@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Notify Legal when contract linked to Renewal/Cross-sell/Expansion</name>
+    <style>none</style>
+    <subject>Client Overview has been created or updated for opportunity &quot; {!Opportunity__c.Name}.&quot;</subject>
+    <textOnly>A Client Overview record has been created for opportunity &quot; {!Opportunity__c.Name}.&quot; Please navigate to the Opportunity in order to review the details and link the Client Overview with SpringCM.
+
+Sales Rep: {!Opportunity__c.OwnerFullName__c}
+
+Opportunity Type: {!Opportunity__c.Type__c}
+
+Close Date: {!Opportunity__c.CloseDate__c}
+
+Target Launch Date: {!Opportunity__c.Launch_Date__c}
+
+Billing Partner: {!Opportunity__c.BillingPartner__c}
+
+Contract Path: {!Opportunity__c.Contract_Path__c}
+
+Opportunity Link: {!Opportunity__c.Link}
+
+Client Overview: {!Opportunity__c.Contract__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

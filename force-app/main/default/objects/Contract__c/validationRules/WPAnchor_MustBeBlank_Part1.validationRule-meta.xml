@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WPAnchor_MustBeBlank_Part1</fullName>
+    <active>true</active>
+    <description>As a Whole Person Anchor, the following fields must be left blank: Program Platform Version, Multi-program Discount, Recruitable Population (D + HTN - Current) &amp; Partner Pass Through Price.</description>
+    <errorConditionFormula>ISPICKVAL( Program_Type__c , &quot;WP Anchor&quot;)
+&amp;&amp; 
+				(NOT(ISBLANK( TEXT(Program_Platform_Version__c )))
+				|| NOT(ISBLANK( Multiprogram_Discount__c ))
+    || NOT(ISBLANK( Recruitable_Population_D_HTN_Current__c ))
+ 			|| NOT(ISBLANK( Partner_Pass_Through_Price__c  )))</errorConditionFormula>
+    <errorMessage>As a Whole Person Anchor, the following fields must be left blank: Program Platform Version, Multi-program Discount, Recruitable Population (D + HTN - Current) &amp; Partner Pass Through Price.</errorMessage>
+</ValidationRule>

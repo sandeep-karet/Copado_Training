@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Claim Based Billing Notification</name>
+    <style>none</style>
+    <subject>Claim Based Billing Notification</subject>
+    <textOnly>Hi {!Contract__c.CIM__c},
+
+The Payer Profile has been selected for Account {!Contract__c.Account__c}, Program {!Contract__c.Program_Name__c}. The Payer Claims and Configuration Report will be updated tonight and ready for your review tomorrow. Once reviewed, please check off the task in TaskRay</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Path_Change_Req_Orig_Contract</fullName>
+    <active>true</active>
+    <description>Require the field &quot;Original Contract&quot; before closing opportunities of type &quot;Contract Path Change&quot;</description>
+    <errorConditionFormula>AND ( 
+ISPICKVAL( Type__c, &quot;Contract Path Change&quot;),
+ISPICKVAL( StageName__c, &quot;Closed Won&quot;),
+ISBLANK( Original_Contract__c ),
+NOT(ISPICKVAL(Source__c, &apos;TD&apos;)))</errorConditionFormula>
+    <errorMessage>You must provide a value for field &quot;Original Contract&quot; before closing opportunities of type &quot;Contract Path Change&quot;</errorMessage>
+</ValidationRule>

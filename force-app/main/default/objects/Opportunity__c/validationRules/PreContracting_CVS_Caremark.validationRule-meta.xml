@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PreContracting_CVS_Caremark</fullName>
+    <active>false</active>
+    <description>We noticed that you selected CVS Health or Caremark as the Pre-Contracting Contract Paper.  Please select Caremark TC or Caremark PSM instead.</description>
+    <errorConditionFormula>(  Pre_Contracting_Contract_Paper__r.Account_ID_Long__c  = $CustomMetadata.Account_Long_ID__mdt.CVS_Health.Account_Long_ID__c
+||   Pre_Contracting_Contract_Paper__r.Account_ID_Long__c = $CustomMetadata.Account_Long_ID__mdt.Caremark.Account_Long_ID__c )</errorConditionFormula>
+    <errorMessage>We noticed that you selected CVS Health or Caremark as the Pre-Contracting Contract Paper.  Please select Caremark TC or Caremark PSM instead.</errorMessage>
+</ValidationRule>

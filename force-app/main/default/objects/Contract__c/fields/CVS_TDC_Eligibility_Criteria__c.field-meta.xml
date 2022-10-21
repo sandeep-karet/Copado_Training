@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CVS_TDC_Eligibility_Criteria__c</fullName>
+    <externalId>false</externalId>
+    <label>CVS/TDC Eligibility Criteria</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Active Coverage</fullName>
+                <default>false</default>
+                <label>Active Coverage</label>
+            </value>
+            <value>
+                <fullName>Medical Claims</fullName>
+                <default>false</default>
+                <label>Medical Claims</label>
+            </value>
+            <value>
+                <fullName>Rx Claims</fullName>
+                <default>false</default>
+                <label>Rx Claims</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lost_Reason_Lost_To_Competitor</fullName>
+    <active>true</active>
+    <description>If the Lost Reason is Lost to Competitor, you must have an Opportunity-level Competitor relationship.</description>
+    <errorConditionFormula>ISPICKVAL(Lost_Reason__c , &quot;Lost to Competitor&quot;) 
+&amp;&amp;   HasOpportunityLvlCompetitorRelationship__c == FALSE</errorConditionFormula>
+    <errorMessage>If the Lost Reason is Lost to Competitor, you must have an Opportunity-level Competitor relationship.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CDC_Payer_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>CDC Payer Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Program_Name__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Medicare</fullName>
+                <default>false</default>
+                <label>Medicare</label>
+            </value>
+            <value>
+                <fullName>Medicaid</fullName>
+                <default>false</default>
+                <label>Medicaid</label>
+            </value>
+            <value>
+                <fullName>Private Insurer</fullName>
+                <default>false</default>
+                <label>Private Insurer</label>
+            </value>
+            <value>
+                <fullName>Self-pay</fullName>
+                <default>false</default>
+                <label>Self-pay</label>
+            </value>
+            <value>
+                <fullName>Dual Eligible (Medicare and Medicaid)</fullName>
+                <default>false</default>
+                <label>Dual Eligible (Medicare and Medicaid)</label>
+            </value>
+            <value>
+                <fullName>Grant funding</fullName>
+                <default>false</default>
+                <label>Grant funding</label>
+            </value>
+            <value>
+                <fullName>Employer</fullName>
+                <default>false</default>
+                <label>Employer</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Prediabetes</controllingFieldValue>
+            <valueName>Medicare</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prediabetes</controllingFieldValue>
+            <valueName>Medicaid</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prediabetes</controllingFieldValue>
+            <valueName>Private Insurer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prediabetes</controllingFieldValue>
+            <valueName>Self-pay</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prediabetes</controllingFieldValue>
+            <valueName>Dual Eligible (Medicare and Medicaid)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prediabetes</controllingFieldValue>
+            <valueName>Grant funding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prediabetes</controllingFieldValue>
+            <valueName>Employer</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

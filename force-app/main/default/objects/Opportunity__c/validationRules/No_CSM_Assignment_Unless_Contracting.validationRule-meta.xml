@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_CSM_Assignment_Unless_Contracting</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+OR( 
+ISPICKVAL( StageName__c, &quot;Prospect&quot;),
+IsPICKVAL( StageName__c, &quot;Discovery&quot;),
+ISPICKVAL( StageName__c, &quot;Proposal&quot;),
+ISPICKVAL( StageName__c, &quot;Review/Negotiation&quot;)),
+ISCHANGED(Request_CSM__c))</errorConditionFormula>
+    <errorMessage>You cannot request a CIM unless you are at least in the Contracting stage. You may utilize a Subject Matter Expert, by chattering @Erin Mynaugh. Also chatter her if you believe you need an exemption for this</errorMessage>
+</ValidationRule>

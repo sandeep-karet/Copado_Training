@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Benefits_Consultant_Contact_Role</fullName>
+    <active>true</active>
+    <description>If a Benefits Consultants was involved in the deal, you must add a Contact Role with Type - Broker before you can save this record.</description>
+    <errorConditionFormula>(Broker_Count__c = 0.0
+|| ISBLANK(Broker_Count__c))
+&amp;&amp; (
+ISPICKVAL(Benefit_Consultant_Involved_in_Deal__c, &quot;Consultant introduced us, but was not involved in selling&quot;)
+|| ISPICKVAL(Benefit_Consultant_Involved_in_Deal__c, &quot;Consultant introduced us, and was involved in selling&quot;)
+|| ISPICKVAL(Benefit_Consultant_Involved_in_Deal__c, &quot;Consultant did not introduce us, but was involved in selling&quot;)
+)
+&amp;&amp; NOT(ISPICKVAL(Type__c, &quot;Renewal&quot;))
+&amp;&amp; Bypass_Contact_Role_Rules__c = FALSE
+&amp;&amp; Probability__c &gt; 0.30
+&amp;&amp; NOT (ISCHANGED( Supporting_PBM_Executive_Count__c ))
+&amp;&amp;
+NOT( ISPICKVAL( Source__c , &apos;TD&apos;) )</errorConditionFormula>
+    <errorMessage>If a Benefits Consultants was involved in the deal, you must first add a Contact Role with Type - Broker before you can save this record.</errorMessage>
+</ValidationRule>

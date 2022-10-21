@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PO_must_have_same_Account_as_CO</fullName>
+    <active>true</active>
+    <description>We must not allow users to link a Program Overview to any Account besides the one linked to the related Client Overview.</description>
+    <errorConditionFormula>AND( RecordType.Name = &quot;Program Overview&quot;, Account__c &lt;&gt; Client_Overview__r.Account__c )</errorConditionFormula>
+    <errorMessage>You must link this Program Overview to the same Account to which the related Client Overview is linked.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Message_Content__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Initial_Message__c,&apos;Diabetes Medications&apos;),  $CustomMetadata.Campaign_Automation__mdt.Diabetes_medications.Initial_Message_Content__c , 
+		 IF(ISPICKVAL(Initial_Message__c,&apos;Diabetes Meds - Adherence talk to a coach&apos;), $CustomMetadata.Campaign_Automation__mdt.Diabetes_Meds_Adherence_talk_to_a_coach.Initial_Message_Content__c,
+			IF(ISPICKVAL(Initial_Message__c,&apos;Diabetes care - Kidney disease monitoring&apos;),  $CustomMetadata.Campaign_Automation__mdt.Diabetes_care_Kidney_disease_monitorin.Initial_Message_Content__c,
+			IF(ISPICKVAL(Initial_Message__c,&apos;Managing blood pressure&apos;),  $CustomMetadata.Campaign_Automation__mdt.Managing_blood_pressure.Initial_Message_Content__c, 
+			IF(ISPICKVAL(Initial_Message__c,&apos;BG-A1c Reminder&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_A1c_Reminder.Initial_Message_Content__c,
+			IF(ISPICKVAL(Initial_Message__c,&apos;BG-Smoking Cessation&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_Smoking_Cessation.Initial_Message_Content__c, 
+			IF(ISPICKVAL(Initial_Message__c,&apos;BG-Exercise&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_Exercise.Initial_Message_Content__c,
+			IF(ISPICKVAL(Initial_Message__c,&apos;BG-Eye Exam&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_Eye_Exam.Initial_Message_Content__c, 
+			IF(ISPICKVAL(Initial_Message__c,&apos;BG-Mail Order Meds&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_Mail_Order_Meds.Initial_Message_Content__c, 
+			IF(ISPICKVAL(Initial_Message__c,&apos;BG-Preventative Visit&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_Preventative_Visit.Initial_Message_Content__c, 
+			IF(ISPICKVAL(Initial_Message__c,&apos;BG-Flu Shot&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_Flu_Shot.Initial_Message_Content__c, 
+			IF(ISPICKVAL(Initial_Message__c,&apos;BG-Telehealth&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_Telehealth.Initial_Message_Content__c, &apos;&apos;))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Initial Message Content</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

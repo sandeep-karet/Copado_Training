@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Livongo_Letterhead</letterhead>
+    <name>Program Overview Date &gt; 14 Days</name>
+    <style>freeForm</style>
+    <subject>{!Contract__c.Name} will expire in 14 Days</subject>
+    <textOnly>Hello  {!Contract__c.Client_Overview_CSM__c},
+
+Your Program Overview {!Contract__c.Name} is set to expire in two weeks. Please contact Legal to adjust accordingly before the expiration date.&quot;</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

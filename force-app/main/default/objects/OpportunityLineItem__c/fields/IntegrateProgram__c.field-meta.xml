@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IntegrateProgram__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When checked (the default), this field signals to both Redshift and NetSuite that this Program is to be integrated.  When unchecked, neither Redshift nor Netsuite will sync this Program. If an Opportunity with a Program is added to a Contract with an existing Opportunity and matching Program (Renewals, Expansions), UNCHECK this field on the OLD Opportunity Program.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Checked by default.  When checked, will sync with Redshift &amp; Netsuite.  If an Opportunity with a Program is added to a Contract with an existing Opportunity and matching Program (Renewals, Expansions), UNCHECK this field on the OLD Opportunity Program.</inlineHelpText>
+    <label>Integrate Program</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

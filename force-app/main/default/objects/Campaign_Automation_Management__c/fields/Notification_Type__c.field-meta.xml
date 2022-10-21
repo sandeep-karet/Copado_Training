@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notification_Type__c</fullName>
+    <description>&quot;Definition: Specifies the initial/primary type of channel that will be used to communicate the campaign to the member and if applicable collect their opt-in.
+
+Options Below: 
+Meter Message: the selected audience will recieve an invite to opt-in from their BG meter during the eligible period
+No Notifciation: Definition: A campaign with &quot;&quot;No Notification&quot;&quot; selected will not send an opt-in invitation to members via the BG meter.&quot;
+
+Data Owner: Program Management Team</description>
+    <externalId>false</externalId>
+    <label>Notification Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Meter Message</fullName>
+                <default>false</default>
+                <label>Meter Message</label>
+            </value>
+            <value>
+                <fullName>No notification</fullName>
+                <default>false</default>
+                <label>No notification</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

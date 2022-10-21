@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incentive_Offer_and_Details</fullName>
+    <active>true</active>
+    <errorConditionFormula>(Incentive_Offered__c = TRUE
+&amp;&amp; ISBLANK( Incentive_Details__c ))
+||
+(Incentive_Offered__c = FALSE
+&amp;&amp; NOT( ISBLANK( Incentive_Details__c )))</errorConditionFormula>
+    <errorDisplayField>Incentive_Details__c</errorDisplayField>
+    <errorMessage>If an Incentive Offer has been made, please provide Incentive Details. If no offer was made, please leave Incentive Details blank.</errorMessage>
+</ValidationRule>

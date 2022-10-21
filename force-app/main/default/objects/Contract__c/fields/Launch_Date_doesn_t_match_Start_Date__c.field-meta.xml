@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launch_Date_doesn_t_match_Start_Date__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(NOT(ISBLANK( Actual_Launch_Date__c )), 
+NOT(ISBLANK( Program_Start_Date__c )), 
+Actual_Launch_Date__c &lt; TODAY(), 
+Actual_Launch_Date__c &lt;&gt; Program_Start_Date__c )</formula>
+    <label>Launch Date doesn&apos;t match Start Date</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

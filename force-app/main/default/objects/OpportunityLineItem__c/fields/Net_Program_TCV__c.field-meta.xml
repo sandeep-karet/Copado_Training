@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Net_Program_TCV__c</fullName>
+    <description>Not Used - JENGA-1540</description>
+    <externalId>false</externalId>
+    <formula>IF(AND(Program_Family__c == &apos;Behavioral Health&apos;, NOT(Exclude_Enrollment__c)), (Product_Participants__c * ((UnitPrice__c - (Estimated_At_Risk_PPPM__c + Estimated_Partner_Admin_Fees__c)) * Quantity__c + Up_Front_Per_Member__c) +
+((Product_Participants__c * 0.02) * PMPM__c * Quantity__c / 2)),
+IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), OR(Program_Family__c == &apos;Prediabetes&apos;, Program_Family__c == &apos;Weight Management&apos;), UnitPrice__c == 1.00, NOT(Exclude_Enrollment__c)), (608.00 * (Product_Participants__c * 0.10) * Quantity__c / 12 ),
+IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Servic&apos;), OR(Program_Family__c == &apos;Prediabetes&apos;, Program_Family__c == &apos;Weight Management&apos;), UnitPrice__c == 1.00, NOT(Exclude_Enrollment__c)), (608.00 * (Product_Participants__c * 0.08) * Quantity__c /12),
+IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), Program_Family__c == &apos;Diabetes&apos;, NOT(Exclude_Enrollment__c)), (0.25 * Product_Participants__c * ((UnitPrice__c - (Estimated_At_Risk_PPPM__c + Estimated_Partner_Admin_Fees__c)) * Quantity__c + Up_Front_Per_Member__c)),
+IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), NOT(Program_Family__c == &apos;Diabetes&apos;), NOT(Exclude_Enrollment__c)), (0.1 * Product_Participants__c * ((UnitPrice__c - (Estimated_At_Risk_PPPM__c + Estimated_Partner_Admin_Fees__c)) * Quantity__c + Up_Front_Per_Member__c)),
+IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Servic&apos;), Program_Family__c == &apos;Diabetes&apos;, NOT(Exclude_Enrollment__c)), (0.2 * Product_Participants__c * ((UnitPrice__c - (Estimated_At_Risk_PPPM__c + Estimated_Partner_Admin_Fees__c)) * Quantity__c + Up_Front_Per_Member__c)),
+IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Servic&apos;), NOT(Program_Family__c == &apos;Diabetes&apos;), NOT(Exclude_Enrollment__c)), (0.08 * Product_Participants__c * ((UnitPrice__c - (Estimated_At_Risk_PPPM__c + Estimated_Partner_Admin_Fees__c)) * Quantity__c + Up_Front_Per_Member__c)),
+(Product_Participants__c * ((UnitPrice__c - (Estimated_At_Risk_PPPM__c + Estimated_Partner_Admin_Fees__c)) * Quantity__c + Up_Front_Per_Member__c))
+)))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Net Program TCV</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Contracting_Contract_Paper__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Sales will populate this field during the sales cycle with expected Contract Paper for the Opportunity. Additionally, the Contract Path field is also required before an Opp can be closed won.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Sales will populate this field during the sales cycle with expected Contract Paper for the Opportunity. Additionally, the Contract Path field is also required before an Opp can be closed won.</inlineHelpText>
+    <label>Pre-Contracting Contract Paper</label>
+    <referenceTo>Account__c</referenceTo>
+    <relationshipLabel>Opportunities (Pre-Contracting Contract Paper)</relationshipLabel>
+    <relationshipName>LVGO_Opportunities4</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

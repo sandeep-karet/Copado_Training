@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fast_Start_Credit_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Fast Start Credit Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>One-time (a $X,XXX credit/ $X PPPM credit)</fullName>
+                <default>false</default>
+                <label>One-time (a $X,XXX credit/ $X PPPM credit)</label>
+            </value>
+            <value>
+                <fullName>Recurring (credit of $X PPPM)</fullName>
+                <default>false</default>
+                <label>Recurring (credit of $X PPPM)</label>
+            </value>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <label>Custom</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

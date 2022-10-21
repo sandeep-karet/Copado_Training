@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_Structure__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Updating Pricing Structure will overwrite the Sales Price, Estimated At-Risk PPPM, Estimated Partner Admin Fees, and Up Front Per Member fields.</inlineHelpText>
+    <label>Pricing Structure</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Pricing Structure is not available.</errorMessage>
+        <filterItems>
+            <field>Pricing_Structure__c.Program__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Program_ID__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Pricing_Structure__c.Price_Book__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Price_Book_ID__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Pricing_Structure__c</referenceTo>
+    <relationshipLabel>Opportunity Program</relationshipLabel>
+    <relationshipName>LVGO_Opportunity_Program</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

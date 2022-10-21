@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Benefit_Consultant_Involved_in_Deal__c</fullName>
+    <externalId>false</externalId>
+    <label>Benefit Consultant Involved in Deal?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No Involvement</label>
+            </value>
+            <value>
+                <fullName>Consultant introduced us, but was not involved in selling</fullName>
+                <default>false</default>
+                <label>Yes - Consultant introduced us, but was not involved in selling</label>
+            </value>
+            <value>
+                <fullName>Consultant introduced us, and was involved in selling</fullName>
+                <default>false</default>
+                <label>Yes - Consultant introduced us, and was involved in selling</label>
+            </value>
+            <value>
+                <fullName>Consultant did not introduce us, but was involved in selling</fullName>
+                <default>false</default>
+                <label>Yes - Consultant did not introduce us, but was involved in selling</label>
+            </value>
+            <value>
+                <fullName>Unsure</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unsure</label>
+            </value>
+            <value>
+                <fullName>Yes - Primary</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Yes - Primary</label>
+            </value>
+            <value>
+                <fullName>Yes - Secondary</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Yes - Secondary</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

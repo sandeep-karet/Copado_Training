@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Campaign_Audience_Category__c</fullName>
+    <description>&quot;None: Does not segment the eligible population based on enrollment status nor any other qualification. All members from this sponsor (health plan, employer) can generate opt-ins. 
+Active-30: have logged ingto web or mobile app, and/or used BG meter in last 30 days
+Inactive: have not logged in to mobile or web, nor used BG meter in 30 days+
+&quot;
+Data Owner: Program Management Team</description>
+    <externalId>false</externalId>
+    <label>Campaign Audience Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active-30</fullName>
+                <default>false</default>
+                <label>Active-30</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

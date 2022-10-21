@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_User_Update_TD_Opp</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISPICKVAL(Source__c, &apos;TD&apos;),
+     NOT($Permission.Edit_TD_Opportunity),
+     $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+     OR(  ISCHANGED(Benefit_Consultant_Involved_in_Deal__c),
+          ISCHANGED(CIM__c),
+          ISCHANGED(CSM__c),
+          ISCHANGED(Forecast_Manager_Call__c),
+          ISCHANGED(Name),
+          ISCHANGED(Request_CIM__c),
+          ISCHANGED(Source_ID__c),
+          ISCHANGED(CloseDate__c),
+          ISCHANGED(Launch_Date__c),
+          ISCHANGED(LeadSource__c),
+          ISCHANGED(Opportunity_Covered_Lives__c),
+          ISCHANGED(HSS_Line_of_Business__c),
+          ISCHANGED(Opportunity_Update_Next_Step__c),
+          ISCHANGED(Owner__c),
+          ISCHANGED(Sub_Channel__c),
+          ISCHANGED(StageName__c),
+								  ISCHANGED(Sub_Type__c),
+								  ISCHANGED(Type__c),
+								  ISCHANGED(Contract_Path__c)
+     )
+)</errorConditionFormula>
+    <errorMessage>You are not allowed to update TD Opportunity in LVN, please make the update in TD Instance</errorMessage>
+</ValidationRule>

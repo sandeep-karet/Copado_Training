@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Matching_Population_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Contract__c = &quot;&quot;, 
+			TRUE,
+		 IF( TEXT(Population_Type__c) =  TEXT(Contract__r.Population_Type__c) , 
+						 TRUE, 
+						 IF(ISBLANK(TEXT(Population_Type__c)) || ISBLANK(TEXT(Contract__r.Population_Type__c)), 
+										TRUE, 
+										FALSE
+									)
+					  )
+			)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Matching Population Type?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

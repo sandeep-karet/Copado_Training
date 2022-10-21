@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_update_from_proposal7</fullName>
+    <active>true</active>
+    <description>Prevents updating sales stage beyond &quot;Discovery&quot; unless certain conditions are met</description>
+    <errorConditionFormula>AND( 
+OR( 
+ISPICKVAL( StageName__c, &quot;Review/Negotiation&quot;),
+ISPICKVAL( StageName__c, &quot;Contracting&quot;),
+ISPICKVAL( StageName__c, &quot;Closed Won&quot;)),
+$Profile.Name &lt;&gt; &quot;Sales Admin&quot;, 
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;, 
+$Profile.Name &lt;&gt; &quot;Finance Team&quot;, 
+$UserRole.Name &lt;&gt; &quot;Client Strategy Leadership&quot;, 
+ISBLANK( TEXT( Benefit_Consultant_Involved_in_Deal__c )),
+!ISPICKVAL( Type__c, &quot;Renewal&quot;)
+)</errorConditionFormula>
+    <errorMessage>Please indicate if a Benefit Consultant was involved in this deal. If yes, go to the Partners &amp; Competitors tab and identify the specific partner account as either the Lead Source and/or Influencer relationship.</errorMessage>
+</ValidationRule>

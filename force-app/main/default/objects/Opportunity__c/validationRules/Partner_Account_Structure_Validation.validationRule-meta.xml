@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Account_Structure_Validation</fullName>
+    <active>false</active>
+    <description>Jenga 1552 - “SPA Structure is only available for the following partners and Employee count thresholds: Premera, &lt;= 5,000; HCSC, &lt;= 2,000; All Others, &lt;= 2,500”
+
+DEACTIVATED per Stacy Roberts</description>
+    <errorConditionFormula>AND(ISCHANGED(StageName__c),
+         ISPICKVAL(StageName__c, &quot;Closed Won&quot;),
+         NOT(ISBLANK(Contract_Path__c)),
+         OR(ISPICKVAL(Population_Type__c,&quot;ASO downmarket&quot;),ISPICKVAL(Population_Type__c,&quot;Non-HSS Downmarket&quot;)),
+         OR(AND(CONTAINS(Contract_Path__c, &quot;Premera&quot;),Account__r.NumberOfEmployees__c &gt; 5000),
+	     AND(OR(CONTAINS(Contract_Path__c, &quot;BCBS&quot;),CONTAINS(Contract_Path__c, &quot;HCSC&quot;)),Account__r.NumberOfEmployees__c &gt; 2000),
+	     Account__r.NumberOfEmployees__c &gt; 2500
+	    )
+   )</errorConditionFormula>
+    <errorMessage>SPA Structure is only available for the following partners and employee count thresholds: Premera &lt;= 5,000;  HCSC/BCBS  &lt;= 2,000; All Others, &lt;= 2,500</errorMessage>
+</ValidationRule>

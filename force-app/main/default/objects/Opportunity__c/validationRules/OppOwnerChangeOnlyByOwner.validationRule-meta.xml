@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OppOwnerChangeOnlyByOwner</fullName>
+    <active>false</active>
+    <description>KEEP NOT ACTIVE - CS and Sales not in agreement 1.30.20
+
+Only the current Opportunity Owner can change Ownership. If you believe this message is in error, please reach out to your System Administrator.</description>
+    <errorConditionFormula>AND(ISCHANGED(Owner__c),
+$User.Id &lt;&gt; PRIORVALUE(Owner__c),
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+NOT($Permission.Bypass_OppOwner_Transfer) )</errorConditionFormula>
+    <errorMessage>Only the current Opportunity Owner can change Ownership. If you believe this message is in error, please reach out to your System Administrator.</errorMessage>
+</ValidationRule>

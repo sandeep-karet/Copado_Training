@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Sub_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Type__c, &quot;Hunting License&quot;),
+			 OR(TEXT(Sub_Type__c) == NULL,
+							TEXT(Sub_Type__c) == &quot;&quot;))</errorConditionFormula>
+    <errorMessage>Sub-Type value is required when Opportunity Type is Hunting License.</errorMessage>
+</ValidationRule>

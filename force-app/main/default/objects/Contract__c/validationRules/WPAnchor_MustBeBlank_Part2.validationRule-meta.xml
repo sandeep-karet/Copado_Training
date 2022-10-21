@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WPAnchor_MustBeBlank_Part2</fullName>
+    <active>true</active>
+    <description>As a Whole Person Anchor, the following fields must be left blank: Cross Sell Recruitment Began Date, Disclaimer DM + HTN, Eligibility Sentence DM + HTN &amp; Spanish Eligibility Sentence DM + HTN</description>
+    <errorConditionFormula>ISPICKVAL( Program_Type__c, &quot;WP Anchor&quot;)
+&amp;&amp; 
+    (NOT(ISBLANK( Cross_sell_Recruitment_Began_Date__c ))
+ 			|| NOT(ISBLANK( Disclaimer_DM_HTN__c))
+				|| NOT(ISBLANK( Eligibility_Sentence_DM_HTN__c  ))
+    || NOT(ISBLANK( Spanish_Eligibility_Sentence_DM_HTN__c   )))</errorConditionFormula>
+    <errorMessage>As a Whole Person Anchor, the following fields must be left blank: Cross Sell Recruitment Began Date, Disclaimer DM + HTN, Eligibility Sentence DM + HTN &amp; Spanish Eligibility Sentence DM + HTN</errorMessage>
+</ValidationRule>

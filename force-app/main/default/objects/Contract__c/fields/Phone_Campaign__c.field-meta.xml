@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_Campaign__c</fullName>
+    <description>What type of phone campaign does the client require?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What type of phone campaign does the client require?</inlineHelpText>
+    <label>Phone Campaign</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Phone Only</fullName>
+                <default>false</default>
+                <label>Phone Only</label>
+            </value>
+            <value>
+                <fullName>With Phone</fullName>
+                <default>false</default>
+                <label>With Phone</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

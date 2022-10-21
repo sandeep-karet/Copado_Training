@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incentive_API_Start_Date_is_required</fullName>
+    <active>true</active>
+    <description>Incentive API Start date is required only if Incentives API Partner picklist is selected.</description>
+    <errorConditionFormula>AND (Not(ISBLANK(TEXT(Incentives_API_Partner__c))),
+					 ISBLANK(Incentive_API_Start_Date__c) 
+				)</errorConditionFormula>
+    <errorMessage>Please enter the Incentive API Start Date.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Data Upload or Backfill</fullName>
+                <default>false</default>
+                <label>New Data Upload or Backfill</label>
+            </value>
+            <value>
+                <fullName>New Dropdown Value</fullName>
+                <default>false</default>
+                <label>New Dropdown Value</label>
+            </value>
+            <value>
+                <fullName>New Field(s)</fullName>
+                <default>false</default>
+                <label>New Field(s)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Enhancement</controllingFieldValue>
+            <valueName>New Data Upload or Backfill</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enhancement</controllingFieldValue>
+            <valueName>New Dropdown Value</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enhancement</controllingFieldValue>
+            <valueName>New Field(s)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enhancement</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

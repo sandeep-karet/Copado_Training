@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_update_from_proposal1</fullName>
+    <active>false</active>
+    <description>Prevents updating sales stage beyond &quot;selling&quot; unless certain conditions are met</description>
+    <errorConditionFormula>AND(
+  OR(
+     ISPICKVAL( StageName__c, &quot;VOC&quot;),
+     ISPICKVAL( StageName__c, &quot;Contracting&quot;),
+     ISPICKVAL( StageName__c, &quot;Closed Won&quot;)),
+ ISBLANK( Launch_Date__c ) 
+)</errorConditionFormula>
+    <errorMessage>Please enter a Launch Date for this opportunity</errorMessage>
+</ValidationRule>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>A_CIM_has_been_assigned</fullName>
+        <description>A CIM has been assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>aclaypool@livongo.com.sales</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CIM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Automated_Email_Notifications/Automated_SFDC_Notification_CSM_Assigned</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Legal_when_Contract_Path_Change_Opportunity_is_Closed</fullName>
+        <ccEmails>contractops@livongo.com</ccEmails>
+        <description>Notify Legal when Contract Path Change Opportunity is Closed</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Automated_Email_Notifications/Automated_SFDC_Notification_Client_Onboarding</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Legal_when_contract_linked_to_Renewal_Cross_sell_Expansion_opportunity</fullName>
+        <ccEmails>contractops@livongo.com</ccEmails>
+        <description>Notify Legal when contract linked to Renewal/Cross-sell/Expansion opportunity</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Automated_Email_Notifications/Notify_Legal_when_contract_linked_to_Renewal_Cross_sell_Expansion</template>
+    </alerts>
+    <alerts>
+        <fullName>Request_Close_Opportunity_EA</fullName>
+        <ccEmails>contractops@livongo.com</ccEmails>
+        <description>Request Close Opportunity EA</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>All/Request_Close_Opportunity</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Calculated_Forecasted_Amount_Update</fullName>
+        <description>Calculate forecasted amount based on NET ARR and Percentage on Forecast Manager call.</description>
+        <field>Calculated_Forecasted_Amount__c</field>
+        <formula>if( ISPICKVAL(Forecast_Manager_Call__c, &apos;Forecast - Closed&apos;),Net_ARR__c,
+IF(ISPICKVAL(Forecast_Manager_Call__c, &apos;Forecast - Call&apos;) , Net_ARR__c * 0.95 ,
+IF(ISPICKVAL(Forecast_Manager_Call__c, &apos;Forecast - Upside&apos;) , Net_ARR__c * 0.75 ,
+IF(AND(ISPICKVAL(Forecast_Manager_Call__c, &apos;Not In Forecast&apos;),CONTAINS(Opp_Owner_Role__c, &apos;Commercial&apos;)) , Net_ARR__c * 0.07,0))))</formula>
+        <name>Calculated Forecasted Amount Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Forecast_Closed</fullName>
+        <field>Forecast_Manager_Call__c</field>
+        <literalValue>Forecast - Closed</literalValue>
+        <name>Forecast - Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Request_CIM_When_Opp_Closed</fullName>
+        <field>Request_CIM__c</field>
+        <literalValue>1</literalValue>
+        <name>Request CIM When Opp Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Check Request CIM When Opportunity Closes</fullName>
+        <actions>
+            <name>Request_CIM_When_Opp_Closed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity__c.StageName__c</field>
+            <operation>equals</operation>
+            <value>Contracting,Closed Won</value>
+        </criteriaItems>
+        <description>When an Opportunity moves to &quot;Closed&quot;, automatically check the &quot;Request CIM&quot; box.  This will trigger the workflow rules associated with that checkbox.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email notification for CIM Assignment</fullName>
+        <actions>
+            <name>A_CIM_has_been_assigned</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED( CIM__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity is won - Contract Path Change</fullName>
+        <actions>
+            <name>Notify_Legal_when_Contract_Path_Change_Opportunity_is_Closed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity__c.StageName__c</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Contract Path Change</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity is won -- New%2FCross%2FExpansion</fullName> 
+        <actions>
+            <name>Forecast_Closed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity__c.StageName__c</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity__c.Type__c</field>
+            <operation>equals</operation>
+            <value>New Business,Expansion,Cross-sell (New product),Hunting License</value>
+        </criteriaItems>
+        <description>Opportunity is won -- New/Cross/Expansion/HuntingLicense</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Calculated Forecasted Amount on Oppty</fullName>
+        <actions>
+            <name>Calculated_Forecasted_Amount_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update the calculated forecasted amount on opportunity based on calculation on NetARR and Forecast Manager Call percentage.</description>
+        <formula>OR(ISCHANGED(Forecast_Manager_Call__c),ISNEW(),ISCHANGED(Net_ARR__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

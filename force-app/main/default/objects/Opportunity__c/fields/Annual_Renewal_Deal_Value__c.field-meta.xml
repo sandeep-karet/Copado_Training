@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Renewal_Deal_Value__c</fullName>
+    <externalId>false</externalId>
+    <formula>((Livongo_for_Diabetes_PwDs__c *  Livongo_for_Diabetes_PPPM__c )* 12) + (( Livongo_for_Hypertension_PwHs__c *  Livongo_for_Hypertension_PPPM__c )*12)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Annual Renewal Deal Value calculated as follows: (Quantity * PPPM) *12</inlineHelpText>
+    <label>Annual Renewal Deal Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContractOps_Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>ContractOps Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>Ready for Signatures</fullName>
+                <default>false</default>
+                <label>Ready for Signatures</label>
+            </value>
+            <value>
+                <fullName>Pending Internal Signatures</fullName>
+                <default>false</default>
+                <label>Pending Internal Signatures</label>
+            </value>
+            <value>
+                <fullName>Pending External Signatures</fullName>
+                <default>false</default>
+                <label>Pending External Signatures</label>
+            </value>
+            <value>
+                <fullName>Signed - Ready for Box</fullName>
+                <default>false</default>
+                <label>Signed - Ready for Box</label>
+            </value>
+            <value>
+                <fullName>Fully Executed Doc Ready for Send</fullName>
+                <default>false</default>
+                <label>Fully Executed Doc Ready for Send</label>
+            </value>
+            <value>
+                <fullName>Ready for SFDC Review</fullName>
+                <default>false</default>
+                <label>Ready for SFDC Review</label>
+            </value>
+            <value>
+                <fullName>Ready for Teladoc Shared Drive</fullName>
+                <default>false</default>
+                <label>Ready for Teladoc Shared Drive</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>Failed Follow Up Attempt</fullName>
+                <default>false</default>
+                <label>Failed Follow Up Attempt</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

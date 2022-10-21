@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Livongo_Letterhead</letterhead>
+    <name>ClientOverview is Expired or Terminated</name>
+    <style>freeForm</style>
+    <subject>Client Overview status has changed to Expired/Terminated for {!Contract__c.Name}</subject>
+    <textOnly>Hello CS Leadership,
+
+Client Overview status has changed to {!Contract__c.Status__c} on {!Contract__c.Name}
+
+https://livongohealth2ndorg.lightning.force.com/{!Contract__c.Id}
+
+This is an automated message, please do not reply.
+
+
+Thank you,
+
+
+Livongo Salesforce Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Detailed_Invoice_Recipients_Required</fullName>
+    <active>true</active>
+    <description>Detailed Invoice Recipients required when Detailed Invoice checkbox is checked.</description>
+    <errorConditionFormula>AND(ISCHANGED(Detailed_Invoice__c), 
+Detailed_Invoice__c == TRUE,  
+ISBLANK(Detailed_Invoice_Recipients__c))</errorConditionFormula>
+    <errorMessage>Detailed Invoice Recipients are required when Detailed Invoice is checked</errorMessage>
+</ValidationRule>

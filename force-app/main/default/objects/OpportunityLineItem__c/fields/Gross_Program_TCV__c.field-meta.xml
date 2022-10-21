@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gross_Program_TCV__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Program_Family__c,
+        &apos;Diabetes&apos;, Product_Participants__c * 0.25 * UnitPrice__c * Quantity__c + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * Quantity__c,
+        &apos;Hypertension&apos;, Product_Participants__c * 0.10 * UnitPrice__c * Quantity__c + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * Quantity__c,
+        &apos;Weight Management&apos;, IF(UnitPrice__c == 1.00,
+                                (500 * Product_Participants__c * 0.10 + Product_Participants__c * 0.10 * Year_2_Price__c * MAX(Quantity__c - 12, 0)) + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * Quantity__c,
+                                (Product_Participants__c * 0.10 * UnitPrice__c * 12 + Product_Participants__c * 0.10 * Year_2_Price__c * MAX(Quantity__c - 12, 0)) + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * Quantity__c ),
+        &apos;Prediabetes&apos;, IF(UnitPrice__c == 1.00,
+                            (500 * Product_Participants__c * 0.10 + Product_Participants__c * 0.10 * Year_2_Price__c * MAX(Quantity__c - 12, 0)) + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * Quantity__c,
+                            (Product_Participants__c * 0.10 * UnitPrice__c * 12 + Product_Participants__c * 0.10 * Year_2_Price__c * MAX(Quantity__c - 12, 0)) + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * Quantity__c ),
+        Product_Participants__c * UnitPrice__c * Quantity__c + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * Quantity__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Gross Program EVA</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

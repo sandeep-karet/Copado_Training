@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CVS_Proposal_Reason</fullName>
+    <active>true</active>
+    <description>Any opportunity that is a Current CVS TDC / Aetna Client, must have a Client Proposal Preference filled out before the record could be saved.</description>
+    <errorConditionFormula>NOT(ISPICKVAL(Type__c, &apos;Renewal&apos;)) &amp;&amp; INCLUDES(Account__r.Account_Grouping__c, &quot;Current CVS TDC/Aetna Clients&quot; )
+	&amp;&amp;  (ISPICKVAL(StageName__c, &quot;Proposal&quot;) || ISPICKVAL(StageName__c, &quot;Review/Negotiation&quot;) || ISPICKVAL(StageName__c, &quot;Contracting&quot;))
+	&amp;&amp; ISBLANK( TEXT( Client_Proposal_Preference__c )) &amp;&amp; NOT(ISPICKVAL(Source__c, &quot;TD&quot;))</errorConditionFormula>
+    <errorMessage>Any opportunity that is a Current CVS TDC / Aetna Client, must have a Client Proposal Preference filled out before the record could be saved.</errorMessage>
+</ValidationRule>

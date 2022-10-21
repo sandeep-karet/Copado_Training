@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Activity_Completed_Date_by_Sales__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(ISBLANK(Last_Event_Completed_Date_by_Sales_Rep__c),ISBLANK(Last_Task_by_Sales_Rep_Completed_Date__c)),
+NULL,
+IF( BLANKVALUE(Last_Task_by_Sales_Rep_Completed_Date__c, DATETIMEVALUE(&quot;1900-01-01 00:00:00&quot;)) &lt; BLANKVALUE(Last_Event_Completed_Date_by_Sales_Rep__c, DATETIMEVALUE(&quot;1900-01-01 00:00:00&quot;)) , Last_Event_Completed_Date_by_Sales_Rep__c , Last_Task_by_Sales_Rep_Completed_Date__c)
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Last Activity Completed Date by Sales</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

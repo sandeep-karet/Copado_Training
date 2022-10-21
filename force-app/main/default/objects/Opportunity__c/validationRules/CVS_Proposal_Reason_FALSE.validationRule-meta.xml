@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CVS_Proposal_Reason_FALSE</fullName>
+    <active>true</active>
+    <description>Any opportunity that is  not a Current CVS TDC / Aetna Client, must leave the Client Proposal Preference blank before being able to save.</description>
+    <errorConditionFormula>NOT(INCLUDES(Account__r.Account_Grouping__c, &quot;Current CVS TDC/Aetna Clients&quot; ))
+&amp;&amp; NOT(ISBLANK( TEXT( Client_Proposal_Preference__c )))
+&amp;&amp; NOT(ISPICKVAL(Source__c, &quot;TD&quot;))</errorConditionFormula>
+    <errorMessage>Any opportunity that is  not a Current CVS TDC / Aetna Client, must leave the Client Proposal Preference blank before being able to save.</errorMessage>
+</ValidationRule>

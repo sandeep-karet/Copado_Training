@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracts_Eligibility_Partner</fullName>
+    <columns>NAME</columns>
+    <columns>Client_Competition__c</columns>
+    <columns>RelationshipType__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RelationshipType__c</field>
+        <operation>equals</operation>
+        <value>Eligibility Partner</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Contracts &gt; Eligibility Partner</label>
+</ListView>

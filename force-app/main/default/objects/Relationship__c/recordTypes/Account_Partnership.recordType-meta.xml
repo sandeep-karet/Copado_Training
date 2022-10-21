@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Partnership</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Relationship_Compact_Layout</compactLayoutAssignment>
+    <description>Partner at the Client Account level (Health Plan/Payer, Benefits Consultant, PBM, Wellness Coordinator, or Cohort)</description>
+    <label>Account Partnership</label>
+    <picklistValues>
+        <picklist>Data_Grade__c</picklist>
+        <values>
+            <fullName>A%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A-</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B-</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C-</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Data_Type__c</picklist>
+        <values>
+            <fullName>Contact Info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eligibility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Claims</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy Claims</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Predefined List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tags</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Irregular</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>File_Delivery_Method__c</picklist>
+        <values>
+            <fullName>SFTP - Client Hosted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFTP - Livongo Hosted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secure Mail</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>File_Format__c</picklist>
+        <values>
+            <fullName>Delimited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fixed Width</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RelationshipType__c</picklist>
+        <values>
+            <fullName>Activity Tracking Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Associated Health Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asthma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Behavioral Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Benefits Consultant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biometrics Screening%2FHealth  Risk Assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardiovascular Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Children%27s Health and Obesity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cohort</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concierge%2FCoaching Advocacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cost Transparency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Warehouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dental Services Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diabetes Prevention</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disease Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drug Cost Management Services %28if different than PBM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EAP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMR %28Electronic Medical Records%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Wellness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Engagement Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Plan %28Payer%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hypertension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maternity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Second Opinion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Muskuloskeletal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nutrition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onsite Clinic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Enrollment Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy Benefit Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Second Opinion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sleep Improvement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smoking Cessation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgery Care Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telemedicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party Administrator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transparency Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vision Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weight Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wellness Platform</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Competitor Currently Engaged w%2F Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitor Pursuing Client</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

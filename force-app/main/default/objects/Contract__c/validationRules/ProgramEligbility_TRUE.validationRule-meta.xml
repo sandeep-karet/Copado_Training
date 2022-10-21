@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProgramEligbility_TRUE</fullName>
+    <active>true</active>
+    <description>Eligibility fields on the Client Overview cannot be filled out if the Program Eligibility Flag is checked. Please clear out all fields before saving.</description>
+    <errorConditionFormula>Program_Eligibility_Flag__c = TRUE
+&amp;&amp; (NOT(ISPICKVAL(Eligibility_Verification_Method__c, &quot;&quot;))
+|| NOT(ISPICKVAL(Eligibility_File_Cadence__c, &quot;&quot;))
+|| NOT(ISPICKVAL(Eligibility_Escalation_Path__c, &quot;&quot;))
+|| NOT(ISBLANK(Escalation_Contact__c))
+|| NOT(ISBLANK(Escalation_Details__c))
+|| NOT(ISBLANK(Eligible_Group_IDs__c))
+|| LEN (Links_to_Eligibility_Verification_Files__c) &gt; 0)</errorConditionFormula>
+    <errorMessage>Eligibility fields on the Client Overview cannot be filled out if the Program Eligibility Flag is checked. Please clear out all fields before saving.</errorMessage>
+</ValidationRule>

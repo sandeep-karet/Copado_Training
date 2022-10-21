@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disable_BH_Coaching_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+				Disable_BH_Coaching__c,
+				NOT( CONTAINS(Product2__r.Name, &apos;Behavioral Health&apos;) )
+)</errorConditionFormula>
+    <errorMessage>This check can be checked once Behavioral Health is added.</errorMessage>
+</ValidationRule>

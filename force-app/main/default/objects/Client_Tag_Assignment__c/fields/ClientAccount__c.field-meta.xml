@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ClientAccount__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Client Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>You must choose an Account with Account Status = Client.</errorMessage>
+        <filterItems>
+            <field>Account__c.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Client</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account__c</referenceTo>
+    <relationshipLabel>Client Tags (from Contract)</relationshipLabel>
+    <relationshipName>Client_Tag_Assignments</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

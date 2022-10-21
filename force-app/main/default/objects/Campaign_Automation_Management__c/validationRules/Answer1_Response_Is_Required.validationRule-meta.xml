@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Answer1_Response_Is_Required</fullName>
+    <active>true</active>
+    <description>Answer1 Response is required if the Answer1 Action is Email</description>
+    <errorConditionFormula>AND(ISPICKVAL(Answer1_Action__c, &apos;Send Email&apos;),
+				ISBLANK(Answer1_Response__c))</errorConditionFormula>
+    <errorMessage>Answer1 Response is required if the Answer1 Action is &quot;Send Email&quot;.</errorMessage>
+</ValidationRule>

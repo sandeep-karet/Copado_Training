@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Type_to_be_Selected</fullName>
+    <active>false</active>
+    <description>Requires the user to select &quot;Type&quot; when editing account record</description>
+    <errorConditionFormula>ISBLANK(TEXT( Type__c ))</errorConditionFormula>
+    <errorDisplayField>Type__c</errorDisplayField>
+    <errorMessage>Please select the type of this account (i.e. - Self-funded, Payer/ASO, PBM, etc...)</errorMessage>
+</ValidationRule>

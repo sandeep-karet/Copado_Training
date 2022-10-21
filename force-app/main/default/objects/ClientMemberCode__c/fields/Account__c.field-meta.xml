@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Defines the relationship between a Client Account and a Client Member Code</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Defines the relationship between a Client Account and a Client Member Code</inlineHelpText>
+    <label>Client Account</label>
+    <referenceTo>Account__c</referenceTo>
+    <relationshipLabel>Client Member Codes</relationshipLabel>
+    <relationshipName>Client_Member_Groups</relationshipName>
+    <required>true</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

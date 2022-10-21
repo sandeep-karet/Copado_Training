@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_CIM_Request_Unless_Contracting</fullName>
+    <active>false</active>
+    <description>Limits user from being able to request a CIM before closed won, unless the opportunity is in the &quot;Contracting&quot; stage AND has at least 5000 opportunity covered lives. Permission sets with &quot;Bypass Request CIM Validation&quot; bypass rule.</description>
+    <errorConditionFormula>AND(
+ Request_CIM__c = TRUE,
+ $Permission.Bypass_Request_CIM_Validation = FALSE,
+ NOT(ISPICKVAL(StageName__c, &quot;Closed Won&quot;)),
+  OR(Opportunity_Covered_Lives__c &lt; 5000,
+     ISBLANK(Opportunity_Covered_Lives__c ), 
+     NOT(ISPICKVAL(StageName__c, &quot;Contracting&quot;))
+   )
+)</errorConditionFormula>
+    <errorMessage>If requesting a CIM prior to opportunity close, Opportunity Covered Lives must be greater than 5000 and opportunity must be in stage &quot;Contracting.&quot; To request an exemption from this rule chatter @Erin Mynaugh</errorMessage>
+</ValidationRule>

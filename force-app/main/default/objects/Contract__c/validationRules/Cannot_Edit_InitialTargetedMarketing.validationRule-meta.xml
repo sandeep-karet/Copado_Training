@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Edit_InitialTargetedMarketing</fullName>
+    <active>true</active>
+    <description>Initial Targeted Marketing Date can only be edited by Enrollment marketing users.</description>
+    <errorConditionFormula>AND(ISCHANGED(Initial_Targeted_Marketing__c),
+			 RecordType.Name = &apos;Program Overview&apos;,
+				$Profile.Name &lt;&gt; &apos;Enrollment Marketing&apos;,
+				$Profile.Name &lt;&gt; &apos;System Administrator&apos;)</errorConditionFormula>
+    <errorMessage>Initial Targeted Marketing Date can be changed only by Enrollment Marketing users.</errorMessage>
+</ValidationRule>

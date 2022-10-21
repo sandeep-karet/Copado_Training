@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Survey sent to client 30 days after launch</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>General_Sales_No_Logo</letterhead>
+    <name>CS Survey</name>
+    <style>freeForm</style>
+    <subject>Livongo Requests Your Feedback</subject>
+    <textOnly>Dear {!Account__c.Primary_CS_POC__c},
+
+At Livongo, your satisfaction is of utmost importance. As we have recently launched Livongo for Diabetes, it would be helpful to us if you would take 2-3 minutes to provide feedback on the launch implementation process. This survey is extremely valuable to ensure our team and processes are of the highest quality possible.
+
+To take the survey, please click here:
+https://www.surveymonkey.com/r/LivongoClientSatisfaction
+
+Feel free to reach out to me directly (information below) if you would like to provide additional feedback.
+
+Thanks for your partnership.
+
+Best,
+
+Lynn Crowe
+SVP, Client and Member Advocacy
+Livongo
+m: 978-819-8458
+e: lcrowe@livongo.com
+a: 444 N. Michigan Ave., Ste 3400, Chicago, IL 60611
+www.livongo.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

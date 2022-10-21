@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Replacement_Device_Coverage__c</fullName>
+    <externalId>false</externalId>
+    <label>Replacement Device Coverage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Client approval required (escalate to CSM)</fullName>
+                <default>false</default>
+                <label>Client approval required (escalate to CSM)</label>
+            </value>
+            <value>
+                <fullName>Client will cover 1 RD per member/contract</fullName>
+                <default>false</default>
+                <label>Client will cover 1 RD per member/contract</label>
+            </value>
+            <value>
+                <fullName>Client will cover 1 RD per member/year</fullName>
+                <default>false</default>
+                <label>Client will cover 1 RD per member/year</label>
+            </value>
+            <value>
+                <fullName>Client will not cover RD</fullName>
+                <default>false</default>
+                <label>Client will not cover RD</label>
+            </value>
+            <value>
+                <fullName>Client will cover RD</fullName>
+                <default>false</default>
+                <label>Client will cover RD</label>
+            </value>
+            <value>
+                <fullName>Teladoc will cover RD</fullName>
+                <default>false</default>
+                <label>Teladoc will cover RD</label>
+            </value>
+            <value>
+                <fullName>Livongo will cover RD</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Livongo will cover RD</label>
+            </value>
+            <value>
+                <fullName>Livongo will replace lost or damaged devices</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Livongo will replace lost or damaged devices</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

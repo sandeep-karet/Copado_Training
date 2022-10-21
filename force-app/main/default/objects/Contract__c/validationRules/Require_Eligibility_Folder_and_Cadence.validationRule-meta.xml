@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Eligibility_Folder_and_Cadence</fullName>
+    <active>true</active>
+    <description>Require &quot;Links to Eligibility Verification Folder&quot; and  &quot;Eligibility File Cadence&quot; fields when &quot;Eligibility Verification Method&quot; values are either Reverse Eligibility or Eligible API + Reverse Eligibility FTP</description>
+    <errorConditionFormula>AND(
+    ISCHANGED( Eligibility_Verification_Method__c ),
+    OR(
+       ISPICKVAL( Eligibility_Verification_Method__c ,&quot;Reverse Eligibility (FTP)&quot; ),
+       ISPICKVAL( Eligibility_Verification_Method__c ,&quot;Eligible API + Reverse Eligibility (FTP)&quot; ) ), 
+    OR( 
+       LEN( Links_to_Eligibility_Verification_Files__c )=0,
+       ISBLANK( TEXT( Eligibility_File_Cadence__c)))
+)</errorConditionFormula>
+    <errorMessage>If either &quot;Reverse Eligibility (FTP)&quot; or &quot;Eligible API + Reverse Eligibility (FTP)&quot; are selected as the  Eligibility Verification Method, you must provide the Eligibility File Cadence and Link(s) to Eligibility Verification Folder.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ROI_Status_HTN__c</fullName>
+    <externalId>false</externalId>
+    <label>ROI Status - HTN</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Client &lt;1.25 years on program or partnership doesn&apos;t allow ROI</fullName>
+                <default>false</default>
+                <label>Client &lt;1.25 years on program or partnership doesn&apos;t allow ROI</label>
+            </value>
+            <value>
+                <fullName>Client &gt;1.25 with 100 activated, claims based completed</fullName>
+                <default>false</default>
+                <label>Client &gt;1.25 with 100 activated, claims based completed</label>
+            </value>
+            <value>
+                <fullName>Client &gt;1.25 years with no ROI completed</fullName>
+                <default>false</default>
+                <label>Client &gt;1.25 years with no ROI completed</label>
+            </value>
+            <value>
+                <fullName>Client &gt; 1.25 years with ROI completed but negative results</fullName>
+                <default>false</default>
+                <label>Client &gt; 1.25 years with ROI completed but negative results</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

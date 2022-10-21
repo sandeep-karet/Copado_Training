@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WP_Programs_Pricing_Must_be_in_Range</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(Bypass_Sales_Price_Validation__c), !ISNEW(), ISCHANGED(UnitPrice__c), Opportunity_Type__c != &apos;Renewal&apos;,
+            OR(
+            AND(
+            Product2__r.Name = &apos;DM Solution&apos;,
+            IF( UnitPrice__c &gt; 107, TRUE,IF(UnitPrice__c &lt; 76, TRUE, IF(UnitPrice__c &lt; 95, IF(UnitPrice__c &gt; 85, TRUE, FALSE), FALSE)))
+            ),
+            AND(
+            Product2__r.Name = &apos;CV Solution&apos;,
+            IF(UnitPrice__c &lt; 55, TRUE, IF(UnitPrice__c &gt; 85, TRUE, IF(UnitPrice__c &gt; 60, IF(UnitPrice__c &lt; 76, TRUE, FALSE),FALSE)))
+            ),
+            AND(
+            Product2__r.Name = &apos;DP Solution&apos;,
+            IF(UnitPrice__c &lt; 73, TRUE, IF(UnitPrice__c &gt; 85, TRUE, FALSE))
+            )
+            )
+            )</errorConditionFormula>
+    <errorDisplayField>UnitPrice__c</errorDisplayField>
+    <errorMessage>You&apos;re attempting to update the Sales Price outside of the defined range for this program.</errorMessage>
+</ValidationRule>

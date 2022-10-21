@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Unit__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( TEXT(Sub_Channel__c),
+&quot;Employer - Downmarket&quot;, &quot;Employer&quot;,
+&quot;Employer - East Client Sales&quot;, &quot;Employer&quot;,
+&quot;Employer - East Net New&quot;, &quot;Employer&quot;,
+&quot;Employer - Signature&quot;, &quot;Employer&quot;,
+&quot;Employer - West Client Sales&quot;, &quot;Employer&quot;,
+&quot;Employer - West Net New&quot;, &quot;Employer&quot;,
+&quot;HSG - Aetna&quot;, &quot;HSG&quot;,
+&quot;HSG - Federal&quot;, &quot;HSG&quot;,
+&quot;HSG - United&quot;, &quot;HSG&quot;,
+&quot;HSG - TPA/Reseller&quot;, &quot;HSG&quot;,
+&quot;DTE - East New&quot;, &quot;Employer&quot;,
+&quot;DTE - East Client Sales&quot;, &quot;Employer&quot;,
+&quot;DTE - West New&quot;, &quot;Employer&quot;,
+&quot;DTE - West Client Sales&quot;, &quot;Employer&quot;,
+&quot;DTE - Signature&quot;, &quot;Employer&quot;,
+&quot;DTE - Broker&quot;, &quot;Employer&quot;,
+&quot;Employer - Labor&quot;, &quot;Employer&quot;,
+&quot;Employer&quot;, &quot;Employer&quot;,
+&quot;Employer - ASO&quot;, &quot;Employer&quot;,
+&quot;Canada&quot;, &quot;International&quot;,
+&quot;HHS&quot;, &quot;HHS&quot;,
+&quot;HP - US Existing&quot;, &quot;HP&quot;,
+&quot;HP - US New&quot;, &quot;HP&quot;,
+&quot;HP - Government Federal&quot;, &quot;HSG&quot;,
+&quot;HP - National&quot;, &quot;HP&quot;,
+&quot;HP - Aetna&quot;, &quot;HSG&quot;,
+&quot;HP - United&quot;, &quot;HSG&quot;,
+&quot;HP - TPA/Reseller&quot;, &quot;HSG&quot;,
+&quot;HSG - Blues&quot;, &quot;HSG&quot;,
+&quot;HSG - East&quot;, &quot;HSG&quot;,
+&quot;HSG - West&quot;, &quot;HSG&quot;,
+&quot;HSG - Strategic Partnerships&quot;, &quot;HSG&quot;,
+&quot;HSG&quot;, &quot;HSG&quot;,
+&quot;Undefined&quot;, &quot;Undefined&quot;,
+&quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Business Unit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

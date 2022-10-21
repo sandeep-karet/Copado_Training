@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <description>Evaluates is record lookup to the Contact object using the Lead objects parse field yields any results.</description>
+        <name>varContact_Account_ID_is_Null</name>
+        <label>varContact Account ID is Null?</label>
+        <locationX>725</locationX>
+        <locationY>71</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>AcctIDnotNULL</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varContactAccountID</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Lead_with_Account_ID</targetReference>
+            </connector>
+            <label>AcctIDnotNULL</label>
+        </rules>
+        <rules>
+            <name>AcctIDisNull</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varContactAccountID</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Lead_Checkbox_No_Acct_Found</targetReference>
+            </connector>
+            <label>AcctIDisNull</label>
+        </rules>
+    </decisions>
+    <description>Autolaunched flow that is fired when a new Lead is created and no Account record is affiliated with the record. The flow takes the Email Parse formula field and looks for contact records with with an email parse field = to the lead email parse field. If a match is found, it updates the lead record with the matching Contact records Account.</description>
+    <interviewLabel>New Lead No Account Email Parse Lookup {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead - New &amp; Account=Null Contact Lookup Matching Email Domains</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Look up contacts in the system that have an email address, and match the Lead&apos;s email parse field to a contacts email parse field.</description>
+        <name>Lookup_Contacts_with_Lead_Email_Parse_Field</name>
+        <label>Lookup Contacts with Lead Email Parse Field</label>
+        <locationX>518</locationX>
+        <locationY>69</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>varContact_Account_ID_is_Null</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Contact_Email_Parse__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varLeadEmailParseValue</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Email__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Contact__c</object>
+        <outputAssignments>
+            <assignToReference>varContactAccountID</assignToReference>
+            <field>Account__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varContactEmailParseValue</assignToReference>
+            <field>Contact_Email_Parse__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordUpdates>
+        <description>Updates the lead record that launched the flow with field values to indicate that the lookup was unsuccessful.</description>
+        <name>Update_Lead_Checkbox_No_Acct_Found</name>
+        <label>Update Lead Checkbox No Acct Found</label>
+        <locationX>960</locationX>
+        <locationY>222</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varLeadRecordID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>No_Acct_Found_Via_Email_Parse_Flow__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Lead__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>If Lookup returns a result, the lead object that launched the flow is updated with the account ID.</description>
+        <name>Update_Lead_with_Account_ID</name>
+        <label>Update Lead with Account ID</label>
+        <locationX>976</locationX>
+        <locationY>64</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varLeadRecordID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>TAN__c</field>
+            <value>
+                <elementReference>varContactAccountID</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Lookup_Contacts_with_Lead_Email_Parse_Field</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>The Account ID of the contact&apos;s lookup results.</description>
+        <name>varContactAccountID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>The value of the Contact Email Parse field that in on the Contact object.</description>
+        <name>varContactEmailParseValue</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Account ID for the Lead that autolaunched the flow.</description>
+        <name>varLeadAccountID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the Lead record that launced the flow&apos;s email parse value.</description>
+        <name>varLeadEmailParseValue</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Stores lead record ID from lead record that launched the flow.</description>
+        <name>varLeadRecordID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Checkbox on lead object that is TRUE if the flow did not return results.</description>
+        <name>varNoACCTFoundCheckbox</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

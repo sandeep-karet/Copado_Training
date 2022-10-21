@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_Overview__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The parent Client Overview record to which an individual, program-specific Program Overview relates.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The parent Client Overview contract record to which an individual, program-specific Program Overview relates. Integrated with Redshift.</inlineHelpText>
+    <label>Client Overview</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>You must select a &quot;Client Overview&quot;</errorMessage>
+        <filterItems>
+            <field>Contract__c.RecordType.Name</field>
+            <operation>equals</operation>
+            <value>Client Overview</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contract__c</referenceTo>
+    <relationshipLabel>Program Overviews</relationshipLabel>
+    <relationshipName>ProgramOverviews</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

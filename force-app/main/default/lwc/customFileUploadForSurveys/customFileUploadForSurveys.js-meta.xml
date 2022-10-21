@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>customFileUploadForSurveys</masterLabel>
+    <description>This component allows the user to upload files in a Flow screen.</description>
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="fileHeader" type="String" label="File Header" description="Enter the File Header"/>
+            <property name="myRecordId" type="String" label="RecordId" description="Enter the RecordId"/>
+            <property name="label" type="String" label="Label" description="Enter the Label"/>
+            <property name="uploadedFiles" type="String[]" label="Uploaded Files" description="To store the Uploaded Files"/>
+            <property name="acceptedFormats" type="String" label="Accepted Formats" description="Enter the Acceptable Formats"/>
+            <property name="allowMultipleFiles" type="Boolean" label="Allow Multiple Files?" description="Enter True or False"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

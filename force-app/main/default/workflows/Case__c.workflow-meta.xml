@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Case_ready_to_nurture</fullName>
+        <ccEmails>sfintegration@livongo.com</ccEmails>
+        <description>Case ready for JIRA</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Automated_Email_Notifications/Salesforce_Case_to_Jira_Story</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Case_Owner_for_New_Reference_Request_Case</fullName>
+        <description>Notify Case Owner for New Reference Request Case</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Automated_Email_Notifications/Reference_Request_Assignment</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Livongo_Presale_Email_Confirmation</fullName>
+        <description>Send Livongo Presale Email Confirmation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Automated_Email_Notifications/Livongo_Presale_Auto_Reply</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Livongo_Wins_Email_Confirmation</fullName>
+        <description>Send Livongo Wins Email Confirmation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Automated_Email_Notifications/Livongo_Wins_Auto_Reply</template>
+    </alerts>
+    <rules>
+        <fullName>Livongo Presale Auto Reply</fullName>
+        <actions>
+            <name>Send_Livongo_Presale_Email_Confirmation</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Livongo Presale</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Livongo Wins Auto Reply</fullName>
+        <actions>
+            <name>Send_Livongo_Wins_Email_Confirmation</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Livongo Wins</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>New Reference Request Auto Response</fullName>
+        <actions>
+            <name>Notify_Case_Owner_for_New_Reference_Request_Case</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Reference Request</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

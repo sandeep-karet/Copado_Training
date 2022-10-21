@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Original_Contract__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>This field is related only to Contract Path Change opportunities and is required for commissions to be tied between the original sale, the original contract, and the updated contract via a new path.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field is related only to Contract Path Change opportunities and is required for commissions to be tied between the original sale, the original contract, and the updated contract via a new path.</inlineHelpText>
+    <label>Original Contract</label>
+    <referenceTo>Contract__c</referenceTo>
+    <relationshipLabel>Opportunities (Original Contract)</relationshipLabel>
+    <relationshipName>LVGO_Opportunities_Original_Contract</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

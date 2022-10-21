@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Account_Status_has_changed_to_Former_Client</fullName>
+        <ccEmails>clientsuccessleadership@livongo.com</ccEmails>
+        <description>Account Status has changed to Former Client</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Automated_Email_Notifications/Account_Status_is_Former_Client</template>
+    </alerts>
+    <alerts>
+        <fullName>Enrollment_Marketing_Lead_Assignemnt</fullName>
+        <description>Enrollment Marketing Lead Assignemnt</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EML__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All/Enrollment_Marketing_Lead_Assigned_to_You</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Multi_program</fullName>
+        <field>Single_or_Multi_Program2__c</field>
+        <literalValue>Multi Program</literalValue>
+        <name>Multi program</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Request_CSM_60_Days</fullName>
+        <field>RequestCSM__c</field>
+        <literalValue>1</literalValue>
+        <name>Request CSM_60 Days</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Single_program</fullName>
+        <field>Single_or_Multi_Program2__c</field>
+        <literalValue>Single Program</literalValue>
+        <name>Single program</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_changed_to_Prosp_Exp_Int</fullName>
+        <field>Account_Type__c</field>
+        <literalValue>Prospecting - Expressed Interest</literalValue>
+        <name>Status changed to Prosp-Exp Int</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Turn_Status_to_Engaging</fullName>
+        <field>Account_Type__c</field>
+        <literalValue>Engaging</literalValue>
+        <name>Turn Status to Engaging</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Prior_Account_Status</fullName>
+        <description>JENGA-1279</description>
+        <field>Prior_Account_Status__c</field>
+        <formula>TEXT(PRIORVALUE(Account_Type__c))</formula>
+        <name>Update Prior Account Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Account Status Engaging</fullName>
+        <actions>
+            <name>Turn_Status_to_Engaging</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account__c.Account_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Engaging,Client,Disqualified,Active Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account__c.Closed_Won_Opportunity_Count__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account__c.Open_Opportunity_Count__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>An account with an open opportunity should be in the Account Status &apos;Engaging.&apos;</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Enrollment Marketing Lead Assigned to You</fullName>
+        <actions>
+            <name>Enrollment_Marketing_Lead_Assignemnt</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account__c.EML__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Prior Account Status</fullName>
+        <actions>
+            <name>Update_Prior_Account_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>JENGA-1279</description>
+        <formula>AND(ISCHANGED(Account_Type__c), NOT(ISPICKVAL(Account_Type__c, &apos;&apos;)), NOT(ISBLANK(PRIORVALUE(Account_Type__c))))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

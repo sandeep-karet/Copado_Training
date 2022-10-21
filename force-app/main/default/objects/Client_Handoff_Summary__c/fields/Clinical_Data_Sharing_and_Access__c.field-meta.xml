@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clinical_Data_Sharing_and_Access__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES( Client_Overview__r.Clinical_Data_Sharing_and_Access__c , &quot;None&quot;), &quot;None; &quot;, NULL)  + 
+IF(INCLUDES( Client_Overview__r.Clinical_Data_Sharing_and_Access__c , &quot;Clinical Portal - Care Coordination&quot;), &quot;Clinical Portal - Care Coordination; &quot;, NULL)  + 
+IF(INCLUDES( Client_Overview__r.Clinical_Data_Sharing_and_Access__c , &quot;Clinical Portal - Shared Coaching&quot;), &quot;Clinical Portal - Shared Coaching; &quot;, NULL)  + 
+IF(INCLUDES( Client_Overview__r.Clinical_Data_Sharing_and_Access__c , &quot;Reporting/File Share&quot;), &quot;Reporting/File Share; &quot;, NULL) + 
+IF(INCLUDES( Client_Overview__r.Clinical_Data_Sharing_and_Access__c , &quot;API Integration&quot;), &quot;API Integration; &quot;, NULL)</formula>
+    <label>Clinical Data Sharing and Access</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

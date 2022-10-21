@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Y2_Total_Cumulative_Savings__c</fullName>
+    <externalId>false</externalId>
+    <formula>Y2_Annual_Heart_Attack_Cost_Savings__c + Y2_Annual_Stroke_Cost_Savings__c + (Annual_ED_Cost_Savings__c *2) + (Annual_Office_Visit_Savings__c *2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Y2 Total Cumulative Savings</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

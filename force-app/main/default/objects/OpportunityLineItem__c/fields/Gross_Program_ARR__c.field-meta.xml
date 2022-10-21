@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gross_Program_ARR__c</fullName>
+    <description>THIS SHOULD NOT BE USED</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+    Program_Family__c,
+
+    &apos;Diabetes&apos;, IF(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), (0.25 * Product_Participants__c * (UnitPrice__c * 12)) + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * 12,
+                (0.20 * Product_Participants__c * (UnitPrice__c * 12)) + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * 12),
+    
+    &apos;Hypertension&apos;, IF(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), (0.10 * Product_Participants__c * (UnitPrice__c * 12)) + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * 12,
+                    (0.08 * Product_Participants__c * (UnitPrice__c * 12)) + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * 12),
+
+    &apos;Weight Management&apos;, IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), UnitPrice__c == 1.00), 608 * Product_Participants__c * 0.10,
+                         IF(UnitPrice__c == 1.00, 608 * Product_Participants__c * 0.08,
+                         IF(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), 0.10 * Product_Participants__c * UnitPrice__c * 12 + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * 12,
+                         0.08 * Product_Participants__c * UnitPrice__c * 12 + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * 12))),
+    
+    &apos;Prediabetes&apos;, IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), UnitPrice__c == 1.00), 608 * Product_Participants__c * 0.10,
+                    IF(UnitPrice__c == 1.00, 608 * Product_Participants__c * 0.08,
+                    IF(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), 0.10 * Product_Participants__c * UnitPrice__c * 12 + Currently_Enrolled_Members__c * Incremental_Sales_Price__c * 12,
+                    0.08 * Product_Participants__c * UnitPrice__c * 12 + Currently_Enrolled_Members__c* Incremental_Sales_Price__c * 12))),
+
+    Product_Participants__c * UnitPrice__c * 12 + Product_Participants__c * 0.02 * PMPM__c * 6
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Gross Program ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Monthly_Recurring_Revenue_MRR__c</fullName>
+    <externalId>false</externalId>
+    <formula>(Livongo_for_Diabetes_PwDs__c * Livongo_for_Diabetes_PPPM__c * 0.25)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Total # of PwDs covered by contract * $PPPM * 25%</inlineHelpText>
+    <label>Monthly Recurring Revenue (MRR)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

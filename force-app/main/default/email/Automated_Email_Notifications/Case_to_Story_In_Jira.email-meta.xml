@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Livongo_Logo</letterhead>
+    <name>Case to Story In Jira</name>
+    <style>freeForm</style>
+    <subject>Case {!Case__c.CaseNumber__c} has been moved to JENGA</subject>
+    <textOnly>Hi {!Case__c.ContactId__c},
+
+Thank you for submitting Case {!Case__c.CaseNumber__c}. The CRM Team has determined this is an enhancement that requires further development. To continue following its development, please follow our progress using this link: {!Case__c.Jira_Link__c}
+
+Thank you,
+CRM Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

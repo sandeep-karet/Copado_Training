@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Value__c</fullName>
+    <externalId>false</externalId>
+    <formula>((Livongo_for_Diabetes_PwDs__c * Livongo_for_Diabetes_PPPM__c * 0.25 * 12))
++
+(( Livongo_for_Hypertension_PwHs__c * Livongo_for_Hypertension_PPPM__c * 0.10 * 12))
++
+IF(Livongo_DPP_PPPM__c == 1, 608 * (Livongo_DPP_PwPDs__c * 0.10),
+(( Livongo_DPP_PwPDs__c * Livongo_DPP_PPPM__c * 0.10 *12)))
++
+IF(Livongo_for_Weight_Management_DP_PPPM__c == 1.00, 608 * (Livongo_for_Weight_Management_DP_PwOs__c * 0.10),
+(( Livongo_for_Weight_Management_DP_PwOs__c * Livongo_for_Weight_Management_DP_PPPM__c * 0.10 * 12)))
++
+Livongo_Behavioral_Health_PwBHs__c * Livongo_for_BH_PPPM__c *12 + (Livongo_Behavioral_Health_PwBHs__c * 0.02) * Livongo_BH_Coaching_PPPM__c * 6</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This is the pre-close ARR, not taking into account any adjustments due to partner fees, PGs, etc. Your final commissionable ARR may differ.</inlineHelpText>
+    <label>Old Gross ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

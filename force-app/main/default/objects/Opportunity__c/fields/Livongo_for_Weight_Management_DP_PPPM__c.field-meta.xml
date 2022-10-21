@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Livongo_for_Weight_Management_DP_PPPM__c</fullName>
+    <externalId>false</externalId>
+    <label>Livongo for Weight Management PPPM</label>
+    <summarizedField>OpportunityLineItem__c.UnitPrice__c</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem__c.OpportunityProductName__c</field>
+        <operation>equals</operation>
+        <value>Weight Management, Livongo for Weight Management</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem__c.Opportunity__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

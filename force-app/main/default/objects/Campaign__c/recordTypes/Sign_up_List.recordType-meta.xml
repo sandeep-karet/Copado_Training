@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sign_up_List</fullName>
+    <active>true</active>
+    <description>This is a record type that should be used for marketing users and child marketing campaigns that expresses Leads/Contacts that have taken an action to sign-up for something. This should be used for event RSVPs, Webinar sign-ups, and RFI sign-ups, etc.</description>
+    <label>Sign-up List</label>
+    <picklistValues>
+        <picklist>Campaign_Line_of_Business__c</picklist>
+        <values>
+            <fullName>All</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Benefit Consultants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Plans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Labor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PBMS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Campaign_Objective__c</picklist>
+        <values>
+            <fullName>Brand Awareness</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Lead Generation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thought Leadership</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Method_Detail__c</picklist>
+        <values>
+            <fullName>Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Pardot Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Pardot Whitepaper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pardot Asset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pardot Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pardot Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pardot LandingPage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pardot URL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pardot Whitepaper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Post</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar RSVP Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website RFI Form</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Method__c</picklist>
+        <values>
+            <fullName>Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email%2FDigital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Campaign-No Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sign-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscribe%2FOpt-In</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Aborted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planned</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

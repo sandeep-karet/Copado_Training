@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Description__c</fullName>
+    <externalId>false</externalId>
+    <label>Risk Description</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Risk_Color__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unhappy client - Terming and we have tried literally everything</fullName>
+                <default>false</default>
+                <label>Unhappy client - Terming and we have tried literally everything</label>
+            </value>
+            <value>
+                <fullName>Acquired and no path forward with new parent company</fullName>
+                <default>false</default>
+                <label>Acquired and no path forward with new parent company</label>
+            </value>
+            <value>
+                <fullName>Renewal CCS Received (5/1/2020 or later) for TDC</fullName>
+                <default>false</default>
+                <label>Renewal CCS Received (5/1/2020 or later) for TDC</label>
+            </value>
+            <value>
+                <fullName>Contracted directly and signed</fullName>
+                <default>false</default>
+                <label>Contracted directly and signed</label>
+            </value>
+            <value>
+                <fullName>Redlines in progress and full intent from client to renew direct</fullName>
+                <default>false</default>
+                <label>Redlines in progress and full intent from client to renew direct</label>
+            </value>
+            <value>
+                <fullName>Redlines in progress and full intent from client to renew through other partner</fullName>
+                <default>false</default>
+                <label>Redlines in progress and full intent from client to renew through other partner</label>
+            </value>
+            <value>
+                <fullName>Intent to go direct and not renew</fullName>
+                <default>false</default>
+                <label>Intent to go direct and not renew</label>
+            </value>
+            <value>
+                <fullName>Intent to contract through other partner and not renew</fullName>
+                <default>false</default>
+                <label>Intent to contract through other partner and not renew</label>
+            </value>
+            <value>
+                <fullName>Intent to move to ngTDC</fullName>
+                <default>false</default>
+                <label>Intent to move to ngTDC</label>
+            </value>
+            <value>
+                <fullName>Intent to renew on TDC paper &amp; evaluate alternative contracting paths to stay with Livongo for 2022 and beyond and CAN contract direct - no paperwork received yet</fullName>
+                <default>false</default>
+                <label>Intent to renew on TDC paper &amp; evaluate alternative contracting paths to stay with Livongo for 2022 and beyond and CAN contract direct - no paperwork received yet</label>
+            </value>
+            <value>
+                <fullName>Intent to renew on TDC paper &amp; evaluate alternative contracting paths to stay with Livongo for 2022 and beyond and CANNOT contract direct - no paperwork received yet</fullName>
+                <default>false</default>
+                <label>Intent to renew on TDC paper &amp; evaluate alternative contracting paths to stay with Livongo for 2022 and beyond and CANNOT contract direct - no paperwork received yet</label>
+            </value>
+            <value>
+                <fullName>Intent to renew on TDC paper &amp; no other intent stated and have not received paperwork yet</fullName>
+                <default>false</default>
+                <label>Intent to renew on TDC paper &amp; no other intent stated and have not received paperwork yet</label>
+            </value>
+            <value>
+                <fullName>No discussions with client or consultant after multiple outreaches</fullName>
+                <default>false</default>
+                <label>No discussions with client or consultant after multiple outreaches</label>
+            </value>
+            <value>
+                <fullName>Recent launch/renewal, no commitment to renew</fullName>
+                <default>false</default>
+                <label>Recent launch/renewal, no commitment to renew</label>
+            </value>
+            <value>
+                <fullName>Spoke with client and they are not happy with Livongo</fullName>
+                <default>false</default>
+                <label>Spoke with client and they are not happy with Livongo</label>
+            </value>
+            <value>
+                <fullName>Conversation had but no clear intent - Met with client / consultant and discussed contracting path options but no commitment yet</fullName>
+                <default>false</default>
+                <label>Conversation had but no clear intent - Met with client / consultant and discussed contracting path options but no commitment yet</label>
+            </value>
+            <value>
+                <fullName>Conversation had but no clear intent - Met with AE and they verbally said they will not be pushing ngTDC to the client right now</fullName>
+                <default>false</default>
+                <label>Conversation had but no clear intent - Met with AE and they verbally said they will not be pushing ngTDC to the client right now</label>
+            </value>
+            <value>
+                <fullName>Conversation had but no clear intent - Met with Client/AE/Consultant  and discussed changes and were interested in making changes to direct or partner but did not commit yet</fullName>
+                <default>false</default>
+                <label>Conversation had but no clear intent - Met with Client/AE/Consultant  and discussed changes and were interested in making changes to direct or partner but did not commit yet</label>
+            </value>
+            <value>
+                <fullName>Out to RFP</fullName>
+                <default>false</default>
+                <label>Out to RFP</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Black - Leaving Livongo</controllingFieldValue>
+            <valueName>Unhappy client - Terming and we have tried literally everything</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Black - Leaving Livongo</controllingFieldValue>
+            <valueName>Acquired and no path forward with new parent company</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Black - Leaving Livongo</controllingFieldValue>
+            <valueName>Intent to move to ngTDC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Green - Retaining the Client</controllingFieldValue>
+            <valueName>Renewal CCS Received (5/1/2020 or later) for TDC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Green - Retaining the Client</controllingFieldValue>
+            <valueName>Contracted directly and signed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Green - Retaining the Client</controllingFieldValue>
+            <valueName>Redlines in progress and full intent from client to renew direct</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Green - Retaining the Client</controllingFieldValue>
+            <valueName>Redlines in progress and full intent from client to renew through other partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yellow - Intent Expressed</controllingFieldValue>
+            <valueName>Intent to go direct and not renew</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yellow - Intent Expressed</controllingFieldValue>
+            <valueName>Intent to contract through other partner and not renew</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yellow - Intent Expressed</controllingFieldValue>
+            <valueName>Intent to renew on TDC paper &amp; evaluate alternative contracting paths to stay with Livongo for 2022 and beyond and CAN contract direct - no paperwork received yet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yellow - Intent Expressed</controllingFieldValue>
+            <valueName>Intent to renew on TDC paper &amp; evaluate alternative contracting paths to stay with Livongo for 2022 and beyond and CANNOT contract direct - no paperwork received yet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yellow - Intent Expressed</controllingFieldValue>
+            <valueName>Intent to renew on TDC paper &amp; no other intent stated and have not received paperwork yet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Red - No Clear Intent Expressed</controllingFieldValue>
+            <valueName>No discussions with client or consultant after multiple outreaches</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Red - No Clear Intent Expressed</controllingFieldValue>
+            <valueName>Recent launch/renewal, no commitment to renew</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Red - No Clear Intent Expressed</controllingFieldValue>
+            <valueName>Spoke with client and they are not happy with Livongo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Red - No Clear Intent Expressed</controllingFieldValue>
+            <valueName>Conversation had but no clear intent - Met with client / consultant and discussed contracting path options but no commitment yet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Red - No Clear Intent Expressed</controllingFieldValue>
+            <valueName>Conversation had but no clear intent - Met with AE and they verbally said they will not be pushing ngTDC to the client right now</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Red - No Clear Intent Expressed</controllingFieldValue>
+            <valueName>Conversation had but no clear intent - Met with Client/AE/Consultant  and discussed changes and were interested in making changes to direct or partner but did not commit yet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Red - No Clear Intent Expressed</controllingFieldValue>
+            <valueName>Out to RFP</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

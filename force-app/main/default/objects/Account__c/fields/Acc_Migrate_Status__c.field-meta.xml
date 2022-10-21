@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Acc_Migrate_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Acc Migrate Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Create New</fullName>
+                <default>false</default>
+                <label>Create New</label>
+            </value>
+            <value>
+                <fullName>Migrate to Existing</fullName>
+                <default>false</default>
+                <label>Migrate to Existing</label>
+            </value>
+            <value>
+                <fullName>Do Not Migrate</fullName>
+                <default>false</default>
+                <label>Do Not Migrate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

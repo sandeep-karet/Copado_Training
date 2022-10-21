@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disable_BH_Coaching_For_Standalone_BH</fullName>
+    <active>true</active>
+    <description>Disable BH Coaching should only be filled for Standalone/WP Non-Anchor behavioral Health programs.</description>
+    <errorConditionFormula>AND(
+    NOT(ISPICKVAL(Program_Name__c,&quot;Behavioral Health&quot;)),
+    Disable_BH_Coaching__c = true
+    )</errorConditionFormula>
+    <errorMessage>Disable BH Coaching to be filled for BH programs only.</errorMessage>
+</ValidationRule>

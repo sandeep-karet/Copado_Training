@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supporting_PBM_Exec_PreContractingBillin</fullName>
+    <active>true</active>
+    <description>If Pre-Contracting Billing Partner is Express Scripts, a related Contact Role with the role of &quot;Supporting PBM Executive&quot; is required before you can save this record.</description>
+    <errorConditionFormula>(Supporting_PBM_Executive_Count__c= 0
+|| ISBLANK(Supporting_PBM_Executive_Count__c))
+&amp;&amp; PreContractingBillingPaperLongID__c  = $CustomMetadata.Account_Long_ID__mdt.Express_Scripts.Account_Long_ID__c
+&amp;&amp;  NOT(ISPICKVAL(Type__c, &quot;Renewal&quot;))
+&amp;&amp;  Bypass_Contact_Role_Rules__c = FALSE
+&amp;&amp; Probability__c &gt; 0.30
+&amp;&amp; NOT (ISCHANGED( Broker_Count__c ))
+&amp;&amp; NOT(ISPICKVAL(Source__c, &quot;TD&quot;))</errorConditionFormula>
+    <errorMessage>If Pre-Contracting Billing Partner is Express Scripts, a related Contact Role with the role of &quot;Supporting PBM Executive&quot; is required before you can save this record.</errorMessage>
+</ValidationRule>

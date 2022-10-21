@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Path__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Direct contracts, please select &quot;Livongo&quot;. Indicates the Contract Path for the Opportunity, and required for Opps to be closed won. Once an Opp is won, the Contract Path will be represented as a relationship associated to the Client Overview.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Direct contracts, please select &quot;Livongo&quot;. Indicates the Contract Path for the Opportunity, and required for Opps to be closed won. Once an Opp is won, the Contract Path will be represented as a relationship associated to the Client Overview.</inlineHelpText>
+    <label>Contract Path</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Contract Path must be a Partner Account.</errorMessage>
+        <filterItems>
+            <field>$Source.Source__c</field>
+            <operation>equals</operation>
+            <value>TD</value>
+        </filterItems>
+        <infoMessage>Contract Path must be a Partner Account.</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account__c</referenceTo>
+    <relationshipLabel>Opportunities (Contract Path)</relationshipLabel>
+    <relationshipName>LVGO_Opportunities1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

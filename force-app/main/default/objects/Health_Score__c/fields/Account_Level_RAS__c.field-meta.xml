@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Level_RAS__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Health_Segment__c, 
+					&apos;Program Score&apos;, $CustomMetadata.Health_Score_Elements__mdt.Program_Score.Recommended_Action_Steps__c, 
+					&apos;Renewal Timing&apos;, $CustomMetadata.Health_Score_Elements__mdt.Renewal_Timing.Recommended_Action_Steps__c,
+					&apos;Cross Sells/Expansions&apos;, $CustomMetadata.Health_Score_Elements__mdt.Cross_Sells_Expansions.Recommended_Action_Steps__c,
+					&apos;Client NPS&apos;, $CustomMetadata.Health_Score_Elements__mdt.Client_NPS.Recommended_Action_Steps__c,
+					&apos;Interaction Cadence&apos;, $CustomMetadata.Health_Score_Elements__mdt.Interaction_Cadence.Recommended_Action_Steps__c,
+					&apos;Executive Sponsor Interaction/Engagement&apos;, $CustomMetadata.Health_Score_Elements__mdt.Executive_Sponsor_Interaction_Engagement.Recommended_Action_Steps__c,
+					&apos;Contract Path/Partner Relationship/Status&apos;, $CustomMetadata.Health_Score_Elements__mdt.Contract_Path_Partner_Relationship_Statu.Recommended_Action_Steps__c,
+					&apos;Client Business Health&apos;, $CustomMetadata.Health_Score_Elements__mdt.Client_Business_Health.Recommended_Action_Steps__c,
+					&apos;Issues&apos;, $CustomMetadata.Health_Score_Elements__mdt.Issues.Recommended_Action_Steps__c,
+					&apos;Competitor w/in account&apos;, $CustomMetadata.Health_Score_Elements__mdt.Competitor_w_in_account.Recommended_Action_Steps__c,
+					&apos;Immediate Action Needed&apos;, $CustomMetadata.Health_Score_Elements__mdt.Immediate_Action_Needed.Recommended_Action_Steps__c,
+					 &apos;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Level RAS</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

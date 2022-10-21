@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( TEXT(Sub_Channel__c),
+&quot;Employer - Downmarket&quot;, &quot;Employer - Downmarket&quot;,
+&quot;Employer - East Client Sales&quot;, &quot;Employer - Client Sales&quot;,
+&quot;Employer - East Net New&quot;, &quot;Employer - Net New&quot;,
+&quot;Employer - Signature&quot;, &quot;Employer - Signature&quot;,
+&quot;Employer - West Client Sales&quot;, &quot;Employer - Client Sales&quot;,
+&quot;Employer - West Net New&quot;, &quot;Employer - Net New&quot;,
+&quot;HSG - Aetna&quot;, &quot;HSG - Aetna/Federal&quot;,
+&quot;HSG - Federal&quot;, &quot;HSG - Aetna/Federal&quot;,
+&quot;HSG - TPA/Reseller&quot;, &quot;HSG - TPA/Reseller&quot;,
+&quot;HSG - United&quot;, &quot;HSG - United&quot;,
+&quot;DTE - East New&quot;, &quot;Employer - Net New&quot;,
+&quot;DTE - East Client Sales&quot;, &quot;Employer - Client Sales&quot;,
+&quot;DTE - West New&quot;, &quot; Employer - Net New&quot;,
+&quot;DTE - West Client Sales&quot;, &quot;Employer - Client Sales&quot;,
+&quot;DTE - Signature&quot;, &quot;Employer - Signature&quot;,
+&quot;DTE - Broker&quot;, &quot;Employer - Downmarket&quot;,
+&quot;Employer - Labor&quot;, &quot;Employer - Labor&quot;,
+&quot;Employer&quot;, &quot;Employer&quot;,
+&quot;Employer - ASO&quot;, &quot;Employer - ASO&quot;,
+&quot;Canada&quot;, &quot;International&quot;,
+&quot;HHS&quot;, &quot;HHS&quot;,
+&quot;HP - US Existing&quot;, &quot;HP - US Group Health&quot;,
+&quot;HP - US New&quot;, &quot;HP - US Group Health&quot;,
+&quot;HP - Government Federal&quot;, &quot;HSG - Aetna/Federal&quot;,
+&quot;HP - National&quot;, &quot;HP - National&quot;,
+&quot;HP - Aetna&quot;, &quot;HSG - Aetna/Federal&quot;,
+&quot;HP - United&quot;, &quot;HSG - United&quot;,
+&quot;HP - TPA/Reseller&quot;, &quot;HSG - TPA/Reseller&quot;,
+&quot;HSG - Blues&quot;, &quot;HSG - Blues&quot;,
+&quot;HSG - East&quot;, &quot;HSG - East&quot;,
+&quot;HSG - West&quot;, &quot;HSG - West&quot;,
+&quot;HSG - Strategic Partnerships&quot;, &quot;HSG - Strategic Partnerships&quot;,
+&quot;HSG&quot;, &quot;HSG&quot;,
+&quot;Undefined&quot;, &quot;Undefined&quot;,
+&quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Channel</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-card slds-card_boundary">
+        <div class="slds-page-header">{fileHeader}</div>
+        <div class="slds-align_absolute-left slds-p-around_small">
+            <lightning-file-upload
+                    label={label}
+                    name="fileUploader"
+                    accept={acceptedFormats}
+                    record-id={myRecordId}
+                    onuploadfinished={handleUploadFinished}
+                    multiple={allowMultipleFiles}>
+            </lightning-file-upload>
+        </div>
+        <template if:true={filesExist}>
+            <div class="slds-form--compound">
+                <table class="slds-table slds-table--bordered">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={finalUploadedFiles} for:item="file">
+                            <tr key={file}>
+                                <td>{file}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+    </div>
+</template>

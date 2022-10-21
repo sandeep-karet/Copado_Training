@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_Proposal_Preference__c</fullName>
+    <description>To be used only if Account Grouping is Current CVS TDC/Aetna Clients</description>
+    <externalId>false</externalId>
+    <inlineHelpText>To be used only if Account Grouping is Current CVS TDC/Aetna Clients</inlineHelpText>
+    <label>CVS/Aetna Client Proposal Preference</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>StageName__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Proposed all options, no preference</fullName>
+                <default>false</default>
+                <label>Proposed all options, no preference</label>
+            </value>
+            <value>
+                <fullName>Direct Agreement is preferred</fullName>
+                <default>false</default>
+                <label>Direct Agreement is preferred</label>
+            </value>
+            <value>
+                <fullName>TDC Renewal is preferred</fullName>
+                <default>false</default>
+                <label>TDC Renewal is preferred</label>
+            </value>
+            <value>
+                <fullName>Alternative Contract Path is preferred</fullName>
+                <default>false</default>
+                <label>Alternative Contract Path is preferred</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Proposal</controllingFieldValue>
+            <controllingFieldValue>Review/Negotiation</controllingFieldValue>
+            <controllingFieldValue>Contracting</controllingFieldValue>
+            <valueName>Proposed all options, no preference</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Proposal</controllingFieldValue>
+            <controllingFieldValue>Review/Negotiation</controllingFieldValue>
+            <controllingFieldValue>Contracting</controllingFieldValue>
+            <valueName>Direct Agreement is preferred</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Proposal</controllingFieldValue>
+            <controllingFieldValue>Review/Negotiation</controllingFieldValue>
+            <controllingFieldValue>Contracting</controllingFieldValue>
+            <valueName>TDC Renewal is preferred</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Proposal</controllingFieldValue>
+            <controllingFieldValue>Review/Negotiation</controllingFieldValue>
+            <controllingFieldValue>Contracting</controllingFieldValue>
+            <valueName>Alternative Contract Path is preferred</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

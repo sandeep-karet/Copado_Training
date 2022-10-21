@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eligibility_Verification_Method__c</fullName>
+    <description>Integrated with Redshift</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Integrated with Redshift</inlineHelpText>
+    <label>Eligibility Verification Method</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <label>Custom</label>
+            </value>
+            <value>
+                <fullName>Eligibility File</fullName>
+                <default>false</default>
+                <label>Eligibility File</label>
+            </value>
+            <value>
+                <fullName>Eligibility File AND RTE</fullName>
+                <default>false</default>
+                <label>Eligibility File AND RTE</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Pharmacy Benefit Manager</fullName>
+                <default>false</default>
+                <label>Pharmacy Benefit Manager</label>
+            </value>
+            <value>
+                <fullName>RTE + (File OR Group ID)</fullName>
+                <default>false</default>
+                <label>RTE + (File OR Group ID)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

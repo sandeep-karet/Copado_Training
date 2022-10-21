@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Relationships2</fullName>
+    <columns>NAME</columns>
+    <columns>Client_Competition__c</columns>
+    <columns>Client_Partnership__c</columns>
+    <columns>Master_Client_Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Master_Client_Account__c</field>
+        <operation>contains</operation>
+        <value>Steven</value>
+    </filters>
+    <label>My Relationships</label>
+</ListView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prohibit_Opportunity_for_Non_Cohort</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISPICKVAL(RelationshipType__c, &apos;Cohort&apos;)), NOT(ISBLANK( CohortOpportunity__c )))</errorConditionFormula>
+    <errorMessage>You may only populate the Opportunity for Cohort relationship types.  Please go to the Opportunity record to capture Opportunity-specific Partner Roles.</errorMessage>
+</ValidationRule>

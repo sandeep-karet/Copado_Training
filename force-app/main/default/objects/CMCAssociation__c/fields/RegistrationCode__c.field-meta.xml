@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RegistrationCode__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>The Registration Code associated to the parent Client Member Code</description>
+    <externalId>false</externalId>
+    <label>Registration Only Code</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>You can only associate Registration Code CMCs to the Population Code CMCs.</errorMessage>
+        <filterItems>
+            <field>ClientMemberCode__c.RecordType.Name</field>
+            <operation>equals</operation>
+            <value>Registration Only</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>ClientMemberCode__c</referenceTo>
+    <relationshipLabel>Registration Only Associations</relationshipLabel>
+    <relationshipName>RegistrationOnly</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

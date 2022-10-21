@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Program_Health_Score</fullName>
+    <active>true</active>
+    <label>Program Health Score</label>
+    <picklistValues>
+        <picklist>Client_Business_Health__c</picklist>
+        <values>
+            <fullName>Declining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Growing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Competitor_w_in_account__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Path_Status__c</picklist>
+        <values>
+            <fullName>Green Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red%2FBlack Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yellow Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cross_Sells_Expansions__c</picklist>
+        <values>
+            <fullName>Client declined discussion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expansion%2Fcross sell opp%2Fno additional programs to sell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On path to discussion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnership does not allow expansion</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Executive_Sponsor_Interaction_Engagement__c</picklist>
+        <values>
+            <fullName>Client Advisory Board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Livongo executive relationship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operational engagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reference%2Fcase study%2Fwhite paper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seat at executive sponsor table</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Health_Segment__c</picklist>
+        <values>
+            <fullName>Activation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Active 30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Launch Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diastolic BP Reduction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Coverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enrollment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Type %28Outreach Stratification%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member Satisfaction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Population Refresh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROI Status</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Systolic BP Reduction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eHba1c Reduction</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Immediate_Action_Needed__c</picklist>
+        <values>
+            <fullName>Breach of Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Merger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Nuclear Issue</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Interaction_Cadence__c</picklist>
+        <values>
+            <fullName>Meeting established cadence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No meeting cadence%2Fconsistently cancels</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issues__c</picklist>
+        <values>
+            <fullName>Billing Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eligibility Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Issues</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Population_Refresh__c</picklist>
+        <values>
+            <fullName>%3E 3 months ago</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>within 3 months</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Program__c</picklist>
+        <values>
+            <fullName>Diabetes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hypertension</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ROI_Status_DM__c</picklist>
+        <values>
+            <fullName>Client %3C1%2E25 years on program or partnership doesn%27t allow ROI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client %3E1%2E25 with 100 activated%2C claims based completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client %3E1%2E25 with 100 activated%2C fitch mode or BOB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client %3E1%2E25 years with no ROI completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client ROI completed but results were negative</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ROI_Status_HTN__c</picklist>
+        <values>
+            <fullName>Client %3C1%2E25 years on program or partnership doesn%27t allow ROI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client %3E 1%2E25 years with ROI completed but negative results</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client %3E1%2E25 with 100 activated%2C claims based completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client %3E1%2E25 years with no ROI completed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

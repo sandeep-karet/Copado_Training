@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Closed_Won_Contract_Path_Null</fullName>
+    <active>true</active>
+    <description>The Contract Path must be populated before an Opportunity can be Closed Won.</description>
+    <errorConditionFormula>ISCHANGED(StageName__c)
+&amp;&amp; ISPICKVAL(StageName__c, &quot;Closed Won&quot;)
+&amp;&amp; ISBLANK( Contract_Path__c )</errorConditionFormula>
+    <errorDisplayField>Contract_Path__c</errorDisplayField>
+    <errorMessage>The Contract Path must be populated before an Opportunity can be Closed Won.</errorMessage>
+</ValidationRule>

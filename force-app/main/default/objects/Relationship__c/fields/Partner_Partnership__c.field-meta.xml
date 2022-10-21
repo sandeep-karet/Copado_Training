@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Partnership__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The Partner or Employer Account in a relationship between a Client and Partner or Employer Account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Partner or Employer Account in a relationship between a Client and Partner or Employer Account.</inlineHelpText>
+    <label>Partner Account (A)</label>
+    <referenceTo>Account__c</referenceTo>
+    <relationshipLabel>Client-Level Partnerships (Partner)</relationshipLabel>
+    <relationshipName>RelatedAccounts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

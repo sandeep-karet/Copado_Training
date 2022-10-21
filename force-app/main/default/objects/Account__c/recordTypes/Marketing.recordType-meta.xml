@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing</fullName>
+    <active>false</active>
+    <label>Marketing</label>
+    <picklistValues>
+        <picklist>Acc_Migrate_Status__c</picklist>
+        <values>
+            <fullName>Create New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do Not Migrate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Migrate to Existing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AccountSource__c</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Account_Clean_Request__c</picklist>
+        <values>
+            <fullName>Contacts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Headcount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partners</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Account_Grouping__c</picklist>
+        <values>
+            <fullName>Cigna Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESI - Towers Coalition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glen Target Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HCSC - Empower</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HCSC - Enable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HCSC - HAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>John Fox Target List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>March Madness</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Account_Type__c</picklist>
+        <values>
+            <fullName>Disqualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former Client</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Account_interested_in_following_products__c</picklist>
+        <values>
+            <fullName>Livongo for Diabetes</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Livongo for Hypertension</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Acct_Rev_Synergy_Flag__c</picklist>
+        <values>
+            <fullName>Legacy Combined TD%2FLV Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy LV Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy TD Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net New Client %28All Solutions%29</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Benefit_Plan_Year__c</picklist>
+        <values>
+            <fullName>April</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>August</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>December</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>February</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>January</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>July</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>June</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>March</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>May</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>November</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>October</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>September</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Billing__c</picklist>
+        <values>
+            <fullName>At Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blocked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ON Schedule</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overdue</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Risk__c</picklist>
+        <values>
+            <fullName>Blue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yellow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Segment__c</picklist>
+        <values>
+            <fullName>Enterprise - Gold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise - Silver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Market</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Contract Path%2FmyStrength 1%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Select Partner Accounts%2FBehavioral Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signature</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Tier__c</picklist>
+        <values>
+            <fullName>Tier 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_approves_use_of_logo__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_has_seen_ngTDC__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_open_to_speaking_engagements__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Conversation_had_with__c</picklist>
+        <values>
+            <fullName>CVS%2FAetna AE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client - Decision Maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fiscal_Year__c</picklist>
+        <values>
+            <fullName>April</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>August</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>December</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>February</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>January</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>July</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>June</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>March</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>May</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>November</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>October</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>September</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Incentives_Content_Guides_SPA__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Incentives_Gift_Cards_SPA__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Incentives_Goods_and_Services_SPA__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry__c</picklist>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marketing_Account_SubType__c</picklist>
+        <values>
+            <fullName>Behavioral Health Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Broker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Federal Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fully Insured Employer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Labor%2FPension Fund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care Organization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicare Advantage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ops Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PBM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Funded Employer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TPA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marketing_Account_Type__c</picklist>
+        <values>
+            <fullName>Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NAICS_Industry_Classification__c</picklist>
+        <values>
+            <fullName>Accommodation and Food Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Administrative and Support and Waste Management and Remediation Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arts%2C Entertainment and Recreation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Educational Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance and Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Care and Social Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Management of Companies and Enterprises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Services %28except Public Administration%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional%2C Scientific and Technical Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Administration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Real Estate Rental and Leasing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail Trade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation and Warehousing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unclassified Establishments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wholesale Trade</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Open_Enrollment_Date__c</picklist>
+        <values>
+            <fullName>April</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>August</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>December</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>February</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>January</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>July</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>June</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>March</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>May</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>November</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>October</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>September</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership__c</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subsidiary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payer_Lines_of_Business__c</picklist>
+        <values>
+            <fullName>ASO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fully Insured</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicaid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicare Advantage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provider Sponsored</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payer_Sales_Cycle__c</picklist>
+        <values>
+            <fullName>Contract negotiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract signed -- Active Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initial conversations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not interested currently%2FDeclined%2FLost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not yet engaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFP Process</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Plan_Year_Start_Month__c</picklist>
+        <values>
+            <fullName>April</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>August</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>December</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>February</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>January</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>July</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>June</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>March</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>May</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>November</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>October</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>September</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating__c</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lukewarm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reference_Account__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Risk_Color__c</picklist>
+        <values>
+            <fullName>Black - Leaving Livongo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green - Retaining the Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red - No Clear Intent Expressed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yellow - Intent Expressed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Risk_Description__c</picklist>
+        <values>
+            <fullName>Acquired and no path forward with new parent company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contracted directly and signed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conversation had but no clear intent - Met with AE and they verbally said they will not be pushing ngTDC to the client right now</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conversation had but no clear intent - Met with Client%2FAE%2FConsultant  and discussed changes and were interested in making changes to direct or partner but did not commit yet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conversation had but no clear intent - Met with client %2F consultant and discussed contracting path options but no commitment yet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intent to contract through other partner and not renew</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intent to go direct and not renew</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intent to renew on TDC paper %26 evaluate alternative contracting paths to stay with Livongo for 2022 and beyond and CAN contract direct - no paperwork received yet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intent to renew on TDC paper %26 evaluate alternative contracting paths to stay with Livongo for 2022 and beyond and CANNOT contract direct - no paperwork received yet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intent to renew on TDC paper %26 no other intent stated and have not received paperwork yet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No discussions with client or consultant after multiple outreaches</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out to RFP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recent launch%2Frenewal%2C no commitment to renew</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redlines in progress and full intent from client to renew direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redlines in progress and full intent from client to renew through other partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal CCS Received %285%2F1%2F2020 or later%29 for TDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spoke with client and they are not happy with Livongo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unhappy client - Terming and we have tried literally everything</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Single_or_Multi_Program2__c</picklist>
+        <values>
+            <fullName>Multi Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Program</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Source__c</picklist>
+        <values>
+            <fullName>ITH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Termination_Reason__c</picklist>
+        <values>
+            <fullName>Financial drivers %2F Cost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost crucial sponsor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost through contracting partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M%26A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Never sold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offering didn%E2%80%99t meet needs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physician buy-in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor Consolidation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Broker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fully-Insured Employer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospital%2FHealth System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Labor%2FPension Fund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Care Organization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicare Advantage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ops Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PBM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payer%2FASO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Funded Employer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TPA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Incentive_to_Exclude_SPA__c</picklist>
+        <values>
+            <fullName>Activity Trackers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amazon GC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality Incentives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visa GC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Use_for_Activation_Usage_SPA__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>myStrength_Partner__c</picklist>
+        <values>
+            <fullName>AcademicBlue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anthem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Castlight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ComPsych</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kaiser Permanente</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lyra</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MedCost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Directions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resources For Living</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>This account is a Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

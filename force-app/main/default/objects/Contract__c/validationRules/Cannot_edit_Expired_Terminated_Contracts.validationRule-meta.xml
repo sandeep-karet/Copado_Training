@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_edit_Expired_Terminated_Contracts</fullName>
+    <active>true</active>
+    <description>Only Legal users are able to edit the fields Status, Contract Effective Date, Contract Termination Date, Program Start Date, Program End Date, Program Renewal Notice on Contract records if Status is Expired or Terminated.</description>
+    <errorConditionFormula>AND( 
+NOT($Permission.Bypass_Edit_Contract_in_Terminated_Expired), 
+OR( 
+AND( 
+ISCHANGED(Status__c),
+OR( 
+ISPICKVAL(PRIORVALUE(Status__c), &quot;Terminated&quot;),
+ISPICKVAL(PRIORVALUE(Status__c), &quot;Expired&quot;)
+) 
+), 
+ISCHANGED( ActivateContract__c ), 
+ISCHANGED( Contract_Effective_Date__c ), 
+ISCHANGED( Contract_Termination_Date__c ), 
+ISCHANGED( Program_Start_Date__c ), 
+ISCHANGED( Program_End_Date__c ), 
+ISCHANGED( ContractRenewalDate__c ) 
+), 
+OR( 
+ISPICKVAL(Status__c, &quot;Terminated&quot;),
+ISPICKVAL(Status__c, &quot;Expired&quot;),
+ISPICKVAL(PRIORVALUE(Status__c), &quot;Terminated&quot;),
+ISPICKVAL(PRIORVALUE(Status__c), &quot;Expired&quot;)
+) 
+)</errorConditionFormula>
+    <errorMessage>Only Legal users are able to edit this record due to its Status being either &quot;Expired&quot; or &quot;Terminated&quot;.  If you believe you this record needs to be updated, please Chatter @Livongo Legal.</errorMessage>
+</ValidationRule>

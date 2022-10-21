@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Partnership</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Relationship_Compact_Layout</compactLayoutAssignment>
+    <description>Partner at the Contract level (Admin Party, Billing Partner, Care Coordinator, Contract Path, Contract Terms, or Data)</description>
+    <label>Contract Partnership</label>
+    <picklistValues>
+        <picklist>Data_Grade__c</picklist>
+        <values>
+            <fullName>A%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A-</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B-</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C-</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Data_Type__c</picklist>
+        <values>
+            <fullName>Condition List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eligibility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Claims</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy Claims</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Predefined List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tags</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Frequency__c</picklist>
+        <values>
+            <fullName>Bimonthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biweekly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Irregular</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>File_Delivery_Method__c</picklist>
+        <values>
+            <fullName>SFTP - Client Hosted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFTP - Livongo Hosted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secure Mail</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>File_Format__c</picklist>
+        <values>
+            <fullName>Delimited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fixed Width</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RelationshipType__c</picklist>
+        <values>
+            <fullName>Billing Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Care Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Path</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Terms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data %E2%80%93 Condition List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Eligibility File</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Medical Claims</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - N%2FA %E2%80%93 No Livongo Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Pharmacy Claims</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Predefined List from Biometric</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Predefined List from EMR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Predefined List from HRA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Predefined List from Medical Claims</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data - Predefined List from Pharmacy Claims</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eligibility Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incentives Administrating Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding Model</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Competitor Currently Engaged w%2F Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitor Pursuing Client</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

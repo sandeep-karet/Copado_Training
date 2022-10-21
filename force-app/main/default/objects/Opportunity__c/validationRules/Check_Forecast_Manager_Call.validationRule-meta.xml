@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Forecast_Manager_Call</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL( Forecast_Manager_Call__c , &apos;Forecast - Closed&apos;),
+ NOT(ISPICKVAL( StageName__c , &apos;Closed Won&apos;)),
+ NOT(ISPICKVAL(Source__c, &apos;TD&apos;)))</errorConditionFormula>
+    <errorDisplayField>Forecast_Manager_Call__c</errorDisplayField>
+    <errorMessage>Forecast Manager Call cannot be set to &apos;Forecast - Closed&apos;, as stage is not &apos;Closed Won&apos;.</errorMessage>
+</ValidationRule>
