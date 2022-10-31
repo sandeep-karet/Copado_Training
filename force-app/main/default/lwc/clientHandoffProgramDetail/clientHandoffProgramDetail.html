@@ -1,0 +1,78 @@
+<template>
+    <template if:true={isLoaded} class="slds-is-relative">
+        <template if:true={finalPrograms}>
+            <template for:each={finalPrograms} for:item="p">
+                <div key={p.Id}>
+                    <lightning-card variant="Narrow" title={p.Program_Name__c} icon-name="standard:contract">
+                        <lightning-button-icon slot="actions" icon-name="action:edit_relationship" alternative-text="Open Program" title="Open Program"  onclick={navigateToRecordViewPage} 
+                        value={p.Id} variant="brand" size="small"></lightning-button-icon>
+                        <lightning-record-form 
+                            record-id={p.Id} 
+                            object-api-name="Contract__c" 
+                            fields={progarmFields} 
+                            columns="2"
+                            density="comfy"
+                            mode="readonly">
+                        </lightning-record-form>
+                        <template if:true={p.isDMProgram}>
+                            <lightning-record-form 
+                                record-id={recordId} 
+                                object-api-name={objectApiName}
+                                fields="Additional_Details_DM__c" 
+                                columns="2" 
+                                mode="view" 
+                                density="comfy">
+                            </lightning-record-form>
+                        </template>
+                        <template if:true={p.isHTNProgram}>
+                            <lightning-record-form 
+                                record-id={recordId} 
+                                object-api-name={objectApiName}
+                                fields="Additional_Details_HTN__c" 
+                                columns="2" 
+                                mode="view" 
+                                density="comfy">
+                            </lightning-record-form>    
+                        </template>
+                        <template if:true={p.isDPPProgram}>
+                            <lightning-record-form 
+                                record-id={recordId} 
+                                object-api-name={objectApiName}
+                                fields="Additional_Details_DPP__c" 
+                                columns="2" 
+                                mode="view" 
+                                density="comfy">
+                            </lightning-record-form>
+                        </template>
+                        <template if:true={p.isWMProgram}>
+                            <lightning-record-form 
+                                record-id={recordId} 
+                                object-api-name={objectApiName}
+                                fields="Additional_Details_WM__c" 
+                                columns="2" 
+                                mode="view" 
+                                density="comfy">
+                            </lightning-record-form>
+                        </template>
+                        <template if:true={p.isBHProgram}>
+                            <lightning-record-form 
+                                record-id={recordId} 
+                                object-api-name={objectApiName}
+                                fields="Additional_Details_BH__c" 
+                                columns="2" 
+                                mode="view" 
+                                density="comfy">
+                            </lightning-record-form>
+                        </template>
+                    </lightning-card>
+                </div>
+            </template>
+        </template>
+    </template>
+    <div if:false={isLoaded} class="slds-is-relative">
+            <lightning-spinner
+                variant="brand"
+                alternative-text="Loading...">
+            </lightning-spinner>
+        </div>
+</template>

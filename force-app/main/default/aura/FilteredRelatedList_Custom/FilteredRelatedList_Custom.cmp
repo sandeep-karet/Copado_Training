@@ -1,0 +1,95 @@
+<aura:component controller="FilteredRelatedListCtrl" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+    
+    <aura:attribute name="fieldTypeToDatatableType" type="Map" default="
+    {
+        DATE            : 'date',
+        DATETIME        : 'datetime',
+        INTEGER         : 'number',
+        DOUBLE          : 'number',
+        CURRENCY        : 'number',
+        PERCENT         : 'number',
+        STRING          : 'text', 
+        REFERENCE       : 'text',
+        ID              : 'text',
+        PHONE           : 'tel',
+        BOOLEAN         : 'boolean',
+        EMAIL           : 'email',
+        TEXTAREA        : 'text',
+        PICKLIST        : 'text',
+        MULTIPICKLIST   : 'text',
+        DEFAULT         : 'text'
+    }"/>
+
+    <aura:attribute name="relatedListLabel" type="String"/>
+    <aura:attribute name="parentSObject" type="String"/>
+    <aura:attribute name="parentSObjectId" type="String"/>
+    <aura:attribute name="lookupToParentSObject" type="String"/>
+    <aura:attribute name="recordSObject" type="String"/>
+    <aura:attribute name="sObject" type="String"/>
+    <aura:attribute name="sObjectPlural" type="String"/>
+    <aura:attribute name="sObjectType" type="String"/>
+    <aura:attribute name="childRelationshipName" type="String"/>
+
+    <aura:attribute name="datatableHeight" type="Integer" default="300"/>
+
+    <aura:attribute name="data" type="Object"/>
+
+    <aura:attribute name="columns" type="List" default="[]"/>
+    <aura:attribute name="columnLabels" type="List" default="[]"/>
+    <aura:attribute name="columnFieldTypes" type="List" default="[]"/>
+
+    <aura:attribute name="column1" type="String" default=""/>
+    <aura:attribute name="column2" type="String" default=""/>
+    <aura:attribute name="column3" type="String" default=""/> 
+    <aura:attribute name="column4" type="String" default=""/>
+    <aura:attribute name="column5" type="String" default=""/>
+    <aura:attribute name="column6" type="String" default=""/>
+
+    <aura:attribute name="showNew" type="Boolean" default="false"/>
+
+    <aura:attribute name="filters" type="List" default="[]"/>
+    <aura:attribute name="filter1" type="String" default=""/>
+    <aura:attribute name="filter2" type="String" default=""/>
+    <aura:attribute name="filter3" type="String" default=""/>
+
+    <aura:attribute name="queryString" type="String"/>
+
+    <aura:attribute name="tableSize" type="Integer" default="0"/>
+    <aura:attribute name="sortedBy" type="String"/>
+    <aura:attribute name="sortedDirection" type="Boolean" default="true"/>
+
+    <aura:attribute name="options" type="List" default="[]"/>
+    <aura:attribute name="field" type="String" default=""/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <div class="slds-box slds-box_small slds-theme_default">
+        <lightning:layout verticalAlign="end">
+            <lightning:layoutItem flexibility="auto">
+                <lightning:formattedText class="slds-text-heading_small slds-p-around__xx-small" style="font-weight: bold" value="{!v.relatedListLabel + ' (' + v.tableSize + ')'}"/>
+            </lightning:layoutItem>
+            <aura:if isTrue="{!v.showNew}">
+                <lightning:layoutItem flexibility="auto" class="anchor-right slds-p-around__xx-small">
+                    <lightning:button label="New" variant="neutral" onclick="{!c.createRecord}"/>
+                </lightning:layoutItem>
+            </aura:if>
+        </lightning:layout>
+        <br/>
+        <aura:if isTrue="{!!empty(v.data)}">
+        	<div style="{! 'height:' + v.datatableHeight + 'px'}" class="slds-scrollable_y">
+            	<lightning:datatable
+                    keyField="id"
+                    data="{!v.data}"
+                    columns="{!v.columns}"
+                    hideCheckboxColumn="true"
+                    onsort="{!c.updateColumnSorting}"
+                    onrowaction="{!c.handleRowAction}" 
+                    sortedBy="{!v.sortedBy}"
+                    sortedDirection="{!v.sortedDirection}"/>
+            </div>
+            <aura:set attribute="else">
+                <h2>-- No {!v.relatedListLabel} Found --</h2>
+    		</aura:set>
+       	</aura:if>
+    </div>
+</aura:component>

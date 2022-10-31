@@ -77,6 +77,14 @@
         <name>ApexTrigger</name>
     </types>
     <types>
+        <members>ClientHandoffSummaryPdfRedirect</members>
+        <members>FilteredRelatedList_Custom</members>
+        <members>FilteredRelatedList_Flows</members>
+        <members>OpportunityContactRolesList</members>
+        <members>PricebookEntrySelector</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
         <members>Account__c.Account_Compact_Layout</members>
         <members>Account__c.Livongo_Account_Compact_Layout</members>
         <members>Campaign__c.Marketing</members>
@@ -116,6 +124,7 @@
         <members>Account__c.Account_Type__c</members>
         <members>Account__c.Account_interested_in_following_products__c</members>
         <members>Account__c.Account_is_used_in_Downmarket_CMCs__c</members>
+        <members>Account__c.Acct_Guid__c</members>
         <members>Account__c.Acct_Rev_Synergy_Flag__c</members>
         <members>Account__c.Activated_Percent_HTN__c</members>
         <members>Account__c.Activated_Total_Diabetes__c</members>
@@ -542,6 +551,7 @@
         <members>ClientMemberCode__c.Client_Member_Code_ID_Long__c</members>
         <members>ClientMemberCode__c.Contract__c</members>
         <members>ClientMemberCode__c.Downmarket_Reg_Code_Program_Associations__c</members>
+        <members>ClientMemberCode__c.OneApp_Access__c</members>
         <members>ClientMemberCode__c.SPA_CMC_Prefix__c</members>
         <members>ClientMemberCode__c.UsedforRegistration__c</members>
         <members>ClientMemberCode__c.myStrength_1_0_Access_Code_s__c</members>
@@ -1257,6 +1267,8 @@
         <members>OpportunityLineItem__c.ServiceDate__c</members>
         <members>OpportunityLineItem__c.Source_id__c</members>
         <members>OpportunityLineItem__c.Subtotal__c</members>
+        <members>OpportunityLineItem__c.TD_PREPROD_Product_Id__c</members>
+        <members>OpportunityLineItem__c.TD_PROD_Product_Id__c</members>
         <members>OpportunityLineItem__c.TotalPrice__c</members>
         <members>OpportunityLineItem__c.UnitPrice__c</members>
         <members>OpportunityLineItem__c.Up_Front_Per_Member__c</members>
@@ -1505,6 +1517,8 @@
         <members>Pricing_Structure__c.Pricing_Stipulations__c</members>
         <members>Pricing_Structure__c.Program__c</members>
         <members>Pricing_Structure__c.Up_Front_Per_Member__c</members>
+        <members>Product2.TD_PREPROD_Product_Id__c</members>
+        <members>Product2.TD_PROD_Product_Id__c</members>
         <members>Product2.Whole_Person_Solution__c</members>
         <members>ProgramParticipantsRenewals__mdt.Percentage__c</members>
         <members>ProgramParticipantsRenewals__mdt.ProgramName__c</members>
@@ -2140,6 +2154,69 @@
         <name>GlobalValueSet</name>
     </types>
     <types>
+        <members>Account__c-Account - CI Layout</members>
+        <members>Account__c-Account - CI Layout JENGA 1453</members>
+        <members>Account__c-Account - CS Layout</members>
+        <members>Account__c-Account - Marketing Layout</members>
+        <members>Account__c-Account - Sales Layout</members>
+        <members>Account__c-Account2 Layout</members>
+        <members>Account__c-Client Acct - CS %2F Implementation Layout</members>
+        <members>Account__c-Client Acct - CS Layout</members>
+        <members>Account__c-Client Acct - Implementation Layout</members>
+        <members>Account__c-Client Acct - Sales Layout</members>
+        <members>Account__c-Client Lite Account Layout</members>
+        <members>Account__c-Competitor Account Layour</members>
+        <members>Account__c-OLD - Account Layout</members>
+        <members>Account__c-OLD - CS Account Layout</members>
+        <members>Account__c-OLD - Payer Account Layout</members>
+        <members>Account__c-Partner Account Layout</members>
+        <members>Activity__c-Activity Layout</members>
+        <members>CMCAssociation__c-CMC to Program</members>
+        <members>CMCAssociation__c-CMC to Registration</members>
+        <members>Campaign_Automation_Management__c-Campaign Automation Management Layout</members>
+        <members>Campaign_Influence__c-Campaign Influence Layout</members>
+        <members>Campaign_Member__c-Campaign Member Layout</members>
+        <members>Campaign_Member__c-Default Campaign Member Page Layout</members>
+        <members>Campaign__c-Campaign Layout</members>
+        <members>Campaign__c-Marketing Campaign - General</members>
+        <members>Campaign__c-Marketing Parent Campaign General</members>
+        <members>Campaign__c-Non-Marketing3</members>
+        <members>Case__c-CRM Request</members>
+        <members>Case__c-CRM Request Read Only</members>
+        <members>Case__c-Case_1 Layout</members>
+        <members>Case__c-Livongo Presale and Livongo Wins</members>
+        <members>Case__c-Reference Request Layout</members>
+        <members>ClientMemberCode__c-Client Member Code Layout</members>
+        <members>ClientMemberCode__c-Registration Code Layout</members>
+        <members>Client_Handoff_Summary__c-Client Handoff Summary Layout</members>
+        <members>Client_Tag_Assignment__c-Client Tag Assignment Layout</members>
+        <members>Client_Tag__c-Client Tag Layout</members>
+        <members>Contact__c-Contact - CI Layout</members>
+        <members>Contact__c-Contact - Marketing Layout</members>
+        <members>Contact__c-Contact - Sales Layout</members>
+        <members>Contact__c-Contact Layout</members>
+        <members>Contact__c-New Contact Layout</members>
+        <members>Contact__c-OLD - Contact Layout</members>
+        <members>Contact__c-contact - CS Layout</members>
+        <members>Contract__c-Client Overview</members>
+        <members>Contract__c-Contract Layout</members>
+        <members>Contract__c-Partner Agreement</members>
+        <members>Contract__c-Program Overview</members>
+        <members>Lead__c-Lead Layout</members>
+        <members>OpportunityLineItem__c-OpportunityLineItem Layout</members>
+        <members>Opportunity__c-Implementation and Client Success Opportunity Layout</members>
+        <members>Opportunity__c-Old Opportunity Layout</members>
+        <members>Opportunity__c-Sales and Acct Mgmt Opportunity Layout</members>
+        <members>Pricing_Structure__c-Pricing Structure Layout</members>
+        <members>Relationship__c-Account Competition Layout</members>
+        <members>Relationship__c-Account Data Partnership</members>
+        <members>Relationship__c-Account Partnership Layout</members>
+        <members>Relationship__c-Contract Partnership Layout</members>
+        <members>Relationship__c-Opportunity Competition Layout</members>
+        <members>Relationship__c-Opportunity Partner Roles Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
         <members>Blank_Letterhead</members>
         <members>General_Sales_No_Logo</members>
         <members>Livongo_Letterhead</members>
@@ -2147,6 +2224,9 @@
         <name>Letterhead</name>
     </types>
     <types>
+        <members>accountHealthScoreDetail</members>
+        <members>clientHandoffContactDetail</members>
+        <members>clientHandoffProgramDetail</members>
         <members>customFileUploadForSurveys</members>
         <name>LightningComponentBundle</name>
     </types>
@@ -2171,6 +2251,13 @@
         <members>SPA_Reg_Codes__mdt.SPA_Reg_Code_View</members>
         <members>Whole_Person_Solution_Mapping__mdt.All_Mappings</members>
         <name>ListView</name>
+    </types>
+    <types>
+        <members>Account__c.Create_New_CMC_CMCA</members>
+        <members>Account__c.Modify_Existing_CMC</members>
+        <members>Case__c.New_Child_Case</members>
+        <members>Client_Handoff_Summary__c.Generate_Pdf</members>
+        <name>QuickAction</name>
     </types>
     <types>
         <members>Account__c.Client_Account</members>
@@ -2303,6 +2390,7 @@
         <members>Account__c.GoogleMaps</members>
         <members>Account__c.GoogleNews</members>
         <members>Account__c.GoogleSearch</members>
+        <members>Contract__c.Upload_Contract</members>
         <name>WebLink</name>
     </types>
     <types>

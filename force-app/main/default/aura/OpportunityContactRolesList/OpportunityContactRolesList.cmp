@@ -1,0 +1,34 @@
+<aura:component controller="OpportunityContactRolesListCtrl" implements="lightning:availableForFlowScreens">
+
+    <aura:attribute name="opportunityId" type="String"/>
+    <aura:attribute name="relatedListLabel" type="String"/>
+    <aura:attribute name="columns" type="List" default="[]"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="datatableHeight" type="Integer" default="100"/>
+    <aura:attribute name="tableSize" type="Integer" default="0"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+    <div class="slds-theme_default">
+        <lightning:layout verticalAlign="end">
+            <lightning:layoutItem flexibility="auto">
+                <lightning:formattedText class="slds-text-heading_small slds-p-around__xx-small" style="font-weight: bold" value="{!v.relatedListLabel + ' (' + v.tableSize + ')'}"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+        <br/>
+        <aura:if isTrue="{!!empty(v.data)}">
+        	<div style="{! 'height:' + v.datatableHeight + 'px'}" class="slds-scrollable_y">
+            	<lightning:datatable
+                    keyField="id"
+                    data="{!v.data}"
+                    columns="{!v.columns}"
+                    hideCheckboxColumn="true"
+                    onrowaction="{!c.handleRowAction}" />
+            </div>
+            <aura:set attribute="else">
+                <h2>-- No {!v.relatedListLabel} Found --</h2>
+    		</aura:set>
+       	</aura:if>
+    </div>
+    <br/>
+</aura:component>
