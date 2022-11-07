@@ -3,7 +3,7 @@
 * Created : 05/13/2019
 * @author Connor Gallaher - Slalom
 */
-
+@namespaceAccessible
 public class ContractService {
     public static final Integer DEFAULT_NUM_MONTHS = Integer.valueOf(System.Label.Default_Renewal_Opp_Num_Months);
     public static final String DEFAULT_RENEWAL_OPP_TYPE = System.Label.Default_Renewal_Opp_Type;
@@ -20,8 +20,8 @@ public class ContractService {
     public static final String NEW_DEVICE_TYPE_HT900 = System.Label.New_Device_Type_HT900;
     public static final String DEFAULT_BH_V1_PROGRAM_NAME = System.Label.Default_BH_1_0_Program_Name;
     public static final String DEFAULT_MYSTRENGTH_PROGRAM_PLATFORM_VERSION = System.Label.myStrength_Program_Platform_Version;
-    public static final Id CLIENT_OVERVIEW_RT =  Schema.SObjectType.Contract.getRecordTypeInfosByDeveloperName().get('Client_Overview').getRecordTypeId(); 
-    public static final Id PROGRAM_OVERVIEW_RT = Schema.SObjectType.Contract.getRecordTypeInfosByDeveloperName().get('Program_Overview').getRecordTypeId(); 
+    public static final Id CLIENT_OVERVIEW_RT =  Schema.SObjectType.Contract__c.getRecordTypeInfosByDeveloperName().get('Client_Overview').getRecordTypeId(); 
+    public static final Id PROGRAM_OVERVIEW_RT = Schema.SObjectType.Contract__c.getRecordTypeInfosByDeveloperName().get('Program_Overview').getRecordTypeId(); 
     public static final String POPULATIONTYPENONHSSDOWNMARKET = System.Label.PopulationTypeNonHSSDownmarket;
     public static final String DIABETES_W_CKD_AWARE_VARIANT = System.Label.Diabetes_w_CKD_Aware_Variant;
     public static final String HYPERTENSION_W_CKD_AWARE_VARIANT = System.Label.Hypertension_w_CKD_Aware_Variant;
@@ -800,7 +800,7 @@ public class ContractService {
             chatterGroup = chatterGroupList[0];
             if (operationType == 'Insert' || operationType == 'Update') {
                 for (Contract__c newContract : newContracts) {
-                    String recordTypeName = Schema.SObjectType.Contract.getRecordTypeInfosById().get(newContract.RecordtypeId).getName();
+                    String recordTypeName = Schema.SObjectType.Contract__c.getRecordTypeInfosById().get(newContract.RecordtypeId).getName();
                     if (operationType == 'Update') {
                         Contract__c oldContract = oldContracts.get(newContract.Id);
                         for (Schema.FieldSetMember fsm : contractTrackedFields) {
@@ -833,7 +833,7 @@ public class ContractService {
                 List<Contract__c> oldContractList = oldContracts.Values();
                 if (oldContracts.Values().size() > 0) {
                     for (Contract__c p : oldContracts.Values()) {
-                        String recordTypeName = Schema.SObjectType.Contract.getRecordTypeInfosById().get(p.RecordtypeId).getName();
+                        String recordTypeName = Schema.SObjectType.Contract__c.getRecordTypeInfosById().get(p.RecordtypeId).getName();
                         if (recordTypeName == 'Program Overview') {
                             String inputText = '\n'+ p.Program_Name__c+' Program Overview ' + p.ContractNumber__c + ' has been deleted';
                             ConnectApi.FeedItemInput feedItemInput = createFeed(inputText, chatterGroup.Id, p.Client_Overview_Id__c);
