@@ -484,10 +484,10 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>NOT(ISBLANK([OpportunityLineItem__c].Opportunity__c.Contract__c ))
-&amp;&amp; ISCHANGED([OpportunityLineItem__c].Pricing_Structure__c )
-&amp;&amp; NOT(ISBLANK([OpportunityLineItem__c].Pricing_Structure__c ))
-&amp;&amp; [OpportunityLineItem__c].Opportunity__c.Probability__c &gt; 0.1</stringValue>
+                <stringValue>NOT(ISBLANK([LVGO__OpportunityLineItem__c].LVGO__Opportunity__c.LVGO__Contract__c ))
+&amp;&amp; ISCHANGED([LVGO__OpportunityLineItem__c].LVGO__Pricing_Structure__c )
+&amp;&amp; NOT(ISBLANK([LVGO__OpportunityLineItem__c].LVGO__Pricing_Structure__c ))
+&amp;&amp; [LVGO__OpportunityLineItem__c].LVGO__Opportunity__c.LVGO__Probability__c &gt; 0.1</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_3</name>
