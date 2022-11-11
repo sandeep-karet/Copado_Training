@@ -2601,7 +2601,7 @@
     <formulas>
         <name>fClient_Overview_Record_Type_Id</name>
         <dataType>String</dataType>
-        <expression>{!$Label.Program_Agreement_Record_Type}</expression>
+        <expression>{!$Label.LVGO__Program_Agreement_Record_Type}</expression>
     </formulas>
     <formulas>
         <name>fEligibility_Sentence_BH</name>
@@ -2636,16 +2636,16 @@
     <formulas>
         <name>fEligibility_Sentence_Standard</name>
         <dataType>String</dataType>
-        <expression>IF(TEXT({!Loop_thorough_POs_Standard.Program_Name__c}) = &quot;Diabetes&quot;, &quot;The program is offered at no cost to &quot;+ LOWER({!Employee_Title_Standard})+ &quot; with diabetes and coverage through the &quot; + {!Health_Plan_Name_Standard} + &quot; plan.&quot;, 
-IF(TEXT({!Loop_thorough_POs_Standard.Program_Name__c}) = &quot;Hypertension&quot;, &quot;The program is offered at no cost to &quot;+ LOWER({!Employee_Title_Standard})+ &quot; with high blood pressure and coverage through the &quot; + {!Health_Plan_Name_Standard} + &quot; plan.&quot;,
-IF(TEXT({!Loop_thorough_POs_Standard.Program_Name__c}) = &quot;Diabetes Prevention&quot;, &quot;The program may be offered at no cost to &quot;+ LOWER({!Employee_Title_Standard})+ &quot; who qualify for Livongo and have coverage through the &quot; + {!Health_Plan_Name_Standard} + &quot; plan.&quot;,
-IF(TEXT({!Loop_thorough_POs_Standard.Program_Name__c}) =  &quot;Weight Management&quot;, &quot;The program may be offered at no cost to &quot;+ LOWER({!Employee_Title_Standard})+ &quot; who qualify for Livongo and have coverage through the &quot; + {!Health_Plan_Name_Standard} + &quot; plan.&quot;,
-IF(TEXT({!Loop_thorough_POs_Standard.Program_Name__c}) = &quot;Behavioral Health&quot;, &quot;The Livongo Behavioral Health program is offered at no cost to eligible &quot;+ LOWER({!Employee_Title_Standard})+ &quot; ages 13 years and up with coverage through the &quot; + {!Health_Plan_Name_Standard} + &quot; plan.&quot;, &quot;&quot;)))))</expression>
+        <expression>IF(TEXT({!Loop_thorough_POs_Standard.LVGO__Program_Name__c}) = &quot;Diabetes&quot;, &quot;The program is offered at no cost to &quot;+ LOWER({!Employee_Title_Standard})+ &quot; with diabetes and coverage through the &quot; + {!Health_Plan_Name_Standard} + &quot; plan.&quot;, 
+IF(TEXT({!Loop_thorough_POs_Standard.LVGO__Program_Name__c}) = &quot;Hypertension&quot;, &quot;The program is offered at no cost to &quot;+ LOWER({!Employee_Title_Standard})+ &quot; with high blood pressure and coverage through the &quot; + {!Health_Plan_Name_Standard} + &quot; plan.&quot;,
+IF(TEXT({!Loop_thorough_POs_Standard.LVGO__Program_Name__c}) = &quot;Diabetes Prevention&quot;, &quot;The program may be offered at no cost to &quot;+ LOWER({!Employee_Title_Standard})+ &quot; who qualify for Livongo and have coverage through the &quot; + {!Health_Plan_Name_Standard} + &quot; plan.&quot;,
+IF(TEXT({!Loop_thorough_POs_Standard.LVGO__Program_Name__c}) =  &quot;Weight Management&quot;, &quot;The program may be offered at no cost to &quot;+ LOWER({!Employee_Title_Standard})+ &quot; who qualify for Livongo and have coverage through the &quot; + {!Health_Plan_Name_Standard} + &quot; plan.&quot;,
+IF(TEXT({!Loop_thorough_POs_Standard.LVGO__Program_Name__c}) = &quot;Behavioral Health&quot;, &quot;The Livongo Behavioral Health program is offered at no cost to eligible &quot;+ LOWER({!Employee_Title_Standard})+ &quot; ages 13 years and up with coverage through the &quot; + {!Health_Plan_Name_Standard} + &quot; plan.&quot;, &quot;&quot;)))))</expression>
     </formulas>
     <formulas>
         <name>fEnrollment_Communications_Survey_Type</name>
         <dataType>String</dataType>
-        <expression>TEXT({!Get_Enrollment_Communications_Survey_Record.Enrollment_Communications_Survey_Type__c})</expression>
+        <expression>TEXT({!Get_Enrollment_Communications_Survey_Record.LVGO__Enrollment_Communications_Survey_Type__c})</expression>
     </formulas>
     <formulas>
         <name>fHR_Communications</name>
@@ -2715,7 +2715,7 @@ IF(TEXT({!Loop_thorough_POs_Standard.Program_Name__c}) = &quot;Behavioral Health
     <formulas>
         <name>fProgram_Overview_Record_Type</name>
         <dataType>String</dataType>
-        <expression>{!$Label.Program_Schedule_Record_Type}</expression>
+        <expression>{!$Label.LVGO__Program_Schedule_Record_Type}</expression>
     </formulas>
     <interviewLabel>Enrollment Communications Input Form {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Enrollment Communications Input Form</label>

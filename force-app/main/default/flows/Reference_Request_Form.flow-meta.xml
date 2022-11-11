@@ -36,7 +36,7 @@
     <formulas>
         <name>AccountBillingCityandState</name>
         <dataType>String</dataType>
-        <expression>{!Get_Opportunity_Record.Account__c.BillingCity__c} + &apos;,&apos; + {!Get_Opportunity_Record.Account__c.BillingState__c}</expression>
+        <expression>{!Get_Opportunity_Record.LVGO__Account__c.LVGO__BillingCity__c} + &apos;,&apos; + {!Get_Opportunity_Record.LVGO__Account__c.LVGO__BillingState__c}</expression>
     </formulas>
     <formulas>
         <name>currentUserId</name>
@@ -51,7 +51,7 @@
     <formulas>
         <name>referenceRequestRecordTypeId</name>
         <dataType>String</dataType>
-        <expression>{!$Label.ReferenceRequestRecordTypeId}</expression>
+        <expression>{!$Label.LVGO__ReferenceRequestRecordTypeId}</expression>
     </formulas>
     <interviewLabel>Reference Request Form {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Reference Request Form</label>
