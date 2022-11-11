@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Won_Livongo_For_Diabetes_PwD_Sum__c</fullName>
+    <externalId>false</externalId>
+    <label>Closed Won Livongo for Diabetes PwD Sum</label>
+    <summarizedField>Opportunity__c.Livongo_for_Diabetes_PwDs__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity__c.StageName__c</field>
+        <operation>equals</operation>
+        <value>Closed Won</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity__c.Type__c</field>
+        <operation>equals</operation>
+        <value>New Business, Expansion, Cross-sell (New product)</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity__c.Account__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

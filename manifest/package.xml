@@ -147,7 +147,12 @@
         <members>Account__c.BillingAddress__c</members>
         <members>Account__c.BillingCity__c</members>
         <members>Account__c.BillingState__c</members>
+        <members>Account__c.Billing_City__c</members>
+        <members>Account__c.Billing_Country__c</members>
         <members>Account__c.Billing_State_Backend__c</members>
+        <members>Account__c.Billing_State_Province__c</members>
+        <members>Account__c.Billing_Street__c</members>
+        <members>Account__c.Billing_Zip_Postal_Code__c</members>
         <members>Account__c.Billing__c</members>
         <members>Account__c.Bypass_Address_Verification__c</members>
         <members>Account__c.CMC_Prefix__c</members>
@@ -166,6 +171,8 @@
         <members>Account__c.Client_details_regarding_referrals__c</members>
         <members>Account__c.Client_has_seen_ngTDC__c</members>
         <members>Account__c.Client_open_to_speaking_engagements__c</members>
+        <members>Account__c.Closed_Won_Cross_Sell_Opp_Count__c</members>
+        <members>Account__c.Closed_Won_Livongo_For_Diabetes_PwD_Sum__c</members>
         <members>Account__c.Closed_Won_Opportunity_Count__c</members>
         <members>Account__c.Conversation_had_with__c</members>
         <members>Account__c.Cost_of_diabetes_testing_supplies__c</members>
@@ -179,6 +186,7 @@
         <members>Account__c.Description__c</members>
         <members>Account__c.EML__c</members>
         <members>Account__c.Earliest_Active_Initial_Launch_Date__c</members>
+        <members>Account__c.Earliest_Closed_Won_Opportunity__c</members>
         <members>Account__c.EffectiveDate__c</members>
         <members>Account__c.Email_Coverage_Percentage_DM__c</members>
         <members>Account__c.Email_Coverage_Percentage_HTN__c</members>
@@ -222,6 +230,7 @@
         <members>Account__c.Last_Task_by_Sales_Rep_Completed_Date__c</members>
         <members>Account__c.Last_Updated_ECS_DateTime__c</members>
         <members>Account__c.Last_Updated_ECS__c</members>
+        <members>Account__c.Latest_Closed_Won_Opp_Date__c</members>
         <members>Account__c.Livongo_Financial_Impact_ROI_Actual__c</members>
         <members>Account__c.Location_Size_Accuracy__c</members>
         <members>Account__c.Location_Size_Unit_of_Measure__c</members>
@@ -246,6 +255,8 @@
         <members>Account__c.Open_Enrollment_Date__c</members>
         <members>Account__c.Open_Enrollment_Period__c</members>
         <members>Account__c.Open_Opportunity_Count__c</members>
+        <members>Account__c.Open_Opportunity_PwDs__c</members>
+        <members>Account__c.Open_Renewal_Opportunity_Count__c</members>
         <members>Account__c.Other_CSM__c</members>
         <members>Account__c.Overall_Account_Score__c</members>
         <members>Account__c.Overall_DM_Score__c</members>
@@ -267,6 +278,12 @@
         <members>Account__c.Program_Overview_Count__c</members>
         <members>Account__c.Prospect_Update_Next_Steps__c</members>
         <members>Account__c.Provider_Sponsored_Population__c</members>
+        <members>Account__c.PwBH_Sold__c</members>
+        <members>Account__c.PwDPP_Sold__c</members>
+        <members>Account__c.PwH_Sold__c</members>
+        <members>Account__c.PwO_Sold__c</members>
+        <members>Account__c.PwWM_DPP_Sold__c</members>
+        <members>Account__c.PwWM_Sold__c</members>
         <members>Account__c.RPwDs_from_Claims_Data__c</members>
         <members>Account__c.RPwHs_from_Claims__c</members>
         <members>Account__c.Rating__c</members>
@@ -282,7 +299,12 @@
         <members>Account__c.S_P_500__c</members>
         <members>Account__c.Savings_PPPM_ROI_Actual__c</members>
         <members>Account__c.ShippingAddress__c</members>
+        <members>Account__c.Shipping_City__c</members>
+        <members>Account__c.Shipping_Country__c</members>
         <members>Account__c.Shipping_State_Backend__c</members>
+        <members>Account__c.Shipping_State_Province__c</members>
+        <members>Account__c.Shipping_Street__c</members>
+        <members>Account__c.Shipping_Zip_Postal_Code__c</members>
         <members>Account__c.SicDesc__c</members>
         <members>Account__c.Sic__c</members>
         <members>Account__c.Single_or_Multi_Program2__c</members>
@@ -296,6 +318,11 @@
         <members>Account__c.Termination_Rationale_Summary__c</members>
         <members>Account__c.Termination_Reason__c</members>
         <members>Account__c.TickerSymbol__c</members>
+        <members>Account__c.Total_Closed_Lost_Opps__c</members>
+        <members>Account__c.Total_Closed_No_Decision_Opps__c</members>
+        <members>Account__c.Total_Open_Opportunities__c</members>
+        <members>Account__c.Total_Opportunity_Count__c</members>
+        <members>Account__c.Total_Won_Opportunities__c</members>
         <members>Account__c.Type__c</members>
         <members>Account__c.Type_of_Incentive_to_Exclude_SPA__c</members>
         <members>Account__c.Union_Population__c</members>
@@ -315,6 +342,7 @@
         <members>Account__c.myStrength_Partner__c</members>
         <members>Account__c.of_Enrolled_RPwDs_to_date__c</members>
         <members>Account__c.of_Enrolled_RPwHs_to_Date__c</members>
+        <members>Account__c.of_Open_Opportunities__c</members>
         <members>Account__c.of_Retirees__c</members>
         <members>Account__c.test_delete__c</members>
         <members>Activity__c.Access_to_Direct_Mail__c</members>
@@ -554,6 +582,7 @@
         <members>ClientMemberCode__c.Account_Id__c</members>
         <members>ClientMemberCode__c.Account__c</members>
         <members>ClientMemberCode__c.ClientMemberCode__c</members>
+        <members>ClientMemberCode__c.Client_Account__c</members>
         <members>ClientMemberCode__c.Client_Member_Code_ID_Long__c</members>
         <members>ClientMemberCode__c.Contract__c</members>
         <members>ClientMemberCode__c.Downmarket_Reg_Code_Program_Associations__c</members>
@@ -672,6 +701,11 @@
         <members>Contact__c.Lead_Type__c</members>
         <members>Contact__c.LinkedIn__c</members>
         <members>Contact__c.Mailing_Address__c</members>
+        <members>Contact__c.Mailing_City__c</members>
+        <members>Contact__c.Mailing_Country__c</members>
+        <members>Contact__c.Mailing_State_Province__c</members>
+        <members>Contact__c.Mailing_Street__c</members>
+        <members>Contact__c.Mailing_Zip_Postal_Code__c</members>
         <members>Contact__c.Management_Level__c</members>
         <members>Contact__c.Marital_Status__c</members>
         <members>Contact__c.Marketing_Relationship_Strength__c</members>
@@ -1331,6 +1365,7 @@
         <members>Opportunity__c.Cost_Savings_83_PPPM_Monthly__c</members>
         <members>Opportunity__c.Cost_of_diabetes_testing_supplies__c</members>
         <members>Opportunity__c.Covered_Lives__c</members>
+        <members>Opportunity__c.Cross_Sell_LV_Total__c</members>
         <members>Opportunity__c.Cross_Sell_LV_to_HHS__c</members>
         <members>Opportunity__c.Cross_Sell_TD_Total__c</members>
         <members>Opportunity__c.CurrentUser_CIM__c</members>
@@ -1418,7 +1453,6 @@
         <members>Opportunity__c.Migration_ID__c</members>
         <members>Opportunity__c.Monthly_Recurring_Revenue_MRR__c</members>
         <members>Opportunity__c.Net_ARR__c</members>
-        <members>Opportunity__c.Net_TCV__c</members>
         <members>Opportunity__c.NextStep__c</members>
         <members>Opportunity__c.Non_Standard_Agreements__c</members>
         <members>Opportunity__c.Notes_for_Contacts__c</members>
@@ -2205,6 +2239,7 @@
         <name>GlobalValueSet</name>
     </types>
     <types>
+        <members>Account__c-Account - Base Layout</members>
         <members>Account__c-Account - CI Layout</members>
         <members>Account__c-Account - CI Layout JENGA 1453</members>
         <members>Account__c-Account - CS Layout</members>
