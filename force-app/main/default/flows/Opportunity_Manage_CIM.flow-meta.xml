@@ -20,7 +20,7 @@
         <inputParameters>
             <name>subjectNameOrId</name>
             <value>
-                <elementReference>inputAccountID</elementReference>
+                <elementReference>inputSourceID</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
@@ -44,7 +44,7 @@
         <inputParameters>
             <name>subjectNameOrId</name>
             <value>
-                <elementReference>inputAccountID</elementReference>
+                <elementReference>inputSourceID</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
@@ -68,7 +68,7 @@
         <inputParameters>
             <name>subjectNameOrId</name>
             <value>
-                <elementReference>inputAccountID</elementReference>
+                <elementReference>inputSourceID</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
@@ -331,7 +331,7 @@
         <inputAssignments>
             <field>AccountId</field>
             <value>
-                <elementReference>inputAccountID</elementReference>
+                <elementReference>inputSourceID</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -564,7 +564,7 @@
             <field>AccountId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>inputAccountID</elementReference>
+                <elementReference>inputSourceID</elementReference>
             </value>
         </filters>
         <filters>
@@ -602,7 +602,7 @@
             <field>AccountId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>inputAccountID</elementReference>
+                <elementReference>inputSourceID</elementReference>
             </value>
         </filters>
         <filters>
@@ -708,6 +708,13 @@
     </variables>
     <variables>
         <name>inputOpportunityID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputSourceID</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
