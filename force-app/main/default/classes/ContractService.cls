@@ -812,7 +812,7 @@ public class ContractService {
                             
                             if (newContract.get(fieldName) != oldContract.get(fieldName)) {
                                 String inputText = '\n' + fieldLabel + ' has been updated on ' + recordTypeName + ' ' +
-                                    newContract.get('ContractNumber')+'\n' + 
+                                    newContract.get('ContractNumber__c')+'\n' + 
                                     'Old Value: ' + oldContract.get(fieldName) + '\n' + 
                                     'New Value: ' + newContract.get(fieldName) + '\n';
                                 ConnectApi.FeedItemInput feedItemInput = createFeed(inputText, chatterGroup.Id, newContract.Id);
