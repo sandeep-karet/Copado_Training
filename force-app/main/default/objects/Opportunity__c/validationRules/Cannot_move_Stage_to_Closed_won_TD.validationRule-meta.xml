@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_move_Stage_to_Closed_won_TD</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Source__c, &quot;TD&quot;),
+							Product_Count__c = 0, 
+							Bypass_Product_Requirement__c = FALSE,
+							ISPICKVAL( StageName__c, &quot;Closed Won&quot;))</errorConditionFormula>
+    <errorMessage>You cannot move the Stage to Closed Won for Opportunities created from TD org without adding Programs first. If you believe this is in error, please contact your System Administrator.</errorMessage>
+</ValidationRule>
