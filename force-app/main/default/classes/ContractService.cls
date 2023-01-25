@@ -3,8 +3,7 @@
 * Created : 05/13/2019
 * @author Connor Gallaher - Slalom
 */
-@namespaceAccessible
-public class ContractService {
+global class ContractService {
     public static final Integer DEFAULT_NUM_MONTHS = Integer.valueOf(System.Label.Default_Renewal_Opp_Num_Months);
     public static final String DEFAULT_RENEWAL_OPP_TYPE = System.Label.Default_Renewal_Opp_Type;
     public static final String DEFAULT_RENEWAL_OPP_STAGE = System.Label.Default_Renewal_Opp_Stage;
@@ -465,7 +464,7 @@ public class ContractService {
     //Creating related Client Overview and Program Overview
     //Invocable Methods called from Opportunity__c Process Builder and Create Client Overview Bundle button on Opportunity
     @InvocableMethod(label='Create Related Client Overview and Program Overviews')
-    public static void createdRelatedCoPo(List<List<String>> oppSource) {     
+    global static void createdRelatedCoPo(List<List<String>> oppSource) {     
         List<OpportunityLineItem__c> oliList = new List<OpportunityLineItem__c>();
         Map<Id, Contract__c> oppToClientOverviewsMap = new Map<Id, Contract__c>();
         Map<String, Contract__c> programOverviewsToCreateMap = new Map<String, Contract__c>();

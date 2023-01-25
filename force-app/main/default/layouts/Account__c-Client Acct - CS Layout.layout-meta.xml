@@ -341,6 +341,32 @@
         <relatedList>Opportunity__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>NAME</fields>
+        <fields>ContractNumber__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>ContractRenewalDate__c</fields>
+        <fields>Status__c</fields>
+        <relatedList>Contract__c.Account_Program_Overview__c</relatedList>
+    </relatedLists> 
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Partner_Partnership__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Client_Partnership__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Competitor_Competition__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Client_Competition__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
         <fields>ACTIVITY.TASK</fields>
@@ -364,6 +390,14 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>ClientTag__c</fields>
+        <fields>NAME</fields>
+        <fields>Contract__c</fields>
+        <fields>CREATEDBY_USER</fields>
+        <fields>CREATED_DATE</fields>
+        <relatedList>Client_Tag_Assignment__c.ClientAccount__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

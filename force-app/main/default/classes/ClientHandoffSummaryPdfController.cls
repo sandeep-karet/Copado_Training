@@ -56,7 +56,7 @@ public class ClientHandoffSummaryPdfController {
         }
         private set;
     }
-    private List<AccountContactRelation> theaccountContactRelationships {
+    private List<AccountContactRelation__c> theaccountContactRelationships {
         get{
             if(clientHandoffSymmaryId != null) {
                 theaccountContactRelationships = ClientHandoffSummaryController.getAccountContactRelationships(clientHandoffSymmaryId);
@@ -118,7 +118,7 @@ public class ClientHandoffSummaryPdfController {
     
     public class ClientHandoffSummaryWrapper {
         public Client_Handoff_Summary__c clientHandoffSummary {get; set;}
-        public List<AccountContactRelation> accountContactRelationships {get; set;}
+        public List<AccountContactRelation__c> accountContactRelationships {get; set;}
         public List<Contract__c> programOverviews {get; set;}
         public List<Opportunity__c> opportunitiesForParentAccount{get;set;}
         public List<Relationship__c> partnerRelationshipForParentAccount{get;set;}

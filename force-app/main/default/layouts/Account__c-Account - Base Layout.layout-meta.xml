@@ -761,14 +761,19 @@
             <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Account__c.Create_New_CMC_CMCA</actionName>
+            <actionName>Account__c.Send_Enrollment_Communications_Survey</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Account__c.Modify_Existing_CMC</actionName>
+            <actionName>Account__c.Create_New_CMC_CMCA</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>7</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Account__c.Modify_Existing_CMC</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>8</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -803,6 +808,43 @@
         <fields>Email__c</fields>
         <fields>Work_Phone__c</fields>
         <relatedList>Contact__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Contact__c.Contact_Name__c</fields>
+        <fields>Contact__c.Account_Name__c</fields>
+        <fields>Contact__c.Title__c</fields>
+        <fields>AccountContactRelation__c.Roles__c</fields>
+        <fields>Contact__c.Email__c</fields>
+        <fields>Contact__c.Work_Phone__c</fields>
+        <relatedList>AccountContactRelation__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Partner_Partnership__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Client_Partnership__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Master_Client_Account__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Partner_Partnership__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Competitor_Competition__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Client_Competition__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -857,6 +899,47 @@
         <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <fields>NAME</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>ClientMemberCode__c</fields>
+        <fields>UsedforRegistration__c</fields>
+        <relatedList>ClientMemberCode__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <fields>NAME</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>ClientMemberCode__c</fields>
+        <fields>RegistrationCode__c</fields>
+        <fields>ProgramOverview__c</fields>
+        <fields>Program_Overview_Name__c</fields>
+        <relatedList>CMCAssociation__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>ClientTag__c</fields>
+        <fields>NAME</fields>
+        <relatedList>Client_Tag_Assignment__c.ClientAccount__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Master_Account__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Master_Client_Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Master_Client_Account__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Master_Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>CreatedDate</fields>
         <fields>StepStatus</fields>
         <fields>OriginalActor</fields>
@@ -865,8 +948,19 @@
         <relatedList>RelatedProcessHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
-        <relatedList>ClientMemberCode__c.Client_Account__c</relatedList>
+        <fields>Enrollment_Communications_Survey_Type__c</fields>
+        <fields>Survey_Status__c</fields>
+        <fields>Survey_Status_Updated_Date__c</fields>
+        <relatedList>Enrollment_Communications_Survey__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>Active__c</fields>
+        <relatedList>Relationship__c.Account_Data_Partnership__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

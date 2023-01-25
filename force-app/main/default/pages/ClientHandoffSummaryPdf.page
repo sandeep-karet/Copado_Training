@@ -229,13 +229,13 @@
                 </tr>
                 <apex:repeat value="{!theCHS.accountContactRelationships}" var="ACR">
                     <tr >
-                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact.FirstName} {!ACR.Contact.LastName}</td>
-                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Account.Name}</td>
-                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact.Title}</td>
-                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact.Phone}</td>
-                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact.Email}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact__r.FirstName__c} {!ACR.Contact__r.LastName__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Account__r.Name}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact__r.Title__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact__r.Work_Phone__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact__r.Email__c}</td>
                     <!--    <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact.Include_in_Client_Strategy_Calls_Emails__c}</td> -->
-                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Roles}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Roles__c}</td>
                     </tr>
                 </apex:repeat>
             </table>

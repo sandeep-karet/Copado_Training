@@ -2,10 +2,11 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Send_Enrollment_Survey__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(INCLUDES(Roles, &quot;Client Implementation Lead / POC&quot;),TRUE,
-			IF(INCLUDES(Roles, &quot;Client Success Lead / POC&quot;),TRUE,
-						IF(INCLUDES(Roles, &quot;Enrollment Marketing POC&quot;),TRUE,FALSE)))</formula>
+    <formula>IF(INCLUDES(Roles__c, &quot;Client Implementation Lead / POC&quot;),TRUE,
+			IF(INCLUDES(Roles__c, &quot;Client Success Lead / POC&quot;),TRUE,
+						IF(INCLUDES(Roles__c, &quot;Enrollment Marketing POC&quot;),TRUE,FALSE)))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Send Enrollment Survey</label>
+    <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

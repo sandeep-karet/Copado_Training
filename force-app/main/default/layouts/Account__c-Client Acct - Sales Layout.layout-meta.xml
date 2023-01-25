@@ -672,6 +672,43 @@
         <fields>Email__c</fields>
         <fields>Work_Phone__c</fields>
         <relatedList>Contact__c.Account__c</relatedList>
+    </relatedLists> 
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Contact__c.Contact_Name__c</fields>
+        <fields>Contact__c.Account_Name__c</fields>
+        <fields>Contact__c.Title__c</fields>
+        <fields>AccountContactRelation__c.Roles__c</fields>
+        <fields>Contact__c.Email__c</fields>
+        <fields>Contact__c.Work_Phone__c</fields>
+        <relatedList>AccountContactRelation__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Partner_Partnership__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Client_Partnership__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Master_Client_Account__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Partner_Partnership__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Competitor_Competition__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Client_Competition__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -724,6 +761,39 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <fields>NAME</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>ClientMemberCode__c</fields>
+        <fields>RegistrationCode__c</fields>
+        <fields>ProgramOverview__c</fields>
+        <fields>Program_Overview_Name__c</fields>
+        <relatedList>CMCAssociation__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>ClientTag__c</fields>
+        <fields>NAME</fields>
+        <relatedList>Client_Tag_Assignment__c.ClientAccount__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Master_Account__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Master_Client_Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Master_Client_Account__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Master_Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>CreatedDate</fields>

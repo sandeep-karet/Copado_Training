@@ -12,7 +12,7 @@ public with sharing class ClientHandoffSummaryController {
         return contractList;
     }
     @AuraEnabled(cacheable=true)
-    public static List<AccountContactRelation> getAccountContactRelationships(Id clientHandoffId) {
+    public static List<AccountContactRelation__c> getAccountContactRelationships(Id clientHandoffId) {
         String roleString = '';
         for(CHS_Contact_Roles__mdt crm: accConRolesMDT) {
             roleString += '\'' + crm.Role__c + '\',';
@@ -20,10 +20,10 @@ public with sharing class ClientHandoffSummaryController {
         roleString = roleString.removeEnd(',');
         Client_Handoff_Summary__c clientHandoffSummary = getClientHandoffSummaryRecord(clientHandoffId);
         Id taskRayAccountId = clientHandoffSummary.Account__c;
-        String queryString = 'SELECT Id, AccountId, ContactId, Account.Name, Contact.Name, Contact.Email, Contact.Phone, Contact.Description,'+ 
-                                'Roles, Contact.Title, Contact.Account.Name,'+
-                                'Contact.FirstName, Contact.LastName FROM AccountContactRelation WHERE Account =: taskRayAccountId AND Roles includes (' + roleString +')'; //Contact.Include_in_Client_Strategy_Calls_Emails__c, 
-        List<AccountContactRelation> accConRelList = Database.Query(queryString);
+        String queryString = 'SELECT Id, Account__c, Contact__c, Account__r.Name, Contact__r.Name, Contact__r.Email__c, Contact__r.Phone__c, Contact__c.Description__c,'+ 
+                                'Roles__c, Contact__r.Title__c, Contact__r.Account__r.Name,'+
+                                'Contact__r.FirstName__c, Contact__r.LastName__c FROM AccountContactRelation__c WHERE Account__c =: taskRayAccountId AND Roles__c includes (' + roleString +')'; //Contact.Include_in_Client_Strategy_Calls_Emails__c, 
+        List<AccountContactRelation__c> accConRelList = Database.Query(queryString);
         return accConRelList;
     }
     private static Client_Handoff_Summary__c getClientHandoffSummaryRecord(Id chsId) {

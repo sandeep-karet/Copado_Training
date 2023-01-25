@@ -25,6 +25,8 @@
         <members>ContractStatusUpdateBatchTest</members>
         <members>ContractTriggerHandler</members>
         <members>ContractTriggerTest</members>
+        <members>EnrollmentCommunicationsHandlerTest</members>
+        <members>EnrollmentCommunicationsTriggerHandler</members>
         <members>FilteredRelatedListCtrl</members>
         <members>FilteredRelatedListCtrlTest</members>
         <members>FreezeUsers</members>
@@ -70,6 +72,7 @@
         <members>ClientMemberCodeTrigger</members>
         <members>ContentVersionTrigger</members>
         <members>ContractTrigger</members>
+        <members>EnrollmentCommunicationsTrigger</members>
         <members>HealthScoreTrigger</members>
         <members>LeadTrigger</members>
         <members>OpportunityLineItemTrigger</members>
@@ -105,11 +108,17 @@
         <name>CustomApplication</name>
     </types>
     <types>
-        <members>AccountContactRelation.Account_Name__c</members>
-        <members>AccountContactRelation.Contact_Email__c</members>
-        <members>AccountContactRelation.Contact_Name__c</members>
-        <members>AccountContactRelation.Relationship_Strength__c</members>
-        <members>AccountContactRelation.Send_Enrollment_Survey__c</members>
+        <members>AccountContactRelation__c.Account_Name__c</members>
+        <members>AccountContactRelation__c.Account__c</members>
+        <members>AccountContactRelation__c.Contact_Email__c</members>
+        <members>AccountContactRelation__c.Contact_Name__c</members>
+        <members>AccountContactRelation__c.Contact__c</members>
+        <members>AccountContactRelation__c.EndDate__c</members>
+        <members>AccountContactRelation__c.IsActive__c</members>
+        <members>AccountContactRelation__c.Relationship_Strength__c</members>
+        <members>AccountContactRelation__c.Roles__c</members>
+        <members>AccountContactRelation__c.Send_Enrollment_Survey__c</members>
+        <members>AccountContactRelation__c.StartDate__c</members>
         <members>Account_Long_ID__mdt.Account_Long_ID__c</members>
         <members>Account__c.ACA_Population__c</members>
         <members>Account__c.ASO_Population__c</members>
@@ -258,7 +267,6 @@
         <members>Account__c.Open_Opportunity_Count__c</members>
         <members>Account__c.Open_Opportunity_PwDs__c</members>
         <members>Account__c.Open_Renewal_Opportunity_Count__c</members>
-        <members>Account__c.Operating_Hours__c</members>
         <members>Account__c.Other_CSM__c</members>
         <members>Account__c.Overall_Account_Score__c</members>
         <members>Account__c.Overall_DM_Score__c</members>
@@ -1146,27 +1154,41 @@
         <members>Contract__c.sFTP_in_Place__c</members>
         <members>Enrollment_Communications_Survey__c.Account__c</members>
         <members>Enrollment_Communications_Survey__c.Annual_Notice_of_Change_Content_Needed__c</members>
+        <members>Enrollment_Communications_Survey__c.Behavioral_Health_Eligibility_Sentence__c</members>
         <members>Enrollment_Communications_Survey__c.Client_Communicates_by_Phone__c</members>
         <members>Enrollment_Communications_Survey__c.Client_Implementation_Manager__c</members>
         <members>Enrollment_Communications_Survey__c.Client_Sending_Announcement_DMM__c</members>
+        <members>Enrollment_Communications_Survey__c.Client_able_to_send_HR_comms__c</members>
         <members>Enrollment_Communications_Survey__c.Contact_Email_Address__c</members>
         <members>Enrollment_Communications_Survey__c.Contact_Name__c</members>
         <members>Enrollment_Communications_Survey__c.Data_Types_Provided_for_Enrollment__c</members>
+        <members>Enrollment_Communications_Survey__c.Diabetes_Eligibility_Sentence__c</members>
+        <members>Enrollment_Communications_Survey__c.Disclaimer__c</members>
+        <members>Enrollment_Communications_Survey__c.Employee_Title__c</members>
         <members>Enrollment_Communications_Survey__c.Enrollment_Communications_Survey_Type__c</members>
         <members>Enrollment_Communications_Survey__c.Enrollment_Marketing_Lead__c</members>
         <members>Enrollment_Communications_Survey__c.Estimated_Review_Timeline__c</members>
+        <members>Enrollment_Communications_Survey__c.General_Eligibility_Sentence__c</members>
+        <members>Enrollment_Communications_Survey__c.Hypertension_Eligibility_Sentence__c</members>
         <members>Enrollment_Communications_Survey__c.Include_Population_Covered_Dependents__c</members>
+        <members>Enrollment_Communications_Survey__c.Livongo_Programs__c</members>
+        <members>Enrollment_Communications_Survey__c.Marketing_Name__c</members>
         <members>Enrollment_Communications_Survey__c.Medicare_Annual_Enrollment_Consideration__c</members>
         <members>Enrollment_Communications_Survey__c.Medicare_Enrollment_Period_Notes__c</members>
+        <members>Enrollment_Communications_Survey__c.OE_Month_End__c</members>
+        <members>Enrollment_Communications_Survey__c.OE_Month_Start__c</members>
+        <members>Enrollment_Communications_Survey__c.OE_Period_Length__c</members>
         <members>Enrollment_Communications_Survey__c.Org_specific_Medicare_Requirement_Notes__c</members>
         <members>Enrollment_Communications_Survey__c.Organization_specific_Medicare_Requireme__c</members>
         <members>Enrollment_Communications_Survey__c.Other_HR_Communication__c</members>
         <members>Enrollment_Communications_Survey__c.Populations_Excluded__c</members>
+        <members>Enrollment_Communications_Survey__c.Prediabetes_Eligibility_Sentence__c</members>
         <members>Enrollment_Communications_Survey__c.Recipient_Email__c</members>
         <members>Enrollment_Communications_Survey__c.Recipient_Name__c</members>
         <members>Enrollment_Communications_Survey__c.Survey_Status_Updated_Date__c</members>
         <members>Enrollment_Communications_Survey__c.Survey_Status__c</members>
         <members>Enrollment_Communications_Survey__c.Survey_URL__c</members>
+        <members>Enrollment_Communications_Survey__c.Weight_Management_Eligibility_Sentence__c</members>
         <members>Estimated_Enrollment_Mapping__mdt.Estimated_Enrollment__c</members>
         <members>Estimated_Enrollment_Mapping__mdt.Opp_Owner_Role__c</members>
         <members>Estimated_Enrollment_Mapping__mdt.Program_Family__c</members>
@@ -1665,9 +1687,11 @@
         <members>Default_Renewal_Opp_Stage</members>
         <members>Default_Renewal_Opp_Stage_VOC</members>
         <members>Default_Renewal_Opp_Type</members>
+        <members>Diabetes</members>
         <members>Diabetes_w_CKD_Aware_Variant</members>
         <members>Enrollment_Communications_Survey_Community_URL</members>
         <members>GaryAlpertUserId</members>
+        <members>Hypertension</members>
         <members>Hypertension_w_CKD_Aware_Variant</members>
         <members>JessicaGahunguUserId</members>
         <members>New_Device_Type_HT900</members>
@@ -2081,6 +2105,7 @@
         <name>CustomMetadata</name>
     </types>
     <types>
+        <members>AccountContactRelation__c</members>
         <members>Account_Long_ID__mdt</members>
         <members>Account_Team_Member__c</members>
         <members>Account__c</members>
@@ -2230,7 +2255,7 @@
         <members>Contract_Relationship_Management</members>
         <members>Deactivate_Matching_Relationship_Records_Client_Overview</members>
         <members>Enrollment_Comm_Survey_Management</members>
-        <members>Enrollment_Communications_Input_Form</members>
+        <members>Enrollment_Communications_Survey_Wizard</members>
         <members>Lead_Management</members>
         <members>Modify_Existing_CMC</members>
         <members>New_Lead_No_Account_Email_Parse_Lookup</members>
@@ -2364,6 +2389,7 @@
         <members>Account__c.Create_New_CMC_CMCA</members>
         <members>Account__c.Livongo_Incentives_SPA</members>
         <members>Account__c.Modify_Existing_CMC</members>
+        <members>Account__c.Send_Enrollment_Communications_Survey</members>
         <members>Case__c.New_Child_Case</members>
         <members>Client_Handoff_Summary__c.Generate_Pdf</members>
         <members>Contract__c.WP_Non_Anchor_Layout</members>
