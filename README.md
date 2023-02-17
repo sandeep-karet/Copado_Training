@@ -16,3 +16,7 @@ The `sfdx-project.json` file contains useful configuration information for your 
 - [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
 - [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
 - [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+
+## Recently Installed Packages
+- (CollapsePackage) https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003RUYMQA4
+- (ClonedObjects) https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003RUVcQAO
