@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProgramAgreement1__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The parent Program Agreement contract record to which an individual, program-specific Program Schedule relates.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The parent Program Agreement contract record to which an individual, program-specific Program Schedule relates.</inlineHelpText>
+    <label>Program Agreement</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>You must select a &quot;Program Agreement&quot; Contract..</errorMessage>
+        <filterItems>
+            <field>Contract__c.RecordType.Name</field>
+            <operation>equals</operation>
+            <value>Program Agreement</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contract__c</referenceTo>
+    <relationshipLabel>Contracts (Program Schedules)</relationshipLabel>
+    <relationshipName>LVGO_ProgramSchedules</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

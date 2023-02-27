@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contractcustom__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Defines the relationship between a Client Account and a Client Overview contract.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Defines the relationship between a Client Account and a Client Overview contract.</inlineHelpText>
+    <label>Contract</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>You must choose a Client Overview contract.</errorMessage>
+        <filterItems>
+            <field>Contract__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Client Overview</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contract__c</referenceTo>
+    <relationshipLabel>Client Member Codes</relationshipLabel>
+    <relationshipName>Client_Member_Codes</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

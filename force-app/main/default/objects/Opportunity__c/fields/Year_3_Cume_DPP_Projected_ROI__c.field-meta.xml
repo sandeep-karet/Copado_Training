@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Year_3_Cume_DPP_Projected_ROI__c</fullName>
+    <externalId>false</externalId>
+    <formula>(Projected_Total_DPP_Cases_Prevented__c * 9294.942747)
+/
+(
+( Year_1_DPP_Per_Member_cost__c *  Estimated_Enrolled_DPP_Population__c )
++
+(( Year_2_DPP_Per_Member_Cost__c *  Estimated_Enrolled_DPP_Population__c )*0.5)
++
+(( Year_2_DPP_Per_Member_Cost__c *  Estimated_Enrolled_DPP_Population__c )*0.25)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Year 3 Cume DPP Projected ROI</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
