@@ -5,7 +5,7 @@
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>
-        <label>Information</label>
+        <label>Opportunity Information</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
@@ -14,6 +14,10 @@
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Account__c</field>
+            </layoutItems>
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>Owner__c</field>	
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
@@ -40,7 +44,7 @@
                 <field>StageName__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Lost_Reason__c</field>
             </layoutItems>
             <layoutItems>
@@ -48,12 +52,20 @@
                 <field>Client_Proposal_Preference__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Alternative_Contract_Path__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Probability__c</field>
+            </layoutItems>
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>Forecast_Manager_Call__c</field>	
+            </layoutItems>	
+            <layoutItems>	
+                <behavior>Readonly</behavior>	
+                <field>Cross_Sell_LV_Total__c</field>	
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -66,6 +78,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Combined_Total__c</field>
+            </layoutItems>
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>Campaign__c</field>	
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -82,10 +98,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>TD_Opp_Guid__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Owner__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -179,14 +191,13 @@
                 <field>Opportunity_Next_Step__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Contract info</label>
+        <label>Contract Info</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -215,7 +226,7 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Pricebook2__c</field>
             </layoutItems>
             <layoutItems>
@@ -329,6 +340,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Livongo_DPP_PPPM__c</field>
+            </layoutItems>	
+            <layoutItems>	
+                <behavior>Readonly</behavior>	
+                <field>Year_2_DPP_Price__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -379,6 +394,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Annual_Renewal_Deal_Value__c</field>
+            </layoutItems>
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>Program_Count__c</field>	
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -608,6 +627,18 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
+                <field>Year_2_DPP_Per_Member_Cost__c</field>	
+            </layoutItems>	
+            <layoutItems>	
+                <behavior>Readonly</behavior>	
+                <field>Total_DPP_Per_Member_Cost_No_Attrition__c</field>	
+            </layoutItems>	
+            <layoutItems>	
+                <behavior>Readonly</behavior>	
+                <field>Total_DPP_Per_Member_Cost_Attrition__c</field>	
+            </layoutItems>	
+            <layoutItems>	
+                <behavior>Readonly</behavior>
                 <field>Year_1_DPP_Cost_Savings__c</field>
             </layoutItems>
             <layoutItems>
@@ -652,13 +683,21 @@
                 <behavior>Readonly</behavior>
                 <field>Year_1_DPP_Projected_ROI__c</field>
             </layoutItems>
+            <layoutItems>	
+                <behavior>Readonly</behavior>	
+                <field>Year_2_Cume_DPP_Projected_ROI__c</field>	
+            </layoutItems>	
+            <layoutItems>	
+                <behavior>Readonly</behavior>	
+                <field>Year_3_Cume_DPP_Projected_ROI__c</field>	
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
-        <editHeading>true</editHeading>
+        <editHeading>false</editHeading>
         <label>Custom Links</label>
         <layoutColumns/>
         <layoutColumns/>
@@ -667,7 +706,7 @@
     </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
-        <detailHeading>false</detailHeading>
+        <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>System Information</label>
         <layoutColumns>
@@ -676,7 +715,7 @@
                 <field>CreatedById</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Bypass_Contact_Role_Rules__c</field>
             </layoutItems>
             <layoutItems>
@@ -718,27 +757,32 @@
         <platformActionListItems>
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>2</sortOrder>
+            <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>3</sortOrder>
+            <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.ContentPost</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>4</sortOrder>
+            <sortOrder>7</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.ContentNote</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>5</sortOrder>
+            <sortOrder>8</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Clone</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>6</sortOrder>
+            <sortOrder>9</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>	
+            <actionName>DeepClone</actionName>	
+            <actionType>StandardButton</actionType>	
+            <sortOrder>14</sortOrder>	
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -752,10 +796,44 @@
             <quickActionName>FeedItem.ContentPost</quickActionName>
         </quickActionListItems>
     </quickActionList>
+    <relatedContent>	
+        <relatedContentItems>	
+            <layoutItem>	
+                <component>wits:newsPanel</component>	
+            </layoutItem>	
+        </relatedContentItems>	
+        <relatedContentItems>	
+            <layoutItem>	
+                <behavior>Readonly</behavior>	
+                <field>Account__c</field>	
+            </layoutItem>	
+        </relatedContentItems>	
+        <relatedContentItems>	
+            <layoutItem>	
+                <behavior>Readonly</behavior>	
+                <field>Owner__c</field>	
+            </layoutItem>	
+        </relatedContentItems>	
+    </relatedContent>	
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>OpportunityLineItem__c.Opportunity__c</relatedList>
-    </relatedLists>
+        <fields>RelationshipType__c</fields>	
+        <fields>Partner_Oppty_Partnership__c</fields>	
+        <fields>Active__c</fields>	
+        <fields>Start_Date__c</fields>	
+        <fields>End_Date__c</fields>	
+        <fields>ReportRecipient__c</fields>	
+        <relatedList>Relationship__c.Opportunity_Partnership__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>Competitor_Oppty_Competition__c</fields>	
+        <fields>Competing_Product__c</fields>	
+        <fields>Active__c</fields>	
+        <fields>Start_Date__c</fields>	
+        <fields>End_Date__c</fields>	
+        <relatedList>Relationship__c.Opportunity_Competition__c</relatedList>	
+    </relatedLists>	
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
@@ -776,14 +854,6 @@
         <relatedList>RelatedHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>CreatedDate</fields>
-        <fields>StepStatus</fields>
-        <fields>OriginalActor</fields>
-        <fields>Actor</fields>
-        <fields>Comments</fields>
-        <relatedList>RelatedProcessHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
         <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <relatedLists>
@@ -791,7 +861,32 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedContentNoteList</relatedList>
-    </relatedLists>
+    </relatedLists>	
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>RelationshipType__c</fields>	
+        <fields>Master_Account__c</fields>	
+        <fields>Active__c</fields>	
+        <fields>Start_Date__c</fields>	
+        <fields>End_Date__c</fields>	
+        <relatedList>Relationship__c.Master_Opportunity__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>Client_Partnership__c</fields>	
+        <fields>Start_Date__c</fields>	
+        <fields>End_Date__c</fields>	
+        <relatedList>Relationship__c.CohortOpportunity__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <fields>CreatedDate</fields>	
+        <fields>StepStatus</fields>	
+        <fields>OriginalActor</fields>	
+        <fields>Actor</fields>	
+        <fields>Comments</fields>	
+        <relatedList>RelatedProcessHistoryList</relatedList>	
+    </relatedLists>	
+    <relatedObjects>Account__c</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

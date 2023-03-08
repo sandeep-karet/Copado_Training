@@ -3,9 +3,9 @@
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
-        <detailHeading>false</detailHeading>
+        <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Information</label>
+        <label>Opportunity Information</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
@@ -20,7 +20,7 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Probability__c</field>
             </layoutItems>
             <layoutItems>
@@ -30,10 +30,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Population_Type__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>TD_Opp_Guid__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -50,7 +46,7 @@
                 <field>Launch_Date__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Type__c</field>
             </layoutItems>
             <layoutItems>
@@ -63,7 +59,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Product_List__c</field>
+                <field>Request_CIM__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -76,7 +72,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Contract info</label>
+        <label>Contract Info</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -93,7 +89,7 @@
                 <field>Covered_Lives__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Opportunity_Covered_Lives__c</field>
             </layoutItems>
         </layoutColumns>
@@ -147,6 +143,10 @@
                 <behavior>Readonly</behavior>
                 <field>Annual_Renewal_Deal_Value__c</field>
             </layoutItems>
+            <layoutItems>   
+                <behavior>Edit</behavior>   
+                <field>Program_Count__c</field> 
+            </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Livongo_Behavioral_Health_PwBHs__c</field>
@@ -159,9 +159,9 @@
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
-        <editHeading>true</editHeading>
+        <editHeading>false</editHeading>
         <label>Custom Links</label>
         <layoutColumns/>
         <layoutColumns/>
@@ -170,13 +170,17 @@
     </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
-        <detailHeading>false</detailHeading>
+        <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>System Information</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>CreatedById</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>TD_Opp_Guid__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -189,6 +193,21 @@
     </layoutSections>
     <platformActionList>
         <actionListContext>Record</actionListContext>
+        <platformActionListItems>   
+            <actionName>FeedItem.ContentPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>3</sortOrder>
+        </platformActionListItems>  
+        <platformActionListItems>   
+            <actionName>FeedItem.ContentNote</actionName>
+            <actionType>QuickAction</actionType>    
+            <sortOrder>2</sortOrder>    
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Clone</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>7</sortOrder>
+        </platformActionListItems>
         <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
@@ -202,22 +221,7 @@
         <platformActionListItems>
             <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>2</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>FeedItem.ContentPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>3</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>FeedItem.ContentNote</actionName>
-            <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Clone</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>7</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -231,9 +235,50 @@
             <quickActionName>FeedItem.ContentPost</quickActionName>
         </quickActionListItems>
     </quickActionList>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>OpportunityLineItem__c.Opportunity__c</relatedList>
+    <relatedContent>    
+        <relatedContentItems>   
+            <layoutItem>    
+                <component>wits:newsPanel</component>   
+            </layoutItem>   
+        </relatedContentItems>  
+        <relatedContentItems>   
+            <layoutItem>    
+                <behavior>Readonly</behavior>   
+                <field>Account__c</field>   
+            </layoutItem>   
+        </relatedContentItems>  
+        <relatedContentItems>   
+            <layoutItem>    
+                <behavior>Readonly</behavior>   
+                <field>Owner__c</field> 
+            </layoutItem>   
+        </relatedContentItems>  
+    </relatedContent>
+    <relatedLists>  
+        <fields>NAME</fields>   
+        <fields>RelationshipType__c</fields>    
+        <fields>Partner_Oppty_Partnership__c</fields>   
+        <fields>Active__c</fields>  
+        <fields>Start_Date__c</fields>  
+        <fields>End_Date__c</fields>    
+        <fields>ReportRecipient__c</fields> 
+        <relatedList>Relationship__c.Opportunity_Partnership__c</relatedList>   
+    </relatedLists> 
+    <relatedLists>  
+        <fields>NAME</fields>   
+        <fields>Competitor_Oppty_Competition__c</fields>    
+        <fields>Competing_Product__c</fields>   
+        <fields>Active__c</fields>  
+        <fields>Start_Date__c</fields>  
+        <fields>End_Date__c</fields>    
+        <relatedList>Relationship__c.Opportunity_Competition__c</relatedList>   
+    </relatedLists> 
+    <relatedLists>  
+        <fields>NAME</fields>   
+        <fields>Client_Partnership__c</fields>  
+        <fields>Start_Date__c</fields>  
+        <fields>End_Date__c</fields>    
+        <relatedList>Relationship__c.CohortOpportunity__c</relatedList> 
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
@@ -260,6 +305,16 @@
     <relatedLists>
         <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Master_Account__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Master_Opportunity__c</relatedList>
+    </relatedLists>
+    <relatedObjects>Account__c</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

@@ -5,7 +5,7 @@
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>
-        <label>Information</label>
+        <label>Product Information</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
@@ -27,6 +27,14 @@
                 <behavior>Required</behavior>
                 <field>Product_Participants__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>	
+                <field>Quantity__c</field>	
+            </layoutItems>	
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>Year_2_Price__c</field>	
+            </layoutItems>	
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Program_Rev_Synergy_Flag__c</field>
@@ -50,7 +58,7 @@
                 <field>Pricing_Structure__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>UnitPrice__c</field>
             </layoutItems>
             <layoutItems>
@@ -119,10 +127,18 @@
     </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
-        <detailHeading>false</detailHeading>
+        <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>System Information</label>
         <layoutColumns>
+            <layoutItems>	
+                <behavior>Readonly</behavior>	
+                <field>Owner_of_Opportunity__c</field>	
+            </layoutItems>	
+            <layoutItems>	
+                <behavior>Readonly</behavior>	
+                <field>ProductCode__c</field>	
+            </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>OpportunityProductName__c</field>
@@ -136,7 +152,7 @@
                 <field>PO_WholePerson__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>Enrollment_Percentage__c</field>
             </layoutItems>
             <layoutItems>
@@ -166,7 +182,7 @@
                 <field>Price_Book_ID__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>Bypass_Sales_Price_Validation__c</field>
             </layoutItems>
             <layoutItems>
@@ -177,7 +193,7 @@
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>
         <label>Custom Links</label>
@@ -194,7 +210,22 @@
     <summaryLayout>
         <masterLabel>00h8M000000EeOs</masterLabel>
         <sizeX>4</sizeX>
-        <sizeY>0</sizeY>
+        <sizeY>1</sizeY>	
+        <summaryLayoutItems>	
+            <field>Product2__c</field>	
+            <posX>0</posX>	
+            <posY>0</posY>	
+        </summaryLayoutItems>	
+        <summaryLayoutItems>	
+            <field>ProductCode__c</field>	
+            <posX>1</posX>	
+            <posY>0</posY>	
+        </summaryLayoutItems>	
+        <summaryLayoutItems>	
+            <field>UnitPrice__c</field>	
+            <posX>2</posX>	
+            <posY>0</posY>	
+        </summaryLayoutItems>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
     </summaryLayout>
 </Layout>

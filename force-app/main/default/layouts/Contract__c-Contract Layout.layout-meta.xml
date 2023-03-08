@@ -6,7 +6,7 @@
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>
-        <label>Information</label>
+        <label>Contract Information</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
@@ -47,7 +47,7 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Status__c</field>
             </layoutItems>
             <layoutItems>
@@ -78,7 +78,7 @@
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Description Information</label>
@@ -142,7 +142,7 @@
                 <field>Remaining_Mths_greater_9_Early_Term_Fee__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -235,7 +235,7 @@
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Signature Information</label>
@@ -258,7 +258,7 @@
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Address Information</label>
@@ -269,7 +269,7 @@
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -278,7 +278,7 @@
         <label>System Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>ActivatedBy__c</field>
             </layoutItems>
             <layoutItems>
@@ -292,7 +292,7 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>ActivatedDate__c</field>
             </layoutItems>
             <layoutItems>
@@ -307,9 +307,9 @@
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>false</detailHeading>
-        <editHeading>true</editHeading>
+        <customLabel>false</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>false</editHeading>
         <label>Custom Links</label>
         <layoutColumns/>
         <layoutColumns/>
@@ -365,6 +365,21 @@
             <quickActionName>FeedItem.ContentPost</quickActionName>
         </quickActionListItems>
     </quickActionList>
+    <relatedContent>	
+        <relatedContentItems>	
+            <layoutItem>	
+                <behavior>Readonly</behavior>	
+                <field>Account__c</field>	
+            </layoutItem>	
+        </relatedContentItems>	
+    </relatedContent>	
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>Account__c</fields>	
+        <fields>ClientMemberCode__c</fields>	
+        <fields>UsedforRegistration__c</fields>	
+        <relatedList>ClientMemberCode__c.Contract__c</relatedList>	
+    </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
@@ -402,6 +417,32 @@
         <fields>CloseDate__c</fields>
         <relatedList>Opportunity__c.Contract__c</relatedList>
     </relatedLists>
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>RelationshipType__c</fields>	
+        <fields>Partner_Contract_Partnership__c</fields>	
+        <fields>Active__c</fields>	
+        <relatedList>Relationship__c.Contract_Partnership__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>RelationshipType__c</fields>	
+        <fields>Master_Account__c</fields>	
+        <fields>Active__c</fields>	
+        <fields>Start_Date__c</fields>	
+        <fields>End_Date__c</fields>	
+        <relatedList>Relationship__c.Master_Contract__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <excludeButtons>MassChangeOwner</excludeButtons>	
+        <fields>Client_Tag__c.NAME</fields>	
+        <fields>NAME</fields>	
+        <fields>ClientAccount__c</fields>	
+        <fields>CREATEDBY_USER</fields>	
+        <fields>CREATED_DATE</fields>	
+        <relatedList>Client_Tag_Assignment__c.Contract__c</relatedList>	
+    </relatedLists>	
+    <relatedObjects>Account__c</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

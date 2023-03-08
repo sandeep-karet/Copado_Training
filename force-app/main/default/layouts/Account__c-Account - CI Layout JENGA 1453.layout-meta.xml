@@ -2,9 +2,9 @@
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
-        <editHeading>false</editHeading>
+        <editHeading>true</editHeading>
         <label>Account Information</label>
         <layoutColumns>
             <layoutItems>
@@ -39,6 +39,10 @@
                 <behavior>Readonly</behavior>
                 <field>Last_Activity_Completed_Date_by_Sales__c</field>
             </layoutItems>
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>Most_Recent_Event_by_Sales_Rep__c</field>	
+            </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Most_Recent_Task_Event_by_Sales_Rep__c</field>
@@ -70,11 +74,11 @@
                 <field>Account_Type__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Type__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -109,6 +113,10 @@
         <editHeading>true</editHeading>
         <label>Employer Account Overview</label>
         <layoutColumns>
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>NumberOfEmployees__c</field>	
+            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Covered_Lives__c</field>
@@ -145,10 +153,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>RequestCIM__c</field>
+                <field>RequestCSM__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Client_ARR__c</field>
             </layoutItems>
             <layoutItems>
@@ -219,7 +227,7 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Account_Transition_Date__c</field>
             </layoutItems>
             <layoutItems>
@@ -229,6 +237,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Next_Business_Review__c</field>
+            </layoutItems>
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>Benefit_Plan_Year__c</field>	
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -243,7 +255,7 @@
                 <field>PBM_Partner_Pipeline_Request__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -481,6 +493,15 @@
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
+    <layoutSections>	
+        <customLabel>false</customLabel>	
+        <detailHeading>false</detailHeading>	
+        <editHeading>false</editHeading>	
+        <label>Description Information</label>	
+        <layoutColumns/>	
+        <layoutColumns/>	
+        <style>TwoColumnsTopToBottom</style>	
+    </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
@@ -492,22 +513,22 @@
         <style>CustomLinks</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
+        <editHeading>false</editHeading>
         <label>Address Information</label>
         <layoutColumns/>
         <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Additional Information</label>
         <layoutColumns/>
         <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -520,7 +541,7 @@
                 <field>Risk_Color__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Risk_Description__c</field>
             </layoutItems>
             <layoutItems>
@@ -535,12 +556,11 @@
                 <behavior>Edit</behavior>
                 <field>Client_has_seen_ngTDC__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        </layoutColumns>        
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>System Information</label>
@@ -559,6 +579,14 @@
                 <behavior>Edit</behavior>
                 <field>Ignore_all_CSM_mirroring_effects__c</field>
             </layoutItems>
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>Account_is_used_in_Downmarket_CMCs__c</field>	
+            </layoutItems>
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>CMC_Prefix__c</field>	
+            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Source__c</field>
@@ -574,12 +602,79 @@
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
+    <platformActionList>	
+        <actionListContext>Record</actionListContext>	
+        <platformActionListItems>	
+            <actionName>Edit</actionName>	
+            <actionType>StandardButton</actionType>	
+            <sortOrder>0</sortOrder>	
+        </platformActionListItems>	
+        <platformActionListItems>	
+            <actionName>Delete</actionName>	
+            <actionType>StandardButton</actionType>	
+            <sortOrder>1</sortOrder>	
+        </platformActionListItems>	
+        <platformActionListItems>	
+            <actionName>FeedItem.TextPost</actionName>	
+            <actionType>QuickAction</actionType>	
+            <sortOrder>2</sortOrder>	
+        </platformActionListItems>	
+        <platformActionListItems>	
+            <actionName>FeedItem.ContentPost</actionName>	
+            <actionType>QuickAction</actionType>	
+            <sortOrder>3</sortOrder>	
+        </platformActionListItems>	
+        <platformActionListItems>	
+            <actionName>FeedItem.ContentNote</actionName>	
+            <actionType>QuickAction</actionType>	
+            <sortOrder>4</sortOrder>	
+        </platformActionListItems>	
+        <platformActionListItems>	
+            <actionName>Account__c.Create_New_CMC_CMCA</actionName>	
+            <actionType>QuickAction</actionType>	
+            <sortOrder>10</sortOrder>	
+        </platformActionListItems>	
+    </platformActionList>	
+    <relatedContent>	
+        <relatedContentItems>	
+            <layoutItem>	
+                <component>wits:newsPanel</component>	
+            </layoutItem>	
+        </relatedContentItems>	
+    </relatedContent>
     <relatedLists>
         <fields>NAME</fields>
         <fields>Title__c</fields>
         <fields>Email__c</fields>
         <fields>Work_Phone__c</fields>
         <relatedList>Contact__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>RelationshipType__c</fields>	
+        <fields>Partner_Partnership__c</fields>	
+        <fields>Active__c</fields>	
+        <fields>Start_Date__c</fields>	
+        <fields>End_Date__c</fields>	
+        <relatedList>Relationship__c.Client_Partnership__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>RelationshipType__c</fields>	
+        <fields>Master_Client_Account__c</fields>	
+        <fields>Active__c</fields>	
+        <fields>Start_Date__c</fields>	
+        <fields>End_Date__c</fields>	
+        <relatedList>Relationship__c.Partner_Partnership__c</relatedList>	
+    </relatedLists>
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>RelationshipType__c</fields>	
+        <fields>Competitor_Competition__c</fields>	
+        <fields>Active__c</fields>	
+        <fields>Start_Date__c</fields>	
+        <fields>End_Date__c</fields>	
+        <relatedList>Relationship__c.Client_Competition__c</relatedList>	
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -613,6 +708,47 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
+    <relatedLists>	
+        <excludeButtons>MassChangeOwner</excludeButtons>	
+        <fields>NAME</fields>	
+        <fields>RECORDTYPE</fields>	
+        <fields>ClientMemberCode__c</fields>	
+        <fields>UsedforRegistration__c</fields>	
+        <relatedList>ClientMemberCode__c.Account__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <excludeButtons>MassChangeOwner</excludeButtons>	
+        <fields>NAME</fields>	
+        <fields>RECORDTYPE</fields>	
+        <fields>ClientMemberCode__c</fields>	
+        <fields>RegistrationCode__c</fields>	
+        <fields>ProgramOverview__c</fields>	
+        <fields>Program_Overview_Name__c</fields>	
+        <relatedList>CMCAssociation__c.Account__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <fields>ClientTag__c</fields>	
+        <fields>NAME</fields>	
+        <relatedList>Client_Tag_Assignment__c.ClientAccount__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>RelationshipType__c</fields>	
+        <fields>Master_Account__c</fields>	
+        <fields>Active__c</fields>	
+        <fields>Start_Date__c</fields>	
+        <fields>End_Date__c</fields>	
+        <relatedList>Relationship__c.Master_Client_Account__c</relatedList>	
+    </relatedLists>
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>RelationshipType__c</fields>	
+        <fields>Master_Client_Account__c</fields>	
+        <fields>Active__c</fields>	
+        <fields>Start_Date__c</fields>	
+        <fields>End_Date__c</fields>	
+        <relatedList>Relationship__c.Master_Account__c</relatedList>	
     </relatedLists>
     <relatedLists>
         <fields>CreatedDate</fields>

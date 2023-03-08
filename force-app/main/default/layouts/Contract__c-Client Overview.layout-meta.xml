@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>Upload_Contract</customButtons>
-    <excludeButtons>RecordShareHierarchy</excludeButtons>
-    <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
+    <layoutSections>	
+        <customLabel>true</customLabel>	
+        <detailHeading>true</detailHeading>	
+        <editHeading>true</editHeading>	
+        <label>Configuration</label>	
+        <layoutColumns/>	
+        <layoutColumns/>	
+        <style>TwoColumnsLeftToRight</style>	
+    </layoutSections>	
     <layoutSections>
         <customLabel>true</customLabel>
-        <detailHeading>false</detailHeading>
-        <editHeading>false</editHeading>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
         <label>Client Overview</label>
         <layoutColumns>
             <layoutItems>
@@ -19,7 +26,7 @@
                 <field>Account__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Status__c</field>
             </layoutItems>
             <layoutItems>
@@ -208,8 +215,8 @@
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
+        <detailHeading>false</detailHeading>
+        <editHeading>false</editHeading>
         <label>Eligibility Notes</label>
         <layoutColumns>
             <layoutItems>
@@ -217,8 +224,7 @@
                 <field>Eligibility_Team_Notes__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -360,7 +366,7 @@
                 <field>Hold_All_Marketing__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Date_Marketing_Put_On_Hold__c</field>
             </layoutItems>
             <layoutItems>
@@ -606,7 +612,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>clinical</label>
+        <label>Clinical</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -962,11 +968,15 @@
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>System Information</label>
         <layoutColumns>
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>Pricebook2__c</field>	
+            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>OwnerId</field>
@@ -976,7 +986,7 @@
                 <field>Contract_ID_Long__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Account_Client_Overview__c</field>
             </layoutItems>
             <layoutItems>
@@ -1014,10 +1024,28 @@
                 <field>Jira_Key__c</field>
             </layoutItems>
         </layoutColumns>
+        <style>TwoColumnsTopToBottom</style>	
+    </layoutSections>	
+    <layoutSections>	
+        <customLabel>true</customLabel>	
+        <detailHeading>true</detailHeading>	
+        <editHeading>true</editHeading>	
+        <label>Client Implementation</label>	
+        <layoutColumns>	
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>Registration_Address_Type__c</field>	
+            </layoutItems>	
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>Multifactor_Authentication__c</field>	
+            </layoutItems>	
+        </layoutColumns>	
+        <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>false</editHeading>
         <label>Custom Links</label>
@@ -1075,6 +1103,14 @@
             <quickActionName>FeedItem.ContentPost</quickActionName>
         </quickActionListItems>
     </quickActionList>
+    <relatedContent>	
+        <relatedContentItems>	
+            <layoutItem>	
+                <behavior>Readonly</behavior>	
+                <field>Account__c</field>	
+            </layoutItem>	
+        </relatedContentItems>	
+    </relatedContent>
     <relatedLists>
         <relatedList>RelatedContentNoteList</relatedList>
     </relatedLists>
@@ -1115,6 +1151,21 @@
         <fields>CloseDate__c</fields>
         <relatedList>Opportunity__c.Contract__c</relatedList>
     </relatedLists>
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>RelationshipType__c</fields>	
+        <fields>Partner_Contract_Partnership__c</fields>	
+        <fields>Active__c</fields>	
+        <fields>LAST_UPDATE</fields>	
+        <fields>Relationship_Sort__c</fields>	
+        <relatedList>Relationship__c.Contract_Partnership__c</relatedList>	
+        <sortField>Relationship_Sort__c</sortField>	
+        <sortOrder>Asc</sortOrder>	
+    </relatedLists>	
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <relatedList>Client_Tag_Assignment__c.Contract__c</relatedList>	
+    </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
         <fields>ContractNumber__c</fields>
@@ -1128,6 +1179,7 @@
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
     </relatedLists>
+    <relatedObjects>Account__c</relatedObjects>	
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
@@ -1136,7 +1188,22 @@
     <summaryLayout>
         <masterLabel>00h8M000000Ef5c</masterLabel>
         <sizeX>4</sizeX>
-        <sizeY>0</sizeY>
+        <sizeY>1</sizeY>	
+        <summaryLayoutItems>	
+            <field>Account__c</field>	
+            <posX>0</posX>	
+            <posY>0</posY>	
+        </summaryLayoutItems>	
+        <summaryLayoutItems>	
+            <field>Accessible_Covered_Lives__c</field>	
+            <posX>2</posX>	
+            <posY>0</posY>	
+        </summaryLayoutItems>	
+        <summaryLayoutItems>	
+            <field>CustomerSignedDate__c</field>	
+            <posX>3</posX>	
+            <posY>0</posY>	
+        </summaryLayoutItems>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
     </summaryLayout>
 </Layout>

@@ -2,9 +2,9 @@
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
-        <editHeading>false</editHeading>
+        <editHeading>true</editHeading>
         <label>Account Information</label>
         <layoutColumns>
             <layoutItems>
@@ -54,7 +54,7 @@
                 <field>Account_Type__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Type__c</field>
             </layoutItems>
             <layoutItems>
@@ -66,6 +66,15 @@
                 <field>Most_Recent_Task_Event_by_Sales_Rep__c</field>
             </layoutItems>
         </layoutColumns>
+        <style>TwoColumnsTopToBottom</style>	
+    </layoutSections>	
+    <layoutSections>	
+        <customLabel>true</customLabel>	
+        <detailHeading>true</detailHeading>	
+        <editHeading>true</editHeading>	
+        <label>Configuration</label>	
+        <layoutColumns/>	
+        <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
@@ -117,6 +126,10 @@
         <editHeading>true</editHeading>
         <label>Employer Account Overview</label>
         <layoutColumns>
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>NumberOfEmployees__c</field>	
+            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Covered_Lives__c</field>
@@ -153,10 +166,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>RequestCIM__c</field>
+                <field>RequestCSM__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Client_ARR__c</field>
             </layoutItems>
             <layoutItems>
@@ -227,7 +240,7 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Account_Transition_Date__c</field>
             </layoutItems>
             <layoutItems>
@@ -237,6 +250,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Next_Business_Review__c</field>
+            </layoutItems>
+            <layoutItems>	
+                <behavior>Edit</behavior>	
+                <field>Benefit_Plan_Year__c</field>	
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -251,7 +268,7 @@
                 <field>PBM_Partner_Pipeline_Request__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -490,16 +507,16 @@
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
         <label>Description Information</label>
         <layoutColumns/>
         <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
         <label>Custom Links</label>
@@ -509,13 +526,13 @@
         <style>CustomLinks</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
+        <editHeading>false</editHeading>
         <label>Address Information</label>
         <layoutColumns/>
         <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -524,7 +541,7 @@
         <label>Additional Information</label>
         <layoutColumns/>
         <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -537,7 +554,7 @@
                 <field>Risk_Color__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Risk_Description__c</field>
             </layoutItems>
             <layoutItems>
@@ -552,12 +569,11 @@
                 <behavior>Edit</behavior>
                 <field>Client_has_seen_ngTDC__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        </layoutColumns>        
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>System Information</label>
@@ -714,6 +730,47 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
+    <relatedLists>	
+        <excludeButtons>MassChangeOwner</excludeButtons>	
+        <fields>NAME</fields>	
+        <fields>RECORDTYPE</fields>	
+        <fields>ClientMemberCode__c</fields>	
+        <fields>UsedforRegistration__c</fields>	
+        <relatedList>ClientMemberCode__c.Account__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <excludeButtons>MassChangeOwner</excludeButtons>	
+        <fields>NAME</fields>	
+        <fields>RECORDTYPE</fields>	
+        <fields>ClientMemberCode__c</fields>	
+        <fields>RegistrationCode__c</fields>	
+        <fields>ProgramOverview__c</fields>	
+        <fields>Program_Overview_Name__c</fields>	
+        <relatedList>CMCAssociation__c.Account__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <fields>ClientTag__c</fields>	
+        <fields>NAME</fields>	
+        <relatedList>Client_Tag_Assignment__c.ClientAccount__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>RelationshipType__c</fields>	
+        <fields>Master_Account__c</fields>	
+        <fields>Active__c</fields>	
+        <fields>Start_Date__c</fields>	
+        <fields>End_Date__c</fields>	
+        <relatedList>Relationship__c.Master_Client_Account__c</relatedList>	
+    </relatedLists>	
+    <relatedLists>	
+        <fields>NAME</fields>	
+        <fields>RelationshipType__c</fields>	
+        <fields>Master_Client_Account__c</fields>	
+        <fields>Active__c</fields>	
+        <fields>Start_Date__c</fields>	
+        <fields>End_Date__c</fields>	
+        <relatedList>Relationship__c.Master_Account__c</relatedList>	
     </relatedLists>
     <relatedLists>
         <fields>CreatedDate</fields>
