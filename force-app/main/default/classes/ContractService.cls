@@ -581,7 +581,7 @@ global class ContractService {
         //Creating Program Overviews for all the programs that came from both Standalone and Whole Person Solution OLIs
         if (programWrapList.size() > 0) {
             for (ProgramWrap program: programWrapList) {
-                String programName = program.ProgramName;
+                String programName = String.valueOf(program.programName).contains('Livongo - ')?String.valueOf(program.programName).replace('Livongo - ',''):program.programName;
                 //If the program is already existing in the Map, It doesn't add duplicate programs rather it updates the Program Type based on the below logic
                 if (programOverviewsToCreateMap.keySet().contains(programName)) {        
                     switch on programOverviewsToCreateMap.get(programName).Program_Type__c {
@@ -617,28 +617,28 @@ global class ContractService {
                     programOverview.Account__c = opp.Account__c;
                     programOverview.Client_Overview__c = oppToClientOverviewsMap.get(opp.Id).Id;
                     programOverview.RecordTypeId = PROGRAM_OVERVIEW_RT;
-                    programOverview.Program_Name__c = program.programName;
+                    programOverview.Program_Name__c = programName;
                     
                     
                     
                     if (opp.Contract_Path__c != null && opp.Account__c != null) {
-                        programOverview.Name = (opp.Account__r.Name + ' - ' + program.programName + ' - ' + opp.Contract_Path__r.Name).left(80).trim();
+                        programOverview.Name = (opp.Account__r.Name + ' - ' + programName + ' - ' + opp.Contract_Path__r.Name).left(80).trim();
                     }
                     else if (opp.Account__c != null) {
-                        programOverview.Name = (opp.Account__r.Name + ' - ' + program.programName).left(80).trim();
+                        programOverview.Name = (opp.Account__r.Name + ' - ' + programName).left(80).trim();
                     }
                     programOverview.Program_Type__c = program.programType;
-                    if (program.programName == 'Hypertension' && program.pricingStructure != null && program.pricingStructure.Contains('Cellular')) {
+                    if (programName == 'Hypertension' && program.pricingStructure != null && program.pricingStructure.Contains('Cellular')) {
                         programOverview.New_Device_Type__c = NEW_DEVICE_TYPE_HT900;
                     }
-                    if (program.programName == 'Hypertension' && program.pricingStructure != null && program.pricingStructure.Contains('Cellular')) {
+                    if (programName == 'Hypertension' && program.pricingStructure != null && program.pricingStructure.Contains('Cellular')) {
                         programOverview.New_Device_Type__c = NEW_DEVICE_TYPE_HT900;
                     }
                     /* Bluetooth Pricing Structure for Hypertension has been removed
                     else if (program.programName == 'Hypertension' && program.pricingStructure != null && program.pricingStructure.Contains('Bluetooth')) {
                     programOverview.New_Device_Type__c = NEW_DEVICE_TYPE_HTAND;
                     } */
-                    else if (program.programName == 'Hypertension' && programOverview.Program_Type__c != 'Standalone') {
+                    else if (programName == 'Hypertension' && programOverview.Program_Type__c != 'Standalone') {
                         programOverview.New_Device_Type__c = NEW_DEVICE_TYPE_HT900;
                     }
                     if (program.oliName != null && program.oliName == DEFAULT_BH_V1_PROGRAM_NAME) {

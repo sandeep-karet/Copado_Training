@@ -57,7 +57,7 @@ public class EnrollmentCommunicationsHandlerTest {
             Contract__c cont_PO = new Contract__c();
             cont_PO.Account__c = accList.get(1).Id;
             cont_PO.RecordTypeId = PO_RECORDTYPEID;
-            cont_PO.Account_Client_Overview__c = cont_CO.Id;
+            cont_PO.Account_Client_Overview__c = cont_CO.Account__c;
             cont_PO.Program_Name__c = livPrograms.get(k);
             cont_PO.Eligibility_Sentence__c = '';
             cont_PO.Status__c = 'Draft';

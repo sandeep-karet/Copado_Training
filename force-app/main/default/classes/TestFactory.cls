@@ -57,7 +57,7 @@ global class TestFactory {
         Account__c testAccount = new Account__c();
         testAccount.RecordTypeId = Schema.SObjectType.Account__c.getRecordTypeInfosByDeveloperName().get('Competitor_Account').getRecordTypeId();
         testAccount.Name = 'Test Competitor Account';
-        testAccount.Type__c = 'Payer';
+        testAccount.Type__c = 'Payer/ASO';
         testAccount.Covered_Lives__c = 10000;
         return testAccount;
     }
@@ -67,7 +67,7 @@ global class TestFactory {
         Account__c testAccount = new Account__c();
         testAccount.RecordTypeId = Schema.SObjectType.Account__c.getRecordTypeInfosByDeveloperName().get('Partner_Account').getRecordTypeId();
         testAccount.Name = 'Test Partner Account';
-        testAccount.Type__c = 'Payer';
+        testAccount.Type__c = 'Payer/ASO';
         testAccount.Covered_Lives__c = 10000;
         return testAccount;
     }
@@ -89,7 +89,7 @@ global class TestFactory {
         opp.StageName__c = 'Prospect';
         opp.Type__c = type;
         opp.CloseDate__c = Date.today().addDays(1);
-        opp.LeadSource__c = 'Direct Outreach';
+        opp.LeadSource__c = 'Other';
         return opp;
     }
     

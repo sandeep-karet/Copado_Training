@@ -1,13 +1,13 @@
 @isTest
 public class RelatedClientAccountsCtrlTest {
 
-    public static final Id PARTNER_ACCOUNT_RT_ID = Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('Partner_Account').getRecordTypeId();
-    public static final Id CLIENT_ACCOUNT_RT_ID = Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('Client_Account').getRecordTypeId();
+    public static final Id PARTNER_ACCOUNT_RT_ID = Schema.SObjectType.Account__c.getRecordTypeInfosByDeveloperName().get('Partner_Account').getRecordTypeId();
+    public static final Id CLIENT_ACCOUNT_RT_ID = Schema.SObjectType.Account__c.getRecordTypeInfosByDeveloperName().get('Client_Account').getRecordTypeId();
     public static final Id CONTRACT_PARTNERSHIP_RT_ID = Schema.SObjectType.Relationship__c.getRecordTypeInfosByDeveloperName().get('Contract_Partnership').getRecordTypeId();
 
 
     public static Account__c getPartnerAccount() {
-        Id partnerAccountRTId = Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('Partner_Account').getRecordTypeId();
+        Id partnerAccountRTId = Schema.SObjectType.Account__c.getRecordTypeInfosByDeveloperName().get('Partner_Account').getRecordTypeId();
         return [SELECT Id, RecordTypeId, Name FROM Account__c WHERE RecordTypeId = :PARTNER_ACCOUNT_RT_ID LIMIT 1];
     }
 

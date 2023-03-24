@@ -5,7 +5,7 @@ private class ContractHSUpdateBatchTest {
         List<Account__c> accounts = new List<Account__c>();
         for (Integer i=0; i<10; i++) {
             Account__c testAccount = new Account__c();
-            testAccount.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('Client_Account').getRecordTypeId();
+            testAccount.RecordTypeId = Schema.SObjectType.Account__c.getRecordTypeInfosByDeveloperName().get('Client_Account').getRecordTypeId();
             testAccount.Name = 'Test Batch Account' + i;
             testAccount.Type__c = 'Self Funded Employer';
             testAccount.Account_Type__c = 'Client';

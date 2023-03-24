@@ -4,7 +4,7 @@ global class ContractHSUpdateBatch implements Database.Batchable<sObject>, Datab
     
     global Database.QueryLocator start(Database.BatchableContext bc) {
         return Database.getQueryLocator('SELECT Id, Account__c FROM Contract__c WHERE (Account__r.RecordType.Name = \'Client Account\' OR Account__r.RecordType.Name = \'Partner Account\')' +
-                                        'AND RecordType.Name = \'Program Overview\' AND (Status != \'Terminated\' OR Status != \'Expired\') ');
+                                        'AND RecordType.Name = \'Program Overview\' AND (Status__c != \'Terminated\' OR Status__c != \'Expired\') ');
     }
     
     global void execute(Database.BatchableContext bc, List<Contract__c> scope){
