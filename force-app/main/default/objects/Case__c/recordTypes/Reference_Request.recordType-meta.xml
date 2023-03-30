@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reference_Request</fullName>
+    <active>true</active>
+    <businessProcess>Reference Request</businessProcess>
+    <compactLayoutAssignment>Reference_Request</compactLayoutAssignment>
+    <label>Reference Request</label>
+    <picklistValues>
+        <picklist>Case_Area__c</picklist>
+        <values>
+            <fullName>Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Error Message</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Page Layout%2FFields</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting%2FDashboard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Details__c</picklist>
+        <values>
+            <fullName>Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gainsight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NetSuite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spring CM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZaapIT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Team__c</picklist>
+        <values>
+            <fullName>B2B Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Success</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Science</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eligibility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enrollment Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member Support%2FOps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales - HSS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Type__c</picklist>
+        <values>
+            <fullName>Government %26 Labor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Plans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Market Employer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacy Benefit Managers %26 Consultants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-Insured Employers</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Livongo_Programs__c</picklist>
+        <values>
+            <fullName>CV Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DM Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DP Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Livongo for Behavioral Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Livongo for Diabetes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Livongo for Diabetes Prevention</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Livongo for Hypertension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Livongo for Weight Management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reference Request Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Other_Teams_Impacted__c</picklist>
+        <values>
+            <fullName>Billing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Success</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Science</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eligibility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enrollment Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member Support%2FOps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales - Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales - HSS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason__c</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Type__c</picklist>
+        <values>
+            <fullName>New Data Upload or Backfill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Dropdown Value</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Field%28s%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Enhancement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reference Request</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

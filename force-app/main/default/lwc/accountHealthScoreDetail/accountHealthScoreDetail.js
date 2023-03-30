@@ -19,7 +19,7 @@ export default class AccountHealthScoreDetail extends LightningElement {
     @track isLoaded = false;
 
     @wire(getRecord, { recordId: '$recordId', fields:[ACC_OVERALL_ACCOUNT_SCORE_FIELD, ACC_OVERALL_DM_SCORE_FIELD, ACC_OVERALL_HTN_SCORE_FIELD]})
-    account;
+    account__c;
 
     @wire(getHealthScores, {accountId: '$recordId'})
     wiredPrograms(value) {
@@ -64,30 +64,30 @@ export default class AccountHealthScoreDetail extends LightningElement {
     }
 
     get accountColor() {
-        if (this.account.data.fields.Overall_Account_Score__c.value >= 75) {
+        if (this.account__c.data.fields.LVGO__Overall_Account_Score__c.value >= 75) {
             return 'green'
         }
-        else if (this.account.data.fields.Overall_Account_Score__c.value >= 60 && this.account.data.fields.Overall_Account_Score__c.value < 75) {
+        else if (this.account__c.data.fields.LVGO__Overall_Account_Score__c.value >= 60 && this.account__c.data.fields.LVGO__Overall_Account_Score__c.value < 75) {
             return 'yellow'
         }
         return 'red';
     }
 
     get programDMColor() {
-        if (this.account.data.fields.Overall_DM_Score__c.value >= 75) {
+        if (this.account__c.data.fields.LVGO__Overall_DM_Score__c.value >= 75) {
             return 'green'
         }
-        else if (this.account.data.fields.Overall_DM_Score__c.value >= 60 && this.account.data.fields.Overall_DM_Score__c.value < 75) {
+        else if (this.account__c.data.fields.LVGO__Overall_DM_Score__c.value >= 60 && this.account__c.data.fields.LVGO__Overall_DM_Score__c.value < 75) {
             return 'yellow'
         }
         return 'red';
     }
 
     get programHTNColor() {
-        if (this.account.data.fields.Overall_HTN_Score__c.value >= 75) {
+        if (this.account__c.data.fields.LVGO__Overall_HTN_Score__c.value >= 75) {
             return 'green'
         }
-        else if (this.account.data.fields.Overall_HTN_Score__c.value >= 60 && this.account.data.fields.Overall_HTN_Score__c.value < 75) {
+        else if (this.account__c.data.fields.LVGO__Overall_HTN_Score__c.value >= 60 && this.account__c.data.fields.LVGO__Overall_HTN_Score__c.value < 75) {
             return 'yellow'
         }
         return 'red';
