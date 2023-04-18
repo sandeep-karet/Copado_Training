@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cases_for_review</fullName>
+    <columns>CASENUMBER__c</columns>
+    <columns>NAME</columns>
+    <columns>SUBJECT__c</columns>
+    <columns>STATUS__c</columns>
+    <columns>PRIORITY__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>STATUS__c</field>
+        <operation>equals</operation>
+        <value>Story in Jira,Closed</value>
+    </filters>
+    <filters>
+        <field>LAST_UPDATE</field>
+        <operation>lessOrEqual</operation>
+        <value>10/31/2020 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>LAST_UPDATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>8/1/2020 12:00 AM</value>
+    </filters>
+    <label>Cases_for_review</label>
+</ListView>

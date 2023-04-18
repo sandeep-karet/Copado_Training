@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>all_Campaigns</fullName>
+    <columns>NAME</columns>
+    <columns>ISACTIVE__c</columns>
+    <columns>START_DATE__c</columns>
+    <columns>END_DATE__c</columns>
+    <columns>TYPE__c</columns>
+    <columns>STATUS__c</columns>
+    <columns>BUDGETEDCOST__c</columns>
+    <columns>ACTUALCOST__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACTIVE</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <label>Inactive Campaigns</label>
+    <language>en_US</language>
+</ListView>

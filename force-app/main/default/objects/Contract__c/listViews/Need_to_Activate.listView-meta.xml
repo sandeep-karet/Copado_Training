@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Need_to_Activate</fullName>
+    <columns>Contract_Path__c</columns>
+    <columns>BillingPartner__c</columns>
+    <columns>ContractNumber__c</columns>
+    <columns>Legacy_Contract_Number__c</columns>
+    <columns>NAME</columns>
+    <columns>STATUS__c</columns>
+    <columns>Contract_Effective_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contract__c.Client_Overview</value>
+    </filters>
+    <filters>
+        <field>Contract_Path__c</field>
+        <operation>contains</operation>
+        <value>Illinois,Oklahoma,New Mexico,Texas,Montana</value>
+    </filters>
+    <filters>
+        <field>STATUS__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>HCSC Clean Up</label>
+</ListView>

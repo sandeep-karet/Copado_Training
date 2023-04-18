@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Overview_Edit</fullName>
+    <columns>ContractNumber__c</columns>
+    <columns>Legacy_Contract_Number__c</columns>
+    <columns>STATUS__c</columns>
+    <columns>STARTDATE__c</columns>
+    <columns>ENDDATE__c</columns>
+    <columns>Population_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Legacy_Contract_Number__c</field>
+        <operation>equals</operation>
+        <value>00008266,00014346,00014348,00008269,00008460,00014350,00014352,00008463,00008451,00014338,00014340,00008454,00014543,00014541,00008457,00014342,00014344</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contract__c.Client_Overview</value>
+    </filters>
+    <label>Contract Overview Edit</label>
+</ListView>

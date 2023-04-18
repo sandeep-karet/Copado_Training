@@ -9,8 +9,8 @@ public class ContractTriggerHandler {
     public static final Id PROGRAM_OVERVIEW_RT = Schema.SObjectType.Contract__c.getRecordTypeInfosByDeveloperName().get('Program_Overview').getRecordTypeId();
     
     public static void handleContractAfterInsert(List<Contract__c> newContracts) {
-        if (!Test.isRunningTest())
-            ContractService.chatterTechOps(null, newContracts, null, 'Insert');
+        if (!Test.isRunningTest()){}
+            //ContractService.chatterTechOps(null, newContracts, null, 'Insert');
     }
     
     public static void handleContractBeforeInsert(List<Contract__c> newContracts) { 
@@ -53,14 +53,14 @@ public class ContractTriggerHandler {
         }
         //Pass list of changed Contracts to ContractService class
         if (!initialContractsToRenew.isEmpty()) {
-            ContractService.autoCreateRenewalOpportunities(initialContractsToRenew);
+            //ContractService.autoCreateRenewalOpportunities(initialContractsToRenew);
         }
         
         //Tracking Fields and notifying TechOps Chatter Group
         final List<Schema.FieldSetMember> contractTrackedFields = SObjectType.Contract__c.FieldSets.HistoryTracking.getFields();
         if (!contractTrackedFields.isEmpty()) {
-            if (!Test.isRunningTest())
-                ContractService.chatterTechOps(oldContracts, newContracts, contractTrackedFields, 'Update');    
+            if (!Test.isRunningTest()){}
+                //ContractService.chatterTechOps(oldContracts, newContracts, contractTrackedFields, 'Update');    
         }
         
         if (!programsToUpdateHS.isEmpty()) {
@@ -82,7 +82,7 @@ public class ContractTriggerHandler {
         }
     }
     public static void handleContractAfterDelete(Map<Id, Contract__c> oldContracts) {
-        if (!Test.isRunningTest())
-            ContractService.chatterTechOps(oldContracts, null, null, 'Delete');
+        if (!Test.isRunningTest()){}
+            //ContractService.chatterTechOps(oldContracts, null, null, 'Delete');
     }
 }

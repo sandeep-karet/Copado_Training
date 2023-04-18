@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jeff_Test_List_2</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Work_Phone__c</columns>
+    <columns>EMAIL__c</columns>
+    <columns>TITLE__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Account__c.Account_Owner_Role__c</field>
+        <operation>contains</operation>
+        <value>Sales</value>
+    </filters>
+    <filters>
+        <field>Account__c.Account_Type__c</field>
+        <operation>equals</operation>
+        <value>Prospecting,Prospecting - Expressed Interest,Engaging,Former Client</value>
+    </filters>
+    <label>2020_05_WEBINAR_Mental_Health__COLD</label>
+</ListView>

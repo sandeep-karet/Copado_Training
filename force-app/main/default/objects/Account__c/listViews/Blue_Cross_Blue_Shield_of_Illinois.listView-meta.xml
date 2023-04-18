@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blue_Cross_Blue_Shield_of_Illinois</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>Account_ID_Long__c</columns>
+    <columns>NAME</columns>
+    <columns>SITE__c</columns>
+    <columns>Billing_State_Province__c</columns>
+    <columns>PHONE__c</columns>
+    <columns>TYPE__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>Blue Shield of Illinois</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>bcbs,blue shield</value>
+    </filters>
+    <label>Blue Cross Blue Shield of Illinois</label>
+</ListView>

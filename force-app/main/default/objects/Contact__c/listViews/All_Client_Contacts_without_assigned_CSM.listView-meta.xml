@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Client_Contacts_without_assigned_CSM</fullName>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>TITLE__c</columns>
+    <columns>EMAIL__c</columns>
+    <columns>Work_Phone__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Type_From_Account__c</field>
+        <operation>contains</operation>
+        <value>client</value>
+    </filters>
+    <filters>
+        <field>CSM_ID_From_Account__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Type_From_Account__c</field>
+        <operation>notContain</operation>
+        <value>payer/aso</value>
+    </filters>
+    <label>All Client Contacts without assigned CSM</label>
+</ListView>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SpringCM_Workflow_Errors</fullName>
+    <columns>CASENUMBER__c</columns>
+    <columns>NAME</columns>
+    <columns>SUBJECT__c</columns>
+    <columns>STATUS__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATEDDATE__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>SpringCm</value>
+    </filters>
+    <filters>
+        <field>SUBJECT__c</field>
+        <operation>equals</operation>
+        <value>Error in your workflow</value>
+    </filters>
+    <label>SpringCM Workflow Errors</label>
+</ListView>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unassigned_CSM_Requests</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>Contract_Path__c</columns>
+    <columns>OWNER__c</columns>
+    <columns>Livongo_for_Diabetes_PwDs__c</columns>
+    <columns>CIM__c</columns>
+    <columns>Request_CIM__c</columns>
+    <columns>Request_CSM__c</columns>
+    <columns>CloseDate__c</columns>
+    <columns>Launch_Date__c</columns>
+    <columns>STAGENAME__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CIM__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Livongo_for_Diabetes_PwDs__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>STAGENAME__c</field>
+        <operation>notEqual</operation>
+        <value>Closed Lost,Closed No Decision</value>
+    </filters>
+    <filters>
+        <field>TYPE__c</field>
+        <operation>equals</operation>
+        <value>New Business,Expansion,Cross-sell (New product)</value>
+    </filters>
+    <filters>
+        <field>Request_CIM__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Unassigned CIM Requests</label>
+</ListView>

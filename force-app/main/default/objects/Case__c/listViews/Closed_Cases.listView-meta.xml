@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Cases</fullName>
+    <columns>CASENUMBER__c</columns>
+    <columns>NAME</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CLOSEDDATE__c</columns>
+    <columns>SUBJECT__c</columns>
+    <columns>Case_Team__c</columns>
+    <columns>STATUS__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>STATUS__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <label>Closed Cases</label>
+</ListView>

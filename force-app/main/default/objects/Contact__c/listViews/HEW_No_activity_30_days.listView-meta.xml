@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HEW_No_activity_30_days</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Work_Phone__c</columns>
+    <columns>EMAIL__c</columns>
+    <columns>TITLE__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>LAST_ACTIVITY</field>
+        <operation>lessThan</operation>
+        <value>8/29/2020</value>
+    </filters>
+    <filters>
+        <field>Account__c.Account_Type__c</field>
+        <operation>notEqual</operation>
+        <value>Client</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT__c</field>
+        <operation>notEqual</operation>
+        <value>USI Insurance - Charlotte,NC,Arthur J. Gallagher - Chicago,Mercer - Atlanta,Buck - Atlanta,OurHealth,Caremark,Mercer - Charlotte,BMC,Aon - Atlanta,Epic Brokers</value>
+    </filters>
+    <filters>
+        <field>Account__c.Account_Type__c</field>
+        <operation>notEqual</operation>
+        <value>Engaging</value>
+    </filters>
+    <label>HEW No activity 30 days</label>
+</ListView>

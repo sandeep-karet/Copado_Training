@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Client_Overviews_Downmarkets</fullName>
+    <columns>ContractNumber__c</columns>
+    <columns>Legacy_Contract_Number__c</columns>
+    <columns>NAME</columns>
+    <columns>STATUS__c</columns>
+    <columns>STARTDATE__c</columns>
+    <columns>ENDDATE__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Population_Type__c</field>
+        <operation>equals</operation>
+        <value>ASO downmarket,Non-HSS Downmarket</value>
+    </filters>
+    <label>All Client Overviews - Downmarkets</label>
+</ListView>

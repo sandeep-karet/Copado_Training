@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllActivatedContracts</fullName>
+    <columns>ContractNumber__c</columns>
+    <columns>Legacy_Contract_Number__c</columns>
+    <columns>NAME</columns>
+    <columns>STATUS__c</columns>
+    <columns>Contract_Effective_Date__c</columns>
+    <columns>Contract_Termination_Date__c</columns>
+    <columns>Eligibility_Verification_Method__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>STATUS__c</field>
+        <operation>equals</operation>
+        <value>Active,Activate</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contract__c.Client_Overview</value>
+    </filters>
+    <label>Active Client Overviews</label>
+</ListView>

@@ -37,7 +37,7 @@
                 <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A8_6725395996</name>
+        <name>formula_2_myRule_1_A8_4275603938</name>
         <dataType>String</dataType>
         <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
@@ -48,7 +48,7 @@
                 <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A7_3587763942</name>
+        <name>formula_3_myRule_1_A7_1578239010</name>
         <dataType>String</dataType>
         <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
@@ -59,7 +59,7 @@
                 <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A6_3073938153</name>
+        <name>formula_4_myRule_1_A6_9122667430</name>
         <dataType>String</dataType>
         <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
@@ -70,7 +70,7 @@
                 <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_1_A5_6489819887</name>
+        <name>formula_5_myRule_1_A5_4774250352</name>
         <dataType>String</dataType>
         <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
@@ -81,7 +81,7 @@
                 <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_6_myRule_1_A4_4719477689</name>
+        <name>formula_6_myRule_1_A4_1366227990</name>
         <dataType>String</dataType>
         <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
@@ -92,7 +92,7 @@
                 <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_7_myRule_1_A3_5512127809</name>
+        <name>formula_7_myRule_1_A3_1482139879</name>
         <dataType>String</dataType>
         <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
@@ -103,7 +103,7 @@
                 <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_8_myRule_1_A2_9762654383</name>
+        <name>formula_8_myRule_1_A2_8079441048</name>
         <dataType>String</dataType>
         <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
@@ -114,7 +114,7 @@
                 <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_9_myRule_1_A1_8810626913</name>
+        <name>formula_9_myRule_1_A1_2737290906</name>
         <dataType>String</dataType>
         <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
@@ -124,8 +124,8 @@
             <value>
                 <stringValue>AND(
  ISNEW(),
- [LVGO__Contract__c].RecordTypeId = $Label.LVGO__Program_Agreement_Record_Type,
- [LVGO__Contract__c].LVGO__Is_Cloned__c = FALSE
+ [Contract__c].RecordTypeId = $Label.LVGO__Program_Agreement_Record_Type,
+ [Contract__c].LVGO__Is_Cloned__c = FALSE
 )</stringValue>
             </value>
         </processMetadataValues>
@@ -133,11 +133,11 @@
         <dataType>Boolean</dataType>
         <expression>AND(
  ISNEW(),
- {!myVariable_current.RecordTypeId} = {!$Label.LVGO__Program_Agreement_Record_Type},
- {!myVariable_current.Is_Cloned__c} = FALSE
+ {!myVariable_current.RecordTypeId} = {!$Label.Program_Agreement_Record_Type},
+ {!myVariable_current.Is_Cloned__c} = FALSE 
 )</expression>
     </formulas>
-    <interviewLabel>Contract_Relationship_Management-3_InterviewLabel</interviewLabel>
+    <interviewLabel>Contract_Relationship_Management-1_InterviewLabel</interviewLabel>
     <label>Contract - Relationship Management</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -277,7 +277,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_9_myRule_1_A1_8810626913</elementReference>
+                <elementReference>formula_9_myRule_1_A1_2737290906</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -389,7 +389,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_8_myRule_1_A2_9762654383</elementReference>
+                <elementReference>formula_8_myRule_1_A2_8079441048</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -537,7 +537,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_7_myRule_1_A3_5512127809</elementReference>
+                <elementReference>formula_7_myRule_1_A3_1482139879</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -649,7 +649,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_6_myRule_1_A4_4719477689</elementReference>
+                <elementReference>formula_6_myRule_1_A4_1366227990</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -761,7 +761,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_5_myRule_1_A5_6489819887</elementReference>
+                <elementReference>formula_5_myRule_1_A5_4774250352</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -873,7 +873,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_4_myRule_1_A6_3073938153</elementReference>
+                <elementReference>formula_4_myRule_1_A6_9122667430</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -985,7 +985,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_3_myRule_1_A7_3587763942</elementReference>
+                <elementReference>formula_3_myRule_1_A7_1578239010</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1097,7 +1097,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_2_myRule_1_A8_6725395996</elementReference>
+                <elementReference>formula_2_myRule_1_A8_4275603938</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1244,7 +1244,7 @@
             </processMetadataValues>
             <field>EML__c</field>
             <value>
-                <elementReference>myVariable_current.Account__c.EML__c</elementReference>
+                <elementReference>myVariable_current.Account__r.EML__c</elementReference>
             </value>
         </inputAssignments>
         <object>Contract__c</object>

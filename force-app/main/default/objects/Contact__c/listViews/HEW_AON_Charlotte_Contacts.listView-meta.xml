@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HEW_AON_Charlotte_Contacts</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>TITLE__c</columns>
+    <columns>Work_Phone__c</columns>
+    <columns>EMAIL__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT__c</field>
+        <operation>equals</operation>
+        <value>AON - Charlotte</value>
+    </filters>
+    <label>HEW_AON-Charlotte Contacts</label>
+</ListView>

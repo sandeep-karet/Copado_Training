@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Program_Overviews_all_statuses</fullName>
+    <columns>ContractNumber__c</columns>
+    <columns>Legacy_Contract_Number__c</columns>
+    <columns>NAME</columns>
+    <columns>Program_Name__c</columns>
+    <columns>STATUS__c</columns>
+    <columns>Program_Start_Date__c</columns>
+    <columns>Program_End_Date__c</columns>
+    <columns>ContractRenewalDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contract__c.Program_Overview</value>
+    </filters>
+    <label>All Program Overviews (all statuses)</label>
+</ListView>

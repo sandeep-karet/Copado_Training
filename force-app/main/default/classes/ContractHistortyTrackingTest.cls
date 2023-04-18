@@ -25,7 +25,7 @@ public class ContractHistortyTrackingTest {
         newContracts.add(newProgramOverview);
         insert newContracts;
         
-        ContractService.chatterTechOps(null, newContracts, null, 'Insert');
+        //ContractService.chatterTechOps(null, newContracts, null, 'Insert');
         system.assertEquals(1, newContracts.size());
     }
     
@@ -53,7 +53,7 @@ public class ContractHistortyTrackingTest {
             oldContracts.put(oldCon.Id, oldCon);
         }
         
-        ContractService.chatterTechOps(oldContracts, null, null, 'Delete');
+        //ContractService.chatterTechOps(oldContracts, null, null, 'Delete');
         system.assertEquals(1, oldContracts.size());
     }
 }

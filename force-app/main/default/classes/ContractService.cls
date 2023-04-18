@@ -71,12 +71,14 @@ global class ContractService {
         wpMappings = wpMappingMap;
     }
     
-    /*
+    /* Removing this feature as part of LV Collapse
 * Main method called from the ContractTriggerHandler class.  Handles initial queries for key objects and data
 * that will be needed throughout this class.  Handles delegation of creation of objects through calls to
 * other methods and overall primary handling of business logic.
 */
-    public static void autoCreateRenewalOpportunities(List<Contract__c> contracts) {
+   /* Commenting the renewal logic as part of LV Collapse */
+    
+    /*  public static void autoCreateRenewalOpportunities(List<Contract__c> contracts) {
         //Iterate through POs and add unique Client Overviews to a set
         Set<Id> clientOverviewIds = new Set<Id>();
         for (Contract__c c : contracts) {
@@ -190,14 +192,14 @@ global class ContractService {
         findAndUpdateExistingOpportunityPrograms(helperMap.values());
         
         createAndInsertOpportunityPrograms(helperMap.values(), programIdsToPriceBookEntryIds);
-    }
+    } */
     
     /*
 * Finds existing Opportunity/Opportunities based on each Program Overview's End Date, as well as the corresponding Client Overview's Contract__c Path and Account.
 * If an Opportunity__c is found, set Opportunity__c to the found Opportunity, and update the name by appending the Family from the current PO to the Opp name.
 * Finally, update the Opportunity/Opportunities.
 */
-    public static void findAndUpdateExistingOpportunities(List<ContractRenewalHelper> helpers, Set<Id> accountIds) {
+   /* public static void findAndUpdateExistingOpportunities(List<ContractRenewalHelper> helpers, Set<Id> accountIds) {
         //Map each Program Overview to the Opportunity__c it will be associated with
         Set<Id> updatedSetOpps = new Set<Id>();
         Map<Id, Opportunity__c> updatedMapOpps = new Map<Id, Opportunity__c>();
@@ -228,13 +230,13 @@ global class ContractService {
                 System.debug('An exception occurred: ' + ex.getMessage());
             }
         }
-    }
+    } */
     
     /*
 * Stub out new Opportunity/Opportunities with defined criteria from the POs/COs and insert these new Opportunity/Opportunities.
 * @return list of these newly created Opportunity__c objects.
 */
-    public static List<Opportunity__c> createAndInsertNewOpportunities(List<ContractRenewalHelper> helpers, Id pbId) {
+  /*  public static List<Opportunity__c> createAndInsertNewOpportunities(List<ContractRenewalHelper> helpers, Id pbId) {
         //Stub out remaining Opportunities for POs without an associated Opportunity
         Opportunity__c oppStub;
         Set<Opportunity__c> oppStubs = new Set<Opportunity__c>();
@@ -337,7 +339,7 @@ global class ContractService {
             }
         }
         return newOpps;
-    }
+    } */
     
     /*
 * Finds existing Opportunity__c Programs for the Opportunities associated with each
@@ -347,7 +349,7 @@ global class ContractService {
 * are created by finding any existing Opportunity__c Programs under a Program Overview's
 * associated Opportunity__c based on the Program Id (Product2Id)
 */
-    public static void findAndUpdateExistingOpportunityPrograms(List<ContractRenewalHelper> helpers) {
+   /* public static void findAndUpdateExistingOpportunityPrograms(List<ContractRenewalHelper> helpers) {
         Set<Id> oppIds = new Set<Id>();
         Map<Id, List<OpportunityLineItem__c>> opportunityToOppPrograms = new Map<Id, List<OpportunityLineItem__c>>();
         for (ContractRenewalHelper h : helpers) {
@@ -367,12 +369,12 @@ global class ContractService {
                 }
             }
         }
-    }
+    } */
     
     /*
 * Create an Opportunity__c Program (OpportunityLineItem) for each Program Overview with defined criteria and insert these new Opportunity__c Program(s).
 */
-    public static void createAndInsertOpportunityPrograms(List<ContractRenewalHelper> helpers, Map<Id, Id> programIdsToPriceBookEntryIds) {
+  /*  public static void createAndInsertOpportunityPrograms(List<ContractRenewalHelper> helpers, Map<Id, Id> programIdsToPriceBookEntryIds) {
         //Create a new Opp Program for each PO
         //Map each Program Overview to its corresponding Opportunity__c Program
         List<OpportunityLineItem__c> oppPrograms = new List<OpportunityLineItem__c>();
@@ -424,13 +426,13 @@ global class ContractService {
                 System.debug('An exception occurred: ' + ex.getMessage());
             }
         }
-    }
+    } */
     
     /*
 * Update the Opportunity__c name with the new program family name
 * @return the updated String for the Opportunity__c name
 */
-    public static String updateOppNameWithNewProgram(String oppName, String programFamily, Boolean wholePersonSolution) {
+   /* public static String updateOppNameWithNewProgram(String oppName, String programFamily, Boolean wholePersonSolution) {
         Boolean keepAutoRenewalInName = false;
         if (oppName.contains('Auto-renewal')) {
             oppName = oppName.substring(0, oppName.lastIndexOf(' - '));
@@ -459,7 +461,7 @@ global class ContractService {
             oppName = oppName.substring(0, 120);
         }
         return oppName;
-    }
+    } */
     
     //Creating related Client Overview and Program Overview
     //Invocable Methods called from Opportunity__c Process Builder and Create Client Overview Bundle button on Opportunity
@@ -789,9 +791,10 @@ global class ContractService {
             }
         }
     }
+    /* Removing as part of Lv Collapse
     //Chatter in the TechOps group for field tracking
     //Create chatter notifications based on the type of operation type
-    public static void chatterTechOps(Map<Id, Contract__c> oldContracts, List<Contract__c> newContracts, List<Schema.FieldSetMember> contractTrackedFields, String operationType) {
+   /* public static void chatterTechOps(Map<Id, Contract__c> oldContracts, List<Contract__c> newContracts, List<Schema.FieldSetMember> contractTrackedFields, String operationType) {
         List<ConnectApi.BatchInput> batchInputs = new List<ConnectApi.BatchInput>();
         CollaborationGroup chatterGroup;
         List<CollaborationGroup> chatterGroupList = [SELECT Id, Name from CollaborationGroup WHERE Name = 'TechOps' LIMIT 1];
@@ -864,7 +867,7 @@ global class ContractService {
         feedItemInput.feedElementType = ConnectApi.FeedElementType.FeedItem;
         feedItemInput.subjectId = recordId == null ? 'me' : recordId;
         return feedItemInput;
-    }
+    } */
     
     public static void updateHealthScores(List<Contract__c> newContracts) {
         Set<Id> accIdSet = new Set<Id>();
@@ -994,10 +997,10 @@ global class ContractService {
         }
     }
     
-    /*
+    /* Commenting as part of removing Opp Renewal 
     * Inner class used to store key data that will be used/reused throughout the ContractService class.
     */
-    public class ContractRenewalHelper {
+   /* public class ContractRenewalHelper {
         public Contract__c programOverview { get; set; }
         public Contract__c clientOverview { get; set; }
         public Product2 program { get; set; }
@@ -1009,5 +1012,5 @@ global class ContractService {
             this.programOverview = programOverview;
             this.disableTeleTherapy = false;
         }
-    }
+    } */
 }
