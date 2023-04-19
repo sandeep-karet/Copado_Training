@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_Question_Group__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Dictates what questions must be done per insurance.</inlineHelpText>
+    <label>Insurance Question Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Include All Insurance Questions</fullName>
+                <default>false</default>
+                <label>Include All Insurance Questions</label>
+            </value>
+            <value>
+                <fullName>Include Policy Holder Group Id To Base Insurance Questions</fullName>
+                <default>false</default>
+                <label>Include Policy Holder Group Id To Base Insurance Questions</label>
+            </value>
+            <value>
+                <fullName>Skip Policy Group Id From All Insurance Questions</fullName>
+                <default>false</default>
+                <label>Skip Policy Group Id From All Insurance Questions</label>
+            </value>
+            <value>
+                <fullName>Skip Policy Holder Name From All Insurance Questions</fullName>
+                <default>false</default>
+                <label>Skip Policy Holder Name From All Insurance Questions</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
