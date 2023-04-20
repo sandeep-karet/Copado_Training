@@ -11,6 +11,7 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
+        <controllingField>Campaign_Type__c</controllingField>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
@@ -54,6 +55,56 @@
                 <default>false</default>
                 <label>2021 OEP Reduced</label>
             </value>
+            <value>
+                <fullName>Optimized Enrollment Plan</fullName>
+                <default>false</default>
+                <label>Optimized Enrollment Plan</label>
+            </value>
+            <value>
+                <fullName>OEP Lite</fullName>
+                <default>false</default>
+                <label>OEP Lite</label>
+            </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Standard</controllingFieldValue>
+            <valueName>Optimized Enrollment Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Standard</controllingFieldValue>
+            <valueName>OEP Lite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Custom</controllingFieldValue>
+            <valueName>2021 OEP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Custom</controllingFieldValue>
+            <valueName>Client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Custom</controllingFieldValue>
+            <valueName>Medicaid</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Custom</controllingFieldValue>
+            <valueName>Medicare</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Custom</controllingFieldValue>
+            <valueName>Partnership</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Custom</controllingFieldValue>
+            <valueName>Partnership SPA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Custom</controllingFieldValue>
+            <valueName>Reduced OEP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Custom</controllingFieldValue>
+            <valueName>2021 OEP Reduced</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>
