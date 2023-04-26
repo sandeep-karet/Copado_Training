@@ -3,7 +3,7 @@
     <fullName>Require_Account_Type_to_be_Mandatory</fullName>
     <active>false</active>
     <description>Requires the user to select &quot;Account Type&quot; when editing account record</description>
-    <errorConditionFormula>ISBLANK(TEXT(  Account_Type__c  ))</errorConditionFormula>
+    <errorConditionFormula>AND(ISBLANK(TEXT(  Account_Type__c  )),$Setup.LVGO_Automation_Switch__c.Validations__c)</errorConditionFormula>
     <errorDisplayField>Account_Type__c</errorDisplayField>
     <errorMessage>Please select the type of this account (i.e. - Prospect, Client, Former Client, Partner)</errorMessage>
 </ValidationRule>

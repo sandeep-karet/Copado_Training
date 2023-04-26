@@ -3,7 +3,7 @@
     <fullName>Legal_and_Admins_only_can_change_status</fullName>
     <active>true</active>
     <description>Only a Legal User or an Admin should be able to change the status of a contract record (Client Overview or Program Overview)</description>
-    <errorConditionFormula>AND(ISCHANGED( Status__c ),
+    <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c,ISCHANGED( Status__c ),
 				 $UserRole.Name  &lt;&gt; &quot;Legal&quot;, 
 							$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
 			    $Profile.Name &lt;&gt; &quot;Sales Ops&quot;)</errorConditionFormula>

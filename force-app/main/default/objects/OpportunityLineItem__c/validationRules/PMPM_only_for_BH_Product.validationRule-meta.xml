@@ -3,8 +3,8 @@
     <fullName>PMPM_only_for_BH_Product</fullName>
     <active>true</active>
     <description>PMPM rate can only be edited for BH 2.0 product</description>
-    <errorConditionFormula>AND(ISCHANGED(PMPM__c), 
-NOT(ISPICKVAL(Product2__r.Family, &apos;Behavioral Health&apos;)))</errorConditionFormula>
+    <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c,ISCHANGED(PMPM__c), 
+            NOT(ISPICKVAL(Product2__r.Family, &apos;Behavioral Health&apos;)))</errorConditionFormula>
     <errorDisplayField>PMPM__c</errorDisplayField>
     <errorMessage>PMPM should only be entered for Behavioral Health products</errorMessage>
 </ValidationRule>

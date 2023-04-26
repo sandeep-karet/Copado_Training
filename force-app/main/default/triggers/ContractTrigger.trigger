@@ -5,6 +5,8 @@
 */
 
 trigger ContractTrigger on Contract__c (after insert, before insert, after update, before delete, after delete) {
+    LVGO_Automation_Switch__c switchFlg = LVGO_Automation_Switch__c.getInstance();
+    if(switchFlg != null && switchFlg.Triggers__c){
     if (Trigger.isAfter && Trigger.isInsert) {
         ContractTriggerHandler.handleContractAfterInsert(Trigger.new);
     }
@@ -19,5 +21,6 @@ trigger ContractTrigger on Contract__c (after insert, before insert, after updat
     }
     if (Trigger.isAfter && Trigger.isDelete){
         ContractTriggerHandler.handleContractAfterDelete(Trigger.oldMap);
+    }
     }
 }

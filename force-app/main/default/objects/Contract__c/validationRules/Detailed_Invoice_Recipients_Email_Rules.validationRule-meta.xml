@@ -3,6 +3,7 @@
     <fullName>Detailed_Invoice_Recipients_Email_Rules</fullName>
     <active>false</active>
     <errorConditionFormula>ISCHANGED(Detailed_Invoice_Recipients__c)
+&amp;&amp;  $Setup.LVGO_Automation_Switch__c.Validations__c
 &amp;&amp; NOT(ISBLANK(Detailed_Invoice_Recipients__c))
 &amp;&amp; NOT( REGEX( Detailed_Invoice_Recipients__c , &quot;([A-Za-z0-9]+([!#$%&amp;&apos;*+-/=?^_`{|}~]*[A-Za-z0-9]+)*@[A-Za-z0-9\\-]+(\\.[A-Za-z0-9\\-]+)*[ ]*[,;]?[ ]*)+&quot;
 

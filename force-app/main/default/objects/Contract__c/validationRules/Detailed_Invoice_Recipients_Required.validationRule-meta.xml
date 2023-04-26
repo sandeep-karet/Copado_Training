@@ -3,7 +3,8 @@
     <fullName>Detailed_Invoice_Recipients_Required</fullName>
     <active>true</active>
     <description>Detailed Invoice Recipients required when Detailed Invoice checkbox is checked.</description>
-    <errorConditionFormula>AND(ISCHANGED(Detailed_Invoice__c), 
+    <errorConditionFormula>AND(ISCHANGED(Detailed_Invoice__c),
+$Setup.LVGO_Automation_Switch__c.Validations__c, 
 Detailed_Invoice__c == TRUE,  
 ISBLANK(Detailed_Invoice_Recipients__c))</errorConditionFormula>
     <errorMessage>Detailed Invoice Recipients are required when Detailed Invoice is checked</errorMessage>

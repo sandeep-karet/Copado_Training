@@ -4,6 +4,6 @@
     <active>true</active>
     <description>Answer1 Response is required if the Answer1 Action is Email</description>
     <errorConditionFormula>AND(ISPICKVAL(Answer1_Action__c, &apos;Send Email&apos;),
-				ISBLANK(Answer1_Response__c))</errorConditionFormula>
+                    ISBLANK(Answer1_Response__c),$Setup.LVGO_Automation_Switch__c.Validations__c)</errorConditionFormula>
     <errorMessage>Answer1 Response is required if the Answer1 Action is &quot;Send Email&quot;.</errorMessage>
 </ValidationRule>

@@ -4,7 +4,7 @@
     <active>true</active>
     <description>If CVS Campaign&apos;s Risk Color is populated, Conversation Had With? must be populated. You can chose &quot;N/A&quot;. If you are unable to update this field, please reach out to your Client Success Manager.</description>
     <errorConditionFormula>NOT(ISBLANK(TEXT( Risk_Color__c)))
-&amp;&amp;  ISBLANK(Conversation_had_with__c )</errorConditionFormula>
+    &amp;&amp;  ISBLANK(Conversation_had_with__c ) &amp;&amp; $Setup.LVGO_Automation_Switch__c.Validations__c</errorConditionFormula>
     <errorDisplayField>Conversation_had_with__c</errorDisplayField>
     <errorMessage>If CVS Campaign&apos;s Risk Color is populated, Conversation Had With? must be populated. You can chose &quot;N/A&quot;. If you are unable to update this field, please reach out to your Client Success Manager.</errorMessage>
 </ValidationRule>

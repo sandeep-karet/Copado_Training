@@ -3,6 +3,7 @@
     <fullName>Check_Forecast_Manager_Call</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
+ $Setup.LVGO_Automation_Switch__c.Validations__c,
  ISPICKVAL( Forecast_Manager_Call__c , &apos;Forecast - Closed&apos;),
  NOT(ISPICKVAL( StageName__c , &apos;Closed Won&apos;)),
  NOT(ISPICKVAL(Source__c, &apos;TD&apos;)))</errorConditionFormula>

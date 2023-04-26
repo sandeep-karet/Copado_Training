@@ -4,6 +4,7 @@
     <active>true</active>
     <description>Regular Users (Non-Admin/Non-Legal user) should not be allowed to edit ANY fields on a Contract if its Status is either Expired or Terminated.</description>
     <errorConditionFormula>AND(
+$Setup.LVGO_Automation_Switch__c.Validations__c,
 NOT(
 OR(
 $UserRole.Name = &quot;Legal&quot;, 

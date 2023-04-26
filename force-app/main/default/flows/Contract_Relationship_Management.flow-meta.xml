@@ -12,6 +12,9 @@
         <label>myDecision</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision2</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_1</name>
@@ -26,6 +29,34 @@
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
+            <label>Is Process On</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision2</name>
+        <label>myDecision2</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_3</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_3_A1</targetReference>
+            </connector>
             <label>Client Overview is Created</label>
         </rules>
     </decisions>
@@ -34,89 +65,100 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
+                <stringValue>$Label.Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A8_4275603938</name>
+        <name>formula_10_myRule_3_A2_9673150485</name>
         <dataType>String</dataType>
-        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
+        <expression>{!$Label.Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
+                <stringValue>$Label.Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A7_1578239010</name>
+        <name>formula_11_myRule_3_A1_1150403006</name>
         <dataType>String</dataType>
-        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
+        <expression>{!$Label.Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
+                <stringValue>$Label.Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A6_9122667430</name>
+        <name>formula_4_myRule_3_A8_6332339033</name>
         <dataType>String</dataType>
-        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
+        <expression>{!$Label.Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
+                <stringValue>$Label.Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_1_A5_4774250352</name>
+        <name>formula_5_myRule_3_A7_3736257831</name>
         <dataType>String</dataType>
-        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
+        <expression>{!$Label.Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
+                <stringValue>$Label.Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_6_myRule_1_A4_1366227990</name>
+        <name>formula_6_myRule_3_A6_1742217240</name>
         <dataType>String</dataType>
-        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
+        <expression>{!$Label.Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
+                <stringValue>$Label.Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_7_myRule_1_A3_1482139879</name>
+        <name>formula_7_myRule_3_A5_9905694371</name>
         <dataType>String</dataType>
-        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
+        <expression>{!$Label.Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
+                <stringValue>$Label.Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_8_myRule_1_A2_8079441048</name>
+        <name>formula_8_myRule_3_A4_2877510400</name>
         <dataType>String</dataType>
-        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
+        <expression>{!$Label.Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
+                <stringValue>$Label.Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_9_myRule_1_A1_2737290906</name>
+        <name>formula_9_myRule_3_A3_6682183376</name>
         <dataType>String</dataType>
-        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
+        <expression>{!$Label.Contract_Partner_Role}</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>NOT($Setup.LVGO_Automation_Switch__c.ProcessBuilders__c )</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT({!$Setup.LVGO_Automation_Switch__c.ProcessBuilders__c} )</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
@@ -124,20 +166,20 @@
             <value>
                 <stringValue>AND(
  ISNEW(),
- [Contract__c].RecordTypeId = $Label.LVGO__Program_Agreement_Record_Type,
- [Contract__c].LVGO__Is_Cloned__c = FALSE
+ [Contract__c].RecordTypeId = $Label.Program_Agreement_Record_Type,
+ [Contract__c].Is_Cloned__c = FALSE
 )</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_myRule_1</name>
+        <name>formula_myRule_3</name>
         <dataType>Boolean</dataType>
         <expression>AND(
  ISNEW(),
  {!myVariable_current.RecordTypeId} = {!$Label.Program_Agreement_Record_Type},
- {!myVariable_current.Is_Cloned__c} = FALSE 
+ {!myVariable_current.Is_Cloned__c} = FALSE
 )</expression>
     </formulas>
-    <interviewLabel>Contract_Relationship_Management-1_InterviewLabel</interviewLabel>
+    <interviewLabel>Contract_Relationship_Management-2_InterviewLabel</interviewLabel>
     <label>Contract - Relationship Management</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -165,12 +207,12 @@
     </processMetadataValues>
     <processType>Workflow</processType>
     <recordCreates>
-        <name>myRule_1_A1</name>
+        <name>myRule_3_A1</name>
         <label>Billing Partner</label>
-        <locationX>100</locationX>
+        <locationX>300</locationX>
         <locationY>200</locationY>
         <connector>
-            <targetReference>myRule_1_A2</targetReference>
+            <targetReference>myRule_3_A2</targetReference>
         </connector>
         <inputAssignments>
             <processMetadataValues>
@@ -277,7 +319,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_9_myRule_1_A1_2737290906</elementReference>
+                <elementReference>formula_11_myRule_3_A1_1150403006</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -313,12 +355,12 @@
         <object>Relationship__c</object>
     </recordCreates>
     <recordCreates>
-        <name>myRule_1_A2</name>
+        <name>myRule_3_A2</name>
         <label>Care Coordinator</label>
-        <locationX>100</locationX>
+        <locationX>300</locationX>
         <locationY>300</locationY>
         <connector>
-            <targetReference>myRule_1_A3</targetReference>
+            <targetReference>myRule_3_A3</targetReference>
         </connector>
         <inputAssignments>
             <processMetadataValues>
@@ -389,7 +431,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_8_myRule_1_A2_8079441048</elementReference>
+                <elementReference>formula_10_myRule_3_A2_9673150485</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -425,12 +467,12 @@
         <object>Relationship__c</object>
     </recordCreates>
     <recordCreates>
-        <name>myRule_1_A3</name>
+        <name>myRule_3_A3</name>
         <label>Contract Path</label>
-        <locationX>100</locationX>
+        <locationX>300</locationX>
         <locationY>400</locationY>
         <connector>
-            <targetReference>myRule_1_A4</targetReference>
+            <targetReference>myRule_3_A4</targetReference>
         </connector>
         <inputAssignments>
             <processMetadataValues>
@@ -537,7 +579,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_7_myRule_1_A3_1482139879</elementReference>
+                <elementReference>formula_9_myRule_3_A3_6682183376</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -573,12 +615,12 @@
         <object>Relationship__c</object>
     </recordCreates>
     <recordCreates>
-        <name>myRule_1_A4</name>
+        <name>myRule_3_A4</name>
         <label>Eligibility Partner</label>
-        <locationX>100</locationX>
+        <locationX>300</locationX>
         <locationY>500</locationY>
         <connector>
-            <targetReference>myRule_1_A5</targetReference>
+            <targetReference>myRule_3_A5</targetReference>
         </connector>
         <inputAssignments>
             <processMetadataValues>
@@ -649,7 +691,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_6_myRule_1_A4_1366227990</elementReference>
+                <elementReference>formula_8_myRule_3_A4_2877510400</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -685,12 +727,12 @@
         <object>Relationship__c</object>
     </recordCreates>
     <recordCreates>
-        <name>myRule_1_A5</name>
+        <name>myRule_3_A5</name>
         <label>Data - Email</label>
-        <locationX>100</locationX>
+        <locationX>300</locationX>
         <locationY>600</locationY>
         <connector>
-            <targetReference>myRule_1_A6</targetReference>
+            <targetReference>myRule_3_A6</targetReference>
         </connector>
         <inputAssignments>
             <processMetadataValues>
@@ -761,7 +803,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_5_myRule_1_A5_4774250352</elementReference>
+                <elementReference>formula_7_myRule_3_A5_9905694371</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -797,12 +839,12 @@
         <object>Relationship__c</object>
     </recordCreates>
     <recordCreates>
-        <name>myRule_1_A6</name>
+        <name>myRule_3_A6</name>
         <label>Data - Medical Claims</label>
-        <locationX>100</locationX>
+        <locationX>300</locationX>
         <locationY>700</locationY>
         <connector>
-            <targetReference>myRule_1_A7</targetReference>
+            <targetReference>myRule_3_A7</targetReference>
         </connector>
         <inputAssignments>
             <processMetadataValues>
@@ -873,7 +915,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_4_myRule_1_A6_9122667430</elementReference>
+                <elementReference>formula_6_myRule_3_A6_1742217240</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -909,12 +951,12 @@
         <object>Relationship__c</object>
     </recordCreates>
     <recordCreates>
-        <name>myRule_1_A7</name>
+        <name>myRule_3_A7</name>
         <label>Data - Pharmacy Claims</label>
-        <locationX>100</locationX>
+        <locationX>300</locationX>
         <locationY>800</locationY>
         <connector>
-            <targetReference>myRule_1_A8</targetReference>
+            <targetReference>myRule_3_A8</targetReference>
         </connector>
         <inputAssignments>
             <processMetadataValues>
@@ -985,7 +1027,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_3_myRule_1_A7_1578239010</elementReference>
+                <elementReference>formula_5_myRule_3_A7_3736257831</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1021,12 +1063,12 @@
         <object>Relationship__c</object>
     </recordCreates>
     <recordCreates>
-        <name>myRule_1_A8</name>
+        <name>myRule_3_A8</name>
         <label>Data - Eligibility File</label>
-        <locationX>100</locationX>
+        <locationX>300</locationX>
         <locationY>900</locationY>
         <connector>
-            <targetReference>myRule_1_A9</targetReference>
+            <targetReference>myRule_3_A9</targetReference>
         </connector>
         <inputAssignments>
             <processMetadataValues>
@@ -1097,7 +1139,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_2_myRule_1_A8_4275603938</elementReference>
+                <elementReference>formula_4_myRule_3_A8_6332339033</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1136,6 +1178,136 @@
         <processMetadataValues>
             <name>evaluationType</name>
             <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Contract__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Dummy Action</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Created By ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>CreatedById</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Name</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Name</field>
+            <value>
+                <stringValue>Test</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Contract__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
                 <stringValue>always</stringValue>
             </value>
         </processMetadataValues>
@@ -1157,9 +1329,9 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_1_A9</name>
+        <name>myRule_3_A9</name>
         <label>Update Default Fields</label>
-        <locationX>100</locationX>
+        <locationX>300</locationX>
         <locationY>1000</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1250,7 +1422,7 @@
         <object>Contract__c</object>
     </recordUpdates>
     <startElementReference>myDecision</startElementReference>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

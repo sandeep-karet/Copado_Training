@@ -3,7 +3,7 @@
     <fullName>Required_at_Contracting_Stage</fullName>
     <active>true</active>
     <description>These requirements should be met at the contracting stage.</description>
-    <errorConditionFormula>AND(ISCHANGED(StageName__c),
+    <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c,ISCHANGED(StageName__c),
 				ISPICKVAL(StageName__c, &apos;Contracting&apos;),
 				OR(ISBLANK(Contract_Path__c),
 						 ISBLANK(Launch_Date__c)))</errorConditionFormula>

@@ -4,6 +4,7 @@
     <active>true</active>
     <description>Require &quot;Links to Eligibility Verification Folder&quot; and  &quot;Eligibility File Cadence&quot; fields when &quot;Eligibility Verification Method&quot; values are either Reverse Eligibility or Eligible API + Reverse Eligibility FTP</description>
     <errorConditionFormula>AND(
+    $Setup.LVGO_Automation_Switch__c.Validations__c,
     ISCHANGED( Eligibility_Verification_Method__c ),
     OR(
        ISPICKVAL( Eligibility_Verification_Method__c ,&quot;Reverse Eligibility (FTP)&quot; ),

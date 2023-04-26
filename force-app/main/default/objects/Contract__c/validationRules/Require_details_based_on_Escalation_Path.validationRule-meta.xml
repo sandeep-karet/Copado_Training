@@ -3,13 +3,16 @@
     <fullName>Require_details_based_on_Escalation_Path</fullName>
     <active>true</active>
     <description>Require Escalation Contact or Escalation Details if certain Eligibility Escalation Path values are chosen</description>
-    <errorConditionFormula>OR(
+    <errorConditionFormula>AND(
+$Setup.LVGO_Automation_Switch__c.Validations__c,
+OR(
 AND(
 ISPICKVAL( Eligibility_Escalation_Path__c ,&quot;Escalate to Defined Contact (Provide Details)&quot; ),
 ISBLANK( Escalation_Contact__c )),
 AND(
 ISPICKVAL( Eligibility_Escalation_Path__c ,&quot;Complex Escalation (Provide Details)&quot; ),
 ISBLANK( Escalation_Details__c ))
+)
 )</errorConditionFormula>
     <errorMessage>If either &quot;Escalate to Defined Contact&quot; or &quot;Complex Escalation&quot; are selected as the Eligibility Escalation Path, you must provide details in the corresponding field.</errorMessage>
 </ValidationRule>

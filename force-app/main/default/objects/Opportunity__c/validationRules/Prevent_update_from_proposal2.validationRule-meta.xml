@@ -4,6 +4,7 @@
     <active>true</active>
     <description>Prevents updating sales stage beyond &quot;Discovery&quot; unless certain conditions are met, but allows for Price Book wizard to bypass the rule.</description>
     <errorConditionFormula>AND( 
+$Setup.LVGO_Automation_Switch__c.Validations__c,
 				OR( 
 								ISPICKVAL( StageName__c, &quot;Proposal&quot;), 
 								ISPICKVAL( StageName__c, &quot;Review/Negotiation&quot;), 

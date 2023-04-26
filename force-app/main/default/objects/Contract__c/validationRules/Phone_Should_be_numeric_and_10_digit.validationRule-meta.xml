@@ -3,7 +3,8 @@
     <fullName>Phone_Should_be_numeric_and_10_digit</fullName>
     <active>true</active>
     <errorConditionFormula>NOT(ISBLANK(Member_support_phone__c)) &amp;&amp;
-NOT(REGEX(Member_support_phone__c, &quot;\\D*?(\\d\\D*?){10}&quot;))</errorConditionFormula>
+NOT(REGEX(Member_support_phone__c, &quot;\\D*?(\\d\\D*?){10}&quot;))
+&amp;&amp; $Setup.LVGO_Automation_Switch__c.Validations__c</errorConditionFormula>
     <errorDisplayField>Member_support_phone__c</errorDisplayField>
     <errorMessage>Please enter a valid 10 digit phone number.</errorMessage>
 </ValidationRule>

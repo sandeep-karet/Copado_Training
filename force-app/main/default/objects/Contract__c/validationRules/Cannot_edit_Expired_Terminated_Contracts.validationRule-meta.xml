@@ -3,7 +3,8 @@
     <fullName>Cannot_edit_Expired_Terminated_Contracts</fullName>
     <active>true</active>
     <description>Only Legal users are able to edit the fields Status, Contract Effective Date, Contract Termination Date, Program Start Date, Program End Date, Program Renewal Notice on Contract records if Status is Expired or Terminated.</description>
-    <errorConditionFormula>AND( 
+    <errorConditionFormula>AND(
+ $Setup.LVGO_Automation_Switch__c.Validations__c,  
 NOT($Permission.Bypass_Edit_Contract_in_Terminated_Expired), 
 OR( 
 AND( 

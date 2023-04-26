@@ -3,7 +3,7 @@
     <fullName>Cannot_Edit_InitialTargetedMarketing</fullName>
     <active>true</active>
     <description>Initial Targeted Marketing Date can only be edited by Enrollment marketing users.</description>
-    <errorConditionFormula>AND(ISCHANGED(Initial_Targeted_Marketing__c),
+    <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c,ISCHANGED(Initial_Targeted_Marketing__c),
 			 RecordType.Name = &apos;Program Overview&apos;,
 				$Profile.Name &lt;&gt; &apos;Enrollment Marketing&apos;,
 				$Profile.Name &lt;&gt; &apos;System Administrator&apos;)</errorConditionFormula>

@@ -3,7 +3,7 @@
     <fullName>Limit_Characters</fullName>
     <active>true</active>
     <description>Only allow uppercase letters, numbers, and a dash</description>
-    <errorConditionFormula>NOT(REGEX(  ClientMemberCode__c ,&quot;^[0-9 A-Z -]*&quot;))</errorConditionFormula>
+    <errorConditionFormula>AND(NOT(REGEX(  ClientMemberCode__c ,&quot;^[0-9 A-Z -]*&quot;)),$Setup.LVGO_Automation_Switch__c.Validations__c)</errorConditionFormula>
     <errorDisplayField>ClientMemberCode__c</errorDisplayField>
     <errorMessage>The Client Member Code must contain only UPPERCASE letters, numbers, and/or a dash</errorMessage>
 </ValidationRule>

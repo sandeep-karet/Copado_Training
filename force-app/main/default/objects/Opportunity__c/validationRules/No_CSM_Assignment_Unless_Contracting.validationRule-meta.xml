@@ -3,6 +3,7 @@
     <fullName>No_CSM_Assignment_Unless_Contracting</fullName>
     <active>true</active>
     <errorConditionFormula>AND( 
+$Setup.LVGO_Automation_Switch__c.Validations__c,
 OR( 
 ISPICKVAL( StageName__c, &quot;Prospect&quot;),
 IsPICKVAL( StageName__c, &quot;Discovery&quot;),

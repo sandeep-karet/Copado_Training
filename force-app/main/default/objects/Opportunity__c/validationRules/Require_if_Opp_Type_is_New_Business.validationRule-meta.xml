@@ -4,6 +4,7 @@
     <active>true</active>
     <description>Lead Source is required on Opps that are New Business</description>
     <errorConditionFormula>AND (
+    $Setup.LVGO_Automation_Switch__c.Validations__c,
     OR(ISPICKVAL( Type__c, &quot;New Business&quot;),
 							ISPICKVAL( Type__c, &quot;Hunting License&quot;)),
     ISPICKVAL(LeadSource__c,&quot;&quot;)

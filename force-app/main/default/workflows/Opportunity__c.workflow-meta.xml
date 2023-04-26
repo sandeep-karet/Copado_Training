@@ -91,12 +91,8 @@ IF(AND(ISPICKVAL(Forecast_Manager_Call__c, &apos;Not In Forecast&apos;),CONTAINS
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Opportunity__c.StageName__c</field>
-            <operation>equals</operation>
-            <value>Contracting,Closed Won</value>
-        </criteriaItems>
         <description>When an Opportunity moves to &quot;Closed&quot;, automatically check the &quot;Request CIM&quot; box.  This will trigger the workflow rules associated with that checkbox.</description>
+        <formula>AND(OR(ISPICKVAL(StageName__c,&quot;Contracting&quot;),ISPICKVAL(StageName__c,&quot;Closed Won&quot;)))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
@@ -106,7 +102,7 @@ IF(AND(ISPICKVAL(Forecast_Manager_Call__c, &apos;Not In Forecast&apos;),CONTAINS
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <formula>ISCHANGED( CIM__c )</formula>
+        <formula>AND(ISCHANGED( CIM__c ) ,($Setup.LVGO_Automation_Switch__c.Workflows__c))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -116,36 +112,18 @@ IF(AND(ISPICKVAL(Forecast_Manager_Call__c, &apos;Not In Forecast&apos;),CONTAINS
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Opportunity__c.StageName__c</field>
-            <operation>equals</operation>
-            <value>Closed Won</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Opportunity__c.Type__c</field>
-            <operation>equals</operation>
-            <value>Contract Path Change</value>
-        </criteriaItems>
+        <formula>AND(ISPICKVAL(StageName__c,&quot;Closed Won&quot;),ISPICKVAL(Type__c,&quot;Contract Path Change&quot;) ,($Setup.LVGO_Automation_Switch__c.Workflows__c))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
-        <fullName>Opportunity is won -- New%2FCross%2FExpansion</fullName> 
+        <fullName>Opportunity is won -- New%2FCross%2FExpansion</fullName>
         <actions>
             <name>Forecast_Closed</name>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Opportunity__c.StageName__c</field>
-            <operation>equals</operation>
-            <value>Closed Won</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Opportunity__c.Type__c</field>
-            <operation>equals</operation>
-            <value>New Business,Expansion,Cross-sell (New product),Hunting License</value>
-        </criteriaItems>
         <description>Opportunity is won -- New/Cross/Expansion/HuntingLicense</description>
+        <formula>AND(                      ISPICKVAL(StageName__c,&quot;Closed Won&quot;),                     OR(                     ISPICKVAL(Type__c,&quot;New Business&quot;),                     ISPICKVAL(Type__c,&quot;Expansion&quot;),                     ISPICKVAL(Type__c,&quot;Cross-sell (New product)&quot;),                     ISPICKVAL(Type__c,&quot;Hunting License&quot;)                     ),                     ($Setup.LVGO_Automation_Switch__c.Workflows__c)                     )</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
@@ -156,7 +134,7 @@ IF(AND(ISPICKVAL(Forecast_Manager_Call__c, &apos;Not In Forecast&apos;),CONTAINS
         </actions>
         <active>true</active>
         <description>Update the calculated forecasted amount on opportunity based on calculation on NetARR and Forecast Manager Call percentage.</description>
-        <formula>OR(ISCHANGED(Forecast_Manager_Call__c),ISNEW(),ISCHANGED(Net_ARR__c))</formula>
+        <formula>AND(OR(ISCHANGED(Forecast_Manager_Call__c),ISNEW(),ISCHANGED(Net_ARR__c)),($Setup.LVGO_Automation_Switch__c.Workflows__c))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
 </Workflow>

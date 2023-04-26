@@ -50,11 +50,7 @@
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Case__c.RecordTypeId</field>
-            <operation>equals</operation>
-            <value>Livongo Presale</value>
-        </criteriaItems>
+        <formula>AND(RecordType.Name == &quot;Livongo Presale&quot;,($Setup.LVGO_Automation_Switch__c.Workflows__c))</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>
@@ -64,11 +60,7 @@
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Case__c.RecordTypeId</field>
-            <operation>equals</operation>
-            <value>Livongo Wins</value>
-        </criteriaItems>
+        <formula>AND(RecordType.Name == &quot;Livongo Wins&quot;,($Setup.LVGO_Automation_Switch__c.Workflows__c))</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>
@@ -78,11 +70,7 @@
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Case__c.RecordTypeId</field>
-            <operation>equals</operation>
-            <value>Reference Request</value>
-        </criteriaItems>
+        <formula>AND(RecordType.Name == &quot;Reference Request&quot;,($Setup.LVGO_Automation_Switch__c.Workflows__c))</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
 </Workflow>

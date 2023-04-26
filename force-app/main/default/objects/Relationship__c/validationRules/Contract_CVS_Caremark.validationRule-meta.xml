@@ -3,7 +3,8 @@
     <fullName>Contract_CVS_Caremark</fullName>
     <active>true</active>
     <description>We noticed that you selected CVS Health or Caremark as the Contract Path.  Please select Caremark TC or Caremark PSM instead.</description>
-    <errorConditionFormula>( Partner_Contract_Partnership__r.Account_ID_Long__c = $CustomMetadata.Account_Long_ID__mdt.CVS_Health.Account_Long_ID__c
+    <errorConditionFormula>$Setup.LVGO_Automation_Switch__c.Validations__c &amp;&amp;
+( Partner_Contract_Partnership__r.Account_ID_Long__c = $CustomMetadata.Account_Long_ID__mdt.CVS_Health.Account_Long_ID__c
 || Partner_Contract_Partnership__r.Account_ID_Long__c = $CustomMetadata.Account_Long_ID__mdt.Caremark.Account_Long_ID__c )
 &amp;&amp; ISPICKVAL( RelationshipType__c , &quot;Contract Path&quot;)</errorConditionFormula>
     <errorMessage>We noticed that you selected CVS Health or Caremark as the Contract Path.  Please select Caremark TC or Caremark PSM instead.</errorMessage>

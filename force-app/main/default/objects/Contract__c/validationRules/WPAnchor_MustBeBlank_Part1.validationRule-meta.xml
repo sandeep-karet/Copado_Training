@@ -3,7 +3,8 @@
     <fullName>WPAnchor_MustBeBlank_Part1</fullName>
     <active>true</active>
     <description>As a Whole Person Anchor, the following fields must be left blank: Program Platform Version, Multi-program Discount, Recruitable Population (D + HTN - Current) &amp; Partner Pass Through Price.</description>
-    <errorConditionFormula>ISPICKVAL( Program_Type__c , &quot;WP Anchor&quot;)
+    <errorConditionFormula>$Setup.LVGO_Automation_Switch__c.Validations__c &amp;&amp;
+ISPICKVAL( Program_Type__c , &quot;WP Anchor&quot;)
 &amp;&amp; 
 				(NOT(ISBLANK( TEXT(Program_Platform_Version__c )))
 				|| NOT(ISBLANK( Multiprogram_Discount__c ))

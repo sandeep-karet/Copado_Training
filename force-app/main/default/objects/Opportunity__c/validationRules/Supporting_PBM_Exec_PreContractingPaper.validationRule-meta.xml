@@ -3,7 +3,8 @@
     <fullName>Supporting_PBM_Exec_PreContractingPaper</fullName>
     <active>true</active>
     <description>If Pre-Contracting Contract Paper is either Express Scripts, Caremark TC, Caremark PSM, OptumRX, Optum, or Prime Therapeutics, A related Contact Role with the role of &quot;Supporting PBM Executive&quot; is required before you can save this record.</description>
-    <errorConditionFormula>(Supporting_PBM_Executive_Count__c= 0
+    <errorConditionFormula>$Setup.LVGO_Automation_Switch__c.Validations__c &amp;&amp;
+(Supporting_PBM_Executive_Count__c= 0
 || ISBLANK(Supporting_PBM_Executive_Count__c))
  &amp;&amp; (  PreContractingContractPaperLongID__c  = $CustomMetadata.Account_Long_ID__mdt.Express_Scripts.Account_Long_ID__c   
 					|| PreContractingContractPaperLongID__c  = $CustomMetadata.Account_Long_ID__mdt.Caremark_TC.Account_Long_ID__c 

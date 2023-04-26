@@ -3,7 +3,7 @@
     <fullName>Jira_Link_Cannot_Be_Blank</fullName>
     <active>true</active>
     <errorConditionFormula>ISPICKVAL( Status__c , &quot;Story in Jira&quot;)
-&amp;&amp;  ISBLANK( Jira_Link__c )</errorConditionFormula>
+    &amp;&amp;  ISBLANK( Jira_Link__c ) &amp;&amp; $Setup.LVGO_Automation_Switch__c.Validations__c</errorConditionFormula>
     <errorDisplayField>Jira_Link__c</errorDisplayField>
     <errorMessage>Please fill in the Jira Link URL before moving the Status to Story in Jir</errorMessage>
 </ValidationRule>

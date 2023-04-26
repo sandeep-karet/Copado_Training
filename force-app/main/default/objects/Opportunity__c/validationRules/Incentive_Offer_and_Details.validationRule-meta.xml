@@ -2,7 +2,8 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Incentive_Offer_and_Details</fullName>
     <active>true</active>
-    <errorConditionFormula>(Incentive_Offered__c = TRUE
+    <errorConditionFormula>$Setup.LVGO_Automation_Switch__c.Validations__c &amp;&amp;
+(Incentive_Offered__c = TRUE
 &amp;&amp; ISBLANK( Incentive_Details__c ))
 ||
 (Incentive_Offered__c = FALSE

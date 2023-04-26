@@ -13,12 +13,13 @@
                 <stringValue>Lead - New &amp; Account=Null Contact Lookup Matching Email Domains</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_1_A1</name>
+        <name>myRule_3_A1</name>
         <label>Launch Lead Flow to Lookup Contacts w same Email Domain</label>
-        <locationX>100</locationX>
+        <locationX>300</locationX>
         <locationY>200</locationY>
         <actionName>New_Lead_No_Account_Email_Parse_Lookup</actionName>
         <actionType>flow</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <processMetadataValues>
                 <name>dataType</name>
@@ -158,6 +159,9 @@
         <label>myDecision</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision2</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_1</name>
@@ -172,6 +176,34 @@
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
+            <label>Is Process On</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision2</name>
+        <label>myDecision2</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_3</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_3_A1</targetReference>
+            </connector>
             <label>Email &lt;&gt; null &amp; Account = null</label>
         </rules>
     </decisions>
@@ -180,11 +212,22 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>ISBLANK([LVGO__Lead__c].LVGO__TAN__c)
-&amp;&amp; NOT(ISBLANK([LVGO__Lead__c].LVGO__Email__c ))</stringValue>
+                <stringValue>NOT($Setup.LVGO_Automation_Switch__c.ProcessBuilders__c )</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT({!$Setup.LVGO_Automation_Switch__c.ProcessBuilders__c} )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISBLANK([Lead__c].TAN__c)
+&amp;&amp; NOT(ISBLANK([Lead__c].Email__c ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_3</name>
         <dataType>Boolean</dataType>
         <expression>ISBLANK({!myVariable_current.TAN__c})
 &amp;&amp; NOT(ISBLANK({!myVariable_current.Email__c} ))</expression>
@@ -216,6 +259,136 @@
         </value>
     </processMetadataValues>
     <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Lead__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>dummy action</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Created By ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>CreatedById</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Lead Name</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Name</field>
+            <value>
+                <stringValue>Test</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Lead__c</object>
+    </recordUpdates>
     <startElementReference>myDecision</startElementReference>
     <status>Active</status>
     <variables>

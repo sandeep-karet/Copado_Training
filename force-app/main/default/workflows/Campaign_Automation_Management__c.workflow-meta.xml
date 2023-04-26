@@ -17,10 +17,7 @@
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Campaign_Automation_Management__c.Name</field>
-            <operation>notEqual</operation>
-        </criteriaItems>
+        <formula>AND(Name != null,($Setup.LVGO_Automation_Switch__c.Workflows__c))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
 </Workflow>

@@ -2,7 +2,7 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>WP_Programs_Pricing_Must_be_in_Range</fullName>
     <active>true</active>
-    <errorConditionFormula>AND(NOT(Bypass_Sales_Price_Validation__c), !ISNEW(), ISCHANGED(UnitPrice__c), Opportunity_Type__c != &apos;Renewal&apos;,
+    <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c,NOT(Bypass_Sales_Price_Validation__c), !ISNEW(), ISCHANGED(UnitPrice__c), Opportunity_Type__c != &apos;Renewal&apos;,
             OR(
             AND(
             Product2__r.Name = &apos;DM Solution&apos;,

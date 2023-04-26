@@ -3,7 +3,7 @@
     <fullName>Require_Type_to_be_Selected</fullName>
     <active>false</active>
     <description>Requires the user to select &quot;Type&quot; when editing account record</description>
-    <errorConditionFormula>ISBLANK(TEXT( Type__c ))</errorConditionFormula>
+    <errorConditionFormula>AND(ISBLANK(TEXT( Type__c )),$Setup.LVGO_Automation_Switch__c.Validations__c)</errorConditionFormula>
     <errorDisplayField>Type__c</errorDisplayField>
     <errorMessage>Please select the type of this account (i.e. - Self-funded, Payer/ASO, PBM, etc...)</errorMessage>
 </ValidationRule>

@@ -3,7 +3,8 @@
     <fullName>Benefits_Consultant_Contact_Role</fullName>
     <active>true</active>
     <description>If a Benefits Consultants was involved in the deal, you must add a Contact Role with Type - Broker before you can save this record.</description>
-    <errorConditionFormula>(Broker_Count__c = 0.0
+    <errorConditionFormula>$Setup.LVGO_Automation_Switch__c.Validations__c &amp;&amp;
+(Broker_Count__c = 0.0
 || ISBLANK(Broker_Count__c))
 &amp;&amp; (
 ISPICKVAL(Benefit_Consultant_Involved_in_Deal__c, &quot;Consultant introduced us, but was not involved in selling&quot;)

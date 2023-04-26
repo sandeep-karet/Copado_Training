@@ -21,7 +21,7 @@
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <formula>ISCHANGED(Survey_Status__c)</formula>
+        <formula>AND(ISCHANGED(Survey_Status__c),($Setup.LVGO_Automation_Switch__c.Workflows__c))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
 </Workflow>

@@ -4,6 +4,7 @@
     <active>true</active>
     <description>Prevents updating sales stage beyond &quot;Discovery&quot; unless certain conditions are met</description>
     <errorConditionFormula>AND( 
+$Setup.LVGO_Automation_Switch__c.Validations__c,
 OR( 
 ISPICKVAL( StageName__c, &quot;Review/Negotiation&quot;),
 ISPICKVAL( StageName__c, &quot;Contracting&quot;),

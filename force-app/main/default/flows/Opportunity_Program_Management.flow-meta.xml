@@ -13,15 +13,16 @@
                 <stringValue>Update PO from OLI</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_3_A1</name>
+        <name>myRule_5_A1</name>
         <label>Update PO from OLI</label>
-        <locationX>300</locationX>
+        <locationX>500</locationX>
         <locationY>200</locationY>
         <actionName>Update_PO_from_OLI</actionName>
         <actionType>flow</actionType>
         <connector>
-            <targetReference>myDecision4</targetReference>
+            <targetReference>myDecision6</targetReference>
         </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <processMetadataValues>
                 <name>dataType</name>
@@ -145,46 +146,14 @@
             </processMetadataValues>
             <name>inputOLIProgramName</name>
             <value>
-                <elementReference>myVariable_current.Product2__c.Family</elementReference>
+                <elementReference>myVariable_current.Product2__r.Family</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
     <apiVersion>49.0</apiVersion>
     <decisions>
-        <name>isChangedDecision6_myRule_5_Pricing_Structure_c</name>
-        <label>isChangedDecision6_myRule_5_Pricing_Structure_c</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>isChangedDecision9_myRule_8_Pricing_Structure_c</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>isChangedRule_6_myRule_5_Pricing_Structure_c</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>myVariable_old</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>myVariable_old.Pricing_Structure__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>myVariable_current.Pricing_Structure__c</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>isChangedDecision9_myRule_8_Pricing_Structure_c</targetReference>
-            </connector>
-            <label>isChangedRule_6_myRule_5_Pricing_Structure_c</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>isChangedDecision9_myRule_8_Pricing_Structure_c</name>
-        <label>isChangedDecision9_myRule_8_Pricing_Structure_c</label>
+        <name>isChangedDecision11_myRule_10_Pricing_Structure_c</name>
+        <label>isChangedDecision11_myRule_10_Pricing_Structure_c</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
@@ -192,7 +161,7 @@
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>isChangedRule_9_myRule_8_Pricing_Structure_c</name>
+            <name>isChangedRule_11_myRule_10_Pricing_Structure_c</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>myVariable_old</leftValueReference>
@@ -211,7 +180,39 @@
             <connector>
                 <targetReference>myDecision</targetReference>
             </connector>
-            <label>isChangedRule_9_myRule_8_Pricing_Structure_c</label>
+            <label>isChangedRule_11_myRule_10_Pricing_Structure_c</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>isChangedDecision8_myRule_7_Pricing_Structure_c</name>
+        <label>isChangedDecision8_myRule_7_Pricing_Structure_c</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>isChangedDecision11_myRule_10_Pricing_Structure_c</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>isChangedRule_8_myRule_7_Pricing_Structure_c</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>myVariable_old.Pricing_Structure__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>myVariable_current.Pricing_Structure__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>isChangedDecision11_myRule_10_Pricing_Structure_c</targetReference>
+            </connector>
+            <label>isChangedRule_8_myRule_7_Pricing_Structure_c</label>
         </rules>
     </decisions>
     <decisions>
@@ -242,7 +243,7 @@
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
-            <label>New Opportunity Program</label>
+            <label>Is Process On</label>
         </rules>
     </decisions>
     <decisions>
@@ -273,7 +274,7 @@
             <connector>
                 <targetReference>myRule_3_A1</targetReference>
             </connector>
-            <label>Pricing Structure Changed w Contract ID</label>
+            <label>New Opportunity Program</label>
         </rules>
     </decisions>
     <decisions>
@@ -288,11 +289,42 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myDecision7</targetReference>
+            <targetReference>myDecision6</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_5</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_5</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_5_A1</targetReference>
+            </connector>
+            <label>Pricing Structure Changed w Contract ID</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision6</name>
+        <label>myDecision6</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision9</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_7</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <processMetadataValues>
@@ -325,7 +357,7 @@
                         <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>isChangedRule_6_myRule_5_Pricing_Structure_c</leftValueReference>
+                <leftValueReference>isChangedRule_8_myRule_7_Pricing_Structure_c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -369,7 +401,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_5_A1</targetReference>
+                <targetReference>myRule_7_A1</targetReference>
             </connector>
             <label>Pricing Structure Added</label>
         </rules>
@@ -378,16 +410,16 @@
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>3.0</numberValue>
+                <numberValue>4.0</numberValue>
             </value>
         </processMetadataValues>
-        <name>myDecision7</name>
-        <label>myDecision7</label>
+        <name>myDecision9</name>
+        <label>myDecision9</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>myRule_8</name>
+            <name>myRule_10</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <processMetadataValues>
@@ -420,7 +452,7 @@
                         <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>isChangedRule_9_myRule_8_Pricing_Structure_c</leftValueReference>
+                <leftValueReference>isChangedRule_11_myRule_10_Pricing_Structure_c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -464,7 +496,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_8_A1</targetReference>
+                <targetReference>myRule_10_A1</targetReference>
             </connector>
             <label>Price Variation Remove</label>
         </rules>
@@ -473,10 +505,21 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>ISNEW()</stringValue>
+                <stringValue>NOT($Setup.LVGO_Automation_Switch__c.ProcessBuilders__c )</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT({!$Setup.LVGO_Automation_Switch__c.ProcessBuilders__c} )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISNEW()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_3</name>
         <dataType>Boolean</dataType>
         <expression>ISNEW()</expression>
     </formulas>
@@ -484,20 +527,20 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>NOT(ISBLANK([LVGO__OpportunityLineItem__c].LVGO__Opportunity__c.LVGO__Contract__c ))
-&amp;&amp; ISCHANGED([LVGO__OpportunityLineItem__c].LVGO__Pricing_Structure__c )
-&amp;&amp; NOT(ISBLANK([LVGO__OpportunityLineItem__c].LVGO__Pricing_Structure__c ))
-&amp;&amp; [LVGO__OpportunityLineItem__c].LVGO__Opportunity__c.LVGO__Probability__c &gt; 0.1</stringValue>
+                <stringValue>NOT(ISBLANK([OpportunityLineItem__c].Opportunity__c.Contract__c ))
+&amp;&amp; ISCHANGED([OpportunityLineItem__c].Pricing_Structure__c )
+&amp;&amp; NOT(ISBLANK([OpportunityLineItem__c].Pricing_Structure__c ))
+&amp;&amp; [OpportunityLineItem__c].Opportunity__c.Probability__c &gt; 0.1</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_myRule_3</name>
+        <name>formula_myRule_5</name>
         <dataType>Boolean</dataType>
         <expression>NOT(ISBLANK({!myVariable_current.Opportunity__r.Contract__c} ))
 &amp;&amp; ISCHANGED({!myVariable_current.Pricing_Structure__c} )
 &amp;&amp; NOT(ISBLANK({!myVariable_current.Pricing_Structure__c} ))
 &amp;&amp; {!myVariable_current.Opportunity__r.Probability__c} &gt; 0.1</expression>
     </formulas>
-    <interviewLabel>Opportunity_Program_Management-5_InterviewLabel</interviewLabel>
+    <interviewLabel>Opportunity_Program_Management-2_InterviewLabel</interviewLabel>
     <label>Opportunity Program Management</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -549,9 +592,220 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
+        <name>myRule_10_A1</name>
+        <label>Clear Pricing</label>
+        <locationX>1000</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Currency</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Sales Price</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Currency</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>UnitPrice__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <object>OpportunityLineItem__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[OpportunityLineItem__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
         <name>myRule_1_A1</name>
-        <label>Update Lookups</label>
+        <label>Dummy Action</label>
         <locationX>100</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Created By ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>CreatedById</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Name</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Name</field>
+            <value>
+                <stringValue>Test</stringValue>
+            </value>
+        </inputAssignments>
+        <object>OpportunityLineItem__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[OpportunityLineItem__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_3_A1</name>
+        <label>Update Lookups</label>
+        <locationX>300</locationX>
         <locationY>200</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -666,12 +920,12 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_5_A1</name>
+        <name>myRule_7_A1</name>
         <label>Check the Bypass Sales Price Validation</label>
-        <locationX>500</locationX>
+        <locationX>700</locationX>
         <locationY>200</locationY>
         <connector>
-            <targetReference>myRule_5_A2</targetReference>
+            <targetReference>myRule_7_A2</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -750,12 +1004,12 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_5_A2</name>
+        <name>myRule_7_A2</name>
         <label>Update OLI with New Pricing</label>
-        <locationX>500</locationX>
+        <locationX>700</locationX>
         <locationY>300</locationY>
         <connector>
-            <targetReference>myRule_5_A3</targetReference>
+            <targetReference>myRule_7_A3</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -978,9 +1232,9 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_5_A3</name>
+        <name>myRule_7_A3</name>
         <label>Uncheck the Bypass Sales Price Validation</label>
-        <locationX>500</locationX>
+        <locationX>700</locationX>
         <locationY>400</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1034,88 +1288,7 @@
         </inputAssignments>
         <object>OpportunityLineItem__c</object>
     </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[OpportunityLineItem__c]</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_8_A1</name>
-        <label>Clear Pricing</label>
-        <locationX>800</locationX>
-        <locationY>200</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Sales Price</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Currency</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>UnitPrice__c</field>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </inputAssignments>
-        <object>OpportunityLineItem__c</object>
-    </recordUpdates>
-    <startElementReference>isChangedDecision6_myRule_5_Pricing_Structure_c</startElementReference>
+    <startElementReference>isChangedDecision8_myRule_7_Pricing_Structure_c</startElementReference>
     <status>Active</status>
     <variables>
         <name>myVariable_current</name>

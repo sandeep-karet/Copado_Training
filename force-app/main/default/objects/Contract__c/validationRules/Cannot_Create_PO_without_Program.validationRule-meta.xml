@@ -3,7 +3,7 @@
     <fullName>Cannot_Create_PO_without_Program</fullName>
     <active>true</active>
     <description>Cannot Create a Program Overview record without Program Name</description>
-    <errorConditionFormula>CASESAFEID(RecordType.Id) = $Label.Program_Schedule_Record_Type &amp;&amp; TEXT(Program_Name__c) = &quot;&quot;</errorConditionFormula>
+    <errorConditionFormula>CASESAFEID(RecordType.Id) = $Label.Program_Schedule_Record_Type &amp;&amp; TEXT(Program_Name__c) = &quot;&quot; &amp;&amp;  $Setup.LVGO_Automation_Switch__c.Validations__c</errorConditionFormula>
     <errorDisplayField>Program_Name__c</errorDisplayField>
     <errorMessage>Please provide a program before saving.</errorMessage>
 </ValidationRule>

@@ -3,8 +3,9 @@
     <fullName>Initial_Price_must_be_0</fullName>
     <active>false</active>
     <errorConditionFormula>AND(
- ISNEW(),
- UnitPrice__c != 0
-)</errorConditionFormula>
+            ISNEW(),
+            UnitPrice__c != 0,
+            $Setup.LVGO_Automation_Switch__c.Validations__c
+            )</errorConditionFormula>
     <errorMessage>Initial Sales Price must be 0. Please use the lookup &quot;Pricing Structure&quot; to alter this Sales price. Prices can be updated after creation.</errorMessage>
 </ValidationRule>

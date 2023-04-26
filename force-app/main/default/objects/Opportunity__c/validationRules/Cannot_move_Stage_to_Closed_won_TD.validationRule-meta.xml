@@ -2,7 +2,7 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Cannot_move_Stage_to_Closed_won_TD</fullName>
     <active>true</active>
-    <errorConditionFormula>AND(ISPICKVAL(Source__c, &quot;TD&quot;),
+    <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c,ISPICKVAL(Source__c, &quot;TD&quot;),
 							Product_Count__c = 0, 
 							Bypass_Product_Requirement__c = FALSE,
 							ISPICKVAL( StageName__c, &quot;Closed Won&quot;))</errorConditionFormula>

@@ -5,7 +5,7 @@
     <description>Jenga 1552 - Enterprise Structure is only available for the following partners and covered lives thresholds: Premera, &gt; 5,000; HCSC,  &gt; 2,000; All Others, &gt; 2,500
 
 DEACTIVATED per Stacy Roberts</description>
-    <errorConditionFormula>AND(ISCHANGED(StageName__c),
+    <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c,ISCHANGED(StageName__c),
     ISPICKVAL(StageName__c, &quot;Closed Won&quot;),
     NOT(ISBLANK(Contract_Path__c)),
     NOT(OR(ISPICKVAL(Population_Type__c,&quot;ASO downmarket&quot;),ISPICKVAL(Population_Type__c,&quot;Non-HSS Downmarket&quot;))),

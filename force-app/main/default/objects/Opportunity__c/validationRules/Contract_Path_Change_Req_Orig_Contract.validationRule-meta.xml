@@ -4,6 +4,7 @@
     <active>true</active>
     <description>Require the field &quot;Original Contract&quot; before closing opportunities of type &quot;Contract Path Change&quot;</description>
     <errorConditionFormula>AND ( 
+$Setup.LVGO_Automation_Switch__c.Validations__c,
 ISPICKVAL( Type__c, &quot;Contract Path Change&quot;),
 ISPICKVAL( StageName__c, &quot;Closed Won&quot;),
 ISBLANK( Original_Contract__c ),

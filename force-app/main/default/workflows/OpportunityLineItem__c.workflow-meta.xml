@@ -171,7 +171,7 @@ IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), 
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <formula>ISCHANGED(Opportunity_Owner_Role__c)</formula>
+        <formula>AND(ISCHANGED(Opportunity_Owner_Role__c),$Setup.LVGO_Automation_Switch__c.Workflows__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -181,12 +181,8 @@ IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), 
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Opportunity__c.StageName__c</field>
-            <operation>notEqual</operation>
-            <value>Closed Won,Closed Lost,Closed No Decision</value>
-        </criteriaItems>
         <description>Sales Commissionable Price will be updated to match Sales Price until the Opportunity is Closed Won.</description>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,                     NOT(ISPICKVAL(Opportunity__r.StageName__c,&quot;Closed Won&quot;)),                     NOT(ISPICKVAL(Opportunity__r.StageName__c,&quot;Closed Lost&quot;)),                     NOT(ISPICKVAL(Opportunity__r.StageName__c,&quot;Closed No Decision&quot;))                 )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -196,12 +192,8 @@ IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), 
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Opportunity__c.StageName__c</field>
-            <operation>notEqual</operation>
-            <value>Closed Won,Closed Lost,Closed No Decision</value>
-        </criteriaItems>
         <description>Sales Commissionable Price will be updated to match Sales Price until the Opportunity is Closed Won.</description>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,                     NOT(ISPICKVAL(Opportunity__r.StageName__c,&quot;Closed Won&quot;)),                     NOT(ISPICKVAL(Opportunity__r.StageName__c,&quot;Closed Lost&quot;)),                     NOT(ISPICKVAL(Opportunity__r.StageName__c,&quot;Closed No Decision&quot;))                 )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -212,7 +204,7 @@ IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), 
         </actions>
         <active>true</active>
         <description>Sets the Integrate Program field on the Opportunity Program to TRUE.</description>
-        <formula>IntegrateProgram__c = FALSE</formula>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,IntegrateProgram__c = FALSE)</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
 </Workflow>

@@ -87,22 +87,8 @@
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Account__c.Account_Type__c</field>
-            <operation>notEqual</operation>
-            <value>Engaging,Client,Disqualified,Active Partner</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Account__c.Closed_Won_Opportunity_Count__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Account__c.Open_Opportunity_Count__c</field>
-            <operation>notEqual</operation>
-            <value>0</value>
-        </criteriaItems>
         <description>An account with an open opportunity should be in the Account Status &apos;Engaging.&apos;</description>
+        <formula>AND(                     AND(                         NOT(ISPICKVAL(Account_Type__c,&quot;Engaging&quot;)),                         NOT(ISPICKVAL(Account_Type__c,&quot;Client&quot;)),                         NOT(ISPICKVAL(Account_Type__c,&quot;Disqualified&quot;)),                         NOT(ISPICKVAL(Account_Type__c,&quot;Active Partner&quot;))                     ),                     Closed_Won_Opportunity_Count__c == 0,                     Open_Opportunity_Count__c != 0,                     $Setup.LVGO_Automation_Switch__c.Workflows__c                 )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -112,10 +98,7 @@
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Account__c.EML__c</field>
-            <operation>notEqual</operation>
-        </criteriaItems>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,EML__c != null)</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
@@ -126,7 +109,7 @@
         </actions>
         <active>true</active>
         <description>JENGA-1279</description>
-        <formula>AND(ISCHANGED(Account_Type__c), NOT(ISPICKVAL(Account_Type__c, &apos;&apos;)), NOT(ISBLANK(PRIORVALUE(Account_Type__c))))</formula>
+        <formula>AND(ISCHANGED(Account_Type__c), NOT(ISPICKVAL(Account_Type__c, &apos;&apos;)), NOT(ISBLANK(PRIORVALUE(Account_Type__c))),$Setup.LVGO_Automation_Switch__c.Workflows__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
 </Workflow>

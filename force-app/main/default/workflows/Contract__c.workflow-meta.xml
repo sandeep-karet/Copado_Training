@@ -247,7 +247,7 @@
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <formula>RecordType.Name =&apos;Program Overview&apos; &amp;&amp; (ISNEW() || ISCHANGED( Claims_Configuration__c )) &amp;&amp; NOT(ISBLANK(Claims_Configuration__c ))</formula>
+        <formula>$Setup.LVGO_Automation_Switch__c.Workflows__c &amp;&amp; RecordType.Name =&apos;Program Overview&apos; &amp;&amp; (ISNEW() || ISCHANGED( Claims_Configuration__c )) &amp;&amp; NOT(ISBLANK(Claims_Configuration__c ))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -257,11 +257,7 @@
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Contract__c.Complete_Per_Legal__c</field>
-            <operation>equals</operation>
-            <value>True</value>
-        </criteriaItems>
+        <formula>AND(Complete_Per_Legal__c == TRUE,$Setup.LVGO_Automation_Switch__c.Workflows__c)</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
@@ -272,7 +268,7 @@
         </actions>
         <active>true</active>
         <description>When a Program Overview record is manually created and the &quot;Name&quot; field is blank, give it a default name</description>
-        <formula>CASESAFEID(RecordType.Id) =  $Label.Program_Schedule_Record_Type  &amp;&amp; OR(ISCHANGED( Program_Name__c ), ISBLANK(Name))</formula>
+        <formula>$Setup.LVGO_Automation_Switch__c.Workflows__c &amp;&amp; CASESAFEID(RecordType.Id) =  $Label.Program_Schedule_Record_Type  &amp;&amp; OR(ISCHANGED( Program_Name__c ), ISBLANK(Name))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -283,7 +279,7 @@
         </actions>
         <active>true</active>
         <description>Notify CS Leadership when Client Overview status changes to Expired or Terminated.</description>
-        <formula>AND(RecordType.Name=&quot;Client Overview&quot;,               ISCHANGED(Status__c),              OR(ISPICKVAL(Status__c, &quot;Expired&quot;) ,ISPICKVAL(Status__c, &quot;Terminated&quot;))           )</formula>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,RecordType.Name=&quot;Client Overview&quot;,               ISCHANGED(Status__c),              OR(ISPICKVAL(Status__c, &quot;Expired&quot;) ,ISPICKVAL(Status__c, &quot;Terminated&quot;))           )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -293,12 +289,8 @@
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Contract__c.RecordTypeId</field>
-            <operation>equals</operation>
-            <value>Program Agreement</value>
-        </criteriaItems>
         <description>Set&apos;s the default contract name field of a Program Agreement to the name of the account it&apos;s related too.</description>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,RecordType.Name == &apos;Program Agreement&apos;)</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>
@@ -313,7 +305,7 @@
         </actions>
         <active>true</active>
         <description>Program Implementation Status” to be updated to “Terminated” and “Registration Status” as “Closed” , when the Program Status  is Terminated</description>
-        <formula>AND(RecordType.Name = &quot;Program Overview&quot;, ISPICKVAL(Status__c, &quot;Terminated&quot;), NOT(ISBLANK(Program_End_Date__c)))</formula>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,RecordType.Name = &quot;Program Overview&quot;, ISPICKVAL(Status__c, &quot;Terminated&quot;), NOT(ISBLANK(Program_End_Date__c)))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
@@ -323,11 +315,7 @@
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <criteriaItems>
-            <field>Contract__c.RecordTypeId</field>
-            <operation>equals</operation>
-            <value>Program Overview</value>
-        </criteriaItems>
+        <formula>AND(RecordType.Name == &quot;Program Overview&quot;,$Setup.LVGO_Automation_Switch__c.Workflows__c)</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
 </Workflow>

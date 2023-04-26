@@ -3,7 +3,8 @@
     <fullName>PBM_CVS_Health</fullName>
     <active>true</active>
     <description>We noticed that you selected CVS Health as the PBM. CVS Health represents CVS “the client”. Please select Caremark instead</description>
-    <errorConditionFormula>Partner_Partnership__r.Account_ID_Long__c  =  $CustomMetadata.Account_Long_ID__mdt.CVS_Health.Account_Long_ID__c 
+    <errorConditionFormula>$Setup.LVGO_Automation_Switch__c.Validations__c &amp;&amp;
+Partner_Partnership__r.Account_ID_Long__c  =  $CustomMetadata.Account_Long_ID__mdt.CVS_Health.Account_Long_ID__c 
 	&amp;&amp; ISPICKVAL( RelationshipType__c , &quot;Pharmacy Benefit Manager&quot;)</errorConditionFormula>
     <errorMessage>We noticed that you selected CVS Health as the PBM. CVS Health represents CVS “the client”. Please select Caremark instead</errorMessage>
 </ValidationRule>

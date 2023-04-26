@@ -3,7 +3,7 @@
     <fullName>Prog_Qualification_Dependency_Standalone</fullName>
     <active>true</active>
     <description>Program Qualification Dependency should be filled only for Standalone Program Type</description>
-    <errorConditionFormula>AND(NOT(ISPICKVAL(Program_Type__c,&quot;Standalone&quot;)),
+    <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c,NOT(ISPICKVAL(Program_Type__c,&quot;Standalone&quot;)),
 				NOT(ISBLANK(Program_Qualification_Dependency__c))
 			)</errorConditionFormula>
     <errorMessage>Program Qualification dependency to be filled only for Standalone program type.</errorMessage>

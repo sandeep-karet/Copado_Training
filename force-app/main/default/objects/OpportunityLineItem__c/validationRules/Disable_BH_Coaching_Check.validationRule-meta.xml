@@ -3,8 +3,9 @@
     <fullName>Disable_BH_Coaching_Check</fullName>
     <active>true</active>
     <errorConditionFormula>AND (
-				Disable_BH_Coaching__c,
-				NOT( CONTAINS(Product2__r.Name, &apos;Behavioral Health&apos;) )
-)</errorConditionFormula>
+                    Disable_BH_Coaching__c,
+                    NOT( CONTAINS(Product2__r.Name, &apos;Behavioral Health&apos;)) ,
+                    $Setup.LVGO_Automation_Switch__c.Validations__c
+        )</errorConditionFormula>
     <errorMessage>This check can be checked once Behavioral Health is added.</errorMessage>
 </ValidationRule>

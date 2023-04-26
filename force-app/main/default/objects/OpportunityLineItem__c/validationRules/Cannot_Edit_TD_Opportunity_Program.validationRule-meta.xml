@@ -4,14 +4,15 @@
     <active>true</active>
     <description>Cannot edit TD Opportunity Programs.</description>
     <errorConditionFormula>AND(ISPICKVAL(Opportunity__r.Source__c,&apos;TD&apos;),
-				NOT($Permission.Edit_TD_Opportunity_Program),
-    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-				OR(ISCHANGED(Product_Participants__c),
-				ISCHANGED(UnitPrice__c),
-				ISCHANGED(Quantity__c ),
-				ISCHANGED(Pricing_Structure__c),
-				ISCHANGED(Estimated_Partner_Admin_Fees__c),
-				ISCHANGED(Estimated_At_Risk_PPPM__c),
-				ISCHANGED(Up_Front_Per_Member__c)))</errorConditionFormula>
+                    NOT($Permission.Edit_TD_Opportunity_Program),
+                    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+                    OR(ISCHANGED(Product_Participants__c),
+                    ISCHANGED(UnitPrice__c),
+                    ISCHANGED(Quantity__c ),
+                    ISCHANGED(Pricing_Structure__c),
+                    ISCHANGED(Estimated_Partner_Admin_Fees__c),
+                    ISCHANGED(Estimated_At_Risk_PPPM__c),
+                    ISCHANGED(Up_Front_Per_Member__c)),
+                    $Setup.LVGO_Automation_Switch__c.Validations__c)</errorConditionFormula>
     <errorMessage>You are not allowed to update TD Opportunity Program in LVN, please make the update in TD Instance</errorMessage>
 </ValidationRule>

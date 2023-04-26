@@ -3,10 +3,11 @@
     <fullName>Disable_Teletherapy_Check</fullName>
     <active>false</active>
     <errorConditionFormula>AND(
-				Disable_Teletherapy__c,
-                Product2__r.Name != &apos;myStrength Complete&apos;,
-                Product2__r.Name != &apos;Livongo for Behavioral Health by myStrength 2.0&apos;,
-				NOT(CONTAINS(Product2__r.Name, &apos;Solution&apos;))
-)</errorConditionFormula>
+                    Disable_Teletherapy__c,
+                    Product2__r.Name != &apos;myStrength Complete&apos;,
+                    Product2__r.Name != &apos;Livongo for Behavioral Health by myStrength 2.0&apos;,
+                    NOT(CONTAINS(Product2__r.Name, &apos;Solution&apos;)),
+                    $Setup.LVGO_Automation_Switch__c.Validations__c
+        )</errorConditionFormula>
     <errorMessage>This check box can be checked only for Whole Person Solution Programs, myStrength Complete and Livongo for Behavioral Health by myStrength 2.0</errorMessage>
 </ValidationRule>

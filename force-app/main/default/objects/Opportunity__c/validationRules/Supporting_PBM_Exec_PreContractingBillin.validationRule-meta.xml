@@ -3,7 +3,8 @@
     <fullName>Supporting_PBM_Exec_PreContractingBillin</fullName>
     <active>true</active>
     <description>If Pre-Contracting Billing Partner is Express Scripts, a related Contact Role with the role of &quot;Supporting PBM Executive&quot; is required before you can save this record.</description>
-    <errorConditionFormula>(Supporting_PBM_Executive_Count__c= 0
+    <errorConditionFormula>$Setup.LVGO_Automation_Switch__c.Validations__c &amp;&amp;
+(Supporting_PBM_Executive_Count__c= 0
 || ISBLANK(Supporting_PBM_Executive_Count__c))
 &amp;&amp; PreContractingBillingPaperLongID__c  = $CustomMetadata.Account_Long_ID__mdt.Express_Scripts.Account_Long_ID__c
 &amp;&amp;  NOT(ISPICKVAL(Type__c, &quot;Renewal&quot;))

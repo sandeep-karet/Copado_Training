@@ -14,7 +14,7 @@
             <name>Role_Assigned</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Opportunity_Record.Owner__c.UserRoleId</leftValueReference>
+                <leftValueReference>Get_Opportunity_Record.Owner__r.UserRoleId</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -51,6 +51,7 @@
             <label>Match found</label>
         </rules>
     </decisions>
+    <environments>Default</environments>
     <interviewLabel>Opportunity-Update SubChannel {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity-Update SubChannel based on Role</label>
     <processMetadataValues>
@@ -107,7 +108,7 @@
             <field>Role__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Opportunity_Record.Owner__c.UserRole.DeveloperName</elementReference>
+                <elementReference>Get_Opportunity_Record.Owner__r.UserRole.DeveloperName</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -167,6 +168,7 @@
         <connector>
             <targetReference>Get_Opportunity_Record</targetReference>
         </connector>
+        <filterFormula>{!$Setup.LVGO_Automation_Switch__c.Flows__c}</filterFormula>
         <object>Opportunity__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

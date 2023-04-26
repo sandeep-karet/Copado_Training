@@ -3,6 +3,7 @@
     <fullName>Required_Parent_Opportunity</fullName>
     <active>false</active>
     <errorConditionFormula>AND(
+  $Setup.LVGO_Automation_Switch__c.Validations__c,
 				OR(ISPICKVAL(Type__c, &quot;New Business&quot;),
 							ISPICKVAL(Type__c, &quot;Expansion&quot;),
 						 ISPICKVAL(Type__c, &quot;Cross-sell (New product)&quot;)),

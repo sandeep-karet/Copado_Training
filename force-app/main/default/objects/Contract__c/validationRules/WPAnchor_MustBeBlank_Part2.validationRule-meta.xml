@@ -3,7 +3,8 @@
     <fullName>WPAnchor_MustBeBlank_Part2</fullName>
     <active>true</active>
     <description>As a Whole Person Anchor, the following fields must be left blank: Cross Sell Recruitment Began Date, Disclaimer DM + HTN, Eligibility Sentence DM + HTN &amp; Spanish Eligibility Sentence DM + HTN</description>
-    <errorConditionFormula>ISPICKVAL( Program_Type__c, &quot;WP Anchor&quot;)
+    <errorConditionFormula>$Setup.LVGO_Automation_Switch__c.Validations__c &amp;&amp;
+ISPICKVAL( Program_Type__c, &quot;WP Anchor&quot;)
 &amp;&amp; 
     (NOT(ISBLANK( Cross_sell_Recruitment_Began_Date__c ))
  			|| NOT(ISBLANK( Disclaimer_DM_HTN__c))

@@ -3,7 +3,9 @@
     <fullName>Custom_Marketing_Req_Detail</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
-Custom_marketing_requirements__c = TRUE,
-ISBLANK( Custom_marketing_requirements_detail__c ))</errorConditionFormula>
+            Custom_marketing_requirements__c = TRUE,
+            ISBLANK( Custom_marketing_requirements_detail__c ),
+            $Setup.LVGO_Automation_Switch__c.Validations__c
+        )</errorConditionFormula>
     <errorMessage>You have indicated this account has custom marketing requirements. Please specify those requirements in the Custom Marketing Requirements Detail field.</errorMessage>
 </ValidationRule>

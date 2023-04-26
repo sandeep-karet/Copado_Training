@@ -5,7 +5,7 @@
     <description>KEEP NOT ACTIVE - CS and Sales not in agreement 1.30.20
 
 Only the current Opportunity Owner can change Ownership. If you believe this message is in error, please reach out to your System Administrator.</description>
-    <errorConditionFormula>AND(ISCHANGED(Owner__c),
+    <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c,ISCHANGED(Owner__c),
 $User.Id &lt;&gt; PRIORVALUE(Owner__c),
 $Profile.Name &lt;&gt; &apos;System Administrator&apos;,
 NOT($Permission.Bypass_OppOwner_Transfer) )</errorConditionFormula>

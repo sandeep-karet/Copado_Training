@@ -3,7 +3,9 @@
     <fullName>Incentive_API_Start_Date_is_required</fullName>
     <active>true</active>
     <description>Incentive API Start date is required only if Incentives API Partner picklist is selected.</description>
-    <errorConditionFormula>AND (Not(ISBLANK(TEXT(Incentives_API_Partner__c))),
+    <errorConditionFormula>AND (
+$Setup.LVGO_Automation_Switch__c.Validations__c,
+Not(ISBLANK(TEXT(Incentives_API_Partner__c))),
 					 ISBLANK(Incentive_API_Start_Date__c) 
 				)</errorConditionFormula>
     <errorMessage>Please enter the Incentive API Start Date.</errorMessage>

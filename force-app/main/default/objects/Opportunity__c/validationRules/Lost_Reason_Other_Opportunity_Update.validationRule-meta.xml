@@ -3,7 +3,8 @@
     <fullName>Lost_Reason_Other_Opportunity_Update</fullName>
     <active>true</active>
     <description>If the Lost Reason is Other, you must specify the reason in Opportunity Update.</description>
-    <errorConditionFormula>ISPICKVAL(Lost_Reason__c , &quot;Other&quot;) 
+    <errorConditionFormula>$Setup.LVGO_Automation_Switch__c.Validations__c &amp;&amp;
+ISPICKVAL(Lost_Reason__c , &quot;Other&quot;) 
 &amp;&amp;  ISBLANK( Opportunity_Update_Next_Step__c )
 &amp;&amp; NOT(ISPICKVAL(Source__c, &apos;TD&apos;))</errorConditionFormula>
     <errorDisplayField>Opportunity_Update_Next_Step__c</errorDisplayField>
