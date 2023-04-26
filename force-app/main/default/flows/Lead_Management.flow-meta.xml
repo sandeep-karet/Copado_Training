@@ -223,14 +223,14 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>ISBLANK([Lead__c].TAN__c)
-&amp;&amp; NOT(ISBLANK([Lead__c].Email__c ))</stringValue>
+                <stringValue>ISBLANK([LVGO__Lead__c].LVGO__TAN__c)
+&amp;&amp; NOT(ISBLANK([LVGO__Lead__c].LVGO__Email__c ))</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_3</name>
         <dataType>Boolean</dataType>
-        <expression>ISBLANK({!myVariable_current.TAN__c})
-&amp;&amp; NOT(ISBLANK({!myVariable_current.Email__c} ))</expression>
+        <expression>ISBLANK({!myVariable_current.LVGO__TAN__c})
+&amp;&amp; NOT(ISBLANK({!myVariable_current.LVGO__Email__c} ))</expression>
     </formulas>
     <interviewLabel>Lead_Management-2_InterviewLabel</interviewLabel>
     <label>Lead Management</label>

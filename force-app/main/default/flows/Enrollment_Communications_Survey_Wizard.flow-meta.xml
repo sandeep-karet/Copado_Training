@@ -246,12 +246,12 @@
     <formulas>
         <name>fEnrollment_Communications_Survey_Community_URL</name>
         <dataType>String</dataType>
-        <expression>{!$Label.Enrollment_Communications_Survey_Community_URL}</expression>
+        <expression>{!$Label.LVGO__Enrollment_Communications_Survey_Community_URL}</expression>
     </formulas>
     <formulas>
         <name>fEnrollment_Marketing_Lead_Id</name>
         <dataType>String</dataType>
-        <expression>IF( ISBLANK({!Get_Related_Account_Record.EML__c}), &apos;&apos;, {!Get_Related_Account_Record.EML__r.Id})</expression>
+        <expression>IF( ISBLANK({!Get_Related_Account_Record.LVGO__EML__c}), &apos;&apos;, {!Get_Related_Account_Record.LVGO__EML__r.Id})</expression>
     </formulas>
     <formulas>
         <name>fOrg_Base_Url</name>
@@ -353,7 +353,7 @@
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>0120f000000WicOAAS</stringValue>
+                <stringValue>0127h000000gNyvAAE</stringValue>
             </value>
         </filters>
         <filters>

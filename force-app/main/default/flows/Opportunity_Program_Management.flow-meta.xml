@@ -527,18 +527,18 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>NOT(ISBLANK([OpportunityLineItem__c].Opportunity__c.Contract__c ))
-&amp;&amp; ISCHANGED([OpportunityLineItem__c].Pricing_Structure__c )
-&amp;&amp; NOT(ISBLANK([OpportunityLineItem__c].Pricing_Structure__c ))
-&amp;&amp; [OpportunityLineItem__c].Opportunity__c.Probability__c &gt; 0.1</stringValue>
+                <stringValue>NOT(ISBLANK([LVGO__OpportunityLineItem__c].LVGO__Opportunity__c.LVGO__Contract__c ))
+&amp;&amp; ISCHANGED([LVGO__OpportunityLineItem__c].LVGO__Pricing_Structure__c )
+&amp;&amp; NOT(ISBLANK([LVGO__OpportunityLineItem__c].LVGO__Pricing_Structure__c ))
+&amp;&amp; [LVGO__OpportunityLineItem__c].LVGO__Opportunity__c.LVGO__Probability__c &gt; 0.1</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_5</name>
         <dataType>Boolean</dataType>
-        <expression>NOT(ISBLANK({!myVariable_current.Opportunity__r.Contract__c} ))
-&amp;&amp; ISCHANGED({!myVariable_current.Pricing_Structure__c} )
-&amp;&amp; NOT(ISBLANK({!myVariable_current.Pricing_Structure__c} ))
-&amp;&amp; {!myVariable_current.Opportunity__r.Probability__c} &gt; 0.1</expression>
+        <expression>NOT(ISBLANK({!myVariable_current.LVGO__Opportunity__r.LVGO__Contract__c} ))
+&amp;&amp; ISCHANGED({!myVariable_current.LVGO__Pricing_Structure__c} )
+&amp;&amp; NOT(ISBLANK({!myVariable_current.LVGO__Pricing_Structure__c} ))
+&amp;&amp; {!myVariable_current.LVGO__Opportunity__r.LVGO__Probability__c} &gt; 0.1</expression>
     </formulas>
     <interviewLabel>Opportunity_Program_Management-2_InterviewLabel</interviewLabel>
     <label>Opportunity Program Management</label>

@@ -65,89 +65,89 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.Contract_Partner_Role </stringValue>
+                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
         <name>formula_10_myRule_3_A2_9673150485</name>
         <dataType>String</dataType>
-        <expression>{!$Label.Contract_Partner_Role}</expression>
+        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.Contract_Partner_Role </stringValue>
+                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
         <name>formula_11_myRule_3_A1_1150403006</name>
         <dataType>String</dataType>
-        <expression>{!$Label.Contract_Partner_Role}</expression>
+        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.Contract_Partner_Role </stringValue>
+                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
         <name>formula_4_myRule_3_A8_6332339033</name>
         <dataType>String</dataType>
-        <expression>{!$Label.Contract_Partner_Role}</expression>
+        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.Contract_Partner_Role </stringValue>
+                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
         <name>formula_5_myRule_3_A7_3736257831</name>
         <dataType>String</dataType>
-        <expression>{!$Label.Contract_Partner_Role}</expression>
+        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.Contract_Partner_Role </stringValue>
+                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
         <name>formula_6_myRule_3_A6_1742217240</name>
         <dataType>String</dataType>
-        <expression>{!$Label.Contract_Partner_Role}</expression>
+        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.Contract_Partner_Role </stringValue>
+                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
         <name>formula_7_myRule_3_A5_9905694371</name>
         <dataType>String</dataType>
-        <expression>{!$Label.Contract_Partner_Role}</expression>
+        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.Contract_Partner_Role </stringValue>
+                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
         <name>formula_8_myRule_3_A4_2877510400</name>
         <dataType>String</dataType>
-        <expression>{!$Label.Contract_Partner_Role}</expression>
+        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>$Label.Contract_Partner_Role </stringValue>
+                <stringValue>$Label.LVGO__Contract_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
         <name>formula_9_myRule_3_A3_6682183376</name>
         <dataType>String</dataType>
-        <expression>{!$Label.Contract_Partner_Role}</expression>
+        <expression>{!$Label.LVGO__Contract_Partner_Role}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
@@ -166,8 +166,8 @@
             <value>
                 <stringValue>AND(
  ISNEW(),
- [Contract__c].RecordTypeId = $Label.Program_Agreement_Record_Type,
- [Contract__c].Is_Cloned__c = FALSE
+ [LVGO__Contract__c].RecordTypeId = $Label.LVGO__Program_Agreement_Record_Type,
+ [LVGO__Contract__c].LVGO__Is_Cloned__c = FALSE
 )</stringValue>
             </value>
         </processMetadataValues>
@@ -175,8 +175,8 @@
         <dataType>Boolean</dataType>
         <expression>AND(
  ISNEW(),
- {!myVariable_current.RecordTypeId} = {!$Label.Program_Agreement_Record_Type},
- {!myVariable_current.Is_Cloned__c} = FALSE
+ {!myVariable_current.RecordTypeId} = {!$Label.LVGO__Program_Agreement_Record_Type},
+ {!myVariable_current.LVGO__Is_Cloned__c} = FALSE
 )</expression>
     </formulas>
     <interviewLabel>Contract_Relationship_Management-2_InterviewLabel</interviewLabel>

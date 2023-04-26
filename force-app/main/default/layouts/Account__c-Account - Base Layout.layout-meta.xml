@@ -113,9 +113,9 @@
         <editHeading>true</editHeading>
         <label>Employer Account Overview</label>
         <layoutColumns>
-            <layoutItems>	
-                <behavior>Edit</behavior>	
-                <field>NumberOfEmployees__c</field>	
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>NumberOfEmployees__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -194,11 +194,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Billing_City__c</field>
+                <field>BillingCity__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Billing_State_Province__c</field>
+                <field>Billing_Street__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>BillingState__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -211,10 +215,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Phone__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Billing_State_Backend__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -313,9 +313,9 @@
                 <behavior>Edit</behavior>
                 <field>Next_Business_Review__c</field>
             </layoutItems>
-            <layoutItems>	
-                <behavior>Edit</behavior>	
-                <field>Benefit_Plan_Year__c</field>	
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Benefit_Plan_Year__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -483,45 +483,45 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Related Closed/Won Sales Information</label>
-        <layoutColumns>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Account_Engagement_Status__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Total_Opportunity_Count__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Closed_Won_Opportunity_Count__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Earliest_Closed_Won_Opportunity__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Latest_Closed_Won_Opp_Date__c</field>	
-            </layoutItems>	
-        </layoutColumns>	
-        <layoutColumns>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Total_Won_Opportunities__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Closed_Won_Cross_Sell_Opp_Count__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Total_Closed_Lost_Opps__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Total_Closed_No_Decision_Opps__c</field>	
-            </layoutItems>	
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Account_Engagement_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_Opportunity_Count__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Closed_Won_Opportunity_Count__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Earliest_Closed_Won_Opportunity__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Latest_Closed_Won_Opp_Date__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_Won_Opportunities__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Closed_Won_Cross_Sell_Opp_Count__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_Closed_Lost_Opps__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_Closed_No_Decision_Opps__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -530,20 +530,21 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Related Open Sales Information</label>
-        <layoutColumns>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Open_Opportunity_Count__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Open_Cross_Sell_Opportunity_Count__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Open_Renewal_Opportunity_Count__c</field>	
-            </layoutItems>	
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Open_Opportunity_Count__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Open_Cross_Sell_Opportunity_Count__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Open_Renewal_Opportunity_Count__c</field>
+            </layoutItems>
         </layoutColumns>
+        <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
@@ -551,49 +552,49 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Related Open/Sold Sales by Program Information</label>
-        <layoutColumns>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Open_Opportunity_PwDs__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>PwBH_Sold__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>PwDPP_Sold__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>PwH_Sold__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>PwWM_Sold__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>PwO_Sold__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>PwWM_DPP_Sold__c</field>	
-            </layoutItems>	
-        </layoutColumns>	
-        <layoutColumns>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Closed_Won_Livongo_For_Diabetes_PwD_Sum__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Readonly</behavior>	
-                <field>Program_Count2__c</field>	
-            </layoutItems>	
-            <layoutItems>	
-                <behavior>Edit</behavior>	
-                <field>Single_or_Multi_Program2__c</field>	
-            </layoutItems>	
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Open_Opportunity_PwDs__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>PwBH_Sold__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>PwDPP_Sold__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>PwH_Sold__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>PwWM_Sold__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>PwO_Sold__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>PwWM_DPP_Sold__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Closed_Won_Livongo_For_Diabetes_PwD_Sum__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Program_Count3__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Single_or_Multi_Program2__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -784,9 +785,9 @@
                 <behavior>Edit</behavior>
                 <field>Source_ID__c</field>
             </layoutItems>
-            <layoutItems>	
-                <behavior>Edit</behavior>	
-                <field>TD_Acct_Guid__c</field>	
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>TD_Acct_Guid__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -809,42 +810,42 @@
         <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>1</sortOrder>
+            <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>2</sortOrder>
+            <sortOrder>1</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>3</sortOrder>
+            <sortOrder>2</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.ContentPost</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>4</sortOrder>
+            <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.ContentNote</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>5</sortOrder>
+            <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Account__c.Send_Enrollment_Communications_Survey</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>10</sortOrder>
+            <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Account__c.Create_New_CMC_CMCA</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>11</sortOrder>
+            <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Account__c.Modify_Existing_CMC</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>12</sortOrder>
+            <sortOrder>7</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -873,13 +874,6 @@
             <quickActionName>FeedItem.ContentNote</quickActionName>
         </quickActionListItems>
     </quickActionList>
-    <relatedContent>	
-        <relatedContentItems>	
-            <layoutItem>	
-                <component>wits:newsPanel</component>	
-            </layoutItem>	
-        </relatedContentItems>	
-    </relatedContent>
     <relatedLists>
         <fields>NAME</fields>
         <fields>Title__c</fields>
@@ -889,12 +883,9 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>Contact__c.Contact_Name__c</fields>
-        <fields>Contact__c.Account_Name__c</fields>
-        <fields>Contact__c.Title__c</fields>
-        <fields>AccountContactRelation__c.Roles__c</fields>
-        <fields>Contact__c.Email__c</fields>
-        <fields>Contact__c.Work_Phone__c</fields>
+        <fields>Contact_Name__c</fields>
+        <fields>Account_Name__c</fields>
+        <fields>Roles__c</fields>
         <relatedList>AccountContactRelation__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -1059,7 +1050,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8M000000EhTv</masterLabel>
+        <masterLabel>00h7h000000r1ZJ</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

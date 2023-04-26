@@ -77,26 +77,26 @@
             <value>
                 <stringValue>(ISNEW()
 
-|| ISCHANGED([Enrollment_Communications_Survey__c].Survey_Status_Updated_Date__c ))
+|| ISCHANGED([LVGO__Enrollment_Communications_Survey__c].LVGO__Survey_Status_Updated_Date__c ))
 
-&amp;&amp; NOT(ISBLANK([Enrollment_Communications_Survey__c].Account__c 
+&amp;&amp; NOT(ISBLANK([LVGO__Enrollment_Communications_Survey__c].LVGO__Account__c 
 ))
-&amp;&amp;  ([Enrollment_Communications_Survey__c].Survey_Status_Updated_Date__c  &gt; [Enrollment_Communications_Survey__c].Account__r.Last_Updated_ECS_DateTime__c 
+&amp;&amp;  ([LVGO__Enrollment_Communications_Survey__c].LVGO__Survey_Status_Updated_Date__c  &gt; [LVGO__Enrollment_Communications_Survey__c].LVGO__Account__r.LVGO__Last_Updated_ECS_DateTime__c 
 
-|| [Enrollment_Communications_Survey__c].Account__r.Last_Updated_ECS_DateTime__c  == null)</stringValue>
+|| [LVGO__Enrollment_Communications_Survey__c].LVGO__Account__r.LVGO__Last_Updated_ECS_DateTime__c  == null)</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_3</name>
         <dataType>Boolean</dataType>
         <expression>(ISNEW()
 
-|| ISCHANGED({!myVariable_current.Survey_Status_Updated_Date__c} ))
+|| ISCHANGED({!myVariable_current.LVGO__Survey_Status_Updated_Date__c} ))
 
-&amp;&amp; NOT(ISBLANK({!myVariable_current.Account__c} 
+&amp;&amp; NOT(ISBLANK({!myVariable_current.LVGO__Account__c} 
 ))
-&amp;&amp;  ({!myVariable_current.Survey_Status_Updated_Date__c}  &gt; {!myVariable_current.Account__r.Last_Updated_ECS_DateTime__c} 
+&amp;&amp;  ({!myVariable_current.LVGO__Survey_Status_Updated_Date__c}  &gt; {!myVariable_current.LVGO__Account__r.LVGO__Last_Updated_ECS_DateTime__c} 
 
-|| {!myVariable_current.Account__r.Last_Updated_ECS_DateTime__c}  == null)</expression>
+|| {!myVariable_current.LVGO__Account__r.LVGO__Last_Updated_ECS_DateTime__c}  == null)</expression>
     </formulas>
     <interviewLabel>Enrollment_Comm_Survey_Management-2_InterviewLabel</interviewLabel>
     <label>Enrollment Comm Survey Management</label>

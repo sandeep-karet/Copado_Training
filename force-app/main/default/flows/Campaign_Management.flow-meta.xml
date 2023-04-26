@@ -120,56 +120,56 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>RIGHT(TEXT(YEAR([Campaign__c].Start_Date__c)),2)&amp;&quot;_&quot;&amp;TEXT(MONTH([Campaign__c].Start_Date__c))
-&amp;&quot;_&quot;&amp;CASE([Campaign__c].Campaign_Line_of_Business__c, 
+                <stringValue>RIGHT(TEXT(YEAR([LVGO__Campaign__c].LVGO__Start_Date__c)),2)&amp;&quot;_&quot;&amp;TEXT(MONTH([LVGO__Campaign__c].LVGO__Start_Date__c))
+&amp;&quot;_&quot;&amp;CASE([LVGO__Campaign__c].LVGO__Campaign_Line_of_Business__c, 
 &quot;Benefit Consultants&quot;,&quot;BENCON&quot;, 
 &quot;Employer&quot;,&quot;EMP&quot;,
 &quot;Government&quot;, &quot;GOV&quot;,
 &quot;Health Plans&quot;, &quot;HP&quot;,
 &quot;Health Systems&quot;, &quot;HS&quot;,
 &quot;Labor&quot;,&quot;LAB&quot;,
-&quot;PBMS&quot;,&quot;PBM&quot;,&quot;&quot;)&amp;&quot;_&quot;&amp;[Campaign__c].Short_Name__c &amp;&quot;_v.&quot;&amp;TEXT([Campaign__c].Round_Sequence_of_Campaign_Communication__c )&amp;&quot;_&quot;&amp;TEXT(MONTH([Campaign__c].End_Date__c ))</stringValue>
+&quot;PBMS&quot;,&quot;PBM&quot;,&quot;&quot;)&amp;&quot;_&quot;&amp;[LVGO__Campaign__c].LVGO__Short_Name__c &amp;&quot;_v.&quot;&amp;TEXT([LVGO__Campaign__c].LVGO__Round_Sequence_of_Campaign_Communication__c )&amp;&quot;_&quot;&amp;TEXT(MONTH([LVGO__Campaign__c].LVGO__End_Date__c ))</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_4_myRule_3_A2_6918213135</name>
         <dataType>String</dataType>
-        <expression>RIGHT(TEXT(YEAR({!myVariable_current.Start_Date__c})),2)&amp;&quot;_&quot;&amp;TEXT(MONTH({!myVariable_current.Start_Date__c}))
-&amp;&quot;_&quot;&amp;CASE({!myVariable_current.Campaign_Line_of_Business__c}, 
+        <expression>RIGHT(TEXT(YEAR({!myVariable_current.LVGO__Start_Date__c})),2)&amp;&quot;_&quot;&amp;TEXT(MONTH({!myVariable_current.LVGO__Start_Date__c}))
+&amp;&quot;_&quot;&amp;CASE({!myVariable_current.LVGO__Campaign_Line_of_Business__c}, 
 &quot;Benefit Consultants&quot;,&quot;BENCON&quot;, 
 &quot;Employer&quot;,&quot;EMP&quot;,
 &quot;Government&quot;, &quot;GOV&quot;,
 &quot;Health Plans&quot;, &quot;HP&quot;,
 &quot;Health Systems&quot;, &quot;HS&quot;,
 &quot;Labor&quot;,&quot;LAB&quot;,
-&quot;PBMS&quot;,&quot;PBM&quot;,&quot;&quot;)&amp;&quot;_&quot;&amp;{!myVariable_current.Short_Name__c} &amp;&quot;_v.&quot;&amp;TEXT({!myVariable_current.Round_Sequence_of_Campaign_Communication__c} )&amp;&quot;_&quot;&amp;TEXT(MONTH({!myVariable_current.End_Date__c} ))</expression>
+&quot;PBMS&quot;,&quot;PBM&quot;,&quot;&quot;)&amp;&quot;_&quot;&amp;{!myVariable_current.LVGO__Short_Name__c} &amp;&quot;_v.&quot;&amp;TEXT({!myVariable_current.LVGO__Round_Sequence_of_Campaign_Communication__c} )&amp;&quot;_&quot;&amp;TEXT(MONTH({!myVariable_current.LVGO__End_Date__c} ))</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>RIGHT(TEXT(YEAR([Campaign__c].Start_Date__c)),2)&amp;&quot;_&quot;&amp;TEXT(MONTH([Campaign__c].Start_Date__c))
-&amp;&quot;_&quot;&amp;CASE([Campaign__c].Campaign_Line_of_Business__c, 
+                <stringValue>RIGHT(TEXT(YEAR([LVGO__Campaign__c].LVGO__Start_Date__c)),2)&amp;&quot;_&quot;&amp;TEXT(MONTH([LVGO__Campaign__c].LVGO__Start_Date__c))
+&amp;&quot;_&quot;&amp;CASE([LVGO__Campaign__c].LVGO__Campaign_Line_of_Business__c, 
 &quot;Benefit Consultants&quot;,&quot;BENCON&quot;, 
 &quot;Employer&quot;,&quot;EMP&quot;,
 &quot;Government&quot;, &quot;GOV&quot;,
 &quot;Health Plans&quot;, &quot;HP&quot;,
 &quot;Health Systems&quot;, &quot;HS&quot;,
 &quot;Labor&quot;,&quot;LAB&quot;,
-&quot;PBMS&quot;,&quot;PBM&quot;,&quot;&quot;)&amp;&quot;_&quot;&amp;[Campaign__c].Short_Name__c &amp;&quot;_&quot;&amp;[Campaign__c].List_Segment_Audience__c&amp;&quot;_v.&quot;&amp;TEXT([Campaign__c].Round_Sequence_of_Campaign_Communication__c )&amp;&quot;_&quot;&amp;TEXT(MONTH([Campaign__c].End_Date__c ))
+&quot;PBMS&quot;,&quot;PBM&quot;,&quot;&quot;)&amp;&quot;_&quot;&amp;[LVGO__Campaign__c].LVGO__Short_Name__c &amp;&quot;_&quot;&amp;[LVGO__Campaign__c].LVGO__List_Segment_Audience__c&amp;&quot;_v.&quot;&amp;TEXT([LVGO__Campaign__c].LVGO__Round_Sequence_of_Campaign_Communication__c )&amp;&quot;_&quot;&amp;TEXT(MONTH([LVGO__Campaign__c].LVGO__End_Date__c ))
 </stringValue>
             </value>
         </processMetadataValues>
         <name>formula_5_myRule_3_A1_8238429709</name>
         <dataType>String</dataType>
-        <expression>RIGHT(TEXT(YEAR({!myVariable_current.Start_Date__c})),2)&amp;&quot;_&quot;&amp;TEXT(MONTH({!myVariable_current.Start_Date__c}))
-&amp;&quot;_&quot;&amp;CASE({!myVariable_current.Campaign_Line_of_Business__c}, 
+        <expression>RIGHT(TEXT(YEAR({!myVariable_current.LVGO__Start_Date__c})),2)&amp;&quot;_&quot;&amp;TEXT(MONTH({!myVariable_current.LVGO__Start_Date__c}))
+&amp;&quot;_&quot;&amp;CASE({!myVariable_current.LVGO__Campaign_Line_of_Business__c}, 
 &quot;Benefit Consultants&quot;,&quot;BENCON&quot;, 
 &quot;Employer&quot;,&quot;EMP&quot;,
 &quot;Government&quot;, &quot;GOV&quot;,
 &quot;Health Plans&quot;, &quot;HP&quot;,
 &quot;Health Systems&quot;, &quot;HS&quot;,
 &quot;Labor&quot;,&quot;LAB&quot;,
-&quot;PBMS&quot;,&quot;PBM&quot;,&quot;&quot;)&amp;&quot;_&quot;&amp;{!myVariable_current.Short_Name__c} &amp;&quot;_&quot;&amp;{!myVariable_current.List_Segment_Audience__c}&amp;&quot;_v.&quot;&amp;TEXT({!myVariable_current.Round_Sequence_of_Campaign_Communication__c} )&amp;&quot;_&quot;&amp;TEXT(MONTH({!myVariable_current.End_Date__c} ))</expression>
+&quot;PBMS&quot;,&quot;PBM&quot;,&quot;&quot;)&amp;&quot;_&quot;&amp;{!myVariable_current.LVGO__Short_Name__c} &amp;&quot;_&quot;&amp;{!myVariable_current.LVGO__List_Segment_Audience__c}&amp;&quot;_v.&quot;&amp;TEXT({!myVariable_current.LVGO__Round_Sequence_of_Campaign_Communication__c} )&amp;&quot;_&quot;&amp;TEXT(MONTH({!myVariable_current.LVGO__End_Date__c} ))</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
