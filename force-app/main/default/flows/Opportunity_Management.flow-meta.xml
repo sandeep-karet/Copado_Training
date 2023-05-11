@@ -754,7 +754,7 @@
             <assignToReference>myCollection_myRule_11_A1oppSource</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>formula_13_myRule_11_A1_1248455065</elementReference>
+                <elementReference>formula_13_myRule_11_A1_5658535410</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -1129,7 +1129,7 @@
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_11</name>
-            <conditionLogic>1 AND 2 AND ( 3 OR 4 ) AND 5</conditionLogic>
+            <conditionLogic>( 1 OR 6 ) AND 2 AND ( 3 OR 4 ) AND 5</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -1289,6 +1289,37 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.StageName__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2397,7 +2428,7 @@
                 <leftValueReference>myVariable_current.Launch_Date__c</leftValueReference>
                 <operator>GreaterThanOrEqualTo</operator>
                 <rightValue>
-                    <elementReference>formula_33_myRule_31_0808477756</elementReference>
+                    <elementReference>formula_33_myRule_31_4440053198</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -2708,10 +2739,10 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>[LVGO__Opportunity__c].Id </stringValue>
+                <stringValue>[Opportunity__c].Id </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_13_myRule_11_A1_1248455065</name>
+        <name>formula_13_myRule_11_A1_5658535410</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.Id}</expression>
     </formulas>
@@ -2722,7 +2753,7 @@
                 <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_33_myRule_31_0808477756</name>
+        <name>formula_33_myRule_31_4440053198</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
     </formulas>
@@ -2733,7 +2764,7 @@
                 <stringValue>Today() + 3</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_39_myRule_37_A1_2755077608</name>
+        <name>formula_39_myRule_37_A1_3653689322</name>
         <dataType>Date</dataType>
         <expression>Today() + 3</expression>
     </formulas>
@@ -2744,7 +2775,7 @@
                 <stringValue>$Label.LVGO__Queue_RequestCIM </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_40_myRule_37_A1_6317761657</name>
+        <name>formula_40_myRule_37_A1_7286980048</name>
         <dataType>String</dataType>
         <expression>{!$Label.LVGO__Queue_RequestCIM}</expression>
     </formulas>
@@ -2755,7 +2786,7 @@
                 <stringValue>$Label.LVGO__Task_Record_Type_Id </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_41_myRule_37_A1_7867806435</name>
+        <name>formula_41_myRule_37_A1_4840203138</name>
         <dataType>String</dataType>
         <expression>{!$Label.Task_Record_Type_Id}</expression>
     </formulas>
@@ -2766,7 +2797,7 @@
                 <stringValue>[LVGO__Opportunity__c].LVGO__Account__c.LVGO__Covered_Lives__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_3_A3_8679480649</name>
+        <name>formula_4_myRule_3_A3_1855344745</name>
         <dataType>Number</dataType>
         <expression>{!myVariable_current.LVGO__Account__r.LVGO__Covered_Lives__c}</expression>
         <scale>18</scale>
@@ -2778,7 +2809,7 @@
                 <stringValue>$Label.LVGO__Opportunity_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_3_A2_5062048029</name>
+        <name>formula_5_myRule_3_A2_9264567882</name>
         <dataType>String</dataType>
         <expression>{!$Label.LVGO__Opportunity_Partner_Role}</expression>
     </formulas>
@@ -2789,7 +2820,7 @@
                 <stringValue>$Label.LVGO__Opportunity_Partner_Role </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_6_myRule_3_A1_5261988229</name>
+        <name>formula_6_myRule_3_A1_7844056589</name>
         <dataType>String</dataType>
         <expression>{!$Label.LVGO__Opportunity_Partner_Role}</expression>
     </formulas>
@@ -2797,12 +2828,12 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>NOT($Setup.LVGO_Automation_Switch__c.ProcessBuilders__c )</stringValue>
+                <stringValue>NOT($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__ProcessBuilders__c )</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_1</name>
         <dataType>Boolean</dataType>
-        <expression>NOT({!$Setup.LVGO_Automation_Switch__c.ProcessBuilders__c} )</expression>
+        <expression>NOT({!$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__ProcessBuilders__c} )</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
@@ -2815,7 +2846,7 @@
         <dataType>Boolean</dataType>
         <expression>ISNEW()</expression>
     </formulas>
-    <interviewLabel>Opportunity_Management-3_InterviewLabel</interviewLabel>
+    <interviewLabel>Opportunity_Management-4_InterviewLabel</interviewLabel>
     <label>Opportunity Management</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -2883,7 +2914,7 @@
             </processMetadataValues>
             <field>ActivityDate</field>
             <value>
-                <elementReference>formula_39_myRule_37_A1_2755077608</elementReference>
+                <elementReference>formula_39_myRule_37_A1_3653689322</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2913,7 +2944,7 @@
             </processMetadataValues>
             <field>OwnerId</field>
             <value>
-                <elementReference>formula_40_myRule_37_A1_6317761657</elementReference>
+                <elementReference>formula_40_myRule_37_A1_7286980048</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2985,7 +3016,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_41_myRule_37_A1_7867806435</elementReference>
+                <elementReference>formula_41_myRule_37_A1_4840203138</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3169,7 +3200,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_6_myRule_3_A1_5261988229</elementReference>
+                <elementReference>formula_6_myRule_3_A1_7844056589</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3281,7 +3312,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <elementReference>formula_5_myRule_3_A2_5062048029</elementReference>
+                <elementReference>formula_5_myRule_3_A2_9264567882</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3826,7 +3857,7 @@
             </processMetadataValues>
             <field>Opportunity_Covered_Lives__c</field>
             <value>
-                <elementReference>formula_4_myRule_3_A3_8679480649</elementReference>
+                <elementReference>formula_4_myRule_3_A3_1855344745</elementReference>
             </value>
         </inputAssignments>
         <object>Opportunity__c</object>
