@@ -8,6 +8,10 @@ public class ContentVersionTriggerTest {
     @isTest
     static void checkContentVersionTitle(){
         
+        LVGO_Automation_Switch__c asw  =new LVGO_Automation_Switch__c();
+        asw.Triggers__c  =true;
+        insert asw;
+        
         ContentVersion conVer=new ContentVersion();
         conVer.Title=Title;
         conVer.PathOnClient='Account Health Notes.snote';
@@ -19,11 +23,11 @@ public class ContentVersionTriggerTest {
         try {
             update conVer;
         }catch(Exception e){
-                        System.debug(e.getMessage());
+                        System.debug('Err:: '+e.getMessage());
                         Error= e.getMessage();
             
          }
-       	Test.stopTest();         
+        Test.stopTest();         
         Boolean expectedError = Error.contains(ERROR_MSG);
         system.assertEquals(expectedError, TRUE);
     }

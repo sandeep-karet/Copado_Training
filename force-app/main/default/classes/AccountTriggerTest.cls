@@ -31,6 +31,9 @@ public class AccountTriggerTest {
     
     @isTest
     static void createNewNotes(){
+        LVGO_Automation_Switch__c asw  =new LVGO_Automation_Switch__c();
+        asw.Triggers__c  =true;
+        insert asw;
         // New Notes creation testing when account health notes is added for the first time.
         List<Account__c> Accts=getAccountId();            
         set<Id> acctId=new Set<Id>();      
@@ -58,6 +61,10 @@ public class AccountTriggerTest {
     
     @isTest
     static void appendToExistingNotes(){
+        LVGO_Automation_Switch__c asw  =new LVGO_Automation_Switch__c();
+        asw.Triggers__c  =true;
+        insert asw;
+        
         // Update notes 
         List<Account__c> Accts=getAccountIdWithExistingNotes();            
         set<Id> acctId=new Set<Id>();  

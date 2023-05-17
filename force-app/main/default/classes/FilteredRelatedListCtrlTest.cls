@@ -66,10 +66,10 @@ public class FilteredRelatedListCtrlTest {
     @isTest
     static void getMetadataForColumnsTest() {
         List<String> columns = new List<String>();
-        columns.add('FirstName');
-        columns.add('MobilePhone');
-        columns.add('LastCURequestDate');
-        columns.add('LeadSource');
+        columns.add('FirstName__c');
+        columns.add('MobilePhone__c');
+        columns.add('LastCURequestDate__c');
+        columns.add('LeadSource__c');
 
         Test.startTest();
 

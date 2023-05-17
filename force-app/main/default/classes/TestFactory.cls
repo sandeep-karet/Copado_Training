@@ -139,7 +139,7 @@ global class TestFactory {
     //Creates and returns a TaskRayProject
     /*public static TASKRAY__Project__c createTaskRayProject() {
         TASKRAY__Project__c project = new TASKRAY__Project__c();
-       	project.TaskRayStatus__c = 'Not Started';
+        project.TaskRayStatus__c = 'Not Started';
         project.Project_Template_Category__c = 'Project Template';
         project.Project_Type__c = 'Contract Path Change';
         //project.Project_Sub_Type__c = 'Enterprise';

@@ -3,8 +3,23 @@ public class OppLineEnrollmenPercentBatchTest {
     
     @TestSetup
     static void testData(){
+        
+        
         User testUser = [SELECT Id FROM User WHERE Id = :UserInfo.getUserId()];
+        //System.runAs ( testUser ) {
+            UserRole ur = new UserRole();
+            ur.Name='Commercial_DTE_East_Client_Sales';
+            ur.DeveloperName='Commercial_DTE_East_Client_Sales';
+            insert ur;
+        //}    
         System.runAs (testUser) {
+        LVGO_Automation_Switch__c asw  =new LVGO_Automation_Switch__c();
+        asw.Triggers__c  =true;
+        asw.Flows__c  =true;
+        asw.ProcessBuilders__c  =true;
+        asw.Validations__c  =true; 
+        asw.Workflows__c  =true;
+        insert asw;
             Profile p = [SELECT Id FROM Profile WHERE Name = 'System Administrator'];
             User newUser = new User (Alias = 'standt', Email='testuser@test.com', 
                                      EmailEncodingKey='UTF-8', LastName='Testing', LanguageLocaleKey='en_US', 
@@ -12,12 +27,14 @@ public class OppLineEnrollmenPercentBatchTest {
                                      TimeZoneSidKey='America/Los_Angeles', UserName='testuser@testlv.com', UserRoleId = getUserRole().Id);
             insert newUser;
             Account__c clientAccount = TestFactory.createClientAccount();
+            clientAccount.Account_Name__c=clientAccount.Name;
             insert clientAccount;      
             
             Opportunity__c newBusinessOpp = TestFactory.createTypeBasedOpportunity('New Business');
             newBusinessOpp.Account__c = clientAccount.Id;
             newBusinessOpp.Name = 'Enrollment Opp';
-            newBusinessOpp.Opportunity_Covered_Lives__c=10000;     
+            newBusinessOpp.Opportunity_Covered_Lives__c=10000;   
+            newBusinessOpp.Opportunity_Name__c = newBusinessOpp.Name;  
             insert newBusinessOpp;
             
             
@@ -52,10 +69,17 @@ public class OppLineEnrollmenPercentBatchTest {
             insert livongoPBEntriesList;
             insert pricingStructureList;
             
+            livongoPBEntriesList = [Select Id, Pricebook2ID, Product2Id, Product2.Name, UnitPrice, IsActive from PricebookEntry where Id IN:livongoPBEntriesList];
+            
             List<OpportunityLineItem__c> oliList = new List<OpportunityLineItem__c>();
             
             for(PricebookEntry pbe: livongoPBEntriesList) {
-                oliList.add(TestFactory.createOpportunityLineItem(newBusinessOpp.Id, pbe.Id));
+                //oliList.add(TestFactory.createOpportunityLineItem(newBusinessOpp.Id, pbe.Id));
+                OpportunityLineItem__c oli = TestFactory.createOpportunityLineItem(newBusinessOpp.Id, pbe.Id);
+                oli.Product2__c = pbe.Product2Id;
+                oli.Price_Book_ID__c = pbe.Pricebook2ID;
+                oli.OpportunityProductName__c = pbe.Product2.Name;
+                oliList.add(oli);
             }   
             insert oliList;
         }
@@ -117,6 +141,7 @@ public class OppLineEnrollmenPercentBatchTest {
         Pricing_Structure__c ps = new Pricing_Structure__c(Name = 'Broker PPPM', Price_Book__c = priceBook.Id, Program__c = product.Id, IsActive__c = true, List_Price__c = 65);
         insert ps;
         oppLineList[0].Pricing_structure__c =ps.Id;
+        oppLineList[0].Price_Book_ID__c = priceBook.Id; 
         update oppLineList;
         Test.startTest();
         OppLineEnrollmentPercentUpdateBatch OppLineBatch = new OppLineEnrollmentPercentUpdateBatch();

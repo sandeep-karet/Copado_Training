@@ -5,8 +5,17 @@ public class OpportunityTriggerTest {
     public static final String EXPANSION = 'Expansion';
     public static final String CROSSSELL = 'Cross-sell (New product)';
     public static final String CONTRACTPATHCHANGE = 'Contract Path Change';
+    
     @TestSetup
     static void setupData() {
+    
+        LVGO_Automation_Switch__c asw  =new LVGO_Automation_Switch__c();
+        asw.Triggers__c  =true;
+        asw.Flows__c = true;
+        asw.ProcessBuilders__c = true;
+        asw.Validations__c = true;
+        insert asw;        
+        
         Account__c clientAccount = TestFactory.createClientAccount();
         insert clientAccount;
         
@@ -90,7 +99,10 @@ public class OpportunityTriggerTest {
         
         for (Opportunity__c oppty: oppList) {
             for(PricebookEntry pbe: livongoPBEntriesList) {
-                oliList.add(TestFactory.createOpportunityLineItem(oppty.Id, pbe.Id));
+                //oliList.add(TestFactory.createOpportunityLineItem(oppty.Id, pbe.Id));
+                OpportunityLineItem__c olItem = TestFactory.createOpportunityLineItem(oppty.Id, pbe.Id); 
+                olItem.Product2__c = pbe.Product2Id; 
+                oliList.add(olItem); 
             }
         }
         
@@ -103,6 +115,8 @@ public class OpportunityTriggerTest {
         }
         
         update oliList;
+        
+        
     }
     
     private static Account__c getAccountById(Id accId) {
@@ -124,7 +138,7 @@ public class OpportunityTriggerTest {
     }
     
     private static PricebookEntry getPBE() {
-        return [SELECT Id FROM PricebookEntry WHERE Product2.Name = 'Livongo for Diabetes' AND Pricebook2.Name = 'Livongo' LIMIT 1];
+        return [SELECT Id, Product2Id  FROM PricebookEntry WHERE Product2.Name = 'Livongo for Diabetes' AND Pricebook2.Name = 'Livongo' LIMIT 1];
     }
     
     private static List<PricebookEntry> getLivongoPBEs() {
@@ -147,7 +161,10 @@ public class OpportunityTriggerTest {
     private static List<OpportunityLineItem__c> getOppLineItems(Id OppRevId, List<PriceBookEntry> pbes){
         List<OpportunityLineItem__c> oliList = new List<OpportunityLineItem__c>();
         for(PricebookEntry pbe: pbes) {
-                oliList.add(TestFactory.createOpportunityLineItem(oppRevId, pbe.Id));
+                //oliList.add(TestFactory.createOpportunityLineItem(oppRevId, pbe.Id));
+                OpportunityLineItem__c olItem = TestFactory.createOpportunityLineItem(oppRevId, pbe.Id); 
+                olItem.Product2__c = pbe.Product2Id; 
+                oliList.add(olItem); 
             }  
         insert oliList;
         return oliList;
@@ -263,7 +280,7 @@ public class OpportunityTriggerTest {
         
         PricebookEntry pbe = getPBE();
         OpportunityLineItem__c oli = TestFactory.createOpportunityLineItem(expansionOpp.Id, pbe.Id);
-        
+        oli.Product2__c = pbe.Product2Id; 
         insert oli;
    
         update renewalOpp; 
@@ -337,6 +354,7 @@ public class OpportunityTriggerTest {
     
     @isTest
     static void healthScoresTest() {
+    
         Test.startTest();
         Opportunity__c opp = getOpportunityByType(RENEWAL);
         opp.CloseDate__c = Date.today().addMonths(24);

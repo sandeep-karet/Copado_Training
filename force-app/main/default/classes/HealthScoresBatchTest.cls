@@ -2,6 +2,10 @@
 private class HealthScoresBatchTest {
     @testSetup 
     static void setup() {
+        LVGO_Automation_Switch__c asw  =new LVGO_Automation_Switch__c();
+        asw.Triggers__c  =true;
+        insert asw;
+        
         List<Account__c> accounts = new List<Account__c>();
         for (Integer i=0; i<10; i++) {
             Account__c testAccount = new Account__c();

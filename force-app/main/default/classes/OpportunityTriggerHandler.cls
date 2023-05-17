@@ -14,7 +14,7 @@ public class OpportunityTriggerHandler {
             if (opp.Type__c == 'Renewal' && opp.CloseDate__c != oldOpportunities.get(opp.Id).CloseDate__c) {
                 hsOppList.add(opp);
             }
-            if(opp.Owner__c != oldOpportunities.get(opp.Id).Opp_Owner_Role__c) {
+            if(opp.Owner__c != oldOpportunities.get(opp.Id).Owner__c) {
                 setOppId.add(opp.Id);
             }
         }

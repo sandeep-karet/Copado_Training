@@ -6,8 +6,14 @@
 @isTest
 public class ContractHistortyTrackingTest {
     public static final List<Schema.FieldSetMember> contractTrackedFields = SObjectType.Contract__c.FieldSets.HistoryTracking.getFields();
-    @isTest(SeeAllData=true)
+    @isTest
     static void contractHistoryTrackingInsertOperation() {
+        LVGO_Automation_Switch__c asw  =new LVGO_Automation_Switch__c();
+        asw.Triggers__c  = true;
+        asw.ProcessBuilders__c = true;
+        asw.Flows__c = true;
+        insert asw;
+        
         List<Contract__c> newContracts = new List<Contract__c>();
         
         Account__c clientAccount = TestFactory.createClientAccount();
@@ -29,8 +35,14 @@ public class ContractHistortyTrackingTest {
         system.assertEquals(1, newContracts.size());
     }
     
-    @isTest(SeeAllData=true)
+    @isTest
     static void contractHistoryTrackingDeleteOperation() {
+        LVGO_Automation_Switch__c asw  =new LVGO_Automation_Switch__c();
+        asw.Triggers__c  = true;
+        asw.ProcessBuilders__c = true;
+        asw.Flows__c = true;
+        insert asw;
+        
         Map<Id, Contract__c> oldContracts = new Map<Id, Contract__c>();
         List<Contract__c> oldContractsList = new List<Contract__c>();
         

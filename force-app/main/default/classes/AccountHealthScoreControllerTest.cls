@@ -2,6 +2,10 @@
 public class AccountHealthScoreControllerTest {
     @TestSetup
     static void setupData() {
+        LVGO_Automation_Switch__c asw  =new LVGO_Automation_Switch__c();
+        asw.Triggers__c  =true;
+        insert asw;
+        
         Account__c clientAccount = TestFactory.createClientAccount();
         insert clientAccount;
     }
@@ -13,7 +17,7 @@ public class AccountHealthScoreControllerTest {
     private static List<Health_Score__c> getHealthScores(Id accId) {
         return [SELECT Id FROM Health_Score__c WHERE Account__c = :accId];
     }
-	
+    
     @isTest
     static void hsControllerTest() {
         Account__c acc = getClientAccount();

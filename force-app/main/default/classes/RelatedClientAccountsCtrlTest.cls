@@ -19,6 +19,12 @@ public class RelatedClientAccountsCtrlTest {
         Contract__c co = TestFactory.createClientOverview();
         co.Account__c = partnerAccount.Id;
         insert co;
+        
+        List<Relationship__c> allRelationships = new List<Relationship__c>();
+        Relationship__c rel1 = TestFactory.createRelationship('Contract Path');
+        rel1.RecordtypeId=CONTRACT_PARTNERSHIP_RT_ID; 
+        allRelationships.add(rel1);    
+        insert allRelationships; 
     }
 
     @isTest
@@ -37,7 +43,7 @@ public class RelatedClientAccountsCtrlTest {
         List<Relationship__c> rels  = RelatedClientAccountsCtrl.getRelatedClientAccounts(partnerAccount.Id);
 
         Test.stopTest();
-		
+        
         //Should be multiple Relationships created
         System.assertNotEquals(0, rels.size());
         for (Relationship__c rel : rels) {
