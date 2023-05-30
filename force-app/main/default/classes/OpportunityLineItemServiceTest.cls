@@ -8,6 +8,13 @@ public with sharing class OpportunityLineItemServiceTest {
     
     @TestSetup
     static void testData(){
+        
+        LVGO_Automation_Switch__c asw  =new LVGO_Automation_Switch__c();
+        asw.Triggers__c  =true;
+        asw.Flows__c  =true;
+        asw.ProcessBuilders__c  =true;
+        insert asw;
+        
         Account__c clientAccount = TestFactory.createClientAccount();
         insert clientAccount;      
         
@@ -49,13 +56,20 @@ public with sharing class OpportunityLineItemServiceTest {
         List<OpportunityLineItem__c> oliList = new List<OpportunityLineItem__c>();
         
         for(PricebookEntry pbe: livongoPBEntriesList) {
-            oliList.add(TestFactory.createOpportunityLineItem(newBusinessOpp.Id, pbe.Id));
+            //oliList.add(TestFactory.createOpportunityLineItem(newBusinessOpp.Id, pbe.Id));
+            OpportunityLineItem__c olItem = TestFactory.createOpportunityLineItem(newBusinessOpp.Id, pbe.Id); 
+            olItem.Product2__c = pbe.Product2Id; 
+            oliList.add(olItem); 
         }   
         insert oliList;
         
         //UserRole r = new UserRole(DeveloperName = 'Commercial', Name = 'Commercial');
         //insert r;        
     }
+    
+    private static Account__c getAccount() { 
+        return [SELECT Id FROM Account__c LIMIT 1]; 
+    } 
     
     private static Opportunity__c getOpportunity() {
         return [SELECT Id, Owner__c, Opportunity_Covered_Lives__c FROM Opportunity__c LIMIT 1];
@@ -99,7 +113,9 @@ public with sharing class OpportunityLineItemServiceTest {
         List<PricebookEntry> pbeList = new List<PricebookEntry>();
         List<OpportunityLineItem__c> oliList = getOLI();
         Test.startTest();
+        Account__c acc = getAccount();       
         Opportunity__c objopp= TestFactory.createOpportunity();
+        objopp.Account__c = acc.Id; 
         Insert objopp;
         
         Pricebook2 livongoPricebook = getPricebook();
@@ -188,7 +204,9 @@ public with sharing class OpportunityLineItemServiceTest {
         List<PricebookEntry> pbeList = new List<PricebookEntry>();
         List<OpportunityLineItem__c> oliList = getOLI();
         Test.startTest();
+        Account__c acc = getAccount(); 
         Opportunity__c objopp= TestFactory.createOpportunity();
+        objopp.Account__c = acc.Id; 
         Insert objopp;
         
         Pricebook2 livongoPricebook = getPricebook();
@@ -266,6 +284,7 @@ public with sharing class OpportunityLineItemServiceTest {
         OpportunityLineItem__c oli = TestFactory.createOpportunityLineItem(opp.Id, pbe.Id);
         oli.Price_Book_ID__c = pbe.Pricebook2Id;
         oli.Program_ID__c = pbe.Product2Id;
+        oli.Product2__c = pbe.Product2Id; 
         insert oli;
         
         //oli.Pricing_Structure__c = 
@@ -309,6 +328,7 @@ public with sharing class OpportunityLineItemServiceTest {
         OpportunityLineItem__c oli = TestFactory.createOpportunityLineItem(opp.Id, pbe.Id);
         oli.Price_Book_ID__c = pbe.Pricebook2Id;
         oli.Program_ID__c = pbe.Product2Id;
+        oli.Product2__c = pbe.Product2Id; 
         insert oli;
         
         oliList.add(oli);
@@ -358,6 +378,7 @@ public with sharing class OpportunityLineItemServiceTest {
             OpportunityLineItem__c oli = TestFactory.createOpportunityLineItem(opp.Id, pbe.Id);
             oli.Price_Book_ID__c = pbe.Pricebook2Id;
             oli.Program_ID__c = pbe.Product2Id;
+            oli.Product2__c = pbe.Product2Id; 
             oliList.add(oli);
         }
         
