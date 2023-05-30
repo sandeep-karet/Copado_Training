@@ -43,9 +43,9 @@
                 <behavior>Readonly</behavior>
                 <field>Last_Activity_Completed_Date_by_Sales__c</field>
             </layoutItems>
-            <layoutItems>	
-                <behavior>Edit</behavior>	
-                <field>Most_Recent_Event_by_Sales_Rep__c</field>	
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Most_Recent_Event_by_Sales_Rep__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -66,6 +66,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>BillingCity__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Insurer_Code__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>External_tags__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -117,9 +125,9 @@
         <editHeading>true</editHeading>
         <label>Employer Account Overview</label>
         <layoutColumns>
-            <layoutItems>	
-                <behavior>Edit</behavior>	
-                <field>NumberOfEmployees__c</field>	
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>NumberOfEmployees__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -242,9 +250,9 @@
                 <behavior>Edit</behavior>
                 <field>Next_Business_Review__c</field>
             </layoutItems>
-            <layoutItems>	
-                <behavior>Edit</behavior>	
-                <field>Benefit_Plan_Year__c</field>	
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Benefit_Plan_Year__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -497,14 +505,14 @@
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
-    <layoutSections>	
-        <customLabel>false</customLabel>	
-        <detailHeading>false</detailHeading>	
-        <editHeading>false</editHeading>	
-        <label>Description Information</label>	
-        <layoutColumns/>	
-        <layoutColumns/>	
-        <style>TwoColumnsTopToBottom</style>	
+    <layoutSections>
+        <customLabel>false</customLabel>
+        <detailHeading>false</detailHeading>
+        <editHeading>false</editHeading>
+        <label>Description Information</label>
+        <layoutColumns/>
+        <layoutColumns/>
+        <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -560,7 +568,7 @@
                 <behavior>Edit</behavior>
                 <field>Client_has_seen_ngTDC__c</field>
             </layoutItems>
-        </layoutColumns>        
+        </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
@@ -583,13 +591,13 @@
                 <behavior>Edit</behavior>
                 <field>Ignore_all_CSM_mirroring_effects__c</field>
             </layoutItems>
-            <layoutItems>	
-                <behavior>Edit</behavior>	
-                <field>Account_is_used_in_Downmarket_CMCs__c</field>	
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Account_is_used_in_Downmarket_CMCs__c</field>
             </layoutItems>
-            <layoutItems>	
-                <behavior>Edit</behavior>	
-                <field>CMC_Prefix__c</field>	
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CMC_Prefix__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -606,39 +614,39 @@
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
-    <platformActionList>	
-        <actionListContext>Record</actionListContext>	
-        <platformActionListItems>	
-            <actionName>Edit</actionName>	
-            <actionType>StandardButton</actionType>	
-            <sortOrder>0</sortOrder>	
-        </platformActionListItems>	
-        <platformActionListItems>	
-            <actionName>Delete</actionName>	
-            <actionType>StandardButton</actionType>	
-            <sortOrder>1</sortOrder>	
-        </platformActionListItems>	
-        <platformActionListItems>	
-            <actionName>FeedItem.TextPost</actionName>	
-            <actionType>QuickAction</actionType>	
-            <sortOrder>2</sortOrder>	
-        </platformActionListItems>	
-        <platformActionListItems>	
-            <actionName>FeedItem.ContentPost</actionName>	
-            <actionType>QuickAction</actionType>	
-            <sortOrder>3</sortOrder>	
-        </platformActionListItems>	
-        <platformActionListItems>	
-            <actionName>FeedItem.ContentNote</actionName>	
-            <actionType>QuickAction</actionType>	
-            <sortOrder>4</sortOrder>	
-        </platformActionListItems>	
-        <platformActionListItems>	
-            <actionName>Account__c.Create_New_CMC_CMCA</actionName>	
-            <actionType>QuickAction</actionType>	
+    <platformActionList>
+        <actionListContext>Record</actionListContext>
+        <platformActionListItems>
+            <actionName>Edit</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Delete</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>1</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.TextPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>2</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.ContentPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>3</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.ContentNote</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>4</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Account__c.Create_New_CMC_CMCA</actionName>
+            <actionType>QuickAction</actionType>
             <sortOrder>10</sortOrder>	
-        </platformActionListItems>	
-    </platformActionList>	
+        </platformActionListItems>
+    </platformActionList>
     <relatedContent>	
         <relatedContentItems>	
             <layoutItem>	
@@ -653,32 +661,32 @@
         <fields>Work_Phone__c</fields>
         <relatedList>Contact__c.Account__c</relatedList>
     </relatedLists>
-    <relatedLists>	
-        <fields>NAME</fields>	
-        <fields>RelationshipType__c</fields>	
-        <fields>Partner_Partnership__c</fields>	
-        <fields>Active__c</fields>	
-        <fields>Start_Date__c</fields>	
-        <fields>End_Date__c</fields>	
-        <relatedList>Relationship__c.Client_Partnership__c</relatedList>	
-    </relatedLists>	
-    <relatedLists>	
-        <fields>NAME</fields>	
-        <fields>RelationshipType__c</fields>	
-        <fields>Master_Client_Account__c</fields>	
-        <fields>Active__c</fields>	
-        <fields>Start_Date__c</fields>	
-        <fields>End_Date__c</fields>	
-        <relatedList>Relationship__c.Partner_Partnership__c</relatedList>	
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Partner_Partnership__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Client_Partnership__c</relatedList>
     </relatedLists>
-    <relatedLists>	
-        <fields>NAME</fields>	
-        <fields>RelationshipType__c</fields>	
-        <fields>Competitor_Competition__c</fields>	
-        <fields>Active__c</fields>	
-        <fields>Start_Date__c</fields>	
-        <fields>End_Date__c</fields>	
-        <relatedList>Relationship__c.Client_Competition__c</relatedList>	
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Master_Client_Account__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Partner_Partnership__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Competitor_Competition__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Client_Competition__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -713,46 +721,46 @@
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
     </relatedLists>
-    <relatedLists>	
-        <excludeButtons>MassChangeOwner</excludeButtons>	
-        <fields>NAME</fields>	
-        <fields>RECORDTYPE</fields>	
-        <fields>ClientMemberCode__c</fields>	
-        <fields>UsedforRegistration__c</fields>	
-        <relatedList>ClientMemberCode__c.Account__c</relatedList>	
-    </relatedLists>	
-    <relatedLists>	
-        <excludeButtons>MassChangeOwner</excludeButtons>	
-        <fields>NAME</fields>	
-        <fields>RECORDTYPE</fields>	
-        <fields>ClientMemberCode__c</fields>	
-        <fields>RegistrationCode__c</fields>	
-        <fields>ProgramOverview__c</fields>	
-        <fields>Program_Overview_Name__c</fields>	
-        <relatedList>CMCAssociation__c.Account__c</relatedList>	
-    </relatedLists>	
-    <relatedLists>	
-        <fields>ClientTag__c</fields>	
-        <fields>NAME</fields>	
-        <relatedList>Client_Tag_Assignment__c.ClientAccount__c</relatedList>	
-    </relatedLists>	
-    <relatedLists>	
-        <fields>NAME</fields>	
-        <fields>RelationshipType__c</fields>	
-        <fields>Master_Account__c</fields>	
-        <fields>Active__c</fields>	
-        <fields>Start_Date__c</fields>	
-        <fields>End_Date__c</fields>	
-        <relatedList>Relationship__c.Master_Client_Account__c</relatedList>	
+    <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <fields>NAME</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>ClientMemberCode__c</fields>
+        <fields>UsedforRegistration__c</fields>
+        <relatedList>ClientMemberCode__c.Account__c</relatedList>
     </relatedLists>
-    <relatedLists>	
-        <fields>NAME</fields>	
-        <fields>RelationshipType__c</fields>	
-        <fields>Master_Client_Account__c</fields>	
-        <fields>Active__c</fields>	
-        <fields>Start_Date__c</fields>	
-        <fields>End_Date__c</fields>	
-        <relatedList>Relationship__c.Master_Account__c</relatedList>	
+    <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <fields>NAME</fields>
+        <fields>RECORDTYPE</fields>
+        <fields>ClientMemberCode__c</fields>
+        <fields>RegistrationCode__c</fields>
+        <fields>ProgramOverview__c</fields>
+        <fields>Program_Overview_Name__c</fields>
+        <relatedList>CMCAssociation__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>ClientTag__c</fields>
+        <fields>NAME</fields>
+        <relatedList>Client_Tag_Assignment__c.ClientAccount__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Master_Account__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Master_Client_Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>RelationshipType__c</fields>
+        <fields>Master_Client_Account__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Master_Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>CreatedDate</fields>
