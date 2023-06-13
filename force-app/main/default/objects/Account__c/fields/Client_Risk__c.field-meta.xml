@@ -4,6 +4,11 @@
     <defaultValue>(&quot;green&quot;)</defaultValue>
     <description>Score of the account health and potential risk (if yellow, red)</description>
     <externalId>false</externalId>
+    <inlineHelpText>*Green: Everything is good
+*Yellow: Middle of the road participation and doesn’t engage often
+*Orange: Unhappy and potential for RFP
+*Red: Significant issues putting renewal at high risk
+*Black: Confirmed or forecast termination</inlineHelpText>
     <label>Account Health Score</label>
     <required>false</required>
     <trackFeedHistory>true</trackFeedHistory>
@@ -25,6 +30,12 @@
                 <color>#33CCFF</color>
                 <default>false</default>
                 <label>Blue</label>
+            </value>
+            <value>
+                <fullName>Orange</fullName>
+                <color>#FF6600</color>
+                <default>false</default>
+                <label>Orange</label>
             </value>
             <value>
                 <fullName>Yellow</fullName>

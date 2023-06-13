@@ -4,7 +4,7 @@
         <name>Send_Email_to_Contacts</name>
         <label>Send Email to Contacts</label>
         <locationX>842</locationX>
-        <locationY>1598</locationY>
+        <locationY>1538</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -35,7 +35,7 @@
         <name>Assign_Selected_Contact_Email</name>
         <label>Assign Selected Contact Email</label>
         <locationX>842</locationX>
-        <locationY>1358</locationY>
+        <locationY>1322</locationY>
         <assignmentItems>
             <assignToReference>SelectedContactEmails</assignToReference>
             <operator>Add</operator>
@@ -86,7 +86,7 @@
         <name>Validate_Contact_Email_Address</name>
         <label>Validate Contact Email Address</label>
         <locationX>710</locationX>
-        <locationY>1238</locationY>
+        <locationY>1214</locationY>
         <defaultConnector>
             <targetReference>Assign_Selected_Contact_Email</targetReference>
         </defaultConnector>
@@ -111,7 +111,7 @@
         <name>Validate_current_users_profile</name>
         <label>Validate current users profile</label>
         <locationX>388</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <defaultConnector>
             <targetReference>Get_Related_Account_Record</targetReference>
         </defaultConnector>
@@ -120,24 +120,10 @@
             <name>Current_user_not_allowed_to_send_survey</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>fCurrent_User_Profile</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Permission.LVGO__Send_Enrollment_Survey</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Client Implementation</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>fCurrent_User_Profile</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Client Success</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>fCurrent_User_Profile</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Enrollment Marketing</stringValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -157,7 +143,7 @@
         <name>Validate_if_the_Account_has_COs_and_POs_created_0</name>
         <label>Validate if the Account has COs and POs created</label>
         <locationX>1139</locationX>
-        <locationY>878</locationY>
+        <locationY>890</locationY>
         <defaultConnector>
             <targetReference>Account_has_no_related_contracts_0</targetReference>
         </defaultConnector>
@@ -182,7 +168,7 @@
         <name>Validate_if_the_account_has_existing_surveys_0</name>
         <label>Validate if the account has existing surveys</label>
         <locationX>726</locationX>
-        <locationY>758</locationY>
+        <locationY>782</locationY>
         <defaultConnector>
             <targetReference>Validate_if_the_Account_has_COs_and_POs_created_0</targetReference>
         </defaultConnector>
@@ -238,6 +224,7 @@
         <picklistField>Enrollment_Communications_Survey_Type__c</picklistField>
         <picklistObject>Enrollment_Communications_Survey__c</picklistObject>
     </dynamicChoiceSets>
+    <environments>Default</environments>
     <formulas>
         <name>fCurrent_User_Profile</name>
         <dataType>String</dataType>
@@ -283,7 +270,7 @@
         <name>Create_Enrollment_Communications_Survey</name>
         <label>Create Enrollment Communications Survey</label>
         <locationX>842</locationX>
-        <locationY>1478</locationY>
+        <locationY>1430</locationY>
         <assignRecordIdToReference>vSurveyRecordId</assignRecordIdToReference>
         <connector>
             <targetReference>Send_Email_to_Contacts</targetReference>
@@ -336,7 +323,7 @@
         <name>Get_COs_and_POs_related_to_the_Account</name>
         <label>Get COs and POs related to the Account</label>
         <locationX>726</locationX>
-        <locationY>638</locationY>
+        <locationY>674</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Validate_if_the_account_has_existing_surveys_0</targetReference>
@@ -353,7 +340,7 @@
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>0127h000000gNyvAAE</stringValue>
+                <elementReference>vProgramOverviewId</elementReference>
             </value>
         </filters>
         <filters>
@@ -385,10 +372,10 @@
         <name>Get_Enrollment_Survey_Records</name>
         <label>Get Enrollment Survey Records</label>
         <locationX>726</locationX>
-        <locationY>518</locationY>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_COs_and_POs_related_to_the_Account</targetReference>
+            <targetReference>Get_Program_Overview_Record_Type_Id</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -403,10 +390,40 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Program_Overview_Record_Type_Id</name>
+        <label>Get Program Overview Record Type Id</label>
+        <locationX>726</locationX>
+        <locationY>566</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_COs_and_POs_related_to_the_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>LVGO__Contract__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Program_Overview</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>vProgramOverviewId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Related_Account_Contacts</name>
         <label>Get Related Account Contacts</label>
         <locationX>726</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Enrollment_Survey_Records</targetReference>
@@ -434,7 +451,7 @@
         <name>Get_Related_Account_Record</name>
         <label>Get Related Account Record</label>
         <locationX>726</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Related_Account_Contacts</targetReference>
@@ -471,7 +488,7 @@
         <name>AccountContactSelectionScreen</name>
         <label>AccountContactSelectionScreen</label>
         <locationX>710</locationX>
-        <locationY>1118</locationY>
+        <locationY>1106</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -511,7 +528,7 @@
         <name>Confirmation_Screen</name>
         <label>Confirmation_Screen</label>
         <locationX>842</locationX>
-        <locationY>1718</locationY>
+        <locationY>1646</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -527,7 +544,7 @@
         <name>Email_Error_Message_Screen</name>
         <label>Email Error Message Screen</label>
         <locationX>578</locationX>
-        <locationY>1358</locationY>
+        <locationY>1322</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -543,7 +560,7 @@
         <name>NoAccountContactsScreen</name>
         <label>NoAccountContactsScreen</label>
         <locationX>1106</locationX>
-        <locationY>1118</locationY>
+        <locationY>1106</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -559,7 +576,7 @@
         <name>Survey_already_exists_screen_0</name>
         <label>Survey already exists screen</label>
         <locationX>314</locationX>
-        <locationY>878</locationY>
+        <locationY>890</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -575,7 +592,7 @@
         <name>Users_Not_Allowed_to_Send_Screen</name>
         <label>Users Not Allowed to Send Screen</label>
         <locationX>50</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -637,6 +654,13 @@ Thanks!</text>
     </variables>
     <variables>
         <name>selectedContactFirstName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>vProgramOverviewId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
