@@ -419,7 +419,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>BillingAddress__c</field>
+                <field>Billing_Address_Custom__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -429,7 +429,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>ShippingAddress__c</field>
+                <field>Shipping_Address_Custom__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -662,6 +662,16 @@
         <relatedList>Contact__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <customButtons>New_Contact</customButtons>
+        <customButtons>Add_Relationship</customButtons>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <excludeButtons>New</excludeButtons>
+        <fields>Contact__c</fields>
+        <fields>Account_Name__c</fields>
+        <fields>Roles__c</fields>
+        <relatedList>AccountContactRelation__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>NAME</fields>
         <fields>RelationshipType__c</fields>
         <fields>Partner_Partnership__c</fields>
@@ -735,7 +745,7 @@
         <fields>RECORDTYPE</fields>
         <fields>ClientMemberCode__c</fields>
         <fields>RegistrationCode__c</fields>
-        <fields>ProgramOverview__c</fields>
+        <fields>Program_Number_Hyperlink__c</fields>
         <fields>Program_Overview_Name__c</fields>
         <relatedList>CMCAssociation__c.Account__c</relatedList>
     </relatedLists>

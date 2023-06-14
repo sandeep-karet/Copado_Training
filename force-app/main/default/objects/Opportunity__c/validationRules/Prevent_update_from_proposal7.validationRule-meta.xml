@@ -9,10 +9,8 @@ OR(
 ISPICKVAL( StageName__c, &quot;Review/Negotiation&quot;),
 ISPICKVAL( StageName__c, &quot;Contracting&quot;),
 ISPICKVAL( StageName__c, &quot;Closed Won&quot;)),
-$Profile.Name &lt;&gt; &quot;Sales Admin&quot;, 
 $Profile.Name &lt;&gt; &quot;System Administrator&quot;, 
-$Profile.Name &lt;&gt; &quot;Finance Team&quot;, 
-$UserRole.Name &lt;&gt; &quot;Client Strategy Leadership&quot;, 
+$UserRole.Name &lt;&gt; &quot;Client Management - VP&quot;, 
 ISBLANK( TEXT( Benefit_Consultant_Involved_in_Deal__c )),
 !ISPICKVAL( Type__c, &quot;Renewal&quot;)
 )</errorConditionFormula>

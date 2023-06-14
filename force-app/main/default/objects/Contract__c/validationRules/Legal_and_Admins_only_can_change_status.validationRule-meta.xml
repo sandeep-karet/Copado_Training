@@ -4,8 +4,7 @@
     <active>true</active>
     <description>Only a Legal User or an Admin should be able to change the status of a contract record (Client Overview or Program Overview)</description>
     <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c,ISCHANGED( Status__c ),
-				 $UserRole.Name  &lt;&gt; &quot;Legal&quot;, 
-							$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
-			    $Profile.Name &lt;&gt; &quot;Sales Ops&quot;)</errorConditionFormula>
+				NOT($Permission.Change_Contract_Status),  
+							$Profile.Name &lt;&gt; &quot;System Administrator&quot;)</errorConditionFormula>
     <errorMessage>Only Admin and Legal users are allowed to edit the contract status. If you believe the current status is inaccurate, chatter @Livongo Legal to request an update.</errorMessage>
 </ValidationRule>

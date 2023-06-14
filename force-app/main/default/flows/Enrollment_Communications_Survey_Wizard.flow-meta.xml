@@ -61,7 +61,7 @@
         <name>Validate_Account_Contacts</name>
         <label>Validate Account Contacts</label>
         <locationX>908</locationX>
-        <locationY>998</locationY>
+        <locationY>890</locationY>
         <defaultConnector>
             <targetReference>NoAccountContactsScreen</targetReference>
         </defaultConnector>
@@ -120,7 +120,7 @@
             <name>Current_user_not_allowed_to_send_survey</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Permission.LVGO__Send_Enrollment_Survey</leftValueReference>
+                <leftValueReference>$Permission.Send_Enrollment_Survey</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -403,7 +403,7 @@
             <field>SobjectType</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>LVGO__Contract__c</stringValue>
+                <stringValue>Contract__c</stringValue>
             </value>
         </filters>
         <filters>
@@ -472,7 +472,7 @@
         <name>Account_has_no_related_contracts_0</name>
         <label>Account has no related contracts</label>
         <locationX>1370</locationX>
-        <locationY>998</locationY>
+        <locationY>890</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>

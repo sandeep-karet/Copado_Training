@@ -4,7 +4,7 @@
     <active>true</active>
     <errorConditionFormula>$Setup.LVGO_Automation_Switch__c.Validations__c &amp;&amp;
 (TEXT(Sub_Channel__c) == &apos;&apos; || TEXT(Sub_Channel__c) == NULL) &amp;&amp;
-($UserRole.Name == &apos;Commercial DTE - Labor&apos; || $UserRole.Name == &apos;Commercial DTE - Labor VP&apos;)</errorConditionFormula>
+($UserRole.Name == &apos;DTE - Labor&apos; || $UserRole.Name == &apos;DTE - Labor VP&apos;)</errorConditionFormula>
     <errorDisplayField>Sub_Channel__c</errorDisplayField>
     <errorMessage>Sub-Channel cannot be blank.</errorMessage>
 </ValidationRule>
