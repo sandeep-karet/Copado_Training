@@ -378,37 +378,37 @@
         <platformActionListItems>
             <actionName>FeedItem.LinkPost</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>4</sortOrder>
+            <sortOrder>2</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.PollPost</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>6</sortOrder>
+            <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>7</sortOrder>
+            <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>8</sortOrder>
+            <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Clone</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>9</sortOrder>
+            <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Share</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>10</sortOrder>
+            <sortOrder>7</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.QuestionPost</actionName>
             <actionType>QuickAction</actionType>
-            <sortOrder>13</sortOrder>
+            <sortOrder>8</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>
@@ -431,6 +431,14 @@
         <relatedList>RelatedHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>Account_Name__c</fields>
+        <fields>Roles__c</fields>
+        <fields>StartDate__c</fields>
+        <fields>EndDate__c</fields>
+        <fields>IsActive__c</fields>
+        <relatedList>AccountContactRelation__c.Contact__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <relatedList>RelatedContentNoteList</relatedList>
     </relatedLists>
     <relatedLists>
@@ -438,7 +446,12 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Contact__c.Reports_To__c</relatedList>
+        <fields>Contract_Number_HyperLink__c</fields>
+        <fields>Legacy_Contract_Number__c</fields>
+        <fields>Contract_Name__c</fields>
+        <fields>Account__c</fields>
+        <fields>Status__c</fields>
+        <relatedList>Contract__c.Billing_POC__c</relatedList>
     </relatedLists>
     <relatedObjects>Account__c</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
