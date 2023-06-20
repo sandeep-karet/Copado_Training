@@ -156,6 +156,16 @@ IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), 
         <protected>false</protected>
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_the_Opportunity_Product_Name</fullName>
+        <field>OpportunityProductName__c</field>
+        <formula>Product2__r.Name</formula>
+        <name>Set the Opportunity Product Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
     <rules>
         <fullName>Opportunity Owner Role IsChanged</fullName>
         <actions>
@@ -206,5 +216,19 @@ IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), 
         <description>Sets the Integrate Program field on the Opportunity Program to TRUE.</description>
         <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,IntegrateProgram__c = FALSE)</formula>
         <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set the Product Name</fullName>
+        <actions>
+            <name>Set_the_Opportunity_Product_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>OpportunityLineItem__c.ProductCode__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Sets the product name on the Opportunity Product</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
 </Workflow>
