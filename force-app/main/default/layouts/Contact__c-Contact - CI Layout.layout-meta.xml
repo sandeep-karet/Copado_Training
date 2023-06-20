@@ -8,8 +8,20 @@
         <label>Contact Information</label>
         <layoutColumns>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Salutation__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>FirstName__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MiddleName__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
-                <field>Name</field>
+                <field>LastName__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -342,6 +354,10 @@
                 <field>CreatedById</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Required</behavior>
+                <field>Name</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Contact_ID_Long__c</field>
             </layoutItems>
@@ -460,7 +476,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h8M000000EfMJ</masterLabel>
+        <masterLabel>00h7h000000r1ZY</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

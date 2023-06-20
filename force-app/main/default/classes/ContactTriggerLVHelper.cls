@@ -27,4 +27,20 @@ public class ContactTriggerLVHelper {
         
         database.update(accContRelMap.values(),false);
     }
+
+    public static void updateName(List<Contact__c> conlist,Map<id,Contact__c> newMap ,Map<id,Contact__c> oldMap){
+        for(Contact__c contObj: conlist){
+            String conName='';
+            if(NULL != contObj.Salutation__c)
+                conName = contObj.Salutation__c;
+            if(NULL != contObj.Firstname__c)
+                conName+= ' '+contObj.Firstname__c;
+            if(NULL != contObj.Middlename__c)
+                conName+= ' '+contObj.Middlename__c;
+            if(NULL != contObj.Lastname__c)
+                conName+= ' '+contObj.Lastname__c;
+            contObj.Name = conName;
+        }
+    }
+    
 }
