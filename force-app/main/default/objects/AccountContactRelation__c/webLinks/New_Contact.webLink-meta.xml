@@ -10,5 +10,5 @@
     <openType>sidebar</openType>
     <protected>false</protected>
     <requireRowSelection>true</requireRowSelection>
-    <url>{!URLFOR(&apos;/lightning/o/LVGO__Contact__c/new?defaultFieldValues=LVGO__Account__c=&apos; + LVGO__Account__c.Id+&apos;,Name=XYZ&apos;)}</url>
+    <url>{!URLFOR(&apos;/lightning/o/LVGO__Contact__c/new?nooverride=1&amp;defaultFieldValues=LVGO__Account__c=&apos; + LVGO__Account__c.Id+&apos;,Name=XYZ&apos;)}</url>
 </WebLink>
