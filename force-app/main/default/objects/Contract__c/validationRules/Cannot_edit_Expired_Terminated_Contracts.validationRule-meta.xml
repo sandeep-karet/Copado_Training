@@ -6,6 +6,7 @@
     <errorConditionFormula>AND(
  $Setup.LVGO_Automation_Switch__c.Validations__c,  
 NOT($Permission.Bypass_Edit_Contract_in_Terminated_Expired), 
+NOT($Permission.Bypass_Legal_and_Admins_only_can_change_status_Validation_Rule),
 OR( 
 AND( 
 ISCHANGED(Status__c),

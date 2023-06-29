@@ -5,6 +5,7 @@
     <description>Regular Users (Non-Admin/Non-Legal user) should not be allowed to edit ANY fields on a Contract if its Status is either Expired or Terminated.</description>
     <errorConditionFormula>AND(
 $Setup.LVGO_Automation_Switch__c.Validations__c,
+NOT($Permission.Bypass_Legal_and_Admins_only_can_change_status_Validation_Rule),
 NOT(
 OR(
 NOT($Permission.Edit_Termed_Contract_Status),

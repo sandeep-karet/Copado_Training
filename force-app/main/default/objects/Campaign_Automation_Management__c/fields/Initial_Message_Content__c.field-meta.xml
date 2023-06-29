@@ -13,7 +13,8 @@
 			IF(ISPICKVAL(Initial_Message__c,&apos;BG-Mail Order Meds&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_Mail_Order_Meds.Initial_Message_Content__c, 
 			IF(ISPICKVAL(Initial_Message__c,&apos;BG-Preventative Visit&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_Preventative_Visit.Initial_Message_Content__c, 
 			IF(ISPICKVAL(Initial_Message__c,&apos;BG-Flu Shot&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_Flu_Shot.Initial_Message_Content__c, 
-			IF(ISPICKVAL(Initial_Message__c,&apos;BG-Telehealth&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_Telehealth.Initial_Message_Content__c, &apos;&apos;))))))))))))</formula>
+			IF(ISPICKVAL(Initial_Message__c,&apos;BG-Telehealth&apos;),  $CustomMetadata.Campaign_Automation__mdt.BG_Telehealth.Initial_Message_Content__c, 
+			IF(ISPICKVAL(Initial_Message__c,&apos;Email - A1c Reminder&apos;),  $CustomMetadata.Campaign_Automation__mdt.Email_A1c_Reminder.Initial_Message_Content__c, &apos;&apos;)))))))))))))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Initial Message Content</label>
     <required>false</required>

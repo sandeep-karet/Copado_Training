@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>54.0</apiVersion>
+    <description>SCDEV-2817 changes are done in this version</description>
     <environments>Default</environments>
     <formulas>
         <name>currentDate</name>
@@ -29,10 +30,34 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
+        <name>Update_Initial_Message</name>
+        <label>Update Initial Message</label>
+        <locationX>50</locationX>
+        <locationY>408</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Notification_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Email</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Initial_Message__c</field>
+            <value>
+                <stringValue>Email - A1c Reminder</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_the_record_status_to_inactive</name>
         <label>Update the record status to inactive</label>
         <locationX>50</locationX>
         <locationY>288</locationY>
+        <connector>
+            <targetReference>Update_Initial_Message</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>End_Date__c</field>

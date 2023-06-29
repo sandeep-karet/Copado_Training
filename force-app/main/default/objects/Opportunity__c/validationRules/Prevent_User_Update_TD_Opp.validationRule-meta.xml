@@ -5,7 +5,7 @@
     <errorConditionFormula>AND(
 $Setup.LVGO_Automation_Switch__c.Validations__c,
  ISPICKVAL(Source__c, &apos;TD&apos;),
-     NOT($Permission.Edit_TD_Opportunity),
+     NOT($Permission.Edit_TD_Opportunity), NOT($Permission.Bypass_Legal_and_Admins_only_can_change_status_Validation_Rule),
      $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
      OR(  ISCHANGED(Benefit_Consultant_Involved_in_Deal__c),
           ISCHANGED(CIM__c),

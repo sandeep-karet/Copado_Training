@@ -55,7 +55,7 @@
                 <field>OwnerId</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Client_Member_Code__c</field>
             </layoutItems>
             <layoutItems>
@@ -70,6 +70,10 @@
                 <behavior>Required</behavior>
                 <field>Notification_Type__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>File_Name__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -83,11 +87,23 @@
                 <behavior>Required</behavior>
                 <field>Start_Date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Enable_Second_Round_Campaign__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Second_Round_Campaign_Start_Date__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>End_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Second_Round_Campaign_Days_Delay__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -96,18 +112,18 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Meter Message Journey</label>
+        <label>Message Journey</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Initial_Message__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Answer1_Text__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Answer1_Action__c</field>
             </layoutItems>
             <layoutItems>
@@ -115,7 +131,7 @@
                 <field>Answer1_Response__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Answer1_Confirmation_Message__c</field>
             </layoutItems>
         </layoutColumns>
@@ -123,6 +139,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Initial_Message_Content__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Custom_Content_Message_Text__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

@@ -172,6 +172,7 @@
         <members>Account__c.Billing_Zip_Postal_Code__c</members>
         <members>Account__c.Billing__c</members>
         <members>Account__c.Bypass_Address_Verification__c</members>
+        <members>Account__c.CHC_Payer_Id__c</members>
         <members>Account__c.CMC_Prefix__c</members>
         <members>Account__c.CSM__c</members>
         <members>Account__c.Campaign_Risk_Notes__c</members>
@@ -377,7 +378,6 @@
         <members>CMCAssociation__c.ClientMemberCode__c</members>
         <members>CMCAssociation__c.Client_Member_Code_Client_Account__c</members>
         <members>CMCAssociation__c.Code__c</members>
-        <members>CMCAssociation__c.Enable_Core_Admin_Import__c</members>
         <members>CMCAssociation__c.Legacy_Salesforce_Id__c</members>
         <members>CMCAssociation__c.ProgramOverview__c</members>
         <members>CMCAssociation__c.Program_Name__c</members>
@@ -399,13 +399,18 @@
         <members>Campaign_Automation_Management__c.Campaign_Type__c</members>
         <members>Campaign_Automation_Management__c.Client_Member_Code__c</members>
         <members>Campaign_Automation_Management__c.Code__c</members>
+        <members>Campaign_Automation_Management__c.Custom_Content_Message_Text__c</members>
+        <members>Campaign_Automation_Management__c.Enable_Second_Round_Campaign__c</members>
         <members>Campaign_Automation_Management__c.End_Date__c</members>
+        <members>Campaign_Automation_Management__c.File_Name__c</members>
         <members>Campaign_Automation_Management__c.Initial_Message_Content__c</members>
         <members>Campaign_Automation_Management__c.Initial_Message__c</members>
         <members>Campaign_Automation_Management__c.Legacy_Salesforce_Id__c</members>
         <members>Campaign_Automation_Management__c.Notes__c</members>
         <members>Campaign_Automation_Management__c.Notification_Type__c</members>
         <members>Campaign_Automation_Management__c.Program__c</members>
+        <members>Campaign_Automation_Management__c.Second_Round_Campaign_Days_Delay__c</members>
+        <members>Campaign_Automation_Management__c.Second_Round_Campaign_Start_Date__c</members>
         <members>Campaign_Automation_Management__c.Start_Date__c</members>
         <members>Campaign_Automation_Management__c.State__c</members>
         <members>Campaign_Automation_Management__c.Status__c</members>
@@ -567,6 +572,7 @@
         <members>ClientMemberCode__c.Contract__c</members>
         <members>ClientMemberCode__c.Contractcustom__c</members>
         <members>ClientMemberCode__c.Downmarket_Reg_Code_Program_Associations__c</members>
+        <members>ClientMemberCode__c.Enable_Core_Admin_Import__c</members>
         <members>ClientMemberCode__c.Legacy_Salesforce_Id__c</members>
         <members>ClientMemberCode__c.OneApp_Access__c</members>
         <members>ClientMemberCode__c.OneApp_Migration_Date__c</members>
@@ -1076,6 +1082,7 @@
         <members>Contract__c.Recruitable_Pop_Current__c</members>
         <members>Contract__c.Recruitable_Population_D_HTN_Current__c</members>
         <members>Contract__c.ReductioninBG__c</members>
+        <members>Contract__c.Registration_Address_Type__c</members>
         <members>Contract__c.Registration_Customizations__c</members>
         <members>Contract__c.Registration_Flow_Scenarios__c</members>
         <members>Contract__c.Registration_Name__c</members>
@@ -1781,6 +1788,7 @@
         <members>Campaign_Automation.Diabetes_Meds_Adherence_talk_to_a_coach</members>
         <members>Campaign_Automation.Diabetes_care_Kidney_disease_monitorin</members>
         <members>Campaign_Automation.Diabetes_medications</members>
+        <members>Campaign_Automation.Email_A1c_Reminder</members>
         <members>Campaign_Automation.Managing_blood_pressure</members>
         <members>Estimated_Enrollment_Mapping.CKDARROther</members>
         <members>Estimated_Enrollment_Mapping.DiabetesARRCommercial</members>
@@ -1829,6 +1837,7 @@
         <members>Program_Abbreviation.Behavioral_Health</members>
         <members>Program_Abbreviation.Chronic_Kidney_Disease</members>
         <members>Program_Abbreviation.Diabetes</members>
+        <members>Program_Abbreviation.Diabetes_Deviceflex</members>
         <members>Program_Abbreviation.Heart_Failure</members>
         <members>Program_Abbreviation.Hypertension</members>
         <members>Program_Abbreviation.Prediabetes</members>
@@ -1855,6 +1864,7 @@
         <members>Program_Participant.Weight_Management</members>
         <members>Program_Participant.myStrength</members>
         <members>Program_Participant.myStrength_Complete</members>
+        <members>Program_Participant.myStrength_Plus</members>
         <members>RoleAndSubChannelMapping.Client_Implementation_Manager</members>
         <members>RoleAndSubChannelMapping.CommerciaEmployer_Downmarket_Renewal_Rep</members>
         <members>RoleAndSubChannelMapping.CommercialEmployer_Downmarket_Renewal_VP</members>
@@ -1897,11 +1907,59 @@
         <members>RoleAndSubChannelMapping.Commercial_HSG_Aetna_Rep</members>
         <members>RoleAndSubChannelMapping.Commercial_HSG_Blues_Rep</members>
         <members>RoleAndSubChannelMapping.Commercial_HSG_Blues_VP</members>
+        <members>RoleAndSubChannelMapping.Commercial_Ops</members>
         <members>RoleAndSubChannelMapping.DTE_Client_Management_Manager</members>
         <members>RoleAndSubChannelMapping.DTE_Client_Management_Platinum_Team</members>
         <members>RoleAndSubChannelMapping.DTE_Client_Management_Premier_Team_TDH</members>
         <members>RoleAndSubChannelMapping.DTE_Client_Management_Special_Segment</members>
         <members>RoleAndSubChannelMapping.DTE_Client_Management_Sr_Manager</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_AVP</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_Renewal_Rep</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_Renewal_VP</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_Rep1</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_Rep2</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_Rep3</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_Rep4</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_Rep5</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_Rep6</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_SVP</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_VP1</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_VP2</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_VP3</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_VP4</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_VP5</members>
+        <members>RoleAndSubChannelMapping.Employer_Downmarket_VP6</members>
+        <members>RoleAndSubChannelMapping.Employer_East_Client_Sales_Rep</members>
+        <members>RoleAndSubChannelMapping.Employer_East_Client_Sales_VP</members>
+        <members>RoleAndSubChannelMapping.Employer_Labor_Rep</members>
+        <members>RoleAndSubChannelMapping.Employer_Net_New_Business_VP</members>
+        <members>RoleAndSubChannelMapping.Employer_Net_New_Rep</members>
+        <members>RoleAndSubChannelMapping.Employer_SVP</members>
+        <members>RoleAndSubChannelMapping.Employer_UHC_Employees_Rep</members>
+        <members>RoleAndSubChannelMapping.Employer_UHC_Employees_VP</members>
+        <members>RoleAndSubChannelMapping.Employer_West_Client_Sales_Labor_VP</members>
+        <members>RoleAndSubChannelMapping.Employer_West_Client_Sales_Rep</members>
+        <members>RoleAndSubChannelMapping.Employer_West_Client_Sales_VP</members>
+        <members>RoleAndSubChannelMapping.HHS_CM</members>
+        <members>RoleAndSubChannelMapping.HHS_SVP</members>
+        <members>RoleAndSubChannelMapping.HHS_Sales</members>
+        <members>RoleAndSubChannelMapping.HHS_VP</members>
+        <members>RoleAndSubChannelMapping.HSG_ASO_Rep1</members>
+        <members>RoleAndSubChannelMapping.HSG_ASO_TPA_Reseller_VP</members>
+        <members>RoleAndSubChannelMapping.HSG_Aetna_Rep</members>
+        <members>RoleAndSubChannelMapping.HSG_Aetna_VP</members>
+        <members>RoleAndSubChannelMapping.HSG_Blues_Rep</members>
+        <members>RoleAndSubChannelMapping.HSG_Blues_VP</members>
+        <members>RoleAndSubChannelMapping.HSG_Federal_Rep</members>
+        <members>RoleAndSubChannelMapping.HSG_Federal_VP</members>
+        <members>RoleAndSubChannelMapping.HSG_National_Rep</members>
+        <members>RoleAndSubChannelMapping.HSG_National_VP</members>
+        <members>RoleAndSubChannelMapping.HSG_SVP</members>
+        <members>RoleAndSubChannelMapping.HSG_Strategic_Partnerships_SVP</members>
+        <members>RoleAndSubChannelMapping.HSG_Strategic_Partnerships_VP</members>
+        <members>RoleAndSubChannelMapping.HSG_TPA_Reseller_Rep</members>
+        <members>RoleAndSubChannelMapping.HSG_United_Rep</members>
+        <members>RoleAndSubChannelMapping.HSG_United_VP</members>
         <members>RoleAndSubChannelMapping.Health_SerHSG_Strategic_Partnerships_SVP</members>
         <members>RoleAndSubChannelMapping.Health_ServHSG_Strategic_Partnerships_VP</members>
         <members>RoleAndSubChannelMapping.Health_Services_HSG_Aetna_Federal_AVP</members>
@@ -1917,6 +1975,12 @@
         <members>RoleAndSubChannelMapping.Health_Services_HSG_United_VP</members>
         <members>RoleAndSubChannelMapping.Health_Services_HSG_West_Rep</members>
         <members>RoleAndSubChannelMapping.Health_Services_HSG_West_VP</members>
+        <members>RoleAndSubChannelMapping.Sales_Canada</members>
+        <members>RoleAndSubChannelMapping.Sales_HHS</members>
+        <members>RoleAndSubChannelMapping.Sales_International</members>
+        <members>RoleAndSubChannelMapping.Sales_VP_Canada</members>
+        <members>RoleAndSubChannelMapping.System_Administrator</members>
+        <members>SPA_CMC_Prefix.ASR_Health_Benefits</members>
         <members>SPA_CMC_Prefix.Aetna</members>
         <members>SPA_CMC_Prefix.Allied_Benefit_Systems</members>
         <members>SPA_CMC_Prefix.AmeriBen</members>
@@ -1929,6 +1993,7 @@
         <members>SPA_CMC_Prefix.BCBS_Montana</members>
         <members>SPA_CMC_Prefix.BCBS_NM</members>
         <members>SPA_CMC_Prefix.BCBS_OK</members>
+        <members>SPA_CMC_Prefix.BCBS_RI</members>
         <members>SPA_CMC_Prefix.BCBS_TX</members>
         <members>SPA_CMC_Prefix.BCBS_Tennessee</members>
         <members>SPA_CMC_Prefix.Benefit_Intelligence</members>
@@ -1937,9 +2002,11 @@
         <members>SPA_CMC_Prefix.Blue_Benefit_Administrators_BLUEBENEFIT</members>
         <members>SPA_CMC_Prefix.Blue_Cross_Blue_Shield_of_NC</members>
         <members>SPA_CMC_Prefix.CallADoctorPlus</members>
+        <members>SPA_CMC_Prefix.Consociate_Group</members>
         <members>SPA_CMC_Prefix.Employee_Plans</members>
         <members>SPA_CMC_Prefix.Evolution_Healthcare</members>
         <members>SPA_CMC_Prefix.Express_Scripts</members>
+        <members>SPA_CMC_Prefix.GDP_Advisors_LLC</members>
         <members>SPA_CMC_Prefix.GroupAndPensionAdministrators_MYPLAN</members>
         <members>SPA_CMC_Prefix.GroupAndPensionAdministrators_WPMYPLAN</members>
         <members>SPA_CMC_Prefix.Group_Alternatives</members>
@@ -1947,6 +2014,7 @@
         <members>SPA_CMC_Prefix.Group_and_Pension_Administrators</members>
         <members>SPA_CMC_Prefix.HealthComp_Administrators</members>
         <members>SPA_CMC_Prefix.HealthEz</members>
+        <members>SPA_CMC_Prefix.HealthJoy_LLC</members>
         <members>SPA_CMC_Prefix.HealthNow_New_York_BCBSWNY</members>
         <members>SPA_CMC_Prefix.HealthNow_New_York_BSNENY</members>
         <members>SPA_CMC_Prefix.HealtheChoices</members>
@@ -1964,6 +2032,7 @@
         <members>SPA_CMC_Prefix.Independence_Blue_Cross_IBC</members>
         <members>SPA_CMC_Prefix.Insurance_Management_Services_IMS</members>
         <members>SPA_CMC_Prefix.Meritain_Health</members>
+        <members>SPA_CMC_Prefix.NOVA_HealthCare</members>
         <members>SPA_CMC_Prefix.Premera_Blue_Cross_AK</members>
         <members>SPA_CMC_Prefix.Premera_Blue_Cross_WA</members>
         <members>SPA_CMC_Prefix.Regence_BlueCross_BlueShield_of_Oregon</members>
@@ -1973,6 +2042,7 @@
         <members>SPA_CMC_Prefix.Regence_BlueShield_of_Western_Washington</members>
         <members>SPA_CMC_Prefix.SimplePay</members>
         <members>SPA_CMC_Prefix.TPA_Partner_LLC</members>
+        <members>SPA_CMC_Prefix.Trek_Health_LLC</members>
         <members>SPA_CMC_Prefix.Trustmark</members>
         <members>SPA_CMC_Prefix.UMR</members>
         <members>SPA_CMC_Prefix.Unified_Group_Services_Inc</members>
@@ -1989,6 +2059,11 @@
         <members>SPA_Reg_Codes.AMERIBEN_DM_DPP</members>
         <members>SPA_Reg_Codes.AMERIBEN_DM_DPP_HTN</members>
         <members>SPA_Reg_Codes.AMERIBEN_DM_DPP_HTN_WM_BH</members>
+        <members>SPA_Reg_Codes.ASR_DM</members>
+        <members>SPA_Reg_Codes.ASR_DM_DPP_HTN</members>
+        <members>SPA_Reg_Codes.ASR_DM_DPP_HTN_WM_BH</members>
+        <members>SPA_Reg_Codes.ASR_DM_HTN</members>
+        <members>SPA_Reg_Codes.ASR_Default</members>
         <members>SPA_Reg_Codes.BAS_DM</members>
         <members>SPA_Reg_Codes.BBAHEALTH</members>
         <members>SPA_Reg_Codes.BCBSFL_DM</members>
@@ -2010,6 +2085,12 @@
         <members>SPA_Reg_Codes.BCBSOK</members>
         <members>SPA_Reg_Codes.BCBSOK_DM_DPP_HTN</members>
         <members>SPA_Reg_Codes.BCBSOK_DM_DPP_HTN_WM_BH</members>
+        <members>SPA_Reg_Codes.BCBSRI_DM</members>
+        <members>SPA_Reg_Codes.BCBSRI_DM_DPP_HTN</members>
+        <members>SPA_Reg_Codes.BCBSRI_DM_DPP_HTN_WM_BH</members>
+        <members>SPA_Reg_Codes.BCBSRI_DM_HTN</members>
+        <members>SPA_Reg_Codes.BCBSRI_Default</members>
+        <members>SPA_Reg_Codes.BCBSRI_HTN</members>
         <members>SPA_Reg_Codes.BCBSTX</members>
         <members>SPA_Reg_Codes.BCBSTX_DM_DPP_HTN</members>
         <members>SPA_Reg_Codes.BCBSTX_DM_DPP_HTN_WM_BH</members>
@@ -2032,6 +2113,11 @@
         <members>SPA_Reg_Codes.BSNENY</members>
         <members>SPA_Reg_Codes.Benefit_Intelligence_DM</members>
         <members>SPA_Reg_Codes.Benefit_Intelligence_DM_DPP</members>
+        <members>SPA_Reg_Codes.CGRP_DM</members>
+        <members>SPA_Reg_Codes.CGRP_DM_DPP_HTN</members>
+        <members>SPA_Reg_Codes.CGRP_DM_DPP_HTN_WM_BH</members>
+        <members>SPA_Reg_Codes.CGRP_DM_HTN</members>
+        <members>SPA_Reg_Codes.CGRP_Default</members>
         <members>SPA_Reg_Codes.CallADoctorPlus_DM</members>
         <members>SPA_Reg_Codes.CallADoctorPlus_DM_DPP_HTN_WM_BH</members>
         <members>SPA_Reg_Codes.CallADoctorPlus_DM_HTN_DPP</members>
@@ -2052,6 +2138,16 @@
         <members>SPA_Reg_Codes.Express_Scripts_DM_HTN_DPP_WM_BH</members>
         <members>SPA_Reg_Codes.Express_Scripts_HTN</members>
         <members>SPA_Reg_Codes.GBS</members>
+        <members>SPA_Reg_Codes.GDP_BH</members>
+        <members>SPA_Reg_Codes.GDP_DM</members>
+        <members>SPA_Reg_Codes.GDP_DM_BH</members>
+        <members>SPA_Reg_Codes.GDP_DM_DPP</members>
+        <members>SPA_Reg_Codes.GDP_DM_DPP_HTN</members>
+        <members>SPA_Reg_Codes.GDP_DM_DPP_HTN_WM_BH</members>
+        <members>SPA_Reg_Codes.GDP_DM_HTN</members>
+        <members>SPA_Reg_Codes.GDP_DPP</members>
+        <members>SPA_Reg_Codes.GDP_Default</members>
+        <members>SPA_Reg_Codes.GDP_HTN</members>
         <members>SPA_Reg_Codes.GPA_WPMYPLAN_DM</members>
         <members>SPA_Reg_Codes.GPA_WPMYPLAN_DM_DPP_HTN_BH_WM</members>
         <members>SPA_Reg_Codes.GPA_WPMYPLAN_DPP</members>
@@ -2060,6 +2156,16 @@
         <members>SPA_Reg_Codes.GROUPALT</members>
         <members>SPA_Reg_Codes.Group_and_Pension_Administrators_DM</members>
         <members>SPA_Reg_Codes.HC_DM</members>
+        <members>SPA_Reg_Codes.HEALTHJOY_BH</members>
+        <members>SPA_Reg_Codes.HEALTHJOY_DM</members>
+        <members>SPA_Reg_Codes.HEALTHJOY_DM_BH</members>
+        <members>SPA_Reg_Codes.HEALTHJOY_DM_DPP</members>
+        <members>SPA_Reg_Codes.HEALTHJOY_DM_DPP_HTN</members>
+        <members>SPA_Reg_Codes.HEALTHJOY_DM_DPP_HTN_WM_BH</members>
+        <members>SPA_Reg_Codes.HEALTHJOY_DM_HTN</members>
+        <members>SPA_Reg_Codes.HEALTHJOY_DPP</members>
+        <members>SPA_Reg_Codes.HEALTHJOY_Default</members>
+        <members>SPA_Reg_Codes.HEALTHJOY_HTN</members>
         <members>SPA_Reg_Codes.HNAS</members>
         <members>SPA_Reg_Codes.HealthEz_DM_DPP_HTN</members>
         <members>SPA_Reg_Codes.HealthEz_DM_DPP_HTN_WM_BH</members>
@@ -2090,6 +2196,11 @@
         <members>SPA_Reg_Codes.MTHEALTH</members>
         <members>SPA_Reg_Codes.MTHTN</members>
         <members>SPA_Reg_Codes.MYPLAN_DM</members>
+        <members>SPA_Reg_Codes.NOVA_DM</members>
+        <members>SPA_Reg_Codes.NOVA_DM_DPP_HTN</members>
+        <members>SPA_Reg_Codes.NOVA_DM_DPP_HTN_WM_BH</members>
+        <members>SPA_Reg_Codes.NOVA_DM_HTN</members>
+        <members>SPA_Reg_Codes.NOVA_Default</members>
         <members>SPA_Reg_Codes.OKHEALTH</members>
         <members>SPA_Reg_Codes.OKHTN</members>
         <members>SPA_Reg_Codes.OR_REG_HP</members>
@@ -2105,6 +2216,8 @@
         <members>SPA_Reg_Codes.TRUSTMARK</members>
         <members>SPA_Reg_Codes.TXHEALTH</members>
         <members>SPA_Reg_Codes.TXHTN</members>
+        <members>SPA_Reg_Codes.TrekHealthLLC_MySTR</members>
+        <members>SPA_Reg_Codes.TrekHealthLLC_MySTR_Defalut</members>
         <members>SPA_Reg_Codes.UMR_DM</members>
         <members>SPA_Reg_Codes.UMR_DM_DPP</members>
         <members>SPA_Reg_Codes.UMR_DM_DPP_HTN</members>
@@ -2176,6 +2289,7 @@
         <members>Additional_Account_Permission</members>
         <members>Bypass_Edit_Closed_Opp_Validation</members>
         <members>Bypass_Edit_Contract_in_Terminated_Expired</members>
+        <members>Bypass_Legal_and_Admins_only_can_change_status_Validation_Rule</members>
         <members>Bypass_OppOwner_Transfer</members>
         <members>Bypass_Opp_Launch_Date</members>
         <members>Bypass_Request_CIM_Validation</members>
@@ -2579,6 +2693,7 @@
         <members>Bypass_Opp_Launch_Date</members>
         <members>Bypass_Opportunity_Contact_Role_Rules</members>
         <members>CMC_CMCA_record_types</members>
+        <members>Campaign_Automation_Permission_Set</members>
         <members>Change_Opp_Owner</members>
         <members>Client_Success_Segment_Leadership</members>
         <members>Client_Success_or_HSS_Acct_Mgmt_User</members>
@@ -2586,6 +2701,7 @@
         <members>Commercial_Marketing_User</members>
         <members>Configuration_Team_Status</members>
         <members>Contract_Ops</members>
+        <members>Custom_Bypass_Legal_and_Admins_only_can_change_status_Validation_Rule</members>
         <members>Custom_Bypass_Transfer_Account_Owner_Validation_Rule</members>
         <members>Custom_Object_Import</members>
         <members>DOPS_Permission</members>
@@ -2720,6 +2836,8 @@
         <members>Account__c.RiskColor_RequiredFields</members>
         <members>Campaign_Automation_Management__c.Answer1_Response_Is_Required</members>
         <members>Campaign_Automation_Management__c.End_Date_cannot_be_less_the_Start_Date</members>
+        <members>Campaign_Automation_Management__c.File_Name_field_is_required</members>
+        <members>Campaign_Automation_Management__c.Second_round_meter_message_is_Required</members>
         <members>Campaign_Automation_Management__c.Start_Date_cannot_be_in_the_past</members>
         <members>Campaign__c.No_update_by_SalesTeam_member</members>
         <members>Case__c.Jira_Link_Cannot_Be_Blank</members>
@@ -2807,6 +2925,7 @@
     <types>
         <members>Account__c</members>
         <members>Campaign_Automation_Management__c</members>
+        <members>Case</members>
         <members>Case__c</members>
         <members>Contract__c</members>
         <members>Enrollment_Communications_Survey__c</members>
@@ -2817,6 +2936,12 @@
     <types>
         <members>Account__c.Account_Status_has_changed_to_Former_Client</members>
         <members>Account__c.Enrollment_Marketing_Lead_Assignemnt</members>
+        <members>Case.Auto_Response_to_new_CRM_Request_case</members>
+        <members>Case.Case_ready_to_nurture</members>
+        <members>Case.Case_to_Story_In_Jira</members>
+        <members>Case.Notify_Case_Owner_for_New_Reference_Request_Case</members>
+        <members>Case.Send_Livongo_Presale_Email_Confirmation</members>
+        <members>Case.Send_Livongo_Wins_Email_Confirmation</members>
         <members>Case__c.Case_ready_to_nurture</members>
         <members>Case__c.Notify_Case_Owner_for_New_Reference_Request_Case</members>
         <members>Case__c.Send_Livongo_Presale_Email_Confirmation</members>
@@ -2850,6 +2975,8 @@
         <members>Account__c.Turn_Status_to_Engaging</members>
         <members>Account__c.Update_Prior_Account_Status</members>
         <members>Campaign_Automation_Management__c.Update_Campaign_Name</members>
+        <members>Case.Assign_Reference_Requests_to_Lisa_Thomas</members>
+        <members>Case.Update_Owner_to_Queue</members>
         <members>Contract__c.Complete_Per_Legal_Date_Time</members>
         <members>Contract__c.Program_Implementation_Status</members>
         <members>Contract__c.Registration_Status</members>
@@ -2883,6 +3010,12 @@
         <members>Account__c.Enrollment Marketing Lead Assigned to You</members>
         <members>Account__c.Update Prior Account Status</members>
         <members>Campaign_Automation_Management__c.Update Campaign Name Field</members>
+        <members>Case.Assign CRM Requests to CRM Queue</members>
+        <members>Case.Assign Reference Requests</members>
+        <members>Case.Livongo Presale Auto Reply</members>
+        <members>Case.Livongo Wins Auto Reply</members>
+        <members>Case.New Case Auto Response</members>
+        <members>Case.New Reference Request Auto Response</members>
         <members>Case__c.Livongo Presale Auto Reply</members>
         <members>Case__c.Livongo Wins Auto Reply</members>
         <members>Case__c.New Reference Request Auto Response</members>
