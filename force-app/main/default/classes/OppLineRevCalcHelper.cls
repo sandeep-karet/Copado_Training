@@ -19,7 +19,7 @@ public class OppLineRevCalcHelper {
                 }
                 setOppId.add(obj.Opportunity__c);
             }
-            Map <Id,Opportunity__c> oppMap = new Map<Id,Opportunity__c>([SELECT Id, Source__c, Opp_Owner_Role__c FROM Opportunity__c WHERE 
+            Map <Id,Opportunity__c> oppMap = new Map<Id,Opportunity__c>([SELECT Id, Name, Source__c, Opp_Owner_Role__c FROM Opportunity__c WHERE 
                                                                    Id IN : setOppId]);
             Map <Id, Pricing_Structure__c> mapPS = new Map <Id, Pricing_Structure__c> ([Select Id, Name From Pricing_Structure__c Where Id IN: setPS]);
             Map <Id, Product2> mapP = new Map <Id, Product2> ([Select Id, Name From Product2 Where Id IN: setP]);
@@ -34,6 +34,8 @@ public class OppLineRevCalcHelper {
             }
             
             for (OpportunityLineItem__c obj: lstOP) {
+                obj.Name = oppMap.get(obj.Opportunity__c).Name + ' ' + mapP.get(obj.Product2__c).Name;
+                
                 if(oppMap.get(obj.Opportunity__c).Source__c != 'TD') {
                     
                     Decimal Product_Participants = obj.Product_Participants__c != null ? obj.Product_Participants__c : 0.00;
