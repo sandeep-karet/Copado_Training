@@ -63,7 +63,7 @@ global class ContractService {
         }
         activeUserIdMap = usersIdMap;
         
-        Whole_Person_Solution_Mapping__mdt[] wpMappingsMDT = [SELECT Solution__c, Program__c, Program_Type__c, Program_Platform_Version__c  FROM Whole_Person_Solution_Mapping__mdt];
+        Whole_Person_Solution_Mapping__mdt[] wpMappingsMDT = [SELECT Solution__c, Program__c, Program_Type__c, Program_Platform_Version__c, Provider_Based_Care__c  FROM Whole_Person_Solution_Mapping__mdt];
         Map<String, List<Whole_Person_Solution_Mapping__mdt>> wpMappingMap = new Map<String, List<Whole_Person_Solution_Mapping__mdt>>();
         for (Whole_Person_Solution_Mapping__mdt wpMdt : wpMappingsMDT) {
             string key = wpMdt.Solution__c;
@@ -665,6 +665,12 @@ global class ContractService {
                         programOverview.Disable_BH_Coaching__c = false;
                         programOverview.Disable_Teletherapy__c = false;
                     }
+                    if (program.oliName != null && (program.oliName == DIABETES_W_PROVIDER_BASED_CARE || program.oliName == HYPERTENSION_W_PROVIDER_BASED_CARE)) {
+                        programOverview.Provider_Based_Care__c = true;
+                    }
+                    else if (program.soultionName != null && program.ProviderBasedCare == true) {
+                        programOverview.Provider_Based_Care__c = true;
+                    }
                     /*
                     if (program.oliName != null && program.oliName == DEFAULT_BH_V1_PROGRAM_NAME) {
                         programOverview.Program_Platform_Version__c = DEFAULT_MYSTRENGTH_PROGRAM_PLATFORM_VERSION;
@@ -1006,6 +1012,7 @@ global class ContractService {
         public String pricingStructure {get; set;}
         public String oliName {get; set;}
         public String programPlatformVersion {get; set;}
+        public Boolean ProviderBasedCare {get; set;}
         
         public ProgramWrap(OpportunityLineItem__c oli) {
             this.programName = oli.Program_Family__c;
@@ -1019,6 +1026,7 @@ global class ContractService {
             this.programName = wpProgram.Program__c;
             this.programType = wpProgram.Program_Type__c;
             this.programPlatformVersion = wpProgram.Program_Platform_Version__c;
+            this.ProviderBasedCare = wpProgram.Provider_Based_Care__c;
         }
     }
     
