@@ -18,5 +18,5 @@ The `sfdx-project.json` file contains useful configuration information for your 
 - [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
 
 ## Recently Installed Packages
-- (CollapsePackage) https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G000004FATKQA4
+- (CollapsePackage) https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G000004FATjQAO
 - (ClonedObjects) https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003RUVcQAO

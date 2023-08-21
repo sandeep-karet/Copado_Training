@@ -14,7 +14,7 @@ This method will fetch Contract record that needs to be processed
     global  Database.QueryLocator Start(Database.BatchableContext BC) 
     {   
         
-        return Database.getQueryLocator('Select Id,RecordType.Name,Status__c,ContractNumber__c, Client_Overview__r.Status__c ,Contract_Effective_Date__c,Contract_Termination_Date__c,Program_Start_Date__c,Program_End_Date__c from Contract__c where Contract_Effective_Date__c=TODAY OR Contract_Termination_Date__c=TODAY OR Program_Start_Date__c=TODAY OR Program_End_Date__c = TODAY');
+        return Database.getQueryLocator('Select Id,RecordType.Name,Status__c,ContractNumber__c, Client_Overview__r.Status__c ,Contract_Effective_Date__c,Contract_Termination_Date__c,Program_Start_Date__c,Program_End_Date__c from Contract__c where Contract_Effective_Date__c=TODAY OR Contract_Termination_Date__c=TODAY OR Program_Start_Date__c=TODAY OR Program_End_Date__c = TODAY order by recordtype.name ASC');
         
     }
     /***************************************************************
