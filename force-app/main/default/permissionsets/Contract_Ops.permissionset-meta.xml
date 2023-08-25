@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Contract_Ops_Permission</name>
+    </customPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contract__c.Billing_Partner_Admin_Fee__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Contract__c.Disable_BH_Coaching__c</field>
