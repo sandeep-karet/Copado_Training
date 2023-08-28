@@ -40,18 +40,22 @@ This method update Contract record based on various date fields
             mapToContractsWithOldStatus.put(recContr.Id,recContr.Status__c);
             mapToContractsWithContractNumber.put(recContr.Id,recContr.ContractNumber__c);
             if(recContr.RecordType.Name =='Client Overview' && recContr.Status__c=='Draft' 
-               && recContr.Contract_Effective_Date__c != null && recContr.Contract_Effective_Date__c == Date.today())
+               && recContr.Contract_Effective_Date__c != null && recContr.Contract_Effective_Date__c == Date.today()){
                 recContr.Status__c='Activate';
-            else if(recContr.RecordType.Name =='Client Overview' && recContr.Status__c=='Active' 
-                    && recContr.Contract_Termination_Date__c != null && recContr.Contract_Termination_Date__c == Date.today())
-                recContr.Status__c='Expired';   
-            else if(recContr.RecordType.Name =='Program Overview' && recContr.Status__c=='Draft' 
-                    && recContr.Program_Start_Date__c != null && recContr.Client_Overview__r.Status__c =='Active' && recContr.Program_Start_Date__c == Date.today())
+                listUpdateContract.add(recContr);
+            }else if(recContr.RecordType.Name =='Client Overview' && recContr.Status__c=='Active' 
+                    && recContr.Contract_Termination_Date__c != null && recContr.Contract_Termination_Date__c == Date.today()){
+                recContr.Status__c='Expired'; 
+                listUpdateContract.add(recContr);  
+            }else if(recContr.RecordType.Name =='Program Overview' && recContr.Status__c=='Draft' 
+                    && recContr.Program_Start_Date__c != null && recContr.Client_Overview__r.Status__c =='Active' && recContr.Program_Start_Date__c == Date.today()){
                 recContr.Status__c='Activate';
-            else if(recContr.RecordType.Name =='Program Overview' && recContr.Status__c=='Active' 
-                    && recContr.Program_End_Date__c != null && recContr.Program_End_Date__c == Date.today())
+                listUpdateContract.add(recContr);
+            }else if(recContr.RecordType.Name =='Program Overview' && recContr.Status__c=='Active' 
+                    && recContr.Program_End_Date__c != null && recContr.Program_End_Date__c == Date.today()){
                 recContr.Status__c='Expired';   
-            listUpdateContract.add(recContr);
+                listUpdateContract.add(recContr);
+            }
             mapToContractsWithNewStatus.put(recContr.Id,recContr.Status__c);
             
         }
