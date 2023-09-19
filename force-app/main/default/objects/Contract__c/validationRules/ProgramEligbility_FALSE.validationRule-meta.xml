@@ -5,6 +5,7 @@
     <description>Eligibility fields on the Program Overview cannot be filled out if the Program Eligibility Flag is unchecked. Please clear out all fields before saving.</description>
     <errorConditionFormula>$Setup.LVGO_Automation_Switch__c.Validations__c &amp;&amp;
 NOT($Permission.Bypass_Legal_and_Admins_only_can_change_status_Validation_Rule)
+&amp;&amp; Client_Overview__r.Program_Eligibility_Flag__c = FALSE
 &amp;&amp; (NOT(ISPICKVAL(Eligibility_Verification_Method__c, &quot;&quot;))
 || NOT(ISPICKVAL(Eligibility_File_Cadence__c, &quot;&quot;))
 || NOT(ISPICKVAL(Eligibility_Escalation_Path__c, &quot;&quot;))

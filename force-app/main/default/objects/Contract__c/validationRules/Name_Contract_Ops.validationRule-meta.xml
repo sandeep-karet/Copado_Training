@@ -4,7 +4,8 @@
     <active>true</active>
     <description>Name is only editable by users with Contract Ops permissions.</description>
     <errorConditionFormula>AND(
-    $Profile.Name != &quot;System Administrator&quot;,
+    ISCHANGED(Name),
+                $Profile.Name != &quot;System Administrator&quot;,
 				NOT($Permission.Contract_Ops_Permission) 
 )</errorConditionFormula>
     <errorDisplayField>Name</errorDisplayField>
