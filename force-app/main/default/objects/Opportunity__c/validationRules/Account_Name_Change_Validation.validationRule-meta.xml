@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Name_Change_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISCHANGED( LVGO__Account__c ),  $Profile.Name &lt;&gt; &apos;System Administrator&apos;)</errorConditionFormula>
+    <errorDisplayField>LVGO__Account__c</errorDisplayField>
+    <errorMessage>Only System Administrator can update the Account Name</errorMessage>
+</ValidationRule>

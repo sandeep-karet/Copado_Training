@@ -14,7 +14,7 @@ This method will fetch Contract record that needs to be processed
     global  Database.QueryLocator Start(Database.BatchableContext BC) 
     {   
         
-        return Database.getQueryLocator('Select Id,RecordType.Name,Status__c,ContractNumber__c, Client_Overview__r.Status__c ,Contract_Effective_Date__c,Contract_Termination_Date__c,Program_Start_Date__c,Program_End_Date__c from Contract__c where Contract_Effective_Date__c=TODAY OR Contract_Termination_Date__c=TODAY OR Program_Start_Date__c=TODAY OR Program_End_Date__c = TODAY');
+        return Database.getQueryLocator('Select Id,RecordType.Name,Status__c,ContractNumber__c, Client_Overview__r.Status__c ,Contract_Effective_Date__c,Contract_Termination_Date__c,Program_Start_Date__c,Program_End_Date__c from Contract__c where Contract_Effective_Date__c=TODAY OR Contract_Termination_Date__c=TODAY OR Program_Start_Date__c=TODAY OR Program_End_Date__c = TODAY order by recordtype.name ASC');
         
     }
     /***************************************************************
@@ -40,18 +40,22 @@ This method update Contract record based on various date fields
             mapToContractsWithOldStatus.put(recContr.Id,recContr.Status__c);
             mapToContractsWithContractNumber.put(recContr.Id,recContr.ContractNumber__c);
             if(recContr.RecordType.Name =='Client Overview' && recContr.Status__c=='Draft' 
-               && recContr.Contract_Effective_Date__c != null && recContr.Contract_Effective_Date__c == Date.today())
+               && recContr.Contract_Effective_Date__c != null && recContr.Contract_Effective_Date__c == Date.today()){
                 recContr.Status__c='Activate';
-            else if(recContr.RecordType.Name =='Client Overview' && recContr.Status__c=='Active' 
-                    && recContr.Contract_Termination_Date__c != null && recContr.Contract_Termination_Date__c == Date.today())
-                recContr.Status__c='Expired';   
-            else if(recContr.RecordType.Name =='Program Overview' && recContr.Status__c=='Draft' 
-                    && recContr.Program_Start_Date__c != null && recContr.Client_Overview__r.Status__c =='Active' && recContr.Program_Start_Date__c == Date.today())
+                listUpdateContract.add(recContr);
+            }else if(recContr.RecordType.Name =='Client Overview' && recContr.Status__c=='Active' 
+                    && recContr.Contract_Termination_Date__c != null && recContr.Contract_Termination_Date__c == Date.today()){
+                recContr.Status__c='Expired'; 
+                listUpdateContract.add(recContr);  
+            }else if(recContr.RecordType.Name =='Program Overview' && recContr.Status__c=='Draft' 
+                    && recContr.Program_Start_Date__c != null && recContr.Client_Overview__r.Status__c =='Active' && recContr.Program_Start_Date__c == Date.today()){
                 recContr.Status__c='Activate';
-            else if(recContr.RecordType.Name =='Program Overview' && recContr.Status__c=='Active' 
-                    && recContr.Program_End_Date__c != null && recContr.Program_End_Date__c == Date.today())
+                listUpdateContract.add(recContr);
+            }else if(recContr.RecordType.Name =='Program Overview' && recContr.Status__c=='Active' 
+                    && recContr.Program_End_Date__c != null && recContr.Program_End_Date__c == Date.today()){
                 recContr.Status__c='Expired';   
-            listUpdateContract.add(recContr);
+                listUpdateContract.add(recContr);
+            }
             mapToContractsWithNewStatus.put(recContr.Id,recContr.Status__c);
             
         }

@@ -89,8 +89,8 @@ public without sharing class OpportunityLineItemService {
         List<Id> oppIds = new List<Id>();
         Map<Id,String> oppAccRevFlag = new Map<Id,String>();
         List<OpportunityLineItem__c> oppLineItemsToBeUpdated = new List<OpportunityLineItem__c>();
-        String myStrId = [SELECT Id FROM Product2 WHERE Name = 'myStrength' LIMIT 1].Id;
-        String myStrCompleteId = [SELECT Id FROM Product2 WHERE Name = 'myStrength Complete' LIMIT 1].Id;
+        String myStrId = [SELECT Id FROM Product2 WHERE ProductCode = 'MYSTR3' LIMIT 1].Id;	
+        String myStrCompleteId = [SELECT Id FROM Product2 WHERE ProductCode  = 'MYSTRPLUS' LIMIT 1].Id;
         for(OpportunityLineItem__c opli : oppLineList) {
             oppIds.add(opli.Opportunity__c);          
         }
