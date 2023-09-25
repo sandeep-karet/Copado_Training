@@ -80,6 +80,16 @@
         <protected>false</protected>
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Whole_Person_Populate</fullName>
+        <field>Single_or_Multi_Program2__c</field>
+        <literalValue>Whole Person</literalValue>
+        <name>Whole Person Populate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
     <rules>
         <fullName>Account Status Engaging</fullName>
         <actions>
@@ -102,6 +112,52 @@
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
+        <fullName>Lost Opp Account status Expressed Interest</fullName>
+        <actions>
+            <name>Status_changed_to_Prosp_Exp_Int</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>If a prospect has a closed no decision/lost opp, and no open opp, the status should be Prospecting - Expressed Interest</description>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,ISPICKVAL(Account_Type__c,&quot;Engaging&quot;),ISPICKVAL(Account_Type__c,&quot;Prospecting&quot;),Open_Opportunity_Count__c=0,Closed_Won_Opportunity_Count__c=0,OR(Total_Closed_No_Decision_Opps__c!=0,Total_Closed_Lost_Opps__c!=0))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Multi Program populate</fullName>
+        <actions>
+            <name>Multi_program</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,Program_Count2__c>=2,PO_WholePerson__c<1)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Request CSM_60 Days</fullName>
+        <active>true</active>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,Earliest_Active_Initial_Launch_Date__c!=null,RecordType.Name=&quot;Client Account&quot;,RequestCSM=false,CSM__c=null,NOT(ISPICKVAL(Account_Type__c,&quot;Former Client&quot;)),NOT(ISPICKVAL(Account_Type__c,&quot;Disqualified&quot;)),NOT(ISPICKVAL(Account_Type__c,&quot;Study&quot;)))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Request_CSM_60_Days</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Account__c.Earliest_Active_Initial_Launch_Date__c</offsetFromField>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Single program populate</fullName>
+        <actions>
+            <name>Single_program</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,Program_Count2__c=1,PO_WholePerson__c<1)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
         <fullName>Update Prior Account Status</fullName>
         <actions>
             <name>Update_Prior_Account_Status</name>
@@ -112,4 +168,92 @@
         <formula>AND(ISCHANGED(Account_Type__c), NOT(ISPICKVAL(Account_Type__c, &apos;&apos;)), NOT(ISBLANK(PRIORVALUE(Account_Type__c))),$Setup.LVGO_Automation_Switch__c.Workflows__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
+    <tasks>
+        <fullName>Resource_Request_CSM_Needed_on_this_Account</fullName>
+        <assignedTo>meagan.lew@teladochealth.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Resource Request: CSM Needed on this Account</subject>
+    </tasks>
+    <tasks>
+        <fullName>Resource_Request_CSM_Needed_on_this_Account10</fullName>
+        <assignedTo>dawn.bossaller@teladochealth.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Resource Request: CSM Needed on this Account</subject>
+    </tasks>
+    <tasks>
+        <fullName>Resource_Request_CSM_Needed_on_this_Account2</fullName>
+        <assignedTo>stacey.deweerdt@teladochealth.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Resource Request: CSM Needed on this Account</subject>
+    </tasks>
+    <tasks>
+        <fullName>Resource_Request_CSM_Needed_on_this_Account4</fullName>
+        <assignedTo>kmcneil@teladochealth.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Resource Request: CSM Needed on this Account</subject>
+    </tasks>
+    <tasks>
+        <fullName>Resource_Request_CSM_Needed_on_this_Account5</fullName>
+        <assignedTo>karen.tongwarin@teladochealth.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Resource Request: CSM Needed on this Account</subject>
+    </tasks>
+    <tasks>
+        <fullName>Resource_Request_CSM_Needed_on_this_Account9</fullName>
+        <assignedTo>kmcneil@teladochealth.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Resource Request: CSM Needed on this Account</subject>
+    </tasks>
+    <tasks>
+        <fullName>Resource_Request_CSM_Needed_on_this_Account_1</fullName>
+        <assignedTo>meagan.lew@teladochealth.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Resource Request: CSM Needed on this Account</subject>
+    </tasks>
+    <tasks>
+        <fullName>Resource_Request_CSM_Needed_on_this_Account_2</fullName>
+        <assignedTo>meagan.lew@teladochealth.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Resource Request: CSM Needed on this Account</subject>
+    </tasks>
 </Workflow>

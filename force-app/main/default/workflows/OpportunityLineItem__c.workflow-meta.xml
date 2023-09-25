@@ -31,105 +31,10 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Gross_Program_ARR_Copy_Formula_Update</fullName>
-        <field>Gross_Program_ARR_Copy__c</field>
-        <formula>IF(AND(Program_Family__c == &apos;Behavioral Health&apos;), (BLANKVALUE(Product_Participants__c, 0) * (BLANKVALUE(UnitPrice__c, 0) * 12) + ((BLANKVALUE(Product_Participants__c, 0) * 0.02) * BLANKVALUE(PMPM__c, 0) * 6)),
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), OR(Program_Family__c == &apos;Prediabetes&apos;, Program_Family__c == &apos;Weight Management&apos;), BLANKVALUE(UnitPrice__c, 0) == 1.00), (608.00 * (BLANKVALUE(Product_Participants__c, 0) * 0.10)),
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), OR(Program_Family__c == &apos;Prediabetes&apos;, Program_Family__c == &apos;Weight Management&apos;), BLANKVALUE(UnitPrice__c, 0) == 1.00), (608.00 * (BLANKVALUE(Product_Participants__c, 0) * 0.08)),
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), Program_Family__c == &apos;Diabetes&apos;), (0.25 * BLANKVALUE(Product_Participants__c, 0) * (BLANKVALUE(UnitPrice__c, 0) * 12)) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * 0.25 * BLANKVALUE(Incremental_Sales_Price__c, 0) * 12,
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), NOT(Program_Family__c == &apos;Diabetes&apos;)), (0.10 * BLANKVALUE(Product_Participants__c, 0) * (BLANKVALUE(UnitPrice__c, 0) * 12)) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * 0.10 * BLANKVALUE(Incremental_Sales_Price__c, 0) * 12,
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), Program_Family__c == &apos;Diabetes&apos;), (0.20 * BLANKVALUE(Product_Participants__c, 0) * (BLANKVALUE(UnitPrice__c, 0) * 12)) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * 0.20 * BLANKVALUE(Incremental_Sales_Price__c, 0) * 12,
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), NOT(Program_Family__c == &apos;Diabetes&apos;)), (0.08 * BLANKVALUE(Product_Participants__c, 0) * (BLANKVALUE(UnitPrice__c, 0) * 12)) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * 0.08 * BLANKVALUE(Incremental_Sales_Price__c, 0) * 12,
-(BLANKVALUE(Product_Participants__c, 0) * (BLANKVALUE(UnitPrice__c, 0) * 12)) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * BLANKVALUE(Incremental_Sales_Price__c, 0) * 12
-)))))))</formula>
-        <name>Gross Program ARR Copy Formula Update</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Gross_Program_TCV_Copy_Formula_Update</fullName>
-        <field>Gross_Program_TCV_Copy__c</field>
-        <formula>CASE(Program_Family__c,
-&apos;Diabetes&apos;, BLANKVALUE(Product_Participants__c, 0) * 0.25 * BLANKVALUE(UnitPrice__c, 0) * BLANKVALUE(Quantity__c, 0) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * 0.25 * BLANKVALUE(Incremental_Sales_Price__c, 0) * BLANKVALUE(Quantity__c, 0),
-&apos;Hypertension&apos;, BLANKVALUE(Product_Participants__c, 0) * 0.10 * BLANKVALUE(UnitPrice__c, 0) * BLANKVALUE(Quantity__c, 0) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * 0.10 * BLANKVALUE(Incremental_Sales_Price__c, 0) * BLANKVALUE(Quantity__c, 0),
-&apos;Weight Management&apos;, IF(BLANKVALUE(UnitPrice__c, 0) == 1.00,
-500 * BLANKVALUE(Product_Participants__c, 0) * 0.10 + BLANKVALUE(Product_Participants__c, 0) * 0.10 * BLANKVALUE(Year_2_Price__c, 0) * MAX(BLANKVALUE(Quantity__c, 0) - 12, 0),
-BLANKVALUE(Product_Participants__c, 0) * 0.10 * BLANKVALUE(UnitPrice__c, 0) * 12 + BLANKVALUE(Product_Participants__c, 0) * 0.10 * BLANKVALUE(Year_2_Price__c, 0) * MAX(BLANKVALUE(Quantity__c, 0) - 12, 0)) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * 0.10 * BLANKVALUE(Incremental_Sales_Price__c, 0) * BLANKVALUE(Quantity__c, 0),
-&apos;Prediabetes&apos;, IF(BLANKVALUE(UnitPrice__c, 0) == 1.00,
-500 * BLANKVALUE(Product_Participants__c, 0) * 0.10 + BLANKVALUE(Product_Participants__c, 0) * 0.10 * BLANKVALUE(Year_2_Price__c, 0) * MAX(BLANKVALUE(Quantity__c, 0) - 12, 0),
-BLANKVALUE(Product_Participants__c, 0) * 0.10 * BLANKVALUE(UnitPrice__c, 0) * 12 + BLANKVALUE(Product_Participants__c, 0) * 0.10 * BLANKVALUE(Year_2_Price__c, 0) * MAX(BLANKVALUE(Quantity__c, 0) - 12, 0)) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * 0.10 * BLANKVALUE(Incremental_Sales_Price__c, 0) * BLANKVALUE(Quantity__c, 0),
-BLANKVALUE(Product_Participants__c, 0) * BLANKVALUE(UnitPrice__c, 0) * BLANKVALUE(Quantity__c, 0) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * BLANKVALUE(Incremental_Sales_Price__c, 0) * BLANKVALUE(Quantity__c, 0))</formula>
-        <name>Gross Program TCV Copy Formula Update</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Net_Program_TCV_Update</fullName>
-        <description>Update Net Program TCV Copy field with the value from the Net Program TCV field</description>
-        <field>Net_Program_TCV_Copy__c</field>
-        <formula>Net_Program_TCV__c</formula>
-        <name>Net Program TCV Update</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>true</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>PO_WholePerson</fullName>
         <field>PO_WholePerson__c</field>
         <formula>1</formula>
         <name>PO#_WholePerson</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Program_ARR_Copy_Formula_Update</fullName>
-        <field>Program_ARR_Copy__c</field>
-        <formula>IF(AND(Program_Family__c == &apos;Behavioral Health&apos;), (BLANKVALUE(Product_Participants__c, 0) * ((BLANKVALUE(UnitPrice__c, 0) - (BLANKVALUE(Estimated_At_Risk_PPPM__c, 0) + BLANKVALUE(Estimated_Partner_Admin_Fees__c, 0))) * 12 + BLANKVALUE(Up_Front_Per_Member__c, 0)) + ((BLANKVALUE(Product_Participants__c, 0) * 0.02) * BLANKVALUE(PMPM__c, 0) * 6)),
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), OR(Program_Family__c == &apos;Prediabetes&apos;, Program_Family__c == &apos;Weight Management&apos;), UnitPrice__c == 1.00), (608.00 * (BLANKVALUE(Product_Participants__c, 0) * 0.10)),
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), OR(Program_Family__c == &apos;Prediabetes&apos;, Program_Family__c == &apos;Weight Management&apos;), UnitPrice__c == 1.00), (608.00 * (BLANKVALUE(Product_Participants__c, 0) * 0.08)),
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), Program_Family__c == &apos;Diabetes&apos;), (0.25 * BLANKVALUE(Product_Participants__c, 0) * ((BLANKVALUE(UnitPrice__c, 0) - (BLANKVALUE(Estimated_At_Risk_PPPM__c, 0) + BLANKVALUE(Estimated_Partner_Admin_Fees__c, 0))) * 12 + BLANKVALUE(Up_Front_Per_Member__c, 0))) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * 0.25 * BLANKVALUE(Incremental_Sales_Price__c, 0) * 12,
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), NOT(Program_Family__c == &apos;Diabetes&apos;)), (0.1 * BLANKVALUE(Product_Participants__c, 0) * ((BLANKVALUE(UnitPrice__c, 0) - (BLANKVALUE(Estimated_At_Risk_PPPM__c, 0) + BLANKVALUE(Estimated_Partner_Admin_Fees__c, 0))) * 12 + BLANKVALUE(Up_Front_Per_Member__c, 0))) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * 0.10 * BLANKVALUE(Incremental_Sales_Price__c, 0) * 12,
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), Program_Family__c == &apos;Diabetes&apos;), (0.2 * BLANKVALUE(Product_Participants__c, 0) * ((BLANKVALUE(UnitPrice__c, 0) - (BLANKVALUE(Estimated_At_Risk_PPPM__c, 0) + BLANKVALUE(Estimated_Partner_Admin_Fees__c, 0))) * 12 + BLANKVALUE(Up_Front_Per_Member__c, 0))) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * 0.20 * BLANKVALUE(Incremental_Sales_Price__c, 0) * 12,
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), NOT(Program_Family__c == &apos;Diabetes&apos;)), (0.08 * BLANKVALUE(Product_Participants__c, 0) * ((BLANKVALUE(UnitPrice__c, 0) - (BLANKVALUE(Estimated_At_Risk_PPPM__c, 0) + BLANKVALUE(Estimated_Partner_Admin_Fees__c, 0))) * 12 + BLANKVALUE(Up_Front_Per_Member__c, 0))) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * 0.08 * BLANKVALUE(Incremental_Sales_Price__c, 0) * 12,
-(BLANKVALUE(Product_Participants__c, 0) * ((BLANKVALUE(UnitPrice__c, 0) - (BLANKVALUE(Estimated_At_Risk_PPPM__c, 0) + BLANKVALUE(Estimated_Partner_Admin_Fees__c, 0))) * 12 + BLANKVALUE(Up_Front_Per_Member__c, 0))) + BLANKVALUE(Currently_Enrolled_Members__c, 0) * BLANKVALUE(Incremental_Sales_Price__c, 0) * 12
-)))))))</formula>
-        <name>Net Program ARR Copy Formula Update</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Program_ARR_Copy_Update</fullName>
-        <description>Update Program ARR Copy field with the value from the Program ARR field</description>
-        <field>Program_ARR_Copy__c</field>
-        <formula>Program_ARR__c</formula>
-        <name>Program ARR Copy Update</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>true</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Program_TCV_Copy_Formula_Update</fullName>
-        <field>Net_Program_TCV_Copy__c</field>
-        <formula>IF(AND(Program_Family__c == &apos;Behavioral Health&apos;, NOT(Exclude_Enrollment__c)), (BLANKVALUE(Product_Participants__c, 0) * ((BLANKVALUE(UnitPrice__c, 0) - (BLANKVALUE(Estimated_At_Risk_PPPM__c, 0) + BLANKVALUE(Estimated_Partner_Admin_Fees__c, 0))) * BLANKVALUE(Quantity__c, 0) + BLANKVALUE(Up_Front_Per_Member__c, 0)) + ((BLANKVALUE(Product_Participants__c, 0) * 0.02) * BLANKVALUE(PMPM__c, 0) * 6)),
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), OR(Program_Family__c == &apos;Prediabetes&apos;, Program_Family__c == &apos;Weight Management&apos;), UnitPrice__c == 1.00, NOT(Exclude_Enrollment__c)), (608.00 * (BLANKVALUE(Product_Participants__c, 0) * 0.10) * (BLANKVALUE(Quantity__c, 0) / 12)),
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), OR(Program_Family__c == &apos;Prediabetes&apos;, Program_Family__c == &apos;Weight Management&apos;), UnitPrice__c == 1.00, NOT(Exclude_Enrollment__c)), (608.00 * (BLANKVALUE(Product_Participants__c, 0) * 0.08) * (BLANKVALUE(Quantity__c, 0) / 12)),
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), Program_Family__c == &apos;Diabetes&apos;, NOT(Exclude_Enrollment__c)), (0.25 * BLANKVALUE(Product_Participants__c, 0) * ((BLANKVALUE(UnitPrice__c, 0) - (BLANKVALUE(Estimated_At_Risk_PPPM__c, 0) + BLANKVALUE(Estimated_Partner_Admin_Fees__c, 0))) * BLANKVALUE(Quantity__c, 0) + BLANKVALUE(Up_Front_Per_Member__c, 0))),
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Commercial&apos;), NOT(Program_Family__c == &apos;Diabetes&apos;), NOT(Exclude_Enrollment__c)), (0.1 * BLANKVALUE(Product_Participants__c, 0) * ((BLANKVALUE(UnitPrice__c, 0) - (BLANKVALUE(Estimated_At_Risk_PPPM__c, 0) + BLANKVALUE(Estimated_Partner_Admin_Fees__c, 0))) * BLANKVALUE(Quantity__c, 0) + BLANKVALUE(Up_Front_Per_Member__c, 0))),
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), Program_Family__c == &apos;Diabetes&apos;, NOT(Exclude_Enrollment__c)), (0.2 * BLANKVALUE(Product_Participants__c, 0) * ((BLANKVALUE(UnitPrice__c, 0) - (BLANKVALUE(Estimated_At_Risk_PPPM__c, 0) + BLANKVALUE(Estimated_Partner_Admin_Fees__c, 0))) * BLANKVALUE(Quantity__c, 0) + BLANKVALUE(Up_Front_Per_Member__c, 0))),
-IF(AND(CONTAINS(Opportunity__r.Opp_Owner_Role__c, &apos;Health Services&apos;), NOT(Program_Family__c == &apos;Diabetes&apos;), NOT(Exclude_Enrollment__c)), (0.08 * BLANKVALUE(Product_Participants__c, 0) * ((BLANKVALUE(UnitPrice__c, 0) - (BLANKVALUE(Estimated_At_Risk_PPPM__c, 0) + BLANKVALUE(Estimated_Partner_Admin_Fees__c, 0))) * BLANKVALUE(Quantity__c, 0) + BLANKVALUE(Up_Front_Per_Member__c, 0))),
-(BLANKVALUE(Product_Participants__c, 0) * ((BLANKVALUE(UnitPrice__c, 0) - (BLANKVALUE(Estimated_At_Risk_PPPM__c, 0) + BLANKVALUE(Estimated_Partner_Admin_Fees__c, 0))) * BLANKVALUE(Quantity__c, 0) + BLANKVALUE(Up_Front_Per_Member__c, 0)))
-)))))))</formula>
-        <name>Program TCV Copy Formula Update</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>

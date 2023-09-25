@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>Auto_Response_to_new_CRM_Request_case</fullName>
+        <description>Auto Response to new CRM Request case</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Automated_Email_Notifications/Internal_CRM_Case_Received</template>
+    </alerts>
+    <alerts>
         <fullName>Case_ready_to_nurture</fullName>
         <ccEmails>sfintegration@livongo.com</ccEmails>
         <description>Case ready for JIRA</description>
         <protected>false</protected>
         <senderType>CurrentUser</senderType>
         <template>Automated_Email_Notifications/Salesforce_Case_to_Jira_Story</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_to_Story_In_Jira</fullName>
+        <description>Case to Story In Jira</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Automated_Email_Notifications/Case_to_Story_In_Jira</template>
     </alerts>
     <alerts>
         <fullName>Notify_Case_Owner_for_New_Reference_Request_Case</fullName>
@@ -43,6 +65,48 @@
         <senderType>CurrentUser</senderType>
         <template>Automated_Email_Notifications/Livongo_Wins_Auto_Reply</template>
     </alerts>
+    <fieldUpdates>
+        <fullName>Assign_Reference_Requests_to_Lisa_Thomas</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Reference_Request_Case_Queue</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Assign Reference Requests to Lisa Thomas</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Owner_to_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Salesforce_Admins</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Update Owner to Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Assign CRM Requests to CRM Queue</fullName>
+        <actions>
+            <name>Update_Owner_to_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(User.UserRoleId!= &quot;Sales Admin&quot;OR(RecordType.Name == &quot;CRM Request&quot;,RecordType.Name == null),($Setup.LVGO_Automation_Switch__c.Workflows__c))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Assign Reference Requests</fullName>
+        <actions>
+            <name>Assign_Reference_Requests_to_Lisa_Thomas</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(RecordType.Name == &quot;Reference Request&quot;,($Setup.LVGO_Automation_Switch__c.Workflows__c))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
     <rules>
         <fullName>Livongo Presale Auto Reply</fullName>
         <actions>

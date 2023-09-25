@@ -34,6 +34,37 @@
         <template>Automated_Email_Notifications/Consecutive_Inactive_Months_to_Lapse_is_changed</template>
     </alerts>
     <alerts>
+        <fullName>Contract_Term_Date_14_Days</fullName>
+        <description>Contract_Term_Date_14_Days</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dana.smith@teladochealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>galpert@teladochealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sara.young@teladochealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>skapadia@teladochealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sroberts@teladochealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Automated_Email_Notifications/Contract_Term_Date_14_Days</template>
+    </alerts>
+    <alerts>
         <fullName>Contract_Termination_Date_has_changed</fullName>
         <description>Contract_Termination_Date_has_changed</description>
         <protected>false</protected>
@@ -120,8 +151,44 @@
             <field>Client_Overview_CSM__c</field>
             <type>userLookup</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>sfdc-sales@livongo.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Automated_Email_Notifications/Program_End_Date_has_changed</template>
+    </alerts>
+    <alerts>
+        <fullName>Program_Overview_Date_14_Days</fullName>
+        <description>Program_Overview_Date_14_Days</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dana.smith@teladochealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>galpert@teladochealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sara.young@teladochealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>skapadia@teladochealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sroberts@teladochealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>suzanne.falaschetti@teladochealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Client_Overview_CSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Automated_Email_Notifications/Program_Overview_Date_14_Days</template>
     </alerts>
     <alerts>
         <fullName>Program_Status_has_Changed</fullName>
@@ -251,6 +318,21 @@
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
+        <fullName>Contract_Term_Date_14_Days</fullName>
+        <active>true</active>
+        <formula>$Setup.LVGO_Automation_Switch__c.Workflows__c &amp;&amp; RecordType.Name =&apos;Client Overview&apos; &amp;&amp; Contract_Termination_Date__c=null &amp;&amp; Status__c =&apos;Terminated&apos;</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Contract_Term_Date_14_Days</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract__c.Contract_Termination_Date__c</offsetFromField>
+            <timeLength>-14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
         <fullName>Date Stamp Complete per Legal</fullName>
         <actions>
             <name>Complete_Per_Legal_Date_Time</name>
@@ -283,6 +365,21 @@
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
+        <fullName>Program_Overview_Date_14_Days</fullName>
+        <active>true</active>
+        <formula>$Setup.LVGO_Automation_Switch__c.Workflows__c &amp;&amp; RecordType.Name =&apos;Program Overview&apos; &amp;&amp; Program_End_Date__c!=null &amp;&amp; Program_Implementation_status__c!=&apos;Terminated&apos;</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Program_Overview_Date_14_Days</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract__c.Program_End_Date__c</offsetFromField>
+            <timeLength>-14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
         <fullName>Set default Program Agreement Name</fullName>
         <actions>
             <name>Update_Program_Agreement_default_name</name>
@@ -292,6 +389,38 @@
         <description>Set&apos;s the default contract name field of a Program Agreement to the name of the account it&apos;s related too.</description>
         <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,RecordType.Name == &apos;Program Agreement&apos;)</formula>
         <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Client Overview Status - Activate</fullName>
+        <active>false</active>
+        <description>Updates the status of a Client Overview to &quot;Activated&quot; on the Contract Effective Date.</description>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,RecordType.Name = &quot;Client Overview&quot;, TEXT(Status) = &quot;Draft&quot;, NOT(ISBLANK(Contract_Effective_Date__c)))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Update_Contract_Status_Activated</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Contract__c.Contract_Effective_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Update Client Overview Status - Expired</fullName>
+        <active>true</active>
+        <description>Updates the status of a Client Overview to &quot;Expired&quot; on the Contract Terminated Date.</description>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,RecordType.Name = &quot;Client Overview&quot;, TEXT(Status) = &quot;Active&quot;, NOT(ISBLANK(Contract_Termination_Date__c)))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Notify_when_Client_Overview_status_is_changed_to_Expired_or_Terminated</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract__c.Contract_Termination_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
     </rules>
     <rules>
         <fullName>Update PO Fields when Status is Terminated</fullName>
