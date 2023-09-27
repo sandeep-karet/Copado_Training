@@ -320,7 +320,7 @@
     <rules>
         <fullName>Contract_Term_Date_14_Days</fullName>
         <active>true</active>
-        <formula>$Setup.LVGO_Automation_Switch__c.Workflows__c &amp;&amp; RecordType.Name =&apos;Client Overview&apos; &amp;&amp; Contract_Termination_Date__c=null &amp;&amp; Status__c =&apos;Terminated&apos;</formula>
+        <formula>$Setup.LVGO_Automation_Switch__c.Workflows__c &amp;&amp; RecordType.Name =&apos;Client Overview&apos; &amp;&amp; Contract_Termination_Date__c=null &amp;&amp; ISPICKVAL(Status__c,&apos;Terminated&apos;)</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
             <actions>
@@ -367,7 +367,7 @@
     <rules>
         <fullName>Program_Overview_Date_14_Days</fullName>
         <active>true</active>
-        <formula>$Setup.LVGO_Automation_Switch__c.Workflows__c &amp;&amp; RecordType.Name =&apos;Program Overview&apos; &amp;&amp; Program_End_Date__c!=null &amp;&amp; Program_Implementation_status__c!=&apos;Terminated&apos;</formula>
+        <formula>$Setup.LVGO_Automation_Switch__c.Workflows__c &amp;&amp; RecordType.Name =&apos;Program Overview&apos; &amp;&amp; Program_End_Date__c!=null &amp;&amp; NOT(ISPICKVAL(Program_Implementation_status__c,&apos;Terminated&apos;))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
             <actions>
@@ -394,7 +394,7 @@
         <fullName>Update Client Overview Status - Activate</fullName>
         <active>false</active>
         <description>Updates the status of a Client Overview to &quot;Activated&quot; on the Contract Effective Date.</description>
-        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,RecordType.Name = &quot;Client Overview&quot;, TEXT(Status) = &quot;Draft&quot;, NOT(ISBLANK(Contract_Effective_Date__c)))</formula>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,RecordType.Name = &quot;Client Overview&quot;, ISPICKVAL(Status__c, &quot;Draft&quot;), NOT(ISBLANK(Contract_Effective_Date__c)))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
             <actions>
@@ -410,7 +410,7 @@
         <fullName>Update Client Overview Status - Expired</fullName>
         <active>true</active>
         <description>Updates the status of a Client Overview to &quot;Expired&quot; on the Contract Terminated Date.</description>
-        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,RecordType.Name = &quot;Client Overview&quot;, TEXT(Status) = &quot;Active&quot;, NOT(ISBLANK(Contract_Termination_Date__c)))</formula>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,RecordType.Name = &quot;Client Overview&quot;, ISPICKVAL(Status__c, &quot;Active&quot;), NOT(ISBLANK(Contract_Termination_Date__c)))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
             <actions>
