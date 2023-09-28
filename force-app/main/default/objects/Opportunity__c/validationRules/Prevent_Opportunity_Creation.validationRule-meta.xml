@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Prevent_Opportunity_Creation</fullName>
-    <active>true</active>
+    <active>false</active>
     <description>Rule to prevent users to not have the ability to create new Opportunities other than System Administrator.</description>
-    <errorConditionFormula>AND(
+    <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c,
 				ISNEW(),
 				$Profile.Name != &quot;System Administrator&quot;
 				)</errorConditionFormula>
