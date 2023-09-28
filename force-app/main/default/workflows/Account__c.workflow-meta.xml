@@ -129,13 +129,13 @@
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,Program_Count2__c>=2,PO_WholePerson__c<1)</formula>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,Program_Count3__c>=2,1>PO_WholePerson__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
         <fullName>Request CSM_60 Days</fullName>
         <active>true</active>
-        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,Earliest_Active_Initial_Launch_Date__c!=null,RecordType.Name=&quot;Client Account&quot;,RequestCSM=false,CSM__c=null,NOT(ISPICKVAL(Account_Type__c,&quot;Former Client&quot;)),NOT(ISPICKVAL(Account_Type__c,&quot;Disqualified&quot;)),NOT(ISPICKVAL(Account_Type__c,&quot;Study&quot;)))</formula>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,Earliest_Active_Initial_Launch_Date__c!=null,RecordType.Name=&quot;Client Account&quot;,RequestCSM__c=false,CSM__c=null,NOT(ISPICKVAL(Account_Type__c,&quot;Former Client&quot;)),NOT(ISPICKVAL(Account_Type__c,&quot;Disqualified&quot;)),NOT(ISPICKVAL(Account_Type__c,&quot;Study&quot;)))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
             <actions>
@@ -154,7 +154,7 @@
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,Program_Count2__c=1,PO_WholePerson__c<1)</formula>
+        <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,Program_Count3__c=1,1>PO_WholePerson__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
