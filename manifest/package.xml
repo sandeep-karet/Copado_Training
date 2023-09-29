@@ -1336,6 +1336,7 @@
         <members>OpportunityLineItem__c.Net_Program_TCV_Copy__c</members>
         <members>OpportunityLineItem__c.Net_Program_TCV__c</members>
         <members>OpportunityLineItem__c.OpportunityProductName__c</members>
+        <members>OpportunityLineItem__c.Opportunity_GUID__c</members>
         <members>OpportunityLineItem__c.Opportunity_Owner_Role__c</members>
         <members>OpportunityLineItem__c.Opportunity_Product_ID__c</members>
         <members>OpportunityLineItem__c.Opportunity_Type__c</members>
@@ -2251,7 +2252,7 @@
         <members>Whole_Person_Solution_Mapping.HF_Solution_BH</members>
         <members>Whole_Person_Solution_Mapping.HF_Solution_DM</members>
         <members>Whole_Person_Solution_Mapping.HF_Solution_HF</members>
-        <members>Whole_Person_Solution_Mapping.HyptCareComplete_BHComplete</members>
+         <members>Whole_Person_Solution_Mapping.HyptCareComplete_BHComplete</members>
         <members>Whole_Person_Solution_Mapping.HyptCareComplete_HyptCare</members>
         <members>Whole_Person_Solution_Mapping.HyptCareComplete_WM</members>
         <members>Whole_Person_Solution_Mapping.PreDiabCareComplete_BHComplete</members>
@@ -2944,6 +2945,7 @@
         <members>Account__c</members>
         <members>Campaign_Automation_Management__c</members>
         <members>Case__c</members>
+        <members>Client_Tag__c</members>
         <members>Contract__c</members>
         <members>Enrollment_Communications_Survey__c</members>
         <members>OpportunityLineItem__c</members>
@@ -2960,6 +2962,7 @@
         <members>Contract__c.Claim_based_billing_notification</members>
         <members>Contract__c.Client_Must_Approved_Assets_has_changed</members>
         <members>Contract__c.Consecutive_Inactive_Months_to_Lapse_is_changed</members>
+        <members>Contract__c.Contract_Term_Date_14_Days</members>
         <members>Contract__c.Contract_Termination_Date_has_changed</members>
         <members>Contract__c.Detailed_Invoice_has_changed</members>
         <members>Contract__c.Is_There_Laspe_Criteria_has_Changed</members>
@@ -2969,9 +2972,12 @@
         <members>Contract__c.Notify_when_Client_Overview_status_is_changed_to_Expired_or_Terminated</members>
         <members>Contract__c.Participants_Term_Mininum_Months_has_changed</members>
         <members>Contract__c.Program_End_Date_has_Changed</members>
+        <members>Contract__c.Program_Overview_Date_14_Days</members>
         <members>Contract__c.Program_Status_has_Changed</members>
         <members>Enrollment_Communications_Survey__c.Notify_Users_on_Survey_Status</members>
         <members>Opportunity__c.A_CIM_has_been_assigned</members>
+        <members>Opportunity__c.An_opportunity_has_been_closed</members>
+        <members>Opportunity__c.An_opportunity_has_been_closed_Renewal</members>
         <members>Opportunity__c.Notification_for_CIM_Needed_on_this_Opportunity</members>
         <members>Opportunity__c.Notify_Legal_when_Contract_Path_Change_Opportunity_is_Closed</members>
         <members>Opportunity__c.Notify_Legal_when_contract_linked_to_Renewal_Cross_sell_Expansion_opportunity</members>
@@ -2985,7 +2991,10 @@
         <members>Account__c.Status_changed_to_Prosp_Exp_Int</members>
         <members>Account__c.Turn_Status_to_Engaging</members>
         <members>Account__c.Update_Prior_Account_Status</members>
+        <members>Account__c.Whole_Person_Populate</members>
         <members>Campaign_Automation_Management__c.Update_Campaign_Name</members>
+        <members>Case__c.Assign_Reference_Requests_to_Lisa_Thomas</members>
+        <members>Client_Tag__c.Update_Client_Tag_Validation_field</members>
         <members>Contract__c.Complete_Per_Legal_Date_Time</members>
         <members>Contract__c.Program_Implementation_Status</members>
         <members>Contract__c.Registration_Status</members>
@@ -2999,13 +3008,7 @@
         <members>OpportunityLineItem__c.Copy_Gross_EVA</members>
         <members>OpportunityLineItem__c.Copy_Gross_Program_ARR</members>
         <members>OpportunityLineItem__c.Copy_Net_Program_ARR</members>
-        <members>OpportunityLineItem__c.Gross_Program_ARR_Copy_Formula_Update</members>
-        <members>OpportunityLineItem__c.Gross_Program_TCV_Copy_Formula_Update</members>
-        <members>OpportunityLineItem__c.Net_Program_TCV_Update</members>
         <members>OpportunityLineItem__c.PO_WholePerson</members>
-        <members>OpportunityLineItem__c.Program_ARR_Copy_Formula_Update</members>
-        <members>OpportunityLineItem__c.Program_ARR_Copy_Update</members>
-        <members>OpportunityLineItem__c.Program_TCV_Copy_Formula_Update</members>
         <members>OpportunityLineItem__c.Sales_Price_equals_Sales_Comm_Price</members>
         <members>OpportunityLineItem__c.Set_Integrate_Program_field_to_TRUE</members>
         <members>OpportunityLineItem__c.Set_the_Opportunity_Product_Name</members>
@@ -3017,16 +3020,26 @@
     <types>
         <members>Account__c.Account Status Engaging</members>
         <members>Account__c.Enrollment Marketing Lead Assigned to You</members>
+        <members>Account__c.Lost Opp Account status Expressed Interest</members>
+        <members>Account__c.Multi Program populate</members>
+        <members>Account__c.Request CSM_60 Days</members>
+        <members>Account__c.Single program populate</members>
         <members>Account__c.Update Prior Account Status</members>
         <members>Campaign_Automation_Management__c.Update Campaign Name Field</members>
+        <members>Case__c.Assign Reference Requests</members>
         <members>Case__c.Livongo Presale Auto Reply</members>
         <members>Case__c.Livongo Wins Auto Reply</members>
         <members>Case__c.New Reference Request Auto Response</members>
+        <members>Client_Tag__c.Run Client Tag Name Validation</members>
         <members>Contract__c.Claim based billing notification</members>
+        <members>Contract__c.Contract_Term_Date_14_Days</members>
         <members>Contract__c.Date Stamp Complete per Legal</members>
         <members>Contract__c.Default Program Overview Name</members>
         <members>Contract__c.Notify when Client Overview is Expired or Terminated</members>
+        <members>Contract__c.Program_Overview_Date_14_Days</members>
         <members>Contract__c.Set default Program Agreement Name</members>
+        <members>Contract__c.Update Client Overview Status - Activate</members>
+        <members>Contract__c.Update Client Overview Status - Expired</members>
         <members>Contract__c.Update PO Fields when Status is Terminated</members>
         <members>Contract__c.Update TargetedRecruitableData field when PO is created</members>
         <members>Enrollment_Communications_Survey__c.Notify Owner and EML when survey status is changed</members>
@@ -3037,10 +3050,23 @@
         <members>OpportunityLineItem__c.Set the Product Name</members>
         <members>Opportunity__c.Check Request CIM When Opportunity Closes</members>
         <members>Opportunity__c.Email notification for CIM Assignment</members>
+        <members>Opportunity__c.Notify Legal when contract linked to Renewal%2FCross-sell%2FExpansion opportunity</members>
         <members>Opportunity__c.Opportunity is won - Contract Path Change</members>
         <members>Opportunity__c.Opportunity is won -- New%2FCross%2FExpansion</members>
+        <members>Opportunity__c.Opportunity is won -- Renewal</members>
         <members>Opportunity__c.Update Calculated Forecasted Amount on Oppty</members>
         <name>WorkflowRule</name>
+    </types>
+    <types>
+        <members>Account__c.Resource_Request_CSM_Needed_on_this_Account</members>
+        <members>Account__c.Resource_Request_CSM_Needed_on_this_Account10</members>
+        <members>Account__c.Resource_Request_CSM_Needed_on_this_Account2</members>
+        <members>Account__c.Resource_Request_CSM_Needed_on_this_Account4</members>
+        <members>Account__c.Resource_Request_CSM_Needed_on_this_Account5</members>
+        <members>Account__c.Resource_Request_CSM_Needed_on_this_Account9</members>
+        <members>Account__c.Resource_Request_CSM_Needed_on_this_Account_1</members>
+        <members>Account__c.Resource_Request_CSM_Needed_on_this_Account_2</members>
+        <name>WorkflowTask</name>
     </types>
     <version>59.0</version>
 </Package>

@@ -43,6 +43,27 @@
         <senderType>CurrentUser</senderType>
         <template>Automated_Email_Notifications/Livongo_Wins_Auto_Reply</template>
     </alerts>
+    <fieldUpdates>
+        <fullName>Assign_Reference_Requests_to_Lisa_Thomas</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Reference_Request_Case_Queue</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Assign Reference Requests to Lisa Thomas</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Assign Reference Requests</fullName>
+        <actions>
+            <name>Assign_Reference_Requests_to_Lisa_Thomas</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(RecordType.Name == &quot;Reference Request&quot;,($Setup.LVGO_Automation_Switch__c.Workflows__c))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
     <rules>
         <fullName>Livongo Presale Auto Reply</fullName>
         <actions>
