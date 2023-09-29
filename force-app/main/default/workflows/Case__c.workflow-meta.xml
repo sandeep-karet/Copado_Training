@@ -5,7 +5,8 @@
         <ccEmails>sfintegration@livongo.com</ccEmails>
         <description>Case ready for JIRA</description>
         <protected>false</protected>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Automated_Email_Notifications/Salesforce_Case_to_Jira_Story</template>
     </alerts>
     <alerts>
@@ -18,7 +19,8 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Automated_Email_Notifications/Reference_Request_Assignment</template>
     </alerts>
     <alerts>
@@ -29,7 +31,8 @@
             <field>SuppliedEmail__c</field>
             <type>email</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Automated_Email_Notifications/Livongo_Presale_Auto_Reply</template>
     </alerts>
     <alerts>
@@ -40,7 +43,8 @@
             <field>SuppliedEmail__c</field>
             <type>email</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Automated_Email_Notifications/Livongo_Wins_Auto_Reply</template>
     </alerts>
     <fieldUpdates>

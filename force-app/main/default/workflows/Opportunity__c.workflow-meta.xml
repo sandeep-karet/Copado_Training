@@ -15,7 +15,8 @@
             <field>CIM__c</field>
             <type>userLookup</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Automated_Email_Notifications/Automated_SFDC_Notification_CSM_Assigned</template>
     </alerts>
     <alerts>
@@ -126,7 +127,8 @@
             <field>CSM__c</field>
             <type>userLookup</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Automated_Email_Notifications/Automated_SFDC_Notification_Client_Onboarding</template>
     </alerts>
     <alerts>
@@ -168,7 +170,8 @@
             <recipient>stacey.deweerdt@teladochealth.com</recipient>
             <type>user</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Automated_Email_Notifications/Automated_SFDC_Notification_Client_Renewal</template>
     </alerts>
     <alerts>
@@ -219,7 +222,8 @@
             <recipient>robrien@teladochealth.com</recipient>
             <type>user</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Automated_Email_Notifications/RequestCIM_Task_Notification</template>
     </alerts>
     <alerts>
@@ -227,7 +231,8 @@
         <ccEmails>contractops@livongo.com</ccEmails>
         <description>Notify Legal when Contract Path Change Opportunity is Closed</description>
         <protected>false</protected>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Automated_Email_Notifications/Automated_SFDC_Notification_Client_Onboarding</template>
     </alerts>
     <alerts>
@@ -235,7 +240,8 @@
         <ccEmails>contractops@livongo.com</ccEmails>
         <description>Notify Legal when contract linked to Renewal/Cross-sell/Expansion opportunity</description>
         <protected>false</protected>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Automated_Email_Notifications/Notify_Legal_when_contract_linked_to_Renewal_Cross_sell_Expansion</template>
     </alerts>
     <alerts>
@@ -243,7 +249,8 @@
         <ccEmails>contractops@livongo.com</ccEmails>
         <description>Request Close Opportunity EA</description>
         <protected>false</protected>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>All/Request_Close_Opportunity</template>
     </alerts>
     <fieldUpdates>

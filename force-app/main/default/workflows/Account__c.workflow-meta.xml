@@ -5,7 +5,8 @@
         <ccEmails>clientsuccessleadership@livongo.com</ccEmails>
         <description>Account Status has changed to Former Client</description>
         <protected>false</protected>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>Automated_Email_Notifications/Account_Status_is_Former_Client</template>
     </alerts>
     <alerts>
@@ -16,7 +17,8 @@
             <field>EML__c</field>
             <type>userLookup</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>salesforcesupport-crm@teladochealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>All/Enrollment_Marketing_Lead_Assigned_to_You</template>
     </alerts>
     <fieldUpdates>
