@@ -34,8 +34,9 @@ public class OppLineRevCalcHelper {
             }
             
             for (OpportunityLineItem__c obj: lstOP) {
-                obj.Name = oppMap.get(obj.Opportunity__c).Name + ' ' + mapP.get(obj.Product2__c).Name;
-                
+                //obj.Name = oppMap.get(obj.Opportunity__c).Name + ' ' + mapP.get(obj.Product2__c).Name;
+                String oppName = mapP.get(obj.Product2__c).Name + ' ' + oppMap.get(obj.Opportunity__c).Name;
+                obj.Name = oppName.length() > 80 ? oppName.substring(0,80):oppName;
                 if(oppMap.get(obj.Opportunity__c).Source__c != 'TD') {
                     
                     Decimal Product_Participants = obj.Product_Participants__c != null ? obj.Product_Participants__c : 0.00;
