@@ -28,6 +28,8 @@ global class ContractService {
     public static final String DIABETES_W_CKD_AWARE_VARIANT = System.Label.Diabetes_w_CKD_Aware_Variant;
     public static final String DIABETES_W_PROVIDER_BASED_CARE = System.Label.Diabetes_W_Provider_Based_Care;
     public static final String HYPERTENSION_W_PROVIDER_BASED_CARE = System.Label.Hypertension_W_Provider_Based_Care;
+    public static final String PREDIABETES_W_PROVIDER_BASED_CARE = System.Label.Prediabetes_W_Provider_Based_Care;
+    public static final String WEIGHTMANAGEMENTCARE_W_PROVIDER_BASED_CARE = System.Label.WeightManagement_W_Provider_Based_Care;
     public static final String HYPERTENSION_W_CKD_AWARE_VARIANT = System.Label.Hypertension_w_CKD_Aware_Variant;
     public static final String MYSTRENGTH = System.Label.myStrength;
     public static final String MYSTRENGTH_COMPLETE = System.Label.myStrength_Complete;
@@ -146,11 +148,11 @@ global class ContractService {
                     }
                 else if (h.programOverview.Program_Name__c == program.Family && program.RecordTypeId == primaryProductRecordTypeId && program.Whole_Person_Solution__c == false && !ckdAwareProduct && !h.programOverview.CKD_Aware_Variant__c) {
                         h.program = program;
-                		}
+                        }
                 else if (h.programOverview.Program_Name__c == program.Family && program.RecordTypeId == primaryProductRecordTypeId && program.Whole_Person_Solution__c == false 
                          && h.programOverview.CKD_Aware_Variant__c && ckdAwareProduct) {   
                          h.program = program;
-                    	}
+                        }
             }
         }
         
@@ -665,7 +667,8 @@ global class ContractService {
                         programOverview.Disable_BH_Coaching__c = false;
                         programOverview.Disable_Teletherapy__c = false;
                     }
-                    if (program.oliName != null && (program.oliName == DIABETES_W_PROVIDER_BASED_CARE || program.oliName == HYPERTENSION_W_PROVIDER_BASED_CARE)) {
+                    if (program.oliName != null && (program.oliName == DIABETES_W_PROVIDER_BASED_CARE || program.oliName == HYPERTENSION_W_PROVIDER_BASED_CARE ||
+                                                    program.oliName == PREDIABETES_W_PROVIDER_BASED_CARE || program.oliName == WEIGHTMANAGEMENTCARE_W_PROVIDER_BASED_CARE)) {
                         programOverview.Provider_Based_Care__c = true;
                     }
                     else if (program.soultionName != null && program.ProviderBasedCare == true) {
@@ -686,7 +689,7 @@ global class ContractService {
                     else if (program.oliName != null && program.oliName == MYSTRENGTH_COMPLETE) {
                         programOverview.Program_Platform_Version__c = MYSTRENGTH_COMPLETE;
                     }
-					*/
+                    */
                     //SCDEV-3454 Chanes End
                     if ((program.oliName != null && program.oliName == DIABETES_W_CKD_AWARE_VARIANT) ||
                         (program.oliName != null && program.oliName == HYPERTENSION_W_CKD_AWARE_VARIANT) || 
