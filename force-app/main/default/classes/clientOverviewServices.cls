@@ -1,7 +1,7 @@
 global class clientOverviewServices {
     
     @InvocableMethod
-    public static List<Id> copyChildRecords(List<List<String>> sourceInformation){
+    global static List<Id> copyChildRecords(List<List<String>> sourceInformation){
       
         if(sourceInformation.get(0).size() == 3){
 
