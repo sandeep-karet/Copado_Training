@@ -20,7 +20,7 @@
         <inputParameters>
             <name>text</name>
             <value>
-                <stringValue>@[0F94R000000HzLESA0] 
+                <stringValue>@[0F97e0000001FYCCA2] 
 Health Plan has been changed. 
 New Partner Account : {!myVariable_current.Partner_Partnership__r.Name}
 </stringValue>
@@ -2116,10 +2116,14 @@ New Partner Account : {!myVariable_current.Partner_Partnership__r.Name}
             <name>originalFormula</name>
             <value>
                 <stringValue>OR(
- ISCHANGED([LVGO__Relationship__c].LVGO__Master_Contract__c) = TRUE,
+AND(    
+    ISCHANGED([LVGO__Relationship__c].LVGO__Master_Contract__c) = TRUE,
+    [LVGO__Relationship__c].LVGO__Master_Contract__c &lt;&gt; NULL
+)
 AND(
- ISNEW(),
- [LVGO__Relationship__c].LVGO__Partner_Contract_Partnership__c &lt;&gt; [LVGO__Relationship__c].LVGO__Master_Contract__c
+    ISNEW(),
+    [LVGO__Relationship__c].LVGO__Master_Contract__c &lt;&gt; NULL
+    [LVGO__Relationship__c].LVGO__Partner_Contract_Partnership__c &lt;&gt; [LVGO__Relationship__c].LVGO__Master_Contract__c
 )
 ) </stringValue>
             </value>
