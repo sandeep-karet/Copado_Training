@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Chatter_TechOps</name>
+        <label>Chatter TechOps</label>
+        <locationX>179</locationX>
+        <locationY>431</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>Account_Data_Partnership_Data_Operations_Only</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>TechOpsChatterPost</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <name>Account_Competition</name>
+        <label>Account Competition</label>
+        <locationX>833</locationX>
+        <locationY>839</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_Partnership</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Account Competition</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_Account_Competition</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Competition</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Master_Client_Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Client_Competition__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Competitor_Competition__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Master_Fields_Account_Competition</targetReference>
+            </connector>
+            <label>TRUE_Account Competition</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Account_Data_Partnership_Data_Operations_Only</name>
+        <label>Account Data Partnership (Data Operations Only)</label>
+        <locationX>311</locationX>
+        <locationY>623</locationY>
+        <defaultConnector>
+            <targetReference>Account_Partnership</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Account Data Partnership (Data Operations Only)</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_4</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account_Data_Partnership</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Master_Fields</targetReference>
+            </connector>
+            <label>TRUE_Account Data Partnership (Data Operations Only)</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Account_Partnership</name>
+        <label>Account Partnership</label>
+        <locationX>573</locationX>
+        <locationY>731</locationY>
+        <defaultConnector>
+            <targetReference>Account_Competition</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Account Partnership</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_6</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Partnership</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Master_Client_Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Client_Partnership__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Partner_Partnership__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Master_Fields_Account_Partnership</targetReference>
+            </connector>
+            <label>TRUE_Account Partnership</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Active_Contract_Path_Billing_Partner</name>
+        <label>Active Contract Path / Billing Partner</label>
+        <locationX>1568</locationX>
+        <locationY>1763</locationY>
+        <defaultConnector>
+            <targetReference>Contract_Partnership_Billing_Partner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Active Contract Path / Billing Partner</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_28</name>
+            <conditionLogic>1 AND (2 OR 3) AND 4 AND 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Partner_Contract_Partnership__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__RelationshipType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Billing Partner</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__RelationshipType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Contract Path</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Active__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Contract Partnership</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deactivate_Existing_Relationships</targetReference>
+            </connector>
+            <label>TRUE_Active Contract Path / Billing Partner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Contract_Partnership</name>
+        <label>Contract Partnership</label>
+        <locationX>1568</locationX>
+        <locationY>1163</locationY>
+        <defaultConnector>
+            <targetReference>Contract_Partnership_Set_Partner_to_Master</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Contract Partnership</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_22</name>
+            <conditionLogic>(1 OR 2 OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Master_Client_Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Partner_Contract_Partnership__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Contract_Partnership__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Contract Partnership</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Master_Fields_Contract_Partnership</targetReference>
+            </connector>
+            <label>TRUE_Contract Partnership</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Contract_Partnership_Billing_Partner</name>
+        <label>Contract Partnership - Billing Partner</label>
+        <locationX>1568</locationX>
+        <locationY>2063</locationY>
+        <defaultConnector>
+            <targetReference>Contract_Partnership_Contract_Path</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Contract Partnership - Billing Partner</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_30</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Contract Partnership</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Partner_Contract_Partnership__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__RelationshipType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Billing Partner</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Active__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Billing_Partner</targetReference>
+            </connector>
+            <label>TRUE_Contract Partnership - Billing Partner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Contract_Partnership_Contract_Path</name>
+        <label>Contract Partnership - Contract Path</label>
+        <locationX>1766</locationX>
+        <locationY>2171</locationY>
+        <defaultConnectorLabel>FALSE_Contract Partnership - Contract Path</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_32</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Contract Partnership</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Partner_Contract_Partnership__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__RelationshipType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Contract Path</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Active__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Contract_Path</targetReference>
+            </connector>
+            <label>TRUE_Contract Partnership - Contract Path</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Contract_Partnership_Set_Partner_to_Master</name>
+        <label>Contract Partnership - Set Partner to Master</label>
+        <locationX>1568</locationX>
+        <locationY>1463</locationY>
+        <defaultConnector>
+            <targetReference>Active_Contract_Path_Billing_Partner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Contract Partnership - Set Partner to Master</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_26</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_TRUE_myRule_26</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Contract_Partnership_to_Master_Contract</targetReference>
+            </connector>
+            <label>TRUE_Contract Partnership - Set Partner to Master</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Health_Plan_Change</name>
+        <label>Health Plan Change</label>
+        <locationX>311</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Account_Data_Partnership_Data_Operations_Only</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Health_Plan_is_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Partnership</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__RelationshipType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Health Plan (Payer)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Partner_Partnership__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Chatter_TechOps</targetReference>
+            </connector>
+            <label>Health Plan is Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opportunity_Competition</name>
+        <label>Opportunity Competition</label>
+        <locationX>1337</locationX>
+        <locationY>1055</locationY>
+        <defaultConnector>
+            <targetReference>Contract_Partnership</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Opportunity Competition</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_18</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Opportunity Competition</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Master_Client_Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Opportunity_Competition__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Competitor_Oppty_Competition__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Master_Fields_Opportunity_Competition</targetReference>
+            </connector>
+            <label>TRUE_Opportunity Competition</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opportunity_Partnership</name>
+        <label>Opportunity Partnership</label>
+        <locationX>1089</locationX>
+        <locationY>947</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_Competition</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Opportunity Partnership</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_14</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Opportunity Partnership</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Master_Client_Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Opportunity_Partnership__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Partner_Oppty_Partnership__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Master_Fields_Opportunity_Partnership</targetReference>
+            </connector>
+            <label>TRUE_Opportunity Partnership</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the Relationship Management process using multiple criteria.
+Handles all Relationship object automation. Automatically configures the initial relationships and sets billing partner on Contract, Opportunity</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>formula_TRUE_myRule_26</name>
+        <dataType>Boolean</dataType>
+        <expression>OR( 
+      AND(    
+               ISCHANGED({!$Record.LVGO__Master_Contract__c}) = TRUE,
+               {!$Record.LVGO__Master_Contract__c} &lt;&gt; NULL
+      ),
+      AND(
+               ISNEW(),
+               {!$Record.LVGO__Master_Contract__c} &lt;&gt; NULL,
+               {!$Record.LVGO__Partner_Contract_Partnership__c} &lt;&gt; {!$Record.LVGO__Master_Contract__c}
+     )
+)</expression>
+    </formulas>
+    <interviewLabel>Relationship Management {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Relationship Management</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Billing_Partner</name>
+        <label>Set Billing Partner</label>
+        <locationX>1370</locationX>
+        <locationY>2171</locationY>
+        <inputAssignments>
+            <field>BillingPartner__c</field>
+            <value>
+                <elementReference>$Record.Partner_Contract_Partnership__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Contract_Partnership__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Contract_Path</name>
+        <label>Set Contract Path</label>
+        <locationX>1634</locationX>
+        <locationY>2279</locationY>
+        <inputAssignments>
+            <field>Contract_Path__c</field>
+            <value>
+                <elementReference>$Record.Partner_Contract_Partnership__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Contract_Partnership__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Master_Fields</name>
+        <label>Set Master Fields</label>
+        <locationX>50</locationX>
+        <locationY>731</locationY>
+        <inputAssignments>
+            <field>Master_Client_Account__c</field>
+            <value>
+                <elementReference>$Record.Account_Data_Partnership__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Master_Fields_Account_Competition</name>
+        <label>Set Master Fields - Account Competition</label>
+        <locationX>578</locationX>
+        <locationY>947</locationY>
+        <inputAssignments>
+            <field>Master_Account__c</field>
+            <value>
+                <elementReference>$Record.Competitor_Competition__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Master_Client_Account__c</field>
+            <value>
+                <elementReference>$Record.Client_Competition__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Master_Fields_Account_Partnership</name>
+        <label>Set Master Fields - Account Partnership</label>
+        <locationX>314</locationX>
+        <locationY>839</locationY>
+        <inputAssignments>
+            <field>Master_Account__c</field>
+            <value>
+                <elementReference>$Record.Partner_Partnership__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Master_Client_Account__c</field>
+            <value>
+                <elementReference>$Record.Client_Partnership__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Master_Fields_Contract_Partnership</name>
+        <label>Set Master Fields - Contract Partnership</label>
+        <locationX>1436</locationX>
+        <locationY>1271</locationY>
+        <connector>
+            <targetReference>Contract_Partnership_Set_Partner_to_Master</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Master_Account__c</field>
+            <value>
+                <elementReference>$Record.Partner_Contract_Partnership__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Master_Client_Account__c</field>
+            <value>
+                <elementReference>$Record.Contract_Partnership__r.Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Master_Contract__c</field>
+            <value>
+                <elementReference>$Record.Contract_Partnership__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Master_Fields_Opportunity_Competition</name>
+        <label>Set Master Fields - Opportunity Competition</label>
+        <locationX>1106</locationX>
+        <locationY>1163</locationY>
+        <connector>
+            <targetReference>Update_HasOpportunityLvlCompetitorRelationship</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Master_Account__c</field>
+            <value>
+                <elementReference>$Record.Competitor_Oppty_Competition__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Master_Client_Account__c</field>
+            <value>
+                <elementReference>$Record.Opportunity_Competition__r.Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Master_Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Opportunity_Competition__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_Master_Fields_Opportunity_Partnership</name>
+        <label>Set Master Fields - Opportunity Partnership</label>
+        <locationX>842</locationX>
+        <locationY>1055</locationY>
+        <inputAssignments>
+            <field>Master_Account__c</field>
+            <value>
+                <elementReference>$Record.Partner_Oppty_Partnership__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Master_Client_Account__c</field>
+            <value>
+                <elementReference>$Record.Opportunity_Partnership__r.Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Master_Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Opportunity_Partnership__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Contract_Partnership_to_Master_Contract</name>
+        <label>Update Contract Partnership to Master Contract</label>
+        <locationX>1436</locationX>
+        <locationY>1571</locationY>
+        <connector>
+            <targetReference>Active_Contract_Path_Billing_Partner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Contract_Partnership__c</field>
+            <value>
+                <elementReference>$Record.Master_Contract__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_HasOpportunityLvlCompetitorRelationship</name>
+        <label>Update 	HasOpportunityLvlCompetitorRelationship__c</label>
+        <locationX>1106</locationX>
+        <locationY>1271</locationY>
+        <inputAssignments>
+            <field>HasOpportunityLvlCompetitorRelationship__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Master_Opportunity__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>185</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Health_Plan_Change</targetReference>
+        </connector>
+        <object>Relationship__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Deactivate_Existing_Relationships</name>
+        <label>Deactivate Existing Relationships</label>
+        <locationX>1436</locationX>
+        <locationY>1871</locationY>
+        <connector>
+            <targetReference>Contract_Partnership_Billing_Partner</targetReference>
+        </connector>
+        <flowName>Deactivate_Matching_Relationship_Records_Client_Overview</flowName>
+        <inputAssignments>
+            <name>inputClientOverviewId</name>
+            <value>
+                <elementReference>$Record.Master_Contract__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputRelationshipType</name>
+            <value>
+                <elementReference>$Record.RelationshipType__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputStartDate</name>
+            <value>
+                <elementReference>$Record.Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>TechOpsChatterPost</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;@[0F94C0000000gK7SAI]&lt;/p&gt;&lt;p&gt;Health Plan has been changed.&amp;nbsp;&lt;/p&gt;&lt;p&gt;New Partner Account : {![Relationship__c].Partner_Partnership__r.Name}&lt;/p&gt;</text>
+    </textTemplates>
+</Flow>
