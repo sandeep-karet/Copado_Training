@@ -26,6 +26,13 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>59.0</apiVersion>
+<constants>
+        <name>TechOps</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>0F97e0000001FYCCA2</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>Account_Competition</name>
         <label>Account Competition</label>
@@ -504,6 +511,11 @@ Handles all Relationship object automation. Automatically configures the initial
                {!$Record.LVGO__Partner_Contract_Partnership__c} &lt;&gt; {!$Record.LVGO__Master_Contract__c}
      )
 )</expression>
+</formulas>
+    <formulas>
+        <name>TechOpsRecordValue</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.LVGO__TechOpsRecordValue}</expression>
     </formulas>
     <interviewLabel>Relationship Management {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Relationship Management</label>
@@ -754,7 +766,9 @@ Handles all Relationship object automation. Automatically configures the initial
     </subflows>
     <textTemplates>
         <name>TechOpsChatterPost</name>
-        <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;@[0F94C0000000gK7SAI]&lt;/p&gt;&lt;p&gt;Health Plan has been changed.&amp;nbsp;&lt;/p&gt;&lt;p&gt;New Partner Account : {![Relationship__c].Partner_Partnership__r.Name}&lt;/p&gt;</text>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>@[{!TechOpsRecordValue}]
+Health Plan has been changed.
+New Partner Account : {!$Record.LVGO__Partner_Partnership_Name__c}</text>
     </textTemplates>
 </Flow>
