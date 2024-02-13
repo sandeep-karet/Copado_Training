@@ -3,7 +3,8 @@
     <fullName>MyStrength_Transition_Date</fullName>
     <active>true</active>
     <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c, AND(NOT(ISPICKVAL(Program_Platform_Version__c, &apos;myStrength&apos;)),
-NOT(ISPICKVAL(Program_Platform_Version__c, &apos;myStrength Complete&apos;))),
+NOT(ISPICKVAL(Program_Platform_Version__c, &apos;myStrength Complete&apos;)),
+NOT(ISPICKVAL(Program_Platform_Version__c, &apos;myStrength Plus&apos;))),
 NOT(ISBLANK(MyStrength_Transition_Date__c)))</errorConditionFormula>
-    <errorMessage>MyStrength Transition Date can be added only for MyStrength and MyStrength Complete Program Platform Versions.</errorMessage>
+    <errorMessage>MyStrength Transition Date can be added only for MyStrength, MyStrength Plus and MyStrength Complete Program Platform Versions.</errorMessage>
 </ValidationRule>
