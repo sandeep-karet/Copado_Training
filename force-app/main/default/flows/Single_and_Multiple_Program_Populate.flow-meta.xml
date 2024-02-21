@@ -11,7 +11,7 @@
             <name>Single_program</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record__Prior.Program_Count3__c</leftValueReference>
+                <leftValueReference>$Record__Prior.LVGO__Program_Count3__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <numberValue>1.0</numberValue>
@@ -26,7 +26,7 @@
             <name>Multi_program</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>$Record__Prior.Program_Count3__c</leftValueReference>
+                <leftValueReference>$Record__Prior.LVGO__Program_Count3__c</leftValueReference>
                 <operator>GreaterThanOrEqualTo</operator>
                 <rightValue>
                     <numberValue>1.0</numberValue>
