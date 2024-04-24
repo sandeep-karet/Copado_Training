@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Population_Type__c</fullName>
-    <description>To be completed for clients on HSS contracts only or if your client is non-HSS but launching as downmarket.</description>
+        <description>To be completed for clients on HSS contracts only or if your client is non-HSS but launching as downmarket.</description>
     <externalId>false</externalId>
     <inlineHelpText>To be completed for clients on HSS contracts only or if your client is non-HSS but launching as downmarket.</inlineHelpText>
     <label>Population Type</label>
@@ -11,7 +11,7 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>false</restricted>
+<restricted>false</restricted>
         <valueSetDefinition>
             <sorted>true</sorted>
             <value>
@@ -20,9 +20,34 @@
                 <label>ASO downmarket</label>
             </value>
             <value>
+                <fullName>Commercial ASO - Opt In</fullName>
+                <default>false</default>
+                <label>Commercial ASO - Opt In</label>
+            </value>
+            <value>
+                <fullName>Commercial ASO - Opt Out</fullName>
+                <default>false</default>
+                <label>Commercial ASO - Opt Out</label>
+            </value>
+            <value>
+                <fullName>Commercial FI</fullName>
+                <default>false</default>
+                <label>Commercial FI</label>
+            </value>
+            <value>
+                <fullName>Dual Eligibles</fullName>
+                <default>false</default>
+                <label>Dual Eligibles</label>
+            </value>
+            <value>
                 <fullName>Enterprise</fullName>
                 <default>false</default>
                 <label>Enterprise</label>
+            </value>
+            <value>
+                <fullName>Exchange</fullName>
+                <default>false</default>
+                <label>Exchange</label>
             </value>
             <value>
                 <fullName>Federal employee</fullName>
@@ -43,6 +68,11 @@
                 <fullName>Health Plan Employee</fullName>
                 <default>false</default>
                 <label>Health Plan Employee</label>
+            </value>
+            <value>
+                <fullName>Managed Medicaid</fullName>
+                <default>false</default>
+                <label>Managed Medicaid</label>
             </value>
             <value>
                 <fullName>Medicaid</fullName>
@@ -68,6 +98,11 @@
                 <fullName>Non-HSS Downmarket</fullName>
                 <default>false</default>
                 <label>Non-HSS Downmarket</label>
+            </value>
+            <value>
+                <fullName>Other Government</fullName>
+                <default>false</default>
+                <label>Other Government</label>
             </value>
             <value>
                 <fullName>Patient Population</fullName>
