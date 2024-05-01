@@ -19,5 +19,5 @@ The `sfdx-project.json` file contains useful configuration information for your 
 
 ## Recently Installed Packages
 
-- (CollapsePackage) https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G00000440G9QAI
+- (CollapsePackage) https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003vm2eQAA
 - (ClonedObjects) https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5G000003RUVcQAO
