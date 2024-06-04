@@ -13,37 +13,37 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>LVGO__Account__c</field>
+                <field>Account__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>LVGO__CloseDate__c</field>
+                <field>CloseDate__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__Launch_Date__c</field>
+                <field>Launch_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__TD_Opp_Guid__c</field>
+                <field>TD_Opp_Guid__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>LVGO__Type__c</field>
+                <field>Type__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__Sub_Type__c</field>
+                <field>Sub_Type__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__Sub_Type_Detail__c</field>
+                <field>Sub_Type_Detail__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>LVGO__StageName__c</field>
+                <field>StageName__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -56,37 +56,37 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__BillingPartner__c</field>
+                <field>BillingPartner__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__Pre_Contracting_Contract_Paper__c</field>
+                <field>Pre_Contracting_Contract_Paper__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__GCRM_Contracting_Account__c</field>
+                <field>GCRM_Contracting_Account__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__GCRM_Contract_Path__c</field>
+                <field>GCRM_Contract_Path__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__Population_Type__c</field>
+                <field>Population_Type__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__Contract__c</field>
+                <field>Contract__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>LVGO__Contract_Number_Hyperlink__c</field>
+                <field>Contract_Number_Hyperlink__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__Original_Contract__c</field>
+                <field>Original_Contract__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -99,25 +99,25 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__ContractOps_Owner__c</field>
+                <field>ContractOps_Owner__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__ContractOps_Notes__c</field>
+                <field>ContractOps_Notes__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__Configuration_Team_Status__c</field>
+                <field>Configuration_Team_Status__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__ContractOps_Status__c</field>
+                <field>ContractOps_Status__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__ContractOps_Stage__c</field>
+                <field>ContractOps_Stage__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -144,11 +144,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__Owner__c</field>
+                <field>Owner__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>LVGO__Bypass_Contact_Role_Rules__c</field>
+                <field>Bypass_Contact_Role_Rules__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -158,11 +158,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__Source__c</field>
+                <field>Source__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LVGO__Source_ID__c</field>
+                <field>Source_ID__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -175,7 +175,7 @@
             <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>LVGO__Opportunity__c.LVGO__Create_Client_Overview_Bundle</actionName>
+            <actionName>Opportunity__c.Create_Client_Overview_Bundle</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>1</sortOrder>
         </platformActionListItems>
@@ -220,34 +220,34 @@
         <relatedContentItems>
             <layoutItem>
                 <behavior>Readonly</behavior>
-                <field>LVGO__Account__c</field>
+                <field>Account__c</field>
             </layoutItem>
         </relatedContentItems>
         <relatedContentItems>
             <layoutItem>
                 <behavior>Readonly</behavior>
-                <field>LVGO__Owner__c</field>
+                <field>Owner__c</field>
             </layoutItem>
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>LVGO__RelationshipType__c</fields>
-        <fields>LVGO__Partner_Oppty_Partnership__c</fields>
-        <fields>LVGO__Active__c</fields>
-        <fields>LVGO__Start_Date__c</fields>
-        <fields>LVGO__End_Date__c</fields>
-        <fields>LVGO__ReportRecipient__c</fields>
-        <relatedList>LVGO__Relationship__c.LVGO__Opportunity_Partnership__c</relatedList>
+        <fields>RelationshipType__c</fields>
+        <fields>Partner_Oppty_Partnership__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <fields>ReportRecipient__c</fields>
+        <relatedList>Relationship__c.Opportunity_Partnership__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>LVGO__Competitor_Oppty_Competition__c</fields>
-        <fields>LVGO__Competing_Product__c</fields>
-        <fields>LVGO__Active__c</fields>
-        <fields>LVGO__Start_Date__c</fields>
-        <fields>LVGO__End_Date__c</fields>
-        <relatedList>LVGO__Relationship__c.LVGO__Opportunity_Competition__c</relatedList>
+        <fields>Competitor_Oppty_Competition__c</fields>
+        <fields>Competing_Product__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Opportunity_Competition__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
@@ -275,28 +275,28 @@
         <relatedList>RelatedFileList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>LVGO__Program__c</fields>
-        <fields>LVGO__Quantity__c</fields>
-        <fields>LVGO__Product_Participants__c</fields>
-        <fields>LVGO__UnitPrice__c</fields>
-        <fields>LVGO__ListPrice__c</fields>
-        <relatedList>LVGO__OpportunityLineItem__c.LVGO__Opportunity__c</relatedList>
+        <fields>Program__c</fields>
+        <fields>Quantity__c</fields>
+        <fields>Product_Participants__c</fields>
+        <fields>UnitPrice__c</fields>
+        <fields>ListPrice__c</fields>
+        <relatedList>OpportunityLineItem__c.Opportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>LVGO__RelationshipType__c</fields>
-        <fields>LVGO__Master_Account__c</fields>
-        <fields>LVGO__Active__c</fields>
-        <fields>LVGO__Start_Date__c</fields>
-        <fields>LVGO__End_Date__c</fields>
-        <relatedList>LVGO__Relationship__c.LVGO__Master_Opportunity__c</relatedList>
+        <fields>RelationshipType__c</fields>
+        <fields>Master_Account__c</fields>
+        <fields>Active__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.Master_Opportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>LVGO__Client_Partnership__c</fields>
-        <fields>LVGO__Start_Date__c</fields>
-        <fields>LVGO__End_Date__c</fields>
-        <relatedList>LVGO__Relationship__c.LVGO__CohortOpportunity__c</relatedList>
+        <fields>Client_Partnership__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <relatedList>Relationship__c.CohortOpportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>CreatedDate</fields>
@@ -306,7 +306,7 @@
         <fields>Comments</fields>
         <relatedList>RelatedProcessHistoryList</relatedList>
     </relatedLists>
-    <relatedObjects>LVGO__Account__c</relatedObjects>
+    <relatedObjects>Account__c</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
