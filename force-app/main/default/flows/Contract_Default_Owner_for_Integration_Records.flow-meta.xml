@@ -5,7 +5,7 @@
         <name>Assign_Owner</name>
         <label>Assign Owner</label>
         <locationX>50</locationX>
-        <locationY>503</locationY>
+        <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
             <operator>Assign</operator>
@@ -15,10 +15,84 @@
         </assignmentItems>
     </assignments>
     <decisions>
+        <name>Is_New_Record</name>
+        <label>Is New Record</label>
+        <locationX>578</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Select_Engagement_Criteria_Options</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IsNew</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NewRecord</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>User_Check</targetReference>
+            </connector>
+            <label>IsNew</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Select_Engagement_Criteria_Options</name>
+        <label>Select Engagement Criteria Options</label>
+        <locationX>974</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Engagement_Criteria_Option_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Engagement_Criteria_Option__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Option 1</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Option_1</targetReference>
+            </connector>
+            <label>Engagement Criteria Option 1</label>
+        </rules>
+        <rules>
+            <name>Engagement_Criteria_Option_2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Engagement_Criteria_Option__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Option 2</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Option_2</targetReference>
+            </connector>
+            <label>Engagement Criteria Option 2</label>
+        </rules>
+        <rules>
+            <name>Engagement_Criteria_None</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Engagement_Criteria_Option__c</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Update_Option_None</targetReference>
+            </connector>
+            <label>Engagement Criteria None</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>User_Check</name>
         <label>User Check</label>
         <locationX>182</locationX>
-        <locationY>287</locationY>
+        <locationY>395</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Filtering_Integration_User</name>
@@ -37,6 +111,32 @@
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>CurrentDateTime</name>
+        <dataType>DateTime</dataType>
+        <expression>Now()</expression>
+    </formulas>
+    <formulas>
+        <name>IsNull</name>
+        <dataType>String</dataType>
+        <expression>Null</expression>
+    </formulas>
+    <formulas>
+        <name>IsNullNumber</name>
+        <dataType>Number</dataType>
+        <expression>Null</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>NewRecord</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>NullCheck</name>
+        <dataType>String</dataType>
+        <expression>Null</expression>
+    </formulas>
     <interviewLabel>LV Contract Default Owner for Integration Records {!$Flow.CurrentDateTime}</interviewLabel>
     <label>LV Contract Default Owner for Integration Records</label>
     <processMetadataValues>
@@ -62,7 +162,7 @@
         <name>Get_Default_Owner</name>
         <label>Get Default Owner</label>
         <locationX>50</locationX>
-        <locationY>395</locationY>
+        <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_Owner</targetReference>
@@ -79,14 +179,149 @@
         <object>User</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>Update_Option_1</name>
+        <label>Update Option 1</label>
+        <locationX>578</locationX>
+        <locationY>503</locationY>
+        <inputAssignments>
+            <field>Coaching_interaction_threshold_days__c</field>
+            <value>
+                <numberValue>60.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Cumulative_unique_days_with_weigh_ins__c</field>
+            <value>
+                <stringValue>0</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Required_coaching_interactions__c</field>
+            <value>
+                <stringValue>0</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Required_coaching_sessions__c</field>
+            <value>
+                <stringValue>0</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Time_in_program_threshold_days__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_weigh_in_days_last_14__c</field>
+            <value>
+                <stringValue>2</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Option_2</name>
+        <label>Update  Option 2</label>
+        <locationX>842</locationX>
+        <locationY>503</locationY>
+        <inputAssignments>
+            <field>Coaching_interaction_threshold_days__c</field>
+            <value>
+                <numberValue>30.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Cumulative_unique_days_with_weigh_ins__c</field>
+            <value>
+                <stringValue>13</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Required_coaching_interactions__c</field>
+            <value>
+                <stringValue>3</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Required_coaching_sessions__c</field>
+            <value>
+                <stringValue>1</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Time_in_program_threshold_days__c</field>
+            <value>
+                <numberValue>90.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_weigh_in_days_last_14__c</field>
+            <value>
+                <stringValue>2</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Option_None</name>
+        <label>Update Option None</label>
+        <locationX>1106</locationX>
+        <locationY>503</locationY>
+        <inputAssignments>
+            <field>Coaching_interaction_threshold_days__c</field>
+            <value>
+                <elementReference>IsNullNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Cumulative_unique_days_with_weigh_ins__c</field>
+            <value>
+                <elementReference>IsNull</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Required_coaching_interactions__c</field>
+            <value>
+                <elementReference>IsNull</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Required_coaching_sessions__c</field>
+            <value>
+                <elementReference>IsNull</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Time_in_program_threshold_days__c</field>
+            <value>
+                <elementReference>IsNullNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_weigh_in_days_last_14__c</field>
+            <value>
+                <elementReference>IsNull</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ValidationBypassDateTime__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>452</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>User_Check</targetReference>
+            <targetReference>Is_New_Record</targetReference>
         </connector>
         <object>Contract__c</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>

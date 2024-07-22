@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_in_program_threshold_days</fullName>
+    <active>true</active>
+    <description>If the &quot;Time in program threshold (days)&quot; field value is greater than 180, then users should not be able to save the record</description>
+    <errorConditionFormula>AND(
+ISCHANGED(Time_in_program_threshold_days__c),
+Time_in_program_threshold_days__c &gt; 180
+) &amp;&amp; NOT(IsValidationRuleBypassed__c)</errorConditionFormula>
+    <errorDisplayField>Time_in_program_threshold_days__c</errorDisplayField>
+    <errorMessage>Time in program threshold value exceeds 180</errorMessage>
+</ValidationRule>
