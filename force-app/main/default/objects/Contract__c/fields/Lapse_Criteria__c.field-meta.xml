@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Lapse_Criteria__c</fullName>
+    <deprecated>false</deprecated>
     <description>Integrated with NetSuite and Redshift</description>
     <externalId>false</externalId>
     <inlineHelpText>Integrated with NetSuite and Redshift</inlineHelpText>
@@ -48,6 +49,11 @@
                 <fullName>Most Activity</fullName>
                 <default>false</default>
                 <label>Most Activity</label>
+            </value>
+            <value>
+                <fullName>Last Activity without Weigh-In</fullName>
+                <default>false</default>
+                <label>Last Activity without Weigh-In</label>
             </value>
         </valueSetDefinition>
     </valueSet>
