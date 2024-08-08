@@ -723,27 +723,6 @@
             </value>
         </inputParameters>
     </actionCalls>
-    <actionCalls>
-        <processMetadataValues>
-            <name>emailAlertSelection</name>
-            <value>
-                <stringValue>Notification_for_CIM_Needed_on_this_Opportunity</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_37_A2</name>
-        <label>Notification for CIM needed on this opportunity</label>
-        <locationX>3700</locationX>
-        <locationY>300</locationY>
-        <actionName>Opportunity__c.Notification_for_CIM_Needed_on_this_Opportunity</actionName>
-        <actionType>emailAlert</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
     <apiVersion>49.0</apiVersion>
     <assignments>
         <name>myAssignment_myRule_11_A1</name>
@@ -2739,7 +2718,7 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>[Opportunity__c].Id </stringValue>
+                <stringValue>[LVGO__Opportunity__c].Id </stringValue>
             </value>
         </processMetadataValues>
         <name>formula_13_myRule_11_A1_5658535410</name>
@@ -2788,7 +2767,7 @@
         </processMetadataValues>
         <name>formula_41_myRule_37_A1_4840203138</name>
         <dataType>String</dataType>
-        <expression>{!$Label.Task_Record_Type_Id}</expression>
+        <expression>{!$Label.LVGO__Task_Record_Type_Id}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
@@ -2878,9 +2857,6 @@
         <label>Create a Task on an Oppty</label>
         <locationX>3700</locationX>
         <locationY>200</locationY>
-        <connector>
-            <targetReference>myRule_37_A2</targetReference>
-        </connector>
         <inputAssignments>
             <processMetadataValues>
                 <name>dataType</name>
