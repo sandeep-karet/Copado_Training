@@ -9,12 +9,6 @@
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <name>emailBody</name>
-            <value>
-                <elementReference>FailedToActivateProgramOverviewNotice</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
             <name>emailAddresses</name>
             <value>
                 <elementReference>UserEmail</elementReference>
@@ -24,6 +18,18 @@
             <name>emailSubject</name>
             <value>
                 <stringValue>Failed to Activate Program Overview Record</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>FailedToActivateProgramOverviewNotice</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputParameters>
     </actionCalls>

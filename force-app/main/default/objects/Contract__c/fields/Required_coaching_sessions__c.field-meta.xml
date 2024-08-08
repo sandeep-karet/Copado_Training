@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Phone_Campaign__c</fullName>
-    <deprecated>false</deprecated>
-    <description>What type of phone campaign does the client require?</description>
+    <fullName>Required_coaching_sessions__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>What type of phone campaign does the client require?</inlineHelpText>
-    <label>Phone Campaign</label>
+    <label>Required coaching sessions</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
+        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Phone Only</fullName>
+                <fullName>0</fullName>
                 <default>false</default>
-                <label>Phone Only</label>
+                <label>0</label>
             </value>
             <value>
-                <fullName>Phone + SMS</fullName>
+                <fullName>1</fullName>
                 <default>false</default>
-                <label>Phone + SMS</label>
+                <label>1</label>
             </value>
             <value>
-                <fullName>SMS Only</fullName>
+                <fullName>2</fullName>
                 <default>false</default>
-                <label>SMS Only</label>
+                <label>2</label>
             </value>
             <value>
-                <fullName>None</fullName>
+                <fullName>3</fullName>
                 <default>false</default>
-                <label>None</label>
+                <label>3</label>
+            </value>
+            <value>
+                <fullName>4</fullName>
+                <default>false</default>
+                <label>4</label>
             </value>
         </valueSetDefinition>
     </valueSet>
