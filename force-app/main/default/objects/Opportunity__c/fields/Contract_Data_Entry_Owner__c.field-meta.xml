@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Contract_Data_Entry_Owner__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <formula>Contract__r.Contract_Data_Entry_Owner__r.Name</formula>
+    <formula>Contract__r.Contract_Data_Entry_Owner__r.FirstName + &apos; &apos; + Contract__r.Contract_Data_Entry_Owner__r.LastName</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Contract Data Entry Owner</label>
     <required>false</required>
