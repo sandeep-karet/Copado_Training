@@ -4,5 +4,5 @@
     <active>true</active>
     <errorConditionFormula>AND( Microsoft_Teams_CCM_Enabled__c,
  OR( ISBLANK(Microsoft_Teams_Date_Enabled__c) ,  ISBLANK(TEXT(Microsoft_Teams_Launch_Type__c)) ) )</errorConditionFormula>
-    <errorMessage>Microsoft Teams Date Enabled and Microsoft Teams Launch Type is required is Microsoft Teams CCM Enabled is checked</errorMessage>
+    <errorMessage>Microsoft Teams Date Enabled and Microsoft Teams Launch Type is required if Microsoft Teams CCM Enabled is checked</errorMessage>
 </ValidationRule>
