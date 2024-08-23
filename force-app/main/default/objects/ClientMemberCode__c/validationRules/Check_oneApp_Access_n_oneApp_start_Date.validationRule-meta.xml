@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_oneApp_Access_n_oneApp_start_Date</fullName>
+    <active>true</active>
+    <description>This is created as part of SCDEV-5393. It is to check oneApp Access and oneApp Start date both the fields has a values in it.</description>
+    <errorConditionFormula>AND ($Setup.LVGO_Automation_Switch__c.Validations__c,
+OR
+(
+  AND(  
+    OneApp_Access__c= TRUE, 
+    ISBLANK(OneApp_Migration_Date__c)),
+
+  AND( 
+    OneApp_Access__c = FALSE, 
+    NOT(ISBLANK(OneApp_Migration_Date__c))
+    ) 
+  )
+)</errorConditionFormula>
+    <errorMessage>If OneApp Access is checked you must enter a OneApp Start Date value. If you enter a OneApp Start Date value then you need to enable OneApp Access flag.</errorMessage>
+</ValidationRule>
