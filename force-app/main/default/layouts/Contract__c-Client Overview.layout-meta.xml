@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>Upload_Contract</customButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>RecordShareHierarchy</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
@@ -1107,9 +1108,13 @@
         <fields>Contract_Number_HyperLink__c</fields>
         <fields>Program_Name__c</fields>
         <fields>Program_Type__c</fields>
+        <fields>Status__c</fields>
+        <fields>Program_Start_Date__c</fields>
+        <fields>Program_End_Date__c</fields>
         <fields>Program_Implementation_status__c</fields>
         <fields>Actual_Launch_Date__c</fields>
-        <fields>ContractRenewalDate__c</fields>
+        <fields>PPPM__c</fields>
+        <fields>Contract_Data_Entry_Owner__c</fields>
         <relatedList>Contract__c.Client_Overview__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -1122,7 +1127,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h7h000000r1ZZ</masterLabel>
+        <masterLabel>00h5G000005hSps</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>1</sizeY>
         <summaryLayoutItems>
