@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recurring_Order_Frequency__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Defines the frequency of how often a member can request a kit</inlineHelpText>
+    <label>Recurring Order Frequency</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>false</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Once every 6 months</fullName>
+                <default>false</default>
+                <label>Once every 6 months</label>
+            </value>
+            <value>
+                <fullName>Once every 12 months</fullName>
+                <default>false</default>
+                <label>Once every 12 months</label>
+            </value>
+            <value>
+                <fullName>Unlimited</fullName>
+                <default>false</default>
+                <label>Unlimited</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

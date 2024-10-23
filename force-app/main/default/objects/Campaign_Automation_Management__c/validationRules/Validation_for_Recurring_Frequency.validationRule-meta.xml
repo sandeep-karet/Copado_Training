@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_for_Recurring_Frequency</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( 
+     OR(
+        AND(
+            Allow_Recurring_Order__c = TRUE,
+            ISBLANK(TEXT(Recurring_Order_Frequency__c))
+        ),
+        AND(
+            NOT(ISBLANK(TEXT(Recurring_Order_Frequency__c))),
+            Allow_Recurring_Order__c = FALSE
+        )
+     ),
+     $Setup.LVGO_Automation_Switch__c.Validations__c
+)</errorConditionFormula>
+    <errorMessage>When Allow Recurring Order is checked, Recurring Frequency value is required.</errorMessage>
+</ValidationRule>
