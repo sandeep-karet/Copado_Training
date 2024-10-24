@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GLP_1_Model__c</fullName>
+    <externalId>false</externalId>
+    <label>GLP-1 Model</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Program_Name__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lifestyle</fullName>
+                <default>false</default>
+                <label>Lifestyle</label>
+            </value>
+            <value>
+                <fullName>Engagement Criteria</fullName>
+                <default>false</default>
+                <label>Engagement Criteria</label>
+            </value>
+            <value>
+                <fullName>Sole Prescriber</fullName>
+                <default>false</default>
+                <label>Sole Prescriber</label>
+            </value>
+            <value>
+                <fullName>Sole Prescriber and Engagement Criteria</fullName>
+                <default>false</default>
+                <label>Sole Prescriber and Engagement Criteria</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Adv Prediabetes</controllingFieldValue>
+            <controllingFieldValue>Compr Prediabetes Care</controllingFieldValue>
+            <controllingFieldValue>Adv Weight Management</controllingFieldValue>
+            <controllingFieldValue>Compr Weight Care</controllingFieldValue>
+            <valueName>Lifestyle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Adv Prediabetes</controllingFieldValue>
+            <controllingFieldValue>Compr Prediabetes Care</controllingFieldValue>
+            <controllingFieldValue>Adv Weight Management</controllingFieldValue>
+            <controllingFieldValue>Compr Weight Care</controllingFieldValue>
+            <valueName>Engagement Criteria</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Compr Prediabetes Care</controllingFieldValue>
+            <controllingFieldValue>Compr Weight Care</controllingFieldValue>
+            <valueName>Sole Prescriber</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Compr Prediabetes Care</controllingFieldValue>
+            <controllingFieldValue>Compr Weight Care</controllingFieldValue>
+            <valueName>Sole Prescriber and Engagement Criteria</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>
