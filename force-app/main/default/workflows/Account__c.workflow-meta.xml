@@ -98,7 +98,7 @@
             <name>Turn_Status_to_Engaging</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>An account with an open opportunity should be in the Account Status &apos;Engaging.&apos;</description>
         <formula>AND(                     AND(                         NOT(ISPICKVAL(Account_Type__c,&quot;Engaging&quot;)),                         NOT(ISPICKVAL(Account_Type__c,&quot;Client&quot;)),                         NOT(ISPICKVAL(Account_Type__c,&quot;Disqualified&quot;)),                         NOT(ISPICKVAL(Account_Type__c,&quot;Active Partner&quot;))                     ),                     Closed_Won_Opportunity_Count__c == 0,                     Open_Opportunity_Count__c != 0,                     $Setup.LVGO_Automation_Switch__c.Workflows__c                 )</formula>
         <triggerType>onAllChanges</triggerType>
@@ -109,7 +109,7 @@
             <name>Enrollment_Marketing_Lead_Assignemnt</name>
             <type>Alert</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,EML__c != null)</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
@@ -130,13 +130,13 @@
             <name>Multi_program</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,Program_Count3__c>=2,1>PO_WholePerson__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
         <fullName>Request CSM_60 Days</fullName>
-        <active>true</active>
+        <active>false</active>
         <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,Earliest_Active_Initial_Launch_Date__c!=null,RecordType.Name=&quot;Client Account&quot;,RequestCSM__c=false,CSM__c=null,NOT(ISPICKVAL(Account_Type__c,&quot;Former Client&quot;)),NOT(ISPICKVAL(Account_Type__c,&quot;Disqualified&quot;)),NOT(ISPICKVAL(Account_Type__c,&quot;Study&quot;)))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
@@ -155,7 +155,7 @@
             <name>Single_program</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>AND($Setup.LVGO_Automation_Switch__c.Workflows__c,Program_Count3__c=1,1>PO_WholePerson__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -165,7 +165,7 @@
             <name>Update_Prior_Account_Status</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>JENGA-1279</description>
         <formula>AND(ISCHANGED(Account_Type__c), NOT(ISPICKVAL(Account_Type__c, &apos;&apos;)), NOT(ISBLANK(PRIORVALUE(Account_Type__c))),$Setup.LVGO_Automation_Switch__c.Workflows__c)</formula>
         <triggerType>onAllChanges</triggerType>
