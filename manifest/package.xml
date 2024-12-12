@@ -266,6 +266,9 @@
         <members>Account__c.Member_NPS__c</members>
         <members>Account__c.Member_recruitment_began__c</members>
         <members>Account__c.Members_Enrolled__c</members>
+        <members>Account__c.Microsoft_Teams_CCM_Enabled__c</members>
+        <members>Account__c.Microsoft_Teams_Date_Enabled__c</members>
+        <members>Account__c.Microsoft_Teams_Launch_Type__c</members>
         <members>Account__c.Migrated_myStrength_Account__c</members>
         <members>Account__c.Migration_ID__c</members>
         <members>Account__c.Most_Recent_Event_by_Sales_Rep__c</members>
@@ -385,6 +388,8 @@
         <members>CMCAssociation__c.Program_Number_Hyperlink__c</members>
         <members>CMCAssociation__c.Program_Overview_Name__c</members>
         <members>CMCAssociation__c.RegistrationCode__c</members>
+        <members>Campaign_Automation_Management__c.AHL_Group_ID__c</members>
+        <members>Campaign_Automation_Management__c.Allow_Recurring_Order__c</members>
         <members>Campaign_Automation_Management__c.Allows_members_to_opt_out__c</members>
         <members>Campaign_Automation_Management__c.Answer1_Action__c</members>
         <members>Campaign_Automation_Management__c.Answer1_Confirmation_Message__c</members>
@@ -410,6 +415,7 @@
         <members>Campaign_Automation_Management__c.Notes__c</members>
         <members>Campaign_Automation_Management__c.Notification_Type__c</members>
         <members>Campaign_Automation_Management__c.Program__c</members>
+        <members>Campaign_Automation_Management__c.Recurring_Order_Frequency__c</members>
         <members>Campaign_Automation_Management__c.Second_Round_Campaign_Days_Delay__c</members>
         <members>Campaign_Automation_Management__c.Second_Round_Campaign_Start_Date__c</members>
         <members>Campaign_Automation_Management__c.Start_Date__c</members>
@@ -919,6 +925,7 @@
         <members>Contract__c.Fast_Start_Participation_Rate_Date_Met__c</members>
         <members>Contract__c.Fast_Start_Participation_Rate__c</members>
         <members>Contract__c.Frequency_of_Award__c</members>
+        <members>Contract__c.GLP_1_Model__c</members>
         <members>Contract__c.General_Disclaimer__c</members>
         <members>Contract__c.General_Eligibility_Sentence__c</members>
         <members>Contract__c.General_Spanish_Disclaimer__c</members>
@@ -1016,6 +1023,7 @@
         <members>Contract__c.New_Device_Type__c</members>
         <members>Contract__c.New_Member_Shipping_days__c</members>
         <members>Contract__c.No_Email_Addresses_for_Population__c</members>
+        <members>Contract__c.No_OEP_Direct_Mail_Inserts__c</members>
         <members>Contract__c.Number_of_Closed_Won_Opps__c</members>
         <members>Contract__c.Number_of_MsC__c</members>
         <members>Contract__c.OE_Month_End__c</members>
@@ -1362,6 +1370,7 @@
         <members>OpportunityLineItem__c.ProductRecordType__c</members>
         <members>OpportunityLineItem__c.Product_Participants__c</members>
         <members>OpportunityLineItem__c.Product_Record_Type__c</members>
+        <members>OpportunityLineItem__c.Product_Rollup__c</members>
         <members>OpportunityLineItem__c.Program_ARR_Copy__c</members>
         <members>OpportunityLineItem__c.Program_ARR__c</members>
         <members>OpportunityLineItem__c.Program_Family__c</members>
@@ -1416,12 +1425,14 @@
         <members>Opportunity__c.CloseDate__c</members>
         <members>Opportunity__c.Combined_Total__c</members>
         <members>Opportunity__c.Commission_Notes__c</members>
+        <members>Opportunity__c.Config_Notes__c</members>
         <members>Opportunity__c.Configuration_Team_Status__c</members>
         <members>Opportunity__c.ContractOps_Notes__c</members>
         <members>Opportunity__c.ContractOps_Owner__c</members>
         <members>Opportunity__c.ContractOps_Stage__c</members>
         <members>Opportunity__c.ContractOps_Status__c</members>
         <members>Opportunity__c.Contract_Billing_Method__c</members>
+        <members>Opportunity__c.Contract_Data_Entry_Owner__c</members>
         <members>Opportunity__c.Contract_Nuances__c</members>
         <members>Opportunity__c.Contract_Number_Hyperlink__c</members>
         <members>Opportunity__c.Contract_Path__c</members>
@@ -2481,6 +2492,7 @@
         <members>AccountContactRelation__c-LV Account Contact Relationship Layout</members>
         <members>Account_Long_ID__mdt-Account Long ID Layout</members>
         <members>Account__c-Account - Base Layout</members>
+        <members>Account__c-Account - Base Layout New</members>
         <members>Account__c-Account - CI Layout</members>
         <members>Account__c-Account - CI Layout JENGA 1453</members>
         <members>Account__c-Account - CS Layout</members>
@@ -2829,15 +2841,9 @@
     </types>
     <types>
         <members>Account__c.Client_Account</members>
-        <members>Account__c.Client_Lite_Account</members>
-        <members>Account__c.Client_Partner</members>
         <members>Account__c.Competitor_Account</members>
         <members>Account__c.Downmarket_Client</members>
-        <members>Account__c.Marketing</members>
-        <members>Account__c.Marketing_Account</members>
         <members>Account__c.Partner_Account</members>
-        <members>Account__c.Payer_Account</members>
-        <members>Account__c.Sales_Account</members>
         <members>CMCAssociation__c.CMC_to_Program</members>
         <members>CMCAssociation__c.CMC_to_Registration</members>
         <members>Campaign__c.Direct_Mail_List</members>
@@ -2877,6 +2883,7 @@
     </types>
     <types>
         <members>Account__c.Custom_Marketing_Req_Detail</members>
+        <members>Account__c.Date_N_Launchtype_Required_if_CCM_Enable</members>
         <members>Account__c.Require_Account_Type_to_be_Mandatory</members>
         <members>Account__c.Require_Type_to_be_Selected</members>
         <members>Account__c.Require_termination_date_when_picked</members>
@@ -2886,9 +2893,11 @@
         <members>Campaign_Automation_Management__c.File_Name_field_is_required</members>
         <members>Campaign_Automation_Management__c.Second_round_meter_message_is_Required</members>
         <members>Campaign_Automation_Management__c.Start_Date_cannot_be_in_the_past</members>
+        <members>Campaign_Automation_Management__c.Validation_for_Recurring_Frequency</members>
         <members>Campaign__c.No_update_by_SalesTeam_member</members>
         <members>Case__c.Jira_Link_Cannot_Be_Blank</members>
         <members>Case__c.Salesforce_team_only_change_status</members>
+        <members>ClientMemberCode__c.Check_oneApp_Access_n_oneApp_start_Date</members>
         <members>ClientMemberCode__c.Limit_Characters</members>
         <members>Contact__c.FirstName_NoSpecialChar</members>
         <members>Contract__c.Cannot_Create_PO_without_Program</members>

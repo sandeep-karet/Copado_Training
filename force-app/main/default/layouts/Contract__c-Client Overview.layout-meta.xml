@@ -453,6 +453,10 @@
                 <behavior>Edit</behavior>
                 <field>Remove_Unlimited__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>No_OEP_Direct_Mail_Inserts__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -1107,9 +1111,13 @@
         <fields>Contract_Number_HyperLink__c</fields>
         <fields>Program_Name__c</fields>
         <fields>Program_Type__c</fields>
+        <fields>Status__c</fields>
+        <fields>Program_Start_Date__c</fields>
+        <fields>Program_End_Date__c</fields>
         <fields>Program_Implementation_status__c</fields>
         <fields>Actual_Launch_Date__c</fields>
-        <fields>ContractRenewalDate__c</fields>
+        <fields>PPPM__c</fields>
+        <fields>Contract_Data_Entry_Owner__c</fields>
         <relatedList>Contract__c.Client_Overview__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -1122,7 +1130,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h7h000000r1ZZ</masterLabel>
+        <masterLabel>00h5G000005hSps</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>1</sizeY>
         <summaryLayoutItems>
