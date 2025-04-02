@@ -8,9 +8,14 @@ ISCHANGED(Coaching_interaction_threshold_days__c),
 NOT(AND(
 Coaching_interaction_threshold_days__c &gt;= 14,
 Coaching_interaction_threshold_days__c &lt;= 180
-)
-)
-) &amp;&amp; NOT(IsValidationRuleBypassed__c)</errorConditionFormula>
+)),
+NOT(OR(
+ISPICKVAL( Engagement_Criteria_Option__c , &quot;Default ESI&quot;),
+ISPICKVAL(Engagement_Criteria_Option__c, &quot;Default Non-ESI&quot;),
+ISPICKVAL(Engagement_Criteria_Option__c, &quot;Custom&quot;)
+)),
+NOT(IsValidationRuleBypassed__c)
+)</errorConditionFormula>
     <errorDisplayField>Coaching_interaction_threshold_days__c</errorDisplayField>
     <errorMessage>Coaching interaction threshold is not between 14-180</errorMessage>
 </ValidationRule>

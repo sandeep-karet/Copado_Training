@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Engagement_Criteria_Option__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
+    <inlineHelpText>See default engagement criteria options. Any custom configurations outside of the default options require approval from clinical product.</inlineHelpText>
     <label>Engagement Criteria Option</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
@@ -13,9 +15,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Option 1</fullName>
+                <fullName>Default ESI</fullName>
                 <default>false</default>
-                <label>Option 1</label>
+                <label>Default ESI</label>
             </value>
             <value>
                 <fullName>Option 2</fullName>
@@ -23,9 +25,20 @@
                 <label>Option 2</label>
             </value>
             <value>
+                <fullName>Default Non-ESI</fullName>
+                <default>false</default>
+                <label>Default Non-ESI</label>
+            </value>
+            <value>
                 <fullName>Custom</fullName>
                 <default>false</default>
                 <label>Custom</label>
+            </value>
+            <value>
+                <fullName>Option 1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Option 1</label>
             </value>
         </valueSetDefinition>
     </valueSet>

@@ -46,19 +46,19 @@
         <locationY>395</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Engagement_Criteria_Option_1</name>
+            <name>Engagement_Criteria_Default_ESI</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.LVGO__Engagement_Criteria_Option__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Option 1</stringValue>
+                    <stringValue>Default ESI</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Option_1</targetReference>
+                <targetReference>Default_ESI</targetReference>
             </connector>
-            <label>Engagement Criteria Option 1</label>
+            <label>Engagement Criteria Default ESI</label>
         </rules>
         <rules>
             <name>Engagement_Criteria_Option_2</name>
@@ -77,15 +77,44 @@
         </rules>
         <rules>
             <name>Engagement_Criteria_None</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 OR ( 2 AND 3)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.LVGO__Engagement_Criteria_Option__c</leftValueReference>
                 <operator>EqualTo</operator>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Engagement_Criteria_Option__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Custom</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.LVGO__Engagement_Criteria_Option__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Custom</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Update_Option_None</targetReference>
+                <targetReference>Update_Option_None_and_custom</targetReference>
             </connector>
             <label>Engagement Criteria None</label>
+        </rules>
+        <rules>
+            <name>Engagement_Criteria_Default_Non_ESI</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LVGO__Engagement_Criteria_Option__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Default Non-ESI</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Default_Non_ESI</targetReference>
+            </connector>
+            <label>Engagement Criteria Default Non-ESI</label>
         </rules>
     </decisions>
     <decisions>
@@ -180,32 +209,38 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Update_Option_1</name>
-        <label>Update Option 1</label>
+        <name>Default_ESI</name>
+        <label>Default ESI</label>
         <locationX>578</locationX>
         <locationY>503</locationY>
         <inputAssignments>
+            <field>Coaching_Sessions__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Coaching_interaction_threshold_days__c</field>
             <value>
-                <numberValue>60.0</numberValue>
+                <elementReference>IsNullNumber</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Cumulative_unique_days_with_weigh_ins__c</field>
             <value>
-                <stringValue>0</stringValue>
+                <elementReference>IsNullNumber</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Required_coaching_interactions__c</field>
             <value>
-                <stringValue>0</stringValue>
+                <elementReference>IsNullNumber</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Required_coaching_sessions__c</field>
             <value>
-                <stringValue>0</stringValue>
+                <elementReference>IsNullNumber</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -217,7 +252,104 @@
         <inputAssignments>
             <field>Unique_weigh_in_days_last_14__c</field>
             <value>
-                <stringValue>2</stringValue>
+                <elementReference>IsNullNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Time_horizon_for_criteria_below_days__c</field>
+            <value>
+                <numberValue>30.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_days_any_app_or_web_engagement__c</field>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_days_lesson_taken_loggedor_food__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_weigh_in_days__c</field>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Default_Non_ESI</name>
+        <label>Update Default Non- ESI</label>
+        <locationX>1370</locationX>
+        <locationY>503</locationY>
+        <inputAssignments>
+            <field>Coaching_Sessions__c</field>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Coaching_interaction_threshold_days__c</field>
+            <value>
+                <elementReference>IsNullNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Cumulative_unique_days_with_weigh_ins__c</field>
+            <value>
+                <elementReference>IsNullNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Required_coaching_interactions__c</field>
+            <value>
+                <elementReference>IsNullNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Required_coaching_sessions__c</field>
+            <value>
+                <elementReference>IsNullNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Time_in_program_threshold_days__c</field>
+            <value>
+                <numberValue>90.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_weigh_in_days_last_14__c</field>
+            <value>
+                <elementReference>IsNullNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Time_horizon_for_criteria_below_days__c</field>
+            <value>
+                <numberValue>30.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_days_any_app_or_web_engagement__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_days_lesson_taken_loggedor_food__c</field>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_weigh_in_days__c</field>
+            <value>
+                <numberValue>4.0</numberValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -227,6 +359,12 @@
         <label>Update  Option 2</label>
         <locationX>842</locationX>
         <locationY>503</locationY>
+        <inputAssignments>
+            <field>Coaching_Sessions__c</field>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Coaching_interaction_threshold_days__c</field>
             <value>
@@ -263,13 +401,43 @@
                 <stringValue>2</stringValue>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Time_horizon_for_criteria_below_days__c</field>
+            <value>
+                <numberValue>30.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_days_any_app_or_web_engagement__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_days_lesson_taken_loggedor_food__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_weigh_in_days__c</field>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Option_None</name>
-        <label>Update Option None</label>
+        <name>Update_Option_None_and_custom</name>
+        <label>Update Option None and custom</label>
         <locationX>1106</locationX>
         <locationY>503</locationY>
+        <inputAssignments>
+            <field>Coaching_Sessions__c</field>
+            <value>
+                <elementReference>IsNullNumber</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Coaching_interaction_threshold_days__c</field>
             <value>
@@ -310,6 +478,30 @@
             <field>ValidationBypassDateTime__c</field>
             <value>
                 <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Time_horizon_for_criteria_below_days__c</field>
+            <value>
+                <elementReference>IsNullNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_days_any_app_or_web_engagement__c</field>
+            <value>
+                <elementReference>IsNullNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_days_lesson_taken_loggedor_food__c</field>
+            <value>
+                <elementReference>IsNullNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_weigh_in_days__c</field>
+            <value>
+                <elementReference>IsNullNumber</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
