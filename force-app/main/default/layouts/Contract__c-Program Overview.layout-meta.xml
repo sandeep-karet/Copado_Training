@@ -392,6 +392,20 @@
                 <behavior>Edit</behavior>
                 <field>Time_in_program_threshold_days__c</field>
             </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Legacy fields (to be deprecated)</label>
+        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Required_coaching_interactions__c</field>
@@ -406,29 +420,6 @@
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Time_horizon_for_criteria_below_days__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Unique_weigh_in_days__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Coaching_Sessions__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Unique_days_any_app_or_web_engagement__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Unique_days_lesson_taken_loggedor_food__c</field>
-            </layoutItems>
-            <layoutItems>
-                <emptySpace>true</emptySpace>
-            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Coaching_interaction_threshold_days__c</field>
@@ -548,7 +539,7 @@
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
-            <layoutItems>
+            <layoutItems> 
                 <behavior>Edit</behavior>
                 <field>PPPM_Billing_Trigger__c</field>
             </layoutItems>
