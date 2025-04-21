@@ -500,7 +500,7 @@ global class ContractService {
         
         //Get Opportunity__c Info
         List<Opportunity__c> oppList = [SELECT Id, Account__c, Contract_Path__c,Type__c,Has_Broker__c,Account__r.Name,Revenue_Bucket__c, Contract_Path__r.Name, CIM__c, BillingPartner__c,
-                                     Contract__c, Launch_Date__c, (SELECT Id, Program_Family__c, Pricing_Structure__c, Pricing_Structure__r.Name, PO_WholePerson__c, 
+                                     Contract__c, Launch_Date__c, (SELECT Id, Program_Family__c, Pricing_Structure__c,Product_Rollup__c, Pricing_Structure__r.Name, PO_WholePerson__c, 
                                                                   Product2__r.Whole_Person_Solution__c, Disable_BH_Coaching__c, Disable_Teletherapy__c, OpportunityProductName__c  FROM LGVO_OpportunityProducts__r) 
                                      FROM Opportunity__c WHERE Id = :oppId];
         Opportunity__c opp = oppList[0];
@@ -516,7 +516,8 @@ global class ContractService {
                       CIM__c, cbi_header__c, cbi_step1__c, cbi_step2__c, cbi_step3__c, cbi_disclaimer__c, Program_Began_as_Pilot__c,
                       Disclaimer__c, Eligibility_Sentence__c, Spanish_Eligibility_Sentence__c, Automated_Enrollment_Injection__c,
                       Relaunch_Start_Date__c, Pop_Refresh_Start_Date__c, Name, Is_there_Lapse_Criteria__c, Lapsed_Criteria_Source__c,
-                      Escalation_Details__c, Eligibility_Escalation_Path__c, Eligibility_Verification_Method__c,Provider_Based_Care__c   
+                      Escalation_Details__c, Eligibility_Escalation_Path__c, Eligibility_Verification_Method__c,Provider_Based_Care__c,
+                      Cardio_Features_Enabled__c,Cardio_Start_Date__c   
                       FROM Contract__c WHERE RecordTypeId = :PROGRAM_OVERVIEW_RT AND Client_Overview__c = :coId AND Status__c = 'Active' AND Program_Type__c = 'Standalone'];
             
             if (!poList.isEmpty()) {
@@ -547,7 +548,17 @@ global class ContractService {
             }
             if (opp.Type__c == 'New Business') {
                 clientOverview.Has_Broker__c = opp.Has_Broker__c;
+              
+               for (OpportunityLineItem__c oppProd : opp.LGVO_OpportunityProducts__r) {
+                  if (oppProd.Product_Rollup__c != null &&
+                       oppProd.Product_Rollup__c.toLowerCase().contains('cardio')) {
+                          clientOverview.Cardio_Features_Enabled__c = true;
+                          clientOverview.Cardio_Start_Date__c = opp.Launch_Date__c;
+                          break; 
+                    }
+                }
             }
+            
             clientOverview.RecordTypeId = CLIENT_OVERVIEW_RT;
             oppToClientOverviewsMap.put(opp.Id, clientOverview);
             

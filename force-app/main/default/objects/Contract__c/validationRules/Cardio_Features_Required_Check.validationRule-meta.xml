@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cardio_Features_Required_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  $Setup.LVGO_Automation_Switch__c.Validations__c = TRUE,
+  OR(
+    ISCHANGED(Cardio_Features_Enabled__c),
+    ISCHANGED(Cardio_Start_Date__c)
+  ),
+  OR(
+    AND(
+      Cardio_Features_Enabled__c = TRUE,
+      ISBLANK(Cardio_Start_Date__c)
+    ),
+    AND(
+      NOT(ISBLANK(Cardio_Start_Date__c)),
+      Cardio_Features_Enabled__c = FALSE
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>If Cardio Features Enabled is checked you must enter a Cardio Start Date value. If you enter a Cardio Start Date value then you need to enable Cardio Features Enabled flag.</errorMessage>
+</ValidationRule>
