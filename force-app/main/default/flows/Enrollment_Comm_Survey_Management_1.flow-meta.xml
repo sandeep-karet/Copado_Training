@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Notify_Users_on_Survey_Status</description>
+        <name>Notify_Users_on_Survey_Status</name>
+        <label>Notify Users on Survey Status</label>
+        <locationX>314</locationX>
+        <locationY>839</locationY>
+        <actionName>Enrollment_Communications_Survey__c.Notify_Users_on_Survey_Status</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <name>Check_for_Bypass</name>
+        <label>Check for Bypass</label>
+        <locationX>248</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>myRule_3</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Bypass Flow</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_Bypass_Flow</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>byPass_Flow_Logic</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>TRUE_Bypass Flow</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_3</name>
+        <label>ISNEW() or Survey Date or Status is changed</label>
+        <locationX>446</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Notify_Owner_and_EML_when_survey_status_is_changed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_TRUE_myRule_3</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_3_A1</targetReference>
+            </connector>
+            <label>ISNEW() or Survey Date is changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Notify_Owner_and_EML_when_survey_status_is_changed</name>
+        <label>Notify Owner and EML when survey status is changed</label>
+        <locationX>446</locationX>
+        <locationY>731</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Notify_Users_on_Survey_Status_change</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Survey_Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Notify_Users_on_Survey_Status</targetReference>
+            </connector>
+            <label>Notify Users on Survey Status change</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the Enrollment Comm Survey Management process using multiple criteria.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>byPass_Flow_Logic</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT({!$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Flows__c} )</expression>
+    </formulas>
+    <formulas>
+        <name>formula_TRUE_myRule_3</name>
+        <dataType>Boolean</dataType>
+        <expression>( (ISNEW()
+|| ISCHANGED({!$Record.LVGO__Survey_Status_Updated_Date__c} ))
+&amp;&amp; NOT(ISBLANK({!$Record.LVGO__Account__c}  ))
+&amp;&amp;  ( ISBLANK({!$Record.LVGO__Account__r.LVGO__Last_Updated_ECS_DateTime__c} )
+|| {!$Record.LVGO__Survey_Status_Updated_Date__c}  &gt; {!$Record.LVGO__Account__r.LVGO__Last_Updated_ECS_DateTime__c} ) )</expression>
+    </formulas>
+    <label>Enrollment Comm Survey Management_1</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>myRule_1_A1</name>
+        <label>Dummy Action</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CreatedById</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>CurrencyIsoCode</field>
+            <value>
+                <stringValue>USD</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>myRule_3_A1</name>
+        <label>Update Last Updated ECS</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Notify_Owner_and_EML_when_survey_status_is_changed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Last_Updated_ECS_DateTime__c</field>
+            <value>
+                <elementReference>$Record.Survey_Status_Updated_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Last_Updated_ECS__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Account__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>122</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_for_Bypass</targetReference>
+        </connector>
+        <object>Enrollment_Communications_Survey__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
