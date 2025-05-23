@@ -77,7 +77,7 @@
             <name>Notify_Users_on_Survey_Status_change</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Survey_Status__c</leftValueReference>
+                <leftValueReference>$Record.LVGO__Survey_Status__c</leftValueReference>
                 <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>

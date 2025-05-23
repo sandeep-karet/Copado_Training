@@ -16,7 +16,7 @@
             <name>Update_Campaign_Name</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>AND(Name != null,($Setup.LVGO_Automation_Switch__c.Workflows__c))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
