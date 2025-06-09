@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_LV_Contract_Account_edit</fullName>
+    <active>true</active>
+    <description>***FINANCIALLY MATERIAL*** Allows only the Change Team and System Admins to edit the Account field on LV Contracts.</description>
+    <errorConditionFormula>AND($Setup.LVGO_Automation_Switch__c.Validations__c = TRUE, ISCHANGED( Account__c ) , NOT( $Permission.Financially_Material_Bypass_Prevent_LV_Contract_Account_edit ))</errorConditionFormula>
+    <errorDisplayField>Account__c</errorDisplayField>
+    <errorMessage>Account is a financially material field owned by the Change Team with restricted edit access.</errorMessage>
+</ValidationRule>
