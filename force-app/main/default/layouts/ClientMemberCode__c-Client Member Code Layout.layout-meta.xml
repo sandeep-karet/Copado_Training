@@ -92,13 +92,6 @@
     </platformActionList>
     <quickActionList/>
     <relatedLists>
-        <fields>NAME</fields>
-        <fields>Name__c</fields>
-        <fields>Group_Number__c</fields>
-        <fields>Status__c</fields>
-        <relatedList>Mbr_Group__c.LV_Client_Member_Code__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <excludeButtons>MassChangeOwner</excludeButtons>
         <fields>NAME</fields>
         <fields>RECORDTYPE</fields>
@@ -114,6 +107,15 @@
         <fields>Code__c</fields>
         <fields>Account__c</fields>
         <relatedList>CMCAssociation__c.RegistrationCode__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Name__c</fields>
+        <fields>Client_Account__c</fields>
+        <fields>Client_Account_Manager__c</fields>
+        <fields>Group_Number__c</fields>
+        <fields>CREATEDBY_USER</fields>
+        <relatedList>Mbr_Group__c.LV_Client_Member_Code__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
