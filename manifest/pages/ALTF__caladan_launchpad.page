@@ -1,0 +1,67 @@
+<apex:page standardController="Account"
+    extensions="ALTF.CaladanController"
+    applyBodyTag="false"
+    applyHtmlTag="true"
+    showHeader="false"
+    docType="html-5.0"
+    standardStylesheets="false"
+>
+    <html lang="en">
+        <head>
+            <base href="{!$Resource.galicia_generated}/" />
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Caladan</title>
+            <link rel="icon" type="image/x-icon" href="favicon.ico" />
+            <link rel="stylesheet" href="styles.css" />
+        </head>
+
+        <body>
+            <apex:include pageName="ALTF__NotLicensedForAccountManager" rendered="{!isLicensedForAccountManager = false}" />
+
+            <apex:outputText rendered="{!isLicensedForAccountManager = true}">
+                <sam-root accountId="{!Account.id}">
+                    <div role="status" class="slds-spinner slds-spinner_medium">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </sam-root>
+            </apex:outputText>
+            <apex:includeScript value="{!URLFOR($Resource.ALTF__JSforce)}" />
+            <script>
+                // Bootstrap the correct page.
+                window.location = window.location + "#/account/{!Account.id}/launchpad";
+
+                var singleAccountManagement = {
+                    userId: "{!JSENCODE($User.Id)}",
+                    username: "{!$User.FirstName} {!$User.LastName}",
+                    languageLocaleKey: "{!TEXT($User.LanguageLocaleKey)}",
+                    timeZoneSidKey: "{!TEXT($User.TimeZoneSidKey)}",
+                    timeZoneOffset: {!timezoneOffset},
+                    localeSidKey: "{!TEXT($User.LocaleSidKey)}",
+                    fiscalYearStartMonth: 1,
+                    coreSettings: {},
+                    amSettings: {},
+                    licenses: {
+                        accountManager: {!IF(isLicensedForAccountManager, true, false)},
+                        oppManager: {!IF(isLicensedForOppManager, true, false)}
+                    },
+                    currency: {}
+                };
+                var altifyCrud = {
+                    accessToken: "{!$Api.Session_Id}",
+                    version: "52.0",
+                    namespace: "ALTF",
+                    devNamespace: "ALTF",
+                    instanceUrl: undefined,
+                    theme: "{!JSENCODE($User.UIThemeDisplayed)}"
+                };
+            </script>
+            <c:caladanlabels />
+            <script src="runtime.js" defer="true"></script>
+            <script src="polyfills.js" defer="true"></script>
+            <script src="main.js" defer="true"></script>
+        </body>
+    </html>
+</apex:page>

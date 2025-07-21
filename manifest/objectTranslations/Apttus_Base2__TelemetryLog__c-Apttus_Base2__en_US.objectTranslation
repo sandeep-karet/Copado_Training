@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Telemetry Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Telemetry Logs</value>
+    </caseValues>
+    <fields>
+        <help><!-- Long text area field used for capturing extra transaction data (in JSON format or similar) that was not captured in other fields. --></help>
+        <label><!-- Attributes (Extra Operation Data) --></label>
+        <name>Apttus_Base2__Attributes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Body of the exception being logged, such as a stack trace or the like. --></help>
+        <label><!-- Log Body --></label>
+        <name>Apttus_Base2__Body__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines whether this record has been synchronized with the external system or not. If so, data will be deleted in the next scheduled batch job run. --></help>
+        <label><!-- Is Record Synced? --></label>
+        <name>Apttus_Base2__IsSynced__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of operation or event to log. --></help>
+        <label><!-- Operation Name --></label>
+        <name>Apttus_Base2__OperationName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Salesforce organization id. --></help>
+        <label><!-- Org Id --></label>
+        <name>Apttus_Base2__OrgId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the package, resource, or product where this operation occurred. --></help>
+        <label><!-- Package or Resource Name --></label>
+        <name>Apttus_Base2__PackageName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Version of the package where this operation occurred. --></help>
+        <label><!-- Package Version --></label>
+        <name>Apttus_Base2__PackageVersion__c</name>
+    </fields>
+    <fields>
+        <help><!-- Level of severity of the exception or error being logged. --></help>
+        <label><!-- Severity --></label>
+        <name>Apttus_Base2__Severity__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Timestamp from when the operation occurred. --></help>
+        <label><!-- Timestamp --></label>
+        <name>Apttus_Base2__Timestamp__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

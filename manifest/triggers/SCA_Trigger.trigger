@@ -1,0 +1,3 @@
+trigger SCA_Trigger on copado__User_Story_Commit__c (before insert) {
+
+}

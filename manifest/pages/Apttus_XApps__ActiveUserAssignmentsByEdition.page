@@ -1,0 +1,49 @@
+<!-- 
+    Apttus XAuthor Apps
+    ActiveUserAssignmentsByEdition
+     
+    @2014 Apttus Inc. All rights reserved.
+ -->
+<apex:page controller="Apttus_XApps.AppUsersByEditionController" tabstyle="Apttus_XApps__UserXAuthorApp__c" readOnly="true">
+   <apex:sectionHeader title="{!$ObjectType.Apttus_XApps__UserXAuthorApp__c.labelPlural} {!$Label.Apttus_XApps__ByEdition}" subtitle="{!$CurrentPage.parameters.edition}" />
+   <apex:form >
+     <apex:pageBlock id="usrPgBlk">
+     <apex:outputPanel style="float:right;">
+        <apex:outputText value="{!$ObjectType.User.label} {!$ObjectType.User.fields.Name.label}: "/>            
+        <apex:inputText value="{!usrName}" id="usrNameFld" />
+        <apex:commandButton action="{!doFilter}" value="{!$Label.Apttus_XApps__Filter}" rerender="usrPgBlk" />
+		<apex:commandButton action="{!doClear}" value="{!$Label.Apttus_XApps__Clear}" rerender="usrPgBlk" />                      
+     </apex:outputPanel>  
+     <br />   
+     <br />
+      <apex:pageBlockTable title="Apps By Edition" value="{!usrAssignmentsByEdition}" var="usrAssgnmnt" columns="2" rendered="{!IF(usrAssignmentsByEdition.size > 0, true, false)}"
+                 id="usrPblTbl" rowClasses="oddRow,evenRow" >
+         <apex:column value="{!usrAssgnmnt.Apttus_XApps__UserId__c}" />
+         <apex:column value="{!usrAssgnmnt.Apttus_XApps__ApplicationId__c}" />
+      </apex:pageBlockTable>
+      <apex:outputPanel layout="none" rendered="{!IF(usrAssignmentsByEdition.size > 0, true, false)}">
+           <apex:outputPanel style="float:left;">  
+              <apex:outputText value=" {!$Label.Apttus_XApps__View} "/>
+              <apex:selectList id="limitPkLst" style="margin-bottom:4px;" value="{!limitSize}" size="1" multiselect="false">
+                 <apex:selectOptions value="{!pageSizeValues}" />
+                 <apex:actionSupport event="onchange" reRender="usrPgBlk" action="{!doPageSizeChange}"/>
+              </apex:selectList>
+              <apex:outputText value=" {!$Label.Apttus_XApps__recordsperpage}." />
+           </apex:outputPanel> 
+         <apex:outputPanel >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </apex:outputPanel>
+         <apex:commandButton value="{!$Label.Apttus_XApps__First}" rerender="usrPgBlk" action="{!firstPage}" disabled="{!IF(offsetSize == 0, true, false)}"/>
+         <apex:commandButton value="{!$Label.Apttus_XApps__Previous}" rerender="usrPgBlk" action="{!previousPage}" disabled="{!IF(offsetSize == 0, true, false)}"/>
+         <apex:outputText value=" {!$Label.Apttus_XApps__Showingpage}  {!currentPage}   {!$Label.Apttus_XApps__of}   {!numPages}  " />
+         <apex:commandButton value="{!$Label.Apttus_XApps__Next}" rerender="usrPgBlk" action="{!nextPage}" disabled="{!IF(offsetSize + limitSize > totalRecs, true, false)}"/>
+         <apex:commandButton value="{!$Label.Apttus_XApps__Last}" rerender="usrPgBlk" action="{!lastPage}" disabled="{!IF(offsetSize + limitSize > totalRecs, true, false)}"/>  
+         <apex:outputPanel style="float:right;">
+           <apex:outputText style="valign:top;" value="  {!$Label.Apttus_XApps__Totalnumberofrecords}: {!totalRecs}  " />
+         </apex:outputPanel>                    
+        </apex:outputPanel>    
+   </apex:pageBlock> 
+   </apex:form>    
+</apex:page>

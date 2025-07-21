@@ -1,0 +1,10 @@
+<apex:page standardController="Lead" extensions="mkto_si.ObjectProxyController" tabStyle="Marketo__tab" showHeader="false">
+
+  <c:MSITabsGlobal rendered="{!errorMessage == null}"
+    mTabSObjectType="{!currentSObjectType}"
+    mTabSObjectId="{!sObjectId}"
+    mTabSObjectName="{!currentSObjectName}"
+    isSalesforceOne="{!isSalesforceOne}"
+  />
+  <apex:pageMessage severity="mkto_si.Error" strength="1" rendered="{!errorMessage != null}" summary="{!errorMessage}" />
+</apex:page>

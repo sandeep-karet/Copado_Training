@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Template Dynamic Section Version --></value>
+    </caseValues>
+    <fields>
+        <help><!-- Criteria spec used for filtering the line items. This is a SOQL WHERE clause --></help>
+        <label>フィルタ条件</label>
+        <name>Apttus__FilterCriteria__c</name>
+    </fields>
+    <fields>
+        <help><!-- Ruleset name used in template dynamic section --></help>
+        <label>ルールセット名</label>
+        <name>Apttus__RulesetName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Master-detail to the template version --></help>
+        <label>テンプレートバージョン</label>
+        <name>Apttus__TemplateVersionId__c</name>
+        <relationshipLabel>テンプレート動的セクションバージョン</relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Template Dynamic Section Version Name --></nameFieldLabel>
+</CustomObjectTranslation>

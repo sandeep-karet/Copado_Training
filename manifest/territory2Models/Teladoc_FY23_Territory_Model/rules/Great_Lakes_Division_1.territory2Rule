@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Territory2Rule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <name>Great Lakes Division 1</name>
+    <objectType>Account</objectType>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Adams,Alexander,Bond,Brown,Calhoun,Cass,Christian,Clark,Clay,Clinton,Coles,Crawford,Cumberland,DeWitt,Douglas,Edgar,Edwards,Effingham,Fayette,Franklin,Gallatin,Greene,Hamilton,Hardin,Jackson,Jasper,Jefferson,Jersey,Johnson,Lawrence,Macon,Macoupin,Madison,Marion,Massac,Monroe,Montgomery,Morgan,Moultrie,Perry,Piatt,Pike,Pope,Pulaski,Randolph,Richland,SaintClair,Saline,Scott,Shelby,Union,Vermilion,Wabash,Washington,Wayne,White,Williamson</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Bartholomew,Brown,Clark,Clay,Crawford,Daviess,Dearborn,Decatur,Delaware,Dubois,Fayette,Floyd,Franklin,Gibson,Greene,Hancock,Harrison,Henry,Jackson,Jay,Jefferson,Jennings,Johnson,Knox,Lawrence,Madison,Martin,Monroe,Morgan,Ohio,Orange,Owen,Perry,Pike,Posey,Randolph,Ripley,Rush,Scott,Shelby,Spencer,Sullivan,Switzerland,Union,Vanderburgh,Vigo,Warrick,Washington,Wayne</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>IL,IN,KY</value>
+    </ruleItems>
+</Territory2Rule>

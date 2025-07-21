@@ -3852,6 +3852,17 @@ Tier 3 - Clients that we need to locate a special situation</description>
         </valueSet>
     </fields>
     <fields>
+        <fullName>Sample_Acc_field__c</fullName>
+        <externalId>false</externalId>
+        <label>Sample Acc field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Secondary_Billing_Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>If a secondary billing contact is required, please link to them here.  Must already exist as a Contact in SF.</description>
@@ -4641,7 +4652,7 @@ Tier 3 - Clients that we need to locate a special situation</description>
             <value>mgrif,sgode,csapp,mswee,pcoen</value>
         </filters>
         <label>Broker Accounts with Address - MG</label>
-        <sharedTo/>
+        <sharedTo />
     </listViews>
     <listViews>
         <fullName>MyAccounts</fullName>

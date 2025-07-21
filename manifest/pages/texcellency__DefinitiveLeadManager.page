@@ -1,0 +1,26 @@
+<apex:page showHeader="true" sidebar="true" standardController="Lead" extensions="texcellency.LeadManagerExtension" action="{!initialize}" >
+    <script type="text/javascript">
+    </script>
+    <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" />
+    <apex:includeScript value="{!$Resource.texcellency__defhc_client}" />
+    <apex:stylesheet value="{!$Resource.texcellency__def_styles}" />
+    <apex:form >
+		<!-- This hidden field is required to ensure that standard controller reads this field when it loads the record -->
+        <apex:inputHidden value="{!lead.texcellency__DefHC_ExecutiveID__c}"
+        id="theHiddenInput" />
+	<apex:pageBlock >
+		<apex:pageBlockSection rendered="{!!IsLeadAttached}">
+			This Lead record is not linked to a Definitive Healthcare Executive.
+		</apex:pageBlockSection>
+		<apex:pageBlockSection rendered="{!IsLeadAttached}">
+			This lead record is currently linked to a Definitive Healtcare record.
+		</apex:pageBlockSection>
+		<apex:pageBlockButtons location="both">
+            <apex:CommandButton action="{!UpdateLeadNow}"
+                value="Refresh Data Now" rendered="{!IsLeadAttached}"/>
+	        <apex:CommandButton action="{!GoBackToDeatilsPage}"
+	            value="Return to Lead Details" />
+		</apex:pageBlockButtons>
+	</apex:pageBlock>
+	</apex:form>
+</apex:page>

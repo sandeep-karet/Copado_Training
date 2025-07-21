@@ -1,0 +1,93 @@
+<!-- 
+    Apttus Contract Management
+    DocAssemblyRuleClone
+     
+    @2013-2014 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus__DocAssemblyRule__c" 
+	  	   extensions="Apttus.DocAssemblyRuleCloneController" 
+           showHeader="true" 
+           sidebar="true" 
+           standardStylesheets="true"
+           tabStyle="Apttus__DocAssemblyRuleset__c">	
+    
+    <style>
+		textarea {
+			width: 70%;
+		}
+	</style>
+	
+	<apex:stylesheet value="{!$Resource.Apttus__ComplyStyles}" />
+	
+	<apex:sectionHeader title="{!$ObjectType.Apttus__DocAssemblyRule__c.Label & ' ' & $Label.Apttus__Clone}" 
+						subtitle="{!CloneSO.Name}" />
+						
+	<apex:form id="idDocAssemblyRuleSO">
+		
+		<!--  required fields -->
+		<apex:outputText value="{!Apttus__DocAssemblyRule__c.Name}" rendered="false" />
+		<apex:outputText value="{!Apttus__DocAssemblyRule__c.Apttus__RulesetId__c}" rendered="false" />
+		
+		<apex:pageBlock id="idDocAssemblyRuleBlock" 
+						mode="edit" >
+						
+			<apex:pageMessages />
+			
+			<apex:pageBlockButtons location="both">
+				<apex:commandButton value="{!$Label.Apttus__Clone}" 
+								    action="{!doClone}" />
+		        <apex:commandButton value="{!$Label.Apttus__Cancel}" 
+		        					action="{!doCancel}" 
+		        					immediate="true" />
+		    </apex:pageBlockButtons>
+		    
+		    <apex:pageBlockSection title="{!$Label.Apttus__NewRuleInformation}" 
+		    					   columns="2" 
+		    					   collapsible="true">
+		    
+		    	<apex:pageBlockSectionItem >
+					<apex:outputLabel value="{!$Label.Apttus__NewRuleName}" 
+									  for="idNewRuleName" />
+		    		<apex:inputField id="idNewRuleName" 
+		    						 value="{!CloneSO.Name}" />
+		    	</apex:pageBlockSectionItem>
+		    	<apex:pageBlockSectionItem />
+		    	
+		    	<apex:inputField value="{!CloneSO.Apttus__Sequence__c}" />
+		    	<apex:pageBlockSectionItem />
+		    
+		    	<apex:inputField value="{!CloneSO.Apttus__Description__c}" />
+		    	<apex:pageBlockSectionItem />
+		    	
+		    	<apex:inputField value="{!CloneSO.Apttus__Active__c}" />
+		    	<apex:pageBlockSectionItem />
+		    	
+		    </apex:pageBlockSection>
+		    <apex:pageBlockSection title="{!$Label.Apttus__MassUpdateRules}"  
+		    					   columns="2" 
+		    					   collapsible="false">
+		    	
+			    <apex:pageBlockTable value="{!RuleUpdateSpecs}" 
+		        					 var="updateSpec" 
+		        					 rowClasses="oddRow,evenRow" 
+		        					 width="100%" 
+		        					 rendered="{!HasRuleUpdateSpecs}" >
+					
+					<apex:column headerValue="{!$Label.Apttus__Field}" >
+						<apex:outputText value="{!$ObjectType.Apttus__DocAssemblyRule__c.Fields[updateSpec.FieldName].Label}" />
+					</apex:column>
+					
+					<apex:column headerValue="{!$Label.Apttus__NewValue}" >
+						<apex:inputField value="{!CloneSO[updateSpec.FieldName]}" />
+					</apex:column>
+									
+		        </apex:pageBlockTable>
+		        <apex:outputText value="{!$Label.Apttus__NoRuleFieldsToDisplay}" rendered="{!NOT(HasRuleUpdateSpecs)}" />
+		        
+			</apex:pageBlockSection>		        
+		</apex:pageBlock>
+			    			   
+	</apex:form>
+	
+</apex:page>

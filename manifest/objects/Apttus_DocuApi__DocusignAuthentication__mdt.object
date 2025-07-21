@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Apttus_DocuApi__DocusignAPIAccountID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field for DocuSign API Account ID.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>To get the API Account Id, you can log into DocuSign as an admin and go to Settings &gt; Apps and keys &gt; API Account Id.</inlineHelpText>
+        <label>Docusign API Account ID</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__DocusignAccountBaseURI__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>To get the Account Base URI, you can log into DocuSign as an admin and go to Settings &gt; Apps and keys &gt; Account Base URI</inlineHelpText>
+        <label>Docusign Account Base URI</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__DocusignAccountID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Docusign account number</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>To get the Account Id, Click your profile image on the upper-right corner of the console; your account number is beneath your name and/or organization name in the drop-down menu</inlineHelpText>
+        <label>Docusign Account ID</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__DocusignAdminUserAPIID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field for DocuSign admin user API ID.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>To get the User Id, you can log into DocuSign as an admin and go to Settings &gt; Apps and keys &gt; User Id.</inlineHelpText>
+        <label>Docusign Admin User API ID</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__EnableAdminConsent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Provide a one-time DocuSign consent on behalf of all the users.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Provide a one-time DocuSign consent on behalf of all the users.</inlineHelpText>
+        <label>Enable Admin Consent</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__Environment__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field for DocuSign Environment setting.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Select a DocuSign Environment.</inlineHelpText>
+        <label>Environment</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Demo</fullName>
+                    <default>true</default>
+                    <label>Demo</label>
+                </value>
+                <value>
+                    <fullName>Production</fullName>
+                    <default>false</default>
+                    <label>Production</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__IntegrationKey__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field for DocuSign Integration Key.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>To generate the Integration Id, you can log into DocuSign as an admin and go to Settings &gt; Apps and keys &gt; Add app and integration key.</inlineHelpText>
+        <label>Integration Key</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__PrivateKey__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field for DocuSign Private Key.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>To generate the Private Key, you can log into DocuSign as an admin and go to Settings &gt; Apps and keys &gt; Add app and integration key &gt; Generate RSA key.</inlineHelpText>
+        <label>Private Key</label>
+        <length>131072</length>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__PublicKey__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field for DocuSign Public Key.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>To generate the Public Key, you can log into DocuSign as an admin and go to Settings &gt; Apps and keys &gt; Add app and integration key &gt; Generate RSA key.</inlineHelpText>
+        <label>Public Key</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <label>Docusign Authentication</label>
+    <pluralLabel>DocusignAuthencations</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

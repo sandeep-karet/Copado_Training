@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Store all the Insight related data of an agreement</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Apttus__AgreementId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Agreement Id on which the Insight rating is defined</description>
+        <inlineHelpText>Agreement Id on which the Insight rating is defined</inlineHelpText>
+        <label>Agreement</label>
+        <referenceTo>Apttus__APTS_Agreement__c</referenceTo>
+        <relationshipLabel>Agreement Insights</relationshipLabel>
+        <relationshipName>AgreementInsights</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Apttus__CalculationCriteriaResults__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Displays the calculated values on which the criteria was satisfied</description>
+        <inlineHelpText>Displays the calculated values on which the criteria was satisfied</inlineHelpText>
+        <label>Calculation Criteria Results</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Apttus__CalculationCriteria__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Displays the formula for the calculation done on the defined criteria</description>
+        <inlineHelpText>Displays the formula for the calculation done on the defined criteria</inlineHelpText>
+        <label>Calculation Criteria</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Apttus__ContentId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Content Id of the document</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Content Id of the document</inlineHelpText>
+        <label>Content Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus__CriteriaFieldValues__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Displays the existing values for the criteria fields</description>
+        <inlineHelpText>Displays the existing values for the criteria fields</inlineHelpText>
+        <label>Criteria Field Values</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Apttus__Criteria__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Criteria for deriving the risk score on the insight</description>
+        <inlineHelpText>Criteria for deriving the risk score on the insight</inlineHelpText>
+        <label>Criteria Summary</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Apttus__DocumentVersionDetailId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Document Version on which the Insight rating is defined</description>
+        <inlineHelpText>Document Version on which the Insight rating is defined</inlineHelpText>
+        <label>Document Version Detail</label>
+        <referenceTo>Apttus__DocumentVersionDetail__c</referenceTo>
+        <relationshipLabel>Agreement Insights</relationshipLabel>
+        <relationshipName>AgreementInsights</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Apttus__Guidance__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Guidance of the Insight</description>
+        <inlineHelpText>Guidance of the Insight</inlineHelpText>
+        <label>Guidance</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Apttus__IDEProvisionId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Provision on which the insight was found</description>
+        <inlineHelpText>Provision on which the insight was found</inlineHelpText>
+        <label>IDE Provision</label>
+        <referenceTo>Apttus__IDEProvision__c</referenceTo>
+        <relationshipLabel>Agreement Insights</relationshipLabel>
+        <relationshipName>AgreementInsights</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Apttus__IndividualRiskScore__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Individual Risk Score</description>
+        <externalId>false</externalId>
+        <formula>IF( NOT(ISNULL(Apttus__Rating__c)) &amp;&amp; NOT(ISBLANK(Apttus__RatingIconPath__c)) &amp;&amp; NOT(ISBLANK(Apttus__RatingLevel__c )), IMAGE(Apttus__RatingIconPath__c, &quot;&quot;) + &apos; &apos; + TEXT(Apttus__Rating__c) +&apos; (&apos; + Apttus__RatingLevel__c + &apos;)&apos; , &apos;&apos;)</formula>
+        <inlineHelpText>Individual Risk Score</inlineHelpText>
+        <label>Individual Risk Score</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus__IsValid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Validity of the Insight</description>
+        <inlineHelpText>Validity of the Insight</inlineHelpText>
+        <label>Is Valid</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Apttus__RatingIconPath__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rating Icon Path</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rating Icon Path</inlineHelpText>
+        <label>Rating Icon Path</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus__RatingLevel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rating Level</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rating Level</inlineHelpText>
+        <label>Rating Level</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus__Rating__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rating of the Insight</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rating of the Insight</inlineHelpText>
+        <label>Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type of the Insight/Provision Name</description>
+        <inlineHelpText>Type of the Insight/Provision Name</inlineHelpText>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Agreement Insights</label>
+    <listViews>
+        <fullName>Contract_Ops_AgreementInsight</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Contract Ops</label>
+        <queue>Contract_Ops</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Agreement Insight Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Agreement Insights</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

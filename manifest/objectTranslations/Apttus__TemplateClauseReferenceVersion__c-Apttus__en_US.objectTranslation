@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Template Clause Reference Version</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Template Clause Reference Versions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Clause --></label>
+        <name>Apttus__ClauseId__c</name>
+        <relationshipLabel><!-- Template Clause Reference Versions (Clause) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Clause reference id --></help>
+        <label><!-- Clause Reference Id --></label>
+        <name>Apttus__ClauseReferenceId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to clause version id in Template Clause Reference --></help>
+        <label><!-- Clause Version --></label>
+        <name>Apttus__ClauseVersionId__c</name>
+        <relationshipLabel><!-- Template Clause Reference Versions (Clause Version) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Master-detail to template version --></help>
+        <label><!-- Template Version --></label>
+        <name>Apttus__TemplateVersionId__c</name>
+        <relationshipLabel><!-- Template Clause Reference Versions (Template Version) --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

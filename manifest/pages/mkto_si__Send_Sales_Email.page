@@ -1,0 +1,76 @@
+<apex:page controller="mkto_si.MseActionController"
+  tabStyle="Marketo__tab"
+  standardStylesheets="false"
+  sidebar="false"
+>
+  <c:CssAndJavascript2 />
+  <c:Analytics hierarchy="marketo"
+/>
+  <div class="mkt-page-container mkto">
+    <!-- Header -->
+    <c:MsePageHeader title="{!$Label.mkto_si__send_sales_email}"
+      cancel="{!cancel}"
+      showButton="true"
+      showBackButton="{!hasReturnUrl}"
+      redirectInSeconds="{!redirectInSeconds}"
+    />
+
+    <div class="mkt-page-content">
+      <!-- Page Messages -->
+      <div class="mkt-page-messages">
+        <c:MktPageMessage severity="warning"
+          summary="{!$Label.mkto_si__no_msi_plus_access_message}"
+          rendered="{!!msiPlusPlusEnabled}"
+        />
+        <c:MktPageMessage severity="warning"
+          summary="{!pageErrorMessage}"
+          rendered="{!msiPlusPlusEnabled && hasPageError}"
+        />
+        <div class="successMessage mkt-show-false">
+          <c:MktPageMessage severity="success"
+            summary="{!$Label.mkto_si__check_email_status_after}. {!redirectingMessage}"
+            rendered="{!msiPlusPlusEnabled}"
+          />
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="mkt-page-body mkt-sales-page-body">
+        <apex:outputPanel rendered="{!msiPlusPlusEnabled && !hasPageError}" styleClass="send-msc-email-iframe">
+          <apex:iframe src="{!JSENCODE(HTMLENCODE(mscPageUrl))}" scrolling="true" id="sendMSCEmail" height="700"/>
+          <script>
+            var isActionHandled = false;
+            window.addEventListener('message', function(event) {
+
+              if (event.data.action === 'msc-window-closed') {
+                if (!isActionHandled) HeaderHelper.redirectBackOrClose();
+                isActionHandled = true;
+              } else if (event.data.action === 'msc-window-success-send-email') {
+                if (!isActionHandled) {
+                  HeaderHelper.showSuccessMessage();
+                  document.getElementsByClassName('send-msc-email-iframe')[0].style.display = 'none';
+                  HeaderHelper.redirectBackOrCloseWithDelay();
+                }
+                isActionHandled = true;
+              }
+            }, false);
+          </script>
+        </apex:outputPanel>
+        <apex:outputPanel styleClass="msc-empty-illustration" rendered="{!!msiPlusPlusEnabled}" layout="block">
+          <apex:image styleClass="msc-empty-illustration-img" value="{!$Resource.mkto_si__web}/mkto/images/empty-illustration.png"/>
+        </apex:outputPanel>
+      </div>
+    </div>
+  </div>
+  <script>
+    $j( document ).ready(function() {
+      var paramObj = getParamsAsObject(location.search);
+      AdobeAnalytics.initGlobalData();
+      if(paramObj.isBulk){ 
+        AdobeAnalytics.disableAutotrack();
+        AdobeAnalytics.trackPageAsync(  'list-view-navigation' ,paramObj.contactType+':'+paramObj.contactIds ,'list-view-send-sales-email' , 'load'); 
+        AdobeAnalytics.trackEventsAsync('list-view-navigation' ,paramObj.contactType+':'+paramObj.contactIds ,'list-view-send-sales-email' , 'click');
+      }
+  }); 
+  </script>
+</apex:page>

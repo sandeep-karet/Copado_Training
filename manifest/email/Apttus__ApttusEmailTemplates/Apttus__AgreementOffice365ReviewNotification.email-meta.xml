@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Agreement Office365 review notification</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Apttus__ApttusLetterhead</letterhead>
+    <name>Agreement Office365 Review Notification</name>
+    <style>freeForm</style>
+    <subject>{!Apttus__APTS_Agreement__c.Name} is submitted for your review</subject>
+    <textOnly>Dear Reviewer,
+ 
+{!Apttus__APTS_Agreement__c.OwnerFullName} has requested review of the following documents via Office 365 online.
+Note: If you are an internal user, you can also open and review the document in Microsoft Word on your desktop.
+{{SharePointUrl}}
+ 
+After you complete the review, please notify {!Apttus__APTS_Agreement__c.OwnerFullName} via any communication channel such as email or chat. {!Apttus__APTS_Agreement__c.OwnerFullName} will end the review cycle in the CLM application and the access to the document will be revoked.
+ 
+Note that the attached supporting documents are just for reference.
+
+Thanks,
+Conga CLM</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

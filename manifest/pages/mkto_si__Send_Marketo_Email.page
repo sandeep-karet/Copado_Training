@@ -1,0 +1,35 @@
+<apex:page controller="mkto_si.MobileVsDesktop"
+  tabStyle="Marketo__tab"
+  sidebar="false"
+>
+  <link rel="Stylesheet" type="text/css" href="{!$Resource.web}/mkto/css/msi_send_email.css" />
+
+  <!-- ExtJs 3.3 from web.resource -->
+  <apex:stylesheet value="{!$Resource.mkto_si__web}/mkto/extjs/resources/css/ext-all.css" />
+  <apex:stylesheet value="{!$Resource.mkto_si__web}/mkto/extjs/resources/css/xtheme-gray.css" />
+  <apex:includeScript value="{!$Resource.mkto_si__web}/mkto/extjs/adapter/ext/ext-base.js" />
+  <apex:includeScript value="{!$Resource.mkto_si__web}/mkto/extjs/ext-all.js" />
+
+  <c:CssAndJavascript2 />
+  <c:Analytics hierarchy="marketo"
+  />
+
+  <apex:outputPanel id="mktSendEmailMobile" rendered="{!isSalesforceOne}" layout="block">
+    <c:SendMarketoEmailMobile />
+  </apex:outputPanel>
+
+  <apex:outputPanel id="mktSendEmail" rendered="{! !isSalesforceOne}" layout="block" >
+    <c:SendMarketoEmail />
+  </apex:outputPanel>
+  <script>
+    $j( document ).ready(function() {
+      var paramObj = getParamsAsObject(location.search);
+      AdobeAnalytics.initGlobalData();
+      if(paramObj.isBulk){
+        AdobeAnalytics.disableAutotrack();
+        AdobeAnalytics.trackPageAsync(  'list-view-navigation', paramObj.contactType+':'+paramObj.contactIds ,('{!isSalesforceOne}' =='true' ? 'mobile' : 'desktop')+'-list-view-send-marketo-email' , 'load'); 
+        AdobeAnalytics.trackEventsAsync('list-view-navigation', paramObj.contactType+':'+paramObj.contactIds ,('{!isSalesforceOne}' =='true' ? 'mobile' : 'desktop')+'-list-view-send-marketo-email' , 'click');
+      }
+  }); 
+  </script>
+</apex:page>

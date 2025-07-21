@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DocuSign User</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DocuSign Users</value>
+    </caseValues>
+    <fields>
+        <help><!-- Time stamp of last refreshed access token, Do not update system use only. --></help>
+        <label><!-- Access Token Time Stamp --></label>
+        <name>Apttus_DocuApi__AccessTokenTimeStamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Encrypted docusign access token. Do not update, system use only. --></help>
+        <label><!-- Access Token --></label>
+        <name>Apttus_DocuApi__AccessToken__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Lookup --></label>
+        <name>Apttus_DocuApi__ContactLookup__c</name>
+        <relationshipLabel><!-- DocuSignUsers --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Docusign envelope status sync job state. --></help>
+        <label><!-- CurrentSyncJobState --></label>
+        <name>Apttus_DocuApi__CurrentSyncJobState__c</name>
+        <picklistValues>
+            <masterLabel>COMPLETE</masterLabel>
+            <translation><!-- COMPLETE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EXECUTING</masterLabel>
+            <translation><!-- EXECUTING --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WAITING</masterLabel>
+            <translation><!-- WAITING --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This DocuSign is credential is will be used as default OAuth info to handle SFDC Organization wide needs --></help>
+        <label><!-- Default --></label>
+        <name>Apttus_DocuApi__Default__c</name>
+    </fields>
+    <fields>
+        <help><!-- DocuSign Account Id from DocuSign System --></help>
+        <label><!-- DocuSign Account Id --></label>
+        <name>Apttus_DocuApi__DocuSignAccountId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email Address form DocuSign system --></help>
+        <label><!-- DocuSign Email Address --></label>
+        <name>Apttus_DocuApi__DocuSignEmailAddress__c</name>
+    </fields>
+    <fields>
+        <help><!-- DocuSign Server Environment --></help>
+        <label><!-- DocuSign Server Environment --></label>
+        <name>Apttus_DocuApi__DocuSignServerEnvironment__c</name>
+    </fields>
+    <fields>
+        <help><!-- User name from DocuSign system --></help>
+        <label><!-- DocuSign User Name --></label>
+        <name>Apttus_DocuApi__DocuSignUserName__c</name>
+    </fields>
+    <fields>
+        <help><!-- System use only not to be used on Layout --></help>
+        <label><!-- Last Sync Completed Envelope Time --></label>
+        <name>Apttus_DocuApi__LastCompletedEnvelopeSyncTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field is used by Apttus system internal to keep track of DocuSign status sync --></help>
+        <label><!-- Last Envelope Status Sync Time --></label>
+        <name>Apttus_DocuApi__LastEnvelopeStatusSyncTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- DateTime to keep track of the last Successful Sync of Envelopes Recipient status System use only not to be used on Layout --></help>
+        <label><!-- Last Recipient Status Sync Time --></label>
+        <name>Apttus_DocuApi__LastRecipientStatusSyncTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field is used by Apttus system internal to keep track of DocuSign data sync --></help>
+        <label><!-- Last Sync Time --></label>
+        <name>Apttus_DocuApi__LastSyncTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- DocuSign OAuth Data as JSON. I can be used with only Integrator Key from Apttus. --></help>
+        <label><!-- OAuth Data --></label>
+        <name>Apttus_DocuApi__OauthData__c</name>
+    </fields>
+    <fields>
+        <help><!-- DocuSign sync status message : Apttus system internal use only --></help>
+        <label><!-- Sync Status Message --></label>
+        <name>Apttus_DocuApi__SyncStatusMessage__c</name>
+    </fields>
+    <fields>
+        <help><!-- The user who is registered/ Entered credential with DocuSign system --></help>
+        <label><!-- User --></label>
+        <name>Apttus_DocuApi__User__c</name>
+        <relationshipLabel><!-- DocuSign Users --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DocuSign Default Recipient (Deprecated)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DocuSign Default Recipients (Deprecated)</value>
+    </caseValues>
+    <fields>
+        <help><!-- ID of the agreement associated with the recipient --></help>
+        <label><!-- Agreement --></label>
+        <name>Apttus_CMDSign__Agreement__c</name>
+        <relationshipLabel><!-- DocuSign Default Recipients (Deprecated) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Contact as look-up --></help>
+        <label><!-- Contact --></label>
+        <name>Apttus_DocuApi__Contact__c</name>
+        <relationshipLabel><!-- DocuSign Default Recipients (Deprecated) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Email --></help>
+        <label><!-- Recipient Email Address --></label>
+        <name>Apttus_DocuApi__Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- fist name --></help>
+        <label><!-- Recipient First Name --></label>
+        <name>Apttus_DocuApi__FirstName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Name --></help>
+        <label><!-- Recipient Last Name --></label>
+        <name>Apttus_DocuApi__LastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Apttus_DocuApi__ReadOnlyEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>Apttus_DocuApi__ReadOnlyFirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Apttus_DocuApi__ReadOnlyLastName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient Type list will come from UI --></help>
+        <label><!-- Recipient Type --></label>
+        <name>Apttus_DocuApi__RecipientType__c</name>
+        <picklistValues>
+            <masterLabel>Carbon Copy</masterLabel>
+            <translation><!-- Carbon Copy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Person Signer</masterLabel>
+            <translation><!-- In Person Signer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signer</masterLabel>
+            <translation><!-- Signer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Signing Order default --></help>
+        <label><!-- Signing Order --></label>
+        <name>Apttus_DocuApi__SigningOrder__c</name>
+    </fields>
+    <fields>
+        <help><!-- User look-up --></help>
+        <label><!-- User --></label>
+        <name>Apttus_DocuApi__User__c</name>
+        <relationshipLabel><!-- DocuSign Default Recipients (Deprecated) --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <description><!-- Contact  lookup --></description>
+        <label><!-- Contact --></label>
+        <name>Apttus_DocuApi__Contact</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Manually entered recipient info --></description>
+        <label><!-- Email --></label>
+        <name>Apttus_DocuApi__Email</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- User lookup --></description>
+        <label><!-- User --></label>
+        <name>Apttus_DocuApi__User</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

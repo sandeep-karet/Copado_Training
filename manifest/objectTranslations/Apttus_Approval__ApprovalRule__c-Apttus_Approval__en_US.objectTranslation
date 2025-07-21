@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Approval Rule</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Approval Rules</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Apttus_Approval__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of approvals required by the approval policy. Only applicable to quorum approval policy. --></help>
+        <label><!-- Approval Count --></label>
+        <name>Apttus_Approval__ApprovalCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The percent of approvals required by the approval policy. Only applicable to percent approval policy. --></help>
+        <label><!-- Approval Percent --></label>
+        <name>Apttus_Approval__ApprovalPercent__c</name>
+    </fields>
+    <fields>
+        <help><!-- The approval policy associated with the rule --></help>
+        <label><!-- Approval Policy --></label>
+        <name>Apttus_Approval__ApprovalPolicy__c</name>
+        <picklistValues>
+            <masterLabel>Majority</masterLabel>
+            <translation><!-- Majority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation><!-- Percent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quorum</masterLabel>
+            <translation><!-- Quorum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unanimous</masterLabel>
+            <translation><!-- Unanimous --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business Object --></label>
+        <name>Apttus_Approval__BusinessObject__c</name>
+        <picklistValues>
+            <masterLabel>Apttus__APTS_Agreement__c</masterLabel>
+            <translation><!-- Apttus__APTS_Agreement__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apttus__AgreementLineItem__c</masterLabel>
+            <translation><!-- Apttus__AgreementLineItem__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apttus__Agreement_Term_Exception__c</masterLabel>
+            <translation><!-- Apttus__Agreement_Term_Exception__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity</masterLabel>
+            <translation><!-- Opportunity --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Continue with policy approval even when a step is rejected. --></help>
+        <label><!-- Continue Policy Approval on a Reject? --></label>
+        <name>Apttus_Approval__ContinuePolicyApprovalOnAReject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Criteria Field Names --></label>
+        <name>Apttus_Approval__CriteriaFieldNames__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rule Criteria --></label>
+        <name>Apttus_Approval__Criteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Apttus_Approval__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dimension 1 --></label>
+        <name>Apttus_Approval__Dimension1Id__c</name>
+        <relationshipLabel><!-- Approval Rules (Dimension 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dimension 1 Value Type --></label>
+        <name>Apttus_Approval__Dimension1ValueType__c</name>
+        <picklistValues>
+            <masterLabel>Discrete</masterLabel>
+            <translation><!-- Discrete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Range</masterLabel>
+            <translation><!-- Range --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dimension 2 --></label>
+        <name>Apttus_Approval__Dimension2Id__c</name>
+        <relationshipLabel><!-- Approval Rules (Dimension 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dimension 2 Value Type --></label>
+        <name>Apttus_Approval__Dimension2ValueType__c</name>
+        <picklistValues>
+            <masterLabel>Discrete</masterLabel>
+            <translation><!-- Discrete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Range</masterLabel>
+            <translation><!-- Range --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dimension 3 --></label>
+        <name>Apttus_Approval__Dimension3Id__c</name>
+        <relationshipLabel><!-- Approval Rules (Dimension 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dimension 3 Value Type --></label>
+        <name>Apttus_Approval__Dimension3ValueType__c</name>
+        <picklistValues>
+            <masterLabel>Discrete</masterLabel>
+            <translation><!-- Discrete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Range</masterLabel>
+            <translation><!-- Range --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dimension 4 --></label>
+        <name>Apttus_Approval__Dimension4Id__c</name>
+        <relationshipLabel><!-- Approval Rules (Dimension 4) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dimension 4 Value Type --></label>
+        <name>Apttus_Approval__Dimension4ValueType__c</name>
+        <picklistValues>
+            <masterLabel>Discrete</masterLabel>
+            <translation><!-- Discrete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Range</masterLabel>
+            <translation><!-- Range --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dimension 5 --></label>
+        <name>Apttus_Approval__Dimension5Id__c</name>
+        <relationshipLabel><!-- Approval Rules (Dimension 5) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dimension 5 Value Type --></label>
+        <name>Apttus_Approval__Dimension5ValueType__c</name>
+        <picklistValues>
+            <masterLabel>Discrete</masterLabel>
+            <translation><!-- Discrete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Range</masterLabel>
+            <translation><!-- Range --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dimension 6 --></label>
+        <name>Apttus_Approval__Dimension6Id__c</name>
+        <relationshipLabel><!-- Approval Rules (Dimension 6) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dimension 6 Value Type --></label>
+        <name>Apttus_Approval__Dimension6ValueType__c</name>
+        <picklistValues>
+            <masterLabel>Discrete</masterLabel>
+            <translation><!-- Discrete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Range</masterLabel>
+            <translation><!-- Range --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>Apttus_Approval__EffectiveDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>Apttus_Approval__ExpirationDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if the rule should match all or match any dimension --></help>
+        <label><!-- Match Rule --></label>
+        <name>Apttus_Approval__MatchRule__c</name>
+        <picklistValues>
+            <masterLabel>Match All</masterLabel>
+            <translation><!-- Match All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Match Any</masterLabel>
+            <translation><!-- Match Any --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rule Type --></label>
+        <name>Apttus_Approval__RuleType__c</name>
+        <picklistValues>
+            <masterLabel>Condition</masterLabel>
+            <translation><!-- Condition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dimension</masterLabel>
+            <translation><!-- Dimension --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sequence --></label>
+        <name>Apttus_Approval__Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stop Processing More Rules --></label>
+        <name>Apttus_Approval__StopProcessingMoreRules__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

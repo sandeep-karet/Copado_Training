@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Doc Assembly Ruleset</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Doc Assembly Rulesets</value>
+    </caseValues>
+    <fields>
+        <help><!-- Indicates whether the ruleset is active --></help>
+        <label><!-- Active --></label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- The business object which provides the context for the ruleset --></help>
+        <label><!-- Business Object --></label>
+        <name>Apttus__BusinessObject__c</name>
+        <picklistValues>
+            <masterLabel>Apttus__APTS_Agreement__c</masterLabel>
+            <translation><!-- Apttus__APTS_Agreement__c --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Type name of child business object like line item --></help>
+        <label><!-- Child Object --></label>
+        <name>Apttus__ChildObject__c</name>
+    </fields>
+    <fields>
+        <help><!-- The description of the rule set --></help>
+        <label><!-- Description --></label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field that relates the child object to the parent. This helps resolve multiple parent references --></help>
+        <label><!-- Parent Reference Field --></label>
+        <name>Apttus__ParentReferenceField__c</name>
+    </fields>
+    <fields>
+        <help><!-- Note: If you add a new agreement/quote record type, the type must also be manually added to this set of picklist values to keep record types in sync between agreements/quotes and templates. --></help>
+        <label><!-- Record Types --></label>
+        <name>Apttus__RecordTypes__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The rule set evaluation sequence --></help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

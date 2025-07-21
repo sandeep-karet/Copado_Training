@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DocuSign System Properties</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DocuSign System Properties</value>
+    </caseValues>
+    <fields>
+        <help><!-- Add Attachments Enabled --></help>
+        <label><!-- Add Attachments Enabled --></label>
+        <name>Apttus_DocuApi__AddAttachmentsEnabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Add Recipients Enabled --></help>
+        <label><!-- Add Recipients Enabled --></label>
+        <name>Apttus_DocuApi__AddRecipientsEnabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Automatic DocuSign User Provisioning can be disabled unchecking this checkbox for manual provision. --></help>
+        <label><!-- Auto Provision User Enabled --></label>
+        <name>Apttus_DocuApi__AutoProvisionUserEnabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- System settings to refresh data from DocuSign about the Completed Envelope Sync Interval for the Scheduled job in minutes on each hour (Comma separated values) - (DEPRECATED) --></help>
+        <label><!-- CompletedEnvSyncInterval (DEPRECATED) --></label>
+        <name>Apttus_DocuApi__CompletedEnvelopeSyncInterval__c</name>
+    </fields>
+    <fields>
+        <help><!-- This flag indicates whether to use Apex batch to process DocuSign eSignature request. If set to true the request would be processed synchronously. --></help>
+        <label><!-- DocuSign Batch Processing Disabled --></label>
+        <name>Apttus_DocuApi__DocuSignBatchProcessingDisabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds class names to be called by Envelope status sync batch job update extension objects --></help>
+        <label><!-- DocuSign envelop status subscriber --></label>
+        <name>Apttus_DocuApi__DocuSignEnvelopeStatusSubscriber__c</name>
+    </fields>
+    <fields>
+        <help><!-- DocuSign Server environment to connect : valid entries (DEMO, PROD,NA1,NA2,EU1) --></help>
+        <label><!-- Production Server Pod --></label>
+        <name>Apttus_DocuApi__DocuSignServer__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, it will provide a DocuSign template selection list on the user interface, under the additional details section. When it is checked, recipient role selection will not be available on the user interface. --></help>
+        <label><!-- DocuSign Templates Enabled --></label>
+        <name>Apttus_DocuApi__DocuSignTemplatesEnabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the DocuSign webhook is enabled to refresh the envelope status automatically. --></help>
+        <label><!-- Docusign Webhook Enabled --></label>
+        <name>Apttus_DocuApi__DocusignWebhookEnabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- This setting controls whether users can edit the email subject and body on the user interface, under the additional details section. If it is checked, users will be able to edit the email subject and the email body. --></help>
+        <label><!-- Edit Email Enabled --></label>
+        <name>Apttus_DocuApi__EditEmailEnabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- No longer used. --></help>
+        <label><!-- Email Body (DEPRECATED) --></label>
+        <name>Apttus_DocuApi__EmailBody__c</name>
+    </fields>
+    <fields>
+        <help><!-- No longer used. --></help>
+        <label><!-- Email Subject (DEPRECATED) --></label>
+        <name>Apttus_DocuApi__EmailSubject__c</name>
+    </fields>
+    <fields>
+        <help><!-- System settings to refresh data from DocuSign about the Envelope Status Sync Interval for the Scheduled job in minutes on each hour (Comma separated values) - (DEPRECATED) --></help>
+        <label><!-- EnvelopeStatusSyncInterval (DEPRECATED) --></label>
+        <name>Apttus_DocuApi__EnvelopeStatusSyncInterval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Timeout for HTTP callouts - The minimum is 1 millisecond and the maximum is 120,000 milliseconds. --></help>
+        <label><!-- Http Timeout --></label>
+        <name>Apttus_DocuApi__HttpTimeout__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this action if the signer is in the same physical location as a DocuSign user who will act as a Signing Host for the transaction. This recipient type can only be used if enabled for this DocuSign account. --></help>
+        <label><!-- In-Person Signers --></label>
+        <name>Apttus_DocuApi__InPersonSigner__c</name>
+    </fields>
+    <fields>
+        <help><!-- Include DocuSign&apos;s certificate of completion with the signed document. --></help>
+        <label><!-- Include Certificate --></label>
+        <name>Apttus_DocuApi__IncludeCertificate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient Tabs Enabled default set to false --></help>
+        <label><!-- Recipient Tabs Enabled --></label>
+        <name>Apttus_DocuApi__IsRecipientTabsEnabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Max Number Of Signer Role listed in the list box for users to select signer roles - (DEPRECATED) --></help>
+        <label><!-- MaxNumberOfSignerRole (DEPRECATED) --></label>
+        <name>Apttus_DocuApi__MaxNumberOfSignerRole__c</name>
+    </fields>
+    <fields>
+        <help><!-- This will connect to DocuSign Production environment.
+Also add “Production Server Pod:” to any one of the value “{DEMO, PROD,NA1,NA2,EU1,WWWSTAGE1}”
+Unchecked will be connected to Demo Server. --></help>
+        <label><!-- Production Environment? --></label>
+        <name>Apttus_DocuApi__ProductionEnvironment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comma separated names for the user profiles that need to see the Finalize In DocuSign button on the user interface. This custom setting is used in combination with the ViewInDocuSignEnabled custom setting. --></help>
+        <label><!-- Profiles Enabled For Finalize 2 --></label>
+        <name>Apttus_DocuApi__ProfilesEnabledForFinalizeInDocuSign2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comma separated names for the user profiles that need to see the Finalize In DocuSign button on the user interface. This custom setting is used in combination with the ViewInDocuSignEnabled custom setting. --></help>
+        <label><!-- Profiles Enabled For Finalize 3 --></label>
+        <name>Apttus_DocuApi__ProfilesEnabledForFinalizeInDocuSign3__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comma separated names for the user profiles that need to see the Finalize In DocuSign button on the user interface. This custom setting is used in combination with the ViewInDocuSignEnabled custom setting. --></help>
+        <label><!-- Profiles Enabled For Finalize --></label>
+        <name>Apttus_DocuApi__ProfilesEnabledForFinalizeInDocuSign__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this to enable the DocuSign template selection only for specific profiles. --></help>
+        <label><!-- Profiles Enabled For Template Selection --></label>
+        <name>Apttus_DocuApi__ProfilesEnabledForTemplateSelection__c</name>
+    </fields>
+    <fields>
+        <help><!-- This settings enables the users to select the recipient role name while adding a recipient and makes the tagging order explicit. When enabled, users will see an additional option list to select the role name for the recipient on the add recipient view. --></help>
+        <label><!-- Recipient Roles Enabled --></label>
+        <name>Apttus_DocuApi__RecipientRolesEnabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- System settings to refresh data from DocuSign about the Envelope Recipient Status Sync Interval for the Scheduled job in minutes on each hour (Comma separated values) - (DEPRECATED) --></help>
+        <label><!-- RecipientStatusSyncInterval (DEPRECATED) --></label>
+        <name>Apttus_DocuApi__RecipientStatusSyncInterval__c</name>
+    </fields>
+    <fields>
+        <help><!-- This setting controls the visibility of the move up/down arrows on the add recipient user interface. If checked, the move up/down arrows will be hidden. --></help>
+        <label><!-- Remove Recipient Ordering --></label>
+        <name>Apttus_DocuApi__RemoveRecipientOrdering__c</name>
+    </fields>
+    <fields>
+        <help><!-- This retrieves a PDF containing the combined content of all documents after signing. It is defaulted to download as separate documents. --></help>
+        <label><!-- RetrieveAsCombinedDocument --></label>
+        <name>Apttus_DocuApi__RetrieveAsCombinedDocument__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select first document default to send for eSignature --></help>
+        <label><!-- Select First Document Default --></label>
+        <name>Apttus_DocuApi__SelectFirstDocumentDefault__c</name>
+    </fields>
+    <fields>
+        <help><!-- Send For Signature Enabled --></help>
+        <label><!-- Send For Signature Enabled --></label>
+        <name>Apttus_DocuApi__SendForSignatureEnabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sort documents by updated data descending order --></help>
+        <label><!-- Sort Document Descending --></label>
+        <name>Apttus_DocuApi__SortDocumentDescending__c</name>
+    </fields>
+    <fields>
+        <help><!-- This setting controls the behavior of the envelope status sync scheduled batch job. If checked, it only looks for envelope status changes for the Apttus created envelopes --></help>
+        <label><!-- Sync Apttus Created Envelopes Only --></label>
+        <name>Apttus_DocuApi__SyncApttusCreatedEnvelopesOnly__c</name>
+    </fields>
+    <fields>
+        <help><!-- This setting controls whether the default value defined for reminders &amp; expiration at the DocuSign account should be used for all the envelopes. If checked, the default values will be used, else, users will be able to modify the values on the screen. --></help>
+        <label><!-- Use Default Reminders &amp; Expiration --></label>
+        <name>Apttus_DocuApi__UseDefaultRemindersExpiration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Version support subscriber class name. --></help>
+        <label><!-- Version Support Subscriber --></label>
+        <name>Apttus_DocuApi__VersionSupportSubscriber__c</name>
+    </fields>
+    <fields>
+        <help><!-- View In DocuSign Enabled --></help>
+        <label><!-- View In DocuSign Enabled --></label>
+        <name>Apttus_DocuApi__ViewInDocuSignEnabled__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

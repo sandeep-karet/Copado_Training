@@ -1,0 +1,44 @@
+<messaging:emailTemplate subject="Quote {!relatedTo.Name} for {!relatedTo.SBQQ__Opportunity2__r.Name} is Approved!" recipientType="User" relatedToType="SBQQ__Quote__c">
+<messaging:HtmlEmailBody >
+<html>
+<body>
+<p>Hi {!relatedTo.Owner.Name},</p>
+<br/>
+<p>
+
+<p>Quote &nbsp;<apex:outputlink value="{!relatedTo.L2O_ORG_LINK__c+relatedTo.Id}">{!relatedTo.Name}</apex:outputLink> for&nbsp;<apex:outputLink value="{!relatedTo.L2O_ORG_LINK__c+relatedTo.SBQQ__Opportunity2__c}" >{!relatedTo.SBQQ__Opportunity2__r.Name}</apex:outputLink> has been approved.</p>
+
+<p>Below are key details of your quote; You may also access your quote in Salesforce by clicking &nbsp;<apex:outputLink value="{!relatedTo.L2O_ORG_LINK__c+relatedTo.Id}" >here</apex:outputLink></p>
+
+<p><b>-------------------------------------------------------------------------------------------------------------------------</b></p>
+
+<p><b>Account: </b>&nbsp;<apex:outputLink value="{!relatedTo.L2O_ORG_LINK__c+relatedTo.SBQQ__Account__c}" >{!relatedTo.SBQQ__Account__r.Name}</apex:outputLink></p>
+
+<p><b>Opportunity: </b>&nbsp;<apex:outputLink value="{!relatedTo.L2O_ORG_LINK__c+relatedTo.SBQQ__Opportunity2__c}" >{!relatedTo.SBQQ__Opportunity2__r.Name}</apex:outputLink></p>
+
+<p><b>Quote Type: </b>{!relatedTo.SBQQ__Type__c}, <b>Transaction Type: </b>{!relatedTo.L2O_Transaction_Type__c} </p>
+
+<p><b>Contract Start Date: </b>{!relatedTo.SBQQ__StartDate__c}, </p>
+
+<p><b>Contract Term (in months): </b>{!relatedTo.SBQQ__SubscriptionTerm__c}</p>
+
+<p><b>Overall Deal Value: </b>{!relatedTo.SBQQ__NetAmount__c}</p>
+
+<p><b>-------------------------------------------------------------------------------------------------------------------------</b></p>
+
+<p><b>Expires On: </b>{!relatedTo.SBQQ__ExpirationDate__c}, <b>Days Quote Open: </b>{!relatedTo.SBQQ__DaysQuoteOpen__c}</p>
+
+<p><b>Reason For Approval: </b>{!relatedTo.L2O_Reason_for_Approval__c}</p>
+
+<c:L2O_ApprovalRejectionSummary quoteIdValue="{!relatedTo.Id}" quoteStatusValue="{!relatedTo.SBQQ__Status__c}" />
+<br/>
+<br/>
+<c:L2O_LineItemsSummary quoteIdValue="{!relatedTo.Id}" />
+
+<p>To view all Quote details,&nbsp;<apex:outputLink value="{!relatedTo.L2O_ORG_LINK__c+relatedTo.Id}" >click here</apex:outputLink></p>
+
+</p>
+</body>
+</html>
+</messaging:HtmlEmailBody>
+</messaging:emailTemplate>

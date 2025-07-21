@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Design --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Wizard Design View Fieldset --></label>
+        <name>Apttus__WizardDesignViewFieldset</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Indicates the Wizard Design is Active. Once activated, the wizard cannot be modified. --></help>
+        <label>有効（非推奨）</label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the runtime user is allowed to edit inputs during review --></help>
+        <label>レビュー編集を許可</label>
+        <name>Apttus__AllowReviewEdit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defaults to Wizard Design name and is used by the Wizard Runtime as the banner. --></help>
+        <label>バナーステートメント</label>
+        <name>Apttus__BannerStatement__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the CSS file in the static resource --></help>
+        <label>CSSファイル名</label>
+        <name>Apttus__CSSFilename__c</name>
+    </fields>
+    <fields>
+        <help><!-- Controlling the subcategory field, whose list values shall allow users to search, find, and select Wizards --></help>
+        <label>カテゴリ</label>
+        <name>Apttus__Category__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Business object context, used to filter and align inputs and steps --></help>
+        <label>コンテキストオブジェクト</label>
+        <name>Apttus__ContextObject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of context, whether its All or Object.
+All means that any step can be used in the wizard design.
+Object means that only aligned (same object) steps can be used in the wizard design. --></help>
+        <label>コンテキストタイプ</label>
+        <name>Apttus__ContextType__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Object</masterLabel>
+            <translation><!-- Object --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>データソースコールバック</label>
+        <name>Apttus__DataSourceCallback__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provides more information for the runtime wizard user to understand the intended use of the runtime Wizard. --></help>
+        <label>説明</label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional field for use in search and selection --></help>
+        <label>キーワード</label>
+        <name>Apttus__Keywords__c</name>
+    </fields>
+    <fields>
+        <label>メタプロパティフィールドセット名</label>
+        <name>Apttus__MetaPropertyFieldSetName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe what the runtime user can see as a help or instruction description for this wizard design. --></help>
+        <label>実行時間ヘルプテキスト</label>
+        <name>Apttus__RuntimeHelpText__c</name>
+    </fields>
+    <fields>
+        <help><!-- Static resource file to be used for customizing wizard --></help>
+        <label>静的リソース</label>
+        <name>Apttus__StaticResource__c</name>
+    </fields>
+    <fields>
+        <help><!-- Wizard design status --></help>
+        <label>ステータス</label>
+        <name>Apttus__Status__c</name>
+        <picklistValues>
+            <masterLabel>Activated</masterLabel>
+            <translation><!-- Activated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deactivated</masterLabel>
+            <translation><!-- Deactivated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retired</masterLabel>
+            <translation><!-- Retired --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Dependent on the category field, whose list values shall allow users to search, find, and select Wizard designs --></help>
+        <label>サブカテゴリ</label>
+        <name>Apttus__Subcategory__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+    </fields>
+    <nameFieldLabel><!-- Design Name --></nameFieldLabel>
+</CustomObjectTranslation>

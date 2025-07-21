@@ -1,0 +1,137 @@
+<!-- 
+    Apttus XAuthor Apps
+    AppAssignmentOverview
+     
+    @2014 Apttus Inc. All rights reserved.
+ -->
+   <!-- action="{!doLicenseAndFeatureSyncCheck}" Page action not needed anymore --> 
+<apex:page standardController="Apttus_XApps__Application__c" extensions="Apttus_XApps.AppAssignmentOverviewController">
+    <style type="text/css">
+        .tableCellCentered {
+            text-align: center;
+        }
+    </style>
+
+    <apex:sectionHeader title="{!$Label.Apttus_XApps__AssignOverviewTitle}" subtitle="{!appName}"/>
+  <!-- <apex:pageBlock id="appLicensePB" title="{!$Label.ApplicationLicenseOverview}">
+    <apex:outputPanel rendered="{!IF(licenseeDetails.size == 0, true, false)}">
+      <apex:outputText value=" No Licenses found. "/>
+   </apex:outputPanel>
+   <apex:pageBlockTable title="Feature Licenses" value="{!licenseeDetails}" var="licenseDetail" columns="9" rendered="{!IF(licenseeDetails.size > 0, true, false)}"
+                        rowClasses="oddRow,evenRow" >
+       <apex:column >
+          <apex:outputPanel rendered="{!IF(appRefId ==  null || NOT(appActivated) || appRefId != licenseDetail.RefId, true, false)}">
+            <input type="radio" class="clsselectAll" id="checkedRefId" name="checkedRefId" value="{!licenseDetail.RefId}" disabled="disabled"/> 
+          </apex:outputPanel>           
+          <apex:outputPanel rendered="{!IF(appActivated && appRefId !=  null && appRefId == licenseDetail.RefId, true, false)}">
+            <input type="radio" class="clsselectAll" id="checkedRefId" name="checkedRefId" value="{!licenseDetail.RefId}" checked="checked" disabled="disabled"/> 
+          </apex:outputPanel>
+       </apex:column>                       
+       <apex:column id="appType" headerValue="{!$Label.EditionName}" value="{!licenseDetail.Name}" />
+       <apex:column headerValue="Description" value="{!licenseDetail.Description}" />
+       <apex:column headerValue="{!$Label.UsersLicensed}">
+         <apex:outputText rendered="{!(licenseDetail.Seats < 0)}">{!$Label.Unlimited}</apex:outputText>
+         <apex:outputText rendered="{!(licenseDetail.Seats >= 0)}">{!licenseDetail.Seats}</apex:outputText>
+       </apex:column>        
+       <apex:column headerValue="{!$Label.UsersAssigned}">
+         <apex:outputText rendered="{!(licenseDetail.SeatsUsed < 0)}">{!$Label.Unlimited}</apex:outputText>
+         <apex:outputText rendered="{!(licenseDetail.SeatsUsed = 0)}">{!licenseDetail.SeatsUsed}</apex:outputText>
+         <apex:outputLink rendered="{!(licenseDetail.SeatsUsed > 0)}" target="_blank" value="{!$Page.ActiveUserAssignmentsByEdition}?refId={!licenseDetail.RefId}&edition={!licenseDetail.Name}">{!licenseDetail.SeatsUsed}</apex:outputLink>
+       </apex:column>       
+       <apex:column headerValue="{!$Label.UsersRemaining}">
+         <apex:outputText rendered="{!(licenseDetail.SeatsAvail < 0)}">{!$Label.Unlimited}</apex:outputText>
+         <apex:outputText rendered="{!(licenseDetail.SeatsAvail >= 0)}">{!licenseDetail.SeatsAvail}</apex:outputText>
+       </apex:column>       
+       <apex:column headerValue="{!$Label.AppsLicensed}">
+         <apex:outputText rendered="{!(licenseDetail.Apps < 0)}">{!$Label.Unlimited}</apex:outputText>
+         <apex:outputText rendered="{!(licenseDetail.Apps >= 0)}">{!licenseDetail.Apps}</apex:outputText>
+       </apex:column>
+       <apex:column headerValue="{!$Label.AppsAssigned}">
+          <apex:outputText rendered="{!(licenseDetail.AppsUsed < 0)}">{!$Label.Unlimited}</apex:outputText>
+          <apex:outputText rendered="{!(licenseDetail.AppsUsed = 0)}">{!licenseDetail.AppsUsed}</apex:outputText>
+          <apex:outputLink rendered="{!(licenseDetail.AppsUsed > 0)}" target="_blank" value="{!$Page.ActivatedAppsByEdition}?refId={!licenseDetail.RefId}&edition={!licenseDetail.Name}">{!licenseDetail.AppsUsed}</apex:outputLink>        
+       </apex:column>
+       <apex:column headerValue="{!$Label.AppsRemaining}">  
+         <apex:outputText rendered="{!(licenseDetail.AppsAvail < 0)}">{!$Label.Unlimited}</apex:outputText>
+         <apex:outputText rendered="{!(licenseDetail.AppsAvail >= 0)}">{!licenseDetail.AppsAvail}</apex:outputText>
+       </apex:column>                               
+    </apex:pageBlockTable>                                 
+   </apex:pageBlock>  -->   
+    <apex:form id="assgndUsrsFrm">
+        <apex:outputPanel rendered="{!isError}">
+            <apex:pageMessages />
+        </apex:outputPanel>
+        <apex:pageBlock title="{!$Label.Apttus_XApps__Users}" id="usrAssgnBlk">
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton action="{!editUsers}" value="{!$Label.Apttus_XApps__Edit}" disabled="{!NOT(appActivated)}"/>
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>
+               
+            <apex:pageBlockSection columns="1">                    
+                    <apex:outputPanel rendered="{!NOT(isError)}">
+                        <apex:outputPanel style="float:right;" rendered="{!hasUsers}">
+                           <apex:outputText value="{!$ObjectType.User.label} {!$ObjectType.User.fields.Name.label}:  "/>            
+                           <apex:inputText value="{!usrName}" id="usrNameFld" />
+                           <apex:commandButton action="{!doFilter}" value="{!$Label.Apttus_XApps__Filter}" rerender="assgndUsrsFrm" />
+                           <apex:commandButton action="{!doClear}" value="{!$Label.Apttus_XApps__Clear}" rerender="assgndUsrsFrm" />                      
+                        </apex:outputPanel>  
+                        <br />   
+                        <br />
+                        <apex:pageBlockTable value="{!assignedUsers}" var="user" rendered="{!hasUsers}" id="bsPgBlk">
+                            <apex:column headerValue="{!$ObjectType.User.fields.Name.label}">
+                                <apex:outputLink value="/{!user.Id}?noredirect=1&isUserEntityOverride=1">{!user.Name}</apex:outputLink>
+                            </apex:column>
+                            <apex:column value="{!user.ProfileId}" />
+                        </apex:pageBlockTable>
+                        <apex:outputPanel layout="none" rendered="{!hasUsers}">
+                           <apex:outputPanel style="float:left;">  
+                              <apex:outputText value=" {!$Label.Apttus_XApps__View} "/>
+                              <apex:selectList id="limitPkLst" style="margin-bottom:4px;" value="{!limitSize}" size="1" multiselect="false">
+                                 <apex:selectOptions value="{!pageSizeValues}" />
+                                 <apex:actionSupport event="onchange" reRender="usrAssgnBlk" action="{!doPageSizeChange}"/>
+                              </apex:selectList>
+                              <apex:outputText value=" {!$Label.Apttus_XApps__recordsperpage}." />
+                           </apex:outputPanel> 
+                           <apex:outputPanel >
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           </apex:outputPanel>
+                           <apex:commandButton value="{!$Label.Apttus_XApps__First}" rerender="usrAssgnBlk" action="{!firstPage}" disabled="{!IF(offsetSize == 0, true, false)}"/>
+                           <apex:commandButton value="{!$Label.Apttus_XApps__Previous}" rerender="usrAssgnBlk" action="{!previousPage}" disabled="{!IF(offsetSize == 0, true, false)}"/>
+                           <apex:outputText value=" {!$Label.Apttus_XApps__Showingpage}  {!currentPage}   {!$Label.Apttus_XApps__of}   {!numPages}  " />
+                           <apex:commandButton value="{!$Label.Apttus_XApps__Next}" rerender="usrAssgnBlk" action="{!nextPage}" disabled="{!IF(offsetSize + limitSize > totalRecs, true, false)}"/>
+                           <apex:commandButton value="{!$Label.Apttus_XApps__Last}" rerender="usrAssgnBlk" action="{!lastPage}" disabled="{!IF(offsetSize + limitSize > totalRecs, true, false)}"/>  
+                           <apex:outputPanel style="float:right;">
+                             <apex:outputText style="valign:top;" value="  {!$Label.Apttus_XApps__Totalnumberofrecords}: {!totalRecs}  " />
+                           </apex:outputPanel>                    
+                        </apex:outputPanel> 
+                        <apex:outputText rendered="{!NOT(hasUsers)}">{!$Label.Apttus_XApps__NoUsersAssigned}</apex:outputText>
+                    </apex:outputPanel>
+            </apex:pageBlockSection>            
+        </apex:pageBlock>
+
+       <apex:pageBlock title="{!$Label.Apttus_XApps__Profiles}" mode="edit">
+
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton action="{!editProfiles}" value="{!$Label.Apttus_XApps__Edit}" disabled="{!NOT(appActivated)}"/>
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="1">
+                    
+                    <apex:outputPanel rendered="{!NOT(isError)}">
+                        <apex:pageBlockTable value="{!assignedProfiles}" var="profile" rendered="{!hasProfiles}">
+                            <apex:column value="{!profile.Name}" />
+                        </apex:pageBlockTable>
+
+                        <apex:outputText rendered="{!NOT(hasProfiles)}">{!$Label.Apttus_XApps__NoProfilesAssigned}</apex:outputText>
+                    </apex:outputPanel>
+
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+       
+    </apex:form>
+
+</apex:page>

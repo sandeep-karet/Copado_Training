@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Approval Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Approval Requests</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- ReviewFieldSet --></label>
+        <name>Apttus_Approval__ReviewFieldSet</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Action Approve Id --></label>
+        <name>Apttus_Approval__Action_Approve_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED --></help>
+        <label><!-- Approval Action Prefix --></label>
+        <name>Apttus_Approval__Action_Prefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Reassign Id --></label>
+        <name>Apttus_Approval__Action_Reassign_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Action --></label>
+        <name>Apttus_Approval__Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Apttus_Approval__Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Approver Name --></label>
+        <name>Apttus_Approval__ActualApproverName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Approver --></label>
+        <name>Apttus_Approval__Actual_Approver__c</name>
+        <relationshipLabel><!-- Approval Requests (Actual Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- ID of the associated agreement line item --></help>
+        <label><!-- Related Agreement Line Item --></label>
+        <name>Apttus_Approval__AgreementLineItemId__c</name>
+        <relationshipLabel><!-- Approval Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The number of approvals required by the approval policy. Only applicable to quorum approval policy. --></help>
+        <label><!-- Approval Count --></label>
+        <name>Apttus_Approval__ApprovalCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval From Email --></label>
+        <name>Apttus_Approval__ApprovalFromEmail__c</name>
+    </fields>
+    <fields>
+        <help><!-- The percent of approvals required by the approval policy. Only applicable to percent approval policy. --></help>
+        <label><!-- Approval Percent --></label>
+        <name>Apttus_Approval__ApprovalPercent__c</name>
+    </fields>
+    <fields>
+        <help><!-- The approval policy associated with the rule --></help>
+        <label><!-- Approval Policy --></label>
+        <name>Apttus_Approval__ApprovalPolicy__c</name>
+        <picklistValues>
+            <masterLabel>Majority</masterLabel>
+            <translation><!-- Majority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation><!-- Percent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quorum</masterLabel>
+            <translation><!-- Quorum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unanimous</masterLabel>
+            <translation><!-- Unanimous --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Process --></label>
+        <name>Apttus_Approval__Approval_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Apttus_Approval__Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>*** Processing ***</masterLabel>
+            <translation><!-- *** Processing *** --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assigned</masterLabel>
+            <translation><!-- Assigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notified</masterLabel>
+            <translation><!-- Notified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reassigned</masterLabel>
+            <translation><!-- Reassigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approver Comments --></label>
+        <name>Apttus_Approval__Approver_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned To Id --></label>
+        <name>Apttus_Approval__Assigned_To_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned To --></label>
+        <name>Apttus_Approval__Assigned_To_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned To --></label>
+        <name>Apttus_Approval__Assigned_To_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned To Type --></label>
+        <name>Apttus_Approval__Assigned_To_Type__c</name>
+        <picklistValues>
+            <masterLabel>Approval Matrix</masterLabel>
+            <translation><!-- Approval Matrix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Queue</masterLabel>
+            <translation><!-- Custom Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Role</masterLabel>
+            <translation><!-- Custom Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom User</masterLabel>
+            <translation><!-- Custom User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Related User</masterLabel>
+            <translation><!-- Related User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rule</masterLabel>
+            <translation><!-- Rule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subprocess</masterLabel>
+            <translation><!-- Subprocess --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reassigned To --></label>
+        <name>Apttus_Approval__Assigned_To__c</name>
+        <relationshipLabel><!-- Approval Requests (Reassigned To) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field is set to true if this request should be auto-escalated by the system if it not approved, rejected, or reassigned by the expected completion date. --></help>
+        <label><!-- Auto Escalate --></label>
+        <name>Apttus_Approval__AutoEscalate__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is set to true if this request should be auto re-approved by the system. --></help>
+        <label><!-- Auto Reapprove --></label>
+        <name>Apttus_Approval__AutoReapprove__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Complete --></label>
+        <name>Apttus_Approval__Auto_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Backup From User --></label>
+        <name>Apttus_Approval__Backup_From_User__c</name>
+        <relationshipLabel><!-- Approval Requests (Backup From User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field is set to true if the request can be escalated. --></help>
+        <label><!-- Can Escalate --></label>
+        <name>Apttus_Approval__CanEscalate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contains a list of user ids that should receive carbon copy notifications along with assigned approvers for a given request. --></help>
+        <label><!-- Carbon Copy Assignee Ids --></label>
+        <name>Apttus_Approval__CarbonCopyAssigneeIds__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the child object --></help>
+        <label><!-- Child Object Id --></label>
+        <name>Apttus_Approval__ChildObjectId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The link to the child object --></help>
+        <label><!-- Child Object Link --></label>
+        <name>Apttus_Approval__ChildObjectLink__c</name>
+    </fields>
+    <fields>
+        <help><!-- The child object name --></help>
+        <label><!-- Child Object Name --></label>
+        <name>Apttus_Approval__ChildObjectName__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the child object associated with the request --></help>
+        <label><!-- Child Object Reference Id --></label>
+        <name>Apttus_Approval__ChildObjectRefId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The child object type. Only applicable to a child process step. --></help>
+        <label><!-- Child Object Type --></label>
+        <name>Apttus_Approval__ChildObjectType__c</name>
+    </fields>
+    <fields>
+        <help><!-- Continue with policy approval even when a step is rejected. --></help>
+        <label><!-- Continue Policy Approval on a Reject? --></label>
+        <name>Apttus_Approval__ContinuePolicyApprovalOnAReject__c</name>
+    </fields>
+    <fields>
+        <help><!-- The list of field names used in the criteria --></help>
+        <label><!-- Criteria Field Names --></label>
+        <name>Apttus_Approval__CriteriaFieldNames__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Approved --></label>
+        <name>Apttus_Approval__DateApproved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Assigned --></label>
+        <name>Apttus_Approval__DateAssigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Cancelled --></label>
+        <name>Apttus_Approval__DateCancelled__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date that the approval request is escalated. --></help>
+        <label><!-- Date Escalated --></label>
+        <name>Apttus_Approval__DateEscalated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Reassigned --></label>
+        <name>Apttus_Approval__DateReassigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Rejected --></label>
+        <name>Apttus_Approval__DateRejected__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Apttus_Approval__Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- IDs of approvers who were designated as Delegate for the Request Assignee --></help>
+        <label><!-- Delegate Approvers --></label>
+        <name>Apttus_Approval__DelegateApproverIds__c</name>
+    </fields>
+    <fields>
+        <help><!-- Names of Delegate Approvers --></help>
+        <label><!-- Delegate Approvers (Names) --></label>
+        <name>Apttus_Approval__DelegateApproverNames__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approver who is designated as Delegate for the Request Assignee --></help>
+        <label><!-- Delegate Approver --></label>
+        <name>Apttus_Approval__DelegateApprover__c</name>
+        <relationshipLabel><!-- Approval Requests (Delegate Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Depends On --></label>
+        <name>Apttus_Approval__DependsOn__c</name>
+    </fields>
+    <fields>
+        <help><!-- The chain of user ids that this request will get escalated to in the event that it is escalated. This chain is determined when the request is initially submitted and is only applicable to dynamic escalation types. --></help>
+        <label><!-- Escalate To Chain --></label>
+        <name>Apttus_Approval__EscalateToChain__c</name>
+    </fields>
+    <fields>
+        <help><!-- The id of the assignee the request will be escalated to if it is escalated. --></help>
+        <label><!-- Escalate To Id --></label>
+        <name>Apttus_Approval__EscalateToId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the assignee the request will be escalated to if it is escalated. --></help>
+        <label><!-- Escalate To Name --></label>
+        <name>Apttus_Approval__EscalateToName__c</name>
+    </fields>
+    <fields>
+        <help><!-- The type of assignee the request will be escalated to if it is escalated. --></help>
+        <label><!-- Escalate To Type --></label>
+        <name>Apttus_Approval__EscalateToType__c</name>
+        <picklistValues>
+            <masterLabel>Backup Admin User</masterLabel>
+            <translation><!-- Backup Admin User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Related User</masterLabel>
+            <translation><!-- Related User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rule</masterLabel>
+            <translation><!-- Rule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Approval Matrix Next Approver</masterLabel>
+            <translation><!-- User Approval Matrix Next Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Delegated Approver</masterLabel>
+            <translation><!-- User Delegated Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Manager</masterLabel>
+            <translation><!-- User Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field is set to true if the request has been escalated to the highest level which is typically the backup admin approver defined in the approvals configuration settings. --></help>
+        <label><!-- Escalated To Highest Level --></label>
+        <name>Apttus_Approval__EscalatedToHighestLevel__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date this approval request is expected to be completed (approved or rejected). --></help>
+        <label><!-- Expected Completion Date --></label>
+        <name>Apttus_Approval__ExpectedCompletionDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of expected days that this approval request needs to be completed in (approved or rejected). --></help>
+        <label><!-- Expected Days To Complete --></label>
+        <name>Apttus_Approval__ExpectedDaysToComplete__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of expected hours that this approval request needs to be completed in (approved or rejected). --></help>
+        <label><!-- Expected Hours To Complete --></label>
+        <name>Apttus_Approval__ExpectedHoursToComplete__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of expected minutes that this approval request needs to be completed in (approved or rejected). --></help>
+        <label><!-- Expected Minutes To Complete --></label>
+        <name>Apttus_Approval__ExpectedMinutesToComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Unique Id --></label>
+        <name>Apttus_Approval__Group_Unique_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group --></label>
+        <name>Apttus_Approval__Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has Attachments --></label>
+        <name>Apttus_Approval__HasAttachments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates that the assignee has a delegate approver setup in the system. Delegate Approver will be notified, and, will be permitted to take action on the request. --></help>
+        <label><!-- Has Delegate Approver --></label>
+        <name>Apttus_Approval__HasDelegateApprover__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is set to true when the request is currently in escalation. --></help>
+        <label><!-- In Escalation --></label>
+        <name>Apttus_Approval__InEscalation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Submitter --></label>
+        <name>Apttus_Approval__Initial_Submitter__c</name>
+        <relationshipLabel><!-- Approval Requests (Initial Submitter) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Internal Comments --></label>
+        <name>Apttus_Approval__Internal_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether this request is associated with an Adhoc Process --></help>
+        <label><!-- Is Adhoc Process --></label>
+        <name>Apttus_Approval__IsAdhocProcess__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether this request was created through adhoc process initiated by User. --></help>
+        <label><!-- Is Adhoc --></label>
+        <name>Apttus_Approval__IsAdhoc__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether auto re-approval is enabled for the step. --></help>
+        <label><!-- Is Auto Reapproval Enabled --></label>
+        <name>Apttus_Approval__IsAutoReapprovalEnabled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Subprocess --></label>
+        <name>Apttus_Approval__IsSubprocess__c</name>
+    </fields>
+    <fields>
+        <help><!-- Designates whether the term exception approver receives a notification only for the approval request (when set to true) or gets the request assigned to them and receives notification as well (false, which is the default). --></help>
+        <label><!-- Notify Only --></label>
+        <name>Apttus_Approval__Notify_Only__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the business object associated with the request --></help>
+        <label><!-- Object Ref Id --></label>
+        <name>Apttus_Approval__ObjectRefId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Link --></label>
+        <name>Apttus_Approval__Object_Id_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Id --></label>
+        <name>Apttus_Approval__Object_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Name --></label>
+        <name>Apttus_Approval__Object_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Type --></label>
+        <name>Apttus_Approval__Object_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the parent approval request. Only applicable for child process steps. --></help>
+        <label><!-- Parent Request --></label>
+        <name>Apttus_Approval__ParentRequestId__c</name>
+        <relationshipLabel><!-- Child Approval Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent Agreement --></label>
+        <name>Apttus_Approval__Parent_Agreement__c</name>
+        <relationshipLabel><!-- Child Approval Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Prev Assigned To Id --></label>
+        <name>Apttus_Approval__PrevAssignedToId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prev Assigned To --></label>
+        <name>Apttus_Approval__PrevAssignedToName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prev Assigned To Type --></label>
+        <name>Apttus_Approval__PrevAssignedToType__c</name>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Process Instance --></label>
+        <name>Apttus_Approval__ProcessInstanceId__c</name>
+        <relationshipLabel><!-- Approval Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rejection Action --></label>
+        <name>Apttus_Approval__Rejection_Action__c</name>
+        <picklistValues>
+            <masterLabel>Final Rejection</masterLabel>
+            <translation><!-- Final Rejection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group &amp; Final Rejection</masterLabel>
+            <translation><!-- Group &amp; Final Rejection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group Rejection</masterLabel>
+            <translation><!-- Group Rejection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Related Agreement Owner --></label>
+        <name>Apttus_Approval__Related_Agreement_Owner__c</name>
+        <relationshipLabel><!-- Approval Requests (Related Agreement Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Agreement Requestor --></label>
+        <name>Apttus_Approval__Related_Agreement_Requestor__c</name>
+        <relationshipLabel><!-- Approval Requests (Related Agreement Requestor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Agreement Term Exception --></label>
+        <name>Apttus_Approval__Related_Agreement_Term_Exception__c</name>
+        <relationshipLabel><!-- Approvals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Agreement --></label>
+        <name>Apttus_Approval__Related_Agreement__c</name>
+        <relationshipLabel><!-- Approvals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Opportunity Owner --></label>
+        <name>Apttus_Approval__Related_Opportunity_Owner__c</name>
+        <relationshipLabel><!-- Approval Requests (Related Opportunity Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Opportunity --></label>
+        <name>Apttus_Approval__Related_Opportunity__c</name>
+        <relationshipLabel><!-- Approvals --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The approval request type --></help>
+        <label><!-- Request Type --></label>
+        <name>Apttus_Approval__RequestType__c</name>
+        <picklistValues>
+            <masterLabel>Child Process</masterLabel>
+            <translation><!-- Child Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subprocess</masterLabel>
+            <translation><!-- Subprocess --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Details --></label>
+        <name>Apttus_Approval__Request_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Reminders --></label>
+        <name>Apttus_Approval__SendReminders__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Email --></label>
+        <name>Apttus_Approval__Send_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub-Sequence String --></label>
+        <name>Apttus_Approval__SequenceString__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub-Sequence --></label>
+        <name>Apttus_Approval__Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Apttus_Approval__Status_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- The step label --></help>
+        <label><!-- Step Label --></label>
+        <name>Apttus_Approval__StepLabel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step --></label>
+        <name>Apttus_Approval__StepNameLink__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sequence with trailing zeros suppressed --></help>
+        <label><!-- Sequence --></label>
+        <name>Apttus_Approval__StepSequenceString__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sequence --></label>
+        <name>Apttus_Approval__StepSequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Group Seq Number --></label>
+        <name>Apttus_Approval__Step_Group_Seq_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Name --></label>
+        <name>Apttus_Approval__Step_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Definition Reference --></label>
+        <name>Apttus_Approval__Step__c</name>
+    </fields>
+    <fields>
+        <help><!-- A comment entered by the submitter when the request was submitted that can be either a process or step level comment.  The comment label is specified by the &quot;Submission Comment 1 Label&quot; field in the related approval process definition. --></help>
+        <label><!-- Submission Comment 1 --></label>
+        <name>Apttus_Approval__SubmissionComment1__c</name>
+    </fields>
+    <fields>
+        <help><!-- A second comment entered by the submitter when the request was submitted.  The comment label is specified by the &quot;Submission Comment 2 Label&quot; field in the related approval process definition. --></help>
+        <label><!-- Submission Comment 2 --></label>
+        <name>Apttus_Approval__SubmissionComment2__c</name>
+    </fields>
+    <fields>
+        <help><!-- A third comment entered by the submitter when the request was submitted.  The comment label is specified by the &quot;Submission Comment 3 Label&quot; field in the related approval process definition. --></help>
+        <label><!-- Submission Comment 3 --></label>
+        <name>Apttus_Approval__SubmissionComment3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subprocess Depends On --></label>
+        <name>Apttus_Approval__SubprocessDependsOn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subprocess Name --></label>
+        <name>Apttus_Approval__SubprocessName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subprocess Sequence --></label>
+        <name>Apttus_Approval__SubprocessSequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Substep Depends On --></label>
+        <name>Apttus_Approval__SubstepDependsOn__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the substep associated with the subprocess. --></help>
+        <label><!-- Substep Name --></label>
+        <name>Apttus_Approval__SubstepName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Substep Sequence --></label>
+        <name>Apttus_Approval__SubstepSequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workflow Trigger Added Comments --></label>
+        <name>Apttus_Approval__Workflow_Trigger_Added_Comments__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Agreement --></description>
+        <label><!-- Agreement --></label>
+        <name>Apttus_Approval__Agreement</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- ApproveReject --></label>
+        <name>Apttus_Approval__ApproveReject</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ApproveRejectLink --></label>
+        <name>Apttus_Approval__ApproveRejectLink</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Cancel --></label>
+        <name>Apttus_Approval__Cancel</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CancelAgreementApprovals --></label>
+        <name>Apttus_Approval__CancelAgreementApprovals</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CancelAgreementLineItemApprovals --></label>
+        <name>Apttus_Approval__CancelAgreementLineItemApprovals</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Delete --></label>
+        <name>Apttus_Approval__Delete</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- DeleteAll --></label>
+        <name>Apttus_Approval__DeleteAll</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Preview --></label>
+        <name>Apttus_Approval__Preview</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- PreviewAgreementApprovals --></label>
+        <name>Apttus_Approval__PreviewAgreementApprovals</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- PreviewAgreementLineItemApprovals --></label>
+        <name>Apttus_Approval__PreviewAgreementLineItemApprovals</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reassign --></label>
+        <name>Apttus_Approval__Reassign</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Submit --></label>
+        <name>Apttus_Approval__Submit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SubmitAgreementApprovals --></label>
+        <name>Apttus_Approval__SubmitAgreementApprovals</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SubmitAgreementApprovalsWithAttachments --></label>
+        <name>Apttus_Approval__SubmitAgreementApprovalsWithAttachments</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SubmitAgreementLineItemApprovals --></label>
+        <name>Apttus_Approval__SubmitAgreementLineItemApprovals</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- sf1AddComment --></label>
+        <name>Apttus_Approval__sf1AddComment</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- sf1ApproveReject --></label>
+        <name>Apttus_Approval__sf1ApproveReject</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- sf1Reassign --></label>
+        <name>Apttus_Approval__sf1Reassign</name>
+    </webLinks>
+</CustomObjectTranslation>

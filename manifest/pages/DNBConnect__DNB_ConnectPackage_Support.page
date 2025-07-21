@@ -1,0 +1,21 @@
+<apex:page showHeader="true" sidebar="false" docType="html" controller="DNBConnect.DNB_Utility" action="{!namespacePrefixForVF}"> 
+    <style>
+        body .bPageTitle .ptBody h1.noSecondHeader {
+        margin-top: 2px;        
+        }
+    </style>
+    <apex:slds />
+    <apex:includeScript value="/lightning/lightning.out.js"/>
+    <apex:includeLightning />
+    
+    <div id="ConnectPackage-lightning" />
+    
+    <script>
+    function one(){
+        $Lightning.use("{!nspace}:ConnectSupportApp", function() {
+            $Lightning.createComponent("{!nspace}:ConnectSupport",{},"ConnectPackage-lightning",function(cmp) {});
+        });
+    }
+    one();
+    </script>
+</apex:page>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Merge Event --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Action --></label>
+        <name>Apttus__Action__c</name>
+        <picklistValues>
+            <masterLabel>Check In</masterLabel>
+            <translation>チェックイン</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Check Out</masterLabel>
+            <translation>チェックアウト</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create Offline Agreement</masterLabel>
+            <translation>オフライン合意書を作成</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Generate</masterLabel>
+            <translation>生成</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Generate Supporting Document</masterLabel>
+            <translation>サポートドキュメントの生成</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Import Offline Agreement</masterLabel>
+            <translation>オフライン合意書をインポート</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preview</masterLabel>
+            <translation>プレビュー</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regenerate</masterLabel>
+            <translation>再作成</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revert Check Out</masterLabel>
+            <translation>チェックアウトを元に戻す</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Review</masterLabel>
+            <translation>レビュー</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>イベントに関連付けられた合意ID</help>
+        <label><!-- Agreement --></label>
+        <name>Apttus__AgreementId__c</name>
+        <relationshipLabel><!-- Merge Events --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>イベントに関連付けられたカスタムオブジェクトID</help>
+        <label><!-- Custom Object --></label>
+        <name>Apttus__CustomObjectId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Format --></label>
+        <name>Apttus__DocumentFormat__c</name>
+        <picklistValues>
+            <masterLabel>DOC</masterLabel>
+            <translation><!-- DOC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PDF</masterLabel>
+            <translation><!-- PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTF</masterLabel>
+            <translation><!-- RTF --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>追加ドキュメント情報</help>
+        <label><!-- Document Info --></label>
+        <name>Apttus__DocumentInfo__c</name>
+        <picklistValues>
+            <masterLabel>Clean</masterLabel>
+            <translation>クリーン</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation>ドラフト</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final</masterLabel>
+            <translation>最終</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Redlines</masterLabel>
+            <translation>朱書き</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>イベントグループの参照</help>
+        <label><!-- Group --></label>
+        <name>Apttus__GroupId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Draft --></label>
+        <name>Apttus__IsDraft__c</name>
+    </fields>
+    <fields>
+        <help>マージされたドキュメントがプライベートであるかどうかを示します</help>
+        <label><!-- Is Private --></label>
+        <name>Apttus__IsPrivate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Protection Level --></label>
+        <name>Apttus__ProtectionLevel__c</name>
+        <picklistValues>
+            <masterLabel>Fill in form fields only</masterLabel>
+            <translation>フォームフィールドのみ入力</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full access</masterLabel>
+            <translation>フルアクセス</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insert comments and tracked changes only</masterLabel>
+            <translation>コメントと変更履歴のみ挿入</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insert comments only</masterLabel>
+            <translation>コメントのみ挿入</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Read only</masterLabel>
+            <translation>読み取り専用</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Result Document --></label>
+        <name>Apttus__ResultDocId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Apttus__Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation>完了済</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation>失敗</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation>処理中</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queued</masterLabel>
+            <translation>キュー済み</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Template --></label>
+        <name>Apttus__TemplateId__c</name>
+        <relationshipLabel><!-- Merge Events --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>イベントに関連付けられたドキュメントのバージョンの詳細ID</help>
+        <label><!-- Version Detail --></label>
+        <name>Apttus__VersionDetailId__c</name>
+        <relationshipLabel><!-- Merge Events --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Event Name --></nameFieldLabel>
+</CustomObjectTranslation>

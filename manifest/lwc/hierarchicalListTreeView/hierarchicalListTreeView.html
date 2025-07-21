@@ -1,0 +1,45 @@
+<template>
+    <div if:true={isLoading} style="height: 300px; position:relative">
+        <lightning-spinner variant="brand" size="medium"></lightning-spinner>
+    </div>
+    <div if:false={isLoading}>
+        <lightning-quick-action-panel>
+            <lightning-card >
+                <template if:false={noData}> 
+                    <div class="slds-m-bottom_medium">
+
+                        <lightning-button
+                            variant="brand-outline"
+                            class="slds-m-left_x-small"
+                            label="Collapse All"
+                            onclick={qlsCollapseAll}>
+                        </lightning-button>
+                        <lightning-button
+                            variant="brand-outline"
+                            class="slds-m-left_x-small"
+                            label="Expand All"
+                            onclick={qlsExpandAll}>
+                        </lightning-button>
+                        <lightning-button
+                            variant="brand-outline"
+                            class="slds-m-left_x-small"
+                            label="Refresh"
+                            onclick={refreshData}>
+                        </lightning-button> 
+                       
+                    </div>
+                    <lightning-tree-grid
+                        columns={newColumns}
+                        data={qteLines}
+                        key-field="Id"
+                        hide-checkbox-column="true"
+                        show-row-number-column="true"
+                    ></lightning-tree-grid>
+                </template> 
+                <template if:true={noData}> 
+                    <div class="slds-align_absolute-center" style="height:5rem;font-size:large;">There is no item to display!</div>
+                </template>           
+            </lightning-card>
+        </lightning-quick-action-panel>
+    </div>
+</template>

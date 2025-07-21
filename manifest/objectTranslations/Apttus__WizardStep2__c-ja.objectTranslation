@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Step --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Wizard Component Library Fieldset --></label>
+        <name>Apttus__WizardComponentLibraryFieldset</name>
+    </fieldSets>
+    <fields>
+        <help>初期設定はデザインラベルをステップし、バナーなどのウィザードステップ実行時によって使用されます</help>
+        <label><!-- Banner Statement --></label>
+        <name>Apttus__BannerStatement__c</name>
+    </fields>
+    <fields>
+        <help>サブカテゴリのフィールドを制御して、リストの値がユーザーに検索やステップを選択することを許可する必要があります</help>
+        <label><!-- Category --></label>
+        <name>Apttus__Category__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation>初期値</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>フィルタリングおよび入力を整列させるために使用される商品構成のコンテキスト</help>
+        <label><!-- Context Object --></label>
+        <name>Apttus__ContextObject__c</name>
+    </fields>
+    <fields>
+        <help>コンテキストの種類、その全てまたはオブジェクトかどうか。
+　「全て」の意味はステップデザインでどんな入力を行うことができることを意味します。
+「オブジェクト」の意味は、ステップデザインで、整列（同じオブジェクト）入力のみ利用できることを意味します</help>
+        <label><!-- Context Type --></label>
+        <name>Apttus__ContextType__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation>全て</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Object</masterLabel>
+            <translation>オブジェクト</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>デザイナーとしてこのステップの予想される利用方法について説明します</help>
+        <label><!-- Description --></label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <help>イメージファイル名はウィザードのこのステップに表示します</help>
+        <label><!-- Image Filename --></label>
+        <name>Apttus__ImageFilename__c</name>
+    </fields>
+    <fields>
+        <help>ステップ内の入力をグループ化する方法を示します。繰り返しが、ユーザが設定入力の値の複数のセットを入力することを可能にし表レイアウトは表として表示されます</help>
+        <label><!-- Input Group Option --></label>
+        <name>Apttus__InputGroupOption__c</name>
+        <picklistValues>
+            <masterLabel>Repeatable</masterLabel>
+            <translation>繰り返し可能</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Table Layout</masterLabel>
+            <translation>表レイアウト</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Two Column Layout</masterLabel>
+            <translation><!-- Two Column Layout --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>検索と選択で使用するための追加フィールド</help>
+        <label><!-- Keywords --></label>
+        <name>Apttus__Keywords__c</name>
+    </fields>
+    <fields>
+        <help>実行時ユーザーがこのステップのヘルプや取扱説明を見ることができるものについて説明します</help>
+        <label><!-- Runtime Help Text --></label>
+        <name>Apttus__RuntimeHelpText__c</name>
+    </fields>
+    <fields>
+        <help>順序はここで画面がユーザーに表示されるべきです</help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help>カテゴリフィールド内容によって、リストの値がユーザーに検索やステップの選択を許可する必要があります</help>
+        <label><!-- Subcategory --></label>
+        <name>Apttus__Subcategory__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation>初期値</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>このステップが属するウィザードデザインを参照</help>
+        <label><!-- Wizard Design --></label>
+        <name>Apttus__WizardDesignId__c</name>
+        <relationshipLabel><!-- Steps --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Step Name --></nameFieldLabel>
+</CustomObjectTranslation>

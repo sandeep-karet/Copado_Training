@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Review Cycle</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Review Cycles</value>
+    </caseValues>
+    <fields>
+        <help><!-- Comment on canceling or Ending the Review Cycle. --></help>
+        <label><!-- Comment --></label>
+        <name>Apttus__Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Body --></label>
+        <name>Apttus__EmailBody__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Subject --></label>
+        <name>Apttus__EmailSubject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Review Ended or Cancelled by user. --></help>
+        <label><!-- Ended/Cancelled By --></label>
+        <name>Apttus__EndedCancelledBy__c</name>
+        <relationshipLabel><!-- Review Cycles (Ended/Cancelled By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ended/Cancelled On --></label>
+        <name>Apttus__EndedCancelledOn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Final document version of the review. --></help>
+        <label><!-- Final Document Version Detail --></label>
+        <name>Apttus__FinalDocumentVersionDetail__c</name>
+        <relationshipLabel><!-- Review Cycles (Final Document Version Detail) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Review Cycle initiator user --></help>
+        <label><!-- User --></label>
+        <name>Apttus__InitiatedBy__c</name>
+        <relationshipLabel><!-- Review Cycles (User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Initial document version sent for review. --></help>
+        <label><!-- Original Document Version Detail --></label>
+        <name>Apttus__OriginalDocumentVersionDetail__c</name>
+        <relationshipLabel><!-- Review Cycles --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Protection Level applied to the Document --></help>
+        <label><!-- Protection Level --></label>
+        <name>Apttus__ProtectionLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Protection Type --></label>
+        <name>Apttus__ProtectionType__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please provide Review Cycle Type --></help>
+        <label><!-- Review Cycle Type --></label>
+        <name>Apttus__ReviewCycleType__c</name>
+        <picklistValues>
+            <masterLabel>MS Teams</masterLabel>
+            <translation><!-- MS Teams --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office365 External Review</masterLabel>
+            <translation><!-- Office365 External Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office365 Internal Review</masterLabel>
+            <translation><!-- Office365 Internal Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parallel Review</masterLabel>
+            <translation><!-- Parallel Review --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Status of the review cycle --></help>
+        <label><!-- Review Status --></label>
+        <name>Apttus__ReviewStatus__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Supporting Document Id&apos;s selected for Review --></help>
+        <label><!-- Supporting Document Ids --></label>
+        <name>Apttus__SupportingDocumentIds__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email Template Id. --></help>
+        <label><!-- TemplateId --></label>
+        <name>Apttus__TemplateId__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

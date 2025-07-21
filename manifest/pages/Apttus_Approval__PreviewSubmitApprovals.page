@@ -1,0 +1,178 @@
+<!-- 
+    Conga Approvals
+    PreviewSubmitApprovals
+    
+    @2012-2023 Conga Inc. All rights reserved.
+
+-->
+<apex:page id="idPreviewSubmitApprovalsPage"
+        controller="Apttus_Approval.PreviewSubmitApprovalsController"
+        showHeader="false"
+        sidebar="false"
+        title="Preview"
+        lightningStylesheets="true">
+
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <head>
+        <apex:slds />
+    </head>
+    <body>
+
+    <script type="text/javascript">
+        // Theme3—Salesforce Classic 2010 user interface theme
+        // Theme4d—Modern “Lightning Experience” Salesforce theme
+        // Theme4u-Lightning Console theme
+        // Theme4t—Salesforce mobile app theme
+        var inClassicMode = "{!$User.UIThemeDisplayed == 'Theme3'}";
+        var inLightningMode = "{!$User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'}";
+        var inSf1Mode = "{!$User.UIThemeDisplayed == 'Theme4t'}";
+    </script>
+
+    <script>
+        /**
+            AWA-942: unknown exception displayed while previewing approvals in communities
+            Receiving an 500 (Internal Server Error) in the javascript console (Chrome) when invoking Apex from sforce.apex.execute.
+            When showHeader="true" this error does not appear and it is successful to call an public webservice method but when
+            showHeader="false", it fails with the status code as 500. 
+    
+            https://help.salesforce.com/apex/HTViewSolution?urlname=Receiving-an-500-Internal-Server-Error-in-the-javascript-console-when-invoking-Apex-from-sforce-apex-execute&language=en_US
+        */
+        var __sfdcSessionId = '{!GETSESSIONID()}';
+    </script>
+
+    <script type="text/javascript" src="/soap/ajax/55.0/connection.js"></script>
+    <script type="text/javascript" src="/soap/ajax/55.0/apex.js"></script>
+
+    <apex:includescript value="{!URLFOR($Resource.Apttus_Approval__JQuery22, 'jquery-2.2.2.js')}" />
+    
+    <div class="slds-scope">
+
+    <apex:form >
+        <!-- Add invisible button to resolve AWA-942.  To add 'UserContext' with standardStylesheets="true" and showHeader="false",
+            it is necessary to have a component which requires standard style sheets at least in the page. -->
+        <apex:commandButton style="display: none;"/>
+    
+        <apex:outputPanel id="idDoReturnInternal">
+            <script type="text/javascript">
+                // make sure jQuery doesn't conflict with any other JS libraries
+                j$ = jQuery.noConflict();
+
+                // call this once the page is ready
+                j$(document).ready(function() {
+                        
+                    var pageLoaded = "{!pageLoaded}";
+                    var pageURL = "{!JSENCODE(pageURL)}";
+                    var siteDomain = "{!siteDomain}";
+                    var inClassicMode = "{!$User.UIThemeDisplayed == 'Theme3'}";
+                    var inLightningMode = "{!$User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'}";
+                    var inSf1Mode = "{!$User.UIThemeDisplayed == 'Theme4t'}";
+                    //console.log('pageLoaded='+pageLoaded+'\n'+'siteDomain='+siteDomain+'\n'+'pageURL='+pageURL+'\n'+'inClassicMode='+inClassicMode+'\n'+'inLightningMode='+inLightningMode+'\n'+'inSf1Mode='+inSf1Mode+'\n'+"{!$User.UIThemeDisplayed}");
+                    
+                    if (pageLoaded == 'false') {
+                        //console.log('calling launchSObjectApprovals');
+                        launchSObjectApprovals(inClassicMode, inLightningMode, inSf1Mode);
+
+                    } else {
+                        //console.log('pageURL='+pageURL);
+                        if (pageURL.length > 0) {
+                            try {
+                                if (inClassicMode == 'false') {
+                                    var pos = pageURL.indexOf(siteDomain);
+                                    //console.log('pos='+pos);
+                                    if (pos == -1) {
+                                        //console.log('sforce.one.navigateToURL...');
+                                        sforce.one.navigateToURL(pageURL);
+                                    } else {
+                                        // strip site domain from the URL
+                                        var relativePageURL = pageURL.substring(pos + siteDomain.length);
+                                        //console.log('relativePageURL='+relativePageURL);
+                                        sforce.one.navigateToURL(relativePageURL);
+                                    }
+                                }
+                                else {
+                                    //console.log('top.location.replace');
+                                    top.location.replace(pageURL);
+                                    return true;
+                                }
+
+                            }
+                            catch(err) {
+                            }
+                        }
+                    
+                    }
+                    
+                });
+
+                function invokeDoReturn(actionTaken) {
+                    // pass actionTaken as parameter since we will redirect page after refresh
+                    //console.log('calling returnToCaller('+actionTaken+')');
+                    returnToCaller(actionTaken);
+                }
+            </script>
+        </apex:outputPanel>
+
+        <!--<apex:pageMessages id="idErrorPage" />-->
+
+        <apex:outputPanel id="idComponentPanel">
+            <c:SObjectApprovals2 id="idSObjectApprovals"
+                                rendered="{!pageLoaded && (inClassicMode || inLightningMode) && NOT(inSf1Mode)}"
+                                contextInfoParam="{!contextInfo}" />
+            <c:SObjectApprovals2Sf1 id="idSObjectApprovalsSf1"
+                                    rendered="{!pageLoaded && NOT(inClassicMode || inLightningMode) && inSf1Mode}"
+                                    contextInfoParam="{!contextInfo}" />
+        </apex:outputPanel>
+
+        <apex:actionFunction name="launchSObjectApprovals"
+                            action="{!doLaunchSObjectApprovals}"
+                            reRender="idErrorPage,idComponentPanel">
+            <apex:param name="param1" assignTo="{!inClassicMode}" value="" />
+            <apex:param name="param2" assignTo="{!inLightningMode}" value="" />
+            <apex:param name="param3" assignTo="{!inSf1Mode}" value="" />
+        </apex:actionFunction>
+
+        <!-- pass actionTaken as parameter since we will redirect page after refresh -->
+        <apex:actionFunction name="returnToCaller"
+                            action="{!doReturnToCaller}"
+                            reRender="idDoReturnInternal">
+            <apex:param name="actionTaken" value="" />
+        </apex:actionFunction>
+
+    </apex:form>
+
+    <!-- dialog to enter comments when recalling request(s) -->
+    <div id="idRecallPanel" style="display:none">
+        <section id="idRecallDialogSection" role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">
+                <apex:form id="idRecallForm">
+                    <header class="slds-modal__header">
+                        <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{!$Label.RecallApprovals}</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_small" id="modal-content-id-1">
+                        <div class="slds-form-element">
+                            <apex:outputLabel value="{!$Label.Apttus_Approval__AddCommentOptional}" for="idRecallComment" styleClass="slds-form-element__label" />
+                            <div class="slds-form-element__control">
+                                <apex:inputTextArea id="idRecallComment" value="{!recallComments}" styleClass="slds-textarea" />
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <apex:commandButton value="{!$Label.Apttus_Approval__Save}"
+                                            onclick="onActionClickRecall(); return false;" 
+                                            styleClass="slds-button slds-button_brand" />
+                        <apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+                                            onclick="hideRecall(); return false;"
+                                            styleClass="slds-button slds-button_neutral" />
+                    </footer>
+                </apex:form>
+            </div>
+        </section>
+        <div id="idRecallDialogBackdrop" class="slds-backdrop" />
+    </div>
+
+    <!-- slds scope -->
+    </div>
+
+    </body>
+    </html>
+</apex:page>

@@ -1,0 +1,40 @@
+<apex:page controller="mkto_si.MseActionController"
+  tabStyle="Marketo__tab"
+  standardStylesheets="false"
+  sidebar="false"
+>
+  <c:CssAndJavascript2 cssOnly="true"/>
+
+  <div class="mkt-page-container mkto">
+    <!-- Header -->
+    <c:MsePageHeader title="{!$Label.mkto_si__sales_campaign}"
+      cancel="{!cancel}"
+      showButton="true"
+      showBackButton="{!hasReturnUrl}"
+    />
+
+    <div class="mkt-page-content">
+      <!-- Page Messages -->
+      <div class="mkt-page-messages">
+        <c:MktPageMessage severity="warning"
+          summary="{!$Label.mkto_si__no_msi_plus_access_message}"
+          rendered="{!!msiPlusPlusEnabled}"
+        />
+        <c:MktPageMessage severity="warning"
+          summary="{!pageErrorMessage}"
+          rendered="{!hasPageError}"
+        />
+      </div>
+
+      <!-- Body -->
+      <div class="mkt-page-body mkt-sales-page-body">
+        <apex:outputPanel rendered="{!msiPlusPlusEnabled && !hasPageError}">
+          <apex:iframe src="{!JSENCODE(mscPageUrl)}" scrolling="true" id="salesCampaignDetails" height="850"/>
+        </apex:outputPanel>
+        <apex:outputPanel styleClass="msc-empty-illustration" rendered="{!!msiPlusPlusEnabled}" layout="block">
+          <apex:image styleClass="msc-empty-illustration-img" value="{!$Resource.mkto_si__web}/mkto/images/empty-illustration.png"/>
+        </apex:outputPanel>
+      </div>
+    </div>
+  </div>
+</apex:page>

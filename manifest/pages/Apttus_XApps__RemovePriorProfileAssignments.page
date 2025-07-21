@@ -1,0 +1,48 @@
+<!-- 
+    Apttus XAuthor Apps
+    RemovePriorProfileAssignments
+     
+    @2014 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page controller="Apttus_XApps.AppOldProfileAssignmentManagerController">
+
+	<style type="text/css">
+		.tableCellCentered {
+			text-align: center;
+		}
+	</style>
+
+	<apex:sectionHeader title="{!$Label.Apttus_XApps__Remove} {!$Label.Apttus_XApps__AssignedProfiles}" subtitle="{!appName}"/>
+
+	<apex:outputPanel rendered="{!isError}">
+		<apex:pageMessages />
+	</apex:outputPanel>
+
+	<apex:form >
+		<apex:pageBlock mode="edit">
+
+			<apex:pageBlockButtons >
+	            <apex:commandButton action="{!save}" value="{!$Label.Apttus_XApps__Save}" disabled="{!isError && !isValidError}"/>
+	            <apex:commandButton action="{!cancel}" value="{!$Label.Apttus_XApps__Cancel}" />
+	        </apex:pageBlockButtons>
+
+			<apex:pageBlockSection columns="1">
+
+					<apex:outputPanel rendered="{!NOT(isError)}">
+						<apex:pageBlockTable value="{!profiles}" var="profile">
+							<apex:column value="{!profile.profileName}" headerValue="{!$Label.Apttus_XApps__Profile}" />
+
+							<apex:column styleClass="tableCellCentered">
+								<apex:facet name="header"><center>{!$Label.Apttus_XApps__Allow}</center></apex:facet>
+								<apex:inputCheckbox value="{!profile.isAllowed}" />
+							</apex:column>
+						</apex:pageBlockTable>
+					</apex:outputPanel>
+
+			</apex:pageBlockSection>
+	        
+		</apex:pageBlock>
+	</apex:form>
+
+</apex:page>

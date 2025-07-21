@@ -1,0 +1,1106 @@
+<apex:page controller="mkto_si.MarketoSalesInsightConfigController" showHeader="true"
+  sidebar="false" 
+  action="{!runDiagnostics}"
+  docType="html-5.0"
+>
+  <c:CssAndJavascript2 />
+  <link rel="Stylesheet" type="text/css" href="{!$Resource.web}/mkto/css/msi_config.css" />
+  <apex:actionStatus id="loadingStatus" onStart="Marketo.setLoading(this.parentNode.parentNode)" onStop="Marketo.unsetLoading(this.parentNode.parentNode)" />
+
+  <apex:outputPanel id="msiConfigPage" styleClass="msi-config-page mkto" layout="block">
+    <div class="msi-config-page-header">
+      <!-- Header -->
+      <c:SalesInsightsHeader />
+      <!-- Tabs -->
+      <apex:form >
+        <apex:outputPanel rendered="{!msiPlusPlusEnabled}" styleClass="mkt-config-tabs-block" layout="block">
+          <div class="mkt-config-tabs">
+            <apex:outputPanel styleClass="mkt-config-tabs-item {!IF(currentTab == 'MSI', 'mkt-config-tabs-item-active', '')}" layout="block">
+              <apex:outputText value="{!$Label.mkto_si__Configuration}"/>
+              <apex:actionSupport event="onclick"
+                action="{!loadTab}"
+                rerender="msiConfigPage"
+                immediate="true"
+              >
+                <apex:param name="currentTab" value="MSI" assignTo="{!currentTab}"/>
+              </apex:actionSupport>
+            </apex:outputPanel>
+
+            <apex:outputPanel styleClass="mkt-config-tabs-item {!IF(currentTab == 'MSC', 'mkt-config-tabs-item-active', '')}" layout="block">
+              <apex:outputText value="{!$Label.mkto_si__user_management_tab}"/>
+              <apex:actionSupport event="onclick"
+                action="{!loadTab}"
+                rerender="msiConfigPage"
+                immediate="true"
+              >
+                <apex:param name="currentTab" value="MSC" assignTo="{!currentTab}"/>
+              </apex:actionSupport>
+            </apex:outputPanel>
+          </div>
+          <apex:outputPanel rendered="{!currentTab == 'MSC'}" styleClass="user-management-help-link" layout="block">
+            <a
+              href="{!JSENCODE(helpLink)}"
+              target="_blank"
+              class="help-link"
+            >{!$Label.user_management_help_link}</a>
+          </apex:outputPanel>
+        </apex:outputPanel>
+      </apex:form>
+    </div>
+    <apex:outputPanel styleClass="mkt-config-tabs-separator" rendered="{!msiPlusPlusEnabled}" layout="block"/>
+    <div class="mkt-page-container">
+      <apex:outputPanel rendered="{!currentTab != 'MSI'}">
+        <c:MseUserManagementPage />
+      </apex:outputPanel>
+      <apex:outputPanel rendered="{!currentTab == 'MSI'}">
+        <apex:slds />
+        <apex:variable var="helpLink"
+          value="https://docs.marketo.com/display/DOCS/Marketo+Sales+Insight+Configuration+Tab+in+Salesforce"
+        />
+        <apex:variable var="msiActionsHelplink"
+          value="https://experienceleague.adobe.com/docs/marketo-learn/tutorials/sales-insight-actions/overview.html?lang=en"
+        />
+        <apex:variable var="dynamicChatHelplink"
+          value="https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/dynamic-chat/dynamic-chat-activities.html"
+        />
+  
+        
+
+        <div class="slds-scope marketo-lightning">
+          <div class="mkt-page-content">
+            <!-- Page Name -->
+            <div class="mkt-page-name">
+              <apex:outputText value="{!$Label.mkto_si__Configure_Sales_Insight} ({!$Label.mkto_si__Version} {!appVersion})"/>
+            </div>
+            <apex:outputPanel id="msgPanel">
+            <div class="mkt-page-messages">
+              <!-- Errors -->
+              <c:MktPageMessage severity="Error"
+                summary="{!configError}"
+                details="{!configErrorDetails}"
+                rendered="{!hasErrors}"
+              />
+              <!-- Troubleshooting -->
+              <c:MktPageMessage severity="info"
+                summary="{!$Label.mkto_si__troubleshooting_tips}"
+                detailsList="{!troubleshootingTips}"
+                footer="{!$Label.mkto_si__Please_include_a_screenshot_of_this_page_when_contacting_support}"
+                rendered="{!showTroubleshooting}"
+              />
+              <!-- Success -->
+              <c:MktPageMessage severity="success"
+                summary="{!$Label.mkto_si__Diagnostics_Test_Passed_Your_Sales_Insight_installation_is_properly_configured}"
+                rendered="{!isValidConfig}"
+              />
+            </div></apex:outputPanel>
+
+            <apex:outputPanel rendered="false" styleClass="config-header" layout="block">
+              <apex:outputPanel styleClass="slds-page-header__row">
+                <apex:outputPanel styleClass="slds-page-header__col-title">
+                  <apex:outputPanel styleClass="slds-media">
+                    <apex:outputPanel styleClass="slds-media__figure">
+                      <apex:outputPanel styleClass="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+                        <img src="{!$Resource.configuration_icon}" class="icon config-icon" alt="" title=""/>
+                        <apex:outputText styleClass="slds-assistive-text" value="{!$Label.mkto_si__Configure_your_Marketo_API_settings_and_Sales_Insight_options}" />
+                      </apex:outputPanel>
+                    </apex:outputPanel>
+                    <apex:outputPanel styleClass="slds-media__body">
+                      <apex:outputPanel styleClass="slds-page-header__name">
+                        <apex:outputPanel styleClass="slds-page-header__name-title">
+                          <h1>
+                            <apex:outputText styleClass="slds-page-header__title slds-truncate" value="{!$Label.mkto_si__Configuration}" title="{!$Label.mkto_si__Configuration}" />
+                          </h1>
+                        </apex:outputPanel>
+                      </apex:outputPanel>
+                      <p class="slds-page-header__name-meta">{!$Label.mkto_si__Application_Title} {!appVersion}</p>
+                    </apex:outputPanel>
+                  </apex:outputPanel>
+                </apex:outputPanel>
+              </apex:outputPanel>
+            </apex:outputPanel>
+
+            <apex:form styleClass="Custom346Tab slds-form config-form">
+
+              <!-- Operational Settings START -->
+              <div class="msi-config-settings-block">
+                <div class="msi_config_subheader" onclick="toggleDetails(this)">
+                  <div class="msi_config_subheader_arrow"></div>
+                  <div class="msi_config_subheader_title">{!$Label.Operational_Settings}</div>
+                </div>
+                <a
+                  href="{!JSENCODE(helpLink)}#operational-settings"
+                  target="_blank"
+                  class="help-link"
+                >{!$Label.Learn_more}</a>
+                <apex:outputPanel styleClass="msi-config-content-block fields-block" layout="block">
+                  <apex:outputPanel styleClass="slds-form__row" layout="block">
+                    <apex:outputPanel styleClass="slds-form__item" layout="block">
+                      <fieldset class="slds-form-element slds-is-editing slds-form-element_stacked">
+                        <div>
+
+                          <!-- Enable MSI Actions checkbox -->
+                          <div class="slds-form-element__row">
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel value="{!$Label.mkto_si__Enable_MSI_Actions}" for="msiPlusPlusEnabled" styleClass="slds-form-element__label" />
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <apex:outputPanel styleClass="slds-checkbox slds-checkbox_standalone">
+                                    <div class="msi-config-field-with-addon">
+                                      <div>
+                                        <apex:inputCheckbox value="{!apiConfig.mkto_si__MsiPlusPlusEnabled__c}" id="msiPlusPlusEnabled" />
+                                        <apex:outputPanel styleClass="slds-checkbox_faux"/>
+                                      </div>
+                                      <apex:outputPanel styleClass="msi-config-addon" style="font-style: italic;">{!$Label.requires_additional_configuration_text}
+                                        <a
+                                        href="{!JSENCODE(msiActionsHelplink)}"
+                                        target="_blank"
+                                        class="help-link"
+                                        style="font-style: normal;pointer-events: auto;"
+                                      >{!$Label.Learn_more}</a>
+                                      </apex:outputPanel>
+                                    </div>
+                                  </apex:outputPanel>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+
+                        </div>
+                      </fieldset>
+                    </apex:outputPanel>
+                    <apex:outputPanel styleClass="slds-form__item" layout="block">
+                    </apex:outputPanel>
+                  </apex:outputPanel>
+
+                  <!-- API Settings -->
+                  <apex:outputPanel styleClass="slds-form__row" layout="block">
+
+                    <!-- SOAP Settings -->
+                    <apex:outputPanel styleClass="slds-form__item msi-config-fields-block-first" layout="block">
+                      <fieldset class="slds-form-element slds-is-editing slds-form-element_stacked">
+                        <legend class="msi-config-fields-block-legend">
+                          <apex:outputText value="{!$Label.mkto_si__SOAP_API}"/>
+                        </legend>
+                        <div class="slds-form-element__row">
+                          <!-- Marketo Host -->
+                          <apex:outputPanel styleClass="slds-form__item" layout="block">
+                            <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                              <apex:outputLabel styleClass="slds-form-element__label" for="marketoHost">
+                                <apex:outputText value="{!$Label.mkto_si__Marketo_Host}"/>
+                                <abbr title="Required">&#xFF0A;</abbr>
+                              </apex:outputLabel>
+                              <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                <apex:inputText value="{!apiConfig.mkto_si__Marketo_Host__c}" size="50" required="true" styleClass="slds-input" id="marketoHost"/>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </apex:outputPanel>
+                        </div>
+                        <div class="slds-form-element__row">
+                          <!-- API URL -->
+                          <apex:outputPanel styleClass="slds-form__item" layout="block">
+                            <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                              <apex:outputLabel styleClass="slds-form-element__label" for="apiUrl">
+                                <apex:outputText value="{!$Label.mkto_si__API_URL}"/>
+                                <abbr title="Required">&#xFF0A;</abbr>
+                              </apex:outputLabel>
+                              <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                <apex:inputText value="{!apiConfig.mkto_si__API_URL__c}" id="apiUrl" size="50" required="true" styleClass="slds-input"/>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </apex:outputPanel>
+                        </div>
+                        <div class="slds-form-element__row">
+                          <!-- API User Id -->
+                          <apex:outputPanel styleClass="slds-form__item" layout="block">
+                            <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                              <apex:outputLabel styleClass="slds-form-element__label" for="apiUserId">
+                                <apex:outputText value="{!$Label.mkto_si__User_ID}"/>
+                                <abbr title="Required">&#xFF0A;</abbr>
+                              </apex:outputLabel>
+                              <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                <apex:inputText value="{!apiConfig.mkto_si__API_User_Id__c}" id="apiUserId" size="50" required="true" styleClass="slds-input"/>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </apex:outputPanel>
+                        </div>
+                        <div class="slds-form-element__row">
+                          <!-- SOAP API Call Timeout -->
+                          <apex:outputPanel styleClass="slds-form__item" layout="block">
+                            <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                              <apex:outputLabel value="{!$Label.mkto_si__API_Timeout}" for="SoapAPICallTimeout" styleClass="slds-form-element__label"/>
+                              <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                <div class="msi-config-field-with-addon">
+                                  <div class="msi-config-field-with-addon-field">
+                                    <apex:inputField value="{!apiConfig.mkto_si__Soap_API_Call_Timeout__c}" id="SoapAPICallTimeout" html-min="1" html-max="120" type="number" html-size="5" styleClass="slds-input" html-placeholder="{!timeoutPlaceholder}"/>
+                                  </div>
+                                  <apex:outputPanel styleClass="msi-config-addon">{!$Label.mkto_si__seconds}</apex:outputPanel>
+                                </div>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </apex:outputPanel>
+                        </div>
+                      </fieldset>
+                    </apex:outputPanel>
+
+                    <!-- REST Settings -->
+                    <apex:outputPanel styleClass="slds-form__item" layout="block">
+                      <fieldset class="slds-form-element slds-is-editing slds-form-element_stacked">
+                        <legend class="msi-config-fields-block-legend">
+                          <apex:outputText value="{!$Label.mkto_si__REST_API}"/>
+                        </legend>
+                        <div>
+                          <div class="slds-form-element__row">
+                            <!-- REST API URL -->
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel styleClass="slds-form-element__label" for="restApiUrl">
+                                  <apex:outputText value="{!$Label.mkto_si__Marketo_REST_API_URL}"/>
+                                </apex:outputLabel>
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <apex:inputText value="{!apiConfig.mkto_si__REST_API_URL__c}" size="100" styleClass="slds-input" id="restApiUrl"/>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+                          <div class="slds-form-element__row">
+                            <!-- Marketo REST API Client Id -->
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel styleClass="slds-form-element__label" for="restApiId">
+                                  <apex:outputText value="{!$Label.mkto_si__Client_ID}"/>
+                                </apex:outputLabel>
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <apex:inputText value="{!apiConfig.mkto_si__REST_API_client_id__c}" id="restApiId" size="50" styleClass="slds-input"/>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+                          <div class="slds-form-element__row">
+                            <!-- Marketo REST API Client Secret -->
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel styleClass="slds-form-element__label" for="restApiSecret">
+                                  <apex:outputText value="{!$Label.mkto_si__Client_Secret}"/>
+                                </apex:outputLabel>
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <apex:inputSecret value="{!apiConfig.mkto_si__REST_API_client_secret__c}" redisplay="true" size="50" id="restApiSecret" styleClass="slds-input"/>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+                          <div class="slds-form-element__row">
+                            <!-- REST API Call Timeout -->
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel value="{!$Label.mkto_si__API_Timeout}" for="RestAPICallTimeout" styleClass="slds-form-element__label"/>
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <div class="msi-config-field-with-addon">
+                                    <div class="msi-config-field-with-addon-field">
+                                      <apex:inputField value="{!apiConfig.mkto_si__Rest_API_Call_Timeout__c}" id="RestAPICallTimeout" html-min="1" html-max="120" type="number" html-size="5" styleClass="slds-input" html-placeholder="{!timeoutPlaceholder}"/>
+                                    </div>
+                                    <apex:outputPanel styleClass="msi-config-addon">{!$Label.mkto_si__seconds}</apex:outputPanel>
+                                  </div>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </apex:outputPanel>
+                  </apex:outputPanel>
+
+                  <!-- API Secret Key -->
+                  <div class="slds-form__row msi-config-api-secret-key">
+                    <div class="slds-form__item">
+                      <fieldset class="slds-form-element slds-is-editing slds-form-element_stacked">
+                        <div class="slds-form-element__row ">
+                          <div class="slds-form__item">
+                            <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                              <label class="slds-form-element__label" for="apiSecretKey">
+                                {!$Label.mkto_si__api_secret_key}
+                                <abbr title="Required">&#xFF0A;</abbr>
+                              </label>
+                              <div class="slds-form-element__control">
+                                <apex:inputSecret value="{!apiConfig.mkto_si__API_Secret_Key__c}"
+                                  id="apiSecretKey"
+                                  size="50"
+                                  styleClass="slds-input"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div class="slds-form__item" />
+                  </div>
+
+
+                  <!-- MSC Environment Selection -->
+                  <apex:outputPanel rendered="{!is_msc_env_visible}">
+                    <div class="slds-form__row msi-config-msc-env">
+                      <div class="slds-form__item">
+                        <fieldset class="slds-form-element slds-is-editing slds-form-element_stacked">
+                          <div class="slds-form-element__row ">
+                            <div class="slds-form__item">
+                              <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <label class="slds-form-element__label" for="msc-env">
+                                  {!$Label.msc_env_picklist_label}
+                                  <abbr title="Required">&#xFF0A;</abbr>
+                                </label>
+                                <div class="slds-form-element__control">
+                                  <apex:selectList id="msc-env" value="{!apiConfig.mkto_si__MSC_Environment__c}" size="1" styleClass="slds-select">
+                                    <apex:selectOptions value="{!msc_env_options}"/>
+                                  </apex:selectList>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <div class="slds-form__item" />
+                    </div>
+                  </apex:outputPanel>
+
+                </apex:outputPanel>
+              </div>
+              <!-- Operational Settings END -->
+
+              <!-- VisualForce Panel START -->
+              <div class="msi-config-settings-block msi_config_header_hide_details">
+                <div class="msi_config_subheader" onclick="toggleDetails(this)">
+                  <div class="msi_config_subheader_arrow"></div>
+                  <div class="msi_config_subheader_title">{!$Label.VisualForce_Panel}</div>
+                </div>
+                <a
+                  href="{!JSENCODE(helpLink)}"
+                  target="_blank"
+                  class="help-link"
+                >{!$Label.Learn_more}</a>
+                <apex:outputPanel styleClass="msi-config-content-block fields-block" layout="block">
+                  <apex:outputPanel styleClass="slds-form__row" layout="block">
+                    <apex:outputPanel styleClass="slds-form__item msi-config-fields-block-first" layout="block">
+                      <fieldset class="slds-form-element slds-is-editing slds-form-element_stacked">
+                        <legend class="msi-config-fields-block-legend">
+                          <apex:outputText value="{!$Label.mkto_si__Data_Display}"/>
+                        </legend>
+                        <div>
+                          <div class="slds-form-element__row">
+                            <div class="slds-form__item">
+                              <div class="slds-form-element slds-form-element_horizontal msi-config-description">
+                                {!$Label.mkto_si__The_following_tabs_are_available}
+                              </div>
+                            </div>
+                          </div>
+                          <apex:outputPanel rendered="{!msiPlusPlusEnabled}">
+                            <!-- Upcoming Sales Campaigns -->
+                            <div class="slds-form-element__row">
+                              <apex:outputPanel styleClass="slds-form__item" layout="block">
+                                <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                  <apex:outputLabel value="{!$Label.mkto_si__upcoming_sales_campaigns}" for="upcomingSalesCampaigns" styleClass="slds-form-element__label"/>
+                                  <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                    <apex:outputPanel styleClass="slds-checkbox slds-checkbox_standalone">
+                                      <apex:inputCheckbox value="{!showUpcomingSalesCampaigns}" id="upcomingSalesCampaigns" />
+                                      <apex:outputPanel styleClass="slds-checkbox_faux"/>
+                                    </apex:outputPanel>
+                                  </apex:outputPanel>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </div>
+                            <!-- Upcoming Sales Tasks -->
+                            <div class="slds-form-element__row">
+                              <apex:outputPanel styleClass="slds-form__item" layout="block">
+                                <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                  <apex:outputLabel value="{!$Label.mkto_si__upcoming_sales_tasks}" for="upcomingSalesTasks" styleClass="slds-form-element__label"/>
+                                  <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                    <apex:outputPanel styleClass="slds-checkbox slds-checkbox_standalone">
+                                      <apex:inputCheckbox value="{!showUpcomingSalesTasks}" id="upcomingSalesTasks" />
+                                      <apex:outputPanel styleClass="slds-checkbox_faux"/>
+                                    </apex:outputPanel>
+                                  </apex:outputPanel>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </div>
+                          </apex:outputPanel>
+                          <!-- Upcoming Marketing Campaigns -->
+                          <div class="slds-form-element__row">
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel value="{!$Label.mkto_si__Upcoming_Marketing_Campaigns}" for="campaigns" styleClass="slds-form-element__label"/>
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <apex:outputPanel styleClass="slds-checkbox slds-checkbox_standalone">
+                                    <apex:inputCheckbox value="{!showMarketingCampaigns}" id="campaigns" />
+                                    <apex:outputPanel styleClass="slds-checkbox_faux"/>
+                                  </apex:outputPanel>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+
+                          <!-- Upcoming Marketing Events -->
+                          <div class="slds-form-element__row">
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel value="{!$Label.mkto_si__Upcoming_Marketing_Events}" for="events" styleClass="slds-form-element__label"/>
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <apex:outputPanel styleClass="slds-checkbox slds-checkbox_standalone">
+                                    <apex:inputCheckbox value="{!showMarketingEvents}" id="events" />
+                                    <apex:outputPanel styleClass="slds-checkbox_faux"/>
+                                  </apex:outputPanel>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+
+                          <!-- Marketing Event Type -->
+                          <div class="slds-form-element__row">
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel value="{!$Label.mkto_si__Marketing_Event_Type}"
+                                  for="upcomingEventsOptions"
+                                  styleClass="slds-form-element__label"
+                                />
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <div class="slds-select_container">
+                                    <apex:selectList value="{!upcomingEventsFilter}" size="1" styleClass="slds-select">
+                                      <apex:selectOptions value="{!upcomingEventsOptions}" id="upcomingEventsOptions"/>
+                                    </apex:selectList>
+                                  </div>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+
+                          <!-- Load Events and Campaigns Button-->
+                          <div class="slds-form-element__row">
+                            <div class="slds-form__item">
+                              <div class="slds-form-element slds-form-element_horizontal msi-config-description">
+                                {!$Label.You_can_reduce_the_number_of_REST_API_calls}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="slds-form-element__row">
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel value="{!$Label.mkto_si__Load_Upcoming_Campaigns_And_Events}" for="load_events_campaigns" styleClass="slds-form-element__label"/>
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <apex:outputPanel styleClass="slds-checkbox slds-checkbox_standalone">
+                                    <apex:inputCheckbox value="{!apiConfig.mkto_si__Do_not_load_events_campaigns__c}" id="load_events_campaigns" />
+                                    <apex:outputPanel styleClass="slds-checkbox_faux"/>
+                                  </apex:outputPanel>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+
+                          <!-- LIMITS -->
+                          <div class="slds-form-element__row">
+                            <div class="slds-form__item">
+                              <div class="slds-form-element slds-form-element_horizontal msi-config-description">
+                                {!$Label.You_can_reduce_timeout_errors}
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Activities Number limit -->
+                          <div class="slds-form-element__row">
+                            <div class="slds-form__item">
+                              <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <label for="activitiesLimit" class="slds-form-element__label">
+                                  {!$Label.number_of_activities_label}
+                                  <span>(&#60;= {!activitiesMaxNumber})</span>
+                                </label>
+                                <div class="slds-form-element__control">
+                                  <div class="msi-config-field-with-addon">
+                                    <div class="msi-config-field-with-addon-field">
+                                      <apex:input value="{!msiValue1}"
+                                        id="activitiesLimit"
+                                        styleClass="slds-input"
+                                        type="number"
+                                        html-min="1"
+                                        required="true"
+                                      />
+                                    </div>
+                                    <div class="input-suffix-label">{!$Label.items}</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="slds-form__item slds-form__item-last"></div>
+                          </div>
+                          <apex:outputPanel rendered="{!msiPlusPlusEnabled}">
+                          <!-- Sales Campaigns limit -->
+                            <div class="slds-form-element__row">
+                              <div class="slds-form__item">
+                                <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                  <label for="salesCampaignsLimit" class="slds-form-element__label">
+                                    {!$Label.sales_campaigns}
+                                    <span>(&#60;= {!salesCampaignsMaxNumber})</span>
+                                  </label>
+                                  <div class="slds-form-element__control">
+                                    <div class="msi-config-field-with-addon">
+                                      <div class="msi-config-field-with-addon-field">
+                                        <apex:input value="{!salesCampaignsLimit}"
+                                          id="salesCampaignsLimit"
+                                          styleClass="slds-input"
+                                          type="number"
+                                          html-min="1"
+                                          required="true"
+                                        />
+                                      </div>
+                                      <div class="input-suffix-label">{!$Label.items}</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="slds-form__item slds-form__item-last"></div>
+                            </div>
+                            <!-- Sales Tasks limit -->
+                            <div class="slds-form-element__row">
+                              <div class="slds-form__item">
+                                <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                  <label for="salesTasksLimit" class="slds-form-element__label">
+                                    {!$Label.sales_tasks}
+                                    <span>(&#60;= {!salesTasksMaxNumber})</span>
+                                  </label>
+                                  <div class="slds-form-element__control">
+                                    <div class="msi-config-field-with-addon">
+                                      <div class="msi-config-field-with-addon-field">
+                                        <apex:input value="{!salesTasksLimit}"
+                                          id="salesTasksLimit"
+                                          styleClass="slds-input"
+                                          type="number"
+                                          html-min="1"
+                                          required="true"
+                                        />
+                                      </div>
+                                      <div class="input-suffix-label">{!$Label.items}</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="slds-form__item slds-form__item-last"></div>
+                            </div>
+                          </apex:outputPanel>
+                          <!-- Campaigns Number Limit -->
+                          <div class="slds-form-element__row">
+                            <div class="slds-form__item">
+                              <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <label for="campaignsLimit" class="slds-form-element__label">
+                                  {!$Label.marketing_campaigns}
+                                  <span>(&#60;= {!campaignsMaxNumber})</span>
+                                </label>
+                                <div class="slds-form-element__control">
+                                  <div class="msi-config-field-with-addon">
+                                    <div class="msi-config-field-with-addon-field">
+                                      <apex:input value="{!msiValue3}"
+                                        id="campaignsLimit"
+                                        styleClass="slds-input"
+                                        type="number"
+                                        html-min="1"
+                                        required="true"
+                                      />
+                                    </div>
+                                    <div class="input-suffix-label">{!$Label.items}</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="slds-form__item slds-form__item-last"></div>
+                          </div>
+
+                          <!-- Events Number Limit -->
+                          <div class="slds-form-element__row">
+                            <div class="slds-form__item">
+                              <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <label for="eventsLimit" class="slds-form-element__label">
+                                  {!$Label.marketing_events}
+                                  <span>(&#60;= {!eventsMaxNumber})</span>
+                                </label>
+                                <div class="slds-form-element__control">
+                                  <div class="msi-config-field-with-addon">
+                                    <div class="msi-config-field-with-addon-field">
+                                      <apex:input value="{!msiValue2}"
+                                        id="eventsLimit"
+                                        styleClass="slds-input"
+                                        type="number"
+                                        html-min="1"
+                                        required="true"
+                                      />
+                                    </div>
+                                    <div class="input-suffix-label">{!$Label.items}</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="slds-form__item slds-form__item-last"></div>
+                          </div>
+
+                        </div>
+                      </fieldset>
+                    </apex:outputPanel>
+
+                    <!-- Layout Tabs Settings -->
+                    <apex:outputPanel styleClass="slds-form__item" layout="block">
+                      <fieldset class="slds-form-element slds-is-editing slds-form-element_stacked">
+                        <legend class="msi-config-fields-block-legend">
+                          <apex:outputText value="{!$Label.mkto_si__tab_settings_label}"/>
+                        </legend>
+                        <div class="slds-form-element__row" id="orderoftabs">
+                          <c:DuelingSortablePicklist options="{!tabsSelectOptions}"
+                            storeTo="{!tabsSettings}"
+                            sortingOnly="true"
+                            size="{!tabsSelectOptionsSize}"
+                            generalLabel="{!$Label.mkto_si__order_of_tabs_label}"
+                          />
+                        </div>
+                        
+                        <div class="slds-form-element__row">
+                          <div class="slds-form__item">
+                            <div class="slds-form-element slds-form-element_horizontal msi-config-description">
+                              {!$Label.mkto_si__Dynamic_Chat_Admin_Setting_text}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slds-form-element__row">
+                          <apex:outputPanel styleClass="slds-form__item" layout="block">
+                            <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                              <apex:outputLabel value="{!$Label.mkto_si__Enable_dynamic_chat_data}" for="dynamicChatEnabled" styleClass="slds-form-element__label" />
+                              <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                <apex:outputPanel styleClass="slds-checkbox slds-checkbox_standalone">
+                                  <div class="msi-config-field-with-addon">
+                                    <div>
+                                      <apex:inputCheckbox value="{!showDynamicChatData}" id="dynamicChatEnabled" />
+                                      <apex:outputPanel styleClass="slds-checkbox_faux"/>
+                                    </div>
+                                    <apex:outputPanel styleClass="msi-config-addon">
+                                      <a
+                                      href="{!JSENCODE(dynamicChatHelplink)}"
+                                      target="_blank"
+                                      class="help-link"
+                                      style="font-style: normal;pointer-events: auto;"
+                                    >{!$Label.Learn_more}</a>
+                                    </apex:outputPanel>
+                                  </div>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </apex:outputPanel>
+                        </div>
+
+
+                      </fieldset>
+                    </apex:outputPanel>
+
+                  </apex:outputPanel>
+                </apex:outputPanel>
+              </div>
+              <!-- VisualForce Panel END -->
+
+              <!-- Marketo Global Tab START -->
+              <div class="msi-config-settings-block msi_config_header_hide_details">
+                <div class="msi_config_subheader" onclick="toggleDetails(this)">
+                  <div class="msi_config_subheader_arrow"></div>
+                  <div class="msi_config_subheader_title">{!$Label.Marketo_Global_Tab}</div>
+                </div>
+                <a
+                  href="{!JSENCODE(helpLink)}"
+                  target="_blank"
+                  class="help-link"
+                >{!$Label.Learn_more}</a>
+                <apex:outputPanel styleClass="msi-config-content-block fields-block" layout="block">
+                  <apex:outputPanel styleClass="slds-form__row" layout="block">
+                    <apex:outputPanel styleClass="slds-form__item msi-config-fields-block-first" layout="block">
+                      <fieldset class="slds-form-element slds-is-editing slds-form-element_stacked">
+                        <legend class="msi-config-fields-block-legend">
+                          <apex:outputText value="{!$Label.mkto_si__Marketo_Tab_Settings}"/>
+                        </legend>
+                        <div>
+                          <div class="slds-form-element__row">
+                            <!-- RCA enabled -->
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel value="{!$Label.mkto_si__RCA_Enabled}" for="rcaEnabled" styleClass="slds-form-element__label"/>
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <apex:outputPanel styleClass="slds-checkbox slds-checkbox_standalone">
+                                    <apex:inputCheckbox value="{!apiConfig.mkto_si__RcaEnabled__c}" id="rcaEnabled" disabled="true"/>
+                                    <apex:outputPanel styleClass="slds-checkbox_faux"/>
+                                  </apex:outputPanel>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+                          <div class="slds-form-element__row">
+                            <!-- RSS Feed Enabled -->
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel value="{!$Label.mkto_si__RSS_Feed_Enabled}" for="enableRSS" styleClass="slds-form-element__label"/>
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <apex:outputPanel styleClass="slds-checkbox slds-checkbox_standalone">
+                                    <apex:inputCheckbox value="{!apiConfig.mkto_si__Enable_RSS__c}" id="enableRSS" disabled="true"/>
+                                    <apex:outputPanel styleClass="slds-checkbox_faux"/>
+                                  </apex:outputPanel>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+                          <div class="slds-form-element__row">
+                            <!-- Best Bets Debug Mode -->
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel value="{!$Label.mkto_si__Best_Bets_Debug_Mode}" for="bestBetsDebugMode" styleClass="slds-form-element__label"/>
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <apex:outputPanel styleClass="slds-checkbox slds-checkbox_standalone">
+                                    <apex:inputCheckbox value="{!apiConfig.mkto_si__BestBetsDebugMode__c}" id="bestBetsDebugMode" />
+                                    <apex:outputPanel styleClass="slds-checkbox_faux"/>
+                                  </apex:outputPanel>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+
+                          <div class="slds-form-element__row">
+                            <!-- Default Hide Days -->
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel value="{!$Label.mkto_si__Default_Hide}" for="defaultHideDays" styleClass="slds-form-element__label"/>
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <div style="display: inline-block;">
+                                    <apex:inputText value="{!defaultHideDays}" id="defaultHideDays" size="3" styleClass="slds-input"/>
+                                  </div>
+                                  <apex:outputPanel styleClass="slds-form-element__addon">{!$Label.mkto_si__days}</apex:outputPanel>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+                          <div class="slds-form-element__row">
+                            <!-- Contact Status Field -->
+                            <apex:outputPanel styleClass="slds-form__item" layout="block">
+                              <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                <apex:outputLabel value="{!$Label.mkto_si__Contact_Status_Field}" for="contactStatusFieldsList" styleClass="slds-form-element__label"/>
+                                <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                  <div class="slds-select_container">
+                                    <apex:selectList value="{!apiConfig.mkto_si__ContactStatusField__c}" size="1" styleClass="slds-select">
+                                      <apex:selectOptions value="{!contactStatusFieldsList}" id="contactStatusFieldsList"/>
+                                    </apex:selectList>
+                                  </div>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </apex:outputPanel>
+                          </div>
+                          <apex:outputPanel rendered="{!msiPlusPlusEnabled}">
+                            <!-- Live Feed Settings -->
+                            <div class="slds-form-element__row">
+                              <apex:outputPanel styleClass="slds-form__item" layout="block">
+                                <apex:outputPanel styleClass="slds-form-element slds-form-element_horizontal slds-is-editing">
+                                  <apex:outputLabel value="{!$Label.mkto_si__Live_Feed_Settings}" for="liveFeedSettingsList" styleClass="slds-form-element__label"/>
+                                  <apex:outputPanel styleClass="slds-form-element__control" layout="block">
+                                    <div class="slds-select_container">
+                                      <apex:selectList value="{!apiConfig.mkto_si__Live_Feed_Filter__c}" size="1" styleClass="slds-select">
+                                        <apex:selectOptions value="{!liveFeedSettingsList}" id="liveFeedSettingsList"/>
+                                      </apex:selectList>
+                                    </div>
+                                  </apex:outputPanel>
+                                </apex:outputPanel>
+                              </apex:outputPanel>
+                            </div>
+                          </apex:outputPanel>
+                        </div>
+                      </fieldset>
+                    </apex:outputPanel>
+
+                    <!-- Global Page Tabs Settings -->
+                    <apex:outputPanel styleClass="slds-form__item" layout="block">
+                      <fieldset class="slds-form-element slds-is-editing slds-form-element_stacked">
+                        <legend class="msi-config-fields-block-legend">
+                          <apex:outputText value="{!$Label.mkto_si__tab_settings_label}"/>
+                        </legend>
+                        <div class="slds-form-element__row">
+                          <c:DuelingSortablePicklist options="{!globalTabsSelectOptions}"
+                            storeTo="{!globalTabsSettings}"
+                            sortingOnly="true"
+                            size="{!globalTabsSelectOptionsSize}"
+                            generalLabel="{!$Label.mkto_si__order_of_tabs_label}"
+                          />
+                        </div>
+                      </fieldset>
+                    </apex:outputPanel>
+                  </apex:outputPanel>
+                </apex:outputPanel>
+              </div>
+              <!-- Marketo Global Tab END -->
+
+              <!-- Action Settings START -->
+              <div class="msi-config-settings-block msi_config_header_hide_details">
+                <div class="msi_config_subheader" onclick="toggleDetails(this)">
+                  <div class="msi_config_subheader_arrow"></div>
+                  <div class="msi_config_subheader_title">{!$Label.Action_Settings}</div>
+                </div>
+                <a
+                  href="{!JSENCODE(helpLink)}"
+                  target="_blank"
+                  class="help-link"
+                >{!$Label.Learn_more}</a>
+
+                <apex:outputPanel styleClass="msi-config-content-block fields-block" layout="block">
+                  <div>
+
+                    <!-- Send Marketo Email checkbox -->
+                    <div class="slds-form-element__row">
+                      <div class="slds-form__item">
+                        <div class="slds-form-element slds-form-element_horizontal msi-config-description">
+                          {!$Label.The_following_actions_are_available}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                      <div class="slds-form__item">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col">
+                          <label for="showMarketoEmail" class="slds-form-element__label">
+                            {!$Label.Send_Marketo_Email}
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-checkbox slds-checkbox_standalone">
+                              <apex:inputCheckbox selected="{!showSendMarketoEmailAction}"
+                                value="{!showSendMarketoEmailAction}"
+                                id="showMarketoEmail"
+                              />
+                              <apex:outputPanel styleClass="slds-checkbox_faux" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Add to Marketo Campaign checkbox -->
+                    <div class="slds-form-element__row">
+                      <div class="slds-form__item">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col">
+                          <label for="showMarketoCampaign" class="slds-form-element__label">
+                            {!$Label.Add_to_Marketo_Campaign}
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-checkbox slds-checkbox_standalone">
+                              <apex:inputCheckbox selected="{!showAddToMarketoCampaignAction}"
+                                value="{!showAddToMarketoCampaignAction}"
+                                id="showMarketoCampaign"
+                              />
+                              <apex:outputPanel styleClass="slds-checkbox_faux" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <apex:outputPanel rendered="{!msiPlusPlusEnabled}">
+                      <!-- Send Sales Email checkbox -->
+                      <div class="slds-form-element__row">
+                        <div class="slds-form__item">
+                          <div class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col">
+                            <label for="showSalesEmail" class="slds-form-element__label">
+                              {!$Label.send_sales_email}
+                            </label>
+                            <div class="slds-form-element__control">
+                              <div class="slds-checkbox slds-checkbox_standalone">
+                                <apex:inputCheckbox selected="{!showSendSalesEmailAction}"
+                                  value="{!showSendSalesEmailAction}"
+                                  id="showSalesEmail"
+                                />
+                                <apex:outputPanel styleClass="slds-checkbox_faux" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Add to Sales Campaign checkbox -->
+                      <div class="slds-form-element__row">
+                        <div class="slds-form__item">
+                          <div class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col">
+                            <label for="showSalesCampaign" class="slds-form-element__label">
+                              {!$Label.add_to_sales_campaign}
+                            </label>
+                            <div class="slds-form-element__control">
+                              <div class="slds-checkbox slds-checkbox_standalone">
+                                <apex:inputCheckbox selected="{!showAddToSalesCampaignAction}"
+                                  value="{!showAddToSalesCampaignAction}"
+                                  id="showSalesCampaign"
+                                />
+                                <apex:outputPanel styleClass="slds-checkbox_faux" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Sales Dialer checkbox -->
+                      <div class="slds-form-element__row">
+                        <div class="slds-form__item">
+                          <div class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col">
+                            <label for="showSalesCall" class="slds-form-element__label">
+                              {!$Label.sales_call}
+                            </label>
+                            <div class="slds-form-element__control">
+                              <div class="slds-checkbox slds-checkbox_standalone">
+                                <apex:inputCheckbox selected="{!showSalesCallAction}"
+                                  value="{!showSalesCallAction}"
+                                  id="showSalesCall"
+                                />
+                                <apex:outputPanel styleClass="slds-checkbox_faux" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Add Sales Task checkbox -->
+                      <div class="slds-form-element__row">
+                        <div class="slds-form__item">
+                          <div class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col">
+                            <label for="showAddSalesTask" class="slds-form-element__label">
+                              {!$Label.add_task}
+                            </label>
+                            <div class="slds-form-element__control">
+                              <div class="slds-checkbox slds-checkbox_standalone">
+                                <apex:inputCheckbox selected="{!showAddSalesTaskAction}"
+                                  value="{!showAddSalesTaskAction}"
+                                  id="showAddSalesTask"
+                                />
+                                <apex:outputPanel styleClass="slds-checkbox_faux" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </apex:outputPanel>
+                  </div>
+                </apex:outputPanel>
+              </div>
+              <!-- Action Settings END -->
+
+
+
+
+
+               <!-- Support Settings START -->
+               <div class="msi-config-settings-block msi_config_header_hide_details">
+                <div class="msi_config_subheader" onclick="toggleDetails(this)">
+                  <div class="msi_config_subheader_arrow"></div>
+                  <div class="msi_config_subheader_title">{!$Label.Support_Settings}</div>
+                </div>
+                
+                <apex:outputPanel styleClass="msi-config-content-block fields-block" layout="block">
+                  <!-- Enable Debugging checkbox -->
+                  <div class="slds-form-element__row">
+                    <div class="slds-form__item">
+                      <div class="slds-form-element slds-form-element_horizontal msi-config-description">
+                        {!$Label.The_following_actions_are_available_for_support}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-form-element__row">
+                    <div class="slds-form__item">
+                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col">
+                        <label for="enableDebugLogs" class="slds-form-element__label">
+                          {!$Label.Enable_Debug_Logging}
+                        </label>
+                        <div class="slds-form-element__control">
+                          <div class="slds-checkbox slds-checkbox_standalone">
+                            <apex:inputCheckbox selected="{!enableDebugLoggingAction}"
+                              value="{!enableDebugLoggingAction}"
+                              id="enableDebugLogs"
+                            >
+                            <apex:actionSupport action="{!handleDebugLogToggle}" rerender="debugLogCodeBlock,msgPanel" status="loadingStatus" event="onchange"/>
+                          </apex:inputCheckbox>
+                            <apex:outputPanel styleClass="slds-checkbox_faux" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                <apex:outputPanel styleClass="msi-config-content-block" layout="block" id="debugLogCodeBlock">  
+                <apex:outputPanel styleClass="slds-form__row msi-config-enable-debug-logs" layout="block" rendered="{!showDebugLogEnableCode}">
+                  <div class="slds-form__item">
+                    <fieldset class="slds-form-element slds-is-editing slds-form-element_stacked">
+                      <div class="slds-form-element__row ">
+                        <div class="slds-form__item">
+                          <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                            <label class="slds-form-element__label" for="debugLogEnableCode">
+                              {!$Label.Debug_Log_Enable_Code}
+                              <abbr title="Required">&#xFF0A;</abbr>
+                            </label>
+                            <div class="slds-form-element__control">
+                              <apex:inputText value="{!apiConfig.mkto_si__Debug_Log_Enable_Code__c}"
+                                id="debugLogEnableCode"
+                                styleClass="slds-input"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slds-form-element__row ">
+                        <div class="slds-form__item">
+                          <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                            <label class="slds-form-element__label" for="debugLogExpirationMinutes">
+                              {!$Label.Debug_Log_Expiration_Minutes}
+                              <abbr title="Required">&#xFF0A;</abbr>
+                            </label>
+                            <div class="slds-form-element__control">
+                              <apex:inputField value="{!apiConfig.mkto_si__Debug_Log_Expiration_Minutes__c}"
+                                id="debugLogExpirationMinutes"
+                                html-size="50"
+                                styleClass="slds-input"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="slds-form__item" />
+                </apex:outputPanel>
+                </apex:outputPanel>
+                </apex:outputPanel>
+                </div>
+                  <!-- Support Settings END -->
+
+
+              <!-- Footer buttons -->
+              <div class="msi-config-footer-block">
+                <apex:actionFunction name="resetConfiguration" action="{!resetConfiguration}"/>
+                <input 
+                  type="button" 
+                  onclick="onResetConfiguration()" 
+                  value="{!$Label.Reset_Configuration}" 
+                  class="slds-button slds-button_neutral msi-config-reset-button"
+                />
+                <input 
+                  type="reset" 
+                  value="{!$Label.Cancel}" 
+                  class="btn slds-button slds-button_neutral marketo-cancel-button"
+                />
+                <apex:commandButton action="{!save}" 
+                  value="{!$Label.mkto_si__Save}" 
+                  styleClass="slds-button slds-button_neutral marketo-save-button" 
+                />
+              </div>
+              <script>
+                var toggleDetails = function(arrow) {
+                  $j(arrow).parent().toggleClass('msi_config_header_hide_details');
+                };
+                var onResetConfiguration = function() {
+                  var message = "{!$Label.mkto_si__This_will_erase_all_configuration_settings}. " + "{!$Label.mkto_si__Are_you_sure}";
+                  if (confirm(message)) {
+                    resetConfiguration();
+                  }
+                }
+              </script>
+            </apex:form>
+          </div>
+        </div>
+      </apex:outputPanel>
+    </div>
+  </apex:outputPanel>
+</apex:page>

@@ -1,0 +1,60 @@
+<apex:page Controller="texcellency.DHCHomeTabController" action="{!initialize}" tabStyle="DHC_Data_Tab__tab">
+<apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" />
+<apex:includeScript value="{!$Resource.texcellency__defhc_client}" />
+<apex:sectionHeader title="Definitive Healthcare" subtitle="Home" />
+    <apex:stylesheet value="{!$Resource.texcellency__def_styles}" /> 
+<apex:tabPanel switchType="client" 
+    id="dhcDataTabPanel" 
+    height="50px"
+    headerClass="dhc-tab-header"
+    styleClass="dhc-tab-panel"
+    tabClass="dhc-tab"
+    activeTabClass="dhc-tab-active">
+    <apex:tab label="REQUEST FOR PROPOSALS" name="rfps" id="tabRFPs">
+        <c:RFPList >
+        </c:RFPList>
+    </apex:tab>
+    <!--
+        Disabling this temporarily
+    <apex:tab label="NEWS & INTELLIGENCE" name="news" id="tabNews">
+        <c:NewsItemList >
+        </c:NewsItemList>
+    </apex:tab>
+    -->
+    <apex:tab label="LEADS" name="leads" id="tabLeads">
+        <apex:form >
+            <apex:pageBlock title="Add Leads from Definitive Healthcare">
+                <apex:PageBlockButtons location="top">
+                    <apex:commandButton value="Search Lead Executives" action="{!showExecutiveSearch}"/>
+                </apex:PageBlockButtons>
+                <apex:pageBlockTable value="{!RecentLeads}" var="item" rendered="false">
+                    <apex:column value="{!item.name}" />
+                    <apex:column value="{!item.company}" />
+                    <apex:column value="{!item.state}" />
+                    <apex:column value="{!item.email}" />
+                    <apex:column value="{!item.status}" />
+                    <apex:column value="{!item.phone}" />
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:form>
+    </apex:tab>
+</apex:tabPanel>
+<apex:panelGrid columns="2" id="theGrid" width="100%" columnClasses="width-50">
+    <apex:pageBlock title="Resource Center" >
+        <b>CRM Integration:</b> For more information about integrating 
+        data from the Definitive Healthcare database, please reach out
+        to your account manager or to the support desk at <a href="mailto:support@definitivehc.com">support@definitivehc.com</a>
+        or at 888-307-4107.
+    </apex:pageBlock>
+    <apex:pageBlock title="Single Sign On">
+        <apex:pageBlockSection collapsible="false" showHeader="false" rendered="{!isSSOEnabled}">
+            <a target="_blank" href="https://www.defhc.com/home/cologin/{!CorporateCode}?email={!$User.Email}">
+            Login to DefinitiveHC Database
+           </a>
+       </apex:pageBlockSection>
+       <apex:pageBlockSection collapsible="false" showHeader="false" rendered="{!!isSSOEnabled}" columns="1">
+            This feature has not been enabled for your organization. Please contact your Account Manager for more information to set-up this feature.
+       </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:panelGrid>
+</apex:page>

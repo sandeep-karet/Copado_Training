@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Term Exception Approval</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Term Exception Approvals</value>
+    </caseValues>
+    <fields>
+        <help><!-- This flag is true if the term exception approval record is active.  Set this to false if you want the approvals engine to ignore this term exception approver during processing. --></help>
+        <label><!-- Active --></label>
+        <name>Apttus_Approval__Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignee Description --></label>
+        <name>Apttus_Approval__Assignee_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field holds the ID of the queue, role, or forecast role that is assigned to the request.  This field is not used when the assignee type is user. --></help>
+        <label><!-- Assignee Id --></label>
+        <name>Apttus_Approval__Assignee_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignee Type --></label>
+        <name>Apttus_Approval__Assignee_Type__c</name>
+        <picklistValues>
+            <masterLabel>Approval Matrix</masterLabel>
+            <translation><!-- Approval Matrix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Assignee</masterLabel>
+            <translation><!-- Custom Assignee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rule</masterLabel>
+            <translation><!-- Rule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used to specify a user assignee using standard salesforce lookup behavior instead of having to type the user&apos;s name.  Using standard lookup prevents typing errors and ensures that the user is correctly assigned regardless of locale settings. --></help>
+        <label><!-- Assignee User --></label>
+        <name>Apttus_Approval__Assignee_User__c</name>
+        <relationshipLabel><!-- Term Exception Approvals --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Denotes the assignee type.  If the type is &apos;Role&apos;, this field is the role name.  For type Approval Matrix, this value is a string of the form &quot;Level X&quot;, where X ranges from 1 to 6.  This field is not used when the assignee type is user. --></help>
+        <label><!-- Assignee Value --></label>
+        <name>Apttus_Approval__Assignee_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is set to true if this term exception approval should be auto-escalated by the system if it not approved, rejected, or reassigned by the expected completion date. --></help>
+        <label><!-- Auto Escalate --></label>
+        <name>Apttus_Approval__AutoEscalate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Depends On --></label>
+        <name>Apttus_Approval__DependsOn__c</name>
+    </fields>
+    <fields>
+        <help><!-- The chain of user ids that this request will get escalated to in the event that it is escalated. This chain is determined when the request is initially submitted and is only applicable to dynamic escalation types. --></help>
+        <label><!-- Escalate To Chain --></label>
+        <name>Apttus_Approval__EscalateToChain__c</name>
+    </fields>
+    <fields>
+        <help><!-- The id of the assignee the request will be escalated to if it is escalated at the term exception approval level. --></help>
+        <label><!-- Escalate To Id --></label>
+        <name>Apttus_Approval__EscalateToId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the assignee the request will be escalated to if it is escalated at the term exception approval level. --></help>
+        <label><!-- Escalate To Name --></label>
+        <name>Apttus_Approval__EscalateToName__c</name>
+    </fields>
+    <fields>
+        <help><!-- The type of assignee the request will be escalated to if it is escalated at the term exception approval level. --></help>
+        <label><!-- Escalate To Type --></label>
+        <name>Apttus_Approval__EscalateToType__c</name>
+        <picklistValues>
+            <masterLabel>Backup Admin User</masterLabel>
+            <translation><!-- Backup Admin User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Related User</masterLabel>
+            <translation><!-- Related User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rule</masterLabel>
+            <translation><!-- Rule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Approval Matrix Next Approver</masterLabel>
+            <translation><!-- User Approval Matrix Next Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Delegated Approver</masterLabel>
+            <translation><!-- User Delegated Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Manager</masterLabel>
+            <translation><!-- User Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The number of expected days that this term exception approval needs to be completed in (approved or rejected) before a request is automatically escalated. --></help>
+        <label><!-- Expected Days To Complete --></label>
+        <name>Apttus_Approval__ExpectedDaysToComplete__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of expected hours that this term exception approval needs to be completed in (approved or rejected) before a request is automatically escalated. --></help>
+        <label><!-- Expected Hours To Complete --></label>
+        <name>Apttus_Approval__ExpectedHoursToComplete__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of expected minutes that this term exception approval needs to be completed in (approved or rejected). --></help>
+        <label><!-- Expected Minutes To Complete --></label>
+        <name>Apttus_Approval__ExpectedMinutesToComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Filter Logic --></label>
+        <name>Apttus_Approval__FilterLogic__c</name>
+    </fields>
+    <fields>
+        <help><!-- Designates whether the approver receives a notification only for the approval request (when set to true) or gets the request assigned to them and receives notification as well (false, which is the default). --></help>
+        <label><!-- Notify Only --></label>
+        <name>Apttus_Approval__Notify_Only__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Email --></label>
+        <name>Apttus_Approval__Send_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sequence --></label>
+        <name>Apttus_Approval__Sequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- When this box is checked if the assignee cannot be resolved at runtime then the step will be skipped instead of getting assigned to the Backup Admin. --></help>
+        <label><!-- Skip Unresolved Assignee --></label>
+        <name>Apttus_Approval__SkipUnresolvedAssignee__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes the term exception master record associated with this term exception approver record. --></help>
+        <label><!-- Term Exception --></label>
+        <name>Apttus_Approval__Term_Exception__c</name>
+        <relationshipLabel><!-- Term Exception Approvals --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

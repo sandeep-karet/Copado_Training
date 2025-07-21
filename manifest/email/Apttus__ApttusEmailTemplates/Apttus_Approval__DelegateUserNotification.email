@@ -1,0 +1,39 @@
+<messaging:emailTemplate recipientType="User"
+    relatedToType="Apttus_Approval__Backup_Approver__c"
+    subject="You have been identified as the delegate approver for {!relatedTo.Current_User__r.Name}" 
+    replyTo="{!recipient.email}">  
+<messaging:htmlEmailBody >
+<div style="text-align:center; margin-right:-5px;">
+<img src='{!$Label.Delegation_Email_Template_Notification}'/>
+</div>
+<style>
+            .my_text
+            {
+                font-family:Verdana;
+                font-size:13px;
+            }
+        </style>
+<div class="my_text"> 
+<br>  
+Dear {!recipient.Name},
+</br>
+<br>
+You have been identified as the delegate approver for {!relatedTo.Current_User__r.Name}.
+</br> 
+All Approval Requests that are assigned to {!relatedTo.Current_User__r.Name} will also be available to you.
+This gives you the ability to Approve/Reject or Add Comments to a request on behalf of {!relatedTo.Current_User__r.Name}.
+You will be notified by email whenever there is an approval request assigned to {!relatedTo.Current_User__r.Name}
+<br> 
+<br>
+Any in flight approval requests assigned to {!relatedTo.Current_User__r.Name} that were still open at the time</br> the delegate went into effect may be available for you to take an action on. Please login to your Salesforce account, navigate to the Console tab, and look under Approval Requests / My Approvals, to see if there are any available requests.
+</br>
+<br>
+
+Please contact your regional approvals administrator if you have any questions.
+</br>
+<br>
+Thank You.
+</br>
+</div>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

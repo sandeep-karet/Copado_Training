@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Territory2Rule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <name>Southeast</name>
+    <objectType>Account</objectType>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>DC,NC,VA,WV,FL,GA,SC,AL,MS</value>
+    </ruleItems>
+</Territory2Rule>

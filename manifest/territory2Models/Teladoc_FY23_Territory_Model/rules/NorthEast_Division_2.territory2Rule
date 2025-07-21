@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Territory2Rule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <booleanFilter>(1 AND 3) OR (2 AND 4)</booleanFilter>
+    <name>NorthEast Division 2</name>
+    <objectType>Account</objectType>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Atlantic,Bergen,Burlington,Camden,CapeMay,Cumberland,Essex,Gloucester,Hudson,Hunterdon,Mercer,Middlesex,Monmouth,Morris,Ocean,Passaic,Salem,Somerset,Sussex,Union,Warren</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Bronx,Nassau,NewYork,Orange,Putnam,Queens,Richmond,Rockland,Suffolk,Westchester</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>NJ</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>NY</value>
+    </ruleItems>
+</Territory2Rule>

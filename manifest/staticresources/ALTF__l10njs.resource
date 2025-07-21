@@ -1162,7 +1162,7 @@
 	'field_display_value_for_contact_First_Action_Details__c_c29d41c4365d23b9013673d05e8f0272' : 'TAS Index',
 	'political_analysis_msg_adding_contact' : 'Adding Org Chart Contact ....',
 	'contact_attribute_display_id_Political_Political Structure' : '#7788bb',
-	'political_analysis_import_accountplan' : 'Account Plan',
+	'political_analysis_import_accountplan' : 'Account Manager Plan',
 	'field_display_value_for_opportunity_Type_c29d41c42eebe3db012f037c7a25117c' : 'Contracted Recurring',
 	'compstrategy_warning_getdmstrategy' : 'Get Altify Recommended Strategy is not available for user selected strategy',
 	'tas_criterion_help_plus_id_c29d41c4365d242401365f52f4e004ce' : 'Yes',

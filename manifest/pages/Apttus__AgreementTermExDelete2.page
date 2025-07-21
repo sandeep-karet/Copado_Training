@@ -1,0 +1,45 @@
+<!-- 
+    Apttus Contract Management
+    AgreementTermExDelete2
+     
+    @2009-2018 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus__Agreement_Term_Exception__c"
+		   extensions="Apttus.AgreementTermExDelete2Controller" 
+		   showHeader="true" 
+		   sidebar="true" 
+		   tabStyle="Apttus__APTS_Agreement__c">
+		   
+    <apex:sectionHeader title="{!$Label.Apttus__Agreement}" />
+
+	<apex:form >
+		<!--  required fields -->
+		<apex:outputText value="{!Apttus__Agreement_Term_Exception__c.Apttus__Approval_Status__c}" rendered="false"/>
+		<apex:outputText value="{!Apttus__Agreement_Term_Exception__c.Apttus__Agreement__c}" rendered="false"/>
+		
+      	<apex:pageBlock rendered="{!NOT(isInitialized) && NOT(hasErrors)}">
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="{!$Label.Apttus__Continue}" action="{!doDelete}" />
+				<apex:commandButton value="{!$Label.Apttus__Cancel}" action="{!cancel}" immediate="true" />
+		    </apex:pageBlockButtons>
+		    <apex:pageBlockSection title="{!$Label.Apttus__DeleteAgreementTermException}" columns="2" collapsible="false">
+				<apex:outputField value="{!Apttus__Agreement_Term_Exception__c.Name}"/>
+				<apex:outputField value="{!Apttus__Agreement_Term_Exception__c.Apttus__Exception__c}"/>
+				<apex:outputField value="{!Apttus__Agreement_Term_Exception__c.Apttus__Description__c}"/>
+				<apex:outputField value="{!Apttus__Agreement_Term_Exception__c.Apttus__Approval_Status__c}"/>
+		    </apex:pageBlockSection>
+		</apex:pageBlock>
+		
+		<apex:pageBlock title="{!$Label.Apttus__PendingApprovalTermExceptions}" rendered="{!isInitialized}" >
+			<apex:pageMessages />
+			<apex:pageBlockButtons >
+				<apex:commandButton id="cmdButtonDoCancel" 
+									action="{!cancel}" 
+									value="{!$Label.Apttus__Ok}" />
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+		
+	</apex:form>
+	
+</apex:page>

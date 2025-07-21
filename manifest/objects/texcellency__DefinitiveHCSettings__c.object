@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Stores settings related to Definitive HC integration</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>texcellency__API_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unique key used to authorize access to Definitive HC API</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is a unique text string issued by Definitive HC which allows a SalesForce organization access Definitive API.</inlineHelpText>
+        <label>API Key</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>texcellency__API_URI__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Url to the DefinitiveHC API</description>
+        <label>API URI</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <label>Definitive HC Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>
