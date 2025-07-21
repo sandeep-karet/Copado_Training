@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Wizard Input Group (Deprecated)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Wizard Input Groups</value>
+    </caseValues>
+    <fields>
+        <help><!-- Signifies that the Input Group within a Step is Active. Setting Step as Active automatically activates the included Input Groups. --></help>
+        <label><!-- Active --></label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates that the input group is a repeatable instance --></help>
+        <label><!-- Repeatable --></label>
+        <name>Apttus__Repeatable__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sequence of Input Group within a step. --></help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates this is a tabular/horizontal group --></help>
+        <label><!-- Table --></label>
+        <name>Apttus__Table__c</name>
+    </fields>
+    <fields>
+        <help><!-- Input group added to a step is in Transient state till the Step is saved. --></help>
+        <label><!-- Transient --></label>
+        <name>Apttus__Transient__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the wizard step that this group belongs --></help>
+        <label><!-- Wizard Step --></label>
+        <name>Apttus__WizardStepId__c</name>
+        <relationshipLabel><!-- Wizard Input Groups --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

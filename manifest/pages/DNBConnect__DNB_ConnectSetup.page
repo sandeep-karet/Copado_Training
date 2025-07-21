@@ -1,0 +1,18 @@
+<apex:page showHeader="true" sidebar="false" docType="html">
+    <style> body { font-family: 'Arial Unicode MS'; } </style>
+    <h1>We have recently cleaned up our package (this applies to V1.67.3) and as a result, an older version of the "D&amp;B Project Setup" Visualforce (tab) has been deleted.<br/></h1>
+    <h2>To add a working D&amp;B Project Setup tab:</h2>
+    <ol>
+        <li>Go to Setup.</li>
+        <li>Type "App Manager" in the search bar.</li>
+        <li>Look for the apps named "D&amp;B Connect."</li>
+        <li>Check the developer name for both apps; it should be "DNB_Connect_Classics" and "DNB_Connect_LTNG."</li>
+        <li>Once located, on the right side, find an arrow pointing down.</li>
+        <li>Click on the arrow and select "Edit."</li>
+        <li>A page will load. On the left side, locate the tab named "Navigation Items."</li>
+        <li>Two sections will appear. In the first section, find the item named "D&amp;B Project Setup."</li>
+        <li>Select it and move it to the second section.</li>
+        <li>After doing that, click on the left arrow at the top left of the screen.</li>
+        <li>Logout and login to view your changes.</li>
+    </ol>
+</apex:page>

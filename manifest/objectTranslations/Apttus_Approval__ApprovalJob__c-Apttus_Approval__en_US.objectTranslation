@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Approval Job</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Approval Jobs</value>
+    </caseValues>
+    <fields>
+        <help><!-- The id of the chained async apex job associated with the parent job for this approval request action --></help>
+        <label><!-- Apex Child Job Id --></label>
+        <name>Apttus_Approval__ApexChildJobId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The id of the parent async apex job associated with this approval request action --></help>
+        <label><!-- Apex Parent Job Id --></label>
+        <name>Apttus_Approval__ApexParentJobId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The approval request id for which this async queueable job applies --></help>
+        <label><!-- Approval Request Id --></label>
+        <name>Apttus_Approval__ApprovalRequestId__c</name>
+        <relationshipLabel><!-- Approval Jobs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Status of the apex queueable job --></help>
+        <label><!-- Status --></label>
+        <name>Apttus_Approval__Status__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation><!-- Aborted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preparing</masterLabel>
+            <translation><!-- Preparing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queued</masterLabel>
+            <translation><!-- Queued --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

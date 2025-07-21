@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>L2O_ConcatenatewithSourceField__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Concatenate with Source Field</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L2O_PlatformEventIndicator__c</fullName>
+        <description>BA - L2O_BillingAddress_Indicator__c
+SA - L2O_ShippingAddress_Indicator__c
+OI - Object Indicator
+CUI - Client Update Indicator</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Platform Event Indicator</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BA</fullName>
+                    <default>false</default>
+                    <label>BA</label>
+                </value>
+                <value>
+                    <fullName>SA</fullName>
+                    <default>false</default>
+                    <label>SA</label>
+                </value>
+                <value>
+                    <fullName>OI</fullName>
+                    <default>false</default>
+                    <label>OI</label>
+                </value>
+                <value>
+                    <fullName>CUI</fullName>
+                    <default>false</default>
+                    <label>CUI</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>L2O_PlatformEventName__c</fullName>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Platform Event Name</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>L2O_Account_Broadcast__e</fullName>
+                    <default>false</default>
+                    <label>Account Broadcast</label>
+                </value>
+                <value>
+                    <fullName>L2O_Post_sale_Broadcast__e</fullName>
+                    <default>false</default>
+                    <label>Post-sale Broadcast</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>L2O_SourceFieldAPIName__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Source Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L2O_SourceFieldIndicator__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Source Field Indicator</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L2O_SourceObject__c</fullName>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Source Object</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>false</default>
+                    <label>Account</label>
+                </value>
+                <value>
+                    <fullName>Order</fullName>
+                    <default>false</default>
+                    <label>Order</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>L2O_TargetFieldAPIName__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Target Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Platform Event Mapping Records</label>
+    <pluralLabel>Platform Event Mapping Records</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

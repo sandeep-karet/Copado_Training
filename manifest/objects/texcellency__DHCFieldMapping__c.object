@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Defines the mapping between source entity in DefinitiveHC database onto standard or custom fields in one of the supported standard objects in Salesforce.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>texcellency__Destination__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Destination field of the standard object to which the source value is mapped.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Destination field of the standard object to which the source value is mapped.</inlineHelpText>
+        <label>Destination</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>texcellency__Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables or disables a mapping.</description>
+        <inlineHelpText>Enables or disables a mapping.</inlineHelpText>
+        <label>Enabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>texcellency__Mask__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Mask value controls when a mapping is applied to a Standard Object Record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mapping applicability is controlled by certain flags. Currently supported:
+Skip new  = 1
+Skip updating = 2
+Skip if Source != DHC = 4
+Skip if Source != DHC &amp;&amp; Field Not Empty = 8
+Turn off multiple flags by setting the Mask to sum of indiv. values</inlineHelpText>
+        <label>Mask</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>texcellency__Source__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Source field from the API entity which provides the value for the destination field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Source field from the API entity which provides the value for the destination field.</inlineHelpText>
+        <label>Source</label>
+        <length>40</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>texcellency__StdObjType__c</fullName>
+        <defaultValue>&quot;A&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates the standard object type to which this mapping applies to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates the standard object type to which this mapping applies to.
+A - Account
+C - Contact
+L - Lead
+O - Opportunity.</inlineHelpText>
+        <label>Standard Object Type</label>
+        <length>1</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>DHC Field Mapping</label>
+    <visibility>Public</visibility>
+</CustomObject>

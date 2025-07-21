@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Approvals Custom Config</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Approvals Custom Config</value>
+    </caseValues>
+    <fields>
+        <help><!-- The approval context type associated with the process for the object
+
+Valid Values are:
+=============
+Single
+Multiple --></help>
+        <label><!-- Approval Context Type --></label>
+        <name>Apttus_Approval__ApprovalContextType__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API name of the approval group status field. Only applicable to custom context objects. If not specified, defaults to &quot;Approval_Group_Status__c&quot;. --></help>
+        <label><!-- Approval Group Status Field --></label>
+        <name>Apttus_Approval__ApprovalGroupStatusField__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API name of the approval status field. Only applicable to custom context objects. If not specified, defaults to &quot;Approval_Status__c&quot;. --></help>
+        <label><!-- Approval Status Field --></label>
+        <name>Apttus_Approval__ApprovalStatusField__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the approval summary page. This will be the global default if not overridden for the approval process. --></help>
+        <label><!-- Approval Summary Page --></label>
+        <name>Apttus_Approval__ApprovalSummaryPage__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when an approval request is submitted. This will be the global default if not overridden for the approval process. --></help>
+        <label><!-- Assignment Email Template --></label>
+        <name>Apttus_Approval__AssignmentEmailTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when an asynchronous approval action has completed. This will be the global default for context objects of this type and cannot be overridden. --></help>
+        <label><!-- Async Approve Email Template --></label>
+        <name>Apttus_Approval__AsyncApproveEmailTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when an asynchronous cancel action has completed. This will be the global default for context objects of this type and cannot be overridden. --></help>
+        <label><!-- Async Cancel Email Template --></label>
+        <name>Apttus_Approval__AsyncCancelEmailTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when an asynchronous action error has occurred. This will be the global default for context objects of this type and cannot be overridden. --></help>
+        <label><!-- Async Error Email Template --></label>
+        <name>Apttus_Approval__AsyncErrorEmailTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when an asynchronous preview action has completed. This will be the global default for context objects of this type and cannot be overridden. --></help>
+        <label><!-- Async Preview Email Template --></label>
+        <name>Apttus_Approval__AsyncPreviewEmailTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when an asynchronous rejection action has completed. This will be the global default for context objects of this type and cannot be overridden. --></help>
+        <label><!-- Async Reject Email Template --></label>
+        <name>Apttus_Approval__AsyncRejectEmailTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when an asynchronous submit action has completed. This will be the global default for context objects of this type and cannot be overridden. --></help>
+        <label><!-- Async Submit Email Template --></label>
+        <name>Apttus_Approval__AsyncSubmitEmailTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of backup administrator or leave blank to use the global default. --></help>
+        <label><!-- Backup Admin User --></label>
+        <name>Apttus_Approval__BackupAdminUser__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when an approval request is cancelled. This will be the global default if not overridden for the approval process. --></help>
+        <label><!-- Cancellation Email Template --></label>
+        <name>Apttus_Approval__CancellationEmailTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The list of child object types associated with the approval process for the parent object. This list is automatically maintained by the application. --></help>
+        <label><!-- Child Object Types2 --></label>
+        <name>Apttus_Approval__ChildObjectTypes2__c</name>
+    </fields>
+    <fields>
+        <help><!-- The list of child object types associated with the approval process for the parent object. This list is automatically maintained by the application. --></help>
+        <label><!-- Child Object Types --></label>
+        <name>Apttus_Approval__ChildObjectTypes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether Adhoc Approval is enabled for this object. --></help>
+        <label><!-- Enable Adhoc Approval --></label>
+        <name>Apttus_Approval__EnableAdhocApproval__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when an approval request is escalated. This will be the global default if not overridden for the approval process. --></help>
+        <label><!-- Escalation Email Template --></label>
+        <name>Apttus_Approval__EscalationEmailTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether or not to include attachments associated with the current context object&apos;s children in the attachment selection screen when submitting for approval. --></help>
+        <label><!-- Include Child Obj Attachments For Submit --></label>
+        <name>Apttus_Approval__IncludeChildObjAttachmentsForSubmit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the My Approvals page used for showing consolidated approval requests --></help>
+        <label><!-- My Approvals Page --></label>
+        <name>Apttus_Approval__MyApprovalsPage__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when a notify only process step is executed. This will be the global default if not overridden for the approval process. --></help>
+        <label><!-- NotifyOnly Email Template --></label>
+        <name>Apttus_Approval__NotifyOnlyEmailTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Parent object reference --></help>
+        <label><!-- Parent Reference Field --></label>
+        <name>Apttus_Approval__ParentReferenceField__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Preview page used for showing consolidated approval requests preview --></help>
+        <label><!-- Preview Page --></label>
+        <name>Apttus_Approval__PreviewPage__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when an approval request is reassigned. This will be the global default if not overridden for the approval process. --></help>
+        <label><!-- Reassignment Email Template --></label>
+        <name>Apttus_Approval__ReassignmentEmailTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when an approval request needs a reminder. --></help>
+        <label><!-- Reminder Email Template --></label>
+        <name>Apttus_Approval__ReminderEmailTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, this setting shows all agreement versions from the document version details related list.  When unchecked (default) it only shows the most recent version from the document versions related list. --></help>
+        <label><!-- Show All Document Version Details --></label>
+        <name>Apttus_Approval__ShowAllDocumentVersionDetails__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked the approvals engine will query all attachments from Files instead of Notes&amp;Attachment --></help>
+        <label><!-- Use Files Instead of Notes &amp; Attachments --></label>
+        <name>Apttus_Approval__UseFilesInsteadOfNotesAndAttachments__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Ruleset (Deprecated) --></value>
+    </caseValues>
+    <fields>
+        <help>ステップ内のルールセットが有効であることを示します。自動的に有効ウィザードのデザインを設定すると含まれるルールセットを有効にします</help>
+        <label><!-- Active --></label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help>高度な数式はルール上のANDとORのオペレータの組み合わせを可能にします</help>
+        <label><!-- Advanced Expression --></label>
+        <name>Apttus__AdvancedExpression__c</name>
+    </fields>
+    <fields>
+        <help>ルールが「フォーカスオブジェクトを決定する」または「レコードタイプを決定する」タイプの場合のオブジェクト名</help>
+        <label><!-- Context Object --></label>
+        <name>Apttus__ContextObject__c</name>
+    </fields>
+    <fields>
+        <help>入力式タイプのルールのみサポート</help>
+        <label><!-- Input Response Rule Type --></label>
+        <name>Apttus__InputResponseRuleType__c</name>
+        <picklistValues>
+            <masterLabel>Input Expression</masterLabel>
+            <translation>式を入力</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>オブジェクトのレコードタイプに対応するレコードタイプ</help>
+        <label><!-- Record Type --></label>
+        <name>Apttus__RecordType__c</name>
+    </fields>
+    <fields>
+        <help>条件マッチにより決定された値</help>
+        <label><!-- Resultant Value --></label>
+        <name>Apttus__ResultantValue__c</name>
+    </fields>
+    <fields>
+        <help>実行時ウィザードフローをナビゲートするルールタイプはフォーカスオブジェクトとレコードタイプを決定します</help>
+        <label><!-- Rule Expression Rule Type --></label>
+        <name>Apttus__RuleExpressionRuleType__c</name>
+        <picklistValues>
+            <masterLabel>Determine Focus Object</masterLabel>
+            <translation>フォーカスオブジェクトを決定</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Determine Record Type</masterLabel>
+            <translation>レコードタイプを決定</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Input</masterLabel>
+            <translation>入力に進む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Step</masterLabel>
+            <translation>ステップに進む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Submit</masterLabel>
+            <translation>送信へ進む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To URL</masterLabel>
+            <translation>URLにアクセス</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next Step</masterLabel>
+            <translation>次のステップ</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>属するステップ内のルールセットの順番</help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help>このルールセットが適用されるオブジェクトレコードのサブタイプ</help>
+        <label><!-- SubRecordtype --></label>
+        <name>Apttus__SubRecordtype__c</name>
+    </fields>
+    <fields>
+        <help>現在使用されていません。 「ウィザードへ移動」タイプのルールに該当して将来のリリースで利用できるようになります</help>
+        <label><!-- Go To Wizard --></label>
+        <name>Apttus__ToWizardId__c</name>
+        <relationshipLabel><!-- Wizard Rulesets (Go To Wizard) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ルールタイプ「入力へ進む」に適用可能</help>
+        <label><!-- Go To Wizard Input Control --></label>
+        <name>Apttus__ToWizardInputControlId__c</name>
+        <relationshipLabel><!-- Wizard Rulesets (Go To Wizard Input Control) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ルールタイプ「ステップに進む」に適用できます</help>
+        <label><!-- Go To Wizard Step --></label>
+        <name>Apttus__ToWizardStepId__c</name>
+        <relationshipLabel><!-- Wizard Rulesets (Go To Wizard Step) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ステップが保存されるまでのステップに追加されたルールセットは過渡状態にあります</help>
+        <label><!-- Transient --></label>
+        <name>Apttus__Transient__c</name>
+    </fields>
+    <fields>
+        <help>ウィザード入力制御を参照</help>
+        <label><!-- Wizard Input Control --></label>
+        <name>Apttus__WizardInputControlId__c</name>
+        <relationshipLabel><!-- Wizard Rulesets (Wizard Input Control) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>このルールセットが属しているウィザードステップを参照</help>
+        <label><!-- Wizard Step --></label>
+        <name>Apttus__WizardStepId__c</name>
+        <relationshipLabel><!-- Wizard Rulesets (Wizard Step) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>このルールセットが関連するウィザード</help>
+        <label><!-- Wizard --></label>
+        <name>Apttus__Wizard__c</name>
+        <relationshipLabel><!-- Wizard Rulesets (Wizard) --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Ruleset Name --></nameFieldLabel>
+</CustomObjectTranslation>

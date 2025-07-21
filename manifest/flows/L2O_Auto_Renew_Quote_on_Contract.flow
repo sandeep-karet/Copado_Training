@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Renewal_Method</name>
+        <label>Renewal Method</label>
+        <locationX>906</locationX>
+        <locationY>262</locationY>
+        <defaultConnector>
+            <targetReference>Renewal_Quoted_Checkbox</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Same</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Fetch_Account.SBQQ__RenewalPricingMethod__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Same</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account</targetReference>
+            </connector>
+            <label>Not Same</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>To check the Status of Renewal Primary Quote.</description>
+        <name>Renewal_Primary_Quote_Status</name>
+        <label>Renewal Primary Quote Status</label>
+        <locationX>442</locationX>
+        <locationY>715</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Draft</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Renewal_Quote</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Renewal_Quote.SBQQ__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Draft</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Uncheck_Renewal_Quoted</targetReference>
+            </connector>
+            <label>Draft</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>To check if &apos;Renewal Quoted&apos; checkbox on Contract.</description>
+        <name>Renewal_Quoted_Checkbox</name>
+        <label>Renewal Quoted Checkbox</label>
+        <locationX>288</locationX>
+        <locationY>324</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Checked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__RenewalQuoted__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Renewal_Quote</targetReference>
+            </connector>
+            <label>Checked</label>
+        </rules>
+        <rules>
+            <name>Unchecked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__RenewalQuoted__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Renewal_Quoted_True</targetReference>
+            </connector>
+            <label>Unchecked</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>To check if its 60 days prior to Contract End Date.</description>
+        <name>X60_Days_prior_Contract_End_Date</name>
+        <label>60 Days prior Contract End Date</label>
+        <locationX>1096</locationX>
+        <locationY>120</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EndDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Formula_60DaysFromToday</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fetch_Account</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>To automatically create Renewal Quote 60 days prior to Contract&apos;s End Date.</description>
+    <formulas>
+        <description>To calculate 60 days from today.</description>
+        <name>Formula_60DaysFromToday</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() + VALUE ({!$Label.L2O_AutoRenewProcessSpan})</expression>
+    </formulas>
+    <interviewLabel>Auto Renew Quote on Contract {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Auto Renew Quote on Contract</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Fetch_Account</name>
+        <label>Fetch Account</label>
+        <locationX>1104</locationX>
+        <locationY>371</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Renewal_Method</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>To fetch the status of the renewal primary quote on the renewal Opp.</description>
+        <name>Get_Renewal_Quote</name>
+        <label>Get Renewal Quote</label>
+        <locationX>450</locationX>
+        <locationY>561</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Renewal_Primary_Quote_Status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SBQQ__RenewalOpportunity__r.SBQQ__PrimaryQuote__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>SBQQ__Quote__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>To automatically create the renew quote on the Renewal Opportunity.</description>
+        <name>Renewal_Quoted_True</name>
+        <label>Renewal Quoted True</label>
+        <locationX>198</locationX>
+        <locationY>567</locationY>
+        <inputAssignments>
+            <field>SBQQ__RenewalQuoted__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>To automatically create the renew quote on the Renewal Opportunity.</description>
+        <name>Renewal_Quoted_True_0</name>
+        <label>Renewal Quoted True</label>
+        <locationX>452</locationX>
+        <locationY>1081</locationY>
+        <inputAssignments>
+            <field>SBQQ__RenewalQuoted__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>To uncheck Contract field &apos;Renewal Quoted&apos; to False.</description>
+        <name>Uncheck_Renewal_Quoted</name>
+        <label>Uncheck Renewal Quoted</label>
+        <locationX>452</locationX>
+        <locationY>917</locationY>
+        <connector>
+            <targetReference>Renewal_Quoted_True_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>SBQQ__RenewalQuoted__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update Account&apos;s Renewal Pricing Method = Same.</description>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>918</locationX>
+        <locationY>566</locationY>
+        <connector>
+            <targetReference>Renewal_Quoted_Checkbox</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Fetch_Account.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>SBQQ__RenewalPricingMethod__c</field>
+            <value>
+                <stringValue>Same</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <start>
+        <locationX>544</locationX>
+        <locationY>45</locationY>
+        <connector>
+            <targetReference>X60_Days_prior_Contract_End_Date</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Activated</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SBQQ__RenewalForecast__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Contract</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2022-04-25</startDate>
+            <startTime>00:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

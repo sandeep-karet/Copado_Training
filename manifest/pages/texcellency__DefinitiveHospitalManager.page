@@ -1,0 +1,105 @@
+<apex:page StandardController="Account"
+    extensions="texcellency.AccountDefHospitalManagerExtension" action="{!initialize}">
+    <script type="text/javascript">
+        function confirmAccountDetach(){
+            return confirm('Are you sure you want to detach this account from definitive hospital?');
+        }
+    </script>
+    <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" />
+    <apex:includeScript value="{!$Resource.texcellency__defhc_client}" />
+    <apex:stylesheet value="{!$Resource.texcellency__def_styles}" />
+    <apex:form >
+        <!-- This hidden field is required to ensure that standard controller reads this field when it loads the record -->
+        <apex:inputHidden value="{!account.texcellency__DefHC_HospitalID__c}" id="theHiddenInput" />
+        <apex:pageBlock >
+            <apex:pageMessages />
+            <apex:pageblockSection title="Hospital Details" columns="1"
+                collapsible="false"
+                rendered="{!IsDefaultMode}">
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="hid">Id</apex:outputLabel>
+                    <apex:outputText value="{!hospital.id}" id="hid" />
+                </apex:pageblockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="name">Name</apex:outputLabel>
+                    <apex:outputLink value="{!hospital.dhcProfile}" id="name"
+                        target="_blank">{!hospital.name}</apex:outputLink>
+                </apex:pageBlockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="city">City</apex:outputLabel>
+                    <apex:outputText value="{!hospital.hqCity}" id="city" />
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="address">Address</apex:outputLabel>
+                    <apex:outputText value="{!hospital.address}" id="address" />
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="State">State</apex:outputLabel>
+                    <apex:outputText value="{!hospital.state}" id="state" />
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="web">Web Site</apex:outputLabel>
+                    <apex:outputLink value="http://{!hospital.webSite}" id="web"
+                        target="_blank">{!hospital.webSite}</apex:outputLink>
+                </apex:pageblockSectionItem>
+                </apex:pageBlockSection>
+                <!--
+                <apex:outputPanel styleClass="stdTableContainer"
+                    layout="block" 
+                rendered="{!IsImportExecMode}">
+                    <apex:pageblockSection title="Hospital Executives" columns="1"
+                        collapsible="false"
+                        rendered="{!IsImportExecMode}"
+                        showHeader="false">
+                            <apex:pageBlockTable value="{!defContacts}" var="ex" styleClass="checkAllContainer">
+                                <apex:column StyleClass="{!ex.cssClass}">
+                                    <apex:facet name="header">
+                                        <input type="checkbox" id="executiveList_CheckAll" class="checkAllHeader" />
+                                    </apex:facet>
+                                    <apex:inputCheckbox value="{!ex.checked}" styleClass="checkAllRow" />
+                                </apex:column>
+                                <apex:column value="{!ex.dexc.id}" rendered="true" StyleClass="{!ex.cssClass}" />
+                                <apex:column headerValue="Name" value="{!ex.dexc.execname}"
+                                    StyleClass="{!ex.cssClass}" />
+                                <apex:column headerValue="Title" value="{!ex.dexc.title}"
+                                    StyleClass="{!ex.cssClass}" />
+                                <apex:column headerValue="Email" value="{!ex.dexc.email}"
+                                    StyleClass="{!ex.cssClass}" />
+                                <apex:column headerValue="Phone" value="{!ex.dexc.phone}"
+                                    StyleClass="{!ex.cssClass}" />
+                            </apex:pageBlockTable>
+                    </apex:pageblockSection>
+                </apex:outputPanel>
+                -->
+                <apex:pageBlockSection title="Confirm updating account with latest data" columns="1"
+                    collapsible="false"
+                    rendered="{!IsUpdateAccountNowMode}">
+                <p>Confirm updating this account with latest data from Definitive Healthcare database</p>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons location="both" > 
+                    <apex:CommandButton action="{!EnableImportExecMode}"
+                        value="Open Contact Manager" rendered="{!IsDefaultMode}" />
+
+                    <apex:CommandButton action="{!EnableUpdateAccountNowMode}"
+                        value="Refresh Data Now" rendered="{!IsDefaultMode}"/>
+                        
+                    <apex:CommandButton action="{!UpdateAccountNow}"
+                        value="Refresh Data Now" rendered="{!IsUpdateAccountNowMode}"/>
+                    <!--    
+                    <apex:CommandButton action="{!importSelectedExecs}"
+                        value="Import Selected Executives" rendered="{!(IsImportExecMode && !IsForceImportExecMode)}" />
+                        
+                    <apex:CommandButton action="{!forcedImportSelectedExecs}"
+                        value="Forced Import Selected Executives" rendered="{!(IsImportExecMode && IsForceImportExecMode)}" />
+                    -->
+                    <apex:CommandButton action="{!goBackToAccount}"
+                        value="Return to Account Details" rendered="{!IsDefaultMode}"/>
+                        
+                    <apex:CommandButton action="{!detachAccount}" onClick="return confirmAccountDetach();"
+                        value="Detach Account" rendered="{!IsDefaultMode}"/>
+
+                    <apex:CommandButton action="{!cancel}" value="Cancel" rendered="{!!IsDefaultMode}" />
+                </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Office 365 Review Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Office 365 Review Details</value>
+    </caseValues>
+    <fields>
+        <help><!-- URL to download the uploaded document --></help>
+        <label><!-- Download URL --></label>
+        <name>Apttus__DownloadURL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stores errors from Office 365. --></help>
+        <label><!-- Exception --></label>
+        <name>Apttus__Exception__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sharable link to the Office 365 document to send to reviewers --></help>
+        <label><!-- File Link --></label>
+        <name>Apttus__FileLink__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status type of the Office 365 review cycle --></help>
+        <label><!-- Office 365 Status Type --></label>
+        <name>Apttus__Office365StatusType__c</name>
+        <picklistValues>
+            <masterLabel>Review</masterLabel>
+            <translation><!-- Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ReviewCancel</masterLabel>
+            <translation><!-- ReviewCancel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ReviewEnd</masterLabel>
+            <translation><!-- ReviewEnd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upload</masterLabel>
+            <translation><!-- Upload --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Status of the Office 365 review cycle --></help>
+        <label><!-- Office 365 Status --></label>
+        <name>Apttus__Office365Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In-Progress</masterLabel>
+            <translation><!-- In-Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Review Cycle lookup --></help>
+        <label><!-- Review Cycle --></label>
+        <name>Apttus__ReviewCycleId__c</name>
+        <relationshipLabel><!-- Office 365 Review Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- File Id of the uploaded document --></help>
+        <label><!-- Upload File Id --></label>
+        <name>Apttus__UploadFileId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Upload URL of Office 365 --></help>
+        <label><!-- Upload URL --></label>
+        <name>Apttus__UploadURL__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

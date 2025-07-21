@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.L2O_Bookings_Total__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>CDF1</field>
+    </columns>
+    <currency>USD</currency>
+    <customDetailFormulas>
+        <calculatedFormula>CASE(STAGE_NAME, &quot;Prospect&quot;, 0, &quot;Discovery&quot;, 0.2*Opportunity.L2O_Bookings_Total__c, 
+&quot;Proposal&quot;,0.25*Opportunity.L2O_Bookings_Total__c,
+&quot;Review/Negotiation&quot;, 0.55*Opportunity.L2O_Bookings_Total__c,
+&quot;Contracting&quot;, 0.7*Opportunity.L2O_Bookings_Total__c,
+&quot; Closed won&quot;,Opportunity.L2O_Bookings_Total__c,Opportunity.L2O_Bookings_Total__c)</calculatedFormula>
+        <dataType>Double</dataType>
+        <developerName>CDF1</developerName>
+        <label>Booking Forcast</label>
+        <scale>2</scale>
+    </customDetailFormulas>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.L2O_Channel_Segment__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Hospital &amp; Health System (HHS)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Prospect,Discovery,Proposal,Review/Negotiation,Contracting,Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.L2O_Sub_Channel_Segment__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,Downmarket,Labor,Signature,East Net New Sales,West Net New Sales,East Client Sales,ASO,Federal,East,West,Aetna,Blues,United,Strategic Partnerships,TPA/Reseller,Employer,HSG,DTE - Client Management,West Client Sales,Canada,Hospital &amp; Health System (HHS)</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>STAGE_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>TERR2_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.L2O_Channel_Segment__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Forecast Summary</name>
+    <params>
+        <name>terr</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>team</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CURRENTQ</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,54 @@
+<!-- 
+    Apttus DocuSign API 
+    CMDocuSignManageEnvelope
+       
+    @2010-2020 Apttus Inc. All rights reserved.
+ -->
+<apex:page controller="Apttus_CMDSign.CMDocuSignManageEnvelopeController" showHeader="true" sidebar="true" tabStyle="Apttus__APTS_Agreement__c" action="{!init}" docType="html-5.0">
+
+<style>
+    #eSign_processing {
+        margin-top: 100px;
+        padding-bottom: 50%;
+        padding-left: 40%;
+        vertical-align: middle;
+        z-index: 1;
+     }
+	 #add_user_recipient {
+         position: unset ;
+         margin-left: 15px;
+     }
+    .logainImage { 
+        width: 25;
+        height: 25;
+        padding-left: 10px; 
+        vertical-align:middle;
+     }
+     .processing_finalize_text {
+        padding-left: 10px;
+        font-size: 18px;
+        font-family: proxima-nova, sans-serif;
+        font-weight: lighter;
+        vertical-align: middle;
+     }
+</style>
+
+<script type="text/javascript">
+    onload();
+</script>
+
+    <Apttus_DocuApi:DocuSignManageEnvelope id="idDocuSignManageEnvelopeComponent"  pageController="{!this}" rendered="{!((!oneClickSend) && ISNULL(errorLabel))}"/>
+    <Apttus_DocuApi:DocuSignManageEnvelope id="idDocuSignManageEnvelopeComponent1"  pageController="{!this}" rendered="{!oneClickSend && !isConsent}"/>
+    <apex:form >
+        <apex:actionfunction name="onload" action="{!singleClickSend}" rerender="processing_msg" rendered="{!oneClickSend && isConsent && batchMode}"/>
+        <apex:actionfunction name="onload" action="{!singleClickSend}" rerender="processing_msg" rendered="{!oneClickSend && isConsent && !batchMode}" oncomplete="checkStatusSynchronous();"/>
+        <apex:actionFunction name="checkStatusSynchronous" action="{!checkJobStatus}" rerender="processing_msg" />
+        <div id="eSign_processing">
+        <apex:outputPanel id="processing_msg" rendered="{!(oneClickSend || NOT(ISNULL(errorLabel))) && isConsent}">
+            <apex:image id="eSign_processing" value="{!URLFOR($Resource.Apttus_DocuApi__Image_LoadingPage)}" styleClass="logainImage"/>
+            <apex:outputText value="{!$Label.Apttus_DocuApi__ProcessingDocumentsHeader}" styleClass="processing_finalize_text" />
+        </apex:outputPanel>
+        <apex:actionPoller action="{!checkJobStatus}" interval="5" id="status_poller" rendered="{!(oneClickSend && isConsent && batchMode) || NOT(ISNULL(errorLabel))}" />
+        </div>
+    </apex:form>
+</apex:page>

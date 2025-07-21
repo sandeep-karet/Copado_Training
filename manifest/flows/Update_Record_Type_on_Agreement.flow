@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Copy_1_of_Record_Type_Name_Assignment</name>
+        <label>Copy 1 of Record Type Name Assignment</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>RecordTypeName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_the_Record_Type.DeveloperName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>If_Agreement_Name_Update_Required</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Record_Type_Name_Assignment</name>
+        <label>Record Type Name Assignment</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>RecordTypeName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.RecordType.DeveloperName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>If_Agreement_Name_Update_Required</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_If_Record_Type_Update_Required</name>
+        <label>Check If Record Type Update Required</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Record_Type_Name_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_record_type_update</name>
+            <conditionLogic>(1 OR 2 ) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Apttus__Status_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Authoring</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Apttus__Status_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.APTS_Agreement_Type__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_the_Record_Type</targetReference>
+            </connector>
+            <label>yes record type update</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>If_Agreement_Name_Update_Required</name>
+        <label>If Agreement Name Update Required</label>
+        <locationX>182</locationX>
+        <locationY>839</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Update_Agreement_Name</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Apttus__Contract_Start_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Apttus__Account__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Agreement_Name</targetReference>
+            </connector>
+            <label>Yes Update Agreement Name</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>AgreementName</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!$Record__Prior.Name}, &apos;Amended&apos;), (LEFT({!$Record.Apttus__Account__r.Name},50)
++ &apos;-&apos; +
+CASE({!RecordTypeName},&apos;A3rd_Party_Agreements&apos;, &apos;3PA&apos;,
+&apos;BAA_StandAlone&apos;, &apos;BAA&apos;, &apos;Client_Intake_Form_CCS&apos;, &apos;CCS&apos;,
+&apos;Data_Sharing_Agreement&apos;, &apos;DSA&apos;,
+&apos;Employer_Service_Agreement_Self_Service_PDF&apos;, &apos;DTE&apos;,
+&apos;Employer_Services_Agreement&apos;, &apos;DTE&apos;,
+&apos;Equipment_Schedule&apos;, &apos;ES&apos;,
+&apos;Health_Plan_Services_Agreement&apos;, &apos;HP&apos;,
+&apos;HHS_Order_Form_Agreement&apos;, &apos;HHS-OFA&apos;,
+&apos;HHS_Services_Agreement&apos;, &apos;HHS&apos;,
+&apos;Letter_of_Intent&apos;, &apos;LOI&apos;,
+&apos;Master_Lease_Agreement&apos;, &apos;MLA&apos;,
+&apos;Non_Disclosure_Agreement&apos;, &apos;NDA&apos;,
+&apos;Non_Disclosure_Agreement_Self_Service_PDF&apos;, &apos;NDA&apos;,
+&apos;Other_forms&apos;, &apos;OTH&apos;,
+&apos;Partner_Agreement&apos;, &apos;PA&apos;,
+&apos;Referral_Agreement&apos;, &apos;Ref Agmt&apos;,
+&apos;Statement_of_Work&apos;, &apos;SOW &apos;,&apos;&apos;)
++ &apos;-&apos; + TEXT(MONTH({!$Record.Apttus__Contract_Start_Date__c}))+ &quot;-&quot; + TEXT(DAY({!$Record.Apttus__Contract_Start_Date__c}))+ &quot;-&quot; + TEXT(YEAR({!$Record.Apttus__Contract_Start_Date__c}))+&quot; &quot;+&apos;Amended &apos;),
+(LEFT({!$Record.Apttus__Account__r.Name},50)
++ &apos;-&apos; +
+CASE({!RecordTypeName},&apos;A3rd_Party_Agreements&apos;, &apos;3PA&apos;,
+&apos;BAA_StandAlone&apos;, &apos;BAA&apos;, &apos;Client_Intake_Form_CCS&apos;, &apos;CCS&apos;,
+&apos;Data_Sharing_Agreement&apos;, &apos;DSA&apos;,
+&apos;Employer_Service_Agreement_Self_Service_PDF&apos;, &apos;DTE&apos;,
+&apos;Employer_Services_Agreement&apos;, &apos;DTE&apos;,
+&apos;Equipment_Schedule&apos;, &apos;ES&apos;,
+&apos;Health_Plan_Services_Agreement&apos;, &apos;HP&apos;,
+&apos;HHS_Order_Form_Agreement&apos;, &apos;HHS-OFA&apos;,
+&apos;HHS_Services_Agreement&apos;, &apos;HHS&apos;,
+&apos;Letter_of_Intent&apos;, &apos;LOI&apos;,
+&apos;Master_Lease_Agreement&apos;, &apos;MLA&apos;,
+&apos;Non_Disclosure_Agreement&apos;, &apos;NDA&apos;,
+&apos;Non_Disclosure_Agreement_Self_Service_PDF&apos;, &apos;NDA&apos;,
+&apos;Other_forms&apos;, &apos;OTH&apos;,
+&apos;Partner_Agreement&apos;, &apos;PA&apos;,
+&apos;Referral_Agreement&apos;, &apos;Ref Agmt&apos;,
+&apos;Statement_of_Work&apos;, &apos;SOW &apos;,&apos;&apos;)
++ &apos;-&apos; + TEXT(MONTH({!$Record.Apttus__Contract_Start_Date__c}))+ &quot;-&quot; + TEXT(DAY({!$Record.Apttus__Contract_Start_Date__c}))+ &quot;-&quot; + TEXT(YEAR({!$Record.Apttus__Contract_Start_Date__c}))))</expression>
+    </formulas>
+    <interviewLabel>Update Record Type on Agreement {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Record Type on Agreement</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_the_Record_Type</name>
+        <label>Get the Record Type</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_the_Agreement_Record_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Apttus__APTS_Agreement__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.APTS_Agreement_Type__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Agreement_Name</name>
+        <label>Update Agreement Name</label>
+        <locationX>50</locationX>
+        <locationY>947</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>AgreementName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_the_Agreement_Record_Type</name>
+        <label>Update the Agreement Record Type</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Copy_1_of_Record_Type_Name_Assignment</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_the_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_If_Record_Type_Update_Required</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3) OR  4 OR 5 OR 6</filterLogic>
+        <filters>
+            <field>APTS_Agreement_Type__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Apttus__Status_Category__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>In Authoring</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Apttus__Status_Category__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Request</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Apttus__Contract_Start_Date__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Apttus__Account__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Apttus__APTS_Agreement__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>RecordTypeName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

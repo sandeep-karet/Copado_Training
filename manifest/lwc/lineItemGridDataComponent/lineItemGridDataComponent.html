@@ -1,0 +1,31 @@
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+             <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+             </lightning-spinner>
+        </template>
+    </div>
+
+    <lightning-card title="">       
+        <div class="slds-p-around_medium">
+            <label title="Performance Guarantees">Performance Guarantees:</label>
+            <lightning-combobox
+            name=""
+            label=""
+            value={value}
+            placeholder="Select Performance Guaranteess"
+            options={options}
+            onchange={handleChange}></lightning-combobox>
+        </div>
+   
+        <div class="slds-p-around_medium">
+            <label title="Agreement Line Items"><b>List of Agreement Line Items</b></label></label>
+            <lightning-datatable columns={gridColumns} data={lineItemData} key-field="Id" selected-rows={preselectedRows}>
+            </lightning-datatable>
+        </div>
+        <div class="slds-p-around_medium" style="text-align: center">
+            <lightning-button variant="brand" label="Update"  onclick={handleClick} >
+            </lightning-button>
+        </div>
+    </lightning-card>    
+</template>

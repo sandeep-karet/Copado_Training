@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Wizard Design (Deprecated)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Wizard Designs</value>
+    </caseValues>
+    <fields>
+        <help><!-- Signifies that the Wizard Design is Active. Once activated, the wizard cannot be modified. --></help>
+        <label><!-- Active --></label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defaults to Wizard Design label and is used by the Wizard Runtime as the banner. --></help>
+        <label><!-- Banner Statement --></label>
+        <name>Apttus__BannerStatement__c</name>
+    </fields>
+    <fields>
+        <help><!-- Controlling the subcategory field, whose list values shall allow users to search, find, and select Wizards --></help>
+        <label><!-- Category --></label>
+        <name>Apttus__Category__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Business object context, used to filter and align inputs and steps --></help>
+        <label><!-- Context Object --></label>
+        <name>Apttus__ContextObject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of context, whether its All or Object.
+All means that any step can be used in the wizard design.
+Object means that only aligned (same object) steps can be used in the wizard design. --></help>
+        <label><!-- Context Type --></label>
+        <name>Apttus__ContextType__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Object</masterLabel>
+            <translation><!-- Object --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Provides more information for the runtime wizard user to understand the intended use of the runtime Wizard. --></help>
+        <label><!-- Description --></label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Editor View --></label>
+        <name>Apttus__EditorView__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Input Name</masterLabel>
+            <translation><!-- Input Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Input Q / S</masterLabel>
+            <translation><!-- Input Q / S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Input Response</masterLabel>
+            <translation><!-- Input Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q / S &amp; Response</masterLabel>
+            <translation><!-- Q / S &amp; Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rule Editors</masterLabel>
+            <translation><!-- Rule Editors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Step Name</masterLabel>
+            <translation><!-- Step Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Step Sequence List</masterLabel>
+            <translation><!-- Step Sequence List --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Additional field for use in search and selection --></help>
+        <label><!-- Keywords --></label>
+        <name>Apttus__Keywords__c</name>
+    </fields>
+    <fields>
+        <help><!-- The label to be used for the wizard. --></help>
+        <label><!-- Label --></label>
+        <name>Apttus__Label__c</name>
+    </fields>
+    <fields>
+        <help><!-- The page that the Wizard should drop off at when all questions are completed. Default will be the record. --></help>
+        <label><!-- Landing Page --></label>
+        <name>Apttus__LandingPage__c</name>
+    </fields>
+    <fields>
+        <help><!-- The language the runtime user speaks. --></help>
+        <label><!-- Language --></label>
+        <name>Apttus__Language__c</name>
+        <picklistValues>
+            <masterLabel>Chinese (Simplified)</masterLabel>
+            <translation><!-- Chinese (Simplified) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chinese (Traditional)</masterLabel>
+            <translation><!-- Chinese (Traditional) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dutch</masterLabel>
+            <translation><!-- Dutch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English</masterLabel>
+            <translation><!-- English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>French</masterLabel>
+            <translation><!-- French --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>German</masterLabel>
+            <translation><!-- German --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italian</masterLabel>
+            <translation><!-- Italian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japanese</masterLabel>
+            <translation><!-- Japanese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Korean</masterLabel>
+            <translation><!-- Korean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portuguese (Brazilian)</masterLabel>
+            <translation><!-- Portuguese (Brazilian) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spanish</masterLabel>
+            <translation><!-- Spanish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swedish</masterLabel>
+            <translation><!-- Swedish --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The locale the wizard runtime user will be in. --></help>
+        <label><!-- Locale --></label>
+        <name>Apttus__Locale__c</name>
+        <picklistValues>
+            <masterLabel>Chinese</masterLabel>
+            <translation><!-- Chinese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English (Canada)</masterLabel>
+            <translation><!-- English (Canada) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English (Ireland)</masterLabel>
+            <translation><!-- English (Ireland) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English (United Kingdom)</masterLabel>
+            <translation><!-- English (United Kingdom) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English (United States)</masterLabel>
+            <translation><!-- English (United States) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>German</masterLabel>
+            <translation><!-- German --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greek (Greece)</masterLabel>
+            <translation><!-- Greek (Greece) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italian</masterLabel>
+            <translation><!-- Italian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japanese</masterLabel>
+            <translation><!-- Japanese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Korean</masterLabel>
+            <translation><!-- Korean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Norwegian</masterLabel>
+            <translation><!-- Norwegian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Polish</masterLabel>
+            <translation><!-- Polish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portuguese</masterLabel>
+            <translation><!-- Portuguese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russian</masterLabel>
+            <translation><!-- Russian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spanish</masterLabel>
+            <translation><!-- Spanish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swedish</masterLabel>
+            <translation><!-- Swedish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thai</masterLabel>
+            <translation><!-- Thai --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Controls if everyone or just the owner can edit a wizard design that is not yet activated. --></help>
+        <label><!-- Owner Edits Only --></label>
+        <name>Apttus__OwnerEditsOnly__c</name>
+    </fields>
+    <fields>
+        <help><!-- Correlates to the Recordtype --></help>
+        <label><!-- Record Type --></label>
+        <name>Apttus__RecordType__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe what the runtime user can see as a help or instruction description for this wizard design. --></help>
+        <label><!-- Runtime Help Text --></label>
+        <name>Apttus__RuntimeDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Runtime Preview Optional --></label>
+        <name>Apttus__RuntimePreviewOptional__c</name>
+    </fields>
+    <fields>
+        <help><!-- This launches a Wizard runtime instance. --></help>
+        <label><!-- Runtime --></label>
+        <name>Apttus__Runtime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Dependent on the category field, whose list values shall allow users to search, find, and select Wizard designs --></help>
+        <label><!-- Subcategory --></label>
+        <name>Apttus__Subcategory__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is a subtype of the recordtype. --></help>
+        <label><!-- Subtype --></label>
+        <name>Apttus__Subtype__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Apttus__Type__c</name>
+        <picklistValues>
+            <masterLabel>Rule</masterLabel>
+            <translation><!-- Rule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Step</masterLabel>
+            <translation><!-- Step --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Version number (counter) of wizard design. This identifies the wizard design uniquely in the chronology of creation. --></help>
+        <label><!-- Version --></label>
+        <name>Apttus__Version__c</name>
+    </fields>
+    <fields>
+        <help><!-- The first step of the wizard design used in all runtime instances --></help>
+        <label><!-- Wizard Start Step --></label>
+        <name>Apttus__WizardStepStartId__c</name>
+        <relationshipLabel><!-- Wizard Designs --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

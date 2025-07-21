@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Document Version Detail --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Document Finder Field Set --></label>
+        <name>Apttus__DocumentFinderFieldSet</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Agreement --></label>
+        <name>Agreement__c</name>
+        <relationshipLabel><!-- Document Version Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The action which created the version --></help>
+        <label>操作</label>
+        <name>Apttus__Action2__c</name>
+        <picklistValues>
+            <masterLabel>Check In</masterLabel>
+            <translation><!-- Check In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create Offline Agreement</masterLabel>
+            <translation><!-- Create Offline Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Generate Agreement</masterLabel>
+            <translation><!-- Generate Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Import Offline Agreement</masterLabel>
+            <translation><!-- Import Offline Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regenerate Agreement</masterLabel>
+            <translation><!-- Regenerate Agreement --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Comments --></help>
+        <label>コメント</label>
+        <name>Apttus__Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the associated content --></help>
+        <label>コンテンツ</label>
+        <name>Apttus__ContentId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Content Version Id to be populated in the case of file storage (Not used for attachment) --></help>
+        <label><!-- ContentVersion --></label>
+        <name>Apttus__ContentVersionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Action --></label>
+        <name>Apttus__DocumentAction__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional document information --></help>
+        <label>ドキュメント情報</label>
+        <name>Apttus__DocumentInfo__c</name>
+        <picklistValues>
+            <masterLabel>Clean</masterLabel>
+            <translation><!-- Clean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final</masterLabel>
+            <translation><!-- Final --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Redlines</masterLabel>
+            <translation><!-- Redlines --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Document Version this record is part of --></help>
+        <label>ドキュメントバージョン</label>
+        <name>Apttus__DocumentVersionId__c</name>
+        <relationshipLabel>ドキュメントバージョン詳細</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- File size of the associated content --></help>
+        <label><!-- File Size --></label>
+        <name>Apttus__FileSize__c</name>
+    </fields>
+    <fields>
+        <help><!-- fileType of content id --></help>
+        <label><!-- FileType --></label>
+        <name>Apttus__FileType__c</name>
+    </fields>
+    <fields>
+        <help><!-- This flag is set to true for document send for signature manually. --></help>
+        <label><!-- Is Sent for Manual Signature --></label>
+        <name>Apttus__IsSentForManualSignature__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates a transient version. A new version is in transient state until the document is successfully attached to the version. Workflow rules should check this field to test for false before firing. --></help>
+        <label>一時的</label>
+        <name>Apttus__IsTransient__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the parent document version id from where this version is derived --></help>
+        <label>祖先</label>
+        <name>Apttus__ParentDocumentVersionDetailId__c</name>
+        <relationshipLabel>ドキュメントバージョン詳細</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Associated PDF Document Id --></help>
+        <label><!-- PDF Document Id --></label>
+        <name>Apttus__PdfDocumentId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of Review Cycles Pending. --></help>
+        <label><!-- Pending Reviews --></label>
+        <name>Apttus__PendingReviews__c</name>
+    </fields>
+    <fields>
+        <help><!-- Document tags --></help>
+        <label>タグ</label>
+        <name>Apttus__Tags__c</name>
+    </fields>
+    <fields>
+        <help><!-- Template version that was used to generate this document --></help>
+        <label>テンプレートバージョン</label>
+        <name>Apttus__TemplateVersionId__c</name>
+        <relationshipLabel>ドキュメントバージョン詳細</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The title of the document version --></help>
+        <label>タイトル</label>
+        <name>Apttus__Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Risk Score of Insights on a document --></help>
+        <label><!-- Total Insight Score --></label>
+        <name>Apttus__TotalInsightScore__c</name>
+    </fields>
+    <fields>
+        <help><!-- Major version --></help>
+        <label>バージョンメジャー</label>
+        <name>Apttus__VersionMajor__c</name>
+    </fields>
+    <fields>
+        <help><!-- Minor version --></help>
+        <label>バージョンマイナー</label>
+        <name>Apttus__VersionMinor__c</name>
+    </fields>
+    <fields>
+        <help><!-- Revision version --></help>
+        <label>バージョン改訂内容</label>
+        <name>Apttus__VersionRevision__c</name>
+    </fields>
+    <fields>
+        <help><!-- View the associated content --></help>
+        <label>表示</label>
+        <name>Apttus__View__c</name>
+    </fields>
+    <nameFieldLabel><!-- Name --></nameFieldLabel>
+</CustomObjectTranslation>

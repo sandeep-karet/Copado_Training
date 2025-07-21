@@ -1,0 +1,99 @@
+<apex:page standardController="Account" extensions="texcellency.AccountListHierarchyManagerExtension"
+recordSetVar="accounts"
+action="{!initialize}">
+    <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" />
+    <apex:includeScript value="{!$Resource.texcellency__defhc_client}" />
+    <apex:stylesheet value="{!$Resource.texcellency__def_styles}" />
+	<apex:form >
+		<apex:pageBlock rendered="{!!UpdateCompleted}" title="Select Accounts to Set the Parents">
+			<apex:pageMessages />
+			<apex:pageBlockSection title="Action summary" collapsible="false" columns="1">
+				<apex:outputText value="Total number of accounts selected for processing: {0}">
+					<apex:param value="{!TotalTargets}" />
+				</apex:outputText>
+				<apex:outputText rendered="{!(ToBeSkipped > 0)}" value="Number of accounts to be skipped: {0}">
+					<apex:param value="{!ToBeSkipped}" />
+				</apex:outputText>
+				<apex:outputText rendered="{!(ToBeAssigned > 0)}" value="Number of accounts to be assigned an exsiting account as parent: {0}">
+					<apex:param value="{!ToBeAssigned}" />
+				</apex:outputText>
+				<apex:outputText rendered="{!(ToBeImportedAndAssigned > 0)}" value="Number of accounts to be assigned a parent by importing: {0}">
+					<apex:param value="{!ToBeImportedAndAssigned}" />
+				</apex:outputText>
+				<apex:outputText rendered="{!(ToBeReplaced > 0)}" value="Number of accounts to be assigned a new parent account: {0}">
+					<apex:param value="{!ToBeReplaced}" />
+				</apex:outputText>
+				<apex:outputText rendered="{!(ToBeImportedAndReplaced > 0)}" value="Number of accounts to be assigned a new parent account: {0}">
+					<apex:param value="{!ToBeImportedAndReplaced}" />
+				</apex:outputText>
+			</apex:pageBlockSection>	
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!updateAccountHierarchy}" rendered="{!(EligibleAccountsFound && !UpdateCompleted)}" value="Set Account Parents" onclick="return dhc.validateMasterCheckboxes();" />
+				<apex:commandButton rendered="{!(EligibleAccountsFound && !UpdateCompleted)}" action="{!cancel}" value="Cancel" />
+				<apex:commandButton rendered="{!(UpdateCompleted || !EligibleAccountsFound)}" action="{!goBack}" value="Go Back" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection title="Action Parameters" rendered="{!(EligibleAccountsFound && !UpdateCompleted)}" collapsible="false" columns="1"> 
+				<apex:pageblockSectionItem >
+	                <apex:outputLabel for="importMissing">Import missing parent accounts from DHC</apex:outputLabel>
+	                <apex:inputCheckbox value="{!importMissingParents}" id="importMissing" styleClass="dhc-master-checkbox" html-data-master-for=".dhc-hierarchy-importandassign:checked,.dhc-hierarchy-importandreplace:checked" html-data-master-message="You have selected some accounts to be imported from DHC. Please select 'Import missing parent accounts from DHC' for this to succeed or unselect the rows with action 'ImportAndAssign' or 'ImportAndReplace'." />
+	            </apex:pageblockSectionItem>
+				<apex:pageblockSectionItem >
+	                <apex:outputLabel for="replaceExisting">Replace existing parents</apex:outputLabel>
+	                <apex:inputCheckbox value="{!ReplaceIncorrectParents}" id="replaceExisting" styleClass="dhc-master-checkbox" html-data-master-for=".dhc-hierarchy-replace:checked,.dhc-hierarchy-importandreplace:checked" html-data-master-message="You have selected some account parents to be replaced with new Accounts. Please select 'Replace existing parents' for this to succeed or unselect the rows with action 'Replace' or 'ImportAndReplace'."/>
+	            </apex:pageblockSectionItem>
+			</apex:pageBlockSection>
+			<apex:pageBlockTable rendered="{!(EligibleAccountsFound && !UpdateCompleted)}" value="{!WrappedList}" var="w" styleClass="checkAllContainer">
+	                <apex:column StyleClass="{!w.cssClass}" style="width:5%;">
+	                    <apex:facet name="header">
+	                        <input type="checkbox" id="accountList_CheckAll" class="checkAllHeader" />
+	                    </apex:facet>
+	                    <apex:inputCheckbox value="{!w.checked}" styleClass="checkAllRow {!w.ActionCssClass}"  />
+	                </apex:column>
+					<apex:column StyleClass="{!w.cssClass}" style="width:23%;">
+						<apex:outputLink value="/{!w.Acct.ID}" target="childProfile">
+							<apex:outputText value="{!left(w.Acct.Name, 60)}">
+							</apex:outputText>
+						</apex:outputLink>
+					</apex:column>
+					<apex:column StyleClass="{!w.cssClass}" value="{!w.HospitalID}" headerValue="Hospital ID" style="width:10%;"/>
+					<apex:column StyleClass="{!w.cssClass}" value="{!w.NetworkID}" headerValue="Network ID"  style="width:10%;"/>
+					<apex:column StyleClass="{!w.cssClass}" style="width:23%;" headerValue="Current Parent">
+						<apex:outputLink value="/{!w.CurrentParent.ID}" target="childProfile">
+							<apex:outputText value="{!left(w.CurrentParent.Name, 60)}">
+							</apex:outputText>
+						</apex:outputLink>
+					</apex:column>
+					<apex:column StyleClass="{!w.cssClass}" style="width:24%;" headerValue="Proposed Parent">
+						<apex:outputLink value="/{!w.ProposedParent.ID}" target="childProfile">
+							<apex:outputText value="{!left(w.ProposedParent.Name, 60)}">
+							</apex:outputText>
+						</apex:outputLink>
+					</apex:column>
+					<apex:column StyleClass="{!w.cssClass}" value="{!w.TargetAction}" headerValue="Action"  style="width:5%;"/>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+		<apex:pageBlock rendered="{!UpdateCompleted}" title="Update summary">
+			<apex:pageBlockSection columns="1">
+				<apex:outputText rendered="{!(SuccessCount != 0)}" value="Successfully updated {0} account(s).">
+					<apex:param value="{!SuccessCount}" />
+				</apex:outputText>
+				<apex:outputText rendered="{!(FailedCount > 0)}" value="Failed to update {0} account(s).">
+					<apex:param value="{!FailedCount}" />
+				</apex:outputText>
+				<apex:outputText rendered="{!(SkippedCount > 0)}" value="Skipped {0} account(s).">
+					<apex:param value="{!SkippedCount}" />
+				</apex:outputText>
+				<apex:outputText rendered="{!(ImportedCount != null)}" value="Imported {0} account(s) from Definitive Database.">
+					<apex:param value="{!ImportedCount}" />
+				</apex:outputText>
+				<apex:outputText rendered="{!(ImportFailureCount > 0)}" value="{0} account(s) failed to import from Definitive Database.">
+					<apex:param value="{!ImportFailureCount}" />
+				</apex:outputText>
+			</apex:pageBlockSection>	
+			<apex:pageMessages />
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!goBack}" value="Go Back" />
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

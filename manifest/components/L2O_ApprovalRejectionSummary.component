@@ -1,0 +1,73 @@
+<!-- This Component is for Approval and Rejection Email Template -->
+<!-- L2O_ApprovalController is the controller class for this component -->
+<apex:component access="global" controller="L2O_ApprovalController">
+    <!-- quoteIdValue contains the quote Id, for which Email Template needs to be sent. -->
+    <apex:attribute name="quoteIdValue" type="String" description="This is the Id of the quote" assignTo="{!quoteId}" access="global" />
+    <!-- quoteStatusValue contains the status, for which Email Template needs to be sent. -->
+    <apex:attribute name="quoteStatusValue" type="String" description="This is the status of the quote" access="global" />
+    
+    <!-- If Quote status is approved below code is executed. -->
+    <apex:outputPanel rendered="{!if(quoteStatusValue=='Approved' , true ,false)}">
+        <!-- Approval Date is Today's date, lastApprovedBy contains value of the approver who approved the record last -->
+        <p><b>Approval Date: </b>{!Today()}, <b>Last Approved By: </b>{!lastApprovedBy}</p>
+    	<table class="table" border="1" style="border-collapse: separate">
+            <thead>    
+                 <!-- Table Headers for Approval -->
+                <tr>
+                    <th>Approver</th> 
+                    <th>Approval chain</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>        
+            <tbody>
+                <tr>
+                        <!-- Iterate over the listofapprovalRecords -->
+                    <apex:repeat value="{!listofapprovalRecords}" var="approvalRecord">   
+                        <!-- approvalRecord variable contains approval record -->
+                     	<tr>
+                            <!-- Approved by Name -->
+                        	<td>{!approvalRecord.sbaa__ApprovedBy__r.Name}</td>
+                            <!-- Approval Chain Name -->
+                            <td>{!approvalRecord.sbaa__ApprovalChain__r.Name}</td>
+                            <!-- Approval Comments -->
+                            <td>{!approvalRecord.sbaa__CommentsLong__c}</td> 
+                        </tr>
+                       </apex:repeat>                                             
+                </tr>           
+            </tbody>   
+    	</table>
+   </apex:outputPanel>
+    
+    <!-- If Quote status is Denied below code is executed. -->
+    <apex:outputPanel rendered="{!if(quoteStatusValue=='Denied' , true ,false)}">
+        <!-- Approval Date is Today's date, lastRejectedBy contains value who rejected the record -->
+    	<p><b>Rejected Date: </b>{!Today()}, <b>Rejected By: </b>{!lastRejectedBy}</p>
+    	<table class="table" border="1" style="border-collapse: separate">
+        <thead> 
+            <!-- Table Headers for Rejection -->
+            <tr>
+                <th>Rejected by</th> 
+                <th>Approval chain</th>
+                <th>Comments</th>
+            </tr>
+        </thead>        
+            <tbody>
+                <tr>
+                     <!-- Iterate over the listOfRejectionRecords -->
+                    <apex:repeat value="{!listOfRejectionRecords}" var="rejectionRecord">   
+                        <!-- rejectionRecord variable contains rejection record -->
+                         <tr>
+                              <!-- Rejected By Name -->
+                             <td>{!rejectionRecord.sbaa__RejectedBy__r.Name}</td>
+                              <!-- Approval Chain Name -->
+                             <td>{!rejectionRecord.sbaa__ApprovalChain__r.Name}</td>
+                              <!-- Rejection Comments -->
+                             <td>{!rejectionRecord.sbaa__CommentsLong__c}</td> 
+                         </tr>
+                    </apex:repeat>                                             
+                </tr>           
+            </tbody>   
+    	</table>
+</apex:outputPanel>
+    
+</apex:component>

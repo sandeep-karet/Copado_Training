@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Rollup Helper Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Rollup Helper Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- If Advanced Currency Management is enabled in your organization select this check box. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Advanced_Currency__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Advanced Currency Management is enabled in your organization select this check box. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Advanced_Currency_del__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, Rollup Helper will attempt to update converted leads (the update may or may not succeed depending this org&apos;s configurations). This option is off by default.
+The converted leads are identified by the &quot;isConverted&quot; system field. --></help>
+        <label><!-- Attempt to Update Converted Leads --></label>
+        <name>rh2__Attempt_to_Update_Converted_Leads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Agent Id --></label>
+        <name>rh2__Batch_Agent_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this setting is checked, Rollup Helper will update recurring Event and Task records individually through batch jobs. If this setting is unchecked, Rollup Helper will attempt to update recurring Event and Task records in bulk. Enable this setting if multiple Events or Tasks of the same recurrence type (e.g. Recurs Daily, Recurs Monthly, etc.) are targeted by a rollup. --></help>
+        <label><!-- Process Recurring Activities In Batches --></label>
+        <name>rh2__Batch_Process_Recurring_Activities__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of records per batch when a data load is performed in the environment.  Will not need to be adjusted unless the smallest number of records per batch you use when loading data in your environment is below 200. --></help>
+        <label><!-- Data Load Batch Size --></label>
+        <name>rh2__Data_Load_Batch_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checking this field prevents Rollup Helper exception emails from being forwarded to our developers. --></help>
+        <label><!-- Developer Exception Email Opt Out --></label>
+        <name>rh2__DeveloperExceptionEmailOptOut__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Advanced Currency Management is disabled in your organization select this check box. --></help>
+        <label><!-- Disable Advanced Currency --></label>
+        <name>rh2__Disable_Advanced_Currency__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, automatic processes will not update the running user for Rollup Helper. --></help>
+        <label><!-- Disable Auto Changes to Running User --></label>
+        <name>rh2__Disable_Auto_Running_User_Changes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box if you do not want to recalculate currency rollups after a change in a child record&apos;s CurrencyIsoCode field --></help>
+        <label><!-- Disable Currency Update Recalculation --></label>
+        <name>rh2__Disable_Currency_Update_Recalculation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box to disable rollup auditing. --></help>
+        <label><!-- Disable Rollup Auditing --></label>
+        <name>rh2__Disable_Rollup_Auditing__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, the Rollup Helper Exception Monitor will send hourly emails containing exceptions generated within the last hour. If unchecked, the Rollup Helper Exception Monitor will send an email once daily containing exceptions generated within the last day. --></help>
+        <label><!-- Enable Hourly Exception Emails --></label>
+        <name>rh2__EnableHourlyExceptionEmails__c</name>
+    </fields>
+    <fields>
+        <help><!-- This will help to prevent record locks caused by multiple rollups attempting to update the same object at the same time. --></help>
+        <label><!-- Enable Single Parent Processing --></label>
+        <name>rh2__Enable_Single_Parent_Processing__c</name>
+    </fields>
+    <fields>
+        <help><!-- To enable Rollup Helper updates to be excluded from a Validation Rule add &apos;&amp;&amp; $Setup.rh2__PS_Settings__c.rh2__Run_Validation_Rule__c&apos; at the end of the contents of the Error Condition Formula section of a validation rule. --></help>
+        <label><!-- Enable Validation Rule Helper --></label>
+        <name>rh2__Enable_Validation_Rule_Helper__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of days that exceptions should be saved for before being cleaned up by Rollup Helper.  The default value is 2 days. --></help>
+        <label><!-- Exception Lifespan --></label>
+        <name>rh2__Exception_Lifespan__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this is unchecked, scheduled jobs will only run at the top of the hour (HH:00).  If this is checked, scheduled jobs can be run at 5 minute intervals (HH:00, HH:05, HH:10, etc.). --></help>
+        <label><!-- Granular Scheduled Jobs --></label>
+        <name>rh2__Granular_Scheduled_Jobs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this field to remove non-essential processing such as filtering out fields that don&apos;t need to be updated. Leave this unchecked to have rollups only process when a change is made to the source field and no fields used in the rollup were updated. --></help>
+        <label><!-- Limit Pre Processing --></label>
+        <name>rh2__Limit_Pre_Processing__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is deprecated. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Limit_Processing_During_Data_Load__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of batch jobs that Rollup Helper can initiate concurrently.  We recommend that the total number of jobs available between Batch, Future, and Queueable is at least 30 concurrent jobs available to Rollup Helper. --></help>
+        <label><!-- Max Concurrent Batch Processes --></label>
+        <name>rh2__MaxBatch__c</name>
+    </fields>
+    <fields>
+        <help><!-- The maximum number of exception records that get created when errors are encountered during rollup runs. The default number of exceptions is 10,000. --></help>
+        <label><!-- Max Exception Records --></label>
+        <name>rh2__MaxExceptions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Future method calls that Rollup Helper can initiate concurrently.  We recommend that the total number of jobs available between Batch, Future, and Queueable is at least 30 concurrent jobs available to Rollup Helper. --></help>
+        <label><!-- Max Concurrent Future Processes --></label>
+        <name>rh2__MaxFuture__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Queueable jobs that Rollup Helper can initiate concurrently.  We recommend that the total number of jobs available between Batch, Future, and Queueable is at least 30 concurrent jobs available to Rollup Helper. --></help>
+        <label><!-- Maximum Jobs Added to the Queue --></label>
+        <name>rh2__MaxQueueable__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of batches to initiate concurrently. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Max_Batch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Future method calls to initiate concurrently. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Max_Future__c</name>
+    </fields>
+    <fields>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Parent_Sync_Job_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Premium_Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checking this field prevents the Realtime Enablement pop up from displaying when saving a new Rollup Helper setting. --></help>
+        <label><!-- Realtime Enablement Opt Out --></label>
+        <name>rh2__RealtimeEnablementOptOut__c</name>
+    </fields>
+    <fields>
+        <help><!-- Maximum number of records to process per asynchronous job with Rollup Helper.  This impacts the number of async calls needed to complete an asynchronous transaction.  Best to be a multiple of 5, default value is 400. --></help>
+        <label><!-- Record Scope --></label>
+        <name>rh2__RecordScope__c</name>
+    </fields>
+    <fields>
+        <help><!-- Maximum number of records to process asynchronously with Rollup Helper.  This impacts the number of batch / future methods will be called in order to process your entire set of records to complete an asynchronous transaction.  Best to be a multiple of 5. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Record_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this setting is checked, new rollups will not be automatically activated upon creation. --></help>
+        <label><!-- Rollup Inactive Upon Creation --></label>
+        <name>rh2__Rollup_Inactive_Upon_Creation__c</name>
+    </fields>
+    <fields>
+        <help><!-- This setting modifies the number of rollups processed per asynchronous job request.  This should generally be set to the highest count of rollups which share the same source object, target object, and filter. --></help>
+        <label><!-- Rollups Per Asynchronous Request --></label>
+        <name>rh2__Rollups_Per_Async__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, the realtime disable script may be used to temporarily turn off rollups.  For more details, please contact support@passagetech.com. --></help>
+        <label><!-- Allow Disable Realtime By Script --></label>
+        <name>rh2__Run_Realtime_Rollup__c</name>
+    </fields>
+    <fields>
+        <help><!-- LEAVE THIS OPTION CHECKED --></help>
+        <label><!-- Run Validation Rule --></label>
+        <name>rh2__Run_Validation_Rule__c</name>
+    </fields>
+    <fields>
+        <help><!-- The sort direction to be used on the all rollups page. This value is set per user after sorting a column on the all rollups page. --></help>
+        <label><!-- Sort Direction --></label>
+        <name>rh2__SortDirection__c</name>
+    </fields>
+    <fields>
+        <help><!-- The sort direction to be used on the all rollups page. This value is set per user after sorting a column on the all rollups page. --></help>
+        <label><!-- Sort Field --></label>
+        <name>rh2__SortField__c</name>
+    </fields>
+    <fields>
+        <label><!-- Static Asynchronous Processing Enabled? --></label>
+        <name>rh2__Static_Asynchronous_Processing_Enabled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Run All Local Tests on Trigger Creation? --></label>
+        <name>rh2__Trigger_Deployments_Run_Tests__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines the percentage of package specific limit usage at which Rollup Helper should switch to asynchronous processing.  It is generally not recommended to lower this value below 60%, and the default is 90%. --></help>
+        <label><!-- Usage % of Limits --></label>
+        <name>rh2__Usage_of_Limits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines the percentage of query row limit usage Rollup Helper should use when retrieving child records. Lowering this setting may impact rollup accuracy, so it is recommended to keep this setting at or close to 100%. The default value is 100%. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Usage_of_Row_Limits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines the percentage of shared limit usage at which Rollup Helper should switch to asynchronous processing.  It is generally not recommended to lower this value below 60%, and the default is 90%. --></help>
+        <label><!-- Usage Shared % of Limits --></label>
+        <name>rh2__Usage_of_Shared_Limits__c</name>
+    </fields>
+    <fields>
+        <help><!-- When unchecked (by default), rollups will use the static rate for non-opp target objs; otherwise, use the dated currency rate, decided by each child record&apos;s date field (this date field can be selected under per rollup&apos;s advanced settings). --></help>
+        <label><!-- Use Dated Conversion Rates For Non Opps --></label>
+        <name>rh2__UseDatedConversionRatesForNonOpps__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, this setting causes Rollup Helper to automatically run rollup queries for validation purposes each time a rollup is created or edited. --></help>
+        <label><!-- Validate Rollup Query --></label>
+        <name>rh2__ValidateRollup__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rollup Helper will send an email to the specified email address daily with a summary of exceptions that have occurred (no emails will be sent if this field is not populated). --></help>
+        <label><!-- Email To Send Exceptions --></label>
+        <name>rh2__emailToSendExceptions__c</name>
+    </fields>
+    <fields>
+        <help><!-- This checkbox will cause Rollup Helper to only process queued asynchronous requests for the user that initiated the asynchronous request. Enabling this setting may be necessary if there are parent objects that have custom field-level security checks or have field-level security checks from a third-party managed package. --></help>
+        <label><!-- Process Queue Items Based On Modified By --></label>
+        <name>rh2__runAsModifyingUserOnly__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this is checked, Enable Validation Helper will be active during asynchronous processing.  Disable if frequent row lock errors have been encountered by Rollup Helper asynchronous jobs. --></help>
+        <label><!-- Allow Validation Helper During Async --></label>
+        <name>rh2__validationHelperDuringAsync__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

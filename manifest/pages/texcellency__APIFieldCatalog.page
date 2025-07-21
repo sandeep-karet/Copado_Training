@@ -1,0 +1,28 @@
+<apex:page controller="texcellency.APIFieldCatalogController" showHeader="true" sidebar="true" action="{!initialize}">
+	<apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" />
+    <apex:includeScript value="{!$Resource.texcellency__defhc_client}" />
+    <apex:stylesheet value="{!$Resource.texcellency__def_styles}" />
+	<apex:pageBlock >
+		<apex:pageMessages />
+		<apex:pageBlockSection columns="3">
+		<apex:pageBlockSection title="Hospital Entity Fields" collapsible="false">
+			<apex:pageBlockTable value="{!HospitalFields}" var="f">
+				<apex:column headerValue="Field Name" value="{!f.Name}" />
+				<apex:column headerValue="Data Type" value="{!f.Type}" />
+			</apex:pageBlockTable>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection title="Executive Entity Fields" collapsible="false">
+			<apex:pageBlockTable value="{!ExecutiveFields}" var="f">
+				<apex:column headerValue="Field Name" value="{!f.Name}" />
+				<apex:column headerValue="Data Type" value="{!f.Type}" />
+			</apex:pageBlockTable>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection title="RFP Entity Fields" collapsible="false">
+			<apex:pageBlockTable value="{!RFPFields}" var="f">
+				<apex:column headerValue="Field Name" value="{!f.Name}" />
+				<apex:column headerValue="Data Type" value="{!f.Type}" />
+			</apex:pageBlockTable>
+		</apex:pageBlockSection>
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+</apex:page>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This is a generic template for Custom Object.  With this template, you may adjust the default elements and values and add new elements and values.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Apttus_DocuApi__AccessTokenTimeStamp__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Time stamp of last refreshed access token, Do not update system use only.</inlineHelpText>
+        <label>Access Token Time Stamp</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__AccessToken__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Encrypted docusign access token. Do not update, system use only.</inlineHelpText>
+        <label>Access Token</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__ContactLookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Contact Lookup System only user.(For contact search to get Email and Title) as recipient</description>
+        <label>Contact Lookup</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>DocuSignUsers</relationshipLabel>
+        <relationshipName>DocuSignUsersContactLookup</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__CurrentSyncJobState__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Docusign envelope status sync job state.</description>
+        <inlineHelpText>Docusign envelope status sync job state.</inlineHelpText>
+        <label>CurrentSyncJobState</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>WAITING</fullName>
+                    <default>false</default>
+                    <label>WAITING</label>
+                </value>
+                <value>
+                    <fullName>COMPLETE</fullName>
+                    <default>false</default>
+                    <label>COMPLETE</label>
+                </value>
+                <value>
+                    <fullName>EXECUTING</fullName>
+                    <default>false</default>
+                    <label>EXECUTING</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__Default__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This DocuSign is credential is will be used as default OAuth info to handle SFDC Organization wide needs</description>
+        <inlineHelpText>This DocuSign is credential is will be used as default OAuth info to handle SFDC Organization wide needs</inlineHelpText>
+        <label>Default</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__DocuSignAccountId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>DocuSign Account Id from DocuSign System</description>
+        <externalId>false</externalId>
+        <inlineHelpText>DocuSign Account Id from DocuSign System</inlineHelpText>
+        <label>DocuSign Account Id</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__DocuSignEmailAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email Address form DocuSign system</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email Address form DocuSign system</inlineHelpText>
+        <label>DocuSign Email Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__DocuSignServerEnvironment__c</fullName>
+        <defaultValue>&quot;PROD&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>DocuSign Server Environment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>DocuSign Server Environment</inlineHelpText>
+        <label>DocuSign Server Environment</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__DocuSignUserName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>User name from DocuSign system</description>
+        <externalId>false</externalId>
+        <inlineHelpText>User name from DocuSign system</inlineHelpText>
+        <label>DocuSign User Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__LastCompletedEnvelopeSyncTime__c</fullName>
+        <deprecated>false</deprecated>
+        <description>DateTime to keep track of the last Successful Sync of Completed Envelopes
+System use only not to be used on Layout</description>
+        <inlineHelpText>System use only not to be used on Layout</inlineHelpText>
+        <label>Last Sync Completed Envelope Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__LastEnvelopeStatusSyncTime__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field is used by Apttus system internal to keep track of DocuSign status sync</description>
+        <inlineHelpText>Field is used by Apttus system internal to keep track of DocuSign status sync</inlineHelpText>
+        <label>Last Envelope Status Sync Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__LastRecipientStatusSyncTime__c</fullName>
+        <deprecated>false</deprecated>
+        <description>DateTime to keep track of the last Successful Sync of Envelopes Recipient status System use only not to be used on Layout</description>
+        <inlineHelpText>DateTime to keep track of the last Successful Sync of Envelopes Recipient status System use only not to be used on Layout</inlineHelpText>
+        <label>Last Recipient Status Sync Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__LastSyncTime__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field is used by Apttus system internal to keep track of DocuSign data sync</description>
+        <inlineHelpText>Field is used by Apttus system internal to keep track of DocuSign data sync</inlineHelpText>
+        <label>Last Sync Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__OauthData__c</fullName>
+        <deprecated>false</deprecated>
+        <description>DocuSign OAuth Data as JSON. I can be used with only Integrator Key from Apttus.</description>
+        <inlineHelpText>DocuSign OAuth Data as JSON. I can be used with only Integrator Key from Apttus.</inlineHelpText>
+        <label>OAuth Data</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__SyncStatusMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>DocuSign sync status message : Apttus system internal use only</description>
+        <inlineHelpText>DocuSign sync status message : Apttus system internal use only</inlineHelpText>
+        <label>Sync Status Message</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The user who is registered/ Entered credential with DocuSign system</description>
+        <inlineHelpText>The user who is registered/ Entered credential with DocuSign system</inlineHelpText>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>DocuSignUsers</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>DocuSign User</label>
+    <listViews>
+        <fullName>Apttus_DocuApi__All</fullName>
+        <columns>Apttus_DocuApi__Default__c</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>Apttus_DocuApi__User__c</columns>
+        <columns>Apttus_DocuApi__DocuSignEmailAddress__c</columns>
+        <columns>Apttus_DocuApi__DocuSignUserName__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Custom Object Label Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>DocuSign Users</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

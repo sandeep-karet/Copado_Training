@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Defines the mapping between source entity in DefinitiveHC database onto standard or custom fields in one of the supported standard objects in Salesforce.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>texcellency__Destination__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Standard or custom field name on Account object to which the value in Source field will be copied.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Standard or custom field name on Account object to which the value in Source field will be copied.</inlineHelpText>
+        <label>Destination Field</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>texcellency__Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if a mapping is enabled or not. If a mapping is disabled, source value will not be copied into the destination field during a sync or copy data operation.</description>
+        <inlineHelpText>Indicates if a mapping is enabled or not. If a mapping is disabled, source value will not be copied into the destination field during a sync or copy data operation.</inlineHelpText>
+        <label>Enabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>texcellency__Source__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the source field in DefinitiveHC database entity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the source field in DefinitiveHC database entity.</inlineHelpText>
+        <label>Source Field</label>
+        <length>40</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>DHC Account Field Mapping</label>
+    <visibility>Public</visibility>
+</CustomObject>

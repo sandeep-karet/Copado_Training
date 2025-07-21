@@ -1,0 +1,53 @@
+<!-- 
+    Conga Approvals
+    AgreementApprovalSummarySf1
+     
+    @2010-2021 Conga Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus_Approval__Approval_Request__c"
+           extensions="Apttus_Approval.AgreementApprovalSummaryController"
+           tabstyle="Apttus_Approval__Approval_Request__c"
+           showHeader="false"
+           sidebar="false"
+           standardStylesheets="false"
+           docType="html-5.0">
+        
+    <script type="text/javascript" src="/soap/ajax/55.0/connection.js"></script>
+    <script type="text/javascript" src="/soap/ajax/55.0/apex.js"></script>
+    
+    <apex:include pageName="Apttus_Approval__ApprovalsJSLibInclude" />
+    
+    <apex:includescript value="{!URLFOR($Resource.Apttus_Approval__JQuery22, 'jquery-2.2.2.js')}" />
+    <apex:includescript value="{!URLFOR($Resource.Apttus_Approval__JQueryUI112, 'jquery-ui-1.12.1.js')}" />
+
+    <apex:stylesheet value="{!URLFOR($Resource.Apttus_Approval__JQueryUI112, 'jquery-ui-1.12.1.css')}" />
+    <apex:stylesheet value="{!$Resource.Apttus_Approval__ApprovalsGlobalCSS}" />
+    <apex:stylesheet value="{!$Resource.Apttus_Approval__ApprovalsSf1CSS}" />
+
+    <apex:sectionHeader title="{!$Label.Apttus_Approval__ApprovalRequest} - Sf1" 
+                        subtitle="{!$ObjectType.Apttus__APTS_Agreement__c.Label} {!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Name}"/>
+    
+    <apex:pageBlock title="{!$ObjectType.Apttus__APTS_Agreement__c.Label} {!$Label.Apttus_Approval__Information}">
+        
+        <apex:pageBlockSection columns="1">
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Account__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.OwnerId}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Description__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__FF_Agreement_Number__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Status_Category__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Status__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Contract_Start_Date__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Contract_End_Date__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Total_Contract_Value__c}" />
+            <p/>&nbsp;
+        </apex:pageBlockSection>
+        
+        <apex:include pageName="Apttus_Approval__ApprovalActionSf1" />
+        
+    </apex:pageBlock>
+    
+    <apex:include pageName="Apttus_Approval__ApprovalRequestsListSf1"/>
+        
+</apex:page>

@@ -1,0 +1,44 @@
+<apex:page controller="mkto_si.StreamServiceController" action="{!doAction}" contentType="application/x-javascript; charset=utf-8" showHeader="false" standardStylesheets="false" sidebar="false">
+
+  <div>
+    <div class="lead-feed-content">
+      <div class="mkt-lead-feed-cards">
+        <apex:dataList value="{!streamList.listItemsPage}" var="item" styleClass="mkt-lead-feed-cards-list">
+          <div>
+            <div class="mkt-lead-feed-card-header">
+              <div>
+                <div class="mkt-lead-feed-card-contact-name">
+                  <apex:outputLink onclick="Marketo.actionStart();" target="_blank" value="{!item.contactLink.url}" rendered="{!item.contactLink.url != null}" styleClass="mkt-lead-feed-card-contact-name-link">{!item.contactLink.name}</apex:outputLink>
+                  <apex:outputText value="{!item.contactLink.name}" rendered="{!(item.contactLink.url == null)}" />
+                </div>
+                <div class="mkt-lead-feed-card-account-name">
+                  <apex:outputLink value="{!item.accountLink.url}" target="_blank" rendered="{!item.accountLink.url != null}" styleClass="mkt-lead-feed-card-account-name-link">{!item.accountLink.name}</apex:outputLink>
+                  <apex:outputText value="{!item.accountLink.name}" rendered="{!(item.accountLink.url == null)}"/>
+                </div>
+              </div>
+              <div class="mkt-lead-feed-card-image-container">
+                <apex:image value="{!$Resource.mkto_si__web}/mkto/images/icon-starfire.svg" styleClass="mkt-lead-feed-card-priority-icon" />
+              </div>
+            </div>
+            <div class="mkt-lead-feed-card-data">
+              <div class="mkt-lead-feed-card-data-text">
+                <apex:outputText value="{!item.momentType}: " rendered="{!(item.momentType != null)}"/>
+                <apex:outputText value="{!item.momentNote}" rendered="{!(item.momentNote != null)}"/>
+              </div>
+              <div class="mkt-lead-feed-card-image-container">
+                <apex:outputLink charset="utf-8" value="{!item.subscribeLinkUrl}" target="_blank" rendered="{!(item.subscribeLinkUrl != null)}" styleClass="mkt-lead-feed-card-subscribe"
+                onclick="AdobeAnalytics.prepareEventData('salesforce1-mobile-marketo-global-tab','User','LFS', 'lead-feed-subscribe'); AdobeAnalytics.trackEvents();">
+                  <apex:image value="{!$Resource.mkto_si__web}/mkto/images/icon-lead-feed-subscribe.svg" styleClass="mkt-lead-feed-card-subscribe-icon"/>
+                </apex:outputLink>
+              </div>
+            </div>
+            <div class="mkt-lead-feed-card-footer">
+              <apex:outputText value="{!item.sMomentDT}"/>
+            </div>
+          </div>
+        </apex:dataList>
+      </div>
+    </div>
+    <div class="mkt-tabs-message mkt-show-{!streamList.resultSize == 0}">{!$Label.mkto_si__Lead_Feed_Empty_Message}</div>
+  </div>
+</apex:page>

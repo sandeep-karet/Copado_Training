@@ -1,0 +1,24 @@
+<apex:page controller="mkto_si.MseActionController"
+  standardStylesheets="false"
+  sidebar="false"
+>
+  <c:CssAndJavascript2 cssOnly="true"/>
+
+  <div class="mkto">
+    <div>
+      <!-- Page Messages -->
+      <div class="mkt-page-messages">
+        <c:MktPageMessage severity="warning"
+          summary="{!$Label.mkto_si__no_msi_plus_access_message}"
+          rendered="{!!msiPlusPlusEnabled}"
+        />
+      </div>
+    </div>
+  </div>
+  <apex:outputPanel rendered="{!msiPlusPlusEnabled}">
+    <apex:iframe src="{!salesOutboxURL}" scrolling="true" id="marketoSalesOutbox" height="800"/>
+  </apex:outputPanel>
+  <apex:outputPanel styleClass="msc-empty-illustration" rendered="{!!msiPlusPlusEnabled}" layout="block">
+    <apex:image styleClass="msc-empty-illustration-img" value="{!$Resource.mkto_si__web}/mkto/images/empty-illustration.png"/>
+  </apex:outputPanel>
+</apex:page>

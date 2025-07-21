@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Wizard Ruleset (Deprecated)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Wizard Rulesets</value>
+    </caseValues>
+    <fields>
+        <help><!-- Signifies that the Ruleset within a step is Active. Setting Wizard Design as Active automatically activates the included rulesets. --></help>
+        <label><!-- Active --></label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Advanced expression that allows combination of AND and OR operators on rules. --></help>
+        <label><!-- Advanced Expression --></label>
+        <name>Apttus__AdvancedExpression__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the object when the rule is of type &apos;Determine Focus Object&apos; or &apos;Determine Record Type&apos; --></help>
+        <label><!-- Context Object --></label>
+        <name>Apttus__ContextObject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Supports only rule of type &apos;Input Expression&apos; --></help>
+        <label><!-- Input Response Rule Type --></label>
+        <name>Apttus__InputResponseRuleType__c</name>
+        <picklistValues>
+            <masterLabel>Input Expression</masterLabel>
+            <translation><!-- Input Expression --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Record type that corresponds to the record types for the object --></help>
+        <label><!-- Record Type --></label>
+        <name>Apttus__RecordType__c</name>
+    </fields>
+    <fields>
+        <help><!-- The value that is determined by the condition being met. --></help>
+        <label><!-- Resultant Value --></label>
+        <name>Apttus__ResultantValue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rule types that can be used for navigating the runtime wizard flow, determining the focus object and record type. --></help>
+        <label><!-- Rule Expression Rule Type --></label>
+        <name>Apttus__RuleExpressionRuleType__c</name>
+        <picklistValues>
+            <masterLabel>Determine Focus Object</masterLabel>
+            <translation><!-- Determine Focus Object --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Determine Record Type</masterLabel>
+            <translation><!-- Determine Record Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Input</masterLabel>
+            <translation><!-- Go To Input --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Step</masterLabel>
+            <translation><!-- Go To Step --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Submit</masterLabel>
+            <translation><!-- Go To Submit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To URL</masterLabel>
+            <translation><!-- Go To URL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next Step</masterLabel>
+            <translation><!-- Next Step --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Sequence of the ruleset within the step it belongs to. --></help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- The subtype of object record this ruleset applies to --></help>
+        <label><!-- SubRecordtype --></label>
+        <name>Apttus__SubRecordtype__c</name>
+    </fields>
+    <fields>
+        <help><!-- Not currently used. Will be available in a future release, applicable to rule type &apos;Go To Wizard&apos;. --></help>
+        <label><!-- Go To Wizard --></label>
+        <name>Apttus__ToWizardId__c</name>
+        <relationshipLabel><!-- Wizard Rulesets (Go To Wizard) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Applicable to rule type &apos;Go To Input&apos;. --></help>
+        <label><!-- Go To Wizard Input Control --></label>
+        <name>Apttus__ToWizardInputControlId__c</name>
+        <relationshipLabel><!-- Wizard Rulesets (Go To Wizard Input Control) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Applicable to rule type &apos;Go To Step&apos;. --></help>
+        <label><!-- Go To Wizard Step --></label>
+        <name>Apttus__ToWizardStepId__c</name>
+        <relationshipLabel><!-- Wizard Rulesets (Go To Wizard Step) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Ruleset added to a step is in Transient state till the Step is saved. --></help>
+        <label><!-- Transient --></label>
+        <name>Apttus__Transient__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Wizard Input Control --></help>
+        <label><!-- Wizard Input Control --></label>
+        <name>Apttus__WizardInputControlId__c</name>
+        <relationshipLabel><!-- Wizard Rulesets (Wizard Input Control) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Wizard Step this ruleset belongs to --></help>
+        <label><!-- Wizard Step --></label>
+        <name>Apttus__WizardStepId__c</name>
+        <relationshipLabel><!-- Wizard Rulesets (Wizard Step) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Wizard this Ruleset is related to --></help>
+        <label><!-- Wizard --></label>
+        <name>Apttus__Wizard__c</name>
+        <relationshipLabel><!-- Wizard Rulesets (Wizard) --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

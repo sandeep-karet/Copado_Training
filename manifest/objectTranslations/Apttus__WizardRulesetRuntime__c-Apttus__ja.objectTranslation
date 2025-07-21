@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Ruleset Runtime (Deprecated) --></value>
+    </caseValues>
+    <fields>
+        <help><!-- Name of the focus object if one is determined by this ruleset. If none is determined, this value would be null. --></help>
+        <label>フォーカスオブジェクト名</label>
+        <name>Apttus__FocusObjectName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Record Type if one is determined by this ruleset. If none is determined, this value would be null. --></help>
+        <label>レコードタイプ名</label>
+        <name>Apttus__RecordTypeName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference/Lookup to wizard ruleset --></help>
+        <label>ウィザードルールセット</label>
+        <name>Apttus__WizardRulesetId__c</name>
+        <relationshipLabel>ウィザードルールセット実行時</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference/Lookup to wizard step runtime --></help>
+        <label>ウィザードステップ実行時</label>
+        <name>Apttus__WizardStepRuntimeId__c</name>
+        <relationshipLabel>ウィザードルールセット実行時</relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Wizard Ruleset Runtime Name --></nameFieldLabel>
+</CustomObjectTranslation>

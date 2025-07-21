@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Wizard</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Wizards</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Wizard Runtime View Fieldset --></label>
+        <name>Apttus__WizardRuntimeViewFieldset</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Action (DEPRECATED) --></label>
+        <name>Apttus__Action__c</name>
+    </fields>
+    <fields>
+        <help><!-- Context record this wizard record is associated with --></help>
+        <label><!-- Context Id --></label>
+        <name>Apttus__ContextId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Context type this wizard record is associated with --></help>
+        <label><!-- Context Type --></label>
+        <name>Apttus__ContextType__c</name>
+    </fields>
+    <fields>
+        <help><!-- External id --></help>
+        <label><!-- External Id --></label>
+        <name>Apttus__ExternalId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of this wizard runtime --></help>
+        <label><!-- Status --></label>
+        <name>Apttus__Status__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation><!-- Aborted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the user who submitted this runtime --></help>
+        <label><!-- Submitted By --></label>
+        <name>Apttus__SubmittedById__c</name>
+        <relationshipLabel><!-- Wizards --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to wizard design --></help>
+        <label><!-- Wizard Design --></label>
+        <name>Apttus__WizardDesignId__c</name>
+        <relationshipLabel><!-- Wizards --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,21 @@
+<template>
+    <div if:true={isLoading} style="height: 300px; position:relative">
+      <lightning-spinner variant="brand" size="medium"></lightning-spinner>
+    </div>
+    <div if:false={isLoading}>
+      <lightning-quick-action-panel header="Opportunity Unlock">
+        <div class="slds-align_absolute-center">
+          <lightning-icon icon-name="utility:unlock" alternative-text="Unlock" title="Unlock"></lightning-icon>
+        </div>
+        <br/>
+        <p class="slds-text-heading--small">Attention!  Implementation has already started on this opportunity.  Unlocking this opportunity will cause Subscriptions, Assets, and PSF records to be deleted in LCRM and will cause disruption in the implementation process.</p>
+        <div class="slds-grid slds-wrap slds-align_absolute-center">
+          <p class="slds-text-heading--medium slds-text-color_error"><br/>DO YOU WISH TO CONTINUE?<br/></p>
+        </div>     
+        <div slot="footer">
+          <lightning-button variant="neutral" label="Cancel" onclick={handleCancel}></lightning-button>
+          <lightning-button variant="brand" label="YES" onclick={handleYes} class="slds-m-left_x-small"></lightning-button>
+        </div>
+      </lightning-quick-action-panel>
+    </div>
+  </template>

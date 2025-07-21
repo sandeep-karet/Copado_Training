@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Comply System Properties</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Comply System Properties</value>
+    </caseValues>
+    <fields>
+        <help><!-- Indicates whether the most recent attachment is auto selected --></help>
+        <label><!-- Auto Select Attachment ? --></label>
+        <name>Apttus_CMDSign__AutoSelectAttachment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Allows projects to specify a list of recipients that will be defaulted for the eSignature. 
+To use this option, projects will add &quot;DocuSign Default Recipients&quot; related list on the Agreement and user will specify the list for each Agreement --></help>
+        <label><!-- Auto-Select multiple recipients? --></label>
+        <name>Apttus_CMDSign__AutoSelectMultipleRecipients__c</name>
+    </fields>
+    <fields>
+        <help><!-- RESERVED: Run Docusign eSignature Strict more where this will disable buttons for Select Attachments / Recipeints --></help>
+        <label><!-- eSignature Strict Mode --></label>
+        <name>Apttus_CMDSign__ESignatureStrictMode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable document preview in DocuSign Application ? --></help>
+        <label><!-- Enable Document Preview in DocuSign App --></label>
+        <name>Apttus_CMDSign__EnableDocumentPreviewInDocuSign__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API Name of the field which holds the value for the recipient to auto select --></help>
+        <label><!-- Auto Select Recipient Field --></label>
+        <name>Apttus_CMDSign__FieldNameAutoSelectRecipient__c</name>
+    </fields>
+    <fields>
+        <help><!-- Filter the related/sibling/parent/child agreements by the status category/status values of the primary agreement i.e. agreement being sent for eSignature. This setting is used only when the &quot;Select Attachments From Related/Sibling&quot; setting is checked. --></help>
+        <label><!-- Filter RSPC By Primary Agreement Status --></label>
+        <name>Apttus_CMDSign__FilterRSPCByPrimaryAgreementStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this to send for eSignature directly from the Agreement page, by auto including the recipients from the default recipient list/OR from the field defined under the custom setting field &quot;Auto Select Recipient Field&quot;, and auto selecting the first doc. --></help>
+        <label><!-- One Click Send --></label>
+        <name>Apttus_CMDSign__OneClickSend__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, all the attachments listed on the user interface will be selected. --></help>
+        <label><!-- Select All Attachments --></label>
+        <name>Apttus_CMDSign__SelectAllAttachments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether attachments will be selected from related, sibling, parent and child agreements --></help>
+        <label><!-- Select Attachments From Related/Sibling --></label>
+        <name>Apttus_CMDSign__SelectAttachmentsFromRSPCAgreements__c</name>
+    </fields>
+    <fields>
+        <help><!-- Update the selected related/sibling/parent/child agreement status category/status values along with primary agreement i.e. the agreement being sent for eSignature. This setting is used when the &quot;Select Attachments From Related/Sibling&quot; setting is checked. --></help>
+        <label><!-- Update RSPC Agreement Status --></label>
+        <name>Apttus_CMDSign__UpdateRSPCAgreementStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- The admin user is the default owner of activities created by a user who is not allowed to be the owner (for e.g. customer portal user). --></help>
+        <label><!-- Admin User --></label>
+        <name>Apttus__AdminUser__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API name of the agreement number field for third party documents --></help>
+        <label><!-- Agreement Number Field For Imported Docs --></label>
+        <name>Apttus__AgreementNumberFieldForImportedDocs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the pdf selection is allowed to be overridden by the user. Only applicable when pdf is auto enabled for final documents. --></help>
+        <label><!-- Allow PDF Selection Override --></label>
+        <name>Apttus__AllowPDFSelectionOverride__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the private document selection is allowed to be overridden by the user. Only applicable when private indicator is auto enabled for documents --></help>
+        <label><!-- Allow Private Selection Override --></label>
+        <name>Apttus__AllowPrivateSelectionOverride__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the reconcile selection is allowed to be overridden by the user. Only applicable when reconciliation is auto enabled for documents. --></help>
+        <label><!-- Allow Reconcile Selection Override --></label>
+        <name>Apttus__AllowReconcileSelectionOverride__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a flag to control the UI button visibility on the XAC for regenerate --></help>
+        <label><!-- Allow Regenerate From XAC --></label>
+        <name>Apttus__AllowRegenerateFromXAC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Allows a user to link an offline document to an existing major version of a document. --></help>
+        <label><!-- Ancestor selection for Import Offline --></label>
+        <name>Apttus__AncestorSelectionForImportOffline__c</name>
+    </fields>
+    <fields>
+        <help><!-- NO LONGER USED --></help>
+        <label><!-- Api User Key (DEPRECATED) --></label>
+        <name>Apttus__ApiUserKey__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a recipient role (Contract Owner, Logged in XAC user or Both) to receive Asynchronous Check-in email notification. --></help>
+        <label><!-- Asynchronous Checkin Recipient --></label>
+        <name>Apttus__AsynchronousCheckinRecipient__c</name>
+    </fields>
+    <fields>
+        <help><!-- Default value of the Asynchronous Check-in checkbox available on the X-Author Contracts Check-in pop-up window. --></help>
+        <label><!-- Auto Enable Asynchronous Checkin --></label>
+        <name>Apttus__AutoEnableAsynchronousCheckin__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether PDF format is auto enabled for final documents --></help>
+        <label><!-- Auto Enable PDF For Final Docs --></label>
+        <name>Apttus__AutoEnablePDFForFinalDocs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether private indicator is auto enabled for documents --></help>
+        <label><!-- Auto Enable Private Indicator --></label>
+        <name>Apttus__AutoEnablePrivateIndicator__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether reconciliation is auto enabled for documents --></help>
+        <label><!-- Auto Enable Reconciliation --></label>
+        <name>Apttus__AutoEnableReconciliation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicator to allow automatic placement of Agreement number in the header and last modified timestamp in the footer of the document for generate, offline and import actions. --></help>
+        <label><!-- Auto Insert Header Footer Data --></label>
+        <name>Apttus__AutoInsertHeaderFooterData__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bypass Sharing --></label>
+        <name>Apttus__BypassSharing__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the contract summary template. --></help>
+        <label><!-- Contract Summary Template --></label>
+        <name>Apttus__ContractSummaryTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Default set of document tags to be used during check-in from X-Author. Tags are comma separated values. --></help>
+        <label><!-- Default Document Tags --></label>
+        <name>Apttus__DefaultDocumentTags__c</name>
+    </fields>
+    <fields>
+        <help><!-- The default owner for the agreement created from an opportunity. Valid values are Opportunity Owner and Current User. If not set, the Opportunity Owner will become the owner of the new agreement --></help>
+        <label><!-- Default Opportunity Agreement Owner --></label>
+        <name>Apttus__DefaultOpportunityAgreementOwner__c</name>
+    </fields>
+    <fields>
+        <help><!-- You may apply your own naming convention to documents at generation, check-in and signature events, by defining a string of delimited variables, in the format %VarName1%_%VarName 2% … The default value is &apos;%:Name%_%action%_%templatename%_%timestamp%&apos;. --></help>
+        <label><!-- Document Naming Convention --></label>
+        <name>Apttus__DocumentNamingConvention__c</name>
+    </fields>
+    <fields>
+        <help><!-- Applies FX2 framework to CM actions Create, Import Offline Documents, else Pre-FX2. Not for X-Author actions --></help>
+        <label><!-- Document Structure FX2 For Imported Docs --></label>
+        <name>Apttus__DocumentStructureFX2ForImportedDocs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Optional naming convention to be used for naming versioned documents --></help>
+        <label><!-- Document Versioning Naming Convention (D --></label>
+        <name>Apttus__DocumentVersioningNamingConvention__c</name>
+    </fields>
+    <fields>
+        <help><!-- Emails the Lite license usage report to the Apttus administrator. --></help>
+        <label><!-- Email Lite Monitoring Report to Apttus? --></label>
+        <name>Apttus__EmailLiteMonitoringReportToApttus__c</name>
+    </fields>
+    <fields>
+        <help><!-- The email template for sending checkin notifications. --></help>
+        <label><!-- Email Template For Checkin Notification --></label>
+        <name>Apttus__EmailTemplateForCheckinNotification__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether clause approvals are enabled --></help>
+        <label><!-- Enable Clause Approvals --></label>
+        <name>Apttus__EnableClauseApprovals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether a user can set field level or clause level permissions for each reviewer. --></help>
+        <label><!-- Enable document permissions for review --></label>
+        <name>Apttus__EnableDocPermissionsForReview__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enables document versioning. Make sure EnableVersionControl is set to true. --></help>
+        <label><!-- Enable Document Versioning --></label>
+        <name>Apttus__EnableDocumentVersioning__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable use of Files , It is mandatory to Run the Migration after making it true. --></help>
+        <label><!-- Enable File --></label>
+        <name>Apttus__EnableFile__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the merge service debug is enabled --></help>
+        <label><!-- Enable Merge Call Debug --></label>
+        <name>Apttus__EnableMergeCallDebug__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether multiple checkout is allowed. Only applicable when version control is in effect. --></help>
+        <label><!-- Enable Multiple Checkout --></label>
+        <name>Apttus__EnableMultipleCheckout__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether Online Contract Collaboration is enabled --></help>
+        <label><!-- Online Contract Collab (Deprecated) --></label>
+        <name>Apttus__EnableOnlineContractCollaboration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enabling pdf security lets users apply security settings to pdf documents and protect them with a password. --></help>
+        <label><!-- Enable PDF Security --></label>
+        <name>Apttus__EnablePDFSecurity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether merge calls may be submitted for processing. If enabled, a Submit button is displayed during document generation. --></help>
+        <label><!-- Enable Submit Merge Call --></label>
+        <name>Apttus__EnableSubmitMergeCall__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enables template versioning --></help>
+        <label><!-- Enable Template Versioning --></label>
+        <name>Apttus__EnableTemplateVersioning__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether version control is in effect. If enabled, checkout/check-in policy is enforced for agreement documents. --></help>
+        <label><!-- Enable Version Control --></label>
+        <name>Apttus__EnableVersionControl__c</name>
+    </fields>
+    <fields>
+        <help><!-- A comma separated list of namespaces to exclude objects from the wizard dropdown --></help>
+        <label><!-- Excluded Namespaces --></label>
+        <name>Apttus__ExcludedNamespaces__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable filtering of agreements (Related/Sibling/Parent/Child) by Status Category or Status of the primary agreement. --></help>
+        <label><!-- Filter By The Primary Agreement Status --></label>
+        <name>Apttus__FilterByThePrimaryAgreementStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- The format of the date time to place in the footer of the imported document --></help>
+        <label><!-- Footer Datetime Format For Imported Docs --></label>
+        <name>Apttus__FooterDatetimeFormatForImportedDocs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if content control border has to hidden --></help>
+        <label><!-- Hide Content Control Border --></label>
+        <name>Apttus__HideContentControlBorder__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines whether to deactivate Lite user who exceeds allowed login limit --></help>
+        <label><!-- Inactivate Non-Compliant Lite User --></label>
+        <name>Apttus__InactivateNonCompliantLiteUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instance Url --></label>
+        <name>Apttus__InstanceUrl__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether to process the signed document using intelligent import --></help>
+        <label><!-- Intelligent Import for Signed Document --></label>
+        <name>Apttus__IntelligentImportForSignedDocument__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the number of repeating child items to process in a single batch transaction --></help>
+        <label><!-- Large Doc Process Batch Size --></label>
+        <name>Apttus__LargeDocProcessBatchSize__c</name>
+    </fields>
+    <fields>
+        <help><!-- The threshold of the number of line items in the proposal when exceeded indicates a large doc. A value of -1 inactivates the threshold. --></help>
+        <label><!-- Large Doc Threshold --></label>
+        <name>Apttus__LargeDocThreshold__c</name>
+    </fields>
+    <fields>
+        <help><!-- System admin email address to send CLM Lite License Usage Monitoring Report --></help>
+        <label><!-- CLM Lite License Admin Email --></label>
+        <name>Apttus__LiteLicenceAdminEmail__c</name>
+    </fields>
+    <fields>
+        <help><!-- List of profile(s) users that will use CLM Lite Licenses. --></help>
+        <label><!-- CLM Lite License Profile(s) --></label>
+        <name>Apttus__LiteProfiles__c</name>
+    </fields>
+    <fields>
+        <help><!-- The maximum level to generate the merge data for --></help>
+        <label><!-- Max Child Level --></label>
+        <name>Apttus__MaxChildLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merge Call Timeout Millis --></label>
+        <name>Apttus__MergeCallTimeoutMillis__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merge Webservice Endpoint --></label>
+        <name>Apttus__MergeWebserviceEndpoint__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specify the display name to use from the configured organization-wide email addresses --></help>
+        <label><!-- Organization-Wide Email Address Display --></label>
+        <name>Apttus__OrganizationWideEmailAddressDisplay__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter Playbook filter names separated by commas that should inherit filter value from template properties on clicking Playbook tab in X-Author --></help>
+        <label><!-- Override Playbook default filter --></label>
+        <name>Apttus__OverridePlaybookDefaultFilter__c</name>
+    </fields>
+    <fields>
+        <help><!-- The password required to change permissions of the PDF document like printing or editing. --></help>
+        <label><!-- PDF Owner Password --></label>
+        <name>Apttus__PDFOwnerPwd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable/Disable Parallel Review for document review process --></help>
+        <label><!-- Parallel Review --></label>
+        <name>Apttus__ParallelReview__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether author events should be published. If enabled, a record is inserted in the Merge Event table. --></help>
+        <label><!-- Publish Author Events --></label>
+        <name>Apttus__PublishAuthorEvents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Publish Merge Events --></label>
+        <name>Apttus__PublishMergeEvents__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the parallel review is enabled for related agreements. --></help>
+        <label><!-- Parallel Review for related agreements --></label>
+        <name>Apttus__RelatedAgreementParallelReview__c</name>
+    </fields>
+    <fields>
+        <help><!-- List of Status category and Statuses for which Check in and Checkout actions will be restricted --></help>
+        <label><!-- Restrict Checkin of Documents --></label>
+        <name>Apttus__RestrictCheckinOfDocuments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the hours of inactivity after which a temp email template is considered abandoned. The default value is 4 hours --></help>
+        <label><!-- Temp Email Template Inactive Hours --></label>
+        <name>Apttus__TempEmailTemplateInactiveHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- Allow to delete smart element from the Word document --></help>
+        <label><!-- Unlock Smart Elements --></label>
+        <name>Apttus__UnlockSmartElements__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates agreement lock is turned on for a version-aware record on first document check-out, thereby locking all the record’s documents to that user. Lock released on all documents on first check-in. --></help>
+        <label><!-- Use Agreement Locks for Versioning --></label>
+        <name>Apttus__UseAgreementLocksForVersioning__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enabling this setting allows you to have more characters available for questions and answers in your wizards --></help>
+        <label><!-- Use text areas for wizards --></label>
+        <name>Apttus__UseLongQuestionsInWizard__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the checkbox to use an organization-wide email addresses --></help>
+        <label><!-- Use Organization-Wide Email Address --></label>
+        <name>Apttus__UseOrganizationWideEmailAddress__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide XAJS Endpoint instance url --></help>
+        <label><!-- XAJS End Point --></label>
+        <name>Apttus__XAJSEndPoint__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

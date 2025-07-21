@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Runtime (Deprecated) --></value>
+    </caseValues>
+    <fields>
+        <help>完成されたものとして、または進行中のウィザードのステータスを示します</help>
+        <label><!-- Completed --></label>
+        <name>Apttus__Completed__c</name>
+    </fields>
+    <fields>
+        <help>進行中のウィザードを続行するにはこのアクションを使用します</help>
+        <label><!-- Continue --></label>
+        <name>Apttus__Continue__c</name>
+    </fields>
+    <fields>
+        <help>完成したウィザードを確認するにはこのアクションを使用します</help>
+        <label><!-- Review --></label>
+        <name>Apttus__Review__c</name>
+    </fields>
+    <fields>
+        <help>ウィザードのデザインへの参照/検索</help>
+        <label><!-- Wizard --></label>
+        <name>Apttus__WizardId__c</name>
+        <relationshipLabel><!-- Wizard Runtime --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ウィザード実行時の自動番号（カウンタ）。これは創作の年表でウィザード実行時をユニークに識別します。</help>
+        <label><!-- Wizard Instance Number --></label>
+        <name>Apttus__WizardInstanceNumber__c</name>
+    </fields>
+    <fields>
+        <help>ステップ開始するための参照/検索</help>
+        <label><!-- Wizard Step --></label>
+        <name>Apttus__WizardStepStartId__c</name>
+        <relationshipLabel><!-- Wizard Runtime --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Wizard Runtime Name --></nameFieldLabel>
+</CustomObjectTranslation>

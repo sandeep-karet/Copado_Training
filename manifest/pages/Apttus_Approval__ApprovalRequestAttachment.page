@@ -1,0 +1,89 @@
+<!-- 
+    Conga Approvals
+    ApprovalRequestAttachment
+     
+    @2010-2021 Conga Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus_Approval__Approval_Request__c"
+		   extensions="Apttus_Approval.ApprovalRequestAttachmentController" 
+		   tabStyle="Attachment"
+		   lightningStylesheets="true">
+
+    <apex:form >
+        <apex:outputText value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Step_Name__c}" rendered="false" />
+        <apex:outputText value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Approver_Comments__c}" rendered="false" />
+        <apex:outputText value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Object_Type__c}" rendered="false" />
+        <apex:outputText value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Object_Name__c}" rendered="false" />
+        
+        <apex:sectionHeader title="Attach File" />
+        <apex:pageBlock mode="edit" id="idAttachPageBlock">
+            <apex:pageBlockSection columns="1">
+                <p />
+                <apex:outputText style="font-weight: bold;" value="{!$Label.Apttus_Approval__AttachStepOne}" /> 
+                <apex:outputText value="{!$Label.Apttus_Approval__AttachStepOneHelp}" />
+
+                <apex:pageBlockSectionItem rendered="{!usingFileTypeAttachments}">
+                    <apex:outputPanel styleClass="requiredBlock" layout="block">
+                        <apex:inputFile value="{!fileSO.VersionData}"
+                            fileName="{!fileSO.PathOnClient}" required="true" id="idFileInput" />
+                        <br />
+                        <apex:outputText value="{!errorMessage}" style="font-weight: bold; color: red" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem rendered="{!NOT(usingFileTypeAttachments)}">
+                    <apex:outputPanel styleClass="requiredBlock" layout="block">
+                        <apex:inputFile value="{!attSO.Body}"
+                            fileName="{!attSO.Name}" required="true" id="idAttInput" />
+                        <br />
+                        <apex:outputText value="{!errorMessage}" style="font-weight: bold; color: red" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <apex:outputText value="{!$Label.Apttus_Approval__Description}" /> 
+                <apex:outputPanel style="align:left">
+                    <apex:inputField value="{!fileSO.Description}" style="width:300px" rendered="{!usingFileTypeAttachments}" />
+                    <apex:inputField value="{!attSO.Description}" style="width:300px" rendered="{!NOT(usingFileTypeAttachments)}" />
+                </apex:outputPanel>
+                <p />
+                <apex:outputText style="font-weight: bold;" value="{!$Label.Apttus_Approval__AttachStepTwo}" /> 
+                <apex:outputText value="{!$Label.Apttus_Approval__AttachStepTwoHelp}" /> 
+                <apex:outputText value="{!$Label.Apttus_Approval__AttachStepTwoHelp2}" />
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel >
+                        <apex:outputText value="" />
+                        <apex:commandButton value="{!$Label.Apttus_Approval__AttachFile}" action="{!doSaveAttachment}" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <p />
+                <apex:outputText style="font-weight: bold;" value="{!$Label.Apttus_Approval__AttachStepThree}" /> 
+                <apex:outputText value="{!$Label.Apttus_Approval__AttachStepThreeHelp}" /> 
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel >
+                        <apex:outputText value="" />
+                        <apex:commandButton value="{!$Label.Apttus_Approval__Done}" action="{!doReturn}" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <p />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="{!$Label.Apttus_Approval__NewAttachments}" 
+								   rendered="{!usingFileTypeAttachments && arAttachments.size > 0}">
+                <apex:pageBlockTable value="{!arAttachments}" var="attachInfo">
+                    <apex:column headerValue="{!$Label.Apttus_Approval__Name}" value="{!attachInfo.fileSO.PathOnClient}" />
+                    <apex:column headerValue="{!$Label.Apttus_Approval__Description}" value="{!attachInfo.fileSO.Description}" />
+                    <apex:column headerValue="{!$Label.Apttus_Approval__Size}" value="{!attachInfo.fileSO.ContentSize}" />
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="{!$Label.Apttus_Approval__NewAttachments}" 
+								   rendered="{!NOT(usingFileTypeAttachments) && arAttachments.size > 0}">
+                <apex:pageBlockTable value="{!arAttachments}" var="attachInfo">
+                    <apex:column value="{!attachInfo.attachmentSO.Name}" />
+                    <apex:column value="{!attachInfo.attachmentSO.Description}" />
+                    <apex:column value="{!attachInfo.attachmentSO.BodyLength}" />
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

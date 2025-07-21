@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>mkto_si__Disabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Disabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Expiration_Days__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Expiration Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Expires__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Expires</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Log_Success__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Log Success</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Module__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Module</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Verifiable</fullName>
+                    <default>true</default>
+                    <label>Verifiable</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Integration Log Setting</label>
+    <pluralLabel>Integration Log Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

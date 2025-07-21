@@ -1,0 +1,58 @@
+<!-- 
+    Conga Contract Management
+    EmailTemplateBody
+    @2021 Conga Inc. All rights reserved.
+-->
+<apex:page >
+    <apex:form id="form">
+        <apex:inputTextarea id="txtAreaDescription" onchange="change()" styleClass="emailBody" cols="1" rows="15" richText="true"
+        />
+        <script>
+            var lexOrigin;
+            for (var i in CKEDITOR.instances) {
+                
+                CKEDITOR.instances[i].on('change', function () {
+                    let messgaeToLWC = {
+                        emailBody: CKEDITOR.instances[i].getData(),
+                        source: 'VisualForce Page'
+                    }
+                    window.parent.postMessage(messgaeToLWC, lexOrigin);
+                });
+                CKEDITOR.instances[i].on('instanceReady', function (e) {
+                    // First time
+                    var nodeList = e.editor.document.getElementsByTag('table');
+                    for (var i = 0; i < nodeList.count(); i++) {
+                        var table = nodeList.getItem(i);
+                        table.setStyle('width', '100%');
+                    }
+                    // in case the user switches to source and back
+                    e.editor.on('contentDom', function () {
+                        var nodeList = e.editor.document.getElementsByTag('table');
+                        for (var i = 0; i < nodeList.count(); i++) {
+                            var table = nodeList.getItem(i);
+                            table.setStyle('width', '100%');
+                        }
+                    });
+                });
+
+            }
+
+            window.addEventListener("message", function (event) {
+                lexOrigin = event.data.lightningURL;
+                for (var i in CKEDITOR.instances) {
+                    CKEDITOR.instances[i].setData(event.data.emailBody);
+                    let messgaeToLWC = {
+                        emailBody: 'RECEIVED',
+                        source: 'VisualForce Page'
+                    }
+                    window.parent.postMessage(messgaeToLWC, lexOrigin);
+                }
+            }, false);
+
+
+        </script>
+
+    </apex:form>
+
+
+</apex:page>
