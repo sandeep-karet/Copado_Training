@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Rule (Deprecated) --></value>
+    </caseValues>
+    <fields>
+        <help>ルールセット内のルールが有効であることを示します。ウィザードデザインを有効化すると自動的に含まれるルールを有効化します</help>
+        <label><!-- Active --></label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help>他のルールと組み合わせて使用​​する方法はどうするか</help>
+        <label><!-- Boolean Operator --></label>
+        <name>Apttus__BooleanOperator__c</name>
+        <picklistValues>
+            <masterLabel>AND</masterLabel>
+            <translation><!-- AND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OR</masterLabel>
+            <translation><!-- OR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>式の制約で使用される比較演算子は「等しい」「含まれる」「で開始する」などです</help>
+        <label><!-- Comparison Operator --></label>
+        <name>Apttus__ComparisonOperator__c</name>
+        <picklistValues>
+            <masterLabel>contains</masterLabel>
+            <translation>次の文字列を含む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>does not contain</masterLabel>
+            <translation>次の文字列を含まない</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>does not end with</masterLabel>
+            <translation>で終了しない</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>does not start with</masterLabel>
+            <translation>で開始しない</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ends with</masterLabel>
+            <translation>で終了</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>equal to</masterLabel>
+            <translation>次の文字列と一致する</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>excludes</masterLabel>
+            <translation>次の値を含まない</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>greater than</masterLabel>
+            <translation>＞</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>greater than or equal to</masterLabel>
+            <translation>＞＝</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>includes</masterLabel>
+            <translation>次の値を含む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less than</masterLabel>
+            <translation>＜</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less than or equal to</masterLabel>
+            <translation>＜＝</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>not equal to</masterLabel>
+            <translation>次の文字列と一致しない</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>starts with</masterLabel>
+            <translation>次の文字列で始まる</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>このルールの入力制御が適用されるべきなのは、結果の値を入力したルールに基づいて決定するための式です</help>
+        <label><!-- From Input Control --></label>
+        <name>Apttus__FromInputControlId__c</name>
+        <relationshipLabel><!-- Wizard Rules (From Input Control) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>評価を進める入力コントロール</help>
+        <label><!-- From Input Control --></label>
+        <name>Apttus__FromInputControl__c</name>
+        <relationshipLabel><!-- Wizard Rules (From Input Control) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>入力のためのルールタイプ</help>
+        <label><!-- Rule Type --></label>
+        <name>Apttus__InputResponseRuleType__c</name>
+        <picklistValues>
+            <masterLabel>Input Expression</masterLabel>
+            <translation>式を入力</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>別の入力の値に基づき入力をもたらすべき値</help>
+        <label><!-- Resultant Value --></label>
+        <name>Apttus__ResultantValue__c</name>
+    </fields>
+    <fields>
+        <help>ルール式のためのルールの種類</help>
+        <label><!-- Rule Type --></label>
+        <name>Apttus__RuleExpressionRuleType__c</name>
+        <picklistValues>
+            <masterLabel>Determine Doc Gen</masterLabel>
+            <translation>ドキュメントジェネレーションを決定</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Determine Focus Object</masterLabel>
+            <translation>フォーカスオブジェクトを決定</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Determine Record Type</masterLabel>
+            <translation>レコードタイプを決定</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Input</masterLabel>
+            <translation>入力に進む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Page</masterLabel>
+            <translation>ページに進む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Step</masterLabel>
+            <translation>ステップに進む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Submit</masterLabel>
+            <translation>送信へ進む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To URL</masterLabel>
+            <translation>URLにアクセス</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Wizard</masterLabel>
+            <translation>ウィザードへ進む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoke Object Actions</masterLabel>
+            <translation>請求オブジェクトのアクション</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>ルールセット内のこの規則の順番番号</help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help>これが関連付けられている入力コントロール</help>
+        <label><!-- To Input Control --></label>
+        <name>Apttus__ToInputControl__c</name>
+        <relationshipLabel><!-- Wizard Rules (To Input Control) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>制約が満たされるかどうかを決定するために使用される式で定義された値</help>
+        <label><!-- Value --></label>
+        <name>Apttus__Value__c</name>
+    </fields>
+    <fields>
+        <help>このルールセットが属するウィザードのルールセットを参照</help>
+        <label><!-- Wizard Ruleset --></label>
+        <name>Apttus__WizardRulesetId__c</name>
+        <relationshipLabel><!-- Wizard Rules (Wizard Ruleset) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>このルールが適用されるルールセット</help>
+        <label><!-- Wizard Ruleset --></label>
+        <name>Apttus__WizardRuleset__c</name>
+        <relationshipLabel><!-- Wizard Rules (Wizard Ruleset) --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Wizard Rule Name --></nameFieldLabel>
+</CustomObjectTranslation>

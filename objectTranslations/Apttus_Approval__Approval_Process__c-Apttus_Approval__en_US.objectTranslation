@@ -1,0 +1,1041 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Approval Process</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Approval Processes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Apttus_Approval__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set this flag to true if approved requests can be deleted by the system. --></help>
+        <label><!-- Allow Approved Requests To Be Deleted --></label>
+        <name>Apttus_Approval__AdhocAllowApprovedRequestsToBeDeleted__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the value the approval status gets set to when a request is auto-reapproved by the system. --></help>
+        <label><!-- Adhoc Auto Reapproval Status Label --></label>
+        <name>Apttus_Approval__AdhocAutoReapprovalStatusLabel__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto-Reapproved</masterLabel>
+            <translation><!-- Auto-Reapproved --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Set this flag to true if auto-reapproval should be enabled for this adhoc process. --></help>
+        <label><!-- Adhoc Step Auto Reapprove --></label>
+        <name>Apttus_Approval__AdhocStepAutoReapprove__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set this flag to make approval comments mandatory for this process. When set, the user will be forced to enter comments when a request is approved. --></help>
+        <label><!-- Approval Comments Mandatory --></label>
+        <name>Apttus_Approval__ApprovalCommentsMandatory__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies the name of a custom page used to show approval summary information.  Leave it blank to use the default page. --></help>
+        <label><!-- Approval Summary Page --></label>
+        <name>Apttus_Approval__ApprovalSummaryPage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignment Email Template --></label>
+        <name>Apttus_Approval__Assignment_Email_Template__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field allows you to specify a backup admin approver at the process level instead of the default system wide level that is assigned to requests that have an invalid or deactivated approver. --></help>
+        <label><!-- Backup Admin User --></label>
+        <name>Apttus_Approval__BackupAdminUser__c</name>
+        <relationshipLabel><!-- Approval Processes (Backup Admin User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Cancel all pending request on a single reject. This is deprecated and no longer used.. --></help>
+        <label><!-- Cancel Pending Requests (Deprecated) --></label>
+        <name>Apttus_Approval__CancelPendingRequestsOnAReject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancellation Email Template --></label>
+        <name>Apttus_Approval__Cancellation_Email_Template__c</name>
+    </fields>
+    <fields>
+        <help><!-- The child object type. Only applicable to a child process step. --></help>
+        <label><!-- Child Object Type --></label>
+        <name>Apttus_Approval__ChildObjectType__c</name>
+    </fields>
+    <fields>
+        <help><!-- Consolidate multiple approvals into a single approval. This takes effect only when consolidated notifications is also checked. --></help>
+        <label><!-- Consolidate Approvals --></label>
+        <name>Apttus_Approval__ConsolidateApprovals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Consolidate multiple approval notifications for an approver into a single notification --></help>
+        <label><!-- Consolidate Notifications --></label>
+        <name>Apttus_Approval__ConsolidateNotifications__c</name>
+    </fields>
+    <fields>
+        <help><!-- The type of context associated with the process --></help>
+        <label><!-- Context Type --></label>
+        <name>Apttus_Approval__ContextType__c</name>
+        <picklistValues>
+            <masterLabel>Multiple</masterLabel>
+            <translation><!-- Multiple --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single</masterLabel>
+            <translation><!-- Single --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Continue with approval process even when a step is rejected. --></help>
+        <label><!-- Continue Pending Approvals on a Reject --></label>
+        <name>Apttus_Approval__ContinuePendingApprovalsOnAReject__c</name>
+    </fields>
+    <fields>
+        <help><!-- The list of field names used in the criteria --></help>
+        <label><!-- Criteria Field Names --></label>
+        <name>Apttus_Approval__CriteriaFieldNames__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies the name of a custom page used to show My Approvals information.  Leave it blank to use the default page. --></help>
+        <label><!-- Custom My Approvals Page --></label>
+        <name>Apttus_Approval__CustomMyApprovalsPage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies the name of a custom page used to show preview information.  Leave it blank to use the default page. --></help>
+        <label><!-- Custom Preview Page --></label>
+        <name>Apttus_Approval__CustomPreviewPage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Depends On --></label>
+        <name>Apttus_Approval__DependsOn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes a description for the particular approval process record type being used (i.e. initial action description, final submission action, etc) --></help>
+        <label><!-- Description --></label>
+        <name>Apttus_Approval__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter any combination of AND, OR, parenthesis, and numbers representing the expressions. These are the only values that can be used. Using other values may cause unexpected behavior. --></help>
+        <label><!-- Entry Criteria Filter Logic --></label>
+        <name>Apttus_Approval__EntryCriteriaFilterLogic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Criteria Active --></label>
+        <name>Apttus_Approval__Entry_Criteria_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Criteria Boolean Operator --></label>
+        <name>Apttus_Approval__Entry_Criteria_BoolOper__c</name>
+        <picklistValues>
+            <masterLabel>AND</masterLabel>
+            <translation><!-- AND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OR</masterLabel>
+            <translation><!-- OR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Entry Criteria Comparison Type --></label>
+        <name>Apttus_Approval__Entry_Criteria_Comparison_Type__c</name>
+        <picklistValues>
+            <masterLabel>contains</masterLabel>
+            <translation><!-- contains --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>does not contain</masterLabel>
+            <translation><!-- does not contain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>equal to</masterLabel>
+            <translation><!-- equal to --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>greater than</masterLabel>
+            <translation><!-- greater than --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>greater than or equal to</masterLabel>
+            <translation><!-- greater than or equal to --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>in</masterLabel>
+            <translation><!-- in --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less than</masterLabel>
+            <translation><!-- less than --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less than or equal to</masterLabel>
+            <translation><!-- less than or equal to --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>not equal to</masterLabel>
+            <translation><!-- not equal to --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>not in</masterLabel>
+            <translation><!-- not in --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>starts with</masterLabel>
+            <translation><!-- starts with --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Entry Criteria Field Value --></label>
+        <name>Apttus_Approval__Entry_Criteria_Field_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Criteria Field --></label>
+        <name>Apttus_Approval__Entry_Criteria_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Criteria --></label>
+        <name>Apttus_Approval__Entry_Criteria__c</name>
+        <relationshipLabel><!-- Entry Criteria --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send notifications when an approval request is escalated. --></help>
+        <label><!-- Escalation Email Template --></label>
+        <name>Apttus_Approval__Escalation_Email_Template__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Action Field Name Source --></label>
+        <name>Apttus_Approval__Final_Action_Field_Name_Source__c</name>
+        <picklistValues>
+            <masterLabel>Self</masterLabel>
+            <translation><!-- Self --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Final Action Field Name --></label>
+        <name>Apttus_Approval__Final_Action_Field_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Action Field Update Type --></label>
+        <name>Apttus_Approval__Final_Action_Field_Update_Type__c</name>
+        <picklistValues>
+            <masterLabel>Field Update</masterLabel>
+            <translation><!-- Field Update --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Final Action Field Value --></label>
+        <name>Apttus_Approval__Final_Action_Field_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Action Type --></label>
+        <name>Apttus_Approval__Final_Action_Type__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Final Approval Action --></label>
+        <name>Apttus_Approval__Final_Approval_Action__c</name>
+        <relationshipLabel><!-- Final Approval Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Group Action --></label>
+        <name>Apttus_Approval__Group_Action__c</name>
+        <relationshipLabel><!-- Group Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Initial Submission Action Type --></label>
+        <name>Apttus_Approval__Initial_Submission_Action_Type__c</name>
+        <picklistValues>
+            <masterLabel>Field Update (Constant)</masterLabel>
+            <translation><!-- Field Update (Constant) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Update (Value)</masterLabel>
+            <translation><!-- Field Update (Value) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Submission Action --></label>
+        <name>Apttus_Approval__Initial_Submission_Action__c</name>
+        <relationshipLabel><!-- Initial Submission Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Initial Submission Field Name Source --></label>
+        <name>Apttus_Approval__Initial_Submission_Field_Name_Source__c</name>
+        <picklistValues>
+            <masterLabel>Self</masterLabel>
+            <translation><!-- Self --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Submission Field Name --></label>
+        <name>Apttus_Approval__Initial_Submission_Field_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Submission Field Value --></label>
+        <name>Apttus_Approval__Initial_Submission_Field_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- This flag is true if this process definition is for an Adhoc approval process. --></help>
+        <label><!-- Is Adhoc --></label>
+        <name>Apttus_Approval__IsAdhoc__c</name>
+    </fields>
+    <fields>
+        <label><!-- NotifyOnly Email Template --></label>
+        <name>Apttus_Approval__NotifyOnly_Email_Template__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Label --></label>
+        <name>Apttus_Approval__Object_Label__c</name>
+        <picklistValues>
+            <masterLabel>Agreement</masterLabel>
+            <translation><!-- Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agreement Line Item</masterLabel>
+            <translation><!-- Agreement Line Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agreement Term Exception</masterLabel>
+            <translation><!-- Agreement Term Exception --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity</masterLabel>
+            <translation><!-- Opportunity --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Object Name --></label>
+        <name>Apttus_Approval__Object_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field represents the business context object for which this approval process applies --></help>
+        <label><!-- Object Type --></label>
+        <name>Apttus_Approval__Object_Type__c</name>
+        <picklistValues>
+            <masterLabel>Apttus__APTS_Agreement__c</masterLabel>
+            <translation><!-- Apttus__APTS_Agreement__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apttus__AgreementLineItem__c</masterLabel>
+            <translation><!-- Apttus__AgreementLineItem__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apttus__Agreement_Term_Exception__c</masterLabel>
+            <translation><!-- Apttus__Agreement_Term_Exception__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity</masterLabel>
+            <translation><!-- Opportunity --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Reference to original process definition that is associated with Approval Requests --></help>
+        <label><!-- Original Instance Process --></label>
+        <name>Apttus_Approval__OriginalInstanceProcessId__c</name>
+        <relationshipLabel><!-- Approval Processes (Original Instance Process) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field is set to true if all steps in this process should be auto-escalated by the system if it not approved, rejected, or reassigned by the expected completion date. --></help>
+        <label><!-- Process Auto Escalate --></label>
+        <name>Apttus_Approval__ProcessAutoEscalate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The id of the assignee the request will be escalated to if it is escalated at the process level. --></help>
+        <label><!-- Process Escalate To Id --></label>
+        <name>Apttus_Approval__ProcessEscalateToId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the assignee the request will be escalated to if it is escalated at the process level. --></help>
+        <label><!-- Process Escalate To Name --></label>
+        <name>Apttus_Approval__ProcessEscalateToName__c</name>
+    </fields>
+    <fields>
+        <help><!-- The type of assignee the request will be escalated to if it is escalated at the process level. --></help>
+        <label><!-- Process Escalate To Type --></label>
+        <name>Apttus_Approval__ProcessEscalateToType__c</name>
+        <picklistValues>
+            <masterLabel>Backup Admin User</masterLabel>
+            <translation><!-- Backup Admin User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Related User</masterLabel>
+            <translation><!-- Related User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rule</masterLabel>
+            <translation><!-- Rule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Approval Matrix Next Approver</masterLabel>
+            <translation><!-- User Approval Matrix Next Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Delegated Approver</masterLabel>
+            <translation><!-- User Delegated Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Manager</masterLabel>
+            <translation><!-- User Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The number of expected days that each approval step for this process needs to be completed in (approved or rejected) before a request is automatically escalated. --></help>
+        <label><!-- Process Expected Days To Complete --></label>
+        <name>Apttus_Approval__ProcessExpectedDaysToComplete__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of expected hours that each approval step for this process needs to be completed in (approved or rejected) before a request is automatically escalated. --></help>
+        <label><!-- Process Expected Hours To Complete --></label>
+        <name>Apttus_Approval__ProcessExpectedHoursToComplete__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of expected minutes that each approval step for this process needs to be completed in (approved or rejected) before a request is automatically escalated. --></help>
+        <label><!-- Process Expected Minutes To Complete --></label>
+        <name>Apttus_Approval__ProcessExpectedMinutesToComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process Name --></label>
+        <name>Apttus_Approval__Process_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reassignment Email Template --></label>
+        <name>Apttus_Approval__Reassignment_Email_Template__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set this flag to enable recall comments for this process. When enabled, the user will be prompted to enter comments when the request is cancelled or recalled. --></help>
+        <label><!-- Recall Comments Enabled --></label>
+        <name>Apttus_Approval__RecallCommentsEnabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set this flag to make rejection comments mandatory for this process. When set, the user will be forced to enter comments when a request is rejected. --></help>
+        <label><!-- Rejection Comments Mandatory --></label>
+        <name>Apttus_Approval__RejectionCommentsMandatory__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Email Template used to send reminder notifications for an approval request. --></help>
+        <label><!-- Reminder Email Template --></label>
+        <name>Apttus_Approval__Reminder_Email_Template__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Email --></label>
+        <name>Apttus_Approval__Send_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sequence --></label>
+        <name>Apttus_Approval__Sequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is set to true if this step should be auto-escalated by the system if it not approved, rejected, or reassigned by the expected completion date. --></help>
+        <label><!-- Step Auto Escalate --></label>
+        <name>Apttus_Approval__StepAutoEscalate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The auto re-approval criteria for the step --></help>
+        <label><!-- Step Auto Reapproval Criteria --></label>
+        <name>Apttus_Approval__StepAutoReapprovalCriteria__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether auto re-approval is enabled for the step. This indicator is maintained by the system. --></help>
+        <label><!-- Step Auto Reapprove --></label>
+        <name>Apttus_Approval__StepAutoReapprove__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contains a list of user ids that should receive carbon copy notifications along with assigned approvers for a request associated with a given step. --></help>
+        <label><!-- Step Carbon Copy Assignee Ids --></label>
+        <name>Apttus_Approval__StepCarbonCopyAssigneeIds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Carbon Copy User --></label>
+        <name>Apttus_Approval__StepCarbonCopyUser__c</name>
+        <relationshipLabel><!-- Approval Processes (Step Carbon Copy User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The API name of the header field to display for the step --></help>
+        <label><!-- Step Display Field Name Header --></label>
+        <name>Apttus_Approval__StepDisplayFieldNameHeader__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API names of the fields to display for the step --></help>
+        <label><!-- Step Display Field Names --></label>
+        <name>Apttus_Approval__StepDisplayFieldNames__c</name>
+    </fields>
+    <fields>
+        <help><!-- The id of the assignee the request will be escalated to if it is escalated at the step level. --></help>
+        <label><!-- Step Escalate To Id --></label>
+        <name>Apttus_Approval__StepEscalateToId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the assignee the request will be escalated to if it is escalated at the step level. --></help>
+        <label><!-- Step Escalate To Name --></label>
+        <name>Apttus_Approval__StepEscalateToName__c</name>
+    </fields>
+    <fields>
+        <help><!-- The type of assignee the request will be escalated to if it is escalated at the step level. --></help>
+        <label><!-- Step Escalate To Type --></label>
+        <name>Apttus_Approval__StepEscalateToType__c</name>
+        <picklistValues>
+            <masterLabel>Backup Admin User</masterLabel>
+            <translation><!-- Backup Admin User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Related User</masterLabel>
+            <translation><!-- Related User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rule</masterLabel>
+            <translation><!-- Rule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Approval Matrix Next Approver</masterLabel>
+            <translation><!-- User Approval Matrix Next Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Delegated Approver</masterLabel>
+            <translation><!-- User Delegated Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Manager</masterLabel>
+            <translation><!-- User Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The number of expected days that this approval step needs to be completed in (approved or rejected) before a request is automatically escalated. --></help>
+        <label><!-- Step Expected Days To Complete --></label>
+        <name>Apttus_Approval__StepExpectedDaysToComplete__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of expected hours that this approval step needs to be completed in (approved or rejected) before a request is automatically escalated. --></help>
+        <label><!-- Step Expected Hours To Complete --></label>
+        <name>Apttus_Approval__StepExpectedHoursToComplete__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of expected minutes that this approval step needs to be completed in (approved or rejected). --></help>
+        <label><!-- Step Expected Minutes To Complete --></label>
+        <name>Apttus_Approval__StepExpectedMinutesToComplete__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a description for this step filter condition --></help>
+        <label><!-- Step Filter Condition Description --></label>
+        <name>Apttus_Approval__StepFilterConditionDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Filter Logic --></label>
+        <name>Apttus_Approval__StepFilterLogic__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API names of the fields which comprise the key for the child object. --></help>
+        <label><!-- Step Key Field Names --></label>
+        <name>Apttus_Approval__StepKeyFieldNames__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of a custom label containing text that will be used as the label for the step --></help>
+        <label><!-- Step Label --></label>
+        <name>Apttus_Approval__StepLabel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Reminders Active --></label>
+        <name>Apttus_Approval__StepRemindersActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Sequence --></label>
+        <name>Apttus_Approval__StepSequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- When this box is checked if the assignee cannot be resolved at runtime then the step will be skipped instead of getting assigned to the Backup Admin. --></help>
+        <label><!-- Step Skip Unresolved Assignee --></label>
+        <name>Apttus_Approval__StepSkipUnresolvedAssignee__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this to enable submission comment 1 for this step. When enabled, the user will be prompted to enter submission comment 1 using the submission comment 1 label when the request is submitted for approval. --></help>
+        <label><!-- Step Submission Comment 1 Enabled --></label>
+        <name>Apttus_Approval__StepSubmissionComment1Enabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this to enable submission comment 2 for this step. When enabled, the user will be prompted to enter submission comment 2 using the submission comment 2 label when the request is submitted for approval. --></help>
+        <label><!-- Step Submission Comment 2 Enabled --></label>
+        <name>Apttus_Approval__StepSubmissionComment2Enabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this to enable submission comment 3 for this step. When enabled, the user will be prompted to enter submission comment 3 using the submission comment 3 label when the request is submitted for approval. --></help>
+        <label><!-- Step Submission Comment 3 Enabled --></label>
+        <name>Apttus_Approval__StepSubmissionComment3Enabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this to enable submission comments at step level. When enabled at step level, the user will be prompted to enter one or more comments for this step when the request is submitted for approval. --></help>
+        <label><!-- Step Submission Comments Enabled --></label>
+        <name>Apttus_Approval__StepSubmissionCommentsEnabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Step Type --></help>
+        <label><!-- Step Type --></label>
+        <name>Apttus_Approval__StepType__c</name>
+        <picklistValues>
+            <masterLabel>Child Process</masterLabel>
+            <translation><!-- Child Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subprocess</masterLabel>
+            <translation><!-- Subprocess --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Step Active --></label>
+        <name>Apttus_Approval__Step_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Approver Type --></label>
+        <name>Apttus_Approval__Step_Approver_Type__c</name>
+        <picklistValues>
+            <masterLabel>Approver 1</masterLabel>
+            <translation><!-- Approver 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approver 2</masterLabel>
+            <translation><!-- Approver 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approver 3</masterLabel>
+            <translation><!-- Approver 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approver 4</masterLabel>
+            <translation><!-- Approver 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approver 5</masterLabel>
+            <translation><!-- Approver 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approver 6</masterLabel>
+            <translation><!-- Approver 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unspecified</masterLabel>
+            <translation><!-- Unspecified --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Step Assignee Description --></label>
+        <name>Apttus_Approval__Step_Assignee_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Assignee Id --></label>
+        <name>Apttus_Approval__Step_Assignee_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Assignee Type --></label>
+        <name>Apttus_Approval__Step_Assignee_Type__c</name>
+        <picklistValues>
+            <masterLabel>Approval Matrix</masterLabel>
+            <translation><!-- Approval Matrix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Queue</masterLabel>
+            <translation><!-- Custom Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Role</masterLabel>
+            <translation><!-- Custom Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom User</masterLabel>
+            <translation><!-- Custom User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Related User</masterLabel>
+            <translation><!-- Related User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rule</masterLabel>
+            <translation><!-- Rule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subprocess</masterLabel>
+            <translation><!-- Subprocess --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Step Assignee --></label>
+        <name>Apttus_Approval__Step_Assignee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Auto Complete --></label>
+        <name>Apttus_Approval__Step_Auto_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Filter Boolean Operator --></label>
+        <name>Apttus_Approval__Step_Filter_BoolOper__c</name>
+        <picklistValues>
+            <masterLabel>AND</masterLabel>
+            <translation><!-- AND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OR</masterLabel>
+            <translation><!-- OR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Step Filter Comments --></label>
+        <name>Apttus_Approval__Step_Filter_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Filter Comparison Type --></label>
+        <name>Apttus_Approval__Step_Filter_Comparison_Type__c</name>
+        <picklistValues>
+            <masterLabel>contains</masterLabel>
+            <translation><!-- contains --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>does not contain</masterLabel>
+            <translation><!-- does not contain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>equal to</masterLabel>
+            <translation><!-- equal to --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>greater than</masterLabel>
+            <translation><!-- greater than --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>greater than or equal to</masterLabel>
+            <translation><!-- greater than or equal to --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>in</masterLabel>
+            <translation><!-- in --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less than</masterLabel>
+            <translation><!-- less than --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less than or equal to</masterLabel>
+            <translation><!-- less than or equal to --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>not equal to</masterLabel>
+            <translation><!-- not equal to --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>not in</masterLabel>
+            <translation><!-- not in --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>starts with</masterLabel>
+            <translation><!-- starts with --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Step Filter Field Number --></label>
+        <name>Apttus_Approval__Step_Filter_Field_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Filter Field Object Source --></label>
+        <name>Apttus_Approval__Step_Filter_Field_Object_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Filter Field Object --></label>
+        <name>Apttus_Approval__Step_Filter_Field_Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Filter Field Value Object Source --></label>
+        <name>Apttus_Approval__Step_Filter_Field_Value_Object_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Filter Field Value Object --></label>
+        <name>Apttus_Approval__Step_Filter_Field_Value_Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Filter Field Value --></label>
+        <name>Apttus_Approval__Step_Filter_Field_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Filter Field --></label>
+        <name>Apttus_Approval__Step_Filter_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Filter --></label>
+        <name>Apttus_Approval__Step_Filter__c</name>
+        <relationshipLabel><!-- Step Filters --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Step Group Action Field Name Source --></label>
+        <name>Apttus_Approval__Step_Group_Action_Field_Name_Source__c</name>
+        <picklistValues>
+            <masterLabel>Self</masterLabel>
+            <translation><!-- Self --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Step Group Action Field Name --></label>
+        <name>Apttus_Approval__Step_Group_Action_Field_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Group Action Field Update Type --></label>
+        <name>Apttus_Approval__Step_Group_Action_Field_Update_Type__c</name>
+        <picklistValues>
+            <masterLabel>Field Update (Constant)</masterLabel>
+            <translation><!-- Field Update (Constant) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Update (Field)</masterLabel>
+            <translation><!-- Field Update (Field) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Step Group Action Field Value --></label>
+        <name>Apttus_Approval__Step_Group_Action_Field_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Group Action Type --></label>
+        <name>Apttus_Approval__Step_Group_Action_Type__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Step Group Action --></label>
+        <name>Apttus_Approval__Step_Group_Action__c</name>
+        <relationshipLabel><!-- Step Group Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Step Group Active --></label>
+        <name>Apttus_Approval__Step_Group_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Group Name --></label>
+        <name>Apttus_Approval__Step_Group_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Group Rejection Action --></label>
+        <name>Apttus_Approval__Step_Group_Rejection_Action__c</name>
+        <picklistValues>
+            <masterLabel>Final Rejection</masterLabel>
+            <translation><!-- Final Rejection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group &amp; Final Rejection</masterLabel>
+            <translation><!-- Group &amp; Final Rejection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group Rejection</masterLabel>
+            <translation><!-- Group Rejection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Step Group Seq # --></label>
+        <name>Apttus_Approval__Step_Group_Seq_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Group --></label>
+        <name>Apttus_Approval__Step_Group__c</name>
+        <relationshipLabel><!-- Step Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Step Hierarchy Driver --></label>
+        <name>Apttus_Approval__Step_Hierarchy_Driver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Name --></label>
+        <name>Apttus_Approval__Step_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the approver receives only a notification for the approval request (when set to true) or gets the request assigned to them in addition to receiving a notification (when set to false, which is the default). --></help>
+        <label><!-- Step Notify Only --></label>
+        <name>Apttus_Approval__Step_Notify_Only__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step Seq # --></label>
+        <name>Apttus_Approval__Step_Seq_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Step --></label>
+        <name>Apttus_Approval__Step__c</name>
+        <relationshipLabel><!-- Steps --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of a custom label containing text that will be used as the label when entering a process comment or the first of up to three comments at the step level. --></help>
+        <label><!-- Submission Comment 1 Label --></label>
+        <name>Apttus_Approval__SubmissionComment1Label__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of a custom label containing text that will be used as the label when entering a second comment at the step level. --></help>
+        <label><!-- Submission Comment 2 Label --></label>
+        <name>Apttus_Approval__SubmissionComment2Label__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of a custom label containing text that will be used as the label when entering a third comment at the step level. --></help>
+        <label><!-- Submission Comment 3 Label --></label>
+        <name>Apttus_Approval__SubmissionComment3Label__c</name>
+    </fields>
+    <fields>
+        <help><!-- Keeps track of the number of steps in the process that have one or more submission comments enabled for that step. --></help>
+        <label><!-- Submission Comments Enabled Count --></label>
+        <name>Apttus_Approval__SubmissionCommentsEnabledCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set this flag to enable submission comments for this process at either the process or step level.  When enabled, the user will be prompted to enter submission comments when the request is submitted for approval. --></help>
+        <label><!-- Submission Comments Enabled --></label>
+        <name>Apttus_Approval__SubmissionCommentsEnabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set this flag to make submission comments mandatory for this process at the process level. When set, the user will be forced to enter submission comments when the request is submitted for approval. --></help>
+        <label><!-- Submission Comments Mandatory --></label>
+        <name>Apttus_Approval__SubmissionCommentsMandatory__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the number of submission comments allowed per step (up to three) when step level comments are enabled.  This value defaults to one whenever process level comments are used since there can only be a single submission comment at the process level. --></help>
+        <label><!-- Submission Comments Per Step --></label>
+        <name>Apttus_Approval__SubmissionCommentsPerStep__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select the type of submission comments that can be entered for this process.  For process level comments, only a single comment can be entered.  For step level comments, up to three comments can be entered for each step. --></help>
+        <label><!-- Submission Comments Type --></label>
+        <name>Apttus_Approval__SubmissionCommentsType__c</name>
+        <picklistValues>
+            <masterLabel>Process</masterLabel>
+            <translation><!-- Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Step</masterLabel>
+            <translation><!-- Step --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <description><!-- Approval Process --></description>
+        <label><!-- Approval Process --></label>
+        <name>Apttus_Approval__ApprovalProcess</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Entry Criteria --></description>
+        <label><!-- Entry Criteria --></label>
+        <name>Apttus_Approval__EntryCriteria</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Final Actions --></description>
+        <label><!-- Final Action --></label>
+        <name>Apttus_Approval__FinalAction</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Initial Submission Actions --></description>
+        <label><!-- Initial Submission Action --></label>
+        <name>Apttus_Approval__InitialSubmissionAction</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record Type for creating dummy process to be associated with Process Instance --></description>
+        <label><!-- Instance --></label>
+        <name>Apttus_Approval__Instance</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Step --></description>
+        <label><!-- Step --></label>
+        <name>Apttus_Approval__Step</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Step Filter Criteria --></description>
+        <label><!-- Step Filter Criteria --></label>
+        <name>Apttus_Approval__StepFilterCriteria</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Step Group --></description>
+        <label><!-- Step Group --></label>
+        <name>Apttus_Approval__StepGroup</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Step Group Action --></description>
+        <label><!-- Step Group Action --></label>
+        <name>Apttus_Approval__StepGroupAction</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Clone --></label>
+        <name>Apttus_Approval__Clone</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create --></label>
+        <name>Apttus_Approval__Create</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Delete --></label>
+        <name>Apttus_Approval__Delete</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit --></label>
+        <name>Apttus_Approval__Edit</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,116 @@
+<template>
+  <lightning-card>
+    <div class="slds-p-around_small" style="border: 1px dotted #a8a9ac;">
+
+      <div if:false={isLoaded} class="outer-div">
+        <lightning-spinner variant="brand" alternative-text="Loading...">
+        </lightning-spinner>
+      </div>
+
+      <!--Display the Contracting Account & Contract Path-->
+      <div class="slds-p-vertical_small">
+        <div class="custom-box slds-box_xxx-small slds-p-bottom_small slds-text-align_center">
+          <br />
+          <div class="acc-container">
+            <lightning-record-view-form record-id={recordId} object-api-name="Opportunity" class="textInput">
+              <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-2">
+                  <lightning-output-field field-name="L2O_Contracting_Account__c"></lightning-output-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                  <lightning-output-field field-name="L2O_Contract_Path__c"></lightning-output-field>
+                </div>
+                <template if:false={isLobNull}>
+                  <div class="slds-col slds-size_1-of-1">
+                    <lightning-output-field field-name="L2O_Client_Line_of_Business__c"></lightning-output-field>                  
+                  </div>
+                </template>
+              </div>
+            </lightning-record-view-form>
+          </div>
+        </div>
+      </div>
+
+      <!--Display the Update Contract Path - Fields and Button-->
+      <template if:true={boolUpdateVisible}>
+        <lightning-button variant="brand" label={clickedButtonLabel} title="Update Contract Path"
+          onclick={handleClick} class="slds-align_absolute-center"></lightning-button>
+      </template>
+
+      <!--Display the form conditional Fields and Button-->
+      <template if:true={boolVisible}>
+        
+        <template if:true={directContract.data}>
+          <lightning-combobox data-id="directCon" name="DirectContract" label="Direct TDH Contract" value={directcontVal}
+            field-level-help="Is this a direct contract with Teladoc Health?" options={directContract.data.values}
+            onchange={handleDirectcontractChange} required>
+          </lightning-combobox>
+        </template>
+        <br />
+
+        <template if:true={DirectEmpBusinessOptions}>
+          <lightning-combobox data-id="directEmp" name="DirectEmployerBusiness" label="Direct Employer Business"
+            value={employerBusinessVal}
+            field-level-help="Are you selling direct to an Employer business?"
+            options={DirectEmpBusinessOptions} onchange={handleDirectEmployerBusinessChange} required>
+          </lightning-combobox>
+        </template>
+        <br />
+
+        <template if:true={showContractingAccount}>
+          <lightning-record-edit-form object-api-name="Opportunity">
+            <label for="contractingAccfieldid">Contracting Account</label>
+            <lightning-input-field id="contractingAccfieldid" data-id="accountName" field-name="L2O_Contracting_Account__c"
+              variant="label-hidden" onchange={handleAccountChange} required> </lightning-input-field>
+          </lightning-record-edit-form>
+        </template>
+        <br />
+
+        <template if:true={showContractPath}>
+          <template if:true={contractPathOptions}>
+            <lightning-combobox data-id="ConPath" name="ContractPath" label="Contract Path"
+              value={contPathVal}
+              field-level-help="Contract Path depends on the Opportunity Sub Type as well as Direct Employer Business."
+              options={contractPathOptions} onchange={contractPathChange} required>
+            </lightning-combobox>
+          </template>
+        </template>
+        <br />
+
+        <template if:true={showPricingModel}>
+          <template if:true={pricingModelOptions}>
+            <lightning-combobox data-id="pricingModel" name="PricingModel" label="Pricing Model" value={selectedType4}
+              field-level-help="Pricing Model"
+              options={pricingModelOptions} onchange={pricingModelChange} required={isPricingModelReq}>
+            </lightning-combobox>
+          </template>
+        </template>
+        <br />
+
+        <template if:true={showLOB}>
+          <template if:true={lobOptions}>
+            <lightning-combobox data-id="lob" name="lineOfBusiness" label="Line Of Business" value={selectedType4}
+              field-level-help="Line Of Business"
+              options={lobOptions} onchange={lineOfBusinessChange} required>
+            </lightning-combobox>
+          </template>
+        </template>
+        <br />
+
+        <br />
+        <div class="slds-align_absolute-center">
+          <div>
+            <lightning-button data-id="Submit" variant="brand" label="Save" disabled={isButtonDisabled}
+              onclick={saveContractPath} class="slds-var-m-left_medium"></lightning-button>
+          </div>
+          <div>
+            <lightning-button variant="brand" label={clickedButtonLabel} title="Update Contract Path"
+              onclick={handleClick} class="slds-var-m-left_medium"></lightning-button>
+          </div>
+        </div>
+
+      </template>
+        
+    </div>
+  </lightning-card>
+</template>

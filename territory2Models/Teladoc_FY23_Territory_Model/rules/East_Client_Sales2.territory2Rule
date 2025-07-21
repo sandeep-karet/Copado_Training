@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Territory2Rule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <name>East Client Sales</name>
+    <objectType>Account</objectType>
+    <ruleItems>
+        <field>Account.L2O_Account_Sub_type__c</field>
+        <operation>equals</operation>
+        <value>Commercial,Government</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.L2O_6_Month_passed_after_client_status__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>LA,MS,AL,GA,SC,FL,NJ,MD,DE,WV,VA,NC,OH,PA,KY,TN,NY,VT,ME,NH,MA,CT,RI</value>
+    </ruleItems>
+</Territory2Rule>

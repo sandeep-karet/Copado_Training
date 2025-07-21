@@ -1,0 +1,11 @@
+<apex:page docType="html-5.0"
+	showHeader="false" 
+	sidebar="false" 
+	standardController="ALTF__Account_Plan__c" 
+	extensions="ALTF.AM_TANDIController"
+	action="{!logToTFrontdoorUsage}"	
+	>
+	<apex:include pageName="ALTF__acc_mgmt_objectives_app_remote_objects" />
+	<c:am_tas_tandi_app planId="{! planId}"   /> 
+	<c:jQuery jQueryUI="true" />
+</apex:page>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Rule --></value>
+    </caseValues>
+    <fields>
+        <help>式の制約で使用される比較演算子は「等しい」「含まれる」「で開始する」などです</help>
+        <label><!-- Comparison Operator --></label>
+        <name>Apttus__ComparisonOperator__c</name>
+        <picklistValues>
+            <masterLabel>contains</masterLabel>
+            <translation>次の文字列を含む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>does not end with</masterLabel>
+            <translation>で終了しない</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>does not start with</masterLabel>
+            <translation>で開始しない</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ends with</masterLabel>
+            <translation>で終了</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>equal to</masterLabel>
+            <translation>次の文字列と一致する</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>excludes</masterLabel>
+            <translation>次の値を含まない</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>greater than</masterLabel>
+            <translation>＞</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>greater than or equal to</masterLabel>
+            <translation>＞＝</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>includes</masterLabel>
+            <translation>次の値を含む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less than</masterLabel>
+            <translation>＜</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less than or equal to</masterLabel>
+            <translation>＜＝</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>not equal to</masterLabel>
+            <translation>次の文字列と一致しない</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>starts with</masterLabel>
+            <translation>次の文字列で始まる</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>このルールの入力制御が適用されるべきなのは、結果の値を入力したルールに基づいて決定するための式です</help>
+        <label><!-- Wizard Input Control --></label>
+        <name>Apttus__FromInputControlId__c</name>
+        <relationshipLabel><!-- Rules --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Holds long value --></help>
+        <label><!-- Long Value --></label>
+        <name>Apttus__LongValue__c</name>
+    </fields>
+    <fields>
+        <help>ルールセット内のルールの順番</help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help>制約が満たされるかどうかを決定するために使用される式で定義された値</help>
+        <label><!-- Value --></label>
+        <name>Apttus__Value__c</name>
+    </fields>
+    <fields>
+        <help>このルールが属するウィザードルールセット（マスター詳細）</help>
+        <label><!-- Wizard Ruleset --></label>
+        <name>Apttus__WizardRulesetId__c</name>
+        <relationshipLabel><!-- Rules --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Rule Name --></nameFieldLabel>
+</CustomObjectTranslation>

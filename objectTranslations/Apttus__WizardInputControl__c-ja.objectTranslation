@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Input Control (Deprecated) --></value>
+    </caseValues>
+    <fields>
+        <help>ステップ内の入力コントロールが有効であることを示します。有効としてウィザードのデザインを設定すると自動的に含まれる入力コントロールを有効にします</help>
+        <label><!-- Active --></label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help>サブカテゴリフィールドを制御して、リストの値がユーザーに検索やコントロールの入力の選択を許可する必要があります</help>
+        <label><!-- Category --></label>
+        <name>Apttus__Category__c</name>
+        <picklistValues>
+            <masterLabel>Category 1</masterLabel>
+            <translation>カテゴリ1</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation>初期値</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>ステップとウィザードのデザイン内の入力をフィルタリングし、整列させるために使用される商品構成のコンテキスト</help>
+        <label><!-- Context Object --></label>
+        <name>Apttus__ContextObject__c</name>
+    </fields>
+    <fields>
+        <help>コンテキストの種類、その全てまたはオブジェクトかどうか。
+「全て」の意味はステップデザインでどんな入力を行うことができることを意味します。
+「オブジェクト」の意味は整列（同じオブジェクト）ステップデザインでこの入力のみ利用できることを意味します</help>
+        <label><!-- Context Type --></label>
+        <name>Apttus__ContextType__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation>全て</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Object</masterLabel>
+            <translation>オブジェクト</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>ここで希望の初期の応答値を配置するか空白のままにします</help>
+        <label><!-- Default Response --></label>
+        <name>Apttus__DefaultResponse__c</name>
+    </fields>
+    <fields>
+        <help>ユーザーが入力コントロールの使用目的を理解するために</help>
+        <label><!-- Description --></label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <help>ウィザードの入力フィールド - 決定を行うためウィザード内にのみ存在するフィールド
+オブジェクトフィールド - 決定を行うためにSalesforceのオブジェクトとして存在するフィールド</help>
+        <label><!-- Field Class --></label>
+        <name>Apttus__FieldClass__c</name>
+        <picklistValues>
+            <masterLabel>Object Field</masterLabel>
+            <translation>オブジェクトフィールド</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wizard Input Field</masterLabel>
+            <translation>ウィザード入力フィールド</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>質問が適用されるSalesforceのオブジェクトフィールド名</help>
+        <label><!-- Field Name --></label>
+        <name>Apttus__FieldName__c</name>
+    </fields>
+    <fields>
+        <help>フィールドのデータ型</help>
+        <label><!-- Field Type --></label>
+        <name>Apttus__FieldType__c</name>
+        <picklistValues>
+            <masterLabel>Checkbox</masterLabel>
+            <translation>チェックボックス</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Currency</masterLabel>
+            <translation>通貨</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date</masterLabel>
+            <translation>日付</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date/Time</masterLabel>
+            <translation>日時</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation>電子メール</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number</masterLabel>
+            <translation>番号</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation>パーセント</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation>電話</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Picklist</masterLabel>
+            <translation>選択リスト</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text</masterLabel>
+            <translation>テキスト</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text Area</masterLabel>
+            <translation>テキストエリア</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>URL</masterLabel>
+            <translation><!-- URL --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>ここで目的の実行時情報のステートメントを配置するか空白のままにします</help>
+        <label><!-- Ghost Response --></label>
+        <name>Apttus__GhostResponse__c</name>
+    </fields>
+    <fields>
+        <help>左から右に表形式の入力グループ内の入力順序</help>
+        <label><!-- Horizontal Sequence --></label>
+        <name>Apttus__HorizontalSequence__c</name>
+    </fields>
+    <fields>
+        <help>データタイプの定義は設計者により入力されました</help>
+        <label><!-- Interface Definition --></label>
+        <name>Apttus__InterfaceDefinition__c</name>
+        <picklistValues>
+            <masterLabel>Checkbox</masterLabel>
+            <translation>チェックボックス</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Currency &lt;Type, Chars, Dec&gt;</masterLabel>
+            <translation>通貨&lt;タイプ、文字、Dec&gt;</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date &lt;Format&gt;</masterLabel>
+            <translation>日付&lt;書式&gt;</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expression Formula</masterLabel>
+            <translation>式フォーミュラ</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number &lt;Chars, Dec&gt;</masterLabel>
+            <translation>番号&lt;Chars、Dec&gt;</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent &lt;Dec&gt;</masterLabel>
+            <translation>パーセント&lt;Dec&gt;</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Picklist Dropdown</masterLabel>
+            <translation>選択リストドロップダウン</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Picklist Radio Button</masterLabel>
+            <translation>選択リストラジオボタン</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text Entry</masterLabel>
+            <translation>テキストエントリ</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>検索と選択で使用するための追加フィールド</help>
+        <label><!-- Keywords --></label>
+        <name>Apttus__Keywords__c</name>
+    </fields>
+    <fields>
+        <help>入力コントロールのラベル</help>
+        <label><!-- Label --></label>
+        <name>Apttus__Label__c</name>
+    </fields>
+    <fields>
+        <help>フィールドに質問の解決をクオリファイするオブジェクト名</help>
+        <label><!-- Object Name --></label>
+        <name>Apttus__ObjectName__c</name>
+    </fields>
+    <fields>
+        <help>順番が表示されるためには、この入力を続行すべきかを示します。形態（1）（1 OR 2）（1 AND 2）等</help>
+        <label><!-- Precedence --></label>
+        <name>Apttus__Precedence__c</name>
+    </fields>
+    <fields>
+        <help>セットアップ後にウィザードを完了するとき、エンドユーザーを指示するために使用されている質問や命令文です入力ラベルに初期設定</help>
+        <label><!-- Question/Instruction --></label>
+        <name>Apttus__Question__c</name>
+    </fields>
+    <fields>
+        <help>入力された制御値が、実行ユーザーで編集できるかどうかを指定します</help>
+        <label><!-- Read Only --></label>
+        <name>Apttus__ReadOnly__c</name>
+    </fields>
+    <fields>
+        <help>これは再現性の問題であることを示します</help>
+        <label><!-- Repeatable --></label>
+        <name>Apttus__Repeatable__c</name>
+    </fields>
+    <fields>
+        <help>入力値はエンドユーザがウィザードを継続するために必要であることを示します</help>
+        <label><!-- Required --></label>
+        <name>Apttus__Required__c</name>
+    </fields>
+    <fields>
+        <help>エンドユーザによる応答データタイプ</help>
+        <label><!-- Response Data Type --></label>
+        <name>Apttus__ResponseDataType__c</name>
+        <picklistValues>
+            <masterLabel>Checkbox</masterLabel>
+            <translation>チェックボックス</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concatenation</masterLabel>
+            <translation>連結</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Currency</masterLabel>
+            <translation>通貨</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date</masterLabel>
+            <translation>日付</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>List</masterLabel>
+            <translation>一覧表示</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number</masterLabel>
+            <translation>番号</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation>パーセント</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text</masterLabel>
+            <translation>テキスト</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>決定するためのCSV（カンマ区切り）リストの値</help>
+        <label><!-- Response --></label>
+        <name>Apttus__Response__c</name>
+    </fields>
+    <fields>
+        <help>実行時ユーザーがこの入力コントロールのヘルプまたは取扱説明を見ることができるものについて説明します</help>
+        <label><!-- Runtime Help Text --></label>
+        <name>Apttus__RuntimeDescription__c</name>
+    </fields>
+    <fields>
+        <help>この入力項目が実行時に表示されるべき順序</help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help>カテゴリフィールド内容によって、リストの値がユーザーに検索や入力コントロールの選択を許可する必要があります</help>
+        <label><!-- Subcategory --></label>
+        <name>Apttus__Subcategory__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation>初期値</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sub-Category 1</masterLabel>
+            <translation>サブカテゴリ 1</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>ステップが保存されるまでステップへの入力追加は過渡状態</help>
+        <label><!-- Transient --></label>
+        <name>Apttus__Transient__c</name>
+    </fields>
+    <fields>
+        <help>値のリストは実行時に表示されます</help>
+        <label><!-- Validation Input --></label>
+        <name>Apttus__Validation2__c</name>
+    </fields>
+    <fields>
+        <help>値のリストは実行時に表示されます</help>
+        <label><!-- Validation Input (Deprecated) --></label>
+        <name>Apttus__Validation__c</name>
+    </fields>
+    <fields>
+        <help>入力制御設計のバージョン番号（カウンタ）。これは、設定の年表で一意に入力コントロールを識別します</help>
+        <label><!-- Version --></label>
+        <name>Apttus__Version__c</name>
+    </fields>
+    <fields>
+        <help>上から下にレンダリングされた入力グループ内の入力の順序</help>
+        <label><!-- Vertical Sequence --></label>
+        <name>Apttus__VerticalSequence__c</name>
+    </fields>
+    <fields>
+        <help>この入力制御が属する入力グループを参照</help>
+        <label><!-- Wizard Input Group --></label>
+        <name>Apttus__WizardInputGroupId__c</name>
+        <relationshipLabel><!-- Wizard Input Controls --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>入力式のためにルールセットを参照</help>
+        <label><!-- Wizard Ruleset --></label>
+        <name>Apttus__WizardRulesetId__c</name>
+        <relationshipLabel><!-- Wizard Input Controls --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>この入力コントロールが属しているステップを参照</help>
+        <label><!-- Wizard Step --></label>
+        <name>Apttus__WizardStepId__c</name>
+        <relationshipLabel><!-- Wizard Input Controls (Wizard Step) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>この入力が属するウィザードステップ</help>
+        <label><!-- Wizard Step --></label>
+        <name>Apttus__WizardStep__c</name>
+        <relationshipLabel><!-- Wizard Input Controls (Wizard Step) --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Input Name --></nameFieldLabel>
+</CustomObjectTranslation>

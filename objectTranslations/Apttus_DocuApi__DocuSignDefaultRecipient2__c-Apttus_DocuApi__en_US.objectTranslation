@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DocuSign Recipient</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DocuSign Recipients</value>
+    </caseValues>
+    <fields>
+        <help><!-- ID of the associated agreement --></help>
+        <label><!-- Agreement --></label>
+        <name>Apttus_CMDSign__AgreementId__c</name>
+        <relationshipLabel><!-- DocuSign Recipients --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Apttus_DocuApi__AccountId__c</name>
+        <relationshipLabel><!-- DocuSign Recipients --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- ID of the contact recipient --></help>
+        <label><!-- Contact --></label>
+        <name>Apttus_DocuApi__ContactId__c</name>
+        <relationshipLabel><!-- DocuSign Recipients --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The &quot;Template Unique Name&quot; for the Salesforce text email template that needs to be used for the email subject and email body for the recipient. Only &quot;Text&quot; template type is supported. --></help>
+        <label><!-- Email Template Unique Name --></label>
+        <name>Apttus_DocuApi__EmailTemplateUniqueName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient Email Address --></help>
+        <label><!-- Recipient Email Address --></label>
+        <name>Apttus_DocuApi__Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient First Name --></help>
+        <label><!-- Recipient First Name --></label>
+        <name>Apttus_DocuApi__FirstName__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, users will not be able to remove the recipient on the user interface. --></help>
+        <label><!-- Required? --></label>
+        <name>Apttus_DocuApi__IsRequired__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates a transient recipient that may get deleted by the user. A new recipient is in transient state until the recipient is explicitly saved by the user. --></help>
+        <label><!-- IsTransient --></label>
+        <name>Apttus_DocuApi__IsTransient__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient Last Name --></help>
+        <label><!-- Recipient Last Name --></label>
+        <name>Apttus_DocuApi__LastName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Note for the individual recipient --></help>
+        <label><!-- Note --></label>
+        <name>Apttus_DocuApi__Note__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email --></help>
+        <label><!-- Email --></label>
+        <name>Apttus_DocuApi__ReadOnlyEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>Apttus_DocuApi__ReadOnlyFirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Apttus_DocuApi__ReadOnlyLastName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient Type list will come from UI --></help>
+        <label><!-- Recipient Type --></label>
+        <name>Apttus_DocuApi__RecipientType__c</name>
+        <picklistValues>
+            <masterLabel>Carbon Copy</masterLabel>
+            <translation><!-- Carbon Copy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Person Signer</masterLabel>
+            <translation><!-- In Person Signer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signer</masterLabel>
+            <translation><!-- Signer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Role names are used to map the anchor tags within your documents to a recipient. Order of the role name determines which anchor tag set to map to. --></help>
+        <label><!-- Role Name --></label>
+        <name>Apttus_DocuApi__RoleName__c</name>
+        <picklistValues>
+            <masterLabel>Signer 1</masterLabel>
+            <translation><!-- Signer 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signer 2</masterLabel>
+            <translation><!-- Signer 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signer 3</masterLabel>
+            <translation><!-- Signer 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signer 4</masterLabel>
+            <translation><!-- Signer 4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- ID of the signing group recipient --></help>
+        <label><!-- Signing Group --></label>
+        <name>Apttus_DocuApi__SigningGroupId__c</name>
+        <relationshipLabel><!-- DocuSign Recipients --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Routing Order default --></help>
+        <label><!-- Routing Order --></label>
+        <name>Apttus_DocuApi__SigningOrder__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the user recipient --></help>
+        <label><!-- User --></label>
+        <name>Apttus_DocuApi__UserId__c</name>
+        <relationshipLabel><!-- DocuSign Recipients --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <description><!-- Contact lookup --></description>
+        <label><!-- Contact --></label>
+        <name>Apttus_DocuApi__Contact</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Manually entered recipient information --></description>
+        <label><!-- Email --></label>
+        <name>Apttus_DocuApi__Email</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- DocuSign Signing Group --></description>
+        <label><!-- Signing Group --></label>
+        <name>Apttus_DocuApi__SigningGroup</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- User lookup --></description>
+        <label><!-- User --></label>
+        <name>Apttus_DocuApi__User</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- NewDefaultRecipientForAgreement --></label>
+        <name>Apttus_CMDSign__NewDefaultRecipientForAgreement</name>
+    </webLinks>
+</CustomObjectTranslation>

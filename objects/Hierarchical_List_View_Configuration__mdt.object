@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>List_View_Fields__c</fullName>
+        <description>Fields to display in hierarchical list view.</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the fields you wish to see in the list view. 
+DO NOT INCLUDE: Id and Self Parent Field</inlineHelpText>
+        <label>List View Fields</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Object_Name__c</fullName>
+        <description>Resulting Object API Name</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the Object API Name.</inlineHelpText>
+        <label>Object Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Id_Field__c</fullName>
+        <description>The field name (Id) of hierarchical data field.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Hierarchical Id field of the list. (For Self Relationship, It is &apos;Id&apos;).</inlineHelpText>
+        <label>Record Id Field</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Self_Parent_Field__c</fullName>
+        <description>Self Parent Field API Name</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Hierarchical Parent Field for the List</inlineHelpText>
+        <label>Self Parent Field</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Self_Relationship_Name__c</fullName>
+        <description>Resulting Object Self Relationship API Name.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>If the resulting object doesn&apos;t have self relationship then you can keep it empty.</inlineHelpText>
+        <label>Self Relationship Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sourcing_Field_Name__c</fullName>
+        <description>Sourcing Field API Name</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>The Field which takes the Id of the current page.
+(Eg: QuoteId in QuoteLines object)</inlineHelpText>
+        <label>Sourcing Field Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Hierarchical List View Configuration</label>
+    <pluralLabel>Hierarchical List View Configurations</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

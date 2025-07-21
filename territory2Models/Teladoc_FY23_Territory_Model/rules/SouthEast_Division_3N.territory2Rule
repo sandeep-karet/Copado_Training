@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Territory2Rule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <booleanFilter>(1 AND 5) OR (2 AND 6) OR (3 AND 7) OR (4 AND 8)</booleanFilter>
+    <name>SouthEast Division 3 (New)</name>
+    <objectType>Account</objectType>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Alachua,Brevard,Broward,Charlotte,Citrus,Collier,DeSoto,Dixie,Flagler,Gilchrist,Glades,Hardee,Hendry,Hernando,Highlands,Hillsborough,IndianRiver,Lake,Lee,Levy,Manatee,Marion,Martin,Miami-Dade,Monroe,Okeechobee,Orange,Osceola,PalmBeach,Pasco,Pinellas,Polk,Putnam,SaintLucie,Sarasota,Seminole,Sumter,Volusia</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingCountry</field>
+        <operation>equals</operation>
+        <value>Appling,Bacon,Brantley,Bryan,Bulloch,Burke,Camden,Candler,Charlton,Chatham,Columbia,Effingham,Emanuel,Evans,Glascock,Glynn,JeffDavis,Jefferson,Jenkins,Liberty,Long,McDuffie,McIntosh,Montgomery,Pierce,Richmond,Screven,Tattnall,Toombs,Ware,Warren,Wayne,Putnam,SaintLucie,Sarasota,Seminole,Sumter,Volusia,Preston,Putnam,Raleigh,Randolph,Ritchie,Roane,Summers,Taylor,Tucker,Tyler,Upshur,Wayne</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Anson,Beaufort,Bladen,Brunswick,Cabarrus,Carteret,Columbus,Craven,Cumberland,Duplin,Durham,Gaston,Greene,Harnett,Hoke,Hyde,Johnston,Jones,Lee,Lenoir,Mecklenburg,Montgomery,Moore,NewHanover,Onslow,Pamlico,Pender,Pitt,Richmond,Robeson,Sampson,Scotland,Stanly,Union,Wake,Wayne,Wilson</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Abbeville,Aiken,Allendale,Anderson,Bamberg,Barnwell,Beaufort,Berkeley,Calhoun,Charleston,Cherokee,Chester,Chesterfield,Clarendon,Colleton,Darlington,Dillon,Dorchester,Edgefield,Fairfield,Florence,Georgetown,Greenville,Greenwood,Hampton,Horry,Jasper,Kershaw,Lancaster,Laurens,Lee,Lexington,Marion,Marlboro,McCormick,Newberry,Oconee,Orangeburg,Pickens,Richland,Saluda,Spartanburg,Sumter,Union,Williamsburg,York</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>FL</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>GA</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>NC</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>SC</value>
+    </ruleItems>
+</Territory2Rule>

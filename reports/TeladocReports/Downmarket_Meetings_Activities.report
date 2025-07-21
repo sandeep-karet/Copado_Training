@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_17567035</developerName>
+        <masterLabel>Manager</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>ASSIGNED</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Corey Cushing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michael Goldman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Keaton Anderson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Darby Law</sourceValue>
+            </sourceValues>
+            <value>Tony Elder</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Dave Toves</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Megan Hill</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kyle Sadler</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matt Scott</sourceValue>
+            </sourceValues>
+            <value>Jack Diamond</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Travis Blanchard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tyler Blanchard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kelsey LeGrande</sourceValue>
+            </sourceValues>
+            <value>Andrea Sadler</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Simeon Goder</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pete Coen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mandy Moore</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mya Griffith</sourceValue>
+            </sourceValues>
+            <value>Cathy Sapp</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Stacie Bakos</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shaye Thaldorf</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ashlea Mondoro</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kelsey Morgan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lauren Kenney</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dominic Luna</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kayln Kennedy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Taylor Jackanow</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Genevieve Schweitzer</sourceValue>
+            </sourceValues>
+            <value>Sydney Brown</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT</field>
+    </columns>
+    <columns>
+        <field>CONTACT</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY</field>
+    </columns>
+    <columns>
+        <field>LEAD</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>PRIORITY</field>
+    </columns>
+    <columns>
+        <field>TASK</field>
+    </columns>
+    <columns>
+        <field>TASK_SUBTYPE</field>
+    </columns>
+    <columns>
+        <field>BucketField_17567035</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>OWNER_ROLE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>downmarket</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>TASK_TYPE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ASSIGNED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STATUS</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Downmarket Meetings Activities</name>
+    <params>
+        <name>closed</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>e</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Activity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>DUE_DATE</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

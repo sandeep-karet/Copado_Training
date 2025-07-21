@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification to Requestor that an agreement is ready for Other Party signature</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Teladoc_LetterHead</letterhead>
+    <name>Agreement Ready for Other Party Signature Notice to Requestor</name>
+    <style>formalLetter</style>
+    <subject>[ACTION] Agreement Ready for Other Party Signature - {!Apttus__APTS_Agreement__c.Name}</subject>
+    <textOnly>The following agreement is ready for {!Apttus__APTS_Agreement__c.APTS_OtherPartyContractingEntity__c}&apos;s signature. You can locate the TDH-signed PDF agreement document in the Files section of the Agreement record. Please collect the required signature and return to the contracts team through Apttus.
+
+
+
+Agreement Name: {!Apttus__APTS_Agreement__c.Name}
+Agreement Number: {!Apttus__APTS_Agreement__c.Apttus__FF_Agreement_Number__c}
+Agreement Link: {!Apttus__APTS_Agreement__c.Link}
+
+Thank you.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

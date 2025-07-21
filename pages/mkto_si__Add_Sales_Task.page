@@ -1,0 +1,76 @@
+<apex:page controller="mkto_si.MseActionController"
+  tabStyle="Marketo__tab"
+  standardStylesheets="false"
+  sidebar="false"
+>
+  <c:CssAndJavascript2 cssOnly="true"/>
+
+  <div class="mkt-page-container mkto">
+    <!-- Header -->
+    <c:MsePageHeader title="{!pageTitle}"
+      cancel="{!cancel}"
+      showButton="true"
+      showBackButton="{!hasReturnUrl}"
+      redirectInSeconds="{!redirectInSeconds}"
+    />
+
+    <div class="mkt-page-content">
+      <!-- Page Messages -->
+      <div class="mkt-page-messages">
+        <c:MktPageMessage severity="warning"
+          summary="{!$Label.mkto_si__no_msi_plus_access_message}"
+          rendered="{!!msiPlusPlusEnabled}"
+        />
+        <c:MktPageMessage severity="warning"
+          summary="{!pageErrorMessage}"
+          rendered="{!hasPageError}"
+        />
+        <div class="successMessage mkt-show-false">
+          <c:MktPageMessage severity="success"
+            summary="{!successMessage}. {!redirectingMessage}"
+            rendered="{!msiPlusPlusEnabled}"
+          />
+        </div>
+        <div class="successMessage deleteMessage mkt-show-false">
+          <c:MktPageMessage severity="success"
+            summary="{!$Label.mkto_si__task_deleted}. {!redirectingMessage}"
+            rendered="{!msiPlusPlusEnabled}"
+          />
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="mkt-page-body mkt-sales-page-body">
+        <apex:outputPanel rendered="{!msiPlusPlusEnabled && !hasPageError}">
+          <div class="sales-call-wrapper">
+            <apex:iframe src="{!JSENCODE(mscPageUrl)}" scrolling="true" id="addOrEditSalesTask" height="750"/>
+          </div>
+          <script>
+            var isActionHandled = false;
+            window.addEventListener('message', function(event) {
+              if (event.data.action === 'msc-window-closed') {
+                if (!isActionHandled) HeaderHelper.redirectBackOrClose();
+                isActionHandled = true;
+              } else if (event.data.action === 'msc-window-success-save-task') {
+                if (!isActionHandled) {
+                  HeaderHelper.showSuccessMessage();
+                  HeaderHelper.redirectBackOrCloseWithDelay();
+                }
+                isActionHandled = true;
+              } else if (event.data.action === 'msc-window-success-delete-task') {
+                if (!isActionHandled) {
+                  HeaderHelper.showSuccessMessage('deleteMessage');
+                  HeaderHelper.redirectBackOrCloseWithDelay();
+                }
+                isActionHandled = true;
+              }
+            }, false);
+          </script>
+        </apex:outputPanel>
+        <apex:outputPanel styleClass="msc-empty-illustration" rendered="{!!msiPlusPlusEnabled}" layout="block">
+          <apex:image styleClass="msc-empty-illustration-img" value="{!$Resource.mkto_si__web}/mkto/images/empty-illustration.png"/>
+        </apex:outputPanel>
+      </div>
+    </div>
+  </div>
+</apex:page>

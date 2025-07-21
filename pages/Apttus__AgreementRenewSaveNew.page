@@ -1,0 +1,96 @@
+<!-- 
+    Apttus Contract Management
+    AgreementRenewSaveNew
+     
+    @2009-2021 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus__APTS_Agreement__c" 
+		   extensions="Apttus.QueryParamController"  
+		   showHeader="true">
+	
+	
+	
+	<script type="text/javascript" src="/soap/ajax/50.0/connection.js"></script>
+	<script type="text/javascript" src="/soap/ajax/50.0/apex.js"></script>
+	<apex:include pageName="Apttus__ComplyJSLibInclude" />
+	<apex:include pageName="Apttus__YUILibrary" />
+	<apex:includeScript value="/support/console/45.0/integration.js"/>
+
+	<script>
+	// Function called when the DOM is ready to create the dialog,
+	// render the dialog into the document body, add our dialog skin
+	// css to the body tag, and wire up the buttons on our dialog   
+	YUI().use('event-base', function (Y) {
+			Y.on('domready', function () {
+					console.log("Once Dom Ready ");
+					// build the wait panel
+					YUI.force.com.showWaitPanel();
+					// post save
+					// delay to display progress message	
+					setTimeout(function() {
+						// post save
+						afterSave();
+					
+					}, 2000);
+
+			});
+	});
+	</script>	
+	<script type="text/javascript">
+    
+	   	/**
+		 * Initializes the call
+		 */
+		function initCall() {
+		
+			try {
+				sforce.connection.sessionId = "{!$Api.Session_ID}"; //to avoid session timeout
+			} catch(e) {
+				erroralert(cERROR_UNKNOWN,e);
+				
+			}
+		
+		}
+    
+	    /**
+		 * Callback invoked after an agreement renewal is saved
+		 */
+		function afterSave() {
+			
+			// get parameters
+			// original agreement id
+			var originalId = "{!JSENCODE(originalId)}";
+			// renewal agreement id
+			var renewalId = "{!JSENCODE(renewalId)}";
+			
+			try {
+				// STEP I - initialize the call
+				initCall();
+				// STEP II - copy child objects from original agreement to the agreement renewal
+				doCopyAgreementChildSObjects(originalId, renewalId, 'Renew');
+				// STEP III - perform after renew tasks
+				afterRenew(originalId, renewalId);
+				// STEP IV - update document properties
+				updateClonedAgreementDocs(renewalId);
+				
+			} catch(ex) {
+				// hide modal panel
+				 YUI.force.com.hideWaitPanel();
+				// display the error
+				erroralert(cERROR_UNKNOWN, ex);
+				
+			} finally {
+				// build the url for a new agreement
+				//var newUrl = "{!URLFOR($Action.APTS_Agreement__c.New)}";
+				var newUrl = "{!URLFOR($Action.APTS_Agreement__c.New,null,[retURL=URLFOR("/" + $ObjectType.APTS_Agreement__c)])}";
+				// navigate to the new agreement
+				navigateTo(newUrl);
+				
+			}
+		
+		}
+		
+    </script>
+	
+</apex:page>

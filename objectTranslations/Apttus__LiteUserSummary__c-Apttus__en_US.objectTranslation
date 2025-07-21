@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lite User Usage Summary</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lite Users Usage Summary</value>
+    </caseValues>
+    <fields>
+        <help><!-- Indicates whether the user exceeded allowed login count --></help>
+        <label><!-- Has Exceeded Allowed Login? --></label>
+        <name>Apttus__IsExceededLogin__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of logins for the given period --></help>
+        <label><!-- Login Count for Given Period --></label>
+        <name>Apttus__LastLoginCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the lite profile --></help>
+        <label><!-- Profile --></label>
+        <name>Apttus__Profile__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total user login count since inception --></help>
+        <label><!-- Total login count Till Date --></label>
+        <name>Apttus__TotalLoginTillDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- User Id belongs to lite profiles --></help>
+        <label><!-- User --></label>
+        <name>Apttus__UserId__c</name>
+        <relationshipLabel><!-- Lite Users Usage Summary --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Telemetry Span</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Telemetry Spans</value>
+    </caseValues>
+    <fields>
+        <help><!-- Long text area field used for capturing extra transaction data (in JSON format or similar) that was not captured in other fields. --></help>
+        <label><!-- Attributes (Extra Operation Data) --></label>
+        <name>Apttus_Base2__Attributes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the method or function where the operation occurred. --></help>
+        <label><!-- Code Function --></label>
+        <name>Apttus_Base2__CodeFunction__c</name>
+    </fields>
+    <fields>
+        <help><!-- Line number where this record was logged. --></help>
+        <label><!-- Code Line Number --></label>
+        <name>Apttus_Base2__CodeLineNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Ending timestamp of the operation being logged. --></help>
+        <label><!-- End Timestamp --></label>
+        <name>Apttus_Base2__EndTimestamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines whether this record has been synchronized with the external system or not. If so, data will be deleted in the next scheduled batch job run. --></help>
+        <label><!-- Is Record Synced? --></label>
+        <name>Apttus_Base2__IsSynced__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of operation or event to log. --></help>
+        <label><!-- Operation Name --></label>
+        <name>Apttus_Base2__OperationName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Salesforce organization id. --></help>
+        <label><!-- Org Id --></label>
+        <name>Apttus_Base2__OrgId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the package, resource, or product where this operation occurred. --></help>
+        <label><!-- Package or Resource Name --></label>
+        <name>Apttus_Base2__PackageName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Version of the package where this operation occurred. --></help>
+        <label><!-- Package Version --></label>
+        <name>Apttus_Base2__PackageVersion__c</name>
+    </fields>
+    <fields>
+        <help><!-- The parent of a telemetry span record. A record with this field set to null represents the Root span node. --></help>
+        <label><!-- Parent Span --></label>
+        <name>Apttus_Base2__ParentSpanId__c</name>
+        <relationshipLabel><!-- Telemetry Spans --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Start timestamp of the operation being logged. --></help>
+        <label><!-- Start Timestamp --></label>
+        <name>Apttus_Base2__StartTimestamp__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,39 @@
+<!--
+   Conga Contract Management
+   Office365SettingList
+    
+   @2021 Conga Inc. All rights reserved.
+  -->
+  <apex:page controller="Apttus.Office365SettingListController">     
+    <apex:form id="form" >
+        <apex:stylesheet value="{!URLFOR($Resource.Apttus__LightningResource,'css/page-icon.css')}" />
+        <apex:outputPanel >
+            <div class="bPageTitle bpageTitleExtra">
+                <div class="ptBody">
+                    <div class="content">
+                        <img src="{!URLFOR($Resource.LightningResource, '/images/headericons/Admin.png')}" class="pageIconPadding"/>
+                        <h1 class="pageType">{!$Label.CustomSetting}</h1>
+                        <h2 class="pageDescription">{!$Label.Office365Settings}</h2>
+                    </div>
+                </div>
+            </div>
+        </apex:outputPanel>
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="top">
+                <apex:outputLink title="{!$Label.Apttus__New}" styleClass="btn" value="/apex/Office365SettingEdit" style="text-decoration:none;padding:4px;" >{!$Label.Apttus__New}</apex:outputLink>                  
+            </apex:pageBlockButtons>    
+            <apex:pageBlockTable value="{!Office365Settings}" var="setting" rendered="{! IF(isSettingFound, true, false) }">
+                <apex:column headervalue="{!$Label.Apttus__Action}" style="width:100px;">
+                    <apex:outputLink title="{!$Label.Apttus__Edit}" value="/apex/Office365SettingEdit?setting={!setting.Name}" styleClass="actionLink">{!$Label.Apttus__Edit}</apex:outputLink>&nbsp;|&nbsp;
+                    <a href="javascript:if (window.confirm('{!$Label.Office365DeleteConfirmMessage}')) deleteSetting('{!setting.Name}');" styleClass="actionLink">{!$Label.Del}</a>
+                </apex:column>
+                <apex:column value="{!setting.Name}" />
+                <apex:column value="{!setting.Apttus__Active__c}" />
+            </apex:pageBlockTable>        
+        </apex:pageBlock>
+        <apex:pageMessage summary="{!$Label.Apttus__NoRecordFound}" severity="info" rendered="{! IF(isSettingFound, false, true) }" />          
+        <apex:actionFunction action="{!deleteSetting}" name="deleteSetting" reRender="form" >
+            <apex:param name="settingName" value="" assignTo="{!SelectedSettingName}"/>
+        </apex:actionFunction>
+    </apex:form>    
+</apex:page>

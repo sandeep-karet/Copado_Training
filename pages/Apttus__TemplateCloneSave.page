@@ -1,0 +1,93 @@
+<!-- 
+    Apttus Contract Management
+    TemplateCloneSave
+     
+    @2009-2011 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus__APTS_Template__c" 
+		   extensions="Apttus.QueryParamController"  
+		   showHeader="true">
+		   
+	<script type="text/javascript" src="/soap/ajax/50.0/connection.js"></script>
+	<script type="text/javascript" src="/soap/ajax/50.0/apex.js"></script>
+	<apex:include pageName="Apttus__ComplyJSLibInclude" />
+		<apex:include pageName="Apttus__YUILibrary" />
+	<apex:includeScript value="/support/console/45.0/integration.js"/>
+
+	<script>
+	// Function called when the DOM is ready to create the dialog,
+	// render the dialog into the document body, add our dialog skin
+	// css to the body tag, and wire up the buttons on our dialog   
+	YUI().use('event-base', function (Y) {
+			Y.on('domready', function () {
+					console.log("Once Dom Ready ");
+					// build the wait panel
+					YUI.force.com.showWaitPanel();
+					// post save
+					// delay to display progress message	
+					setTimeout(function() {
+						// post save
+						afterSave();
+					
+					}, 2000);
+
+			});
+	});
+	</script>
+	
+	
+	<script type="text/javascript">
+    
+	   	/**
+		 * Initializes the call
+		 */
+		function initCall() {
+		
+			try {
+				sforce.connection.sessionId = "{!$Api.Session_ID}"; //to avoid session timeout
+			} catch(e) {
+				erroralert(cERROR_UNKNOWN,e);
+				
+			}
+		
+		}
+    
+	    /**
+		 * Callback invoked after a template clone is saved
+		 */
+		function afterSave() {
+			
+			// get parameters
+			// original template id
+			var originalId = "{!jsencode(originalId)}";
+			// clone template id
+			var cloneId = "{!jsencode(cloneId)}";
+			
+			try {
+				// STEP I - initialize the call
+				initCall();
+				// STEP II - copy child objects from original template to the template clone
+				doCopyTemplateChildSObjects(originalId, cloneId);
+				// STEP III - perform after clone tasks
+				afterTemplateClone(originalId, cloneId);
+				// STEP IV - update document properties
+				updateTemplateDocs(cloneId);
+				
+			} catch(ex) {
+				// hide modal panel
+				YUI.force.com.hideWaitPanel();
+				// display the error
+				erroralert(cERROR_UNKNOWN, ex);
+				
+			} finally {
+				// open the template clone in view mode
+				navigateTo("/" + cloneId);
+				
+			}
+		
+		}
+	
+    </script>
+	
+</apex:page>

@@ -1,0 +1,83 @@
+<!-- 
+    Conga Approvals
+    MyApprovalsActionsInclude
+     
+    @2021 Conga Inc. All rights reserved.
+
+ -->
+ <apex:page controller="Apttus_Approval.MyApprovalsController">
+	<apex:form >
+		<!-- actions common to classic and lightning pages -->
+        <apex:actionFunction name="invokeShowAddApprover"
+                             action="{!doShowAddApprover}"
+                             reRender="idAddApproverForm"
+                             onComplete="onShowAddApproverComplete();">  
+            <apex:param name="requestId" value="" />  
+        </apex:actionFunction>
+        <apex:actionFunction name="invokeShowRemoveApprover"
+                             action="{!doShowRemoveApprover}"
+                             reRender="idRemoveApproverForm"
+                             onComplete="onShowRemoveApproverComplete();">  
+            <apex:param name="requestId" value="" />  
+        </apex:actionFunction>
+        <apex:actionFunction name="invokeSearchAddApprover"
+                             action="{!doSearchAddApprover}"
+                             reRender="idAddApproverSearchForm"
+                             onComplete="onSearchAddApproverComplete();">  
+            <apex:param name="requestId" value="" />  
+            <apex:param name="assigneeType" value="" />  
+            <apex:param name="searchText" value="" />  
+        </apex:actionFunction>
+        <apex:actionFunction name="invokeDoAddApprover"
+                             action="{!doAddApprover}"
+                             reRender="idPagePanel,idAddApproverForm"
+                             onComplete="onAddApproverComplete();">  
+            <apex:param name="requestId" value="" />  
+            <apex:param name="mode" value="" />  
+            <apex:param name="stepLabel" value="" />  
+            <apex:param name="assigneeType" value="" />  
+            <apex:param name="assigneeName" value="" />  
+            <apex:param name="assigneeId" value="" />  
+            <apex:param name="comment" value="" />
+        </apex:actionFunction>
+        <apex:actionFunction name="invokeDoCancelAddApprover" 
+                             action="{!doCancelAddApprover}" 
+                             reRender="idPagePanel,idAddApproverForm"
+                             onComplete="onAddApproverComplete();">
+        </apex:actionFunction>
+        <apex:actionFunction name="invokeDoRemoveApprover"
+                             action="{!doRemoveApprover}"
+                             reRender="idPagePanel,idRemoveApproverForm"
+                             onComplete="onRemoveApproverComplete();">  
+            <apex:param name="requestId" value="" />  
+        </apex:actionFunction>
+        <apex:actionFunction name="invokeShowReassignApprover"
+                             action="{!doShowReassignApprover}"
+                             reRender="idReassignApproverForm"
+                             onComplete="onShowReassignApproverComplete();">  
+            <apex:param name="requestId" value="" />  
+        </apex:actionFunction>
+        <apex:actionFunction name="invokeSearchReassignApprover"
+                             action="{!doSearchReassignApprover}"
+                             reRender="idReassignApproverSearchForm"
+                             onComplete="onSearchReassignApproverComplete();">
+            <apex:param name="requestId" value="" />  
+            <apex:param name="searchText" value="" />  
+        </apex:actionFunction>
+        <apex:actionFunction name="invokeDoReassignApprover"
+                             action="{!doReassignApprover}"
+                             reRender="idPagePanel,idReassignApproverForm"
+                             onComplete="onReassignApproverComplete();">  
+            <apex:param name="requestId" value="" />  
+            <apex:param name="assigneeType" value="" />  
+            <apex:param name="assigneeName" value="" />  
+            <apex:param name="assigneeId" value="" />  
+            <apex:param name="comment" value="" />
+        </apex:actionFunction>
+        <apex:actionFunction name="invokeDoCancelReassignApprover" 
+                             action="{!doCancelReassignApprover}" 
+                             reRender="idPagePanel,idReassignApproverForm"
+                             onComplete="onReassignApproverComplete();">
+        </apex:actionFunction>
+	</apex:form>
+</apex:page>

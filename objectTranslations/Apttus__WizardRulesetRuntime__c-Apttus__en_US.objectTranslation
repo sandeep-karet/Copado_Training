@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Wizard Ruleset Runtime (Deprecated)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Wizard Ruleset Runtime</value>
+    </caseValues>
+    <fields>
+        <help><!-- Name of the focus object if one is determined by this ruleset. If none is determined, this value would be null. --></help>
+        <label><!-- Focus Object Name --></label>
+        <name>Apttus__FocusObjectName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Record Type if one is determined by this ruleset. If none is determined, this value would be null. --></help>
+        <label><!-- Record Type Name --></label>
+        <name>Apttus__RecordTypeName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference/Lookup to wizard ruleset --></help>
+        <label><!-- Wizard Ruleset --></label>
+        <name>Apttus__WizardRulesetId__c</name>
+        <relationshipLabel><!-- Wizard Ruleset Runtime --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference/Lookup to wizard step runtime --></help>
+        <label><!-- Wizard Step Runtime --></label>
+        <name>Apttus__WizardStepRuntimeId__c</name>
+        <relationshipLabel><!-- Wizard Ruleset Runtime --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

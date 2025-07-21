@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DHC Field Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DHC Field Mapping</value>
+    </caseValues>
+    <fields>
+        <help><!-- Destination field of the standard object to which the source value is mapped. --></help>
+        <label><!-- Destination --></label>
+        <name>texcellency__Destination__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enables or disables a mapping. --></help>
+        <label><!-- Enabled --></label>
+        <name>texcellency__Enabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mapping applicability is controlled by certain flags. Currently supported:
+Skip new  = 1
+Skip updating = 2
+Skip if Source != DHC = 4
+Skip if Source != DHC &amp;&amp; Field Not Empty = 8
+Turn off multiple flags by setting the Mask to sum of indiv. values --></help>
+        <label><!-- Mask --></label>
+        <name>texcellency__Mask__c</name>
+    </fields>
+    <fields>
+        <help><!-- Source field from the API entity which provides the value for the destination field. --></help>
+        <label><!-- Source --></label>
+        <name>texcellency__Source__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the standard object type to which this mapping applies to.
+A - Account
+C - Contact
+L - Lead
+O - Opportunity. --></help>
+        <label><!-- Standard Object Type --></label>
+        <name>texcellency__StdObjType__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

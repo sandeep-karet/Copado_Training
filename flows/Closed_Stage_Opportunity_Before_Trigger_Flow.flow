@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>RFP Count for Opportunity record ID</description>
+        <name>RFP_Count_Assignment</name>
+        <label>RFP Count Assignment</label>
+        <locationX>182</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>RFPSize</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Get_RFP_Records</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Closed_Won_Checkbox</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Decide whether the stage is closed won/lost and what actions to take.</description>
+        <name>Closed_Stage_Decision</name>
+        <label>Closed Stage Decision</label>
+        <locationX>468</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Closed_Won</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_RFP_Records</targetReference>
+            </connector>
+            <label>Closed Won</label>
+        </rules>
+        <rules>
+            <name>Closed_Lost</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Close_Date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Closed Lost</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Setting &apos;RFP Finalist&apos; to true Opportunity is moved to Closed Won and False if not currently in stage or moved back from Closed Won.</description>
+        <name>Closed_Won_Checkbox</name>
+        <label>Closed Won Checkbox</label>
+        <locationX>182</locationX>
+        <locationY>611</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>RFP_Finalist_Equals_True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RFPSize</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RFP_Finalist_Checkbox_to_True</targetReference>
+            </connector>
+            <label>RFP Finalist Equals True</label>
+        </rules>
+    </decisions>
+    <description>Opportunity Flow with entry conditions on if Stage Name is either Closed Won or Lost.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Today Date Formula Variable</description>
+        <name>TodaysDate</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>Opportunity Before Trigger Closed Stage Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Closed Stage Opportunity Before Trigger Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Retrieve RFP records</description>
+        <name>Get_RFP_Records</name>
+        <label>Get RFP Records</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>RFP_Count_Assignment</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>RFP__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Marking RFP Finalist checkbox to true once Opportunity stage is moved to Closed won</description>
+        <name>RFP_Finalist_Checkbox_to_True</name>
+        <label>RFP Finalist Checkbox to True</label>
+        <locationX>50</locationX>
+        <locationY>719</locationY>
+        <inputAssignments>
+            <field>RFP_Finalist__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update Close Date to Today&apos;s Date is Opportunity stage is moved to Closed Lost.</description>
+        <name>Update_Close_Date</name>
+        <label>Update Close Date</label>
+        <locationX>490</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>CloseDate</field>
+            <value>
+                <elementReference>TodaysDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>342</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Closed_Stage_Decision</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>1 OR 2</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Lost</stringValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Number of RFPs associated to the Opportunity record ID.</description>
+        <name>RFPSize</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+</Flow>

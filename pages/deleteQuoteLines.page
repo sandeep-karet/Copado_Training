@@ -1,0 +1,20 @@
+<apex:page standardController="SBQQ__QuoteLine__c" action="{!IF($Profile.Name != 'System Administrator', null, URLFOR($Action.SBQQ__QuoteLine__c.Delete, SBQQ__QuoteLine__c.Id, [nooverride=1], true))}">
+    <apex:slds />
+    <div class="slds-scope">
+    <apex:form id="form" style="height: 400px; margin-top:200px">
+                <div id="spinner" class="slds-spinner_container slds-is-relative" >
+                    <div role="status" class="slds-spinner slds-spinner--large slds-spinner--brand">
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+    </apex:form>
+    </div>
+    <apex:pageMessages id="pbm"/>
+    <script>
+    window.onload=function(){
+        alert('You may not delete quote line records.  Please contact administrator.');
+        window.history.back();
+        };
+    </script>
+</apex:page>

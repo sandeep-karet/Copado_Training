@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Altify Account Objective</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Altify Account Objectives</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Division --></label>
+        <name>ALTF__Account_Division__c</name>
+        <relationshipLabel><!-- Altify Account Objectives --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference to the Account for the Objective --></help>
+        <label><!-- Account --></label>
+        <name>ALTF__Account__c</name>
+        <relationshipLabel><!-- Altify Objectives --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- AltifyId --></label>
+        <name>ALTF__AltifyId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date you expect to achieve the Objective. --></help>
+        <label><!-- Due Date --></label>
+        <name>ALTF__Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- IsCompleted is true if Status == &apos;Completed - Achieved&apos; OR Status == &apos;Completed - Not Achieved&apos;, false otherwise --></help>
+        <label><!-- IsCompleted --></label>
+        <name>ALTF__IsCompleted__c</name>
+    </fields>
+    <fields>
+        <help><!-- true if status != completed and due date &lt; today, false otherwise --></help>
+        <label><!-- IsOverdue --></label>
+        <name>ALTF__IsOverdue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Default Objective --></label>
+        <name>ALTF__Is_Default_Objective__c</name>
+    </fields>
+    <fields>
+        <help><!-- The measurable metric(s) that will indicate you have achieved the Objective or the measurable results of achieving the Objective. For example, &quot;$5M in pipeline&quot;, or &quot;unlimited access to the SVP(include the names)&quot;, or &quot;$2M in revenue&quot;. --></help>
+        <label><!-- Metric --></label>
+        <name>ALTF__Metric__c</name>
+    </fields>
+    <fields>
+        <help><!-- The value this objective delivers to others. How is this Objective relevant to the customer, or how is it relevant to the partner if this is a Partner Objective, or relevant to you if this is a Customer Success Objective. --></help>
+        <label><!-- Objective Description --></label>
+        <name>ALTF__Objective_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>ALTF__Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overdue Status --></label>
+        <name>ALTF__Overdue_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>ALTF__Owner__c</name>
+        <relationshipLabel><!-- Altify Account Objectives --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Priority --></help>
+        <label><!-- Priority --></label>
+        <name>ALTF__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Status --></help>
+        <label><!-- Status --></label>
+        <name>ALTF__Status__c</name>
+        <picklistValues>
+            <masterLabel>Achieved</masterLabel>
+            <translation><!-- Achieved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How you plan to achieve the objective. A description of your high level approach to achieving the Objective. For example, &quot;by leveraging relationships and references in the industry&quot; --></help>
+        <label><!-- Strategy --></label>
+        <name>ALTF__Strategy__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specify the Objective by providing a description of what you want to accomplish as it relates to the Objective Type. For example, &quot;grow the pipeline&quot;, or &quot;improve relationship with key players (be specific and use the names of the Key Players)&quot;, or &quot; --></help>
+        <label><!-- Subject --></label>
+        <name>ALTF__Subject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Using the drop down list, select what type of Objective you are adding. --></help>
+        <label><!-- Type --></label>
+        <name>ALTF__Type__c</name>
+        <picklistValues>
+            <masterLabel>Business Development</masterLabel>
+            <translation><!-- Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Success</masterLabel>
+            <translation><!-- Customer Success --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship</masterLabel>
+            <translation><!-- Relationship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Remove Barrier</masterLabel>
+            <translation><!-- Remove Barrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research</masterLabel>
+            <translation><!-- Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revenue</masterLabel>
+            <translation><!-- Revenue --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

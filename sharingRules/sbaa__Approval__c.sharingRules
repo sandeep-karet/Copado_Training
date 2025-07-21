@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Sharing_with_Client_Technical_Ops</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing with Client &amp; Technical Ops</label>
+        <sharedTo>
+            <group>Client_Technical_Ops</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_with_Billing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing with Billing</label>
+        <sharedTo>
+            <role>Billing</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Contract_Ops</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_with_Deal_desk_Pricing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing with Deal desk/Pricing</label>
+        <sharedTo>
+            <role>Deal_Desk_Pricing</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Contract_Ops</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

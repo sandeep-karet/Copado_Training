@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Territory2Rule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <booleanFilter>(1 AND 3) OR (2 AND 4)</booleanFilter>
+    <name>NorthEast Division 3</name>
+    <objectType>Account</objectType>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Livingston,Madison,Monroe,Montgomery,Niagara,Oneida,Onondaga,Ontario,Orleans,Oswego,Otsego,Rensselaer,SaintLawrence,Saratoga,Schenectady,Schoharie,Schuyler,Seneca,Steuben,Sullivan,Tioga,Tompkins,Ulster,Warren,Washington,Wayne,Wyoming,Yates</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Armstrong,Blair,Bradford,Butler,Cambria,Cameron,Carbon,Centre,Clarion,Clearfield,Clinton,Columbia,Crawford,Elk,Erie,Forest,Indiana,Jefferson,Lackawanna,Lawrence,Luzerne,Lycoming,McKean,Mercer,Monroe,Montour,Northumberland,Pike,Potter,Snyder,Sullivan,Susquehanna,Tioga,Union,Venango,Warren,Wayne,Wyoming</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>NY</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>PA</value>
+    </ruleItems>
+</Territory2Rule>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Office365 Review Cycle Cancel Notification Email Template</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Apttus__ApttusLetterhead</letterhead>
+    <name>Office365 Review Cycle Cancel Notification</name>
+    <style>freeForm</style>
+    <subject>Review for {!Apttus__DocumentVersionDetail__c.Apttus__Title__c} has been Cancelled</subject>
+    <textOnly>Hello,
+
+
+Review Request Cancelled for  {!Apttus__DocumentVersionDetail__c.Apttus__Title__c}.
+
+
+Thanks,
+
+Conga CLM</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

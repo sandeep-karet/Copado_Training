@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Altify Contact</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Altify Contacts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Adaptability Last Modified --></label>
+        <name>ALTF__Adaptability_Last_Modified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adaptability --></label>
+        <name>ALTF__Adaptability__c</name>
+        <picklistValues>
+            <masterLabel>Conservative</masterLabel>
+            <translation><!-- Conservative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Innovator</masterLabel>
+            <translation><!-- Innovator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laggard</masterLabel>
+            <translation><!-- Laggard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pragmatist</masterLabel>
+            <translation><!-- Pragmatist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visionary</masterLabel>
+            <translation><!-- Visionary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- AltifyId --></label>
+        <name>ALTF__AltifyId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Altify Personas --></label>
+        <name>ALTF__Altify_Personas__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>ALTF__Contact__c</name>
+        <relationshipLabel><!-- Altify Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>ALTF__Owner__c</name>
+        <relationshipLabel><!-- Altify Contacts --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The Contact field of the Altify Contact object cannot be reset from non null to null --></errorMessage>
+        <name>ALTF__Contact_cannot_be_reset_from_non_null</name>
+    </validationRules>
+</CustomObjectTranslation>

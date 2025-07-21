@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Altify Sales Process Stage Qualifier</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Altify Sales Process Stage Qualifiers</value>
+    </caseValues>
+    <fields>
+        <label><!-- AltifyId --></label>
+        <name>ALTF__AltifyId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Relative importance of this qualifier in the sales process.
+
+Note that the importance level provided will impact:
+- Closure Probability 
+- Close Date
+- Stage (highest importance qualifiers must be completed to move the opp. to the next stage) --></help>
+        <label><!-- Importance --></label>
+        <name>ALTF__Importance__c</name>
+        <picklistValues>
+            <masterLabel>Essential</masterLabel>
+            <translation><!-- Essential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Important</masterLabel>
+            <translation><!-- Important --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nice to have</masterLabel>
+            <translation><!-- Nice to have --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very important</masterLabel>
+            <translation><!-- Very important --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Mandatory qualifiers must be completed before the opportunity can move to a future stage in the sales process, regardless of whether or not the overall qualification threshold of the stage has been reached. --></help>
+        <label><!-- Mandatory --></label>
+        <name>ALTF__Mandatory__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the global qualifier to link to this sales process stage --></help>
+        <label><!-- Qualifier --></label>
+        <name>ALTF__Sales_Process_Qualifier__c</name>
+        <relationshipLabel><!-- Altify Sales Process Stage Qualifiers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Process Stage --></label>
+        <name>ALTF__Sales_Process_Stage__c</name>
+        <relationshipLabel><!-- Altify Sales Process Stage Qualifiers --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The order in which this qualifier is displayed relative to the other qualifiers in the stage.
+
+You should make the order value unique for each qualifier in the stage, to guarantee the same order display each time. --></help>
+        <label><!-- Sort Order --></label>
+        <name>ALTF__Sort_Order__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>mkto_si__Configuration__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>JSON configuration to be used by the handler. Specify settings here</inlineHelpText>
+        <label>Configuration</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Enabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Execute_Independently__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, then the handler will be executed as part of its own transaction</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Execute Independently</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>mkto_si__Handler_Class__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Name of the handler class that implements the interface IntegrationLogHandlerInterface</inlineHelpText>
+        <label>Handler Class</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Integration Log Handler</label>
+    <listViews>
+        <fullName>mkto_si__Configured_Handlers</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>mkto_si__Handler_Class__c</columns>
+        <columns>mkto_si__Execute_Independently__c</columns>
+        <columns>mkto_si__Enabled__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Configured Handlers</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>Integration Log Handlers</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

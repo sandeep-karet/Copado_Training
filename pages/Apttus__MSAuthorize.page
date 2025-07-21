@@ -1,0 +1,24 @@
+<!--
+   Conga Contract Management
+   MSAuthorize
+    
+   @2021 Conga Inc. All rights reserved.
+  -->
+<apex:page controller="Apttus.MSAuthorizeController" lightningStylesheets="true">
+  <apex:includeLightning /> 
+
+  <!-- loading message -->
+  <div id="loading">{!$Label.LoadingPage}</div>
+      
+  <!-- redirect to Lightning Aura component container if lightning experience else open in Lightning Out -->
+  <!-- using Aura container since redirection to Lightning Web Component directly is not supported -->
+  <script>    
+    var nsPrefix = '{!JSENCODE(nsPrefix)}';
+    var lightningRedirectURL = '{!pageName}?' + nsPrefix + '__agreementId={!JSENCODE(agreementId)}&' + nsPrefix + '__action={!JSENCODE(actionName)}&' + nsPrefix + '__documentIdsCsv={!JSENCODE(documentIdsCsv)}&' + nsPrefix + '__code={!JSENCODE(code)}&' + nsPrefix + '__recordId={!JSENCODE(recordId)}&' + nsPrefix + '__setting={!JSENCODE(settingName)}&'  + nsPrefix + '__reviewerId={!JSENCODE(reviewerId)}';
+    if((typeof sforce != 'undefined') && sforce && sforce.one) {
+        sforce.one.navigateToURL(lightningRedirectURL);            
+    } else {  
+        window.open(lightningRedirectURL, '_parent');   
+    }
+  </script>  
+</apex:page>

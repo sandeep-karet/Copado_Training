@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Genehmiger</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Genehmiger</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Genehmiger --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Genehmiger --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Genehmiger --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Genehmiger --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Genehmiger --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Genehmiger --></value>
+    </caseValues>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used with Delegated Approvals, lookup to the Approver who is the delegate for this Approver --></help>
+        <label>Delegierter Genehmiger</label>
+        <name>sbaa__DelegatedApprover__c</name>
+        <relationshipLabel>Delegierte Genehmiger</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- User associated with the Delegated Approver --></help>
+        <label>ID des delegierten Benutzers</label>
+        <name>sbaa__DelegatedUserId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approval delegations end at the end of this date --></help>
+        <label>Delegierungsende</label>
+        <name>sbaa__DelegationEnd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approval delegations start on the beginning of this date --></help>
+        <label>Delegierungsstart</label>
+        <name>sbaa__DelegationStart__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Approver is a Group instead of a single User, populate with the Group ID --></help>
+        <label>Gruppen-ID</label>
+        <name>sbaa__GroupId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approver that needs to approve after this Approver approves --></help>
+        <label>Nächster Genehmiger</label>
+        <name>sbaa__NextApprover__c</name>
+        <relationshipLabel>Genehmiger</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If Approver is a Group, checked if all members need to Approve in order to consider the Approval approved --></help>
+        <label>Einstimmig</label>
+        <name>sbaa__Unanimous__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Approver is a single User, lookup to that User --></help>
+        <label>Benutzer</label>
+        <name>sbaa__User__c</name>
+        <relationshipLabel><!-- Approvers --></relationshipLabel>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Genehmigername</nameFieldLabel>
+    <webLinks>
+        <label>Ersetzen</label>
+        <name>sbaa__Replace</name>
+    </webLinks>
+</CustomObjectTranslation>

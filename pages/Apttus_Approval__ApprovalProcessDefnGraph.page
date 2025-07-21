@@ -1,0 +1,860 @@
+<apex:page docType="html-5.0" applyHtmlTag="false" applyBodyTag="false" showHeader="false" sidebar="false" standardStylesheets="false" controller="Apttus_Approval.ApprovalProcessDefnGraphController" lightningStylesheets="true">
+    <apex:includeScript value="{!URLFOR($Resource.Apttus_Approval__mxGraph,'mxGraph/javascript/mxClient.js')}" />
+    <apex:slds />
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <head>
+        <!-- Sets the basepath for the library if not in same directory -->
+        <script type="text/javascript">
+            mxBasePath = "{!URLFOR($Resource.mxGraph,'mxGraph/javascript/src')}";
+        </script>
+
+        <!-- Loads and initializes the library -->
+        <script type="text/javascript" src="{!URLFOR($Resource.Apttus_Approval__mxGraph,'mxGraph/javascript/mxClient.js')}"></script>
+
+
+        <!-- Example code -->
+        <script type="text/javascript">
+            var stepData = <apex:outputText value="{!stepData}" />;
+            //console.log('stepData', stepData);
+            /**
+            * SizeConstants
+            *
+            * Heights, widths, and margins used in rendering the graph
+            */
+            function SizeConstants() {
+                this.graphMargin = 10;
+
+                this.poolWidth = 500;
+                this.poolHeightMin = 120;
+
+                this.columnWidth = 200;
+
+                this.stepWidth = 150;
+                this.stepHeight = 80;
+                this.stepSpacingY = 30;
+                this.stepSpacingX = 50;
+                this.stepLeftMargin = 70;
+
+                // How much to truncate. Decreasing this value produces a longer label.
+                this.stepSubLabelTruncateFactor = 0.55;
+                this.stepLabelTruncateFactor = 0.6
+            }
+            var sizes = new SizeConstants();
+
+
+            /**
+            * StyleNames
+            *
+            * Style names used for identitying styles and the cells they are applied to
+            */
+            function StyleNames() {
+                this.edge = "IWA_EDGE";
+                this.stepEditorLinks = "IWA_STEP_EDITOR_LINKS";
+                this.stageEditorLinks = "IWA_STAGE_EDITOR_LINKS";
+                this.stage = "IWA_STAGE";
+                this.stageTitle = "IWA_STAGE_TITLE";
+                this.step = "IWA_STEP";
+                this.stepLabel = "IWA_LABEL_STEP";
+                this.stepNameLabel = "IWA_LABEL_STEP_NAME";
+                this.swimlane = "IWA_SWIMLANE";
+            }
+            var styles = new StyleNames();
+
+            /**
+            * Process 
+            *
+            * Class that represents a process definition and calculates the the hierarchical position of the steps and stages, and handles 
+            *   step-object processing functions.
+            */
+            function Process() {
+
+                // An ordered array of columns, each containing a list of steps to display
+                this.stepColumns = new Array();
+                // A list of steps with no parent in the current set
+                this.rootSteps = new Array();
+                // A dictionary of child steps
+                this.stepsByParentId = {};
+                this.stepMap = {};
+            }
+
+            /**
+            * Determines the appropriate horizontal (column) positions of all steps and stages 
+            * in the graph, based on the structure of the process tree.
+            */
+            Process.prototype.getColumnPositions = function (stepRecs, stageRecs) {
+
+                // Build dictionaries and lists we can use to lookup steps and stages
+                this.buildStepLookups(stepRecs, stageRecs);
+
+                // Adds all steps that have no stage ancestor
+                var maxColumn = this.setPreStageColumns(this.rootSteps);
+
+                //only if there are root steps that are not part of stage do we want to add a column number
+                if (maxColumn != 0 || (maxColumn == 0 && this.nonStageRoots != 0)) {
+                    maxColumn += 1;
+                }
+            }
+
+            /**
+            * Build lookup table of child steps
+            */
+            Process.prototype.buildStepLookups = function (stepRecs) {
+
+                // Initialize the stepMap Array having the stepLabel as key and step as its value
+                for (var j = 0; j < stepRecs.length; j++) {
+                    this.stepMap[stepRecs[j].stepLabel] = stepRecs[j];
+                }
+
+                for (var i = 0; i < stepRecs.length; i++) {
+                    var parentStepId = stepRecs[i].stepDependsOn;
+                    if (parentStepId != null && !parentStepId.includes('\n')) {
+                        // This step has a parent step
+                        this.stepMap[stepRecs[i].stepLabel].stageId = null;
+                        this.addChildStep(parentStepId, this.stepMap[stepRecs[i].stepLabel]);
+                    } else if (parentStepId != null && parentStepId.includes('\n')) {
+                        // Has parent stage
+                        var parentStageId = parentStepId;// "Step1\nStep2"
+                        var parentArray = parentStageId.split('\n');
+                        this.stepMap[stepRecs[i].stepLabel].stageId = null;
+                        parentArray.forEach(element => {
+                            this.stepMap[element].stageId = parentStageId;
+                            this.addChildStep(this.stepMap[element].stepLabel,this.stepMap[stepRecs[i].stepLabel]);
+                        });
+                    } else {
+                        // No parent
+                        this.stepMap[stepRecs[i].stepLabel].stageId = null;
+                        this.rootSteps.push(this.stepMap[stepRecs[i].stepLabel]);
+                    }
+                }
+            }
+            
+            /**
+            * Sets the columns for the specified set of root steps 
+            * and all descendants that have no stage ancestor.
+            * Returns the highest column set.
+            */
+            Process.prototype.setPreStageColumns = function (rootSteps) {
+                var maxColumn = 0;
+                var rootCount = 0;
+                for (var i = 0; i < rootSteps.length; i++) {
+                    rootCount++;
+                    var col = this.setStepColumn(rootSteps[i], null, 0);// to determine the depth of each step and 
+                    if (col > maxColumn) maxColumn = col; // getting the max column for all the steps 
+                }
+                Process.prototype.nonStageRoots = rootCount;
+                return maxColumn;
+            }
+
+            /**
+            * Sets the given column for the given step, then recursively adds 
+            *  descendant steps until a new stage is encountered.
+            */
+            Process.prototype.setStepColumn = function (step, parentStep, column) {
+                var maxColumn = column
+                //var stageId = step.stageId;
+                if (this.stepColumns[column] == null) {
+                    this.stepColumns[column] = new Array();
+                }
+                this.stepColumns[column].push(step);
+                var stepId = step.stepLabel;
+                if(this.stepsByParentId[stepId] != undefined){
+                    if (this.stepsByParentId[step.stepLabel].includes(parentStep)) {return;}
+                    else{
+                        column = column + 1;
+                        for (var i = 0; i < this.stepsByParentId[stepId].length; i++) {
+                            var col = this.setStepColumn(this.stepsByParentId[stepId][i], step, column);
+                            if (col > maxColumn) maxColumn = col;
+                        }
+                    }
+                }   
+                return maxColumn;
+            }
+
+            /**
+            * Adds a step to the child collection of its parent. 
+            * The parent could be a step or a stage.
+            */
+            Process.prototype.addChildStep = function (parentId, step) {
+                if (this.stepsByParentId[parentId] == null) {
+                    this.stepsByParentId[parentId] = new Array();
+                }
+                this.stepsByParentId[parentId].push(step);
+            }
+
+            /**
+            * Gets the name of the pool the given step should be in
+            */
+            Process.prototype.getPoolName = function (step) {
+                var poolName = "";
+                if (step.stepAssigneeType != null) {
+                    poolName = step.stepAssigneeType;
+                } else{
+                    poolname = 'default';
+                }
+                return poolName;
+            }
+
+            /**
+            * Gets the name of the lane the given step should be in
+            */
+            Process.prototype.getLaneName = function (step) {
+                var laneName = "";
+                if (step.stepAssigneeType != null) {
+                    laneName = step.stepAssigneeLabel;
+                }else {
+                    laneName = "default";
+                }
+                return laneName;
+            }
+
+
+            /**
+            * Graph Manager
+            * 
+            * Manages settings related to the graph object.
+            */
+            function GraphManager(graph) {
+                this.graph = graph;
+            }
+
+            /**
+            * Add a swimlane to the graph
+            */
+            GraphManager.prototype.addSwimLane = function (parent, name, width, height) {
+                return this.graph.insertVertex(parent, null, name, 0, 0, width, height, styles.swimlane);
+            }
+
+            /**
+            * Configures mxGraph settings, extensions, and event handlers.
+            */
+            GraphManager.prototype.configure = function () {
+                // Disable moving nodes around
+                this.graph.setEnabled(false);
+
+                // Set graph margin
+                this.graph.border = sizes.graphMargin;
+                this.graph.getView().translate = new mxPoint(this.graph.border / 2, this.graph.border / 2);
+
+                // Auto-resize the container
+                this.graph.setResizeContainer(true);
+                this.graph.graphHandler.setRemoveCellsFromParent(false);
+
+                // Add new method for identifying a pool
+                this.graph.isPool = function (cell) {
+                    var model = this.getModel();
+                    var parent = model.getParent(cell);
+
+                    return parent != null && model.getParent(parent) == model.getRoot();
+                };
+
+                // Turn on HTML labels
+                this.graph.htmlLabels = true;
+
+                // Enables wrapping for vertex labels
+                this.graph.isWrapping = function (cell) {
+                    return true;
+                };
+
+                // Truncates the label to the size of the vertex
+                /*&& geometry.width >= 2*/
+                this.graph.getLabel = function (cell) {
+                    var label = this.convertValueToString(cell);
+                    var geometry = this.model.getGeometry(cell);
+
+                    if (!this.model.isCollapsed(cell) && geometry != null && (geometry.offset == null ||
+                        (geometry.offset.x == 0 && geometry.offset.y == 0)) && this.model.isVertex(cell) ) {
+                        var style = this.getCellStyle(cell);
+                        var fontSize = style[mxConstants.STYLE_FONTSIZE] || mxConstants.DEFAULT_FONTSIZE;
+
+                        var max = (geometry.width * 2) / (fontSize * sizes.stepLabelTruncateFactor);
+                        if (max < label.length) {
+                            return label.substring(0, max) + '...';
+                        }
+                    }
+
+                    return label;
+                };
+
+                this.graph.getCursorForCell = function (cell) {
+                    return (isStep(cell) ? "pointer" : null);
+                }
+                this.graph.addListener(mxEvent.CLICK, function (sender, evt) {
+                    console.log('event:',evt);
+                    var cell = evt.getProperty('cell');
+                    if (cell != null) {
+
+                        if (isStep(cell)) {
+                            var cellStep = stepData.filter((element)=>{return element.stepLabel == cell.value});
+                            //console.log('cellvalue:',cellStep);
+                            if(cellStep[0].stepAssigneeType == 'Subprocess' || cellStep[0].stepAssigneeType == 'Childprocess'){
+                                var url = "/apex/ApprovalProcessDefnGraph?ruleId=" + cellStep[0].stepAssigneeId +'&stepName='+cellStep[0].stepLabel+'&retUrl='+encodeURIComponent(location.href);
+                                //console.log('pathname:',window.location.href.indexOf(url));
+                                if(window.location.href.indexOf(url) == -1){
+                                    window.open(url,'_blank');
+                                }
+                            }else if(cellStep[0].stepAssigneeLabel == 'Rule Entries'){
+                                var processNameFromUrl = new URL(location.href).searchParams.get('processName');
+                                var url = "/apex/ApprovalProcessDefnGraph?ruleEntryId=" + cellStep[0].ruleEntryObject.Id+'&ruleEntryName='+cellStep[0].stepLabel+'&retUrl='+encodeURIComponent(location.href);
+                                //console.log('pathname:',window.location.href.indexOf(url));
+                                if(window.location.href.indexOf(url) == -1){
+                                    window.open(url,'_blank');
+                                }
+                            } 
+                            //console.log('url:',url);
+                        }
+                    }
+                }); 
+                // Render the label
+                this.graph.convertValueToString = function (cell) {
+                    if (cell != null) {
+                        if (isStepNameLabel(cell)) {
+                            return cell.value.Name;
+                        }else {
+                            return cell.value;
+                        }
+                    }
+                    return "";
+                };
+            }
+
+            /**
+            * Sets and configures mxGraph layout managers
+            */
+            GraphManager.prototype.defineLayout = function (model) {
+                // Applies size changes to siblings and parents
+                new mxSwimlaneManager(this.graph);
+
+                // Creates a stack depending on the orientation of the swimlane
+                var layout = new mxStackLayout(this.graph, false);
+
+                // Makes sure all children fit into the parent swimlane
+                layout.resizeParent = true;
+
+                // Applies the size to children if parent size changes
+                layout.fill = true;
+                layout.spacing = 0;
+
+                // Only update the size of swimlanes
+                layout.isVertexIgnored = function (vertex) {
+                    return !this.graph.isSwimlane(vertex);
+                }
+
+                // Keeps the lanes and pools stacked
+                var layoutMgr = new mxLayoutManager(this.graph);
+
+                layoutMgr.getLayout = function (cell) {
+                    if (!model.isEdge(cell) && this.graph.getModel().getChildCount(cell) > 0 &&
+                        (model.getParent(cell) == model.getRoot() || this.graph.isPool(cell))) {
+                        layout.fill = this.graph.isPool(cell);
+
+                        return layout;
+                    }
+                };
+            }
+
+            /**
+            * Defines all mxGraph styles used
+            */
+            GraphManager.prototype.defineStyles = function () {
+                // Swim lanes
+                var style = new Object();
+                style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_SWIMLANE;
+                style[mxConstants.STYLE_FONTFAMILY] = "Salesforce Sans";
+                style[mxConstants.STYLE_OPACITY] = 100;
+                style[mxConstants.STYLE_FOLDABLE] = 0;
+                style[mxConstants.STYLE_VERTICAL_ALIGN] = 'top';
+                style[mxConstants.STYLE_FONTSIZE] = 14;
+                style[mxConstants.STYLE_STARTSIZE] = 50;
+                style[mxConstants.STYLE_HORIZONTAL] = false;
+                style[mxConstants.STYLE_FONTCOLOR] = 'black';
+                style[mxConstants.STYLE_STROKECOLOR] = '#7F7F7F';
+                style[mxConstants.STYLE_STROKEWIDTH] = 1;
+                style[mxConstants.STYLE_FILLCOLOR] = "#CACACA";
+                style[mxConstants.STYLE_OPACITY] = 40;
+                
+
+                this.graph.getStylesheet().putCellStyle(styles.swimlane, style);
+
+                // Stages
+                style = new Object();
+                style[mxConstants.STYLE_FONTFAMILY] = "Salesforce Sans";
+                style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_RECTANGLE;
+                style[mxConstants.STYLE_OPACITY] = 100;
+                style[mxConstants.STYLE_FONTCOLOR] = '#774400';
+                style[mxConstants.STYLE_FOLDABLE] = 0;
+                style[mxConstants.STYLE_LABEL_POSITION] = mxConstants.ALIGN_MIDDLE;
+                style[mxConstants.STYLE_VERTICAL_LABEL_POSITION] = mxConstants.ALIGN_CENTER;
+                style[mxConstants.STYLE_FILLCOLOR] = "#E6E6E6";
+                style[mxConstants.STYLE_STROKECOLOR] = "#666666";
+                style[mxConstants.STYLE_STROKEWIDTH] = 2;
+
+                this.graph.getStylesheet().putCellStyle(styles.stage, style);
+
+                // Stage Title
+                style = new Object();
+                style[mxConstants.STYLE_FONTFAMILY] = "Salesforce Sans";
+                style[mxConstants.STYLE_OPACITY] = 0;
+                style[mxConstants.STYLE_FONTCOLOR] = '#774400';
+                style[mxConstants.STYLE_FOLDABLE] = 0;
+                style[mxConstants.STYLE_VERTICAL_ALIGN] = 'top';
+                style[mxConstants.STYLE_FONTSIZE] = 11;
+                style[mxConstants.STYLE_HORIZONTAL] = true;
+                style[mxConstants.STYLE_FONTCOLOR] = 'black';
+                style[mxConstants.STYLE_STROKECOLOR] = 'black';
+
+                this.graph.getStylesheet().putCellStyle(styles.stageTitle, style);
+
+                // Steps
+                style = new Object();
+                style[mxConstants.STYLE_FONTFAMILY] = "Salesforce Sans";
+                style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_RECTANGLE;
+                style[mxConstants.STYLE_FOLDABLE] = 0;
+                style[mxConstants.STYLE_ARCSIZE] = 9;
+                style[mxConstants.STYLE_FILLCOLOR] = "#ced8e4";//"#A6B8CE";
+                style[mxConstants.STYLE_STROKECOLOR] = "#7591b3";//original
+                // style[mxConstants.STYLE_STROKECOLOR] = "#7E8A96";//original
+                style[mxConstants.STYLE_STROKEWIDTH] = 1;
+                style[mxConstants.STYLE_PERIMETER] = mxPerimeter.RectanglePerimeter;
+                // style[mxConstants.STYLE_GRADIENTCOLOR] = '#A6B8CE';
+                style[mxConstants.STYLE_PERIMETER_SPACING] = 2;
+                style[mxConstants.STYLE_ROUNDED] = true;
+                style[mxConstants.STYLE_SHADOW] = false;
+                style[mxConstants.STYLE_FONTSTYLE] = mxConstants.FONT_BOLD;
+                style[mxConstants.STYLE_FONTFAMILY] = "Salesforce Sans";
+                style[mxConstants.STYLE_FONTCOLOR] = 'black';
+                style[mxConstants.STYLE_FONTSIZE] = 13;
+                this.graph.getStylesheet().putCellStyle(styles.step, style);
+
+                // Step label
+                var style = new Object();
+                style[mxConstants.STYLE_FONTFAMILY] = "Salesforce Sans";
+                style[mxConstants.STYLE_FONTCOLOR] = 'black';
+                style[mxConstants.STYLE_FONTSTYLE] = mxConstants.FONT_BOLD;
+                style[mxConstants.STYLE_FONTSIZE] = 12;
+                this.graph.getStylesheet().putCellStyle(styles.stepNameLabel, style);
+
+                // Edges
+                var style = new Object();
+                style[mxConstants.STYLE_ROUNDED] = true;
+                style[mxConstants.STYLE_EDGE] = mxEdgeStyle.ElbowConnector;
+                style[mxConstants.STYLE_FONTFAMILY] = "Salesforce Sans";
+                style[mxConstants.STYLE_STROKEWIDTH] = 3;
+                style[mxConstants.STYLE_OPACITY] = 75;
+                style[mxConstants.STYLE_ENTRY_X] = 0;
+                style[mxConstants.STYLE_EXIT_X] = 1;
+                style[mxConstants.STYLE_SOURCE_PERIMETER_SPACING] = 5;
+                style[mxConstants.STYLE_TARGET_PERIMETER_SPACING] = 5;
+
+                this.graph.getStylesheet().putCellStyle(styles.edge, style);
+            }
+
+            /**
+            * Edge Manager
+            *
+            * Stores settings for determing the style and connection points of edges.
+            */
+            function EdgeManager() {
+                // The set of possible stroke colors for an edge
+                this.edgeColors = ["59595C"];//["59595C", "F95922", "5AABCD", "CC6600"];
+
+                // The set of possible percents that an edge may be offset from the top of a node
+                this.offsets = [0.5, 0.62, 0.38, 0.74, 0.26];
+                this.nodeColors = {};
+                this.nodeOffsets = {};
+                this.laneNodeCount = {};
+                this.edgeIndex = 0;
+            }
+
+            /**
+            * Returns the best style for an edge connection the parent and child nodes specified.
+            * The color and connection point are varied within a swimlane to avoid edge overlap.         
+            * Multiple edges coming from the same parent node use the same style.
+            */
+            EdgeManager.prototype.getEdgeStyle = function (parentNode, childNode) {
+                var color = "";
+                var parentOffset = 0.5;
+                var childOffset = 0.5;
+
+                parentLaneId = null;
+                childLaneId = null;
+
+                // Calculate edge offset from top of parent node
+                if (isStep(parentNode)) {
+                    parentLaneId = parentNode.parent.value;
+                    if (this.nodeOffsets[parentNode.value] != null) {
+                        // Keep offsets the same for multiple edges coming from the same parent
+                        parentOffset = this.nodeOffsets[parentNode.value];
+                    }
+                    else {
+                        if (this.laneNodeCount[parentLaneId] == null) this.laneNodeCount[parentLaneId] = 0;
+                        parentOffset = this.offsets[this.laneNodeCount[parentLaneId] % this.offsets.length];
+
+                        this.laneNodeCount[parentLaneId] += 1;
+                        this.nodeOffsets[parentNode.value] = parentOffset;
+                    }
+                }
+
+                if (isStep(childNode)) {
+                    childLaneId = childNode.parent.value;
+                    if (parentLaneId != null && parentLaneId == childLaneId) {
+                        // Keep edges straight if they don't cross lanes
+                        childOffset = parentOffset
+                    }
+                    else {
+                        if (this.laneNodeCount[childLaneId] == null) this.laneNodeCount[childLaneId] = 0;
+                        var childOffset = this.offsets[this.laneNodeCount[childLaneId] % this.offsets.length];
+                        this.laneNodeCount[childLaneId] += 1;
+                    }
+                }
+
+                if (this.nodeColors[parentNode.value] != null) {
+                    // Keep colors the same for multiple edges coming from the same parent
+                    color = this.nodeColors[parentNode.value];
+                }
+                else {
+                    color = this.edgeColors[this.edgeIndex % this.edgeColors.length];
+                    this.nodeColors[parentNode.value] = color;
+                    this.edgeIndex++;
+                }
+
+                return styles.edge + ";strokeColor=#" + color + ";entryY=" + childOffset + ";exitY=" + parentOffset;
+            }
+
+            var graph;
+            var printZoomFactor = 0.6;
+
+            function drawGraph(container) {
+                var model;
+
+                if (!mxClient.isBrowserSupported()) {
+                    mxUtils.error('Browser is not supported!', 200, false);
+                }
+                else {
+                    createBreadcrumbs();
+                    model = new mxGraphModel();
+                    // Tell the model to manage cell ids for us
+                    model.isCreateIds();
+
+                    graph = new mxGraph(container, model);
+
+                    var graphMgr = new GraphManager(graph);
+                    var edgeMgr = new EdgeManager();
+
+                    // Configure mxGraph properties, methods, and event handlers
+                    graphMgr.configure();
+
+                    // Create style sheet
+                    graphMgr.defineStyles();
+
+                    // Initialize the layout managers
+                    graphMgr.defineLayout(model);
+
+                    // Get the main parent for the graph
+                    var parent = graph.getDefaultParent();
+
+                    ///
+                    // Draw the graph
+                    ///
+
+                    model.beginUpdate();
+                    try {
+                        var pools = {};
+
+                        if (stepData != null) {
+
+                            var processDef = new Process();
+
+                            processDef.getColumnPositions(stepData, null);
+                            // Build lanes and pools
+                            for (var i = 0; i < stepData.length; i++) {
+                                var step = stepData[i];
+
+                                var poolName = processDef.getPoolName(step);
+                                var laneName = processDef.getLaneName(step);
+
+                                if (pools[poolName] == null) {
+                                    pools[poolName] = {};
+                                }
+                                if (pools[poolName][laneName] == null) {
+                                    pools[poolName][laneName] = {};
+                                    pools[poolName][laneName].steps = new Array();
+                                }
+                            }
+                            
+                            var firstSwimlane = null;
+
+                            for (var key in pools) {
+                                var pool = graphMgr.addSwimLane(parent, key);
+                                for (var lane in pools[key]) {
+                                    var swimlane = graphMgr.addSwimLane(pool, lane, sizes.poolWidth);
+                                    pools[key][lane].lane = swimlane;
+                                    pools[key][lane].columnTops = new Array();
+
+                                    if (firstSwimlane == null) firstSwimlane = swimlane;
+                                }
+                            }
+
+                            var stepLeft = sizes.stepLeftMargin;
+
+                            var stepNodes = {};
+
+                            //console.log('processDef',processDef);
+                            // Removing the duplicate steps if added recursively in stepColumns
+                            var tempArray = [];
+                            for (var colIndex = processDef.stepColumns.length - 1; colIndex >= 0; colIndex--) {	
+                                if(processDef.stepColumns[colIndex] != null && processDef.stepColumns[colIndex] != undefined){
+                                for (var stepIndex = 0; stepIndex < processDef.stepColumns[colIndex].length; stepIndex++) {
+                                    var step = processDef.stepColumns[colIndex][stepIndex];
+                                    if(tempArray == null || !tempArray.includes(step)){
+                                        tempArray.push(step);
+                                    }else{
+                                        delete processDef.stepColumns[colIndex][stepIndex];
+                                    }
+                                }
+                                processDef.stepColumns[colIndex] = processDef.stepColumns[colIndex].filter((element)=>{return element != undefined;});
+                            }}
+                            // create steps, pools and lanes
+                            for (var colIndex = 0; colIndex < processDef.stepColumns.length; colIndex++) {
+
+                                if(processDef.stepColumns[colIndex] != null && processDef.stepColumns[colIndex] != undefined){
+                                for (var stepIndex = 0; stepIndex < processDef.stepColumns[colIndex].length; stepIndex++) {
+
+                                    var step = processDef.stepColumns[colIndex][stepIndex];
+                                    var pool = processDef.getPoolName(step);
+                                    var lane = processDef.getLaneName(step);
+
+                                    var swimlane = pools[pool][lane].lane;
+
+                                    var top = pools[pool][lane].columnTops[colIndex];
+                                    if (top == null) top = sizes.stepSpacingY;
+
+                                    if (swimlane != null) {
+                                        var style = styles.step
+                                        // The step
+                                        var node = graph.insertVertex(swimlane, null, step.stepLabel, stepLeft, top, sizes.stepWidth, sizes.stepHeight, style);
+                                        stepNodes[step.stepLabel] = node;
+                                        pools[pool][lane].columnTops[colIndex] = top + sizes.stepHeight + sizes.stepSpacingY;
+                                    }
+                                    else {
+                                        alert("Can\'t find swimlane " + pool + ":" + lane + ".");
+                                    }
+                                }
+                                }
+                                stepLeft = stepLeft + sizes.columnWidth;
+                            }
+                            // Add some padding to the right side
+                                var node = graph.insertVertex(firstSwimlane, null, '', firstSwimlane.geometry.width, 0, sizes.stepSpacingX, 0);
+
+                            // Get total graph height
+                            var totalGraphHeight = 0;
+                            for (var pool in pools) {
+                                for (var lane in pools[pool]) {
+                                    var currentLane = pools[pool][lane].lane;
+
+                                    // Add some padding to the lanes
+                                    currentLane.geometry.height += sizes.stepSpacingY;
+
+                                    if (currentLane.geometry.height < sizes.poolHeightMin) currentLane.geometry.height = sizes.poolHeightMin;
+                                    totalGraphHeight += currentLane.geometry.height;
+                                }
+                            }
+                            //console.log('stepNodes hereee:',stepNodes);
+                            // Draw edges
+                            //console.log('StepsByParentID:', processDef.stepsByParentId);
+                            for (var key in processDef.stepsByParentId) {
+                                for (var i = 0; i < processDef.stepsByParentId[key].length; i++) {
+                                    var parentNode = stepNodes[key];
+                                    var childStep = processDef.stepsByParentId[key][i];
+                                    var childNode = stepNodes[childStep.stepLabel];
+                                    /* console.log('parentNode',parentNode);
+                                    console.log('childNode',childNode);	 */
+                                    if (parentNode != null && parentNode != undefined && childNode != null ) {
+                                        var edgeStyle = edgeMgr.getEdgeStyle(parentNode, childNode);
+                                        // Shift the child node 
+                                        var currentEdge = graph.insertEdge(parent, null, '', parentNode, childNode, edgeStyle);
+                                        // Put edges behind nodes
+                                        graph.orderCells(true, [currentEdge]);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        model.endUpdate();
+
+                        // set zoom
+                        if (window.innerWidth < 500) {
+                            graph.zoomTo(0.3, true);
+                        } else if (window.innerWidth < 700) {
+                            graph.zoomTo(0.4, true);
+                        } else if (window.innerWidth < 900) {
+                            graph.zoomTo(0.5, true);
+                        } else if (window.innerWidth < 1100) {
+                            graph.zoomTo(0.6, true);
+                        } else if (window.innerWidth < 1300) {
+                            graph.zoomTo(0.7, true);
+                        } else if (window.innerWidth < 1500) {
+                            graph.zoomTo(0.8, true);
+                        } else if (window.innerWidth < 1700) {
+                            graph.zoomTo(0.9, true);
+                        }
+                    }
+                }
+            }
+            /**
+            * True if the given cell is a step name label
+            */
+            function isStepNameLabel(cell) {
+                var style = cell.getStyle()
+                return style == styles.stepNameLabel;
+            }
+            /**
+            * Printing
+            */
+            function printGraph() {
+                var preview = new mxPrintPreview(graph);
+                //console.log('Previewing at scale '+printZoomFactor);
+                preview.scale = printZoomFactor;
+                preview.border = 25;
+                preview.pageFormat = mxConstants.PAGE_FORMAT_A4_LANDSCAPE;
+                preview.open();
+            }
+
+            /**
+            * Zoom Out
+            */
+            function zoomOut() {
+                //console.log('zoomOut');
+                printZoomFactor -= 0.1;
+                graph.zoomOut();
+            }
+
+            /**
+            * Zoom In 
+            */
+            function zoomIn() {
+                //console.log('zoomIn');
+                printZoomFactor += 0.1;
+                graph.zoomIn();
+            }
+
+            /**
+            * Resets the Zoom to Default 
+            */
+            function zoomActual() {
+                //console.log('zoomActual ');
+                printZoomFactor = 0.60;
+                graph.zoomActual();
+            }
+            /**
+            * True if the given cell is a step
+            */
+            function isStep(cell) {
+                return true;
+            }
+
+            function createBreadcrumbs(){
+                var currentUrl = window.location.href;
+                //console.log("currentUrl: ",currentUrl);
+                var retUrl = new URL(location.href).searchParams.get("retUrl");
+                // encode URL to prevent Client DOM XSS
+                retUrl = encodeURI(retUrl);
+                if(retUrl == null){
+                    var navId = document.getElementById('navId');
+                    var ol = document.getElementById("olId");
+                    const li = createBreadcrumbLI("Conga Approval Process: {!JSENCODE(processName)}","/{!JSENCODE(processId)}",true);
+                    document.getElementById('processNameHeader').innerHTML = "{!JSENCODE(processName)}";
+                    ol.appendChild(li);
+                    navId.appendChild(ol);
+                }else if(retUrl != null && location.search.includes("ruleId") && !location.search.includes("ruleEntryId")){
+                    var navId = document.getElementById('navId');
+                    var ol = document.getElementById("olId");
+                    var stepName = new URL(location.href).searchParams.get("stepName");
+                    var processName = new URL(retUrl).searchParams.get("processName");
+                    document.getElementById('processNameHeader').innerHTML = processName;
+                    retUrl = retUrl.indexOf('&sfdc') != -1 ? retUrl.substring(0,retUrl.indexOf('&sfdc')) : retUrl;
+                    const processLI = createBreadcrumbLI(processName,retUrl,true);
+                    const stepli = createBreadcrumbLI(stepName,location.href,false);
+                    ol.appendChild(processLI);
+                    ol.appendChild(stepli);
+                    navId.appendChild(ol);
+                }else if(retUrl != null && location.search.includes("ruleEntryId")){
+                    var processUrl = new URL(retUrl).searchParams.get("retUrl");
+                    processUrl = processUrl.indexOf('&sfdc') != -1 ? processUrl.substring(0,processUrl.indexOf('&sfdc')) : processUrl;
+                    var ruleEntryName = new URL(location.href).searchParams.get("ruleEntryName");
+                    var navId = document.getElementById('navId');
+                    var ol = document.getElementById("olId");
+                    var stepName = new URL(decodeURIComponent(retUrl)).searchParams.get("stepName");
+                    var processName = new URL(processUrl).searchParams.get("processName");
+                    document.getElementById('processNameHeader').innerHTML = processName;
+                    const processLI = createBreadcrumbLI(processName,processUrl,true);
+                    const stepli = createBreadcrumbLI(stepName,retUrl,false);
+                    const ruleEntryLi = createBreadcrumbLI(ruleEntryName,location.href,false);
+                    ol.appendChild(processLI);
+                    ol.appendChild(stepli);
+                    ol.appendChild(ruleEntryLi);
+                    navId.appendChild(ol);
+                }		
+            }
+            function createBreadcrumbLI(linkLabel, linkUrl,isPadded){
+                const li = document.createElement("li");
+                li.className = isPadded ? "slds-breadcrumb__item slds-m-left_x-large slds-p-left_small": "slds-breadcrumb__item";
+                const a = document.createElement("a");
+                a.href = linkUrl;
+                a.innerText = linkLabel;
+                li.appendChild(a);
+                return li;
+            }
+
+        </script>
+    </head>
+    <div class="slds-scope">
+        <div class="slds-page-header slds-m-bottom_medium" role="banner">
+        <div class="slds-grid">
+            <div class="slds-col slds-has-flexi-truncate">
+                <div class="slds-media">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-custom-custom40">
+                        <svg aria-hidden="true" class="slds-icon">
+                            <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/custom-sprite/svg/symbols.svg#custom40')}"></use>
+                        </svg>
+                            <span class="slds-assistive-text">Approval Process</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <p class="slds-text-heading--label">Approval Process Visualization</p>
+                    <div class="slds-grid">
+                    <h1 id="processNameHeader" class="slds-page-header__title slds-m-right--small slds-truncate slds-align-middle" title="Record Title"></h1>
+                    <div class="slds-col slds-shrink-none">
+
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="slds-col slds-no-flex slds-align-bottom" >
+                <div class="slds-float_right" >
+                    <div class="slds-button-group" role="group">
+                        <button id="zoomAndPrint" class="slds-button slds-button--small slds-button--neutral" onclick="zoomIn();">Zoom In</button>  
+                        <button class="slds-button slds-button--small slds-button--neutral" onclick="zoomOut();">Zoom Out</button>  
+                        <button class="slds-button slds-button--small slds-button--neutral" onclick="zoomActual();">Reset Zoom</button>&nbsp;&nbsp; 
+                        <button class="slds-button slds-button--small slds-button--neutral" onclick="printGraph();">Print</button>&nbsp;&nbsp; 
+                        <div class="slds-button--last">
+                            <!-- placeholder -->
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            </div>
+            
+        <nav role="navigation" aria-label="Breadcrumbs" id="navId">
+            <ol class="slds-breadcrumb slds-list_horizontal slds-wrap" id="olId"></ol>
+        </nav>
+    </div>
+    </div>
+    <body onload="drawGraph(document.getElementById('graphContainer'))">
+        <!-- Creates a container for the graph with a grid wallpaper. -->
+        <div id="graphContainer" style="width:100%;margin-left: auto; margin-right: auto;overflow:auto;" />
+    </body>
+    </html>
+</apex:page>

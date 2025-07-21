@@ -1,0 +1,65 @@
+<apex:page controller="ALTF.CaladanController" applyBodyTag="false" applyHtmlTag="true" showHeader="false" docType="html-5.0" standardStylesheets="false">
+    <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <title>Caladan</title>
+            <base href="https://localhost:4200" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" type="image/x-icon" href="favicon.ico" />
+            <apex:includeScript value="{!URLFOR($Resource.ALTF__JSforce)}" />
+            <script>
+                    userId: "{!JSENCODE($User.Id)}",
+                    username: "{!$User.FirstName} {!$User.LastName}",
+                    languageLocaleKey: "{!TEXT($User.LanguageLocaleKey)}",
+                    timeZoneSidKey: "{!TEXT($User.TimeZoneSidKey)}",
+                    timeZoneOffset: {!timezoneOffset},
+                    localeSidKey: "{!TEXT($User.LocaleSidKey)}",
+                    fiscalYearStartMonth: {!fiscalYearStartMonth},
+                    coreSettings: {!coreSettings},
+                    amSettings: {!amSettings},
+                    currency: {
+                        isMultiCurrency: {!IF(isMultiCurrency, 'true', 'false')},
+                        userCurrency: "{!JSENCODE(defaultCurrency)}",
+                        corporateCurrency: "{!JSENCODE(corporateCurrencyISO)}",
+                        corporateSymbol: "{!JSENCODE(corporateCurrencySymbol)}",
+                        exchangeRate: {!userCurrencyExchangeRate}
+                    }
+                };
+                var altifyCrud = {
+                    accessToken: "{!$API.Session_Id}",
+                    version: "52.0",
+                    namespace: "ALTF",
+                    devNamespace: "ALTF",
+                    instanceUrl: undefined,
+                    theme: "{!JSENCODE($User.UIThemeDisplayed)}"
+                };
+                var describe = {
+                    Task: {
+                        label: "{!JSENCODE($Label.COMMON_ACTION)}"
+                    },
+                    ALTF__Account_Objective__c: {
+                        label: "{!JSENCODE($Label.RESOURCE_OBJECTIVE)}"
+                    }
+                };
+
+                setTimeout(
+                    function(){
+                        if (this.SfdcApp && this.SfdcApp.projectOneNavigator) {
+                            SfdcApp.projectOneNavigator.sendTitleToParent("{!$Label.APP_NAME}");
+                        }
+                    },
+                    1
+                );
+            </script>
+            <link rel="stylesheet" href="styles.css" />
+        </head>
+        <body>
+            <c:caladanlabels />
+            <sam-root></sam-root>
+            <script src="runtime.js" defer="true"></script>
+            <script src="polyfills.js" defer="true"></script>
+            <script src="vendor.js" defer="true"></script>
+            <script src="main.js" defer="true"></script>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Ruleset --></value>
+    </caseValues>
+    <fields>
+        <help><!-- Advanced expression that allows combination of AND and OR operators on rules. --></help>
+        <label>高度な式</label>
+        <name>Apttus__AdvancedExpression__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the object when the rule is of type &apos;Determine Focus Object&apos; or &apos;Determine Record Type&apos; --></help>
+        <label>コンテキストオブジェクト</label>
+        <name>Apttus__ContextObject__c</name>
+    </fields>
+    <fields>
+        <label>メタプロパティフィールド名</label>
+        <name>Apttus__MetaPropertyFieldName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record type that corresponds to the record types for the object --></help>
+        <label>レコードタイプ</label>
+        <name>Apttus__RecordTypeId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The value that is determined by the condition being met. --></help>
+        <label>合成値</label>
+        <name>Apttus__ResultantValue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rule types that can be used for navigating the runtime wizard flow, determining the focus object and record type. --></help>
+        <label>ルールタイプ</label>
+        <name>Apttus__RuleType__c</name>
+        <picklistValues>
+            <masterLabel>Determine Focus Object</masterLabel>
+            <translation><!-- Determine Focus Object --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Determine Record Type</masterLabel>
+            <translation><!-- Determine Record Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disable This Control</masterLabel>
+            <translation><!-- Disable This Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enable This Control</masterLabel>
+            <translation><!-- Enable This Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Abort</masterLabel>
+            <translation><!-- Go To Abort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Step</masterLabel>
+            <translation><!-- Go To Step --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Submit</masterLabel>
+            <translation><!-- Go To Submit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hide This Control</masterLabel>
+            <translation><!-- Hide This Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set This Control Value</masterLabel>
+            <translation><!-- Set This Control Value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Show This Control</masterLabel>
+            <translation><!-- Show This Control --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Sequence of the ruleset within the step/input it belongs to. --></help>
+        <label>順番</label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- Applicable to rule type &apos;Go To Step&apos;. --></help>
+        <label>ウィザードステップへ進む</label>
+        <name>Apttus__ToWizardStepId__c</name>
+        <relationshipLabel>ステップルールセット (To)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Wizard Input Control --></help>
+        <label>ウィザード入力制御</label>
+        <name>Apttus__WizardInputControlId__c</name>
+        <relationshipLabel>入力ルールセット</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Wizard Step --></help>
+        <label>ウィザードステップ</label>
+        <name>Apttus__WizardStepId__c</name>
+        <relationshipLabel>ステップルールセット</relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Ruleset Name --></nameFieldLabel>
+</CustomObjectTranslation>

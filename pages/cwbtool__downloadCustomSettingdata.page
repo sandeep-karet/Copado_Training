@@ -1,0 +1,10 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 02-26-2023
+  @last modified by  : Kanishk Singh
+-->
+<apex:page controller="cwbtool.CustomSettingController" contenttype="application/x-excel#FullCustomSettingtDetail_{!Now()}.xls" readOnly="true">
+<c:CustomSetting mapFullCustomSettingaDetail="{!mapFullCustomSettingaDetail}" /> 
+</apex:page>

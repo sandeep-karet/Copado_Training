@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Altify Sales Process Qualifier</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Altify Sales Process Qualifiers</value>
+    </caseValues>
+    <fields>
+        <label><!-- AltifyId --></label>
+        <name>ALTF__AltifyId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The text for the qualifier / verifiable outcome, displayed to the user on the &quot;Sales Process&quot; tab in Altify.
+
+To progress an opportunity through the pipeline, the user sets the status on the qualifiers associated with each stage in the sales pr --></help>
+        <label><!-- Question --></label>
+        <name>ALTF__Question__c</name>
+    </fields>
+    <fields>
+        <help><!-- The help text associated with the qualifier / verifiable outcome. 
+
+Use this section to provide instructions to the user on what the question is asking them to focus on, what steps they should take and/or what details they should provide in the co --></help>
+        <label><!-- Tip --></label>
+        <name>ALTF__Tip__c</name>
+    </fields>
+    <fields>
+        <help><!-- A Smart Qualifier cannot be set by a user on the playbook UI screen. 
+It is anticipated that these qualifiers will be set by other means (triggers etc) --></help>
+        <label><!-- Smart Qualifier --></label>
+        <name>ALTF__UI_Readonly__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Export_DM_Qualifiers --></label>
+        <name>ALTF__Export_DM_Qualifiers</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Import_DM_Qualifiers --></label>
+        <name>ALTF__Import_DM_Qualifiers</name>
+    </webLinks>
+</CustomObjectTranslation>

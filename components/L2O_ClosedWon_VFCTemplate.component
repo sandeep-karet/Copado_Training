@@ -1,0 +1,233 @@
+<!-- This Component is calling from 'L2O_ClosedWon_Template' classic Email Template-->
+<!-- L2O_ClosedWon_VFCTemplateController is the controller class for this component -->
+<!-- This Component have an attribute oppIdValue, getting value from 'L2O_ClosedWon_Template' classic Email Template-->
+<apex:component access="global" controller="L2O_ClosedWon_VFCTemplateController">
+    <style>
+        <!-- Faint blue zebra stripes for Table row -->
+tbody tr:nth-child(odd) {
+   background-color: #ADD8E6;
+}
+         <!-- Purpule Background color, White font and Left alignment for Table header -->
+table > thead > tr > th{
+background-color: purple;
+        color: white;
+        text-align: left;
+}
+         <!-- Sloid grey border for Table -->
+        table, td, th {
+    border: 1px solid grey;
+   
+}
+</style>
+     <!-- oppIdValue contains the opportunity Id, for which Email Template needs to be sent. -->
+    <apex:attribute name="oppIdValue" type="String" description="This is the Id of the opportunity" assignTo="{!oppId}" access="global" />
+     <!-- Client Information block, contains Account Information -->
+    <h2 style="color:skyBlue;font-size:100%;">Client Information</h2>
+     <!-- outputpanel visible for non-international opportunity-->
+    <apex:outputpanel rendered="{!!isInternational}" >
+    <ul>
+        <!-- to show the opportunity's related Account Owner, Account Phone,Account Billing Country/Business Region, 
+          Opportunity Description and Opportunity Number of Lives-->
+        <li><p><i>Account Owner : <b><apex:outputField value="{!oppRecord.Account.Owner.Name}"/></b></i> </p></li>
+        <li><p><i>Phone : <b><apex:outputField value="{!oppRecord.Account.Phone}"/></b></i> </p></li>
+        <!-- Account Billing Country / Account Business Region -->
+       <li><p><i>Country And Business Region : <b><apex:outputField value="{!oppRecord.Account.BillingCountry}"/> / <apex:outputField value="{!oppRecord.Account.L2O_Business_Region__c}"/></b></i> </p></li>
+        <li><p><i>Description : <b><apex:outputField value="{!oppRecord.Description}"/></b></i> </p></li>
+        <li><p><i>Total Number Employees : <b><apex:outputField value="{!oppRecord.L2O_Initial_of_Lives__c}"/></b></i> </p></li>
+    </ul>
+   </apex:outputpanel>
+    <!-- outputpanel visible for international opportunity -->
+    <apex:outputpanel rendered="{!isInternational}" >
+    <ul>
+         <!-- to show the opportunity's related Account Name, Account Client Code,Account Client VAT Number, Account Biiling Address,
+           and Quote Primary Contact's Email-->
+        <li><p><i>Client Name : <b><apex:outputField value="{!oppRecord.Account.Name}"/></b></i> </p></li>
+        <li><p><i>Client Code : <b><apex:outputField value="{!oppRecord.Account.L2O_Client_Code__c}"/></b></i> </p></li>
+       <li><p><i>Client VAT Number : <b><apex:outputField value="{!oppRecord.Account.L2O_Client_VAT_Number__c}"/></b></i> </p></li>
+        <!-- to show ',' separated Account Billing Address-->
+        <li><p><i>Client Billing Address : <b><apex:outputField value="{!oppRecord.Account.BillingStreet}"/>,
+            <apex:outputField value="{!oppRecord.Account.BillingCity}"/>,
+            <apex:outputField value="{!oppRecord.Account.BillingPostalCode}"/>,
+            <apex:outputField value="{!oppRecord.Account.BillingState}"/>,
+            <apex:outputField value="{!oppRecord.Account.BillingCountry}"/></b></i> </p></li>
+        <li><p><i>Primary Contact Email : <b><apex:outputText value="{!oppRecord.SBQQ__PrimaryQuote__r.SBQQ__PrimaryContact__r.Email}"/></b></i> </p></li>
+    </ul>
+   </apex:outputpanel>
+      <!-- Opportunity Information block, contains Opportunity Information -->
+     <h2 style="color:skyBlue;font-size:100%;">Opportunity Information</h2>
+    <!-- outputpanel visible for non-international opportunity-->
+    <apex:outputpanel rendered="{!!isInternational}" >
+    <ul>
+         <!-- to show the opportunity Owner-->
+        <li><p><i>Opportunity Owner : <b><apex:outputField value="{!oppRecord.Owner.Name}"/></b></i> </p></li>
+        </ul>
+        </apex:outputpanel>
+    <!-- outputpanel visible for both non-international/International opportunity-->
+    <apex:outputpanel >
+    <ul>
+         <!-- to show the opportunity Type, opportunity sub-type, opportunity Contract path, opportunity Channel Sement, 
+             opportunity Sub Channel Segment, Opportunity Close Date, Quote Start Date, Quote End Date  -->
+        <li><p><i>Type : <b><apex:outputField value="{!oppRecord.Type}"/></b></i> </p></li>
+        <li><p><i>Sub-Type : <b><apex:outputField value="{!oppRecord.L2O_Subtype__c}"/></b></i> </p></li>
+        <li><p><i>Contract Path : <b><apex:outputField value="{!oppRecord.L2O_Contract_Path__c}"/></b></i> </p></li>
+        <li><p><i>Channel Segment : <b><apex:outputField value="{!oppRecord.L2O_Channel_Segment__c}"/></b></i> </p></li>
+        <li><p><i>Sub Channel Segment : <b><apex:outputField value="{!oppRecord.L2O_Sub_Channel_Segment__c}"/></b></i> </p></li>
+       <li><p><i>Opportunity Close Date : <b><apex:outputField value="{!oppRecord.CloseDate}"/></b></i> </p></li>
+        <li><p><i>Quote Start Date : <b><apex:outputField value="{!oppRecord.SBQQ__PrimaryQuote__r.SBQQ__StartDate__c}"/></b></i> </p></li>
+        <li><p><i>Quote End Date : <b><apex:outputField value="{!oppRecord.SBQQ__PrimaryQuote__r.SBQQ__EndDate__c}"/></b></i> </p></li>
+    </ul>
+   </apex:outputpanel>
+    <!-- outputpanel visible for international opportunity-->
+    <apex:outputpanel rendered="{!isInternational}" >
+    <ul>
+        <!-- to show the opportunity Term, opportunity Business Region, opportunity Invoicing Country, opportunity Country of Service, 
+             opportunity Service Contract Code and Opportunity Currency -->
+        <li><p><i>Term : <b><apex:outputField value="{!oppRecord.L2O_Term_Calculation__c}"/>&nbsp;months</b></i> </p></li>
+        <li><p><i>Business Region : <b><apex:outputField value="{!oppRecord.L2O_Business_Region__c	}"/></b></i> </p></li>
+        <li><p><i>Invoicing Country : <b><apex:outputField value="{!oppRecord.L2O_Invoicing_Country__c}"/></b></i> </p></li>
+         <li><p><i>Country of Service : <b><apex:outputField value="{!oppRecord.L2O_Country_of_Service__c}"/></b></i> </p></li>
+         <li><p><i>Service Contract Code : <b><apex:outputField value="{!oppRecord.L2O_Service_Contract_Code__c}"/></b></i> </p></li>
+         <li><p><i>Opportunity Currency : <b><apex:outputField value="{!oppRecord.CurrencyIsoCode}"/></b></i> </p></li>
+    </ul>
+   </apex:outputpanel>
+      <!-- Product Information block, contains Quote Line Information -->   
+    <h2 style="color:skyBlue;font-size:100%;">Product Information</h2>
+     <!-- outputpanel visible for international opportunity-->
+    <apex:outputpanel title="INTL" rendered="{!isINTL}">
+        <h1 style="color:skyBlue;font-size:100%;">International</h1>
+        	<table class="table" border="1" style="border-collapse: separate">
+            <thead>    
+                 <!-- Table Headers for Quote Line Items -->
+                <tr>
+                    <th>Product Name</th> 
+                    <th>Year</th>
+                    <th>Quantity</th>
+                    <th>Case Rate</th>
+                    <th>Sales Price</th>
+                    <th>Net Total</th>
+                    <th>Service Platform</th>
+                </tr>
+            </thead>        
+            <tbody>
+                <!-- Table Body for Quote Line Items -->
+            <tr>
+                <!-- Iterate over the lineItems -->
+            	<apex:repeat value="{!quoteLineItemsforINTL}" var="lineItem"> 
+                    <!-- lineItem variable contains quote lines values -->
+                	<tr>
+                        <!-- to show the Quote Line's Product Name, Quote Start Date's Year, Quote Line Quantity,
+                              Quote Line's Case Rate,  Quote Line's Unit Cost,  Quote Line's Net Total and  Quote Line's Service Platform-->
+                    	<td>{!lineItem.SBQQ__ProductName__c}</td>
+                        <td>{!YEAR(lineItem.SBQQ__Quote__r.SBQQ__StartDate__c)}</td> 
+                        <td>{!lineItem.SBQQ__EffectiveQuantity__c}</td>    
+                        <td>{!lineItem.L2O_Case_Rate__c}</td> 
+                        <td>{!lineItem.SBQQ__UnitCost__c}</td> 
+                        <td>{!lineItem.SBQQ__NetTotal__c}</td> 
+                        <td>{!lineItem.L2O_Service_Platform__c}</td>
+                       </tr>
+            	</apex:repeat>                                             
+           </tr>           
+            </tbody>   
+	</table>
+    </apex:outputpanel>
+     <!-- outputpanel visible for non-international opportunity and show Quote Line of USGH products-->
+    <apex:outputpanel title="USGH" rendered="{!isUSGH}">
+        <h1 style="color:skyBlue;font-size:100%;">USGH</h1>
+        	<table class="table" border="1" style="border-collapse: separate">
+            <thead>    
+                 <!-- Table Headers for Quote Line Items -->
+                <tr>
+                    <th>Product Name</th> 
+                    <th>Quantity</th>
+                    <th>Membership Fee</th>
+                    <th>Per Unit Discount</th>
+                    <th>Net Total</th>
+                    <th>Service Platform</th>
+                </tr>
+            </thead>        
+            <tbody>
+                <!-- Table Body for Quote Line Items -->
+            <tr>
+                <!-- Iterate over the lineItems -->
+            	<apex:repeat value="{!quoteLineItemsforUSGH}" var="lineItem"> 
+                    <!-- lineItem variable contains quote lines values -->
+                	<tr>
+                        <!-- to show the Quote Line's Product Name, Quote Line Quantity, Quote Line's Membership Fee,
+                              Quote Line's Unit Discount, Quote Line's Net Total and  Quote Line's Service Platform-->
+                    	<td>{!lineItem.SBQQ__ProductName__c}</td>
+                        <td>{!lineItem.SBQQ__EffectiveQuantity__c}</td>    
+                        <td>{!lineItem.L2O_Membership_Fee__c}</td> 
+                        <td>{!lineItem.L2O_Per_Unit_Discount__c}</td> 
+                        <td>{!lineItem.SBQQ__NetTotal__c}</td> 
+                        <td>{!lineItem.L2O_Service_Platform__c}</td>
+                       </tr>
+            	</apex:repeat>                                             
+           </tr>           
+            </tbody>   
+	</table>
+    </apex:outputpanel>
+    <!-- outputpanel visible for non-international opportunity and show Quote Line of HHS products-->
+    <apex:outputpanel title="HHS" rendered="{!isHHS}">
+        <h1 style="color:skyBlue;font-size:100%;">HHS</h1>
+        	<table class="table" border="1" style="border-collapse: separate">
+            <thead>    
+                 <!-- Table Headers for Quote Line Items -->
+                <tr>
+                    <th>Product Name</th> 
+                    <th>Quantity</th>
+                    <th>List unit Price</th>
+                    <th>Additional Discount</th>
+                    <th>Net Total</th>
+                    <th>Service Platform</th>
+                </tr>
+            </thead>        
+            <tbody>
+                <!-- Table Body for Quote Line Items -->
+            <tr>
+                <!-- Iterate over the lineItems -->
+            	<apex:repeat value="{!quoteLineItemsforHHS}" var="lineItem"> 
+                    <!-- lineItem variable contains quote lines values -->
+                	<tr>
+                        <!-- to show the Quote Line's Product Name, Quote Line Quantity, Quote Line's List Price,
+                              Quote Line's Additional Discount, Quote Line's Net Total and  Quote Line's Service Platform-->
+                    	<td>{!lineItem.SBQQ__ProductName__c}</td>
+                        <td>{!lineItem.SBQQ__EffectiveQuantity__c}</td>    
+                        <td>{!lineItem.SBQQ__ListPrice__c}</td> 
+                        <td>{!lineItem.SBQQ__AdditionalDiscount__c}</td> 
+                        <td>{!lineItem.SBQQ__NetTotal__c}</td> 
+                        <td>{!lineItem.L2O_Service_Platform__c}</td>
+                       </tr>
+            	</apex:repeat>                                             
+           </tr>           
+            </tbody>   
+	</table>
+    </apex:outputpanel>
+     <!-- Pricing block, contains Revenue Fileds Information from Opportunity --> 
+    <h2 style="color:skyBlue;font-size:100%;">Pricing</h2>
+    <apex:outputpanel >
+    <ul>
+        <!--to show Opportunity TCV, Opportunity ARR, Opportunity Booking Total, Opportunity Net ARR, Opportunity Net ARR w/ PG,
+            Opportunity Est. In Year Revenue (IYR), Opportunity Est First Year Revenue,Opportunity Est. One Time Revenue, 
+              opporutnity 2nd Year Est Revenue and opportunity 3rd Year Est Revenue along with the opportunity currency prior to the values-->
+        
+        <li><p><i>TCV : <b>{!oppRecord.CurrencyIsoCode}&nbsp; <apex:outputText value="{!oppRecord.L2O_TCV__c}"/></b></i> </p></li>
+        <!-- rendered the CurrencyIsoCode only if 'L2O_ARR__c' field not null. -->
+        <li><p><i>ARR : <b><apex:outputText value="{!oppRecord.CurrencyIsoCode}" rendered="{!IF(oppRecord.L2O_ARR__c != null,True,False)}"/>&nbsp;
+            <apex:outputText value="{!oppRecord.L2O_ARR__c}"/></b></i> </p></li>
+        <li><p><i>Bookings Total : <b>{!oppRecord.CurrencyIsoCode}&nbsp;<apex:outputText value="{!oppRecord.L2O_Bookings_Total__c}"/></b></i> </p></li>
+       <li><p><i>Net ARR : <b>{!oppRecord.CurrencyIsoCode}&nbsp;<apex:outputText value="{!oppRecord.L2O_Net_ARR__c}"/></b></i> </p></li>
+        <li><p><i>Net ARR w/ PG : <b>{!oppRecord.CurrencyIsoCode}&nbsp;<apex:outputText value="{!oppRecord.L2O_Net_ARR_w_PG__c}"/></b></i> </p></li>
+        <li><p><i>Est. In Year Revenue (IYR) : <b>{!oppRecord.CurrencyIsoCode}&nbsp;<apex:outputText value="{!oppRecord.L2O_Est_In_Year_Revenue__c}"/></b></i> </p></li>
+        <li><p><i>Est First Year Revenue : <b>{!oppRecord.CurrencyIsoCode}&nbsp;<apex:outputText value="{!oppRecord.L2O_Est_First_Year_Revenue__c}"/></b></i> </p></li>
+        <li><p><i>Est. One Time Revenue : <b>{!oppRecord.CurrencyIsoCode}&nbsp;<apex:outputText value="{!oppRecord.L2O_Est_One_Time_Revenue__c}"/></b></i> </p></li>
+        <!-- rendered the CurrencyIsoCode only if 'L2O_2nd_Year_Est_Revenue__c' field not null   -->
+        <li><p><i>2nd Year Est Revenue : <b><apex:outputText value="{!oppRecord.CurrencyIsoCode}" rendered="{!IF(oppRecord.L2O_2nd_Year_Est_Revenue__c != null,True,False)}"/>&nbsp;
+            <apex:outputText value="{!oppRecord.L2O_2nd_Year_Est_Revenue__c}"/></b></i> </p></li>
+        <!-- rendered the CurrencyIsoCode only if 'L2O_3rd_Year_Est_Revenue__c' field not null   -->
+        <li><p><i>3rd Year Est Revenue : <b><apex:outputText value="{!oppRecord.CurrencyIsoCode}" rendered="{!IF(oppRecord.L2O_3rd_Year_Est_Revenue__c != null,True,False)}"/>&nbsp;
+            <apex:outputText value="{!oppRecord.L2O_3rd_Year_Est_Revenue__c}"/></b></i> </p></li>
+        
+        </ul>
+   </apex:outputpanel>
+   
+</apex:component>

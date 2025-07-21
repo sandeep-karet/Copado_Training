@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Holds the default recipients for e-signature.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Apttus_CMDSign__AgreementId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>ID of the associated agreement</description>
+        <inlineHelpText>ID of the associated agreement</inlineHelpText>
+        <label>Agreement</label>
+        <referenceTo>Apttus__APTS_Agreement__c</referenceTo>
+        <relationshipName>DocuSignDefaultRecipients2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__AccountId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>DocuSign Recipients</relationshipLabel>
+        <relationshipName>DocuSign_Recipients</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__ContactId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>ID of the contact recipient</description>
+        <inlineHelpText>ID of the contact recipient</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>DocuSignDefaultRecipients2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__EmailTemplateUniqueName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The &quot;Template Unique Name&quot; for the Salesforce text email template that needs to be used for the email subject and email body for the recipient. Only &quot;Text&quot; template type is supported.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The &quot;Template Unique Name&quot; for the Salesforce text email template that needs to be used for the email subject and email body for the recipient. Only &quot;Text&quot; template type is supported.</inlineHelpText>
+        <label>Email Template Unique Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Recipient Email Address</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Recipient Email Address</inlineHelpText>
+        <label>Recipient Email Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__FirstName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Recipient First Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Recipient First Name</inlineHelpText>
+        <label>Recipient First Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__IsRequired__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, users will not be able to remove the recipient on the user interface.</description>
+        <inlineHelpText>If checked, users will not be able to remove the recipient on the user interface.</inlineHelpText>
+        <label>Required?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__IsTransient__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates a transient recipient record that may get deleted by the user. A new recipient is in transient state until the recipient is explicitly saved by the user. A new recipient is created by new and clone methods. Workflow rules should check this field to test for false before firing so that rules are not incorrectly fired when transient recipients are created .</description>
+        <inlineHelpText>Indicates a transient recipient that may get deleted by the user. A new recipient is in transient state until the recipient is explicitly saved by the user.</inlineHelpText>
+        <label>IsTransient</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__LastName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Recipient Last Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Recipient Last Name</inlineHelpText>
+        <label>Recipient Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__Note__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Note for the individual recipient</description>
+        <inlineHelpText>Note for the individual recipient</inlineHelpText>
+        <label>Note</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__ReadOnlyEmail__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email</description>
+        <externalId>false</externalId>
+        <formula>IF( (ISBLANK(Apttus_DocuApi__SigningGroupId__c )) ,
+IF( (ISBLANK(Apttus_DocuApi__ContactId__c )) ,
+IF( (ISBLANK( Apttus_DocuApi__UserId__c )) , Apttus_DocuApi__Email__c
+, Apttus_DocuApi__UserId__r.Email
+
+),
+Apttus_DocuApi__ContactId__r.Email
+),
+$Label.Apttus_DocuApi__SigningGroupEmailPlaceholder
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Email</inlineHelpText>
+        <label>Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__ReadOnlyFirstName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( (ISBLANK(Apttus_DocuApi__SigningGroupId__c )) ,
+IF( (ISBLANK(Apttus_DocuApi__ContactId__c )) ,
+IF( (ISBLANK( Apttus_DocuApi__UserId__c )) , Apttus_DocuApi__FirstName__c
+, Apttus_DocuApi__UserId__r.FirstName
+
+),
+Apttus_DocuApi__ContactId__r.FirstName
+),
+Apttus_DocuApi__SigningGroupId__r.Name
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>First Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__ReadOnlyLastName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( (ISBLANK(Apttus_DocuApi__ContactId__c )) ,
+IF( (ISBLANK( Apttus_DocuApi__UserId__c )) , Apttus_DocuApi__LastName__c
+, Apttus_DocuApi__UserId__r.LastName
+
+),
+Apttus_DocuApi__ContactId__r.LastName
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Last Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__RecipientType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Recipient Type list will come from UI</description>
+        <inlineHelpText>Recipient Type list will come from UI</inlineHelpText>
+        <label>Recipient Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Signer</fullName>
+                    <default>true</default>
+                    <label>Signer</label>
+                </value>
+                <value>
+                    <fullName>Carbon Copy</fullName>
+                    <default>false</default>
+                    <label>Carbon Copy</label>
+                </value>
+                <value>
+                    <fullName>In Person Signer</fullName>
+                    <default>false</default>
+                    <label>In Person Signer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__RoleName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Role names are used to map the anchor tags within your documents to a recipient. Each role name must be entered on a separate line. Order of the role name determines which anchor tag set to map to. The first role in the list will map to the &apos;1&apos; tags within the document, second role to the &apos;2&apos; tags, etc. Example: If the first role is &apos;Signer 1&apos;, the recipient tied to the role will map to the \s1\, \i1\ etc. tags in the documents.</description>
+        <inlineHelpText>Role names are used to map the anchor tags within your documents to a recipient. Order of the role name determines which anchor tag set to map to.</inlineHelpText>
+        <label>Role Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Apttus_DocuApi__RecipientType__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Signer 1</fullName>
+                    <default>false</default>
+                    <label>Signer 1</label>
+                </value>
+                <value>
+                    <fullName>Signer 2</fullName>
+                    <default>false</default>
+                    <label>Signer 2</label>
+                </value>
+                <value>
+                    <fullName>Signer 3</fullName>
+                    <default>false</default>
+                    <label>Signer 3</label>
+                </value>
+                <value>
+                    <fullName>Signer 4</fullName>
+                    <default>false</default>
+                    <label>Signer 4</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Signer</controllingFieldValue>
+                <controllingFieldValue>In Person Signer</controllingFieldValue>
+                <valueName>Signer 1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Signer</controllingFieldValue>
+                <controllingFieldValue>In Person Signer</controllingFieldValue>
+                <valueName>Signer 2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Signer</controllingFieldValue>
+                <controllingFieldValue>In Person Signer</controllingFieldValue>
+                <valueName>Signer 3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Signer</controllingFieldValue>
+                <controllingFieldValue>In Person Signer</controllingFieldValue>
+                <valueName>Signer 4</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__SigningGroupId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>ID of the signing group recipient</description>
+        <inlineHelpText>ID of the signing group recipient</inlineHelpText>
+        <label>Signing Group</label>
+        <referenceTo>Apttus_DocuApi__DocuSignSigningGroup__c</referenceTo>
+        <relationshipLabel>DocuSign Recipients</relationshipLabel>
+        <relationshipName>DocuSignRecipients</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__SigningOrder__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Routing Order default</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Routing Order default</inlineHelpText>
+        <label>Routing Order</label>
+        <precision>2</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_DocuApi__UserId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>ID of the user recipient</description>
+        <inlineHelpText>ID of the user recipient</inlineHelpText>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>DocuSignDefaultRecipients2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>DocuSign Recipient</label>
+    <listViews>
+        <fullName>Apttus_DocuApi__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>DSDR-{0000000}</displayFormat>
+        <label>Recipient Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>DocuSign Recipients</pluralLabel>
+    <recordTypes>
+        <fullName>Apttus_DocuApi__Contact</fullName>
+        <active>true</active>
+        <description>Contact lookup</description>
+        <label>Contact</label>
+        <picklistValues>
+            <picklist>Apttus_DocuApi__RecipientType__c</picklist>
+            <values>
+                <fullName>Carbon Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Signer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Apttus_DocuApi__RoleName__c</picklist>
+            <values>
+                <fullName>Signer 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Apttus_DocuApi__Email</fullName>
+        <active>true</active>
+        <description>Manually entered recipient information</description>
+        <label>Email</label>
+        <picklistValues>
+            <picklist>Apttus_DocuApi__RecipientType__c</picklist>
+            <values>
+                <fullName>Carbon Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Signer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Apttus_DocuApi__RoleName__c</picklist>
+            <values>
+                <fullName>Signer 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Apttus_DocuApi__SigningGroup</fullName>
+        <active>true</active>
+        <description>DocuSign Signing Group</description>
+        <label>Signing Group</label>
+        <picklistValues>
+            <picklist>Apttus_DocuApi__RecipientType__c</picklist>
+            <values>
+                <fullName>Carbon Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Signer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Apttus_DocuApi__RoleName__c</picklist>
+            <values>
+                <fullName>Signer 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Apttus_DocuApi__User</fullName>
+        <active>true</active>
+        <description>User lookup</description>
+        <label>User</label>
+        <picklistValues>
+            <picklist>Apttus_DocuApi__RecipientType__c</picklist>
+            <values>
+                <fullName>Carbon Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person Signer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Apttus_DocuApi__RoleName__c</picklist>
+            <values>
+                <fullName>Signer 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signer 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Apttus_CMDSign__NewDefaultRecipientForAgreement</fullName>
+        <availability>online</availability>
+        <description>Create a new default recipient for the agreement</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New eSigner - Agreement</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/Apttus_DocuApi__DefaultRecipient?id={!Apttus__APTS_Agreement__c.Id}</url>
+    </webLinks>
+</CustomObject>

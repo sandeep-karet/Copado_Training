@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>To contain all the mappings of the Contracting Account to valid Pricing Model values.</description>
+    <fields>
+        <fullName>L2O_Contracting_Account_GUID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Contracting Account GUID</label>
+        <length>250</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>L2O_Contracting_Account_Name__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Contracting Account Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>L2O_Pricing_Model_Values__c</fullName>
+        <description>To capture all the valid Pricing Model values for the respective Contracting Account as per TDUAT.</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Pricing Model Values</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>L2O_ContractingAccToPricingModel</label>
+    <listViews>
+        <fullName>All_Fields</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>L2O_Contracting_Account_Name__c</columns>
+        <columns>L2O_Contracting_Account_GUID__c</columns>
+        <columns>L2O_Pricing_Model_Values__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Fields</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>L2O_ContractingAccToPricingModels</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>L2O_OpportunityClosedWon_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>To allow sharing to Public Group to change the Opportunity Stage = Closed Won.</description>
+        <label>Opportunity Closed Won Access</label>
+        <sharedTo>
+            <group>Contract_Ops_Public_Group</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>StageName</field>
+            <operation>equals</operation>
+            <value>Contracting</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Rule_to_Assign_Closed_Won_Opportunity_to_Client_Technical_Ops</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Rule to Assign Closed Won Opportunity to Client &amp; Technical Ops</label>
+        <sharedTo>
+            <group>Client_Technical_Ops</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>HSG_United_VP</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>HSG - United VP</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>USGH_Sales_Leadership</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>USGH_Sales_Leadership</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Product_Leadership_able_to_Read_Contract_Ops_Opportunity</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Product Leadership able to Read Contract Ops Opportunity</label>
+        <sharedTo>
+            <role>Product_Leadership</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Contract_Ops</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_HHS_Opportunities</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share HHS Opportunities</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>HHS_Client_and_Tech_Ops</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>HHS_Sales_Ops</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_USGH_Opportunities</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share USGH Opportunities between Sales Ops and Client &amp; Tech Ops</description>
+        <label>Share USGH Opportunities</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>USGH_Client_and_Tech_Ops</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>USGH_Sales_Ops</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_with_Billing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing with Billing</label>
+        <sharedTo>
+            <role>Billing</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Contract_Ops</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_with_Deal_desk_Pricing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sharing with Deal desk/Pricing</label>
+        <sharedTo>
+            <role>Deal_Desk_Pricing</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Contract_Ops</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>USGH_Sales_Leadership_able_to_Read_and_Edit_Commerical_Ops_Opportunity</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>USGH Sales Leadership able to Read and Edit Commerical Ops Opportunity</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>USGH_Sales_Leadership</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <role>Commercial_Ops</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>USGH_Sales_Ops_able_to_Read_and_Write_Contract_Ops_Opportunity</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>USGH Sales Ops able to Read and Write Contract Ops Opportunity</label>
+        <sharedTo>
+            <role>USGH_Sales_Ops</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Contract_Ops</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

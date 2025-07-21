@@ -1,0 +1,23 @@
+<!-- 
+    Apttus Contract Management
+    SendForReview
+     
+    @2021 Apttus Inc. All rights reserved.
+
+ -->
+ <apex:page sidebar="false" showHeader="true" lightningStylesheets="true" controller="Apttus.SendForReviewController">
+    <apex:includeLightning /> 
+    
+    <!-- loading message -->
+    <div id="loading">{!$Label.LoadingPage}</div>
+      
+    <!-- redirect to Lightning Aura component container if lightning experience else open in Lightning Out -->
+    <!-- using Aura container since redirection to Lightning Web Component directly is not supported -->
+    <script>    
+      var nsPrefix = '{!JSENCODE(nsPrefix)}';
+      var lightningRedirectURL = '/lightning/cmp/' + nsPrefix + '__SendForReviewContainer?' + nsPrefix + '__agreementId={!JSENCODE(agreementId)}&' + nsPrefix + '__action={!JSENCODE(actionName)}&' + nsPrefix + '__documentIdsCsv={!JSENCODE(documentIdsCsv)}';
+      if((typeof sforce != 'undefined') && sforce && sforce.one) {
+          sforce.one.navigateToURL(lightningRedirectURL);            
+      }        
+    </script>   
+  </apex:page>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Lead</baseObject>
+    <category>leads</category>
+    <deployed>true</deployed>
+    <description>Shows Lead records with matching Name, Mobile Phone, Email and Company</description>
+    <join>
+        <outerJoin>false</outerJoin>
+        <relationship>DuplicateRecordItems</relationship>
+    </join>
+    <label>Duplicate Leads</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Name</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Company</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LeadSource</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Email</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>L2O_Lead_Source_Detail__c</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner</field>
+            <table>Lead</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MobilePhone</field>
+            <table>Lead</table>
+        </columns>
+        <masterLabel>Lead Items</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DuplicateRecordSet</field>
+            <table>Lead.DuplicateRecordItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
+            <table>Lead.DuplicateRecordItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DuplicateRecordSet.RecordCount</field>
+            <table>Lead.DuplicateRecordItems</table>
+        </columns>
+        <masterLabel>Duplicate Record Items</masterLabel>
+    </sections>
+</ReportType>

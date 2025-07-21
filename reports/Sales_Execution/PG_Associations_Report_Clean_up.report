@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>PG_Association__c$Name</field>
+    </columns>
+    <columns>
+        <field>PG_Association__c$Performance_Guarantee__c</field>
+    </columns>
+    <columns>
+        <field>PG_Association__c$Id</field>
+    </columns>
+    <columns>
+        <field>PG_Association__c$Agreement_Line_Item__c</field>
+    </columns>
+    <columns>
+        <field>PG_Association__c$Performance_Guarantee__c.Product_Name__c</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>PG_Association__c$Agreement_Line_Item__c.Apttus__AgreementId__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>PG Associations Report - Clean up</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>PG_Associations__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>PG_Association__c$Performance_Guarantee__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>PG_Association__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

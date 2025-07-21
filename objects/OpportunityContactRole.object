@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddContactRole</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AddContactRole</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AddContactRole</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ContactId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>IsPrimary</fullName>
+    </fields>
+    <fields>
+        <fullName>L2O_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The account lookup to this record (where Contact may not belong on the same Account as the Opportunity)</description>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Opportunity Contact Role</relationshipLabel>
+        <relationshipName>Opportunity_Contact_Role</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>L2O_Broker_Flat_Rate__c</fullName>
+        <description>The $ rate for the partner contact</description>
+        <label>Broker Flat Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>L2O_Broker_Percentage__c</fullName>
+        <description>The % rate for the partner contact</description>
+        <label>Broker Percentage</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>L2O_Chronic_Care_Flat_Rate__c</fullName>
+        <description>The $ rate for the partner contact (if Chronic Care products are involved)</description>
+        <label>Chronic Care Flat Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>L2O_Chronic_Care_Percentage__c</fullName>
+        <description>The % rate for the partner contact (if Chronic Care products are involved)</description>
+        <label>Chronic Care Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Role</fullName>
+        <type>Picklist</type>
+    </fields>
+    <validationRules>
+        <fullName>L2O_Broker_Comission_Rate_Field_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+NOT(ISPICKVAL(Opportunity.L2O_Benefit_Consultant_Involved_in_Deal__c,&apos;&apos;) || ISPICKVAL(Opportunity.L2O_Benefit_Consultant_Involved_in_Deal__c,&apos;No Involvement&apos;)),
+AND(
+ISBLANK(L2O_Broker_Flat_Rate__c),
+ISBLANK(L2O_Broker_Percentage__c),
+ISBLANK(L2O_Chronic_Care_Flat_Rate__c),
+ISBLANK(L2O_Chronic_Care_Percentage__c)
+),
+OR(
+ISPICKVAL(Role,&apos;Broker&apos;),
+ISPICKVAL(Role,&apos;General Agency&apos;)
+)
+)</errorConditionFormula>
+        <errorMessage>If the Contact Role is a Broker or General Agency then at least one of the Broker commission rate fields are required</errorMessage>
+    </validationRules>
+</CustomObject>

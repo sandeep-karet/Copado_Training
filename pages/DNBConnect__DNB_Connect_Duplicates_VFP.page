@@ -1,0 +1,51 @@
+<apex:page showHeader="true" sidebar="false" docType="html" controller="DNBConnect.DNB_Utility" action="{!namespacePrefixForVF}" readOnly="true"> 
+    <style>
+        body .bPageTitle .ptBody h1.noSecondHeader {
+        margin-top: 2px;        
+        }
+    </style>
+    <apex:slds />
+    <apex:sectionHeader title="Duplicates"/>
+    <apex:includeScript value="/lightning/lightning.out.js"/>
+    <apex:includeLightning />
+    
+    <div id="ConnectPackage-lightning"/>
+    <script>
+    	dataLayer=[{
+            'pageCategory':'Duplicates Dashboard'
+        }];
+    </script>
+    <script>
+    function one(){
+        $Lightning.use("{!JSENCODE(nspace)}:DNBConnect_DuplicatesApp", function() {
+            $Lightning.createComponent("{!JSENCODE(nspace)}:DNBConnect_Duplicates",{},"ConnectPackage-lightning",function(cmp) {
+            });
+        });
+
+        $A.eventService.addHandler({
+                    event:'c:tagManagerEvent',
+                    handler:function(event){
+                        console.log(event.getParam("element"));
+                        var element = event.getParam("element");
+                        dataLayer.push({'event': element+'-click'});
+                    }
+                });
+    }
+    one();
+    </script>
+
+    <!-- Google Tag Manager -->
+	<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-T3RH5RQ');
+    </script>
+	<!-- End Google Tag Manager -->
+
+    <!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3RH5RQ"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+</apex:page>

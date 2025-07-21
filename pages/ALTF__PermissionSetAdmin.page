@@ -1,0 +1,219 @@
+<apex:page showHeader="true" sidebar="true" controller="ALTF.PermissionSetGeneratorController" lightningStyleSheets="true">
+  <html lang="en" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Permission Set Admin</title>
+      <style>
+        .status-icon {
+          margin-left: 1rem;
+          vertical-align: baseline;
+          display: none !important;
+        }
+
+        .generation-success {
+          color: rgb(46, 132, 74);
+        }
+
+        .generation-fail {
+          color: rgb(234, 0, 30);
+        }
+
+        .generation-success .status-icon-success,
+        .generation-fail .status-icon-error {
+          display: inline-block !important;
+        }
+      </style>
+    </head>
+
+    <body>
+      <apex:slds />
+      <div class="slds-p-around_medium">
+        <div class="slds-p-bottom_medium">
+          <div class="slds-form-element">
+            <div class="slds-form-element__control">
+              <div class="slds-checkbox">
+                <input type="checkbox" name="options" id="isProduction" value="isProduction" checked="" />
+                <label class="slds-checkbox__label" for="isProduction">
+                  <span class="slds-checkbox_faux"></span>
+                  <span class="slds-form-element__label">Click here if you are in a production environment</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="generate-ps slds-button slds-button_brand">Generate Permission Sets</button>
+
+        <div class="slds-spinner_container working" style="visibility: hidden">
+          <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slds-p-around_medium progress-text">
+        PROGRESS: <span class="progress-message">Click button to generate the Altify permission sets</span>
+        <span class="slds-icon_container slds-icon-utility-success status-icon status-icon-success" title="Success">
+          <svg class="slds-icon slds-icon-text-success" aria-hidden="true">
+            <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#success"></use>
+          </svg>
+          <span class="slds-assistive-text">Permission Set Generation succeded</span>
+        </span>
+        <span class="slds-icon_container slds-icon-utility-error status-icon status-icon-error" title="Error">
+          <svg class="slds-icon slds-icon-text-error" aria-hidden="true">
+            <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+          </svg>
+          <span class="slds-assistive-text">Permission Set Generation failed</span>
+        </span>
+      </div>
+      <script>
+        var accessToken = "{!$API.Session_Id}";
+        var endpoint = "{!endpoint}";
+        var boundary = "BOUNDARY";
+        var deployOptions = {
+          deployOptions: {
+            allowMissingFiles: false,
+            autoUpdatePackage: false,
+            checkOnly: false,
+            ignoreWarnings: false,
+            performRetrieve: false,
+            purgeOnDelete: false,
+            rollbackOnError: false,
+            runTests: null,
+            singlePackage: true,
+            testLevel: "NoTestRun"
+          }
+        };
+
+        var permset = "{!permsetZip}";
+
+        window.addEventListener("load", function () {
+          const btn = document.querySelector("button");
+          btn.addEventListener("click", function () {
+            var isProduction = true;
+            const checked = document.querySelector("input:checked");
+            if (checked === null) {
+              isProduction = false;
+            }
+            toggleWorking(true);
+            generatePermset(isProduction);
+          });
+        });
+
+        function generateBlob(isProduction) {
+          var myDeployOptions = deployOptions;
+          if (isProduction) {
+            myDeployOptions = JSON.parse(JSON.stringify(deployOptions));
+            myDeployOptions.deployOptions.testLevel = "RunLocalTests";
+            myDeployOptions.deployOptions.rollbackOnError = true;
+          }
+          const deployJSONString = JSON.stringify(myDeployOptions);
+
+          var base64String = permset;
+          const byteCharacters = atob(base64String);
+          const byteNumbers = new Array(byteCharacters.length);
+          for (let i = 0; i < byteCharacters.length; i++) {
+            byteNumbers[i] = byteCharacters.charCodeAt(i);
+          }
+          const byteArray = new Uint8Array(byteNumbers);
+          const blob = new Blob([byteArray], { type: "application/zip" });
+
+          let data = "";
+          data += "--" + boundary + "\r\n";
+          data += 'Content-Disposition: form-data; name="json"\r\n';
+          data += "Content-Type: application/json\r\n";
+          data += "\r\n";
+          data += deployJSONString + "\r\n";
+
+          data += "--" + boundary + "\r\n";
+          data += "content-disposition: form-data; " + 'name="deploy"; ' + 'filename="deploy.zip"\r\n';
+          data += "Content-Type: application/zip\r\n";
+          data += "\r\n";
+
+          const blobText1 = new Blob([data]);
+          const blobText2 = new Blob(["\r\n--" + boundary + "--"]);
+
+          return new Blob([blobText1, blob, blobText2]);
+        }
+
+        function log(message) {
+          document.querySelector(".progress-message").textContent = message;
+        }
+
+        function getRequestProcessStatus(requestId) {
+          var request = new XMLHttpRequest();
+          request.open("GET", endpoint + "/" + requestId);
+          request.setRequestHeader("Authorization", "Bearer " + accessToken);
+          request.onreadystatechange = function () {
+            if (request.readyState === XMLHttpRequest.DONE) {
+              var status = request.status;
+              if (status === 0 || (status >= 200 && status < 400)) {
+                console.log(request.responseText);
+                const reqResponse = JSON.parse(request.responseText);
+                console.log("reqResponse", reqResponse);
+                if (reqResponse.deployResult.status != "Pending" && reqResponse.deployResult.status != "InProgress") {
+                  toggleWorking(false, reqResponse.deployResult.success);
+                  log("Permission Set Generation " + reqResponse.deployResult.status);
+                } else {
+                  log("Permission Set Generation processing");
+                  setTimeout(function () {
+                    getRequestProcessStatus(requestId);
+                  }, 2000);
+                }
+              } else {
+                toggleWorking(false);
+              }
+            }
+          };
+          request.send();
+        }
+
+        function toggleWorking(isWorking, success) {
+          if (isWorking === true) {
+            document.querySelector("button.generate-ps").setAttribute("disabled", "disabled");
+            document.querySelector(".working").style.visibility = "visible";
+
+            document.querySelector(".progress-text").classList.remove("generation-success");
+            document.querySelector(".progress-text").classList.remove("generation-fail");
+          } else {
+            document.querySelector("button.generate-ps").removeAttribute("disabled");
+            document.querySelector(".working").style.visibility = "hidden";
+          }
+
+          if (success === true) {
+            document.querySelector(".progress-text").classList.add("generation-success");
+          } else if (success === false) {
+            document.querySelector(".progress-text").classList.add("generation-fail");
+          }
+        }
+
+        function generatePermset(isProduction) {
+          var reqBlob = generateBlob(isProduction);
+          var request = new XMLHttpRequest();
+
+          request.onreadystatechange = function () {
+            if (request.readyState === XMLHttpRequest.DONE) {
+              var status = request.status;
+              if (status === 0 || (status >= 200 && status < 400)) {
+                log("Permission Set Generation begun");
+                const reqResponse = JSON.parse(request.responseText);
+                getRequestProcessStatus(reqResponse.id);
+              } else {
+                log("Permission Set Generation failed");
+                toggleWorking(false);
+              }
+            }
+          };
+
+          request.open("POST", endpoint);
+          request.setRequestHeader("Content-Type", "multipart/form-data; boundary=" + boundary);
+          request.setRequestHeader("Authorization", "Bearer " + accessToken);
+          request.send(reqBlob);
+        }
+      </script>
+    </body>
+  </html>
+</apex:page>

@@ -1,0 +1,144 @@
+<apex:page >
+     <apex:remoteObjects >
+        <apex:remoteObjectModel name="Task" 
+            fields="
+                Id,
+                Subject,
+                WhatId,
+                OwnerId,
+                ActivityDate,
+                WhoId,
+                Status,
+                Priority,
+                Description
+            "
+        >
+            <apex:remoteObjectField name="ALTF__Altify_Objective__c" jsShorthand="objectiveId"/>
+        </apex:remoteObjectModel>
+    </apex:remoteObjects>
+
+    <script type="text/javascript">
+        
+    'use strict';
+
+    angular
+    	.module('acc_mgmt__objectives_remote_objects', ['ttg.VfRemoting'])
+    	.factory('ObjectiveRemoteObjects', [ '$q', 'VFRemoting', function($q, VFRemoting){
+    		function createNewTask(planId, task) { 
+                console.log('createNewTask');
+               function adapt(task) {
+                var returnObject = {
+                        Id: task.Id,
+                        OwnerId : task.ownerId,
+                        objectiveId: task.objectiveId,
+                        Subject : task.description,
+                        WhatId : task.accountId,
+                        ActivityDate : task.dueDateValue,
+                        WhoId : task.contactId,
+                        
+                        Description : task.comments
+                    };
+
+                    if (task.status) {
+                        returnObject['Status'] = task.status.value;
+                    } 
+                    if (task.priority) {
+                        returnObject['Priority'] = task.priority.value;
+                    } 
+
+    				return returnObject;
+    			}
+                var deferred = $q.defer();
+                var action = new SObjectModel.Task();
+                ttg.ttgQATracker.callStarted();
+                action.create(
+                		adapt(task),
+                		function(err, records) {
+                            ttg.ttgQATracker.callEnded();
+                            if (err) {
+                                remoteException(err);
+                                deferred.reject(err);
+                            } else {
+                                deferred.resolve(records);
+                            }
+                		} 
+                	)
+
+                return deferred.promise;
+    		}
+
+            function saveTask(task) {
+                var deferred = $q.defer();
+                var updatedTask = new SObjectModel.Task({
+                    Id: task.Id,
+                    OwnerId : task.ownerId,
+                    objectiveId: task.objectiveId,
+                    Subject : task.description,
+                    WhatId : task.accountId,
+                    ActivityDate : task.dueDateValue,
+                    WhoId : task.contactId,
+                    Status : task.status.value,
+                    Priority : task.priority.value,
+                    Description : task.comments
+                });
+                ttg.ttgQATracker.callStarted();
+                updatedTask.update(
+                    function(err, records) {
+                        ttg.ttgQATracker.callEnded();
+                        if (err) {
+                            remoteException(err);
+                            deferred.reject(err);
+                        } else {
+                            deferred.resolve(records);
+                        }
+                    } 
+                )
+
+                return deferred.promise;
+            }
+
+            function saveTaskStatus(task) {
+                var deferred = $q.defer();
+                console.log('ERROR : we should not be setting status on an AM Action',amAction);
+
+                return deferred.promise;
+            }
+
+            function assignObjectiveToAction(amAction) {
+                var deferred = $q.defer();
+                console.log('ERROR : we should not be assignObjectiveToAction on an AM Action',amAction); 
+
+                return deferred.promise;
+            }
+
+            function remoteException(exception) {
+                var width = (jQuery(window).width() > 380 ? 380 : 300) ; 
+                var errorWidth = width - 50; 
+                ttg.ajaxErrorFunction(null, null, {
+                    dlgwidth : width.toString(),
+                    dlgerrorwidth : errorWidth.toString()
+                })({
+                    responseText : exception.message,
+                    event: exception
+                });
+            }
+
+            function editAmAction(amAction) {
+                var deferred = $q.defer();
+                console.log('ERROR : we should not be editAmAction on an AM Action',amAction); 
+                return deferred.promise;
+            }
+
+    		return {
+    			createNewTask: createNewTask,
+                saveTaskStatus: saveTaskStatus,
+                saveTask: saveTask,
+                editAmAction: editAmAction,
+                assignObjectiveToAction: assignObjectiveToAction
+    		}
+    	}])
+    ;
+
+
+    </script>
+</apex:page>

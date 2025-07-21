@@ -1,0 +1,182 @@
+<apex:page docType="html-5.0"
+    showHeader="false" 
+    sidebar="false" 
+    applyHtmlTag="false" 
+    controller="ALTF.PeopleAndProblemsController" 
+>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1" />
+        <title></title>
+        <style>
+                html,
+                body,
+                #people-problems {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                html,
+                body {
+                     width: 1px;
+                     min-width: 100%;
+                     overflow-x: auto;
+                 }
+        </style>
+        <link rel="stylesheet" href="http://localhost:8080/styles/vendors.css"></link>
+        <link rel="stylesheet" href="http://localhost:8080/styles/people-problems.css"></link>
+    </head>
+
+    <body id="people-problems-generatedhtml" >
+
+        <div id="people-problems" ng-app="people-problems">
+            <people-problems class="altify"></people-problems>
+        </div>
+
+        <apex:includeScript value="{!URLFOR($Resource.ALTF__JSforce)}"/>
+
+        <script type="text/javascript" src="http://localhost:8080/scripts/vendors.js"></script>
+        <script type="text/javascript" src="http://localhost:8080/scripts/people-problems.js"></script>
+        <script type="text/javascript" src="http://localhost:8080/scripts/salesforce.js"></script>
+        
+        <script>
+
+            var customTabSettings = {                               
+            };
+
+            <apex:repeat value="{!customTabs}" var="tab">
+                customTabSettings['{!JSENCODE(tab.name)}'] = {
+                    label: '{!JSENCODE(tab.label)}',
+                    src: '{!JSENCODE(tab.url)}',
+                    icon: '{!JSENCODE(tab.icon)}'                    
+                };
+            </apex:repeat>
+
+            angular.module('altify2020backendservices.jsforce', []).constant('jsforce', new jsforce.Connection({ accessToken: '{!$Api.Session_Id}', version: '52.0' }));
+            var oppId = "{!$CurrentPage.parameters.id}";
+            setTimeout(
+                function(){ 
+                    if (this.SfdcApp && this.SfdcApp.projectOneNavigator) { 
+                        var title = oppId ? "{!$Label.altf__COMMON_OPPORTUNITY_MANAGER}" : "{!$Label.altf__COMMON_ACCOUNT_MANAGER}";
+                        SfdcApp.projectOneNavigator.sendTitleToParent(title); 
+                    } 
+                }, 
+                1
+            );            
+
+            angular.module('altify2020backendservices.jsforce', []).constant('jsforce', new jsforce.Connection({ accessToken: '{!$Api.Session_Id}', version: '52.0' }));
+            angular.module('altify2020backendservices.namespace', []).constant('namespace', 'ALTF__');
+            angular.module('altify2020backendservices.org', []).constant('chatterEnabled', {!isChatterEnabled});
+            angular.module('altify2020backendservices.userinfo', [])
+                .constant('userid', '{!$User.Id}')
+                .constant('orgid', '{!$Organization.Id}')
+                .constant('username', '{!JSENCODE($User.FirstName)} {!JSENCODE($User.LastName)}')
+                .constant('userlanguage', '{!JSENCODE(language)}')
+                .constant('useremail', '{!JSENCODE($User.Email)}')
+                .constant('relMapSettings', {
+                    'defaultDisplayAttribute': '{!JSENCODE(defaultDisplayAttribute)}',
+                        'disableAdaptability': {!JSENCODE(IF(disableAdaptability, 'true', 'false'))},
+                        'disableBuyerRole': {!JSENCODE(IF(disableBuyerRole, 'true', 'false'))},
+                        'disableCoverage': {!JSENCODE(IF(disableCoverage, 'true', 'false'))},
+                        'disableDecisionOrientation': {!JSENCODE(IF(disableDecisionOrientation, 'true', 'false'))},
+                        'disablePolitical': {!JSENCODE(IF(disablePolitical, 'true', 'false'))},
+                        'disableStatus': {!JSENCODE(IF(disableStatus, 'true', 'false'))},
+                        'linkedInHandleField': '{!JSENCODE(linkedInHandleField)}',
+                        'onboardingURL1': '{!JSENCODE(onboardingURL1)}',
+                        'onboardingURL2': '{!JSENCODE(onboardingURL2)}',
+                        'onboardingURL3': '{!JSENCODE(onboardingURL3)}',
+                        'twitterHandleField': '{!JSENCODE(twitterHandleField)}',
+                        'disableSocialPhotos': {!JSENCODE(IF(disableSocialPhotos, 'true', 'false'))},
+                        'disableContactCreationOnRelationshipMap': {!JSENCODE(IF(disableContactCreationOnRelationshipMap, 'true', 'false'))},
+                        'colorField': '{!JSENCODE(colorField)}',
+                        'contactSidePanelNamedOrder': '{!JSENCODE(contactSidePanelNamedOrder)}',
+                        'disableDepartment' : {!disableDepartment},
+                        'disableOpportunitySearchFieldInAm' : {!disableOpportunitySearchFieldInAm},
+                        'keyPlayerField': '{!JSENCODE(keyPlayerField)}'
+                })
+                .constant('coreSettings', {
+                    'disableQuickAddForContact': {!JSENCODE(IF(disableQuickAddForContact, 'true', 'false'))},
+                    'disablePrintButtons': {!disablePrintButtons},
+                    'disableQuickAddForTask': {!JSENCODE(IF(disableQuickAddForTask, 'true', 'false'))},
+                    'disableCoaching': {!JSENCODE(IF(disableCoaching, 'true', 'false'))},
+                    'OMHidePRIMETypeColumn': {!JSENCODE(IF(OMHidePRIMETypeColumn, 'true', 'false'))},
+                    'listAllActions': {!JSENCODE(IF(listAllActions, 'true', 'false'))},
+                    'linkEnabled': {!JSENCODE(IF(linkEnabled, 'true', 'false'))},
+                    'tabNameList': '{!JSENCODE(tabNameList)}',
+                    'customTabSettings': customTabSettings,
+                    'isSalesforceShieldEnabled': {!JSENCODE(IF(isSalesforceShieldEnabled, 'true', 'false'))},
+                    'disableAltifyLogging': {!JSENCODE(IF(disableAltifyLogging, 'true', 'false'))},
+                    'disableDecisionCriteria': {!JSENCODE(IF(decisionCriteriaDisabled, 'true', 'false'))},
+                    'helpUrlBase': '{!JSENCODE(helpUrlBase)}',
+                    'disableContactCreationOnRelationshipMap': {!disableContactCreationOnRelationshipMap},
+                    'isLicensedForAccountManager': {!isLicensedForAccountManager},
+                    'userQueryFilter': '{!JSENCODE(userQueryFilter)}',
+                    'isLicensedForInsightMap': {!isLicensedForInsightMap},
+                    'isLicensedForRelMap': {!isLicensedForRelMap},
+                    'isLicensedForOppManager': {!isLicensedForOppManager},
+                    'isLicensedForPeopleAndProblems': {!isLicensedForPeopleAndProblems},
+                    'enableMaxInsightsForContacts': {!JSENCODE(IF(enableMaxInsightsForContacts, 'true', 'false'))},
+                    'enableActionsSpinner': {!enableActionsSpinner},
+                    'customContactTitleField': '{!JSENCODE(customContactTitleField)}'
+                })
+                .constant('insightMapSettings', {
+                    'onboardingURL1': '{!insightMapOnboardingURL1}',
+                    'onboardingURL2': '{!insightMapOnboardingURL2}',
+                    'onboardingURL3': '{!insightMapOnboardingURL3}',
+                    'disableNarrativeView': {!disableNarrativeView},
+                    'disableAltifyInsightNodeFields': {!disableAltifyInsightNodeFields},
+                    'disableOMNodeTypeDescription': {!disableOMNodeTypeDescription},
+                    'disableAMNodeTypeDescription': {!disableAMNodeTypeDescription}
+                })
+                .constant('tandiSettings', {
+                    'AMTANDIUrlSuffix': '{!JSENCODE(aMTANDIUrlSuffix)}',
+                    'tAndIUrlSuffix': '{!JSENCODE(tANDIUrlSuffix)}',
+                    'userLocale' : '{! JSENCODE(userLocale) }',
+                    'TANDIMaxAttendees': 16,
+                    'pageSample' : '{!JSENCODE(tANDIUrlSuffix)}<<tandiId>>',    
+                    'baseUrl' : '{!JSENCODE(sFBaseUrl)}'                                            
+                });
+
+
+            angular
+                .module('ui.altify')        
+                .config(function (UtilsDateProvider) {
+                    UtilsDateProvider.setDefaultLocale('{!JSENCODE(userLocale)}');
+            })
+
+            angular.module('ac.crud.config',[])
+                .constant('SUPPORTEDCURRENCIES', [
+                    {iso: 'USD', label: 'US Dollar', symbol: '$', prefix: true, corporate: true },
+                    {iso: 'EUR', label: 'Euro', symbol: '�', prefix: false, corporate: false }
+                ])
+                .constant('DEFAULTVALUES', {})
+                .constant('USERCONTEXT', {
+                    dateformat: 'M-D-YYYY',
+                    userCurrencyISO: 'USD',
+                    SESSION: '{!JSENCODE($Api.Session_Id)}'
+                })
+                .constant('ACLabels', {
+                    'DLG_SAVE': 'Save',
+                    'DLG_CANCEL': 'Cancel',
+                    'AC_NO_LIST_VIEW': 'No list view',
+                    'AC_VIEW_AS': 'View as',
+                    'COMMON_NEXT': 'Next',
+                    'AC_SELECT_RECORD_TYPE': 'Select a record type',
+                    'AC_SIMPLE': 'Simple',
+                    'COMMON_ADVANCED': 'Advanced',
+                    'COMMON_CLEAR': 'Clear',
+                    'COMMON_SEARCH': 'Search'
+                }).run(function ($locale) {
+                    $locale.NUMBER_FORMATS.GROUP_SEP = ',';
+                    $locale.NUMBER_FORMATS.DECIMAL_SEP = '.';
+                });
+                
+            angular.module('isLightningExperience',[])
+                .constant('isLightningExp', {!$User.UITheme == 'Theme4d'});
+        </script>
+        <c:PeopleAndProblemsi18n />
+    </body>
+</html>
+</apex:page>

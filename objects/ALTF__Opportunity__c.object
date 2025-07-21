@@ -1,0 +1,3207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>NO CONFIGURATION SUPPORT
+
+This object is responsible for storing Altify attributes relating to an Opportunity. There should be exactly one of these for each Opportunity in the system.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>ALTF__Active_Test_and_Improve__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Active Test and Improves for an Altify opportunity</description>
+        <label>Active Test And Improve</label>
+        <referenceTo>ALTF__Test_And_Improve__c</referenceTo>
+        <relationshipLabel>Altify Opportunities</relationshipLabel>
+        <relationshipName>AltifyOpportunities</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__AltifyId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>An external ID used for Altify</description>
+        <externalId>true</externalId>
+        <label>AltifyId</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Altify_Insight_Tags_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Altify Insight Tags Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Altify_Insight_Tags__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Altify Insight Tags</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>ALTF__Altify_Insight_Tags</valueSetName>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ALTF__Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Assessment_Answer_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the Assessment Questions that have a definitive Yes/No anwser</description>
+        <externalId>false</externalId>
+        <label>Assessment Answer Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Assessment_Answer_Last_Updated__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date on which an Assessment Answer was last updated</description>
+        <label>Assessment Answer Last Updated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Assessment_Competitor_Anwser_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the Competitor Answers on the Assessment Questions</description>
+        <externalId>false</externalId>
+        <label>Assessment Competitor Answer Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Assessment_Competitor_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the Competitors on the Assessment Questions</description>
+        <externalId>false</externalId>
+        <label>Assessment Competitor Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Assessment_Last_Chatted_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>User that Last Chatted about the Assessment for this Opportunity</description>
+        <label>Assessment Last Chatted By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Assessment_Last_Chatted_By</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Assessment_Last_Chatted_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <label>TAS Last Chatted Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Assessment_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Assessment Completeness</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Assessment_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Assessment Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>ALTF__Altify_Status</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__Calculated_Close_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>IF ( 
+	ALTF__Opportunity__r.IsClosed  || ALTF__Is_Altify_Opp__c = false , 
+	IF (
+		ALTF__Opportunity__r.IsWon  || ALTF__Is_Altify_Opp__c = false, 
+		ALTF__Opportunity__r.CloseDate, 
+		null
+	),
+	IF (
+			NULLVALUE (ALTF__Pause_Date__c,  DATEVALUE(NOW())) &gt; DATEVALUE(NOW()), 
+			ALTF__Pause_Date__c  +  (NULLVALUE(ALTF__Weeks_To_Close__c, 0) * 7), 
+			DATEVALUE(NOW())  +  (NULLVALUE(ALTF__Weeks_To_Close__c, 0) * 7)
+	)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Qualification Calculated Close Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Completeness_Calc_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Completeness Calc Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Decision_Criteria_Last_Updated__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date on which a Decision Criteria was last updated</description>
+        <label>Decision Criteria Last Updated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Decision_Criteria_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Decision Criteria Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Decision_Criteria_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Decision Criteria Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>ALTF__Altify_Status</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__FSM1__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>OPPORTUNITY: Is there an opportunity?</inlineHelpText>
+        <label>PlanSignal Oppty</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Blank</fullName>
+                    <default>true</default>
+                    <label>Blank</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__FSM2__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>PROBLEMS: Are the business problems validated? Have you confirmed unique value?</inlineHelpText>
+        <label>PlanSignal Problems</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Blank</fullName>
+                    <default>true</default>
+                    <label>Blank</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__FSM3__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>PEOPLE: Do you have support and alignment from the key people?</inlineHelpText>
+        <label>PlanSignal People</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Blank</fullName>
+                    <default>true</default>
+                    <label>Blank</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__FSM4__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(OR(NOT(ALTF__Is_Actions_Ever_Planned__c), ALTF__Opportunity__r.IsClosed), 
+        &apos;Blank&apos;, 
+        IF(OR(ISNULL(ALTF__Min_Due_Date_All_Tasks__c), ALTF__Min_Due_Date_All_Tasks__c &gt;= TODAY()), 
+            &apos;Yes&apos;, 
+            IF(ALTF__Min_Due_Date_All_Tasks__c &lt; (TODAY() - 3), 
+                &apos;No&apos;, 
+                IF( ALTF__Min_Due_Date_All_Tasks__c &gt;= (TODAY() - 3), 
+                    &apos;Unknown&apos;,
+    &apos;No&apos;))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>ACTIONS: Do you have planned actions in place?</inlineHelpText>
+        <label>PlanSignal Actions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__FSM5__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>T&amp;I: Are you using T&amp;Is?</inlineHelpText>
+        <label>PlanSignal T&amp;I</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Blank</fullName>
+                    <default>true</default>
+                    <label>Blank</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__Formal_Decision_Criteria_Contact_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the Contacts associated with Formal Decision Critera</description>
+        <externalId>false</externalId>
+        <label>Formal Decision Criteria Contact Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Formal_Decision_Criteria_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the Formal Decision Critera</description>
+        <externalId>false</externalId>
+        <label>Formal Decision Criteria Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Informal_Decision_Criteria_Contact_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the Contacts associated with Informal Decision Critera</description>
+        <externalId>false</externalId>
+        <label>Informal Decision Criteria Contact Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Informal_Decision_Criteria_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the Informal Decision Critera</description>
+        <externalId>false</externalId>
+        <label>Informal Decision Criteria Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Insight_Card_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the number of cards on the Insight Map</description>
+        <externalId>false</externalId>
+        <label>Insight Map Card Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Insight_Cards_Owned_And_Validated__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the number of Cards that have owners and have been validated on the insight map</description>
+        <externalId>false</externalId>
+        <label>Insight Cards Owned and Validated</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Insight_Map_Last_Updated__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date on which the Insight Map was last updated</description>
+        <label>Insight Map Last Updated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Insight_Published__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Insight Published</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Insight_Section_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the Sections on the Inight Map</description>
+        <externalId>false</externalId>
+        <label>Insight Map Section Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Insights_Last_Chatted_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Insights Last Chatted By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Collaberation_Map_Last_Chatted_By</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Insights_Last_Chatted_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Insights Last Chatted Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Insights_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Insights Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Insights_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Insights Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>ALTF__Altify_Status</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__Is_Actions_Ever_Planned__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Is Actions Ever Planned</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Is_Altify_Opp__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Is Altify Opp</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__MAN1Comment__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Mgmt KeyDeal Comment</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ALTF__MAN1LastUpdatedBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Mgmt KeyDeal Last Updated By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Altify_Opportunities2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__MAN1LastUpdated__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Mgmt KeyDeal Last Updated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__MAN1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Mgmt KeyDeal</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__MAN2Comment__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Mgmt Attn Comment</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ALTF__MAN2LastUpdatedBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Mgmt Attn Last Updated By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Altify_Opportunities3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__MAN2LastUpdated__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Mgmt Attn Last Updated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__MAN2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Mgmt Attn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__MAN3Comment__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Mgmt T&amp;I Comment</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ALTF__MAN3LastUpdatedBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Mgmt T&amp;I Last Updated By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Altify_Opportunities4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__MAN3LastUpdated__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Mgmt T&amp;I Last Updated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__MAN3__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Mgmt T&amp;I</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Max_Due_Date_All_Tasks__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Max Due Date All Tasks</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Min_Due_Date_All_Tasks__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Min Due Date All Tasks</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Mix__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>if ( ALTF__Opportunity_Amount__c == null || ALTF__Sales_Process__c == null, -1,
+If	(
+	NULLVALUE(ALTF__Opportunity_Amount__c, 0) &gt;= ALTF__Sales_Process__r.ALTF__Rock_Value__c,
+	1,
+	IF	(
+		NULLVALUE(ALTF__Opportunity_Amount__c, 0) &lt; ALTF__Sales_Process__r.ALTF__Pebble_Value__c,
+		3,
+		2
+	)
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mix</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Opportunity_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>IF( ISBLANK($Setup.ALTF__Sales_Process_Settings__c.ALTF__Opp_Amount_Field__c),  ALTF__Opportunity__r.Amount ,  ALTF__Amount__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Opportunity_Completeness__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Opportunity Completeness</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Opportunity_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Opportunity Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>ALTF__Altify_Status</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__Opportunity__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Altify Opportunities</relationshipLabel>
+        <relationshipName>Altify_Opportunities</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ALTF__PRIME_Action_Closed_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the PRIME Actions that are currently closed</description>
+        <externalId>false</externalId>
+        <label>PRIME Action Closed Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__PRIME_Action_Open_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the PRIME Actions that are currently open</description>
+        <externalId>false</externalId>
+        <label>PRIME Action Open Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__PRIME_Action_Overdue_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of the PRIME Actions that are currently overdue</description>
+        <externalId>false</externalId>
+        <label>PRIME Action Overdue Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__PRIME_Actions_Last_Updated__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date on which the PRIME Actions were last updated</description>
+        <label>PRIME Actions Last Updated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__PRIME_Last_Chatted_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>PRIME Last Chatted By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PRIME_Last_Chatted_By</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__PRIME_Last_Chatted_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <label>PRIME Last Chatted Time</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__PRIME_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <label>PRIME Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__PRIME_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>PRIME Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>ALTF__Altify_Status</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__Pause_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Qualification Pause Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Probability__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Qualification  Probability</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Qualification_Dirty__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF (
+	ALTF__Qualification_Sales_Process_Type_Stamp__c  &lt;&gt; ALTF__Sales_Process__c, 
+	1, 
+	IF (
+		ALTF__Qualification_Sales_Process_Ver_Stamp__c  &lt;&gt; ALTF__Sales_Process__r.ALTF__Version__c, 
+		1, 
+		0
+	)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Qualification_Dirty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Qualification_Last_Chatted_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Qualification Last Chatted By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Altify_Opportunities</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Qualification_Last_Chatted_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Qualification Last Chatted Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Qualification_Progress__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Qualification Progress</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Qualification_Sales_Process_Type_Stamp__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Qualification Sales Process Type Stamp</label>
+        <referenceTo>ALTF__Sales_Process__c</referenceTo>
+        <relationshipLabel>Altify Opportunities (Qualification Sales Process Type Stamp)</relationshipLabel>
+        <relationshipName>Altify_Opportunities1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Qualification_Sales_Process_Ver_Stamp__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Qualification Sales Process Ver Stamp</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Qualification_Stage__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Qualification Stage</label>
+        <referenceTo>ALTF__Stage__c</referenceTo>
+        <relationshipLabel>Altify Opportunities</relationshipLabel>
+        <relationshipName>Altify_Opportunities</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Recommended_Strategy__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Recommended Strategy</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Frontal</fullName>
+                    <default>false</default>
+                    <label>Frontal</label>
+                </value>
+                <value>
+                    <fullName>Flanking</fullName>
+                    <default>false</default>
+                    <label>Flanking</label>
+                </value>
+                <value>
+                    <fullName>Fragment</fullName>
+                    <default>false</default>
+                    <label>Fragment</label>
+                </value>
+                <value>
+                    <fullName>Defend</fullName>
+                    <default>false</default>
+                    <label>Defend</label>
+                </value>
+                <value>
+                    <fullName>Develop</fullName>
+                    <default>false</default>
+                    <label>Develop</label>
+                </value>
+                <value>
+                    <fullName>Disengage</fullName>
+                    <default>false</default>
+                    <label>Disengage</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__Rel_Map_Key_Roles_Uncovered_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of Key Players with Decision Maker or Approver on the relationship map</description>
+        <externalId>false</externalId>
+        <label>Rel Map Key Roles Uncovered Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Rel_Map_Supportive_Key_Player_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of Key Players that are Supporter or Mentor on the relationship map</description>
+        <externalId>false</externalId>
+        <label>Rel Map Supportive Key Player Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Relationship_Map_Contact_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of contacts on the relationship map</description>
+        <externalId>false</externalId>
+        <label>Relationship Map Contact Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Relationship_Map_Key_Player_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of Key Players (i.e. contacts on the relationship map which are Inner Circle or Political Structure.</description>
+        <externalId>false</externalId>
+        <label>Relationship Map Key Player Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Relationship_Map_Last_Updated__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Relationship Map Last Updated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Relationships_Last_Chatted_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>User that Last Chatted about the Relationships for this Opportunity</description>
+        <label>Relationships Last Chatted By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipLabel>Users</relationshipLabel>
+        <relationshipName>User</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Relationships_Last_Chatted_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Relationship Map Last Chatted Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Relationships_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Relationships Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Relationships_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Relationships Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>ALTF__Altify_Status</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__Sales_Process_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Qualification Sales Process Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Qualification Sales Process Name</inlineHelpText>
+        <label>Qualification Sales Process Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Sales_Process_Stage_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Qualification Sales Process Stage Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Qualification Sales Process Stage N</inlineHelpText>
+        <label>Qualification Sales Process Stage Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Sales_Process_Stage__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Qualification Sales Process Stage</label>
+        <referenceTo>ALTF__Sales_Process_Stage__c</referenceTo>
+        <relationshipLabel>Altify Opportunities</relationshipLabel>
+        <relationshipName>Altify_Opportunities</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Sales_Process__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Qualification Sales Process</label>
+        <referenceTo>ALTF__Sales_Process__c</referenceTo>
+        <relationshipLabel>Altify Opportunities</relationshipLabel>
+        <relationshipName>Altify_Opportunities</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Strategy_Last_Chatted_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Strategy Last Chatted By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Strategy_Last_Chatted_By</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Strategy_Last_Chatted_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Strategy Last Chatted Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Strategy_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Strategy Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Strategy_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Strategy Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>ALTF__Altify_Status</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__Use_Recommended__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Use Recommended</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__User_Defined_Strategy__c</fullName>
+        <deprecated>false</deprecated>
+        <label>User Defined Strategy</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Frontal</fullName>
+                    <default>false</default>
+                    <label>Frontal</label>
+                </value>
+                <value>
+                    <fullName>Flanking</fullName>
+                    <default>false</default>
+                    <label>Flanking</label>
+                </value>
+                <value>
+                    <fullName>Fragment</fullName>
+                    <default>false</default>
+                    <label>Fragment</label>
+                </value>
+                <value>
+                    <fullName>Defend</fullName>
+                    <default>false</default>
+                    <label>Defend</label>
+                </value>
+                <value>
+                    <fullName>Develop</fullName>
+                    <default>false</default>
+                    <label>Develop</label>
+                </value>
+                <value>
+                    <fullName>Disengage</fullName>
+                    <default>false</default>
+                    <label>Disengage</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__Weeks_To_Close__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Qualification Weeks To Close</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Worked_In_Altify__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>OR( ALTF__Worked_in_OM__c ,  ALTF__Worked_In_Playbook__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Worked In Altify</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Worked_In_Playbook__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>ALTF__Probability__c &gt; 0</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Worked In Playbook</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Worked_in_OM__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Worked in OM</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Assessment_Completeness__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Assessment Completeness</label>
+        <summaryForeignKey>ALTF__Assessment_Answer__c.ALTF__Opportunity__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__COM_HasCompetitors__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes if there are competitors for the Opportunity.</inlineHelpText>
+        <label>Has Competitors</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__COM_StrategyAll__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes if you have identified the likely competitive strategy for each of the competitors in the Opportunity.</inlineHelpText>
+        <label>Strategy All Competitors</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__COM_Strategy__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Chosen competitive strategy</inlineHelpText>
+        <label>Strategy</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>true</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>Frontal</fullName>
+                    <default>false</default>
+                    <label>Frontal</label>
+                </value>
+                <value>
+                    <fullName>Flanking</fullName>
+                    <default>false</default>
+                    <label>Flanking</label>
+                </value>
+                <value>
+                    <fullName>Defend</fullName>
+                    <default>false</default>
+                    <label>Defend</label>
+                </value>
+                <value>
+                    <fullName>Develop</fullName>
+                    <default>false</default>
+                    <label>Develop</label>
+                </value>
+                <value>
+                    <fullName>Disengage</fullName>
+                    <default>false</default>
+                    <label>Disengage</label>
+                </value>
+                <value>
+                    <fullName>Fragment</fullName>
+                    <default>false</default>
+                    <label>Fragment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Competitor_Completeness_Total__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Competitor Completeness Total</label>
+        <summarizedField>ALTF__Opportunity_Competitor__c.DMMAX__Completeness__c</summarizedField>
+        <summaryForeignKey>ALTF__Opportunity_Competitor__c.ALTF__Opportunity__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Competitor_Completeness__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>If(DMMAX__Competitor_Count__c == 0, 0,  DMMAX__Competitor_Completeness_Total__c / DMMAX__Competitor_Count__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Competitor Completeness</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Competitor_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Competitor Count</label>
+        <summaryForeignKey>ALTF__Opportunity_Competitor__c.ALTF__Opportunity__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__DC_CompetitivePosition__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Degree to which we are in a superior position on the most important 2 decision criteria. Strong if superior on both, OK if superior on one and neutral on the other.</inlineHelpText>
+        <label>Decision Criteria Top Criteria Position</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                    <label>OK</label>
+                </value>
+                <value>
+                    <fullName>Strong</fullName>
+                    <default>false</default>
+                    <label>Strong</label>
+                </value>
+                <value>
+                    <fullName>High Risk</fullName>
+                    <default>false</default>
+                    <label>High Risk</label>
+                </value>
+                <value>
+                    <fullName>Risk</fullName>
+                    <default>false</default>
+                    <label>Risk</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__DC_Completeness__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Degree to which we have understood the relative priority of decision criteria for the Key Players. OK if at least one criterion per Key Player prioritized.</inlineHelpText>
+        <label>Decision Criteria Key Player Assessment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                    <label>OK</label>
+                </value>
+                <value>
+                    <fullName>Incomplete</fullName>
+                    <default>false</default>
+                    <label>Incomplete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__DC_Differentiation__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Degree to which we are in a superior position on the aggregated decision criteria of the stakeholders. All Stronger if we are superior on all. All Equal if we are equal on all. Some Stronger if we are stronger on some.</inlineHelpText>
+        <label>Decision Criteria Differentiation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All Equal</fullName>
+                    <default>false</default>
+                    <label>All Equal</label>
+                </value>
+                <value>
+                    <fullName>None Stronger</fullName>
+                    <default>false</default>
+                    <label>None Stronger</label>
+                </value>
+                <value>
+                    <fullName>All Stronger</fullName>
+                    <default>false</default>
+                    <label>All Stronger</label>
+                </value>
+                <value>
+                    <fullName>Some Stronger</fullName>
+                    <default>false</default>
+                    <label>Some Stronger</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__DC_Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>&apos;None&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Buckets the number of decision criteria into None, Low (1-3), Medium (4-7) or High (8+)</inlineHelpText>
+        <label>Decision Criteria Quantity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__DaysSinceLastModification__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>MIN(TODAY() - Datevalue(ALTF__Opportunity__r.LastModifiedDate), TODAY() - DATEVALUE(LastModifiedDate))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Days since the opportunity was last modified.  
+Warning: this may not always be reliable as information *related* to the opportunity may be updated without being reflected here.</inlineHelpText>
+        <label>Days Since Last Modification</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Days_Since_Previous_Test_Improve__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(DMMAX__TI_Last_Completed_Scheduled_Review__c), 0, MAX(0, TODAY() - DMMAX__TI_Last_Completed_Scheduled_Review__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Since Previous Test &amp; Improve</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Days_To_Next_Test_Improve__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(DMMAX__TI_Earliest_Scheduled_Review__c), 0, MAX(0, DMMAX__TI_Earliest_Scheduled_Review__c - TODAY()))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days To Next Test &amp; Improve</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__EarliestPRIME__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Earliest PRIME</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__GEN_DaysToClose__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ALTF__Opportunity__r.IsClosed,
+0, 
+ALTF__Opportunity__r.CloseDate - TODAY()
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Number of days between today and the opportunity close date</inlineHelpText>
+        <label>Days To Close</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__GEN_OpportunityAge__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ALTF__Opportunity__r.IsClosed,( 
+ALTF__Opportunity__r.CloseDate - DATEVALUE(ALTF__Opportunity__r.CreatedDate)), 
+TODAY() - DATEVALUE(ALTF__Opportunity__r.CreatedDate))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Number of days since the opportunity was created</inlineHelpText>
+        <label>Opportunity Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__GEN_Phase__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Opportunity phase - Early, Mid or Late in the Sales Cycle.</inlineHelpText>
+        <label>Phase</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Early</fullName>
+                    <default>true</default>
+                    <label>Early</label>
+                </value>
+                <value>
+                    <fullName>Mid</fullName>
+                    <default>false</default>
+                    <label>Mid</label>
+                </value>
+                <value>
+                    <fullName>Late</fullName>
+                    <default>false</default>
+                    <label>Late</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__IM_InsightMapOwnerAwareness__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>All if all Insight Map owners are on the Relationship Map. Some if some Insight Map owners are on the Relationship Map.</inlineHelpText>
+        <label>Insight Map Owner Awareness</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Some</fullName>
+                    <default>false</default>
+                    <label>Some</label>
+                </value>
+                <value>
+                    <fullName>All</fullName>
+                    <default>false</default>
+                    <label>All</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__IM_KeyPlayerInsights__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>OK if more than 50% of Key Players are tied to goals and initiatives on the Insight Map. Low if less than 50% but more than 0 Key Players own goals and initiatives.</inlineHelpText>
+        <label>Insight Map Key Player Presence</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                    <label>OK</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__IM_KeyPlayerIssueCoverage__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>None (no owners on any goals or initiatives)
+General (some owners, none are Key Players)
+Some Key Players (some Key Player owners)
+All Key Players (all goals and initiatives owned by Key Players)</inlineHelpText>
+        <label>Insight Map Goals and Initiatives Owners</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Some Key Players</fullName>
+                    <default>false</default>
+                    <label>Some Key Players</label>
+                </value>
+                <value>
+                    <fullName>All Key Players</fullName>
+                    <default>false</default>
+                    <label>All Key Players</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__IM_MapCompleteness__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>OK if 1 goal, 1 pressure, 1 initiative and 1 obstacle confirmed and 33% of Goals and Initiatives (total) are Key Players. Otherwise Low if not completely Empty.</inlineHelpText>
+        <label>Insight Map Completeness</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Empty</fullName>
+                    <default>false</default>
+                    <label>Empty</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                    <label>OK</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__IsDirty__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>IF ( $Setup.DMMAX__DIESetting__c.DMMAX__Disable_Phase_Trigger__c , false, 
+IF (  ISPICKVAL(DMMAX__GEN_Phase__c, &apos;Closed&apos;) &amp;&amp; DMMAX__Probability_Phase__c != &apos;Closed&apos;, true,
+IF (  ISPICKVAL(DMMAX__GEN_Phase__c, &apos;Early&apos;) &amp;&amp; DMMAX__Probability_Phase__c != &apos;Early&apos;, true,
+IF (  ISPICKVAL(DMMAX__GEN_Phase__c, &apos;Mid&apos;) &amp;&amp; DMMAX__Probability_Phase__c != &apos;Mid&apos;, true,
+IF (  ISPICKVAL(DMMAX__GEN_Phase__c, &apos;Late&apos;) &amp;&amp; DMMAX__Probability_Phase__c != &apos;Late&apos;, true,
+false)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsDirty</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_ContactLevelGeneralContact__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>None = No contacts with meaningful (multiple or in-depth) coverage (or no contacts), Limited = 50% or less contacts with meaningful coverage, OK = More than 50% of contacts with meaningful coverage</inlineHelpText>
+        <label>Contact Level - General Contact</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Limited</fullName>
+                    <default>false</default>
+                    <label>Limited</label>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                    <label>OK</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_DecisionMakerContact__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>OK if you have meaningful contact with 50%+ of the Decision Makers and Limited if you have meaningful contact with less than 50% of the Decision Makers</inlineHelpText>
+        <label>Decision Maker Contact</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Limited</fullName>
+                    <default>false</default>
+                    <label>Limited</label>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                    <label>OK</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_DecisionMakerCount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of Decision Makers on the Relationship Map</inlineHelpText>
+        <label>Decision Maker Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_DecisionMakerNonSupport__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Majority of Decision Makers have a negative preference for you (as opposed to no preference or positive preference)</inlineHelpText>
+        <label>Decision Maker Non-Support</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_DecisionMakerSupport__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Majority of Decision Makers have a preference for you (as opposed to no preference or negative preference)</inlineHelpText>
+        <label>Decision Maker Support</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_Enemy__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Key Player if a Key Player on the Relationship Map is an enemy. Otherwise General if a non Key Player contact on the Relationship Map is an enemy.</inlineHelpText>
+        <label>Enemy</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Key Player</fullName>
+                    <default>false</default>
+                    <label>Key Player</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_KeyPlayerCount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Count of Key Players on the Relationship Map</inlineHelpText>
+        <label>Key Player Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_Mentor__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Key Player if a Key Player on the Relationship Map is your Mentor. Otherwise General if a non Key Player is your Mentor.</inlineHelpText>
+        <label>Mentor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Key Player</fullName>
+                    <default>false</default>
+                    <label>Key Player</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_NegativeContactCount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Count of non-supporters and enemy contacts on the political map.</inlineHelpText>
+        <label>Negative Contact Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_NonSupport__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Key Player if the majority of Key Players have a negative preference for you. General if the majority of contacts on the Relationship Map have a negative preference. Some if 1 or more contacts have a negative preference.</inlineHelpText>
+        <label>Neg. Preference</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Some</fullName>
+                    <default>false</default>
+                    <label>Some</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Key Player</fullName>
+                    <default>false</default>
+                    <label>Key Player</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_Non_Supporter__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Key Player if a Key Player on the Relationship Map is a Non Supporter. Otherwise General if a non Key Player is a Non Supporter.</inlineHelpText>
+        <label>Non Supporter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Key Player</fullName>
+                    <default>false</default>
+                    <label>Key Player</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_PositiveContactCount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Count of mentors and supporters on the political map.</inlineHelpText>
+        <label>Positive Contact Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_SingleThreaded__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>OK if you have meaningful contact with 33%+ of the Key Players or Limited if you have meaningful contact with any of the Key Players</inlineHelpText>
+        <label>Key Player Contact</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                    <label>OK</label>
+                </value>
+                <value>
+                    <fullName>Limited</fullName>
+                    <default>false</default>
+                    <label>Limited</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_Support__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Key Player if the majority of Key Players prefer you. General if the majority of contacts on the Relationship Map prefer you. Some if 1 or more contacts prefer you.</inlineHelpText>
+        <label>Preference</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Key Player</fullName>
+                    <default>false</default>
+                    <label>Key Player</label>
+                </value>
+                <value>
+                    <fullName>Some</fullName>
+                    <default>false</default>
+                    <label>Some</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__POL_Supporter__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Key Player if a Key Player on the Relationship Map is a Supporter. Otherwise General if a non Key Player is your Supporter.</inlineHelpText>
+        <label>Supporter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Key Player</fullName>
+                    <default>false</default>
+                    <label>Key Player</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__PRIME_Completeness__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>PRIME Completeness Score</description>
+        <label>PRIME Completeness</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__PRIME_Overdue__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>ISNULL(DMMAX__EarliestPRIME__c) == false &amp;&amp; DATEVALUE(DMMAX__EarliestPRIME__c) &lt; today()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PRIME Overdue</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Probability_Phase__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>If(ALTF__Opportunity__r.IsClosed, &apos;Closed&apos;, 
+If (ALTF__Opportunity__r.Probability &gt; $Setup.DMMAX__DIESetting__c.DMMAX__OM_Phase_Late__c, &apos;Late&apos;,
+If (ALTF__Opportunity__r.Probability &gt; $Setup.DMMAX__DIESetting__c.DMMAX__OM_Phase_Mid__c, &apos;Mid&apos;,
+&apos;Early&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Probability Phase</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Relationship_Map_Completeness__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Relationship Map Completeness Score</description>
+        <label>Relationship Map Completeness</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Relationship_Map_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Count of contacts on map</description>
+        <externalId>false</externalId>
+        <label>Relationship Map Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Strategy_Completeness__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Strategy Completeness</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS01__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: An initiative with resources assigned by a key player has been confirmed.</inlineHelpText>
+        <label>TAS01- Customer Project</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS02__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: The customer is in your sweet spot or target market.</inlineHelpText>
+        <label>TAS02 - Customer Business</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS03__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: Financial information is compatible with the Customer Project.</inlineHelpText>
+        <label>TAS03 - Financial Condition</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS04__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: Funds for the project are approved or can be obtained.</inlineHelpText>
+        <label>TAS04 - Access To Funds</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS05__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: Compelling business issues, causing the Key Player(s) to act by a defined date, are well known.</inlineHelpText>
+        <label>TAS05 - Compelling Event</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS06__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: Criteria are documented, well understood and attached to the key players.</inlineHelpText>
+        <label>TAS06 - Formal Criteria</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS07__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: Your solution effectively addresses 100% of the customer&apos;s &quot;must have&quot; requirements.</inlineHelpText>
+        <label>TAS07 - Solution Fit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS08__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: Resources are low to normal for an opportunity of this size.</inlineHelpText>
+        <label>TAS08 - Resource Requirements</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS09__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: A key player in the opportunity considers that you or your company will add value, based on previous experience.</inlineHelpText>
+        <label>TAS09 - Current Relationship</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS10__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: From the customer&apos;s perspective, you have unique capabilities that map to the customer&apos;s &quot;must haves&quot;.</inlineHelpText>
+        <label>TAS10 - UBV</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS11__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: You have more Supporters and Mentors than Non-supporters and Enemies.</inlineHelpText>
+        <label>TAS11 - Inside Support</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS12__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: You or another person on the team can regularly access an Executive Key Player.</inlineHelpText>
+        <label>TAS12 - Exec Credibility</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS13__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: The customer&apos;s culture is similar to yours.</inlineHelpText>
+        <label>TAS13 - Cultural Compatibility</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS14__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: Criteria have been discussed and are attached to the Key Players.</inlineHelpText>
+        <label>TAS14 - Informal Criteria</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS15__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: More Supporter/Mentor Key Players (with coverage) than Non-supporter/Enemy Key Players on the Relationship Map.</inlineHelpText>
+        <label>TAS15 - Political Alignment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS16__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: The initial size of the opportunity is equal to or greater than the average opportunity size for your business.</inlineHelpText>
+        <label>TAS16 - Short Term Revenue</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS17__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: Future revenue is equal to or greater than the average lifetime value of a customer for your business.</inlineHelpText>
+        <label>TAS17 - Future Revenue</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS18__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: Profitability is equal to or greater than the average profit on an opportunity for your business.</inlineHelpText>
+        <label>TAS18 - Profitability</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS19__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: The customer is likely to succeed.</inlineHelpText>
+        <label>TAS19 - Degree Of Risk</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TAS20__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Yes: This customer will have a greater-than-normal positive strategic impact on the company.</inlineHelpText>
+        <label>TAS20 - Strategic Value</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TI_Completed_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Completed Test and Review Count</label>
+        <summaryFilterItems>
+            <field>ALTF__Test_And_Improve__c.ALTF__Is_Complete__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ALTF__Test_And_Improve__c.ALTF__Altify_Opportunity__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TI_Earliest_Scheduled_Review__c</fullName>
+        <deprecated>false</deprecated>
+        <label>TI Earliest Scheduled Review</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TI_Last_Completed_Scheduled_Review__c</fullName>
+        <deprecated>false</deprecated>
+        <label>TI Last Completed Scheduled Review</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DMMAX__TI_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(DMMAX__TI_Earliest_Scheduled_Review__c) &amp;&amp; ISBLANK(DMMAX__TI_Last_Completed_Scheduled_Review__c), &apos;None&apos;,
+IF(ISBLANK(DMMAX__TI_Earliest_Scheduled_Review__c) &amp;&amp; !ISBLANK(DMMAX__TI_Last_Completed_Scheduled_Review__c), &apos;Complete&apos;,
+IF(DMMAX__TI_Earliest_Scheduled_Review__c &lt; TODAY(), &apos;Overdue&apos;, &apos;Scheduled&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Scheduled: T&amp;I schedule date is today or in the future. Overdue: T&amp;I schedule date is in the past. None: No open T&amp;I scheduled.</inlineHelpText>
+        <label>Test &amp; Improve Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Tasks_E__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number open &quot;Emphasize Strength&quot; tasks</inlineHelpText>
+        <label>Tasks E</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Tasks_I__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number open &quot;Insulate against competition&quot; tasks</inlineHelpText>
+        <label>Tasks I</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Tasks_M__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number open &quot;Minimize Weakness&quot; tasks</inlineHelpText>
+        <label>Tasks M</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Tasks_P__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number open &quot;Prove your value&quot; tasks</inlineHelpText>
+        <label>Tasks P</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DMMAX__Tasks_R__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of open &quot;Retrieve missing information&quot; tasks</inlineHelpText>
+        <label>Tasks R</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Altify Opportunity</label>
+    <nameField>
+        <label>Altify Opportunity Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Altify Opportunities</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>ALTF__Opportunity__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ALTF__Opportunity__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>ALTF__Opportunity__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

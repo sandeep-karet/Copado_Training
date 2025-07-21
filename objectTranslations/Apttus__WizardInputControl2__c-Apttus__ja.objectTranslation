@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Input Control --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Wizard Component Library Fieldset --></label>
+        <name>Apttus__WizardComponentLibraryFieldset</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Controlling the subcategory field, whose list values shall allow users to search, find, and select Input controls --></help>
+        <label>カテゴリ</label>
+        <name>Apttus__Category__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Business object context, used to filter and align inputs within steps and wizard designs. --></help>
+        <label>コンテキストオブジェクト</label>
+        <name>Apttus__ContextObject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of context, whether its All or Object. 
+All means that this input can be used in any step design. 
+Object means that this input can be used only in aligned (same object) step design. --></help>
+        <label>コンテキストタイプ</label>
+        <name>Apttus__ContextType__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Object</masterLabel>
+            <translation><!-- Object --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- For the user to understand the intended use of the Input Control --></help>
+        <label>説明</label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether comments and attachments would be allowed in the wizard flow --></help>
+        <label>コメントや添付ファイルを許可</label>
+        <name>Apttus__EnableAttachments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Wizard Input Field - A field which exists only within the wizard to make determinations 
+Object Field - A field which exists only as a salesforce object to make determinations --></help>
+        <label>フィールドクラス</label>
+        <name>Apttus__FieldClass__c</name>
+        <picklistValues>
+            <masterLabel>Object Field</masterLabel>
+            <translation><!-- Object Field --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wizard Input Field</masterLabel>
+            <translation><!-- Wizard Input Field --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Name of the salesforce object field the question applies to --></help>
+        <label>フィールド名</label>
+        <name>Apttus__FieldName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Data type of the field --></help>
+        <label>フィールドタイプ</label>
+        <name>Apttus__FieldType__c</name>
+        <picklistValues>
+            <masterLabel>Checkbox</masterLabel>
+            <translation><!-- Checkbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Currency</masterLabel>
+            <translation><!-- Currency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date</masterLabel>
+            <translation><!-- Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DateTime</masterLabel>
+            <translation><!-- DateTime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MultiPicklist</masterLabel>
+            <translation><!-- MultiPicklist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number</masterLabel>
+            <translation><!-- Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation><!-- Percent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Picklist</masterLabel>
+            <translation><!-- Picklist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Picklist Radio Button</masterLabel>
+            <translation><!-- Picklist Radio Button --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text</masterLabel>
+            <translation><!-- Text --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TextArea</masterLabel>
+            <translation><!-- TextArea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>URL</masterLabel>
+            <translation><!-- URL --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Additional field for use in search and selection --></help>
+        <label>キーワード</label>
+        <name>Apttus__Keywords__c</name>
+    </fields>
+    <fields>
+        <label><!-- Long Question --></label>
+        <name>Apttus__LongQuestion__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the object that qualifies the field the question resolves --></help>
+        <label>オブジェクト名</label>
+        <name>Apttus__ObjectName__c</name>
+    </fields>
+    <fields>
+        <help><!-- List of values to be displayed during runtime. --></help>
+        <label>選択リストの値</label>
+        <name>Apttus__PicklistValues__c</name>
+    </fields>
+    <fields>
+        <help><!-- The question or instruction statement that is used to direct the end user when completing the wizard after setup. Defaults to Input Label --></help>
+        <label>質問/インストラクション</label>
+        <name>Apttus__Question__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies if an input control value can be edited by the runtime user --></help>
+        <label>読み取り専用</label>
+        <name>Apttus__ReadOnly__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates that an input value is required for the end user to continue the wizard --></help>
+        <label>必須</label>
+        <name>Apttus__Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describes what the runtime user can see as a help or instruction description of this input control. --></help>
+        <label><!-- Runtime Help Text --></label>
+        <name>Apttus__RuntimeHelpText2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describes what the runtime user can see as a help or instruction description of this input control. --></help>
+        <label>実行時間ヘルプテキスト</label>
+        <name>Apttus__RuntimeHelpText__c</name>
+    </fields>
+    <fields>
+        <help><!-- The sequence in which this input entry should be displayed during runtime --></help>
+        <label>順番</label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- Dependent on the category field, whose list values shall allow users to search, find, and select Input Controls --></help>
+        <label>サブカテゴリ</label>
+        <name>Apttus__Subcategory__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the step this input control belongs to --></help>
+        <label>ウィザードステップ</label>
+        <name>Apttus__WizardStepId__c</name>
+        <relationshipLabel>ステップ入力</relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Control Name --></nameFieldLabel>
+</CustomObjectTranslation>

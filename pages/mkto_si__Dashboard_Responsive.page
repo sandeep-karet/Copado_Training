@@ -1,0 +1,369 @@
+<apex:page controller="mkto_si.DashboardController"
+  tabStyle="Marketo__tab"
+  showHeader="true"
+  sidebar="false"
+>
+  <c:CssAndJavascript2 />
+  <c:Analytics hierarchy="marketo" 
+  />
+
+  <link rel="Stylesheet" type="text/css" href="{!$Resource.web}/mkto/css/msi_mkt_tab.css" />
+  <link rel="Stylesheet" type="text/css" href="{!$Resource.web}/mkto/css/msi_tooltip.css" />
+
+  <script src="{!$Resource.jqueryTools}" type="text/javascript"></script>
+  <script src="{!$Resource.web}/mkto/js/mkt_tab_helpers.js"></script>
+
+  <apex:pageBlock id="mktMobileBestBetsPageMobileBlock"  rendered="{!isSalesforceOne}">
+    <link rel="Stylesheet" type="text/css" href="{!$Resource.css_mobile}" />
+    <c:MobileTab currentView="{!currentView}"
+      currentTabView="{!currentTabView}"
+      loadView="{!loadView}"
+      previous="{!previous}"
+      next="{!next}"
+      setCon="{!setCon}"
+      escape="{!escape}"
+      currentSObjectName="{!currentSObjectName}"
+      currentSObjectId="{!currentSObjectId}"
+      currentSObjectType="{!currentSObjectType}"
+      isSalesforceOne="{!isSalesforceOne}"
+      isLeadOrContact="{!isLeadOrContact}"
+    />
+  </apex:pageBlock>
+
+  <apex:outputPanel styleClass="mkto mkt-tab"  rendered="{!(isSalesforceOne == false)}" layout="block">
+    <apex:form html-autocomplete="off">
+      <!-- Loading -->
+      <apex:actionStatus id="mktLoadingStatus" onStart="Marketo.setLoading(this.parentNode.parentNode)" onStop="Marketo.unsetLoading(this.parentNode.parentNode)" />
+      <apex:actionFunction name="sortByCount" action="{!sortByCount}" rerender="mktTab" status="mktLoadingStatus" immediate="true" />
+      <apex:actionFunction name="sortByDate" action="{!sortByDate}" rerender="mktTab" status="mktLoadingStatus" immediate="true"/>
+      <apex:actionFunction name="reload" action="{!loadView}" rerender="mktTab" status="mktLoadingStatus" immediate="true" />
+      <script>loadDataOnPageReady = false;</script>
+      <div class="mkt-tab-body {!IF(!showLeadFeed, 'mkt-hide-lead-feed', '')}" >
+        <apex:outputPanel styleClass="mkt-tab-body-tabs" id="mktTab" layout="block">
+
+          <!-- Main Menu -->
+          <div class="mkt-tab-menu-with-live-feed">
+            <div class="mkt-tab-menu">
+              <div class="mkt-tab-menu-logo">
+                <img src="{!$Resource.web}/mkto/images/logo-adobe.svg" alt="{!AppName}"/>
+              </div>
+              <apex:actionRegion >
+                <apex:repeat value="{!orderedGlobalTabs}" var="tab">
+                  <apex:outputPanel styleClass="mkt-tab-menu-item {!IF(currentTabView == tab.id, 'mkt-tab-menu-selected', '')}">
+                    <a href="#" class="mkt-tab-menu-item-link" title="{!tab.title}"><apex:outputText value="{!tab.title}"/></a>
+                    <apex:actionSupport event="onclick"
+                      action="{!loadView}"
+                      oncomplete="AdobeAnalytics.preparePageData('global-marketo-tab','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!tab.id}', 'click'); AdobeAnalytics.prepareEventData('global-marketo-tab','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!tab.id}', 'click'); AdobeAnalytics.trackPage();AdobeAnalytics.trackEvents();setCurrentTabInJS('{!JSENCODE(HTMLENCODE(tab.Id))}');"
+                      rerender="mktTab"
+                      status="mktLoadingStatus"
+                      immediate="true"
+                    >
+                      <apex:param name="currentView" value="{!tab.id}" assignTo="{!currentView}"/>
+                    </apex:actionSupport>
+                  </apex:outputPanel>
+                </apex:repeat>
+              </apex:actionRegion>
+            </div>
+            <c:LiveFeedButton rendered="{!showLiveFeed}" containerName="global-marketo-tab"
+            />
+          </div>
+
+          <apex:outputPanel styleClass="mkt-tab-body-tabs-controls" layout="block" rendered="{! currentTabView != 'TASK'}">
+            <div class="mkt-tab-body-tabs-controls-left-part">
+              <apex:outputPanel layout="block" rendered="{!currentTabView != VIEW_BEST_BETS}" styleClass="mkt-tab-body-tabs-select">
+                <apex:outputText value="{!currentViewLabel}" styleClass="mkt-tab-body-tabs-select-label"/>
+              </apex:outputPanel>
+              <apex:outputPanel layout="block" rendered="{!currentTabView == VIEW_BEST_BETS}" styleClass="mkt-tab-body-tabs-select">
+                <apex:outputText value="{!$Label.mkto_si__View}:" styleClass="mkt-tab-body-tabs-select-label"/>
+                <div class="mkt-actions-select">
+                  <apex:selectList value="{!currentView}" size="1" id="mktTabViewsSelect" styleClass="db-views-list">
+                    <apex:actionSupport event="onchange"
+                      action="{!loadView}"
+                      status="mktLoadingStatus"
+                      rerender="mktTab"
+                      oncomplete="AdobeAnalytics.preparePageData('global-marketo-tab-dropdowns','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE(currentView))}', 'dropdown'); AdobeAnalytics.prepareEventData('global-marketo-tab-dropdowns','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE(currentView))}', 'dropdown'); AdobeAnalytics.trackPage();AdobeAnalytics.trackEvents();"
+                    />
+                    <apex:selectOptions value="{!tabsList}"/>
+                    <apex:selectOptions value="{!customViewsList}"/>
+                  </apex:selectList>
+                </div>
+              </apex:outputPanel>
+
+              <apex:outputPanel layout="block" rendered="{!currentView == VIEW_BEST_BETS}" styleClass="mkt-tab-body-best-bets-filter">
+                <apex:outputText value="{!$Label.mkto_si__Showing}:" styleClass="mkt-tab-body-best-bets-filter-label"/>
+                <div class="mkt-tab-body-best-bets-buttons">
+                  <div
+                    class="best-bets-validation-tooltip"
+                    aria-label="{!$Label.Bes_Bets_Button_Validation}"
+                    data-microtip-position="bottom"
+                    data-microtip-size="medium"
+                    role="{!IF(isLastActiveFilter && includeLeads, 'tooltip', '')}"
+                  >
+                    <apex:commandButton value="{!$Label.mkto_si__leads_plural}"
+                      rerender="mktTab"
+                      disabled="{!isLastActiveFilter && includeLeads}"
+                      status="mktLoadingStatus"
+                      action="{!toggleLeadsFilter}"
+                      styleClass="mkt-tab-body-best-bets-button {!IF(includeLeads, 'mkt-tab-body-best-bets-button-active', '')}"
+                      oncomplete="AdobeAnalytics.prepareEventData('global-marketo-tab-button','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE($Label.mkto_si__leads_plural))}', 'click');AdobeAnalytics.trackEvents();"
+                    />
+                  </div>
+                  <div
+                    class="best-bets-validation-tooltip"
+                    aria-label="{!$Label.Bes_Bets_Button_Validation}"
+                    data-microtip-position="bottom"
+                    data-microtip-size="medium"
+                    role="{!IF(isLastActiveFilter && includeContacts, 'tooltip', '')}"
+                  >
+                    <apex:commandButton value="{!$Label.mkto_si__contacts_plural}"
+                      rerender="mktTab"
+                      disabled="{!isLastActiveFilter && includeContacts}"
+                      status="mktLoadingStatus"
+                      action="{!toggleContactsFilter}"
+                      styleClass="mkt-tab-body-best-bets-button {!IF(includeContacts, 'mkt-tab-body-best-bets-button-active', '')}"
+                      oncomplete="AdobeAnalytics.prepareEventData('global-marketo-tab-button','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE($Label.mkto_si__contacts_plural))}', 'click');AdobeAnalytics.trackEvents();"
+                    />
+                  </div>
+                  <div
+                    class="best-bets-validation-tooltip"
+                    aria-label="{!$Label.Bes_Bets_Button_Validation}"
+                    data-microtip-position="bottom"
+                    data-microtip-size="medium"
+                    role="{!IF(isLastActiveFilter && includeAccountContacts, 'tooltip', '')}"
+                  >
+                    <apex:commandButton value="{!$Label.mkto_si__Account_Contacts}"
+                      rerender="mktTab"
+                      disabled="{!isLastActiveFilter && includeAccountContacts}"
+                      status="mktLoadingStatus"
+                      action="{!toggleAccountsFilter}"
+                      styleClass="mkt-tab-body-best-bets-button {!IF(includeAccountContacts, 'mkt-tab-body-best-bets-button-active', '')}"
+                      oncomplete="AdobeAnalytics.prepareEventData('global-marketo-tab-button','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE($Label.mkto_si__Account_Contacts))}', 'click');AdobeAnalytics.trackEvents();"
+                    />
+                  </div>
+                  <div
+                    class="best-bets-validation-tooltip"
+                    aria-label="{!$Label.Bes_Bets_Button_Validation}"
+                    data-microtip-position="bottom"
+                    data-microtip-size="medium"
+                    role="{!IF(isLastActiveFilter && includeOpportunityContacts, 'tooltip', '')}"
+                  >
+                    <apex:commandButton value="{!$Label.mkto_si__Opportunity_Contacts}"
+                      rerender="mktTab"
+                      disabled="{!isLastActiveFilter && includeOpportunityContacts}"
+                      status="mktLoadingStatus"
+                      action="{!toggleOpportunitiesFilter}"
+                      styleClass="mkt-tab-body-best-bets-button {!IF(includeOpportunityContacts, 'mkt-tab-body-best-bets-button-active', '')}"
+                      oncomplete="AdobeAnalytics.prepareEventData('global-marketo-tab-button','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE($Label.mkto_si__Opportunity_Contacts))}', 'click');AdobeAnalytics.trackEvents();"
+                    />
+                  </div>
+                </div>
+              </apex:outputPanel>
+            </div>
+            <!-- BULK ACTIONS  -->
+            <div class="mkt-tab-body-tabs-controls-right-part">
+              <apex:outputPanel styleClass="mkt-tab-body-tabs-actions" 
+                rendered="{! currentTabView == VIEW_BEST_BETS || currentTabView == 'MWL'}"
+                layout="block"
+              >
+                <span>
+                  <apex:outputText value="0" styleClass="mkt-tab-selected-count"/>
+                  <apex:outputText value="{!$Label.mkto_si__Selected}" styleClass="mkt-tab-selected-count-label"/>
+                </span>
+                <div class="mkt-actions-select">
+                  <apex:selectList value="{!bulkAction}" size="1" id="mktBulkActionsSelect" styleClass="db-views-list mkt-bulk-actions-select">
+                    <apex:actionSupport event="onchange"
+                      action="{!runBulkAction}"
+                      status="mktLoadingStatus"
+                      rerender="mktTab"
+                      onsubmit="AdobeAnalytics.prepareEventData('global-marketo-tab-dropdown-bulk-action','{!JSENCODE(HTMLENCODE(currentSObjectType))}', document.getElementById('{!JSENCODE(HTMLENCODE($Component.mktBulkActionsSelect))}') , 'dropdown bulk action');AdobeAnalytics.trackEvents();"
+                    />
+                    <apex:selectOptions value="{!bulkActionsOptions}"/>
+                  </apex:selectList>
+                </div>
+              </apex:outputPanel>
+              <apex:outputPanel styleClass="mkt-tab-body-tabs-time-frame" rendered="{!(currentTabView == 'WA' || currentTabView == 'AWA') && NOT(setCon.errorsOnPage && setCon.errorMessage == 'API_SET_TERRITORY')}" layout="block">
+                <apex:outputText value="{!$Label.mkto_si__Time_Frame}:" styleClass="mkt-tab-body-tabs-time-frame-label"/>
+                <div class="mkt-actions-select">
+                  <apex:selectList value="{!selectedTime}" size="1" styleClass="db-views-list mkt-tab-body-tabs-time-frame-select">
+                    <apex:actionSupport event="onchange" action="{!refreshView}" status="mktLoadingStatus" rerender="mktTab"/>
+                    <apex:selectOptions value="{!timeList}"/>
+                  </apex:selectList>
+                </div>
+              </apex:outputPanel>
+              <!-- Create New View -->
+              <apex:outputPanel layout="block" rendered="{!currentTabView == VIEW_BEST_BETS}">
+                <a
+                  href="{!$Page.BestBetsViewEdit}"
+                  onclick="AdobeAnalytics.preparePageData('global-marketo-tab-button','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE(currentView))}', 'click'); AdobeAnalytics.prepareEventData('global-marketo-tab-button','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE($Label.Create_New_View))}', 'click');AdobeAnalytics.trackPage(); AdobeAnalytics.trackEvents(); Marketo.actionStart();"
+                  class="mkt-global-edit-button"
+                  title="{!$Label.Create_New_View}"
+                >
+                  <apex:image value="{!$Resource.mkto_si__web}/mkto/images/add-circle.svg"/>
+                </a>
+              </apex:outputPanel>
+              <!-- Edit View -->
+              <a
+                href="{!IF(isStandardView, JSENCODE($Page.BestBetsStandardViewEdit), JSENCODE($Page.BestBetsViewEdit))}?view={!JSENCODE(HTMLENCODE(currentView))}"
+                onclick="AdobeAnalytics.preparePageData('global-marketo-tab-button','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE(currentView))}', 'click'); AdobeAnalytics.prepareEventData('global-marketo-tab-button','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE($Label.Edit))}', 'click'); AdobeAnalytics.trackPage(); AdobeAnalytics.trackEvents(); Marketo.actionStart();"
+                class="mkt-global-edit-button"
+                title="{!$Label.Edit}"
+              >
+                <apex:image value="{!$Resource.mkto_si__web}/mkto/images/edit.svg"/>
+              </a>
+            </div>
+          </apex:outputPanel>
+          <div id="mkt-lightning-table">
+            <apex:pageBlock >
+              <c:BestBetsTab setCon="{!setCon}"
+                  escape="{!escape}"
+                  currentSObjectName="{!currentSObjectName}"
+                  currentView="{!currentView}"
+                  hideDays="{!defaultBestBetsHideDays}"
+                  disableMarketoEmail="{!disableMarketoEmail}"
+                  disableMarketoCampaign="{!disableMarketoCampaign}"
+                  disableSalesEmail="{!disableSalesEmail}"
+                  disableSalesCampaign="{!disableSalesCampaign}"
+                  disableSalesCall="{!disableSalesCall}"
+                  disableAddSalesTask="{!disableAddSalesTask}"
+                  rendered="{!(currentTabView == 'MBB')}"
+                />
+                <c:WatchListTab setCon="{!setCon}" 
+                  escape="{!escape}" 
+                  currentSObjectName="{!currentSObjectName}" 
+                  helpLink="{!helpWatchListLink}" 
+                  rendered="{!(currentTabView == 'MWL')}"
+                />
+                <c:WebActivityTab setCon="{!setCon}" escape="{!escape}" currentSObjectName="{!currentSObjectName}" isGrouped="{!isGroupedWebActivity}" rendered="{!(currentTabView == 'WA')}"/>
+                <c:AnonWebActivityTab setCon="{!setCon}" escape="{!escape}" currentSObjectName="{!currentSObjectName}" rendered="{!(currentTabView == 'AWA')}"/>
+                <c:EmailActivityTab setCon="{!setCon}" 
+                  escape="{!escape}" 
+                  currentSObjectName="{!currentSObjectName}" 
+                  showName="true" 
+                  showAccount="true" 
+                  rendered="{!(currentTabView == 'ME')}" 
+                  renderDetails="true"
+                  mTabSObjectType="{!currentSObjectType}"
+                />
+                <c:CallActivityTab setCon="{!setCon}" 
+                  currentSObjectName="{!currentSObjectName}"
+                  escape="{!escape}" 
+                  showName="{!showName}" 
+                  showAccount="{!showAccount}" 
+                  isSalesforceOne="{!isSalesforceOne}" 
+                  rendered="{!currentTabView == 'CALL'}"
+                  renderDetails="true"
+                  mTabSObjectType="{!currentSObjectType}"
+                />
+                <c:TasksTab rendered="{!currentTabView == 'TASK'}"
+                />
+                <c:DynamicChatActivityTab setCon="{!setCon}" 
+                    currentSObjectName="{!currentSObjectName}"
+                    escape="{!escape}" 
+                    showName="{!showName}" 
+                    showAccount="{!showAccount}" 
+                    isSalesforceOne="{!isSalesforceOne}" 
+                    rendered="{!currentTabView == 'CHAT'}"
+                    renderDetails="true"
+                    mTabSObjectType="{!currentSObjectType}"
+                />
+            </apex:pageBlock>
+          </div>
+          <apex:outputPanel layout="block" styleClass="mkt-tab-body-tabs-navigation">
+            <!-- Limited rows message -->
+            <apex:outputPanel styleClass="mkt-tab-body-tabs-navigation-limits mkt-tabs-message" layout="block" rendered="{!setCon.isRowsLimited}">
+              <div>
+                <span>{!$Label.mkto_si__Maximum_pages_reached}</span>
+              </div>
+              <div>
+                <a href="{!JSENCODE(HTMLENCODE(IF(isStandardView, $Page.mkto_si__BestBetsStandardViewEdit, $Page.mkto_si__BestBetsViewEdit)))}?view={!JSENCODE(HTMLENCODE(currentView))}" onclick="Marketo.actionStart();">{!JSENCODE(HTMLENCODE($Label.mkto_si__Edit_the_view))}</a>
+                <apex:outputText styleClass="mkt-tab-body-tabs-navigation-limits-label" value="{!$Label.mkto_si__to_increase_pages_or}"/>
+                <apex:commandLink value="{!$Label.mkto_si__Go_Back}" action="{!previous}" status="mktLoadingStatus" rerender="mktTab"/>
+              </div>
+            </apex:outputPanel>
+            <div>
+              <apex:variable var="hasData" value="{! setCon.isValidList && setCon.resultSize > 0}"/>
+              <apex:variable var="hasPagination" value="{! setCon.hasPrevious || setCon.hasNext}"/>
+              <apex:variable var="showPagination" value="{! currentTabView != 'TASK'}"/>
+
+              <apex:outputPanel rendered="{! showPagination && hasData && hasPagination}"
+                styleClass="mkt-page-navigation"
+              >
+                <apex:commandLink styleClass="{!IF (setCon.hasPrevious, '', 'mkt-page-disabled')}" 
+                  action="{!previous}" 
+                  rerender="mktTab" 
+                  status="mktLoadingStatus"
+                >
+                  &lsaquo;
+                </apex:commandLink>
+              
+                <div class="mkt-page-number">{!$Label.mkto_si__Page} {!setCon.pageNumber}</div>
+
+                <apex:commandLink styleClass="{!IF (setCon.hasNext, '', 'mkt-page-disabled')}" 
+                  action="{!next}" 
+                  rerender="mktTab" 
+                  status="mktLoadingStatus"
+                >
+                  &rsaquo;
+                </apex:commandLink>
+              </apex:outputPanel>
+            </div>
+          </apex:outputPanel>
+          <script>
+            Marketo.mktTab.groupOptions(document.getElementById('{!JSENCODE(HTMLENCODE($Component.mktTabViewsSelect))}'));
+          </script>
+        </apex:outputPanel>
+
+        <!-- Lead Feed Section -->
+        <apex:outputPanel rendered="{!showLeadFeed}" styleClass="mkt-tab-lead-feed" layout="block">
+          <div class="mkt-tab-lead-feed-wrapper">
+            <c:Stream currentSObjectId="{!currentSObjectId}"
+              currentSObjectType="{!currentSObjectType}"
+              isSalesforceOne="{!isSalesforceOne}"
+              escape="{!escape}"
+            />
+          </div>
+        </apex:outputPanel>
+        <script>
+          if (isLightningExperienceOrSalesforce1()) {
+            $j('.mkt-tab-lead-feed').addClass('mkt-lightning');
+          }
+        </script>
+        </div>
+  </apex:form>  
+  </apex:outputPanel> 
+  <script>
+    var ran=false;
+    var b;
+    var c;
+    function setCurrentTabInJS(tabId){
+      b=tabId;
+    }              
+    document.addEventListener("scroll", handleScrollOnTab);
+    function handleScrollOnTab(){
+      if(c==b) ran=true; else ran=false;
+      if(!ran){
+        AdobeAnalytics.preparePageData('global-marketo-tab','{!JSENCODE(HTMLENCODE(currentSObjectType))}',  b, 'scroll'); 
+        AdobeAnalytics.prepareEventData('global-marketo-tab','{!JSENCODE(HTMLENCODE(currentSObjectType))}', b, 'scroll'); 
+        AdobeAnalytics.trackPage();
+        AdobeAnalytics.trackEvents();
+        c=b;
+      }
+    }                                                                                        
+    $j(document).ready(function() {
+      if('{!isSalesforceOne}'!=='true'){
+        AdobeAnalytics.initGlobalData();
+        AdobeAnalytics.disableAutotrack();
+        if('{!currentTabView}' == 'MBB'){
+          AdobeAnalytics.trackPageAsync('global-marketo-tab-dropdowns','{!JSENCODE(HTMLENCODE(currentSObjectType))}',  '{!JSENCODE(HTMLENCODE(currentView))}', 'load');
+          AdobeAnalytics.trackEventsAsync('global-marketo-tab','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE(currentTabView))}', 'load');
+          AdobeAnalytics.trackEventsAsync('global-marketo-tab-dropdowns','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE(currentView))}', 'load');
+        }else{
+          AdobeAnalytics.trackPageAsync('global-marketo-tab','{!JSENCODE(HTMLENCODE(currentSObjectType))}',  '{!JSENCODE(HTMLENCODE(currentTabView))}', 'load'); 
+          AdobeAnalytics.trackEventsAsync('global-marketo-tab','{!JSENCODE(HTMLENCODE(currentSObjectType))}', '{!JSENCODE(HTMLENCODE(currentTabView))}', 'load'); 
+        }
+      setCurrentTabInJS('{!JSENCODE(HTMLENCODE(currentTabView))}');
+      }             
+    });
+    
+  </script>
+</apex:page>

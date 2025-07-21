@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Territory2Rule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <name>East (HSG)</name>
+    <objectType>Account</objectType>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>IN,KY,OH,AL,FL,GA,MS,NC,SC,TN,IL,MI,WI,NY,CT,NJ,PA,WV,VA,DC,MD,DE,VT,RI,NH,MA,ME</value>
+    </ruleItems>
+</Territory2Rule>

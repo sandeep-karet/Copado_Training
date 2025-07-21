@@ -1,0 +1,78 @@
+<apex:page docType="html-5.0"
+	showHeader="{! NOT($CurrentPage.parameters.hide_summary == 'true') }" 
+
+
+	sidebar="false" 
+	 
+	standardController="ALTF__Account_Plan__c" 
+	extensions="ALTF.PlanReviewPageController"
+	action="{!logTANDIHit}"	
+		
+		
+	
+	>
+
+	<head>
+        <style>
+			div#SPINNER {
+				height: 32px;
+				left: 50% !important;
+				position: fixed;
+				top: 50% !important;
+				width: 32px;
+				z-index: 1000001 !important;
+			}
+		</style>
+	</head>
+        
+	<c:vf_remoting_service />
+	<apex:stylesheet value="{!URLFOR($Resource.ALTF__foundation_npm_modules_generated, 'styles/vendors.css')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.ALTF__foundation_npm_modules_generated, 'scripts/vendors.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.ALTF__ttgomjs, 'ttg/lib/ttgutils.js')}"/>
+	<apex:include pageName="ALTF__acc_mgmt_objectives_app_remote_objects" />
+	
+    <div id="TAS" class="altify">
+        <apex:include pageName="ALTF__TAMSummaryTab" />
+        <div id="SPINNER">
+			<div class="slds-spinner_container">
+				<div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+					<span class="slds-assistive-text">Loading</span>
+					<div class="slds-spinner__dot-a"></div>
+					<div class="slds-spinner__dot-b"></div>
+				</div>
+			</div>
+		</div>
+    </div>
+
+	<script>
+
+        var ttg_salesforce1 = ((typeof window.sforce != 'undefined') && (typeof window.sforce.one != 'undefined')) ? true : false; 
+
+       	var height = .70*window.innerHeight;
+       	var s1_height = .85*window.innerHeight;
+
+		var iframe = document.createElement('iframe');
+
+		iframe.frameBorder = 0;
+		iframe.width = "100%";
+		iframe.height = ttg_salesforce1 ? s1_height : height;
+		iframe.id = "acc_mgmt__tandi_mgmt_app_frame";
+		iframe.setAttribute("src", '/apex/altify_people_problems?planid={!JSENCODE(planId)}#!/ap/{!JSENCODE(planId)}/testandimprove?displayoptions=nofab,fullscreen-force');
+		iframe.onload = function() { 
+			document.getElementById("SPINNER").remove();
+		};
+
+		if(ttg_salesforce1){
+			document.getElementById("TAS").appendChild(iframe);
+		} else {
+			var divs = document.getElementsByClassName("outerNoSidebar");
+			if(divs.length) {
+				divs[0].appendChild(iframe);
+			} 
+			else {
+				document.getElementById("TAS").appendChild(iframe);
+			}
+		}
+
+	</script>
+</apex:page>

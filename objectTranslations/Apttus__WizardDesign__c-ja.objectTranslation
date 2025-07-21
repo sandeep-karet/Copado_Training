@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Design --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Wizard Design View Fieldset --></label>
+        <name>Apttus__WizardDesignViewFieldset</name>
+    </fieldSets>
+    <fields>
+        <help>ウィザードのデザインが有効であることを示します。一旦有効化されるとウィザードは変更できません</help>
+        <label><!-- Active (Deprecated) --></label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help>実行時ユーザーがレビュー時に入力を編集することが許可されているかどうかを示します</help>
+        <label><!-- Allow Review Edit --></label>
+        <name>Apttus__AllowReviewEdit__c</name>
+    </fields>
+    <fields>
+        <help>初期設定はウィザードデザイン名にし、バナーなどのウィザード実行時によって使用されます</help>
+        <label><!-- Banner Statement --></label>
+        <name>Apttus__BannerStatement__c</name>
+    </fields>
+    <fields>
+        <help>静的リソース内のCSSファイル名</help>
+        <label><!-- CSS Filename --></label>
+        <name>Apttus__CSSFilename__c</name>
+    </fields>
+    <fields>
+        <help>サブカテゴリのフィールドを制御して、リストの値がユーザーに検索やウィザードの選択を許可する必要があります</help>
+        <label><!-- Category --></label>
+        <name>Apttus__Category__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation>初期値</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>入力とステップをフィルタリングし整列させるために使用される商品構成コンテキスト</help>
+        <label><!-- Context Object --></label>
+        <name>Apttus__ContextObject__c</name>
+    </fields>
+    <fields>
+        <help>コンテキストの種類、その全てまたはオブジェクトかどうか。
+「全て」の意味はウィザードデザインでどんなステップでも利用できることを意味します。
+「オブジェクト」の意味は、ウィザードデザインで整列（同じオブジェクト）ステップのみ利用できることを意味します</help>
+        <label><!-- Context Type --></label>
+        <name>Apttus__ContextType__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation>全て</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Object</masterLabel>
+            <translation>オブジェクト</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DataSource Callback --></label>
+        <name>Apttus__DataSourceCallback__c</name>
+    </fields>
+    <fields>
+        <help>実行時ウィザードの使用目的を理解するための実行時ウィザードのユーザーのためにより多くの情報を提供します</help>
+        <label><!-- Description --></label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <help>検索と選択で使用するための追加フィールド</help>
+        <label><!-- Keywords --></label>
+        <name>Apttus__Keywords__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meta Property FieldSet Name --></label>
+        <name>Apttus__MetaPropertyFieldSetName__c</name>
+    </fields>
+    <fields>
+        <help>実行時ユーザーがこのウィザードのデザインのヘルプや取扱説明を見ることができるものについて説明します</help>
+        <label><!-- Runtime Help Text --></label>
+        <name>Apttus__RuntimeHelpText__c</name>
+    </fields>
+    <fields>
+        <help>静的リソースファイルはウィザードをカスタマイズするために使用されます</help>
+        <label><!-- Static Resource --></label>
+        <name>Apttus__StaticResource__c</name>
+    </fields>
+    <fields>
+        <help>ウィザードデザインステータス</help>
+        <label><!-- Status --></label>
+        <name>Apttus__Status__c</name>
+        <picklistValues>
+            <masterLabel>Activated</masterLabel>
+            <translation>有効化済</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deactivated</masterLabel>
+            <translation>無効化済</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation>ドラフト</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retired</masterLabel>
+            <translation>引退済</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>カテゴリフィールド内容によって、リストの値がユーザーに検索やウィザードデザインの選択を許可する必要があります</help>
+        <label><!-- Subcategory --></label>
+        <name>Apttus__Subcategory__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation>初期値</translation>
+        </picklistValues>
+    </fields>
+    <nameFieldLabel><!-- Design Name --></nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,878 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Performance Guarantees</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Performance Guarantees</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agreement Line Item --></label>
+        <name>Agreement_Line_Item__c</name>
+        <relationshipLabel><!-- Performance Guarantees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Agreement --></label>
+        <name>Agreement__c</name>
+        <relationshipLabel><!-- Performance Guarantees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Calculation Method --></label>
+        <name>Calculation_Method__c</name>
+        <picklistValues>
+            <masterLabel>Average</masterLabel>
+            <translation><!-- Average --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Days</masterLabel>
+            <translation><!-- Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number</masterLabel>
+            <translation><!-- Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicate the abandon rate % --></help>
+        <label><!-- ***Deprecated***Call Center Abandon Rate --></label>
+        <name>Call_Center_Abandon_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Average call center response in seconds --></help>
+        <label><!-- ***DepCall Center Avg Response (Seconds) --></label>
+        <name>Call_Center_Avg_Response_Seconds__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate the minimum % of call required by the PG (e.g., enter 80 if 80% of calls must be answered within 30 seconds) --></help>
+        <label><!-- ***Deprecated*Call Center Calls Required --></label>
+        <name>Call_Center_Calls_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit or Refund --></label>
+        <name>Credit_or_Refund__c</name>
+        <picklistValues>
+            <masterLabel>Credit</masterLabel>
+            <translation><!-- Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Fees at Risk</masterLabel>
+            <translation><!-- No Fees at Risk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refund</masterLabel>
+            <translation><!-- Refund --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How often the client evaluates if we met PG --></help>
+        <label><!-- Evaluation Frequency --></label>
+        <name>Evaluation_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annually</masterLabel>
+            <translation><!-- Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>By Plan Milestones</masterLabel>
+            <translation><!-- By Plan Milestones --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First Year</masterLabel>
+            <translation><!-- First Year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Implementation Period</masterLabel>
+            <translation><!-- Implementation Period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One-Time</masterLabel>
+            <translation><!-- One-Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Per Occurrence</masterLabel>
+            <translation><!-- Per Occurrence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi-Annually</masterLabel>
+            <translation><!-- Semi-Annually --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- &quot;Enter in number of months&quot; --></help>
+        <label><!-- Fees At Risk Payment Term --></label>
+        <name>Fees_At_Risk_Payment_Term__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;Enter in number of months&quot; --></help>
+        <label><!-- Fees At Risk Payment Timeframe --></label>
+        <name>Fees_At_Risk_Payment_Timeframe__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fees At Risk Unit --></label>
+        <name>Fees_At_Risk_Unit__c</name>
+        <picklistValues>
+            <masterLabel>Dollar</masterLabel>
+            <translation><!-- Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter the fees at risk amount, if fees are at risk --></help>
+        <label><!-- Fees at Risk Amount --></label>
+        <name>Fees_at_Risk_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fees at Risk Type --></label>
+        <name>Fees_at_Risk_Type__c</name>
+        <picklistValues>
+            <masterLabel>Administrative Fees</masterLabel>
+            <translation><!-- Administrative Fees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Fees at Risk</masterLabel>
+            <translation><!-- No Fees at Risk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PEPM</masterLabel>
+            <translation><!-- PEPM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPPM</masterLabel>
+            <translation><!-- PPPM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage of Refund</masterLabel>
+            <translation><!-- Percentage of Refund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly Fees</masterLabel>
+            <translation><!-- Quarterly Fees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Total Fees</masterLabel>
+            <translation><!-- Total Fees --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ***Deprecated***Fees at Risk --></label>
+        <name>Fees_at_Risk__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- General PG Comments --></label>
+        <name>General_PG_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Add the PG language/details --></help>
+        <label><!-- Guarantee Description --></label>
+        <name>Guarantee_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate which group the PG originated from --></help>
+        <label><!-- ***Deprecated***Guarantee Origin --></label>
+        <name>Guarantee_Origin__c</name>
+        <picklistValues>
+            <masterLabel>AM</masterLabel>
+            <translation><!-- AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AmeriDoc</masterLabel>
+            <translation><!-- AmeriDoc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BD</masterLabel>
+            <translation><!-- BD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canada</masterLabel>
+            <translation><!-- Canada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consult a Doctor</masterLabel>
+            <translation><!-- Consult a Doctor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HY</masterLabel>
+            <translation><!-- HY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Livongo</masterLabel>
+            <translation><!-- Livongo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stat Health</masterLabel>
+            <translation><!-- Stat Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDH</masterLabel>
+            <translation><!-- TDH --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Guarantee Subtype --></label>
+        <name>Guarantee_Subtype__c</name>
+        <picklistValues>
+            <masterLabel>A1c Reduce and Maintain</masterLabel>
+            <translation><!-- A1c Reduce and Maintain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Abandon Rate</masterLabel>
+            <translation><!-- Abandon Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Activation Rate</masterLabel>
+            <translation><!-- Activation Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Average Speed to Answer</masterLabel>
+            <translation><!-- Average Speed to Answer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BP Reduce and Maintain</masterLabel>
+            <translation><!-- BP Reduce and Maintain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Breakeven</masterLabel>
+            <translation><!-- Breakeven --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change in Diagnosis</masterLabel>
+            <translation><!-- Change in Diagnosis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change in Treatment Plan</masterLabel>
+            <translation><!-- Change in Treatment Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching Response Time</masterLabel>
+            <translation><!-- Coaching Response Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data &amp; Reporting</masterLabel>
+            <translation><!-- Data &amp; Reporting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engagement Rate</masterLabel>
+            <translation><!-- Engagement Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enrollment Rate</masterLabel>
+            <translation><!-- Enrollment Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Follow-up Visits</masterLabel>
+            <translation><!-- Follow-up Visits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiation/Claims</masterLabel>
+            <translation><!-- Initiation/Claims --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Contact/Case</masterLabel>
+            <translation><!-- Member Contact/Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Satisfaction</masterLabel>
+            <translation><!-- Member Satisfaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NPS</masterLabel>
+            <translation><!-- NPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Patient/Initial Visits</masterLabel>
+            <translation><!-- New Patient/Initial Visits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-Time Implementation</masterLabel>
+            <translation><!-- On-Time Implementation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHQ-9/GAD-7</masterLabel>
+            <translation><!-- PHQ-9/GAD-7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Response Time</masterLabel>
+            <translation><!-- Provider Response Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referrals</masterLabel>
+            <translation><!-- Referrals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Response Time</masterLabel>
+            <translation><!-- Response Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submittal/Responsiveness</masterLabel>
+            <translation><!-- Submittal/Responsiveness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustained Active User Engagement</masterLabel>
+            <translation><!-- Sustained Active User Engagement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Availability/Uptime</masterLabel>
+            <translation><!-- System Availability/Uptime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virtual Call Center Uptime</masterLabel>
+            <translation><!-- Virtual Call Center Uptime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weight Loss</masterLabel>
+            <translation><!-- Weight Loss --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Guarantee Type --></label>
+        <name>Guarantee_Type__c</name>
+        <picklistValues>
+            <masterLabel>Access &amp; Availability</masterLabel>
+            <translation><!-- Access &amp; Availability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call Center</masterLabel>
+            <translation><!-- Call Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client/Account Management Satisfaction</masterLabel>
+            <translation><!-- Client/Account Management Satisfaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical Outcomes</masterLabel>
+            <translation><!-- Clinical Outcomes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enrollment Target</masterLabel>
+            <translation><!-- Enrollment Target --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Experience</masterLabel>
+            <translation><!-- Member Experience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Satisfaction</masterLabel>
+            <translation><!-- Member Satisfaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operational/Service SLA</masterLabel>
+            <translation><!-- Operational/Service SLA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ROI</masterLabel>
+            <translation><!-- ROI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utilization</masterLabel>
+            <translation><!-- Utilization --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Legacy Id --></label>
+        <name>L2O_Legacy_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Yes, the PG will not have an End Date --></help>
+        <label><!-- Life of Contract --></label>
+        <name>Life_of_Contract__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Line of Business --></label>
+        <name>Line_of_Business__c</name>
+        <picklistValues>
+            <masterLabel>ASO</masterLabel>
+            <translation><!-- ASO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FI</masterLabel>
+            <translation><!-- FI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicaid</masterLabel>
+            <translation><!-- Medicaid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare</masterLabel>
+            <translation><!-- Medicare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicate the complete member satisfaction score and criteria (e.g., 10%) --></help>
+        <label><!-- ***Deprecated**Member Satisfaction Score --></label>
+        <name>Member_Satisfaction_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate the minimum number of member satisfaction surveys required --></help>
+        <label><!-- ***DeprecatedMember Satisfaction Surveys --></label>
+        <name>Member_Satisfaction_Surveys__c</name>
+    </fields>
+    <fields>
+        <label><!-- ***Deprecated***Other Calculation Method --></label>
+        <name>Other_Calculation_Method__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Evaluation Frequency --></label>
+        <name>Other_Evaluation_Frequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Fees at Risk Type --></label>
+        <name>Other_Fees_at_Risk_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate the guarantee type if &apos;Other&apos; is selected in Guarantee Type field (Member/Participant = Patient, Client = Employer) --></help>
+        <label><!-- Other Guarantee Type --></label>
+        <name>Other_Guarantee_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Additional Measurement Start Date --></label>
+        <name>PG_Additional_Measurement_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Additional Measurement Term Recurring --></label>
+        <name>PG_Additional_Measurement_Term_Recurring__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PG Additional Measurement Term --></label>
+        <name>PG_Additional_Measurement_Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Baseline Threshold --></label>
+        <name>PG_Baseline_Threshold__c</name>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation><!-- 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>130</masterLabel>
+            <translation><!-- 130 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>140</masterLabel>
+            <translation><!-- 140 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>40</masterLabel>
+            <translation><!-- 40 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7.5</masterLabel>
+            <translation><!-- 7.5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PG Baseline Type --></label>
+        <name>PG_Baseline_Type__c</name>
+        <picklistValues>
+            <masterLabel>Average Systolic BP during the first month</masterLabel>
+            <translation><!-- Average Systolic BP during the first month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Estimated a1c in the first month</masterLabel>
+            <translation><!-- Estimated a1c in the first month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self-reported BMI</masterLabel>
+            <translation><!-- Self-reported BMI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self-reported BP</masterLabel>
+            <translation><!-- Self-reported BP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self-reported a1c</masterLabel>
+            <translation><!-- Self-reported a1c --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PG Calculation Party --></label>
+        <name>PG_Calculation_Party__c</name>
+        <picklistValues>
+            <masterLabel>Client</masterLabel>
+            <translation><!-- Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teladoc</masterLabel>
+            <translation><!-- Teladoc --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PG End Date --></label>
+        <name>PG_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Engagement Requirement --></label>
+        <name>PG_Engagement_Requirement__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Format --></label>
+        <name>PG_Format__c</name>
+        <picklistValues>
+            <masterLabel>Generally Available</masterLabel>
+            <translation><!-- Generally Available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legacy</masterLabel>
+            <translation><!-- Legacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Standard</masterLabel>
+            <translation><!-- Non Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PG Gap to Goal Details --></label>
+        <name>PG_Gap_to_Goal_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Initial Measurement Term Recurring --></label>
+        <name>PG_Initial_Measurement_Term_Recurring__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PG Initial Measurement Term --></label>
+        <name>PG_Initial_Measurement_Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Level --></label>
+        <name>PG_Level__c</name>
+        <picklistValues>
+            <masterLabel>Book of Business</masterLabel>
+            <translation><!-- Book of Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client</masterLabel>
+            <translation><!-- Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PG Minimum Enrollment Months --></label>
+        <name>PG_Minimum_Enrollment_Months__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Minimum Sample Size --></label>
+        <name>PG_Minimum_Sample_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Outcome Measure --></label>
+        <name>PG_Outcome_Measure__c</name>
+        <picklistValues>
+            <masterLabel>Average reduction as of the first anniversary of the Member Recruitment Start Date</masterLabel>
+            <translation><!-- Average reduction as of the first anniversary of the Member Recruitment Start Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cumulative values</masterLabel>
+            <translation><!-- Cumulative values --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The last available reading between month seven (7) and month twelve (12)</masterLabel>
+            <translation><!-- The last available reading between month seven (7) and month twelve (12) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The last available reading during the measurement period</masterLabel>
+            <translation><!-- The last available reading during the measurement period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The lowest available reading between month 7 and 12</masterLabel>
+            <translation><!-- The lowest available reading between month 7 and 12 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PG Outcome Target Unit --></label>
+        <name>PG_Outcome_Target_Unit__c</name>
+        <picklistValues>
+            <masterLabel>Dollar</masterLabel>
+            <translation><!-- Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number</masterLabel>
+            <translation><!-- Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mmHg</masterLabel>
+            <translation><!-- mmHg --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PG Outcome Target --></label>
+        <name>PG_Outcome_Target__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Outcome Timing Unit --></label>
+        <name>PG_Outcome_Timing_Unit__c</name>
+        <picklistValues>
+            <masterLabel>Business Days</masterLabel>
+            <translation><!-- Business Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Calendar Days</masterLabel>
+            <translation><!-- Calendar Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hours</masterLabel>
+            <translation><!-- Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minutes</masterLabel>
+            <translation><!-- Minutes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seconds</masterLabel>
+            <translation><!-- Seconds --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PG Outcome Timing --></label>
+        <name>PG_Outcome_Timing__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Reporting Delivery Days --></label>
+        <name>PG_Reporting_Delivery_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Start Date --></label>
+        <name>PG_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PG Status --></label>
+        <name>PG_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated</masterLabel>
+            <translation><!-- Terminated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+        <picklistValues>
+            <masterLabel>Chronic Care Management</masterLabel>
+            <translation><!-- Chronic Care Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expert Medical Service</masterLabel>
+            <translation><!-- Expert Medical Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virtual Care Services</masterLabel>
+            <translation><!-- Virtual Care Services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicate the product name(s) if the PG/SLA is product-specific --></help>
+        <label><!-- Product Name (if product specific) --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program At Risk --></label>
+        <name>Program_At_Risk__c</name>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Program Only</masterLabel>
+            <translation><!-- Program Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Total Invoice</masterLabel>
+            <translation><!-- Total Invoice --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicate the ROI guarantee required by the PG (e.g., &quot;1.75:1 ROI&quot;) --></help>
+        <label><!-- ***Deprecated***ROI Guarantee --></label>
+        <name>ROI_Guarantee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporting Frequency --></label>
+        <name>Reporting_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annually</masterLabel>
+            <translation><!-- Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi Annual</masterLabel>
+            <translation><!-- Semi Annual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Source Document --></label>
+        <name>Source_Document__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate the minimum utilization OR combined utilization to meet PG (include &quot;%&quot; if percentage and &quot;cases&quot; if based on # of case --></help>
+        <label><!-- ***Deprecated***Utilization Guarantee --></label>
+        <name>Utilization_Guarantee__c</name>
+    </fields>
+    <fields>
+        <label><!-- ***Deprecated***Waiver Comments --></label>
+        <name>Waiver_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- ***Deprecated***Waiver End Date --></label>
+        <name>Waiver_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ***Deprecated***Waiver Start Date --></label>
+        <name>Waiver_Start_Date__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Guarantee Description field is required --></errorMessage>
+        <name>Guarantee_Description_field_is_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please make sure you have entered both PG outcome timing as well as Unit --></errorMessage>
+        <name>Make_PG_Outcome_Timing_and_Unit_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Other Calculation Method field is required --></errorMessage>
+        <name>Other_Calculation_Method_Field_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Other Evaluation Frequency field is required --></errorMessage>
+        <name>Other_Evaluation_Frequency_is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Other Guarantee Type field is required --></errorMessage>
+        <name>Other_Guarantee_Type_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Other Fees at Risk Type field is required --></errorMessage>
+        <name>Required_if_Fees_at_Risk_Type_is_Other</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Fee at Risk Amount field is required --></errorMessage>
+        <name>Required_if_Fees_at_Risk_is_Yes</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,317 @@
+<!-- 
+    Apttus DocuSign API 
+    DocuSignSigningGroupSetup
+       
+    @2016 Apttus Inc. All rights reserved.
+ -->
+<apex:page controller="Apttus_DocuApi.DocuSignSigningGroupSetupController"
+    sidebar="true" cache="false"
+    tabStyle="Apttus_DocuApi__DocuSignEnvelope__c">
+
+    <apex:form id="idDocuSignSigningGroupSetup">
+        <apex:includeScript value="{!$Resource.Apttus_DocuApi__jQuery191}" />
+        <apex:includeScript value="{!$Resource.Apttus_DocuApi__Typeahead105}" />
+        <apex:stylesheet value="{!URLFOR($Resource.Apttus_DocuApi__Styles, 'SigningGroupPage.css')}" />
+        
+        <script type="text/javascript">
+            j$ = jQuery.noConflict();
+            function checkAll(cb)
+            {
+                var inputElem = document.getElementsByTagName("input");
+                for(var i=0; i<inputElem.length; i++)
+                {
+                    if(inputElem[i].id.indexOf("checkedone")!=-1)
+                    inputElem[i].checked = cb.checked;
+                }
+            }    
+            
+            function loading(val) {
+                if (val) {
+                    document.getElementById('status_panel').style.display = 'block';
+                    document.getElementById('main_block').style.display = 'none';
+                    document.getElementById('sync_panel').style.display = 'none';
+                }
+                else {
+                    document.getElementById('status_panel').style.display = 'none';
+                    document.getElementById('main_block').style.display = 'block';
+                    document.getElementById('sync_panel').style.display = 'block';
+                }
+            }
+            
+            function hideRemove(){
+                j$('.remove_users').hide();
+                j$('.chkAll').attr('checked', false);
+                
+            }
+            
+            
+            var boxData;
+            if (!boxData) boxData = {};
+    
+            boxData['user-contact-search'] = { 
+                setSelectedValue : 
+                    function( ctrl, id, value ) {
+                        j$(ctrl).attr('data-id', id);
+    
+                        // if destinations are defined, set them too
+                        j$("[id$='userId']").val( id );
+                    },
+    
+                fieldList: 
+                    ['Id', 'Name'],
+    
+                boxQuery: 
+                    function( queryString, typeaheadCallback ) {
+                        Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.DocuSignSigningGroupSetupController.searchRecords}', 
+                            queryString, 
+                            'User', 
+                            boxData['user-contact-search'].fieldList,
+                            'NAME',
+                            '',
+                            'NAME',
+                            200,
+                            function(result, event){
+                                if (event.status) {
+                                    var dataList = [];
+                                    j$.each(result, function(i, r) {
+                                        dataList.push({
+                                            id: r.Id,
+                                            value: r.Name + 
+                                                (('Email'.length && r['Email']) ? 
+                                                (' (' + r['Email'] + ')') : '')
+                                        });
+                                    });
+                                    typeaheadCallback( dataList );
+                                } else {
+                                }
+                            }, 
+                            {escape: false}
+                        );
+                    }
+                };
+            
+            function typeAhead(){
+                j$('#user-contact-search').typeahead({
+                    minLength: 3,
+                    hint: true,
+                    autoselect: true,
+                    highlight: true
+                },
+                {
+                    source: boxData['user-contact-search'].boxQuery, 
+                    name: 'user-contact-searchTypeahead',
+                }).on('typeahead:selected', function (object, datum) {
+                    boxData['user-contact-search'].setSelectedValue( this, datum.id, datum.value );
+                }).on('typeahead:autocompleted', function (object, datum) {
+                    boxData['user-contact-search'].setSelectedValue( this, datum.id, datum.value );
+                }).keyup( function(ev) {
+                    if ( ev.which == 8 || ev.which == 27 ) {
+                        boxData['user-contact-search'].setSelectedValue( this, null, null );
+                    }
+                });
+            }
+            
+            function clearSearchBox(){
+                j$('#user-contact-search').val('');
+                j$("[id$='userId']").val('0');
+                j$("[id$='contactId']").val('0');
+            }
+            
+            function removeSigningGroupUsersJS(){
+                j$("[id$='statusMessage']").text('{!$Label.Apttus_DocuApi__RemoveSigningGroupUserStatus}');
+                removeMembers();
+                
+            }
+            
+            function syncSigningGroupsJS(){
+                j$("[id$='statusMessage']").text('{!$Label.Apttus_DocuApi__SyncStatus}');
+                hideRemove();
+                syncSigningGroups();
+            }
+            
+            function addDocuSignGroupUsersJS(){
+                j$("[id$='statusMessage']").text('{!$Label.Apttus_DocuApi__AddSigningGroupUsersStatus}');
+                addDocuSignGroupUsers();
+            }
+                        
+            j$(document).ready(function() {
+                //init();
+                j$('.remove_users').hide();
+                j$(document).on("click",'.chkOne, .chkAll', function(){
+                   if (j$(".chkOne:checked").length > 0){
+                       j$('.remove_users').show();
+                       
+                    } else{
+                        hideRemove();
+                    }
+                    
+                });
+                
+                typeAhead();
+        
+                j$('#user-contact-search').focus();
+                
+                if ('Email'.length) 
+                    boxData['user-contact-search'].fieldList.push('Email');
+            });
+        </script>
+        <apex:pageblock id="exceptionBlock" mode="maindetail">
+            <apex:pageMessages />
+        </apex:pageblock>
+        <!-- <apex:pageMessage summary="{!$Label.DocuSignAccountNotAvailableError}" severity="error" strength="2" rendered="{!NOT(isAccountAvailable)}"/> -->
+        <apex:pageBlock >
+            <br/>
+            <div id="main_block">
+                <apex:selectList id="choose_group" label="{!$Label.Apttus_DocuApi__SigningGroup}" value="{!signingGroupName}" multiselect="false" size="1">
+                    <apex:selectOptions value="{!signingGroupNameOptions}" />
+                    <apex:actionSupport event="onchange" rerender="groupMembers,containerPanel" action="{!getMembers}" status="status_message" oncomplete="hideRemove();typeAhead();"/>
+                </apex:selectList>
+                <br/><br/>
+                <apex:actionstatus id="status_message" startText="{!$Label.Apttus_DocuApi__SigningGroupUsersRetrieveStatus}" />
+                <table style="width:90%">
+                    <tr>
+                        <td>
+                            <apex:pageBlock title="{!$Label.Apttus_DocuApi__SigningGroupUsers}" mode="maindetail" id="signingGroupUsersBlock">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <apex:outputPanel id="groupMembers">
+                                                <div class="table_div">
+                                                    <apex:pageBlockTable value="{!listGroupUsersWrapper}" var="grp" rendered="{!(listGroupUsersWrapper <> null && listGroupUsersWrapper.size > 0)}" styleClass="tableData">
+                                                        <apex:column > 
+                                                           <apex:facet name="header">
+                                                               <apex:inputCheckbox styleClass="chkAll" >
+                                                                   <apex:actionSupport reRender="groupMembers" onsubmit="checkAll(this)" event="onclick"/>
+                                                               </apex:inputCheckbox>
+                                                           </apex:facet>
+                                                           <apex:inputCheckbox value="{!grp.checked}" styleClass="chkOne" id="checkedone">
+                                                           </apex:inputCheckbox>
+                                                        </apex:column>
+                                                        <apex:column headerValue="{!$Label.Apttus_DocuApi__Name}" value="{!grp.grpMem.Apttus_DocuApi__UserName__c}"/>
+                                                        <apex:column headerValue="{!$Label.Apttus_DocuApi__Email}" value="{!grp.grpMem.Apttus_DocuApi__Email__c}"/>
+                                                    </apex:pageBlockTable>
+                                                </div>
+                                                <br/>
+                                                <apex:outputText value="{!$Label.Apttus_DocuApi__SelectSigningGroup}" style="font-style:italic;font-weight:bold;" rendered="{!(listGroupUsersWrapper = null || listGroupUsersWrapper.size = 0)}" />
+                                            </apex:outputPanel>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </apex:pageBlock>
+                        </td>
+                        <td>
+                            <apex:outputPanel id="containerPanel">
+                                <apex:outputPanel id="typeahead-container" rendered="{!NOT(ISBLANK(signingGroupName))}">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <input class="typeahead tt-search-box" type="text" placeholder="Search For Users" id="user-contact-search" />
+                                            </td>
+                                            <td>
+                                                <input class="add_user_recipient" type="button" name="add_recipient" id="add_user_recipient" value="{!$Label.AddToList}" onclick="addUserId();" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <fieldset id="fldAddUser">
+                                        <apex:outputPanel styleClass="add_user_div" layout="block" id="tableBlock">
+                                            <apex:variable value="{!0}" var="recipientIndex" />
+                                            <apex:dataTable value="{!listSigningGroupUsers}" var="groupUsers" id="recipient_table" styleClass="recipient_table">
+                                                <apex:column styleClass="big_column" rendered="{!(listSigningGroupUsers <> null && listSigningGroupUsers.size > 0)}">
+                                                    <apex:facet name="header">{!$Label.Apttus_DocuApi__Name}</apex:facet>
+                                                    <apex:inputText value="{!groupUsers.userName}" styleClass="standard_input" html-placeholder="{!$Label.Apttus_DocuApi__Name}" />
+                                                </apex:column>
+                                                <apex:column styleClass="big_column" rendered="{!(listSigningGroupUsers <> null && listSigningGroupUsers.size > 0)}">
+                                                    <apex:facet name="header">{!$Label.Apttus_DocuApi__Email}</apex:facet>
+                                                    <apex:inputText value="{!groupUsers.email}" styleClass="standard_input" html-placeholder="{!$Label.Apttus_DocuApi__Email}" />
+                                                </apex:column> 
+                                                <apex:column styleClass="medium_column">
+                                                    <apex:commandButton styleClass="remove_contact" image="{!URLFOR($Resource.Apttus_DocuApi__Image_Remove)}" onclick="removeContact('{!recipientIndex}');return false;"/>
+                                                    <apex:variable var="recipientIndex" value="{!recipientIndex + 1}" />
+                                                </apex:column>
+                                            </apex:dataTable>
+                                            <br/>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <apex:commandLink styleClass="add_contact_button" action="{!addNewUserRow}" id="add_contact" value="{!$Label.Apttus_DocuApi__AddAnotherUserButtonLabel}" reRender="tableBlock" oncomplete="resetScroll();"/>
+                                                    </td>
+                                                    <td style="width:10%"></td>
+                                                    <td>
+                                                        <apex:outputPanel id="addToDocuSign" rendered="{!(listSigningGroupUsers <> null && listSigningGroupUsers.size > 0)}">
+                                                            <apex:commandLink id="add_docusign_group_users" value="{!$Label.Apttus_DocuApi__SaveToDocuSignButtonLabel}" onclick="addDocuSignGroupUsersJS(); return false;"/>
+                                                            <apex:actionFunction name="addDocuSignGroupUsers" action="{!addDocuSignGroupUsers}" rerender="status_panel,choose_group, groupMembers, exceptionBlock, tableBlock" status="loading" oncomplete="hideRemove();">
+                                                            </apex:actionFunction>
+                                                            <apex:actionStatus id="loading2" onstart="loading(true)" onstop="loading(false)" />
+                                                        </apex:outputPanel>             
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </apex:outputPanel>
+                                    </fieldset>
+                                    <script type="text/javascript">
+                                        j$ = jQuery.noConflict();
+                                        j$('.standard_input').bind('enterKey',function(e) {
+                                            (this).next('input, text').focus();
+                                        });
+            
+                                        j$('.standard_input').keydown(function(e){
+                                            if(e.keyCode == 13){
+                                                e.preventDefault();
+                                                j$(this).trigger('enterKey');
+                                            }
+                                        });
+            
+                                        function resetScroll(){
+                                            var objDiv = j$("div[id$='tableBlock']")[0];
+                                            objDiv.scrollTop = objDiv.scrollHeight;
+                                        }
+                                                                   
+                                    </script>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                            <apex:inputHidden id="contactId" value="{!contactId}" />
+                            <apex:inputHidden id="userId" value="{!userId}" />
+                            <apex:actionFunction name="removeContact" action="{!removeRecipient}" reRender="tableBlock">
+                                <apex:param name="recipientIndex" value="" />
+                            </apex:actionFunction>
+                            <apex:actionFunction name="addUserId" action="{!addUser}" reRender="tableBlock" oncomplete="resetScroll();clearSearchBox();"/>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+            </div>
+            <div id="status_panel" style="display:none;">
+                <apex:outputPanel >
+                    <apex:image id="LoadingPage" value="{!URLFOR($Resource.Apttus_DocuApi__Image_LoadingPage)}"  width="35px" height="35px" styleClass="loadingImage"/>
+                    <apex:outputText value="{!$Label.Apttus_DocuApi__SyncStatus}" id="statusMessage" styleClass="textmiddle" escape="false" />
+                </apex:outputPanel>
+                <br/><br/>
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <div id="sync_panel">
+                            <apex:outputPanel >
+                                <input type="button" class="sync_button" name="sync" id="sync_groups" value="{!$Label.SyncWithDocuSign}" onclick="syncSigningGroupsJS();"/>
+                                <apex:actionFunction name="syncSigningGroups" action="{!syncSigningGroups}" rerender="status_panel,choose_group, groupMembers, exceptionBlock, containerPanel" status="loading">
+                                </apex:actionFunction>
+                                <apex:actionStatus id="loading" onstart="loading(true)" onstop="loading(false)" />
+                            </apex:outputPanel>
+                        </div>
+                    </td>
+                    <td>
+                        <apex:outputPanel style="float:left;">
+                            <input type="button" class="remove_users" name="{!$Label.RemoveUsersButtonLabel}" id="remove_users" value="{!$Label.RemoveUsersButtonLabel}" onclick="removeSigningGroupUsersJS();"/>
+                            <apex:actionFunction name="removeMembers" action="{!removeMembers}" rerender="status_panel,choose_group, groupMembers, exceptionBlock" status="loading" oncomplete="hideRemove();">
+                            </apex:actionFunction>
+                            <apex:actionStatus id="remove_status" onstart="loading(true)" onstop="loading(false)" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+            </table>
+            <!-- <apex:actionFunction name="init" action="{!init}" rerender="exceptionBlock">
+            </apex:actionFunction> -->
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

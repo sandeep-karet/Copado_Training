@@ -1,0 +1,46 @@
+<apex:page docType="html-5.0"
+	showHeader="false" 
+
+
+	sidebar="false" 
+	 
+	standardController="Opportunity" 
+	extensions="ALTF.PB_QualifierController"
+	action="{!logQualificationUsageAndLoadAltifyOpp}"	
+		
+		
+	
+	>
+
+    	<apex:includeScript value="{! URLFOR($Resource.prefix) }" />  	
+
+    	<c:MobileRedirect smartOM="true" />
+
+
+
+	
+
+	
+		<apex:include pageName="ALTF__Quicklinks" />
+	
+
+	
+
+	
+
+		
+
+	
+
+	
+
+	
+
+	
+	<c:opp_mgmt_pb_qualifiers_app /> 
+
+
+	
+	
+
+</apex:page>

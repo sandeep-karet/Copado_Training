@@ -1,0 +1,44 @@
+<!-- 
+    Apttus Contract Management
+    AgreementClauseIterationDetail
+    @2016 Apttus Inc. All rights reserved.    
+ -->
+<apex:page standardController="Apttus__Agreement_Clause__c"  extensions="Apttus.AgreementClauseIterationDetailController" 
+           docType="html-5.0" 
+           showHeader="false" 
+           sidebar="false"> 
+  	<apex:pageBlock mode="edit" rendered="{!errorDuringLoad}" id="errorBlock">
+    		<apex:pageMessages />
+    </apex:pageBlock>  
+    <apex:form >
+    <apex:pageBlock > 
+    	    <apex:pageBlockSection id="header" columns="2" collapsible="false" showHeader="true" title="{!$Label.Apttus__AgreementClauseTitleClauseIterationsDetails}" >
+                 
+                    <apex:commandButton value="{!$Label.Apttus__AgreementClauseBack}" action="{!onBack}" />  
+                     <apex:inputHidden id="nothing"/> 
+                
+                <apex:outputText label="{!$Label.Apttus__AgreementClauseAgreementNumber}" >
+                    <apex:outputLink value="/{!agreementSO.id}">{!agreementSO.Apttus__FF_Agreement_Number__c} </apex:outputLink>
+                </apex:outputText> 
+                <apex:outputField value="{!agreementClause.Apttus__Clause__c}" label="{!$Label.Apttus__AgreementClauseName}" />
+                <!-- <apex:outputText label="{!$Label.AgreementClauseNumber}"  >
+                    <apex:outputLink value="/{!agreementClause.id}" >{!agreementClause.name} </apex:outputLink>
+                </apex:outputText> --> 
+                <apex:outputText label="{!$Label.Apttus__AgreementClauseAgreementName}" >
+                    <apex:outputLink value="/{!agreementSO.id}" target="_blank">{!agreementSO.name} </apex:outputLink>
+                </apex:outputText> 
+				<apex:outputField label="{!$Label.Apttus__AgreementClauseIterationNumber}" value="{!agreementClause.name}" />   
+                <apex:outputField label="{!$Label.Apttus__AgreementClauseAccountName}" value="{!agreementSO.Apttus__Account__c}" />
+                <apex:outputField label="{!$Label.Apttus__AgreementClauseTemplateName}" value="{!agreementClause.Apttus__Template__c}" />  
+                
+
+        </apex:pageBlockSection>
+           	<apex:pageBlockSection id="clauseDetails" columns="1" collapsible="false" showHeader="false" >
+        		<apex:outputField label="{!$Label.Apttus__AgreementClauseText}" value="{!agreementClause.Apttus__Text__c}" /> 
+                <apex:outputField label="{!$Label.Apttus__AgreementClausePreviousText}" value="{!agreementClause.Apttus__PrevText__c}" /> 
+                <apex:outputField label="{!$Label.Apttus__AgreementClauseDiffText}" value="{!agreementClause.Apttus__DiffText2__c}"  /> 
+        	</apex:pageBlockSection>
+
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>
