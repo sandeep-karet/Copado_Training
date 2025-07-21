@@ -1,0 +1,52 @@
+<template>
+    <lightning-card>
+        <lightning-card class="slds-align_absolute-center slds-p-bottom_x-large slds-size--1-of-1">
+            <div class="slds-grid slds-wrap slds-align_absolute-center">
+                <div class="slds-p-right_x-large">
+                    <lightning-icon icon-name="action:share_file" size="small"></lightning-icon>
+                </div>
+                <div> 
+                    <h1 class="slds-text-heading--medium"><b>UMR File Upload</b></h1>							
+                </div>
+            </div>
+        </lightning-card>
+        <lightning-card class="slds-align_absolute-center slds-p-bottom_x-large slds-size--1-of-1">
+            <div class="slds-grid slds-gutters slds-align_absolute-center slds-size--1-of-1">
+                <lightning-card class="slds-size--1-of-1" title="EMPLOYERGROUPS File Upload">
+                    <div style="margin-left:4%">
+                        <div>
+                            <input type="file" class="file" onchange={handleEmployeeFilesChange} data-id="file" accept=".csv"/>
+                        </div><br/>
+                        <div class="slds-text-body_small slds-text-color_error">{employeeFileName}</div>                     
+                    </div>
+                </lightning-card>
+            </div>
+            <div class="slds-grid slds-gutters slds-align_absolute-center slds-size--1-of-1">
+                <lightning-card class="slds-size--1-of-1" title="PLANDESIGN File Upload">
+                    <div style="margin-left:4%">
+                        <div>
+                            <input type="file" class="file" onchange={handlePlanFilesChange} data-id="file" accept=".csv"/>
+                        </div><br/>
+                        <div class="slds-text-body_small slds-text-color_error">{planFileName}</div>        
+                    </div>
+                </lightning-card>
+            </div>
+            <div class="slds-grid slds-gutters slds-align_absolute-center slds-size--1-of-1">
+                <lightning-card class="slds-size--1-of-1" title="UMRDEFAULTS File Upload">
+                    <div style="margin-left:4%">
+                        <div>
+                            <input type="file" class="file" onchange={handleDefaultFilesChange} data-id="file" accept=".csv"/>
+                        </div><br/>
+                        <div class="slds-text-body_small slds-text-color_error">{defaultFileName}</div>    
+                    </div>
+                </lightning-card>
+            </div>
+        </lightning-card>
+        <div class="slds-grid slds-gutters slds-align_absolute-center"> 
+            <template if:true={renderButton}>
+                <lightning-button variant="brand" type="submit" name="Submit Files" label="Step 1: Merge File" onclick={mergeFile} class="slds-p-right_medium" ></lightning-button> 
+            </template>
+            <lightning-button variant="brand" type="submit" name="Run Batch" label="Step 2: Run Batch" onclick={runBatch} ></lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>ADMIN ONLY DATA CONFIG
+
+This object is responsible for the maintenance of the Playbook Sales Processes. These can be accessed from the Playbook Admin application.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>ALTF__AltifyId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>An external ID used for Altify</description>
+        <externalId>true</externalId>
+        <label>AltifyId</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Average_Deal_Size__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Enter the size of a typical or average sales opportunity.</inlineHelpText>
+        <label>Average Deal Size</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Closure_Duration__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of days typically taken to close an opportunity after all steps have been completed.  This can be zero.</inlineHelpText>
+        <label>Closure Duration (Days)</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__ComparisionJSONFileName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Contains file name for comparision report</description>
+        <externalId>false</externalId>
+        <label>ComparisionJSONFileName</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Default_Process__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Default Process</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description of the sales process, displayed to the user when clicking through to a new opportunity that doesn\&apos;t automatically get placed into a sales process and requires the user to select which process to use.\n\nWhen is this sales process applied, etc.</description>
+        <inlineHelpText>Enter a description for the Sales Process that conveys sufficient information when you are subsequently viewing or editing the process.</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Disabled Process</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Final_Stage_Probability__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Probability of the opportunity closing after all qualifiers have been checked positively.
+
+Even after all the qualifiers have been successfully completed, some opportunities may be lost.</description>
+        <inlineHelpText>This is the probability of the opportunity closing after all steps have been completed.  This is usually 100%</inlineHelpText>
+        <label>Final Stage Probability %</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Industry_Vertical__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>The industry that is relevant for your Sales Process.</inlineHelpText>
+        <label>Industry Vertical</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High Technology</fullName>
+                    <default>false</default>
+                    <label>High Technology</label>
+                </value>
+                <value>
+                    <fullName>Professional Services</fullName>
+                    <default>false</default>
+                    <label>Professional Services</label>
+                </value>
+                <value>
+                    <fullName>Energy &amp; Power</fullName>
+                    <default>false</default>
+                    <label>Energy &amp; Power</label>
+                </value>
+                <value>
+                    <fullName>Financial Services</fullName>
+                    <default>false</default>
+                    <label>Financial Services</label>
+                </value>
+                <value>
+                    <fullName>Healthcare</fullName>
+                    <default>false</default>
+                    <label>Healthcare</label>
+                </value>
+                <value>
+                    <fullName>Industrials</fullName>
+                    <default>false</default>
+                    <label>Industrials</label>
+                </value>
+                <value>
+                    <fullName>Materials</fullName>
+                    <default>false</default>
+                    <label>Materials</label>
+                </value>
+                <value>
+                    <fullName>Telecommunications</fullName>
+                    <default>false</default>
+                    <label>Telecommunications</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Build My Own</fullName>
+                    <default>false</default>
+                    <label>Build My Own</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__IsActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Not in use</description>
+        <inlineHelpText>Not in use</inlineHelpText>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Multiple_Buyers__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Do you usually sell to a single individual or are there many people involved in the buying process? Select Multiple or Single buyer.</inlineHelpText>
+        <label>Multiple Buyers</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Not in use</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Not in use</inlineHelpText>
+        <label>Order Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Pebble_Percentage__c</fullName>
+        <defaultValue>0.4</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Pebble Percentage</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Pebble_Value__c</fullName>
+        <defaultValue>1000</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Pebble Value</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Rock_Percentage__c</fullName>
+        <defaultValue>0.4</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Rock Percentage</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Rock_Value__c</fullName>
+        <defaultValue>10000000</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Rock Value</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Sales_Cycle_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of days that it usually takes to close a sales opportunity from the time when it first became an opportunity to when you close the deal</inlineHelpText>
+        <label>Sales Cycle Duration (Days)</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Sum_Of_Stages_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Sum Of Stages Duration</label>
+        <summarizedField>ALTF__Sales_Process_Stage__c.ALTF__Duration__c</summarizedField>
+        <summaryForeignKey>ALTF__Sales_Process_Stage__c.ALTF__Sales_Process__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Template_Stage_List__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A list of the initial stages used to populate the Genius Wizard. These may subsequently change and are here for reference only. They are pipe delimited.</description>
+        <label>Genius Stage List</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ALTF__Threshold__c</fullName>
+        <defaultValue>0.7</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The likelihood that this opportunity will close for this sales process</description>
+        <inlineHelpText>Used for Forecasting. 
+
+An opportunity must achieve the threshold percentage (and be within the forecasting close date) in order to be deemed &quot;Projected&quot; in the Forecast Analysis for Altify.</inlineHelpText>
+        <label>Projected Threshold</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Total_Sales_Cycle_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sum of all stage duration plus sales process closure duration</description>
+        <externalId>false</externalId>
+        <formula>ALTF__Sum_Of_Stages_Duration__c  +  ALTF__Closure_Duration__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Sales Cycle Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Version__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>A version number for the sales process. Auto-incremented. DO NOT UPDATE MANUALLY.
+
+On change of a sales process, existing opportunities will be associated with the &quot;old&quot; version id. Altify can then identify any opps that need to be &quot;reset&quot;.</inlineHelpText>
+        <label>Version</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Altify Sales Process</label>
+    <listViews>
+        <fullName>ALTF__All</fullName>
+        <columns>ALTF__Default_Process__c</columns>
+        <columns>NAME</columns>
+        <columns>ALTF__Closure_Duration__c</columns>
+        <columns>ALTF__Final_Stage_Probability__c</columns>
+        <columns>ALTF__Version__c</columns>
+        <columns>ALTF__Order__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Sales Process Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Altify Sales Process</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>ALTF__Closure_Duration__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ALTF__Final_Stage_Probability__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ALTF__Version__c</customTabListAdditionalFields>
+        <listViewButtons>ALTF__Import</listViewButtons>
+        <searchResultsAdditionalFields>ALTF__Closure_Duration__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ALTF__Final_Stage_Probability__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ALTF__Version__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>ALTF__Closure_Duration_Check</fullName>
+        <active>true</active>
+        <errorConditionFormula>ALTF__Closure_Duration__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>ALTF__Closure_Duration__c</errorDisplayField>
+        <errorMessage>Closure duration must be positive</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ALTF__Closure_duration_length</fullName>
+        <active>true</active>
+        <errorConditionFormula>ALTF__Closure_Duration__c  &gt; 1000</errorConditionFormula>
+        <errorDisplayField>ALTF__Closure_Duration__c</errorDisplayField>
+        <errorMessage>Closure Duration cannot be greater than 1000 days</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ALTF__Disabled_Default_Block</fullName>
+        <active>true</active>
+        <errorConditionFormula>ALTF__Disabled__c = true &amp;&amp; ALTF__Default_Process__c = true</errorConditionFormula>
+        <errorDisplayField>ALTF__Disabled__c</errorDisplayField>
+        <errorMessage>You cannot have a disabled default process</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ALTF__Percentage_check_FSP</fullName>
+        <active>true</active>
+        <errorConditionFormula>ALTF__Final_Stage_Probability__c &gt; 1 ||  ALTF__Final_Stage_Probability__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>ALTF__Final_Stage_Probability__c</errorDisplayField>
+        <errorMessage>Only 0-100% is valid</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ALTF__Percentage_check_PP</fullName>
+        <active>true</active>
+        <errorConditionFormula>ALTF__Pebble_Percentage__c  &gt; 1 || ALTF__Pebble_Percentage__c  &lt; 0</errorConditionFormula>
+        <errorDisplayField>ALTF__Pebble_Percentage__c</errorDisplayField>
+        <errorMessage>Only 0-100% is valid</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ALTF__Percentage_check_PT</fullName>
+        <active>true</active>
+        <errorConditionFormula>ALTF__Threshold__c  &gt; 1 || ALTF__Threshold__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>ALTF__Threshold__c</errorDisplayField>
+        <errorMessage>Only 0-100% is valid</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ALTF__Percentage_check_RP</fullName>
+        <active>true</active>
+        <errorConditionFormula>ALTF__Rock_Percentage__c &gt; 1 || ALTF__Rock_Percentage__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>ALTF__Rock_Percentage__c</errorDisplayField>
+        <errorMessage>Only 0-100% is valid</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>ALTF__Export</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Export</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>handleExportAll();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ALTF__Export_Dealmaker_Stages</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Export Altify Stages</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>handleExportDealmakerStages();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ALTF__Export_Global_Qualifiers</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Export Qualifiers</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>handleExportQualifiers();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ALTF__Export_Quicklinks</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Export Quicklinks</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>handleExportQuicklinks();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ALTF__Export_Sales_Process</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Export Sales Process</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>handleExport();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ALTF__Import</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Import Sales Process</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>handleImport();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ALTF__Import_Dealmaker_Stages</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Import Altify Stages</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>handleImportDealmakerStages();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ALTF__Import_Global_Qualifiers</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Import Qualifiers</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>handleImportQualifiers();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ALTF__Import_Quicklinks</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Import Quicklinks</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>handleImportQuicklinks();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ALTF__Load_For_Comparision</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Report</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>handleLoad();</url>
+    </webLinks>
+</CustomObject>

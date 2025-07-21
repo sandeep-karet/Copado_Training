@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Created by - Apttus</description>
+    <fields>
+        <fullName>AgreementOutputFormats__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Define allowable agreement output format separated by semi-colon.</inlineHelpText>
+        <label>AgreementOutputFormats</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agreement_Process_Flow_Short_Name__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter Short Name for the process flow and keep it unique</inlineHelpText>
+        <label>Agreement Process Flow Short Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Agreement_Process_Flow__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter Agreement Action Flow Name ( Full Name)</inlineHelpText>
+        <label>Agreement Process Flow</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agreement_Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter Agreement Record Type. You can add multiple values here separated by comma.</inlineHelpText>
+        <label>Agreement Record Type</label>
+        <length>80</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Auto_Activation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Please define if Auto Activation of Agreement needs to be enabled.</inlineHelpText>
+        <label>Auto Activation</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Help_Me_Understand__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field is used to Keep Salesforce Id of the recording loaded in Salesforce as files. You can only add one Id. Also video loaded here will be shown on Page Layout to explain about specific page component.</inlineHelpText>
+        <label>Help Me Understand</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Show_Me_Flow__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field is used to Keep Salesforce Id of the recording loaded in Salesforce as files. You can only add one Id. Also video loaded here will be shown on Page Layout to explain about business flow for specific Agreement.</inlineHelpText>
+        <label>Show Me Flow</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Agreement Process Flow Setting</label>
+    <listViews>
+        <fullName>All_Extended</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>Help_Me_Understand__c</columns>
+        <columns>Show_Me_Flow__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Extended</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>Agreement Process Flow Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

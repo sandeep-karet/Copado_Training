@@ -1,0 +1,315 @@
+<apex:page controller="LVGO.ClientHandoffSummaryPdfController" renderAs="PDF" applyBodyTag="false" contentType="application/pdf">
+    <head>
+        <style type="text/css" media="print"> 
+            body {
+            font-family: 'sans-serif'; 
+            font-size:14px;
+            }
+            table {
+            padding: 1px;  
+            }
+            th{
+            padding: 2px;
+            text-align: left;
+            font-weight: bold;
+            }
+            tr, td {
+            padding: 2px;
+            text-align: left;                        
+            }
+            @page {
+            size: letter portrait;
+            margin-bottom: 50px;
+            @bottom-right {
+            content: "Page " counter(page) " of " counter(pages);
+            }
+            @bottom-left {
+            content: element(footer)
+            }
+            }
+            div.header {
+            padding: 10px;
+            position: running(header);
+            }
+            div.footer {
+            display: block;
+            padding: 5px;
+            position: running(footer);                       
+            }
+        </style>
+    </head>
+    <div class="header">
+    </div>
+    <div class="footer">
+        <apex:outputText value="Generated on: {!NOW()}">
+        </apex:outputText>                             
+    </div>
+    
+    <div class="content">
+        <table width="100%">
+            <tr>
+                <th colspan="2" style="text-align: left;"><span><apex:image width="200" value="{!$Resource.LVGO__LivongoLogo}"/></span></th>
+                <th colspan="2"><p width="50%" style="color: #4863A0; font-size: 22px; font-weight: bold; text-align: right;">Client Handoff Summary</p></th>
+            </tr>
+        </table>
+        <div>           
+            <!------------ Livongo Team ------------------>
+            <table width="100%">
+                <tr style="font-size: 16px; background: #4863A0; color: #FFFFFF;">
+                    <th colspan="2">Livongo Team</th>
+                </tr>
+            <!--    <tr><td>Account Owner</td><td width="50%">{!theCHS.clientHandoffSummary.Account_Owner__c}</td></tr>  -->
+                <tr><td>Client Implementation Manager</td><td width="50%">{!theCHS.clientHandoffSummary.Client_Implementation_Manager__c}</td></tr>
+                <tr><td>Enrollment Marketing Lead</td><td width="50%">{!theCHS.clientHandoffSummary.Enrollment_Marketing_Lead__c}</td></tr>
+                <tr><td>Client Success Manager</td><td width="50%">{!theCHS.clientHandoffSummary.Client_Success_Manager__c}</td></tr>
+            </table>          
+            <!------------ Account and Contract Details ------------------>
+            <table cellpadding="2" width="100%">
+                <tr style="font-weight: 800;font-size: 16px; background: #4863A0; color: #FFFFFF;">
+                    <th colspan="2">Account and Contract Details</th>
+                </tr>
+                <tr><td>Account Name</td><td width="50%">{!theCHS.clientHandoffSummary.Account_Name__c}</td></tr>
+                <tr><td>Account Health Score</td><td width="50%">{!theCHS.clientHandoffSummary.Account_Health_Score__c}</td></tr>
+                <tr><td>Account Health Notes</td><td width="50%">{!theCHS.clientHandoffSummary.Account_Health_Notes__c}</td></tr>
+                <tr><td>Contract Effective Date</td><td width="50%">{!theCHS.clientHandoffSummary.Contract_Effective_Date__c}</td></tr> 
+                <tr><td>Contract Type</td><td width="50%">{!theCHS.clientHandoffSummary.Contract_Type__c}</td></tr>
+                <tr><td>Population of Coverage</td><td width="50%">
+                    <apex:outputText escape="false" value="{!SUBSTITUTE(theCHS.clientHandoffSummary.LVGO__Population_of_Coverage__c,'<br>',';')}"/>
+                    </td>
+                </tr>
+                <tr><td>Eligibility Verification Method</td><td width="50%">{!theCHS.clientHandoffSummary.Eligibility_Verification_Method__c}</td></tr>
+                <tr><td>Clinical Model</td><td width="50%">{!theCHS.clientHandoffSummary.Clinical_Model__c}</td></tr>
+                <tr><td>Clinical Referrals</td><td width="50%">{!theCHS.clientHandoffSummary.Clinical_Referrals__c}</td></tr>
+                <tr><td>Clinical Data Sharing and Access</td><td width="50%">
+                    <apex:outputText escape="false" value="{!SUBSTITUTE(theCHS.clientHandoffSummary.LVGO__Clinical_Data_Sharing_and_Access__c,'<br>',';')}"/>
+                    </td>
+                </tr>
+                <tr><td>List legal documents</td><td width="50%">{!theCHS.clientHandoffSummary.List_legal_documents__c}</td></tr>
+                <tr><td>Box Link for Legal Documents</td><td width="50%">{!theCHS.clientHandoffSummary.Box_Link_for_Legal_Documents__c}</td></tr>
+                <tr><td>Additional Details - Account and Contract</td><td width="50%">{!theCHS.clientHandoffSummary.Additional_Details_Account_Contract__c}</td></tr>
+            </table> 
+            
+            <!------------ Marketing ------------------>
+            <table cellpadding="2" width="100%">
+                <tr style="font-weight: 800;font-size: 16px; background: #4863A0; color: #FFFFFF;">
+                    <th colspan="2">Marketing</th>
+                </tr>
+                <tr><td>Livongo Led?</td><td width="50%">{!theCHS.clientHandoffSummary.Livongo_Led__c}</td></tr>
+                <tr><td>Outreach Stratification</td><td width="50%">{!theCHS.clientHandoffSummary.Outreach_Stratification__c}</td></tr>
+                <tr><td>Do we receive Emails?</td><td width="50%">{!theCHS.clientHandoffSummary.Do_we_receive_Emails__c}</td></tr>
+                <tr><td>Launch Assets</td><td width="50%">{!theCHS.clientHandoffSummary.Launch_Assets__c}</td></tr>
+                <tr><td>Marketing Name</td><td width="50%">{!theCHS.clientHandoffSummary.Marketing_Name__c}</td></tr>
+                <tr><td>Livongo Incentive for Automation</td><td width="50%">{!theCHS.clientHandoffSummary.Livongo_Incentive_for_Automation__c}</td></tr>
+                <tr><td>Ready for Automation</td><td width="50%">{!theCHS.clientHandoffSummary.Ready_for_Automation__c}</td></tr>
+                <tr><td>Client Must Approve Assets</td><td width="50%">{!theCHS.clientHandoffSummary.Client_Must_Approve_Assets__c}</td></tr>
+                <tr><td>Addtional Details - Marketing</td><td width="50%">{!theCHS.clientHandoffSummary.Additional_Details_Marketing__c}</td></tr>
+            </table>
+            
+            <!------------ Reporting ------------------>
+            <table cellpadding="2"  width="100%">
+                <tr style="font-weight: 800;font-size: 16px; background: #4863A0; color: #FFFFFF;">
+                    <th colspan="2">Reporting</th>
+                </tr>
+             <!--   <tr><td>Reporting Type</td><td width="50%">{!theCHS.clientHandoffSummary.Reporting_Type__c}</td></tr>
+                <tr><td>Report Type Detail</td><td width="50%">{!theCHS.clientHandoffSummary.Reporting_Type_Detail__c}</td></tr>
+                <tr><td>Reporting Method of Delivery</td><td width="50%">{!theCHS.clientHandoffSummary.Reporting_Method_of_Delivery__c}</td></tr>
+                <tr><td>Data Sharing Agreement Document</td><td width="50%">{!theCHS.clientHandoffSummary.Data_Sharing_Agreement_Document__c}</td></tr>
+                <tr><td>Reporting Frequency</td><td width="50%">{!theCHS.clientHandoffSummary.Reporting_Frequency__c}</td></tr> -->
+                <tr><td>Recipient</td><td width="50%">{!theCHS.clientHandoffSummary.Recipient__c}</td></tr>
+                <tr><td>Additional Details - Reporting</td><td width="50%">{!theCHS.clientHandoffSummary.Additional_Details_Reporting__c}</td></tr>
+            </table>
+            
+            <!------------ Account Management ------------------>
+            <table cellpadding="2" width="100%">
+                <tr style="font-weight: 800;font-size: 16px; background: #4863A0; color: #FFFFFF;">
+                    <th colspan="2">Account Management</th>
+                </tr>
+                <tr><td>How does Client Define Success?</td><td width="50%">{!theCHS.clientHandoffSummary.How_does_Client_Define_Success__c}</td></tr>
+                <tr><td>Call Frequency</td><td width="50%">{!theCHS.clientHandoffSummary.Call_Frequency__c}</td></tr>
+                <tr><td>Email Frequency</td><td width="50%">{!theCHS.clientHandoffSummary.Email_Frequency__c}</td></tr>
+                <tr><td>Business reviews discussed?</td><td width="50%">{!theCHS.clientHandoffSummary.Business_reviews_discussed__c}</td></tr>
+                <tr><td>Additional Details - Account Management</td><td width="50%">{!theCHS.clientHandoffSummary.Additional_Details_Account_Management__c}</td></tr>
+            </table> 
+            
+            <!------------ Program Overviews ------------------>            
+            <apex:repeat value="{!theCHS.programOverviews}" var="PO">
+                <table style="width: 100%; layout: fixed;" cellpadding="2"  >
+                    <tr style="font-weight: 800;font-size: 16px; background: #4863A0; color: #FFFFFF;">
+                        <th colspan="2">{!PO.Program_Name__c} Program Overview</th>
+                    </tr>                  
+                    
+                    <tr><td>Initial Launch Date</td><td width="50%">
+                        <apex:outputText value="{0, date, MM/dd/yyyy}"> 
+                            <apex:param value="{!PO.LVGO__Actual_Launch_Date__c}"/>
+                        </apex:outputText>
+                        </td>
+                    </tr>
+                    <tr><td>Initial Member Recruitment</td><td width="50%">
+                        <apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!PO.LVGO__Member_Recruitment_Began__c}"/>
+                        </apex:outputText>
+                        </td>
+                    </tr>
+                    <tr><td>Initial Targeted Marketing</td><td width="50%">
+                        <apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!PO.LVGO__Initial_Targeted_Marketing__c}"/>
+                        </apex:outputText>
+                        </td>
+                    </tr>
+                    <tr><td>Contract Term</td><td width="50%">{!PO.Contract_Term__c}</td></tr>
+                    <tr><td>Program Renewal Notice Date</td><td width="50%">
+                        <apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!PO.LVGO__ContractRenewalDate__c}"/>
+                        </apex:outputText></td></tr>
+                    <tr><td>Participants</td><td width="50%">{!PO.Participants__c}</td></tr>
+                    <tr><td>Is there a Lapse Criteria?</td><td width="50%">{!PO.Is_there_Lapse_Criteria__c}</td></tr>
+                    <tr><td>Lapse Criteria</td><td width="50%">{!PO.Lapse_Criteria__c}</td></tr>
+                    <tr><td>Lapsed Criteria Source</td><td width="50%">{!PO.Lapsed_Criteria_Source__c}</td></tr>
+                    <tr><td>Consecutive Inactive Months to Lapsed</td><td width="50%">{!PO.Consecutive_Inactive_Months_to_Lapsed__c}</td></tr>
+                    <tr><td>Minimum Number of Participants</td><td width="50%">{!PO.Minimum_Number_of_Participants__c}</td></tr>
+                    <tr><td>Performance Guarantees?</td><td width="50%">{!PO.Performance_Guarantees__c}</td></tr>
+                    <apex:outputPanel style="width: 100%;" layout="block" rendered="{!PO.LVGO__Program_Name__c== 'Hypertension'}">
+                        <tr><td style="width: 100%;"><u>Additional Details - HTN</u></td></tr>
+                        <tr><td style="width: 100%;">
+                            <apex:outputText value="{!HTMLENCODE(theCHS.clientHandoffSummary.LVGO__Additional_Details_HTN__c)}"            
+                                             escape="false" style="white-space:pre;white-space:pre-wrap;word-wrap:break-word;display:inline;word-wrap:break-word"/>
+                            </td>
+                        </tr>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="block" rendered="{!PO.LVGO__Program_Name__c== 'Prediabetes'}">
+                        <tr><td><u>Additional Details - DPP</u></td></tr>
+                        <tr><td>
+                            <apex:outputText value="{!HTMLENCODE(theCHS.clientHandoffSummary.LVGO__Additional_Details_DPP__c)}"            
+                                             escape="false" style="white-space:pre;white-space:pre-wrap;word-wrap:break-word;display:inline;word-wrap:break-word"/>
+                            </td>
+                        </tr>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="block" rendered="{!PO.LVGO__Program_Name__c== 'Behavioral Health'}">
+                        <tr><td><u>Additional Details - BH</u></td></tr>
+                        <tr><td>
+                            <apex:outputText value="{!HTMLENCODE(theCHS.clientHandoffSummary.LVGO__Additional_Details_BH__c)}"            
+                                             escape="false" style="white-space:pre;white-space:pre-wrap;word-wrap:break-word;display:inline;word-wrap:break-word"/>
+                            </td>
+                        </tr>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="block" rendered="{!PO.LVGO__Program_Name__c== 'Weight Management'}">
+                        <tr><td><u>Additional Details - WM</u></td></tr>
+                        <tr><td>
+                            <apex:outputText value="{!HTMLENCODE(theCHS.clientHandoffSummary.LVGO__Additional_Details_WM__c)}"            
+                                             escape="false" style="white-space:pre;white-space:pre-wrap;word-wrap:break-word;display:inline;word-wrap:break-word"/>
+                            </td>
+                        </tr>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="block" rendered="{!PO.LVGO__Program_Name__c== 'Diabetes'}">
+                        <tr><td><u>Additional Details - DM</u></td></tr>
+                        <tr><td>
+                            <apex:outputText value="{!HTMLENCODE(theCHS.clientHandoffSummary.LVGO__Additional_Details_DM__c)}"            
+                                             escape="false" style="white-space:pre;white-space:pre-wrap;word-wrap:break-word;display:inline;word-wrap:break-word"/>
+                            </td>
+                        </tr>
+                    </apex:outputPanel>              
+                </table>            
+            </apex:repeat>
+            
+            <!------------ Contacts ------------------>
+            <table cellpadding="2" width="100%">
+                <tr style="font-weight: 800;font-size: 16px; background: #4863A0; color: #FFFFFF;">
+                    <th colspan="2">Contacts</th>
+                </tr>
+            </table>
+            <table cellpadding="2" width="100%" >
+                <tr style="font-size: 13px; background: #4863A0; color: #FFFFFF;text-align: center">
+                    <td>Name</td>
+                    <td>Account</td>
+                    <td>Title</td>
+                    <td>Phone#</td>
+                    <td>Email</td>
+                    <td>Include in CS Calls/Emails?</td>
+                    <td>Roles</td>
+                </tr>
+                <apex:repeat value="{!theCHS.accountContactRelationships}" var="ACR">
+                    <tr >
+                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact__r.FirstName__c} {!ACR.Contact__r.LastName__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Account__r.Name}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact__r.Title__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact__r.Work_Phone__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact__r.Email__c}</td>
+                    <!--    <td style="border-bottom: 1px solid #ddd;">{!ACR.Contact.Include_in_Client_Strategy_Calls_Emails__c}</td> -->
+                        <td style="border-bottom: 1px solid #ddd;">{!ACR.Roles__c}</td>
+                    </tr>
+                </apex:repeat>
+            </table>
+            
+            <!-- Opportunities for Parent Accounts -->
+            <table cellpadding="2" width="100%" >
+                <tr style="font-weight: 800;font-size: 16px; background: #4863A0; color: #FFFFFF;">
+                    <th colspan="2">Opportunities for Parent Account</th>
+                </tr>
+            </table>
+            <table cellpadding="2" width="100%"  >                        
+                <tr style="font-size: 13px; background: #4863A0; color: #FFFFFF;text-align: center" >
+                    <td>Opportunity Name</td>
+                    <td>Stage</td>
+                    <td>Closed Date</td>                    
+                </tr>
+                <apex:repeat value="{!theCHS.opportunitiesForParentAccount}" var="Oppty">
+                    <tr>
+                        <td style="border-bottom: 1px solid #ddd;">{!Oppty.Name}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!Oppty.StageName__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">                     
+                            <apex:outputText value="{0, date, MM/dd/yyyy}">
+                                <apex:param value="{!Oppty.LVGO__CloseDate__c}"/>
+                            </apex:outputText>
+                        </td>                                 
+                    </tr>
+                </apex:repeat>
+            </table> 
+            
+            <!-- Client Partner Relationship for Parent Account -->
+            <table cellpadding="2" width="100%">
+                <tr style="font-weight: 800;font-size: 16px; background: #4863A0; color: #FFFFFF;">
+                    <th colspan="2">Client-Level Partnerships for Parent Account</th>
+                </tr>
+            </table>
+            <table cellpadding="2" width="100%" >
+                <tr style="font-size: 13px; background: #4863A0; color: #FFFFFF;text-align: center" >
+                    <td>Relationship Id</td>
+                    <td>Relationship Type</td>
+                    <td>Partner Account</td>
+                    <td>Active</td>                    
+                </tr>
+                <apex:repeat value="{!theCHS.partnerRelationshipForParentAccount}" var="PRel">
+                    <tr>
+                        <td style="border-bottom: 1px solid #ddd;">{!PRel.Name}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!PRel.RelationshipType__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!PRel.Partner_Account_Text__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!PRel.Active__c}</td>                  
+                    </tr>
+                </apex:repeat>
+            </table> 
+            
+            <!-- Contract Partner Relationship for Parent Account -->
+            <table cellpadding="2" width="100%" >
+                <tr style="font-weight: 800;font-size: 16px; background: #4863A0; color: #FFFFFF;">
+                    <th colspan="2">Contract-Level Partnerships for Parent Account</th>
+                </tr>
+            </table>
+            <table cellpadding="2" width="100%" >            
+                <tr style="font-size: 13px; background: #4863A0; color: #FFFFFF;text-align: center" >
+                    <td>Relationship Id</td>
+                    <td>Relationship Type</td>
+                    <td>Partner Account</td>
+                    <td>Active</td>                    
+                </tr>
+                <apex:repeat value="{!theCHS.contractPartnerRelationshipForParentAccount}" var="CRel">
+                    <tr>
+                        <td style="border-bottom: 1px solid #ddd;">{!CRel.Name}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!CRel.RelationshipType__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!CRel.Partner_Account_Text__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!CRel.Active__c}</td>                  
+                    </tr>
+                </apex:repeat>
+            </table> 
+        </div> 
+    </div> 
+</apex:page>

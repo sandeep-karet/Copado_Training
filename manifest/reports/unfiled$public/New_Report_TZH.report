@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Mbr_Group__c$Name</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Member_Group_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$OneAppAccess__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Mbr_Group__c$Health_Assistant__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>CRMINT-43304
+OneApp = YES &gt; Health Assistant Button Required</description>
+    <format>Tabular</format>
+    <name>MG with OneApp &amp; Health Asst</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Member_Groups_with_Plan_Specific_Fees__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Mbr_Group__c$Active_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

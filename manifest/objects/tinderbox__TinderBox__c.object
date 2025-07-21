@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Octiv Settings</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>tinderbox__Company_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Your organization&apos;s TinderBox URL. For instance, acme.mytinder.com.</inlineHelpText>
+        <label>Company URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>tinderbox__Disable_SessionID__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Will not pass sessionID or serverURL from VisualForce pages to TinderBox iframes. Instead userID is passed and the integration account is relied on for all API requests.</description>
+        <inlineHelpText>Enable this option if you do not want Session IDs to be passed to TinderBox.</inlineHelpText>
+        <label>Disable Session ID</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>tinderbox__Logging__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Record Log statements to the log file.</description>
+        <inlineHelpText>Record Log statements to the log file.</inlineHelpText>
+        <label>Logging</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Octiv</label>
+    <visibility>Public</visibility>
+</CustomObject>

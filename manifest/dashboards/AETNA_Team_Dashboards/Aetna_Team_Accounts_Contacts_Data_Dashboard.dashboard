@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Donut</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Source: Aetna - BenefitSponsor Accts by CM</footer>
+            <groupingSortProperties/>
+            <header>Aetna (Contractee) ACCOUNT RELATIONSHIPS by CM</header>
+            <legendPosition>Right</legendPosition>
+            <report>AETNA_Team_Reports/Aetna_BenefitSponsor_Accts_by_CM</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <sortLegendValues>false</sortLegendValues>
+            <title>Benefit Sponsor Accounts - Assigned CM</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Source: Aetna - BenefitSponsor Acct by Owner</footer>
+            <groupingSortProperties/>
+            <header>Aetna (Contractee) - Benefit Sponsor Accounts by Owner</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>AETNA_Team_Reports/Aetna_BenefitSponsor_Acct_by_Sales_Rep</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>false</showValues>
+            <sortBy>RowValueDescending</sortBy>
+            <sortLegendValues>false</sortLegendValues>
+            <title>Benefit Sponsor Accts by Owner</title>
+            <useReportChart>true</useReportChart>
+        </components>
+    </middleSection>
+    <owner>simperato@teladochealth.com</owner>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Metric</componentType>
+            <displayUnits>Integer</displayUnits>
+            <footer>Source: Aetna Contacts by Title</footer>
+            <groupingSortProperties/>
+            <header>AETNA - Number of Contacts</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>TOTAL NUMBER of AETNA CONTACTS =</metricLabel>
+            <report>AETNA_Team_Reports/Aetna_Contacts_by_Title</report>
+            <showRange>false</showRange>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Bar</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Source: Opportunities Mssng Ctct Roles, AETNA</footer>
+            <groupingSortProperties/>
+            <header>DATA COMPLETENESS ISSUES</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>AETNA_Team_Reports/Opportunities_Mssng_Ctct_Roles_AETNA</report>
+            <showPercentage>false</showPercentage>
+            <showPicturesOnCharts>false</showPicturesOnCharts>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <sortLegendValues>false</sortLegendValues>
+            <title>Opportunities Missing Contact Roles</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>salesforcesupport@teladochealth.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>Aetna Team - Accounts, Contacts, &amp; Data Dashboard</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

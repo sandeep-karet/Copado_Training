@@ -1,0 +1,68 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-wrap slds-align_absolute-center" style="background-color: #FFFACD">
+            <div class="slds-p-right_x-large">
+                <lightning-icon icon-name="action:record" alternative-text="Approved"></lightning-icon>
+            </div>
+            <div>
+                <h1 class="slds-text-heading--medium">Message Bus Error Report</h1>
+            </div>
+        </div> 
+        <div class="slds-size--1-of-3 slds-m-left_large slds-m-top_large">
+            <lightning:layout vertical-align="end" class="slds-form slds-form_horizontal">
+                <lightning:layoutitem padding="around-small" size="8" flexibility="auto">
+                    <lightning-input data-id="oppId" label="Opportuntiy Id" type="search"></lightning-input>    
+                </lightning:layoutitem>
+                <lightning:layoutitem padding="around-small" size="8" flexibility="auto">
+                    <lightning-input data-id="createdBy" type="search" name="Created By" label="Created By"></lightning-input>
+                </lightning:layoutitem>
+                <lightning:layoutitem padding="around-small" size="8" flexibility="auto">
+                    <lightning-input data-id="startDate" type="datetime" name="Start Date" label="Start Date"></lightning-input>
+                </lightning:layoutitem>
+                <lightning:layoutitem padding="around-small" size="8" flexibility="auto">
+                    <lightning-input data-id="endDate" type="datetime" name="End Date" label="End Date"></lightning-input>
+                </lightning:layoutitem>
+                <lightning:layoutitem padding="around-small" size="4" flexibility="auto"> 
+                    <lightning-button  data-id="search" variant="brand" label="Search" onclick={search}></lightning-button>   
+                    <lightning-button class="slds-m-left_small" data-id="search" variant="Neutral" label="Reset" onclick={reset}></lightning-button>  
+                    <lightning-button disabled={disableButton} class="slds-m-left_small" icon-name="utility:download" 
+                                              label="Download as CSV" 
+                                              title="Download CSV File"
+                                              onclick={exportToCSV} variant="brand"></lightning-button>
+                </lightning:layoutitem>
+                
+            </lightning:layout>
+        </div>
+        
+        <div class="slds-p-around_medium slds-p-top_xx-large">
+            <h1 class="slds-text-heading--large">Error Report</h1>
+            <p>Please click on the drop down arrow of the Result column and select Wrap Text for completed error message to display</p>
+            <br/>       
+            <lightning-datatable data-id="datatable"
+                                 key-field="Id"
+                                 data={data}
+                                 onsort={handleSort}
+                                 sorted-by={sortedField}
+                                 sorted-direction={sortDirection}
+                                 columns={columns}
+                                 hide-checkbox-column="true">
+                                </lightning-datatable>         
+            <br/>
+            <div if:true={spinner} class="slds-spinner_inline spinner-padding">
+                <lightning-spinner variant="brand" 
+                                   alternative-text="Loading Cases"     
+                                   size="medium">
+                </lightning-spinner>
+            </div>
+            <div class="slds-m-around_medium slds-align_absolute-center">   
+                <p class="slds-m-vertical_medium content">
+                         Displaying {startingRecord} to {endingRecord} of {totalRecountCount} records.
+                         Page {page} of {totalPage}. </p>
+            </div>
+            <div class="slds-m-around_medium slds-align_absolute-center">   
+                <c-mg2-sorting-lwc onprevious={previousHandler} onnext={nextHandler}></c-mg2-sorting-lwc>
+            </div>
+        </div>                   
+    </lightning-card> 
+</template>

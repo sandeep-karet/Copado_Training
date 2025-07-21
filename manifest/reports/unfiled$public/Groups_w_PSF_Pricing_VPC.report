@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Mbr_Group__c$Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Name__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Consult_Fee_Mbr_Pd__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Consult_Fee_Plan_Pd__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Asset__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Subscription__c.Fee_Type__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Product__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Id</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Product__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Primary 360 Care,Primary Care - PEPM/PMPM + Visit Fee</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Groups w PSF Pricing - VPC</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Member_Groups_with_Plan_Specific_Fees__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Mbr_Group__c$Active_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

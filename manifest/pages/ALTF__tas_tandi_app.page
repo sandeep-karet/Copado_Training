@@ -1,0 +1,10 @@
+<apex:page docType="html-5.0"
+	showHeader="false" 
+	sidebar="false" 
+	standardController="Opportunity" 
+	extensions="ALTF.TANDIController"
+	action="{!logToTFrontdoorUsage}"	
+	>
+	<c:tas_tandi_app oppExtraId="{! shadowOpportunity.Id }" /> 
+	<c:jQuery jQueryUI="true" />
+</apex:page>

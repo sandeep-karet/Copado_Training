@@ -1,0 +1,194 @@
+<messaging:emailTemplate subject="Quote - Rejected" recipientType="User" relatedToType="SBQQ__Quote__c">
+    <messaging:htmlEmailBody >
+        <body style="font-family: 'Trebuchet MS'">
+            <h2 style="color:red;">Quote has been <b>Rejected</b>!</h2>
+            <hr style="border: solid thin #6b008d" />
+            <br />
+            <table cellpadding="5" style="border-collapse: collapse" width="100%">
+                <tr>
+                    <td align="left" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;" 
+                        width="100%"> 
+                        Quote (<apex:outputlink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+relatedTo.Id}" target="_blank">{!relatedTo.Name}</apex:outputlink>) has been REJECTED.  Please contact your manager if you have any questions.
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;" 
+                        width="100%">
+                        Approver Comments:
+                        <c:ApprovalRequestComments relatedToId="{!relatedTo.id}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;" 
+                        width="100%">
+                        Approval Reason:
+                        {!relatedTo.Approvals_for_templates_2__c}
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table cellpadding="5" style="border-collapse: collapse" width="100%">
+                <tr>
+                    <td align="right" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;" 
+                        width="15%">
+                        <i>Account:</i>
+                    </td>
+                    <td width="35%">
+                        <b>{!relatedTo.SBQQ__Account__r.Name}</b>
+                    </td>
+                    <td align="right" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;" 
+                        width="15%">
+                        <i>Livongo Flag:</i>
+                    </td>
+                    <td width="35%">
+                        <b>{!relatedTo.SBQQ__Opportunity2__r.COVID_19__c}</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;" 
+                        width="15%">
+                        <i>CPQ Pricebook:</i>
+                    </td>
+                    <td width="35%">
+                        <b>{!relatedTo.CPQ_Pricebook__c}</b>
+                    </td>
+                    <td align="right" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;" 
+                        width="15%"> 
+                        <i>Additional Population Type:</i>                      
+                    </td>
+                    <td width="35%"> 
+                    <b>{!RelatedTo.SBQQ__Opportunity2__r.Additional_Population_Type__c}</b>                  
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;" 
+                        width="15%">
+                        <i>Start Date:</i>
+                    </td>
+                    <td width="35%">
+                        <b><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                <apex:param value="{!relatedTo.SBQQ__StartDate__c}" />
+                            </apex:outputText></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;" 
+                        width="15%">
+                        <i>Number of Lives:</i>
+                    </td>
+                    <td width="35%">
+                        <b>
+                        <apex:outputText value="{0,number,0}">
+                                <apex:param value="{!relatedTo.Number_of_Lives__c}" />
+                            </apex:outputText></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;" 
+                        width="15%">
+                        <i>Net Monthly Revenue:</i>
+                    </td>
+                    <td width="35%">
+                        <b><apex:outputText value="{0, number, Currency}">
+                                <apex:param value="{!relatedTo.Net_Monthly_Revenue__c}" />
+                            </apex:outputText></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;" 
+                        width="15%">
+                        <i>Net Annual Revenue:</i>
+                    </td>
+                    <td width="35%">
+                        <b><apex:outputText value="{0, number, Currency}">
+                                <apex:param value="{!relatedTo.Net_Annual_Amount_Calc__c}" />
+                            </apex:outputText></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;" 
+                        width="15%">
+                        <i>Notes:</i>
+                    </td>
+                    <td width="35%">
+                        <b>{!relatedTo.SBQQ__Notes__c}</b>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table cellpadding="5" style="border-collapse: collapse" width="100%">
+                <tr>
+                    <td style="background-color: #6b008d; color: #FFFFFF">
+                        <b>Product Name</b>
+                    </td>
+                    <td style="background-color: #6b008d; color: #FFFFFF">
+                        <b>Quantity</b>
+                    </td>
+                    <td style="background-color: #6b008d; color: #FFFFFF">
+                        <b>Bundle Type</b>
+                    </td>
+                    <td style="background-color: #6b008d; color: #FFFFFF">
+                        <b>Consult Fee</b>
+                    </td>
+                    <td style="background-color: #6b008d; color: #FFFFFF">
+                        <b>Membership Fee</b>
+                    </td>
+                    <td style="background-color: #6b008d; color: #FFFFFF">
+                        <b>Discount</b>
+                    </td>
+                    <td style="background-color: #6b008d; color: #FFFFFF">
+                        <b>Total Price</b>
+                    </td>
+                </tr> 
+                <apex:repeat value="{!relatedTo.SBQQ__LineItems__r}" var="lineItem">
+                    <tr>
+                        <td>
+                            {!lineItem.SBQQ__ProductName__c}
+                        </td>
+                        <td>
+                            <apex:outputText value="{0,number,0}">
+                                <apex:param value="{!lineItem.SBQQ__Quantity__c}" />
+                            </apex:outputText>
+                        </td>
+                        <td>
+                            {!lineItem.Bundle_Type__c}
+                        </td>
+                        <td>
+                            <apex:outputText value="{0, number, Currency}">
+                                <apex:param value="{!lineItem.Consult_Fees_Calculated__c}" />
+                            </apex:outputText>
+                        </td>
+                         <td>
+                            <apex:outputText value="{0, number, Currency}">
+                                <apex:param value="{!lineItem.Membership_Fee__c}" />
+                            </apex:outputText>
+                        </td>
+                        <td>
+                            <apex:outputText value="{0,number,0}%" rendered="{!lineItem.SBQQ__Discount__c <> Null}">
+                                <apex:param value="{!lineItem.SBQQ__Discount__c}" />
+                            </apex:outputText>
+                        </td>
+                        <td>
+                            <apex:outputText value="{0, number, Currency}">
+                                <apex:param value="{!lineItem.SBQQ__NetTotal__c}" />
+                            </apex:outputText>
+                        </td>                                                            
+                                                                                 
+                    </tr>
+                </apex:repeat>
+            </table>
+        </body>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

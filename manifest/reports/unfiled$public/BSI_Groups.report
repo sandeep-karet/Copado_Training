@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Broker_Opp_Rel__c$Servicing_Account__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.Owner</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.Client_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.CloseDate</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Broker_Account_Name__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.Initial_of_Lives__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Broker_Opp_Rel__c$Servicing_Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>bsi corporate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Broker_Opp_Rel__c$Opp_Broker__c.Contract__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Teladoc Products - Employer Agreement,Teladoc Products - Consults Included</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Broker_Opp_Rel__c$Opp_Broker__c.Proposal_Template__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Telehealth Services - TD Standard Only,Telehealth Services - TD Included Only,Telehealth Services - Both TD Standard &amp; TD Included,TD Standard &amp; EMS,TD Included &amp; EMS,EMS Standalone</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Broker_Opp_Rel__c$Opportunity_Stage__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>closed won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Broker_Opp_Rel__c$Opp_Broker__c.Client_Manager__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Arica Patel</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>BSI Groups</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Broker_Opportunity_Relations__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Broker_Opp_Rel__c$Opp_Broker__c.CloseDate</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Broker_Opp_Rel__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

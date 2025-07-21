@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Total US Employees</value>
+        </caseValues>
+        <name>no_of_employees_lead</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <label><!-- AQL Date --></label>
+        <name>AQL_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Type --></label>
+        <name>Account_Type__c</name>
+        <picklistValues>
+            <masterLabel>Broker</masterLabel>
+            <translation><!-- Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consultant</masterLabel>
+            <translation><!-- Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer</masterLabel>
+            <translation><!-- Employer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Plan</masterLabel>
+            <translation><!-- Health Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospital and Health System</masterLabel>
+            <translation><!-- Hospital and Health System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance</masterLabel>
+            <translation><!-- Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor</masterLabel>
+            <translation><!-- Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician / Hospital</masterLabel>
+            <translation><!-- Physician / Hospital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referral Agent</masterLabel>
+            <translation><!-- Referral Agent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reseller</masterLabel>
+            <translation><!-- Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TPA</masterLabel>
+            <translation><!-- TPA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor</masterLabel>
+            <translation><!-- Vendor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If checked, allows a lead record to be marked to be added to a Marketo nurture program. --></help>
+        <label><!-- Add to Nurture --></label>
+        <name>Add_to_Nurture__c</name>
+    </fields>
+    <fields>
+        <help><!-- Calculates the number of days since the Last Transfer Date (date the lead was assigned to its current owner). --></help>
+        <label><!-- Age From Last Transfer Date --></label>
+        <name>Age_From_Last_Transfer_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Shows number of days between now and Created Date --></help>
+        <label><!-- Age --></label>
+        <name>Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Age of MQL to Sales Action --></label>
+        <name>Age_of_MQL_to_Sales_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allow ITH Transfer --></label>
+        <name>Allow_ITH_Transfer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allow Transfer --></label>
+        <name>Allow_Transfer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asset URL --></label>
+        <name>Asset_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Categorization for web form captures of inbound Broker leads --></help>
+        <label><!-- Broker/Consultant Type --></label>
+        <name>Broker_Consultant_Type__c</name>
+        <picklistValues>
+            <masterLabel>Independent Broker Firm</masterLabel>
+            <translation><!-- Independent Broker Firm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Broker/Consulting Firm</masterLabel>
+            <translation><!-- National Broker/Consulting Firm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAL Date --></label>
+        <name>Date_Sales_Accepted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Sales Converted --></label>
+        <name>Date_Sales_Qualified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disable Workflow --></label>
+        <name>Disable_Workflow__c</name>
+    </fields>
+    <fields>
+        <label><!-- GCLID --></label>
+        <name>GCLID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter text to capture detail specific to this lead --></help>
+        <label><!-- Lead Source Detail - Other --></label>
+        <name>How_did_you_hear_about_us__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsBouncedEmail --></label>
+        <name>IsBouncedEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- LinkedIn Company Id --></label>
+        <name>LID__LinkedIn_Company_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- LinkedIn Member Token --></label>
+        <name>LID__LinkedIn_Member_Token__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Date/Time when the current Lead Status was set. Read Only field. --></help>
+        <label><!-- Last Status Date --></label>
+        <name>Last_Status_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Read only field to capture the Last Status of the Lead. --></help>
+        <label><!-- Last Status --></label>
+        <name>Last_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select name of Lead Gen Rep who worked the Lead --></help>
+        <label><!-- Lead Gen Rep --></label>
+        <name>Lead_Gen_Rep__c</name>
+        <relationshipLabel><!-- Leads (Lead Gen Rep) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lead Owner Role-Profile --></label>
+        <name>Lead_Owner_Role_Profile__c</name>
+    </fields>
+    <fields>
+        <help><!-- Which lead source, specifically, does this come from? --></help>
+        <label><!-- Lead Source Detail --></label>
+        <name>Lead_Source_Detail__c</name>
+        <picklistValues>
+            <masterLabel>AHIP Conference</masterLabel>
+            <translation><!-- AHIP Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AIS</masterLabel>
+            <translation><!-- AIS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ATA</masterLabel>
+            <translation><!-- ATA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>American Hospital Association</masterLabel>
+            <translation><!-- American Hospital Association --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>American Hospital Association Webinar</masterLabel>
+            <translation><!-- American Hospital Association Webinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Becker&apos;s</masterLabel>
+            <translation><!-- Becker&apos;s --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Becker&apos;s Webinar</masterLabel>
+            <translation><!-- Becker&apos;s Webinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue National Summit</masterLabel>
+            <translation><!-- Blue National Summit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blues Conference</masterLabel>
+            <translation><!-- Blues Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chat</masterLabel>
+            <translation><!-- Chat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conference Board</masterLabel>
+            <translation><!-- Conference Board --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data.com (Jigsaw)</masterLabel>
+            <translation><!-- Data.com (Jigsaw) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EHBC Conference</masterLabel>
+            <translation><!-- EHBC Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee-generated</masterLabel>
+            <translation><!-- Employee-generated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer List 9.11</masterLabel>
+            <translation><!-- Employer List 9.11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event / Tradeshow</masterLabel>
+            <translation><!-- Event / Tradeshow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hoovers</masterLabel>
+            <translation><!-- Hoovers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hosted Event</masterLabel>
+            <translation><!-- Hosted Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ICMA Trade Show</masterLabel>
+            <translation><!-- ICMA Trade Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IFEBP Conference</masterLabel>
+            <translation><!-- IFEBP Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound Call</masterLabel>
+            <translation><!-- Inbound Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Judy Diamond</masterLabel>
+            <translation><!-- Judy Diamond --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leadspack</masterLabel>
+            <translation><!-- Leadspack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare/Medicaid Conference</masterLabel>
+            <translation><!-- Medicare/Medicaid Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microsoft</masterLabel>
+            <translation><!-- Microsoft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NAPEO Conference</masterLabel>
+            <translation><!-- NAPEO Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NBCH Conference</masterLabel>
+            <translation><!-- NBCH Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nurture</masterLabel>
+            <translation><!-- Nurture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Onvia</masterLabel>
+            <translation><!-- Onvia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paid Advertising</masterLabel>
+            <translation><!-- Paid Advertising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHRM Conference</masterLabel>
+            <translation><!-- SHRM Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SIAA Conference</masterLabel>
+            <translation><!-- SIAA Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social</masterLabel>
+            <translation><!-- Social --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State Hospital Association</masterLabel>
+            <translation><!-- State Hospital Association --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telemarketing</masterLabel>
+            <translation><!-- Telemarketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third Party Acquired</masterLabel>
+            <translation><!-- Third Party Acquired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Form</masterLabel>
+            <translation><!-- Web Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Form - Request Demo</masterLabel>
+            <translation><!-- Web Form - Request Demo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Webinar</masterLabel>
+            <translation><!-- Webinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>White Hawk</masterLabel>
+            <translation><!-- White Hawk --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Legacy Owner --></label>
+        <name>Legacy_Owner__c</name>
+        <relationshipLabel><!-- Leads (Legacy Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lifecycle Status --></label>
+        <name>Lifecycle_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- MQL Date --></label>
+        <name>MQL_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Market target segment by size of company --></help>
+        <label><!-- Market Segment --></label>
+        <name>Market_Segment__c</name>
+        <picklistValues>
+            <masterLabel>Brokerage Firms - 51-100</masterLabel>
+            <translation><!-- Brokerage Firms - 51-100 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brokerage Firms - Top 50</masterLabel>
+            <translation><!-- Brokerage Firms - Top 50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channel Partner / Reseller Referral</masterLabel>
+            <translation><!-- Channel Partner / Reseller Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid-Market (1,000-4,999 employees)</masterLabel>
+            <translation><!-- Mid-Market (1,000-4,999 employees) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Account (&gt;=5,000 employees)</masterLabel>
+            <translation><!-- National Account (&gt;=5,000 employees) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Account - Fortune 1000</masterLabel>
+            <translation><!-- National Account - Fortune 1000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMB (&lt;1,000 employees)</masterLabel>
+            <translation><!-- SMB (&lt;1,000 employees) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Marketo Synch --></label>
+        <name>Marketo_Synch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Microsoft Involved --></label>
+        <name>Microsoft_Involved__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this lead is to be disqualified, why? --></help>
+        <label><!-- Reason Rejected --></label>
+        <name>Reason_Disqualified__c</name>
+        <picklistValues>
+            <masterLabel>Already has an opportunity/Duplicate</masterLabel>
+            <translation><!-- Already has an opportunity/Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor</masterLabel>
+            <translation><!-- Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inaccurate Data/Junk</masterLabel>
+            <translation><!-- Inaccurate Data/Junk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrectly Assigned/Wrong Rep</masterLabel>
+            <translation><!-- Incorrectly Assigned/Wrong Rep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Job Title Not Relevant</masterLabel>
+            <translation><!-- Job Title Not Relevant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No budget</masterLabel>
+            <translation><!-- No budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No interest/need</masterLabel>
+            <translation><!-- No interest/need --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student/Retired</masterLabel>
+            <translation><!-- Student/Retired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to Reach</masterLabel>
+            <translation><!-- Unable to Reach --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Recyle Lead --></label>
+        <name>Recyle_Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Route to --></label>
+        <name>Route_to__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Id --></label>
+        <name>Source_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+        <picklistValues>
+            <masterLabel>HUB</masterLabel>
+            <translation><!-- HUB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LV</masterLabel>
+            <translation><!-- LV --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used for marketing automation (Marketo) synchronization --></help>
+        <label><!-- Synch to Marketo Nurture --></label>
+        <name>Synch_to_Marketo_Nurture__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total potential coverable employees at a customer --></help>
+        <label><!-- Total US Employees, Benefits-Enrolled --></label>
+        <name>Total_US_Employees_Benefits_Enrolled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the company this lead is transferred to. --></help>
+        <label><!-- Transferred To --></label>
+        <name>Transferred_To__c</name>
+        <picklistValues>
+            <masterLabel>ITH</masterLabel>
+            <translation><!-- ITH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>International</masterLabel>
+            <translation><!-- International --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- To prevent orphan leads and contacts in MKTO --></help>
+        <label><!-- Unsynch from SFDC --></label>
+        <name>Unsynch_from_SFDC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acquisition Date --></label>
+        <name>mkto71_Acquisition_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Acquisition Program --></label>
+        <name>mkto71_Acquisition_Program__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>mkto71_Lead_Score__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- CompanyId should be a numeric value --></errorMessage>
+        <name>LID__Check_CompanyId_Value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- CompanyId should be a numeric value --></errorMessage>
+        <name>LID__Check_Company_Id_Value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This record is read only. --></errorMessage>
+        <name>read_only_record_type</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- AltavistaNews --></label>
+        <name>AltavistaNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Convert --></label>
+        <name>Convert</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- HooversProfile --></label>
+        <name>HooversProfile</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Personate --></label>
+        <name>MDPERSONATOR__Personate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendGmail --></label>
+        <name>SendGmail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- YahooMaps --></label>
+        <name>YahooMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- View_Related_Files --></label>
+        <name>dca_junto_files__View_Related_Files</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Add_Existing_Document --></label>
+        <name>tinderbox__Add_Existing_Document</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Contract --></label>
+        <name>tinderbox__New_Contract</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Presentation --></label>
+        <name>tinderbox__New_Presentation</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_TinderBox_Document --></label>
+        <name>tinderbox__New_TinderBox_Document</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor_Name__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Owner</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Opportunity_Count__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Relationship_Type__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$End_Date__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Type</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.NumberOfEmployees</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Total_US_Employees_Benefits_Enrolled__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows DTE West Accounts with Consultant relationships</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+        <criteriaItems>
+            <column>Acct_Rel__c$Relationship_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Benefit Partner or Vendor,Broker</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Acct_Rel__c$Benefit_Sponsor__c.Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Scott Hoyer,Chris Cole,Brenna Mack,Todd Hoover,Mike Davis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Acct_Rel__c$Benefit_Sponsor__c.NumberOfEmployees</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>2500</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Acct_Rel__c$Benefit_Sponsor__c.Total_US_Employees_Benefits_Enrolled__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>2,500</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>DTE - West New Consultant Relationships</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_Relationships__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Acct_Rel__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

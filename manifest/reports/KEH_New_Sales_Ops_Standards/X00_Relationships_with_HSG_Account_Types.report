@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c.Name</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c.Account_Type__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c.Owner</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Name</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Owner</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Line_of_Business__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Name</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <description>#USGH Sales Ops Forecast: lookup Health Plan, TPA, Reseller Account types in Relationships</description>
+    <filter>
+        <criteriaItems>
+            <column>Acct_Rel__c$Svc_Acct__c.Account_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Health Plan,Reseller,TPA</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>00_Relationships with HSG Account Types</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Acct_Relationships_with_BOTH_Account_Details__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Acct_Rel__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_PREVFY</interval>
+    </timeFrameFilter>
+</Report>

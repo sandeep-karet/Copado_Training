@@ -1,0 +1,39 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="StartImplementationController">
+	<aura:html tag="style">       
+        .cuf-content {
+        padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+        padding: 0rem !important;
+        }       
+        .slds-modal__content{
+        height:unset !important;
+        max-height:unset !important;  
+        
+        }
+    </aura:html>
+    <div class="slds-text-heading_medium slds-m-top_medium slds-modal__header slds-size_1-of-1">
+        <div class="slds-grid slds-wrap slds-align_absolute-center">
+            <div class="slds-p-right_x-large">
+                <lightning:icon iconName="utility:lock" variant="warning"/>
+            </div>
+            <div> 
+                <h1 class="slds-text-heading--medium"><b>START IMPLEMENTATION</b></h1>							
+            </div>
+        </div>      
+    </div> 
+    <lightning:card class="slds-size--1-of-1 ">                                         
+        <div class="slds-grid slds-wrap slds-align_absolute-center">          
+            <div class="slds-p-left_large slds-p-right_large">
+				<p class="slds-text-heading--small">Starting Implementation will lock this opportunity and restrict editing capabilities, All product and pricing decisions should be finalized in this phase. An Email from the client/partner or broker/consultant confirming all products, pricing and start date is required for the implementation team to begin.</p>		   
+            </div>
+            <div class="slds-grid slds-wrap slds-align_absolute-center">
+                <p class="slds-text-heading--medium slds-text-color_error"><br/>ARE YOU READY TO START IMPLEMENTATION?<br/></p>
+            </div>
+        </div> 
+    </lightning:card>   
+    <div class="slds-m-top_medium modal-footer slds-modal__footer slds-size_1-of-1">
+       <lightning:button aura:id="saveBtn" variant="success" label="Save"  onclick="{!c.save}"/>
+        <lightning:button aura:id="cancelBtn" variant="neutral" label="Cancel"  onclick="{!c.cancel}"/>
+    </div> 
+</aura:component>

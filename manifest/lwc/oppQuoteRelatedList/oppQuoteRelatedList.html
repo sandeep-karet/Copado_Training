@@ -1,0 +1,23 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium slds-p-top_xx-large">
+            <h1 class="slds-text-heading--medium"><b>Quotes</b></h1>
+            <br/> 
+            <lightning-datatable data-id="datatable"
+                                 key-field="Id"
+                                 data={data}
+                                 onsort={handleSort}
+                                 sorted-by={sortedField}
+                                 sorted-direction={sortDirection}
+                                 columns={col}
+                                 hide-checkbox-column=true>
+                                </lightning-datatable>         
+            <p class="slds-m-vertical_medium content">
+                         Displaying {startingRecord} to {endingRecord} of {totalRecountCount} records.
+                         Page {page} of {totalPage}. </p>
+            <div class="slds-m-around_medium slds-align_absolute-center">   
+                <c-mg2-sorting-lwc onprevious={previousHandler} onnext={nextHandler}></c-mg2-sorting-lwc>
+            </div>       
+        </div>                          
+    </lightning-card> 
+</template>

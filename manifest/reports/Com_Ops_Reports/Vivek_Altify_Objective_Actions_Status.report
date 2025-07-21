@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_9984077</developerName>
+        <masterLabel>Activity Status</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.Activities$Status</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Completed</sourceValue>
+            </sourceValues>
+            <value>1. Completed</value>
+        </values>
+        <values>
+            <value>2. In Progress</value>
+        </values>
+        <values>
+            <value>3. Not Started</value>
+        </values>
+        <values>
+            <value>4. Waiting on Someone Else</value>
+        </values>
+        <values>
+            <value>5. Deferred</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account.Activities$Status</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Location</field>
+    </columns>
+    <columns>
+        <field>BucketField_9984077</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Priority</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$TaskSubtype</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Description</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Who</field>
+    </columns>
+    <columns>
+        <field>Account$Id</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$ALTF__Altify_Objective__c</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$ActivityTimeOnly</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$ActivityDate</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$IsChild</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$IsClosed</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$Owner</field>
+    </columns>
+    <columns>
+        <field>Account.Activities$EventSubtype</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Account.Activities$ALTF__Altify_Objective__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Vivek- Altify Objective Actions Status</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_With_Activities_Altify__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

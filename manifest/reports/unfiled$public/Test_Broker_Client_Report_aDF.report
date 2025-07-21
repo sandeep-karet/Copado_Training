@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <block>
+        <blockInfo>
+            <blockId>B1</blockId>
+            <joinTable>Acct_Rel__c.Benefit_Sponsor__c</joinTable>
+        </blockInfo>
+        <columns>
+            <field>Acct_Rel__c$Name</field>
+        </columns>
+        <columns>
+            <field>Acct_Rel__c$Benefit_Sponsor_Name__c</field>
+        </columns>
+        <columns>
+            <field>Acct_Rel__c$Svc_Acct__c</field>
+        </columns>
+        <currency>USD</currency>
+        <filter>
+            <criteriaItems>
+                <column>Acct_Rel__c$Relationship_Type__c</column>
+                <columnToColumn>false</columnToColumn>
+                <isUnlocked>true</isUnlocked>
+                <operator>equals</operator>
+                <value>Broker</value>
+            </criteriaItems>
+        </filter>
+        <format>Summary</format>
+        <name>Account Relationships block 1</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>Account_Relationships__c</reportType>
+        <scope>organization</scope>
+        <showGrandTotal>true</showGrandTotal>
+        <showSubTotals>true</showSubTotals>
+        <timeFrameFilter>
+            <dateColumn>Acct_Rel__c$CreatedDate</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <block>
+        <blockInfo>
+            <blockId>B0</blockId>
+            <joinTable>Opportunity.Account</joinTable>
+        </blockInfo>
+        <columns>
+            <field>Opportunity$Name</field>
+        </columns>
+        <columns>
+            <aggregateTypes>Sum</aggregateTypes>
+            <field>Opportunity$Amount</field>
+        </columns>
+        <columns>
+            <field>Opportunity.OpportunityLineItems$Product__c</field>
+        </columns>
+        <currency>USD</currency>
+        <filter>
+            <criteriaItems>
+                <column>Opportunity$StageName</column>
+                <columnToColumn>false</columnToColumn>
+                <isUnlocked>true</isUnlocked>
+                <operator>equals</operator>
+                <value>Closed Won</value>
+            </criteriaItems>
+        </filter>
+        <format>Summary</format>
+        <name>Opportunities with Products(CPQ) block 1</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>Opportunities_with_Products_CPQ__c</reportType>
+        <scope>organization</scope>
+        <showGrandTotal>true</showGrandTotal>
+        <showSubTotals>true</showSubTotals>
+        <timeFrameFilter>
+            <dateColumn>Opportunity$CloseDate</dateColumn>
+            <interval>INTERVAL_CURFY</interval>
+        </timeFrameFilter>
+    </block>
+    <blockInfo>
+        <blockId xsi:nil="true"/>
+        <joinTable>Acct_Rel__c.Benefit_Sponsor__c</joinTable>
+    </blockInfo>
+    <description>For Paula Smith</description>
+    <format>MultiBlock</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Test Broker Client Report</name>
+    <params>
+        <name>lsk</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_Relationships__c</reportType>
+    <showDetails>true</showDetails>
+</Report>

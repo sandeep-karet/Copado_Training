@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>HyptCareComplete-HyptCare</label>
+    <protected>false</protected>
+    <values>
+        <field>LVGO__Program_Platform_Version__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>LVGO__Program_Type__c</field>
+        <value xsi:type="xsd:string">WP Anchor</value>
+    </values>
+    <values>
+        <field>LVGO__Program__c</field>
+        <value xsi:type="xsd:string">Hypertension</value>
+    </values>
+    <values>
+        <field>LVGO__Provider_Based_Care__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>LVGO__Solution__c</field>
+        <value xsi:type="xsd:string">Hypertension Care Complete</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,195 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" renderAs="{! renderMode }"
+           applyHtmlTag="false"  id="nasfpreview" controller="Mg2_NASFViewController">
+    <html>
+    <head>
+        <style type="text/css">
+
+            /*Colors in Palette
+            Color   Hex RGB
+            #3e4a69 (62,74,105)
+            #75869f (117,134,159)
+            #928c81 (146,140,129)
+            #bababa (186,186,186)
+            #e7eaee (231,234,238)*/
+
+            @media print
+            {
+                .no-print, .no-print *
+                {
+                    display: none !important;
+                }
+            }
+
+            @page {
+                size: letter;
+                margin: 15mm;
+                @top-center {
+                    //content: "Sample";
+                }
+                @bottom-center {
+                    font-family: SansSerif;
+                    font-size: small;
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+                @bottom-right {
+                    font-family: SansSerif;
+                    font-size: x-small;
+                    content: "Created Date: {! currDateTime }";
+                }
+                @bottom-left {
+                    font-family: SansSerif;
+                    font-size: x-small;
+                    content: "Created By: {!$User.FirstName } {!$User.LastName }";
+                }
+                @top-right {
+                    font-family: SansSerif;
+                    font-size: x-small;
+                    content: "Version Number: {! version }";
+                }
+            }
+            .page-break {
+                display:block;
+                page-break-after:always;
+            }
+            body {
+                font-family: Dialog,Arial,Helvetica;
+                font-weight: 250;
+            }
+
+            .asf-header-detail {
+                text-align:center;
+                font-size:medium;
+                font-weight:bold;
+                margin:0px;
+                background-color:#75869f;
+                color:#fff;
+
+                page-break-inside: avoid;
+                width:100%;
+            }
+
+            .major {
+                background-color:#5B2F91;
+                color:#fff;
+                font-size:large;
+                padding:4px;
+            }
+
+            .subdetail {
+                background-color:#75869f;
+                color:#fff;
+            }
+
+            .asf-header-table {
+                text-align:center;
+                font-size:medium;
+                font-weight:bold;
+                margin-bottom:0px;
+                background-color:#fff;
+                color:#64bd5f;
+                page-break-inside: avoid;
+            }
+
+            .asf-header {
+                text-align:center;
+                font-size:medium;
+                font-weight:bold;
+            }
+
+            .asf-info {
+                text-align:left;
+                font-size:small;
+                font-weight:bold;
+                text-decoration:none;
+            }
+
+            .fieldlabel {
+                font-size:11px;
+                font-weight:bold;
+                width:40%;
+            }
+
+            .innertable {
+                border-collapse:collapse;
+                border: .02em solid #75869f;
+                border-spacing: 0;
+                width:100%;
+            }
+
+            .infotable {
+
+                border-spacing: 0;
+                width:100%;
+                font-size:11px;
+                border: 1px solid #75869f;
+
+            }
+
+            .innertable thead th {
+                /* background-color:#5B2F91; That's the teladoc color */
+                background-color:#75869f;
+                color:#fff;
+                font-size:x-small;
+                page-break-inside: avoid;
+            }
+
+            .innertable td,thead th{
+                border: .02em solid #000; // was  #75869f
+                padding:3px;
+                font-size:x-small;
+                vertical-align:text-top;
+                page-break-inside: avoid;
+            }
+
+            .alt {
+                background-color: #e7eaee;
+            }
+        </style>
+    </head>
+    <body>
+    <div><!-- consider page break class if dividing into sections -->
+        <apex:repeat value="{! asf }" var="x">
+            <!--<apex:OutputText value="{! x.asfItem.infoType }"></apex:OutputText>-->
+            <apex:outputPanel rendered="{! x.infoType == 'detail' || x.infoType == 'subdetail' || x.infoType == 'major'}">
+                <table class="infotable" width="100%" border="0">
+                    <tr><td colspan="2" class="asf-header-detail {! x.infoType }">{! x.header }</td></tr>
+                    <apex:repeat value="{! x.infoRows }" var="r">
+                        <tr valign="top" class="{! IF(mod(r.index,2)==0, 'alt', '') }">
+                            <td class="fieldlabel">{! r.name }:</td>
+                            <td>
+                                <apex:outputText value="{!r.value }" escape="false"/>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{! x.infoType == 'table' && x.rows.size > 0}">
+                <table class="innertable">
+                    <thead>
+                    <tr style="page-break-inside: avoid;">
+                        <th colspan="{! x.headers.size }" align="center">
+                            <span class="asf-header">{! x.header }</span>
+                        </th>
+                    </tr>
+                    <tr style="page-break-inside: avoid;">
+                        <apex:repeat value="{! x.headers }" var="h">
+                            <th>{! h }</th>
+                        </apex:repeat>
+                    </tr>
+                    </thead>
+                    <apex:repeat value="{! x.rows }" var="r">
+                        <tr style="page-break-inside: avoid;">
+                            <apex:repeat value="{! r }" var="c">
+                                <td>
+                                    <apex:outputText value="{!SUBSTITUTE(JSENCODE(c), '\\n', '<br/>')}" escape="false" />&nbsp;
+                                </td>
+                            </apex:repeat>
+                        </tr>
+                    </apex:repeat>
+                </table>
+            </apex:outputPanel>
+        </apex:repeat>
+    </div>
+    </body>
+    </html>
+</apex:page>

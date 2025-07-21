@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Post_to_Chatter</name>
+        <label>Post to Chatter</label>
+        <locationX>903</locationX>
+        <locationY>143</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <stringValue>@[{!Get_Associated_Client_Overview.LVGO__EML__r.Id}], the Opportunity&apos;s Population Type does not match the Client Overview&apos;s. Please review and adjust accordingly. [This is an automated message.]</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>inputContractID</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>chatterPost</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Post_to_chatter1</name>
+        <label>Post to chatter1</label>
+        <locationX>913</locationX>
+        <locationY>284</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <stringValue>The Opportunity&apos;s Population Type does not match the Client Overview&apos;s. Please reach out to the EML to review and adjust accordingly. [This is an automated message.]</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>inputContractID</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>chatterPost</nameSegment>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_Population_Type</name>
+        <label>Add Population Type</label>
+        <locationX>636</locationX>
+        <locationY>34</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Associated_Client_Overview.LVGO__Population_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>inputPopulationType</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_CO</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Does_Population_Type_match</name>
+        <label>Does Population Type match?</label>
+        <locationX>355</locationX>
+        <locationY>49</locationY>
+        <defaultConnector>
+            <targetReference>Has_a_CIM_been_assigned</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Does Not Match</defaultConnectorLabel>
+        <rules>
+            <name>Null_value</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Associated_Client_Overview.LVGO__Population_Type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_Population_Type</targetReference>
+            </connector>
+            <label>Null value</label>
+        </rules>
+        <rules>
+            <name>Match_TRUE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Associated_Client_Overview.LVGO__Population_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>inputPopulationType</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Match TRUE</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Has_a_CIM_been_assigned</name>
+        <label>Has a CIM been assigned?</label>
+        <locationX>639</locationX>
+        <locationY>210</locationY>
+        <defaultConnector>
+            <targetReference>Post_to_chatter1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>EML has not been assigned</defaultConnectorLabel>
+        <rules>
+            <name>CIM_Assigned</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Associated_Client_Overview.LVGO__EML__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Post_to_Chatter</targetReference>
+            </connector>
+            <label>EML Assigned</label>
+        </rules>
+    </decisions>
+    <description>Updates the Population Type, else chatter notification</description>
+    <interviewLabel>Update Opportunity&apos;s Contract ID {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Opportunity&apos;s Contract ID</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Associated_Client_Overview</name>
+        <label>Get Associated  Client Overview</label>
+        <locationX>185</locationX>
+        <locationY>49</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Population_Type_match</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>inputContractID</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>LVGO__Contract__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_CO</name>
+        <label>Update CO</label>
+        <locationX>906</locationX>
+        <locationY>36</locationY>
+        <inputReference>Get_Associated_Client_Overview</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_Associated_Client_Overview</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>inputContractID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>inputPopulationType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

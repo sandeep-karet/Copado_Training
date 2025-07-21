@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Contracted_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Initial_of_Lives__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Net_ARR__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Brokers__r$Broker_Rel__c.Svc_Acct__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Brokers__r$Broker_Rel__c.Broker_Location__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Brokers__r$Broker_Contact__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Sapp Team as of jan 11 2022</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Cathy Sapp,Pete Coen,Simeon Goder,Mitch McKelvey,Mya Griffith,michael Sweetser</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Sapp Team 2022 Production</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Broker_Relationships__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$Contracted_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2022-01-11</startDate>
+    </timeFrameFilter>
+</Report>

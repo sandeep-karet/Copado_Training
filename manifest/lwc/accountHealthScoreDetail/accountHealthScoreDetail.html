@@ -1,0 +1,161 @@
+<template>
+    <div if:false={isLoaded} class="spinner">
+        <lightning-spinner
+            variant="brand"
+            alternative-text="Loading...">
+        </lightning-spinner>
+    </div>
+    <template if:true={isLoaded}>
+        <div class="slds-p-vertical_medium">
+            <div if:true={account__c.data} class="custom-box slds-box slds-p-bottom_medium slds-text-align_center">
+                <lightning-layout>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <b class="slds-text-heading_large">
+                            OVERALL SCORE
+                            <br/>
+                            {account__c.data.fields.LVGO__Overall_Account_Score__c.value}
+                        </b>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <b class="slds-text-heading_large">
+                            COLOR
+                            <br/>
+                            <span class={accountColor}>{accountColor}</span>
+                        </b>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+        <lightning-tabset variant="scoped">
+            <!--ACCOUNT SCORE TAB START-->
+            <lightning-tab label="Account Score">
+                <lightning-accordion allow-multiple-sections-open>
+                    <template for:each={resultMap} for:item="hs" for:index='index'>
+                        <lightning-accordion-section key={hs.key} name={hs.key} label={hs.key}>
+                            <lightning-layout multiple-rows>
+                                <template for:each={hs.value} for:item="val">
+                                        <lightning-layout-item size="4" padding="around-small" key={val.hsId} >
+                                            <div class="custom-box slds-box slds-p-around_medium slds-text-align_left">
+                                                <lightning-card>
+                                                    <h3 slot="title">
+                                                        <lightning-icon icon-name="utility:feed" size="medium" class="slds-p-right_small"></lightning-icon>
+                                                        <b>{val.hsSegement}</b>
+                                                    </h3>
+                                                    <lightning-record-form 
+                                                        record-id={val.hsId} 
+                                                        object-api-name="Health_Score__c" 
+                                                        fields={val.displayFields}
+                                                        columns="1"
+                                                        density="comfy">
+                                                    </lightning-record-form>
+                                                </lightning-card>
+                                            </div>
+                                        </lightning-layout-item>
+                                </template>
+                            </lightning-layout>
+                        </lightning-accordion-section>
+                    </template>
+                </lightning-accordion>
+            </lightning-tab>
+            <!--ACCOUNT SCORE TAB END-->
+            <!--DM SCORE TAB START-->
+            <lightning-tab label="DM Score">
+                <div if:true={account__c.data} class="custom-box slds-box slds-p-bottom_medium slds-text-align_center">
+                    <lightning-layout>
+                        <lightning-layout-item size="6" padding="around-small">
+                            <b class="slds-text-heading_large">
+                                OVERALL DM SCORE
+                                <br/>
+                                {account__c.data.fields.LVGO__Overall_DM_Score__c.value}
+                            </b>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" padding="around-small">
+                            <b class="slds-text-heading_large">
+                                COLOR
+                                <br/>
+                                <span class={programDMColor}>{programDMColor}</span>
+                            </b>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+                <lightning-accordion allow-multiple-sections-open>
+                    <template for:each={dmHealthScores} for:item="hs" for:index='index'>
+                        <lightning-accordion-section key={hs.key} name={hs.key} label={hs.key}>
+                            <lightning-layout multiple-rows>
+                                <template for:each={hs.value} for:item="val">
+                                        <lightning-layout-item size="4" padding="around-small" key={val.hsId} >
+                                            <div class="custom-box slds-box slds-p-around_medium slds-text-align_left">
+                                                <lightning-card>
+                                                    <h3 slot="title">
+                                                        <lightning-icon icon-name="utility:feed" size="medium" class="slds-p-right_small"></lightning-icon>
+                                                        <b>{val.hsSegement}</b>
+                                                    </h3>
+                                                    <lightning-record-form 
+                                                        record-id={val.hsId} 
+                                                        object-api-name="Health_Score__c" 
+                                                        fields={val.displayFields} 
+                                                        columns="1"
+                                                        density="comfy">
+                                                    </lightning-record-form>
+                                                </lightning-card>
+                                            </div>
+                                        </lightning-layout-item>
+                                </template>
+                            </lightning-layout>
+                        </lightning-accordion-section>
+                    </template>
+                </lightning-accordion>
+            </lightning-tab>
+            <!--DM SCORE TAB END-->
+            <!--HTN SCORE TAB START-->
+            <lightning-tab label="HTN Score">
+                <div if:true={account__c.data} class="custom-box slds-box slds-p-bottom_medium slds-text-align_center">
+                    <lightning-layout>
+                        <lightning-layout-item size="6" padding="around-small">
+                            <b class="slds-text-heading_large">
+                                OVERALL HTN SCORE
+                                <br/>
+                                {account__c.data.fields.LVGO__Overall_HTN_Score__c.value}
+                            </b>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6" padding="around-small">
+                            <b class="slds-text-heading_large">
+                                COLOR
+                                <br/>
+                                <span class={programHTNColor}>{programHTNColor}</span>
+                            </b>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+                <lightning-accordion allow-multiple-sections-open>
+                    <template for:each={htnHealthScores} for:item="hs" for:index='index'>
+                        <lightning-accordion-section key={hs.key} name={hs.key} label={hs.key}>
+                            <lightning-layout multiple-rows>
+                                <template for:each={hs.value} for:item="val">
+                                        <lightning-layout-item size="4" padding="around-small" key={val.hsId} >
+                                            <div class="custom-box slds-box slds-p-around_medium slds-text-align_left">
+                                                <lightning-card>
+                                                    <h3 slot="title">
+                                                        <lightning-icon icon-name="utility:feed" size="medium" class="slds-p-right_small"></lightning-icon>
+                                                        <b>{val.hsSegement}</b>
+                                                    </h3>
+                                                    <lightning-record-form 
+                                                        record-id={val.hsId} 
+                                                        object-api-name="Health_Score__c" 
+                                                        fields={val.displayFields} 
+                                                        columns="1"
+                                                        density="comfy">
+                                                    </lightning-record-form>
+                                                </lightning-card>
+                                            </div>
+                                        </lightning-layout-item>
+                                </template>
+                            </lightning-layout>
+                        </lightning-accordion-section>
+                    </template>
+                </lightning-accordion>
+            </lightning-tab>
+            <!--HTN SCORE TAB END-->
+        </lightning-tabset>
+    </template>
+</template>

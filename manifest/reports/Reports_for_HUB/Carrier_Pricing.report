@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Carrier_Price__c.Carrier__c</field>
+    </columns>
+    <columns>
+        <field>Carrier_Price__c.Line_of_Business__c</field>
+    </columns>
+    <columns>
+        <field>Carrier_Price__c.Product__c</field>
+    </columns>
+    <columns>
+        <field>Carrier_Price__c.Price__c</field>
+    </columns>
+    <columns>
+        <field>Carrier_Price__c.Total_Book_of_Business_Start__c</field>
+    </columns>
+    <columns>
+        <field>Carrier_Price__c.Total_Book_of_Business_End__c</field>
+    </columns>
+    <columns>
+        <field>Carrier_Price__c.Effective_Date__c</field>
+    </columns>
+    <columns>
+        <field>Carrier_Price__c.Expiration_Date__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>shows carrier prices</description>
+    <filter>
+        <criteriaItems>
+            <column>Carrier_Price__c.Carrier__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>aultcare</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Carrier Pricing</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Carrier_Price__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Carrier_Price__c.Effective_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

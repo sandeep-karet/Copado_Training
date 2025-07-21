@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Disclaimers</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Disclaimers</value>
+    </caseValues>
+    <fields>
+        <help><!-- Specific boilerplate language options related to Welcome Kit disclaimer --></help>
+        <label><!-- Disclaimer Language --></label>
+        <name>Disclaimer_Language__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the status of a disclaimer is still active or not to be used. --></help>
+        <label><!-- Disclaimer Status --></label>
+        <name>Disclaimer_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Archived</masterLabel>
+            <translation><!-- Archived --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Health Plan Boiler Plate Copy --></label>
+        <name>Health_Plan_Boiler_Plate_Copy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Id --></label>
+        <name>Source_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client provided description of the virtual first health plan offering. Limit to 425 characters with spaces. --></help>
+        <label><!-- &quot;Virtual First&quot; Health Plan Summary --></label>
+        <name>Virtual_First_Health_Plan_Summary__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- For fields on Member Group Object (Disclaimer - Teladoc, Disclaimer - Client, Disclaimer - Custom) --></description>
+        <label><!-- Disclaimer --></label>
+        <name>Teladoc</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For fields on Member Group Object (Health plan boiler plate copy) --></description>
+        <label><!-- Virtual First Boiler Plate --></label>
+        <name>Virtual_First_Boiler_Plate</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For fields on Member Group Object (&quot;Virtual First&quot; health plan summary) --></description>
+        <label><!-- Virtual First Summary --></label>
+        <name>Virtual_First_Summary</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>LVGO__Account_Long_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Add 18 digit Account ID</inlineHelpText>
+        <label>Account Long ID</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__CMC_Prefix__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Include the Hyphen at the end</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Include the Hyphen at the end</inlineHelpText>
+        <label>CMC Prefix</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>SPA CMC Prefix</label>
+    <listViews>
+        <fullName>LVGO__All_SPA_CMC_Prefix</fullName>
+        <columns>MasterLabel</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>LVGO__CMC_Prefix__c</columns>
+        <columns>LVGO__Account_Long_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All SPA CMC Prefix</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>SPA CMC Prefixes</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

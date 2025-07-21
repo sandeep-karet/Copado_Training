@@ -1,0 +1,25 @@
+<apex:page id="NASFPreview" controller="NASFPreviewController">
+        <c:LoadingDialogBox />
+    <apex:pageMessages id="msg" />
+    <apex:form >
+        <apex:actionRegion >
+            <apex:pageBlock rendered="true">
+                <apex:pageBlockButtons location="top">
+                    <apex:commandButton action="{!sendAcctForm}" value="Send to Me" reRender="msg" />
+                    <apex:commandlink action="{!passToConfig}" target="_blank" title="Pass to config and open case in new tab" style="text-decoration:none;" reRender="msg" >
+                        <apex:commandButton value="Pass to Configuration" onclick="showLoadingDialog();"
+                                            />
+                    </apex:commandlink>
+                    <apex:commandlink action="{!generatePDFPreview}" target="_blank" title="Open as PDF in new tab for Download/Preview" style="text-decoration:none;" >
+                        <apex:commandButton value="Preview PDF" />
+                    </apex:commandlink>
+                    <apex:commandButton action="{!cancelForm}" value="Cancel"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:actionRegion>
+    </apex:form>
+    <div style="margin-left:5%;margin-right:5%;margin-top:10px;">
+        <apex:include pageName="NASFView"/>
+    </div>
+
+</apex:page>

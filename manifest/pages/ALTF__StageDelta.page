@@ -1,0 +1,43 @@
+<apex:page controller="ALTF.StageDeltaController" docType="html-5.0" >
+
+    <apex:form rendered="true"> 
+        <apex:pageBlock title="Altify Stages vs Salesforce Stages"> 
+        
+            <apex:pageMessages />
+
+            <apex:pageBlockSection title="Existing Stages" collapsible="false">
+            
+                <apex:pageBlockTable value="{!sfStages}" var="stage" id="dmStagesTable" title="Salesforce Stages" >
+	                <apex:column headerClass="headerCell headerLeft">
+	                    <apex:facet name="header">Salesforce Stage</apex:facet>
+	                    <apex:outputText value="{!stage.MasterLabel}"/>
+	                </apex:column>  
+                </apex:pageBlockTable>  
+
+                <apex:pageBlockTable value="{!dmStages}" var="stage" id="sfStagesTable" title="Altify Stages" >
+	                <apex:column headerClass="headerCell headerLeft">
+	                    <apex:facet name="header">Altify Stage</apex:facet>
+	                    <apex:outputText value="{!stage.Name}"/>
+	                </apex:column>  
+                </apex:pageBlockTable>  
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Salesforce Stages not in Altify" collapsible="false">
+                <apex:pageBlockTable value="{!sfNondmStages}" var="stage" id="sfNondmStagesTable" title="Stages" >
+	                <apex:column headerClass="headerCell headerLeft">
+	                    <apex:facet name="header">Salesforce Stage</apex:facet>
+	                    <apex:outputText value="{!stage.MasterLabel}"/>
+	                </apex:column>  
+                </apex:pageBlockTable>  
+            </apex:pageBlockSection>
+
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Synch Stages" action="{!createMissingDMStages}" />
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+
+    </apex:form>
+
+</apex:page>

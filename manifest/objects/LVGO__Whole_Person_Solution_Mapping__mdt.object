@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>LVGO__Program_Platform_Version__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Program Platform Version</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>myStrength Complete</fullName>
+                    <default>true</default>
+                    <label>myStrength Complete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__Program_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Program Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standalone</fullName>
+                    <default>false</default>
+                    <label>Standalone</label>
+                </value>
+                <value>
+                    <fullName>WP Anchor</fullName>
+                    <default>true</default>
+                    <label>WP Anchor</label>
+                </value>
+                <value>
+                    <fullName>WP Non-Anchor</fullName>
+                    <default>false</default>
+                    <label>WP Non-Anchor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__Program__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Program</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Diabetes</fullName>
+                    <default>true</default>
+                    <label>Diabetes</label>
+                </value>
+                <value>
+                    <fullName>Hypertension</fullName>
+                    <default>false</default>
+                    <label>Hypertension</label>
+                </value>
+                <value>
+                    <fullName>Prediabetes</fullName>
+                    <default>false</default>
+                    <label>Prediabetes</label>
+                </value>
+                <value>
+                    <fullName>Weight Management</fullName>
+                    <default>false</default>
+                    <label>Weight Management</label>
+                </value>
+                <value>
+                    <fullName>Behavioral Health</fullName>
+                    <default>false</default>
+                    <label>Behavioral Health</label>
+                </value>
+                <value>
+                    <fullName>Chronic Kidney Disease</fullName>
+                    <default>false</default>
+                    <label>Chronic Kidney Disease</label>
+                </value>
+                <value>
+                    <fullName>Heart Failure</fullName>
+                    <default>false</default>
+                    <label>Heart Failure</label>
+                </value>
+                <value>
+                    <fullName>Home Kidney Testing Program</fullName>
+                    <default>false</default>
+                    <label>Home Kidney Testing Program</label>
+                </value>
+                <value>
+                    <fullName>Home Kidney Testing Program - Results</fullName>
+                    <default>false</default>
+                    <label>Home Kidney Testing Program - Results</label>
+                </value>
+                <value>
+                    <fullName>A1C Test Kits</fullName>
+                    <default>false</default>
+                    <label>A1C Test Kits</label>
+                </value>
+                <value>
+                    <fullName>A1C Test Kits - Results</fullName>
+                    <default>false</default>
+                    <label>A1C Test Kits - Results</label>
+                </value>
+                <value>
+                    <fullName>Adv Weight Management</fullName>
+                    <default>false</default>
+                    <label>Adv Weight Management</label>
+                </value>
+                <value>
+                    <fullName>Compr Weight Care</fullName>
+                    <default>false</default>
+                    <label>Compr Weight Care</label>
+                </value>
+                <value>
+                    <fullName>Adv Prediabetes</fullName>
+                    <default>false</default>
+                    <label>Adv Prediabetes</label>
+                </value>
+                <value>
+                    <fullName>Compr Prediabetes Care</fullName>
+                    <default>false</default>
+                    <label>Compr Prediabetes Care</label>
+                </value>
+                <value>
+                    <fullName>Advanced Weight Management (Select Populations)</fullName>
+                    <default>false</default>
+                    <label>Advanced Weight Management (Select Populations)</label>
+                </value>
+                <value>
+                    <fullName>Comprehensive Weight Care (Select Populations)</fullName>
+                    <default>false</default>
+                    <label>Comprehensive Weight Care (Select Populations)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__Provider_Based_Care__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Provider Based Care</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Solution__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Solution</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DM Solution</fullName>
+                    <default>false</default>
+                    <label>DM Solution</label>
+                </value>
+                <value>
+                    <fullName>CV Solution</fullName>
+                    <default>false</default>
+                    <label>CV Solution</label>
+                </value>
+                <value>
+                    <fullName>DP Solution</fullName>
+                    <default>false</default>
+                    <label>DP Solution</label>
+                </value>
+                <value>
+                    <fullName>CKD Solution</fullName>
+                    <default>false</default>
+                    <label>CKD Solution</label>
+                </value>
+                <value>
+                    <fullName>HF Solution</fullName>
+                    <default>false</default>
+                    <label>HF Solution</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Management Plus</fullName>
+                    <default>false</default>
+                    <label>Diabetes Management Plus</label>
+                </value>
+                <value>
+                    <fullName>Hypertension Management Plus</fullName>
+                    <default>false</default>
+                    <label>Hypertension Management Plus</label>
+                </value>
+                <value>
+                    <fullName>Prediabetes Management Plus</fullName>
+                    <default>false</default>
+                    <label>Prediabetes Management Plus</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Care Complete</fullName>
+                    <default>false</default>
+                    <label>Diabetes Care Complete</label>
+                </value>
+                <value>
+                    <fullName>Hypertension Care Complete</fullName>
+                    <default>false</default>
+                    <label>Hypertension Care Complete</label>
+                </value>
+                <value>
+                    <fullName>Prediabetes Care Complete</fullName>
+                    <default>false</default>
+                    <label>Prediabetes Care Complete</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Care</fullName>
+                    <default>false</default>
+                    <label>Diabetes Care</label>
+                </value>
+                <value>
+                    <fullName>Hypertension Care</fullName>
+                    <default>false</default>
+                    <label>Hypertension Care</label>
+                </value>
+                <value>
+                    <fullName>Test Kit Bundle</fullName>
+                    <default>false</default>
+                    <label>Test Kit Bundle</label>
+                </value>
+                <value>
+                    <fullName>Advanced Weight Management (Select Populations) with MH</fullName>
+                    <default>false</default>
+                    <label>Advanced Weight Management (Select Populations) with MH</label>
+                </value>
+                <value>
+                    <fullName>Comprehensive Weight Care (Select Populations) with MH</fullName>
+                    <default>false</default>
+                    <label>Comprehensive Weight Care (Select Populations) with MH</label>
+                </value>
+                <value>
+                    <fullName>Advanced Weight Management Plus</fullName>
+                    <default>false</default>
+                    <label>Advanced Weight Management Plus</label>
+                </value>
+                <value>
+                    <fullName>Advanced Weight Management</fullName>
+                    <default>false</default>
+                    <label>Advanced Weight Management</label>
+                </value>
+                <value>
+                    <fullName>Advanced Weight Management with Prediabetes</fullName>
+                    <default>false</default>
+                    <label>Advanced Weight Management with Prediabetes</label>
+                </value>
+                <value>
+                    <fullName>Weight Management with MH</fullName>
+                    <default>false</default>
+                    <label>Weight Management with MH</label>
+                </value>
+                <value>
+                    <fullName>Prediabetes Management with MH</fullName>
+                    <default>false</default>
+                    <label>Prediabetes Management with MH</label>
+                </value>
+                <value>
+                    <fullName>Comprehensive Weight Care Complete</fullName>
+                    <default>false</default>
+                    <label>Comprehensive Weight Care Complete</label>
+                </value>
+                <value>
+                    <fullName>Comprehensive Weight Care with Prediabetes Plus</fullName>
+                    <default>false</default>
+                    <label>Comprehensive Weight Care with Prediabetes Plus</label>
+                </value>
+                <value>
+                    <fullName>Comprehensive Weight Care</fullName>
+                    <default>false</default>
+                    <label>Comprehensive Weight Care</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Management with MH</fullName>
+                    <default>false</default>
+                    <label>Diabetes Management with MH</label>
+                </value>
+                <value>
+                    <fullName>Hypertension Management with MH</fullName>
+                    <default>false</default>
+                    <label>Hypertension Management with MH</label>
+                </value>
+                <value>
+                    <fullName>Prediabetes Care with MH</fullName>
+                    <default>false</default>
+                    <label>Prediabetes Care with MH</label>
+                </value>
+                <value>
+                    <fullName>Weight Management Care with MH</fullName>
+                    <default>false</default>
+                    <label>Weight Management Care with MH</label>
+                </value>
+                <value>
+                    <fullName>Hypertension Care with MH</fullName>
+                    <default>false</default>
+                    <label>Hypertension Care with MH</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Care with MH</fullName>
+                    <default>false</default>
+                    <label>Diabetes Care with MH</label>
+                </value>
+                <value>
+                    <fullName>Advanced Prediabetes with MH</fullName>
+                    <default>false</default>
+                    <label>Advanced Prediabetes with MH</label>
+                </value>
+                <value>
+                    <fullName>Advanced Prediabetes Plus</fullName>
+                    <default>false</default>
+                    <label>Advanced Prediabetes Plus</label>
+                </value>
+                <value>
+                    <fullName>Advanced Weight Management with MH</fullName>
+                    <default>false</default>
+                    <label>Advanced Weight Management with MH</label>
+                </value>
+                <value>
+                    <fullName>Comprehensive Prediabetes Care with MH</fullName>
+                    <default>false</default>
+                    <label>Comprehensive Prediabetes Care with MH</label>
+                </value>
+                <value>
+                    <fullName>Comprehensive Prediabetes Care Complete</fullName>
+                    <default>false</default>
+                    <label>Comprehensive Prediabetes Care Complete</label>
+                </value>
+                <value>
+                    <fullName>Weight Management Care Complete</fullName>
+                    <default>false</default>
+                    <label>Weight Management Care Complete</label>
+                </value>
+                <value>
+                    <fullName>Weight Management Plus</fullName>
+                    <default>false</default>
+                    <label>Weight Management Plus</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Whole Person Solution Mapping</label>
+    <listViews>
+        <fullName>LVGO__All_Mappings</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>LVGO__Solution__c</columns>
+        <columns>LVGO__Program__c</columns>
+        <columns>LVGO__Program_Type__c</columns>
+        <columns>LVGO__Program_Platform_Version__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Mappings</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>Whole Person Solution Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

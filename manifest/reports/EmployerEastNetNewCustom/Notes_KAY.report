@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>NAME</field>
+    </columns>
+    <columns>
+        <field>CONTENT_CREATED</field>
+    </columns>
+    <columns>
+        <field>CONTENT_CREATOR</field>
+    </columns>
+    <columns>
+        <field>LAST_REVISED</field>
+    </columns>
+    <columns>
+        <field>LAST_MODIFIER</field>
+    </columns>
+    <columns>
+        <field>FILE_TYPE</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows notes created by Megan Hill or Bob Patterson</description>
+    <filter>
+        <criteriaItems>
+            <column>CONTENT_CREATOR</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>megan hill,robert patterson</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Notes by Megan Hill &amp; Bob Patterson</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>name</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>File</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CONTENT_CREATED</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

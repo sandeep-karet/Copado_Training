@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Decision_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OneTime_Net_Total_With_PG__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Primary_Carrier_Account__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Sub_Channel__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>DTE - Client Management,Employer,Employer - ASO,Employer - Downmarket,Employer - East Client Sales,Employer - East Net New,Employer - Labor,Employer - Signature,Employer - West Client Sales,Employer - West Net New,HSG,HSG - Aetna,HSG - Blues,HSG - East,HSG - Federal,HSG - Strategic Partnerships,HSG - TPA/Reseller,HSG - United,HSG - West</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Primary_Carrier_Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Medical Mutual of Ohio,Health Alliance Plan (HAP),AultCare Insurance Company,AvMed Health,Physicians Health Plan of Northern Indiana,Inc.,SummaCare Health Plan,GlobalHealth Inc,Paramount Health Care</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Adam Koorn Report</name>
+    <params>
+        <name>open</name>
+        <value>open</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

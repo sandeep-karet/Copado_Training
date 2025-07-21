@@ -1,0 +1,784 @@
+<apex:page standardController="Opportunity" extensions="ALTF.StandardControllerPPTExtension"
+    standardStylesheets="false"
+    sidebar="false" 
+    showHeader="false"
+    docType="html-5.0">
+
+    <apex:slds /> 
+
+	<apex:includeLightning />	
+
+	<c:common_translations />
+    <c:CustomLabelJSBridge />
+    <c:jQuery jQueryUI="true" underscore="true"/>
+    
+    <c:PPTAPI ></c:PPTAPI>
+		
+	<style type="text/css">
+
+        #omPPTExportSelections .ppt_export_top_level {
+            padding: 10px;
+            width: 500px;
+            margin: 10px;
+        }
+
+        .ppt_export_buttons {
+            margin: 10px;
+        }
+
+	</style>
+
+    <div id="omPPTExportSelections"></div>
+
+    <div class="ppt_export_buttons">
+        <ul class="slds-button-group-row">
+        <li class="slds-button-group-item">
+            <button class="slds-button slds-button_brand" onclick="ttg_actions.goBack()">{!JSENCODE($Label.COMMON_CLOSE)}</button>
+        </li>
+        <li class="slds-button-group-item">
+            <button class="slds-button slds-button_brand" onclick="ttg_actions.handlePPTX()">{!JSENCODE($Label.COMMON_EXPORT)}</button>
+        </li>
+        </ul>
+    </div>    
+ 
+    <apex:includeScript value="{!URLFOR($Resource.ALTF__ttgomjs, 'ttg/lib/visualforce_error_handler.js')}"/> 
+    
+    <script>
+
+        var _ACTIONS = function(spec){
+
+            var dlg = null;
+
+            function handlePPTX() {
+                ttg_sectionPickerPPTExporter.doExport();
+            }
+            
+            
+            var menuDisplayed = false;
+
+
+            function displayActionsMenu(display) {
+                // console.log('_ACTIONS.displayActionsMenu, #ActionsMenu.toggle(' + display + ')');
+                jQuery('#ActionsMenu').toggle(display);
+            }
+
+            function toggleActionsMenu() {
+                menuDisplayed = !menuDisplayed;
+                // console.log('_ACTIONS.toggleActionsMenu(), menuDisplayed now:' + menuDisplayed);
+                displayActionsMenu(menuDisplayed);
+            }
+
+            function successFunction(){
+                ttg.navTabMgr().incrementPrimeActionCount();
+            }
+
+
+
+            function goBack() {
+                ttg_sectionPickerPPTExporter.tearDown();
+                //history.back();
+                window.close();
+            }
+
+            return {
+                //showPPTDialog : showPPTDialog,
+                handlePPTX : handlePPTX,
+                //createSummaryTabTask : createSummaryTabTask,
+                goBack: goBack
+            };
+
+        }
+
+        var ttg_actions = _ACTIONS({});	
+
+        var ttg = ttg || {};
+        
+        ttg.simpleFlatPPTExporter = function(anchorOppId, isLicensedForPP, isPPTLightingPopupEnabled) {
+
+        
+            var api = ttg.apiLayer.PPTAPI( { 
+                sessionid : '{!JSENCODE($Api.Session_ID)}',
+                opportunityid : anchorOppId  
+            });
+            var dialogOpen = true;
+            var callCount = 0;
+
+            var spinnerImg = 
+                jQuery('<img>')
+                    .attr('id', 'tas_ajax_spinner')
+                    .addClass('spinner')
+                    .attr('src', "{!JSENCODE(URLFOR($Resource.Common, '/images/loader.gif'))}")
+                ;
+                
+            
+            function createFutureDownloadAdvice() {
+                if (isLicensedForPP) {
+                    return jQuery('<ol autofocus style="padding:0;" />')
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_ALTIFY_IS_PREPARING_YOUR_PRESENTATION)}'))
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_ONCE_COMPLETE_A_LINK_WILL_APPEAR_BELOW)}'))
+                            .append(jQuery('<div style="text-align: center;margin: 22px;"/>').attr({id: 'pptlightninglink'}))
+                }
+                else {
+                    return jQuery('<ol/>')
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_ALTIFY_IS_PREPARING_YOUR_PRESENTATION)}'))
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_ONCE_COMPLETE_A_LINK_WILL_APPEAR_BELOW)}'))
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_RIGHT_CLICK_THIS_LINK)}'))
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_OPN_THIS_SAVED_FILE_WITH_POWERPOINT)}'))
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_CLOSE_THIS_DIALOG_WHEN_SAVE_AS_HAS_COMPLETED)}'))
+                }
+            }
+
+
+            function createFutureLinkDiv() {
+                callCount = 0;
+                return  jQuery('<div/>')
+                    .css({ width : '100%', 'text-align' : 'center'})
+                    .addClass('ttg_future_ppt_exporter_linkdiv')
+                    .append(jQuery('<span/>').text('{!JSENCODE($Label.COMMON_PREPARING)}'));
+                    
+            }
+
+            function deletefuturePPTX(id) {
+                api.deletePPTX(id,
+                
+                    function() { createfuturePPTX(id) },                    
+                    function() { /* error */ },                 
+                    function() { /* complete */ }               
+                )
+                
+            }           
+            
+            
+            // FIXME_PPT: remove "angularIsUndefined || " see below
+            function createfuturePPTX(id) {
+                
+                api.postPPTX(
+                    id,
+                    {
+                        'param': {
+                            'id': id,
+                            'omAddPrimeActions'    	: ttg.localStorageService.getStorageProp( 'ompptexportsetting', 'omAddPrimeActions' ) ,
+                            'omAddPoliticalMap'    	: ttg.localStorageService.getStorageProp( 'ompptexportsetting', 'omAddPoliticalMap' ) ,
+                            'omAddPlaybook'    		: ttg.localStorageService.getStorageProp( 'ompptexportsetting', 'omAddPlaybook' ) ,
+                            'omAddOverview'     	: ttg.localStorageService.getStorageProp( 'ompptexportsetting', 'omAddOverview' ) ,
+                            'omAddInsightMaps' 		: ttg.localStorageService.getStorageProp( 'ompptexportsetting', 'omAddInsightMaps' ) ,
+                            'omAddDealReviews' 		: ttg.localStorageService.getStorageProp( 'ompptexportsetting', 'omAddDealReviews' ) ,
+                            'omAddCompetitors' 		: ttg.localStorageService.getStorageProp( 'ompptexportsetting', 'omAddCompetitors' ) ,
+                            'omAddCompetitiveStrategy' 		: ttg.localStorageService.getStorageProp( 'ompptexportsetting', 'omAddCompetitiveStrategy' ) ,
+                            'omAddAssessment' 		: ttg.localStorageService.getStorageProp( 'ompptexportsetting', 'omAddAssessment' ), 
+                            'omAddAssessmentNotes'       : ttg.localStorageService.getStorageProp( 'ompptexportsetting', 'omAddAssessmentNotes' ), 
+                        }
+                    },
+                    function() { checkForFuturePPTXUrl(id) },
+                    function() { },
+                    function() { }
+                )
+                
+            }                       
+
+            function checkForFuturePPTXUrl(id) {
+                function createLightningComponent(documentId) {
+                    jQuery('.ttg_future_ppt_exporter_linkdiv').html('...');
+                    $Lightning.use("ALTF:IncludeLightningOut", function() {
+                        $Lightning.createComponent("DMPPT:PPTX",
+                            { documentId : documentId },
+                            "pptlightninglink",
+                            function(cmp, status, errorMessage) {
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').html('');
+                            }
+                        );
+                    });
+                }
+
+                api.getPPTX(id,
+                
+                    function(responseData) { 
+                        if (responseData != null && responseData.downloadURL != null) {
+
+                            jQuery('.ttg_future_ppt_exporter_linkdiv').html('');
+
+                            if (isLicensedForPP) {
+                                if (isPPTLightingPopupEnabled) {
+                                    createLightningComponent(responseData.documentId);
+                                }
+                                else {
+                                    jQuery('.ttg_future_ppt_exporter_linkdiv').append(
+                                        jQuery('<div/>')
+                                                .css({width:'100%', 'text-align' : 'center' })
+                                                .append(jQuery('<iframe/>', {src : 'https://' + document.domain.replace('ALTF.'.toLowerCase(), 'dmppt.') + responseData.downloadURL, height : '40px', width : '100%', frameBorder : 0, seamless : 'seamless' }))
+                                    )
+                                }
+                            }
+                            else {
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').append(
+                                    jQuery('<a/>', {href: responseData.downloadURL })
+                                        .css({'text-decoration': 'underline', 'cursor': 'pointer'})
+                                        .text('{!JSENCODE($Label.COMMON_CLICK_TO_SAVE)}')
+                                )
+                            }
+                        }
+                        else {
+                            if (++callCount > 40) {
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').html('');
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').append(
+                                    jQuery('<a/>')
+                                        .css({'text-decoration': 'underline', 'cursor': 'pointer'})
+                                        .text('Taking too long.  Continue waiting?')
+                                        .click(function() { callCount = 0; checkForFuturePPTXUrl(id)} ) 
+                                )
+                            }
+                            else {
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').html('');
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').append(
+                                    jQuery('<span/>').css({'display': 'inline-block', width: '100px', 'text-align': 'left'}).text('Waiting' + dots(callCount, 4))
+                                )
+                                if (dialogOpen) {
+                                    checkForFuturePPTXUrl(id);
+                                }
+                            }
+                            
+                        } 
+                    },
+                    function() { /* error */ },                 
+                    function() { /* complete */ }               
+                )
+
+            }
+            
+            function dots(num, mnum) {
+            
+                var s = '';
+                while(s.length < (num % mnum)) {
+                    s += '.';
+                }
+
+                while(s.length < mnum) {
+                    s += ' ';
+                }
+                
+                return s;
+            }
+
+            function futureFailure() {
+            }
+                
+            function closeDialog() {
+                dialogOpen = false;
+                jQuery('#ttg_simple_ppt_exporter_div').remove();
+            }
+            
+            function showDialog() {
+                
+                jQuery('<div/>',{ id : 'ttg_simple_ppt_exporter_div'})
+                    .addClass('ttg_simple_ppt_exporter')
+                    .append(
+                        createFutureDownloadAdvice() 
+                    )
+                    .append(
+                        createFutureLinkDiv() 
+                    )
+                    .dialog({
+                        title       :   '{!JSENCODE($Label.COMMON_EXPORT_POWERPOINT)}'
+                        , width     :   '500px',
+                        closeText   :   '{!JSENCODE($Label.COMMON_CLOSE)}',
+                        close: closeDialog
+                    });
+            }
+
+            showDialog();
+            deletefuturePPTX(anchorOppId)
+            
+            return {
+            }
+        }
+            
+        ttg.navTabMgr = function(spec) {
+            function incrementPrimeActionCount() {
+                var primeActionValue = jQuery('#NavTab_PRIMEActions span');
+                if(!primeActionValue.hasClass('smartOMTabSelected') && primeActionValue.length!=0) {
+                    var currentCount = parseInt(primeActionValue.text()) || 0;
+                    primeActionValue.text(currentCount+1);
+                }
+                var primeActionTab = jQuery('#NavTab_PRIMEActions');
+                console.log(primeActionTab)
+                if(primeActionTab && primeActionTab != null && primeActionTab.parent('li').hasClass('slds-active')){
+                    location.reload(true);
+                }
+            }
+
+            return {
+                incrementPrimeActionCount: incrementPrimeActionCount
+            }
+        }
+
+        jQuery(document).mouseup(function (e) {
+
+            var elementClicked = e.target;
+            var actionsDropdown = jQuery('#ActionsMenu');
+            var actionsDiv = jQuery('#ActionsDiv');
+            var actionsButton = jQuery('#ActionsButton');
+            if ( !actionsDropdown.is(elementClicked) && actionsDropdown.has(elementClicked).length === 0  &&
+                    !actionsDiv.is(elementClicked) && actionsDiv.has(elementClicked).length === 0  && 
+                    !actionsButton.is(elementClicked) && actionsButton.has(elementClicked).length === 0) {
+                // console.log('jQuery(document): call collapseActionsMenu');
+                // ttg_actions.collapseActionsMenu();
+            }
+
+        });
+
+
+        jQuery(document).ready(function() {
+
+
+            ttg_sectionPickerPPTExporter.setUp();
+                    
+        });
+
+        ttg.localStorageService = (function(){
+
+            'use strict';
+
+            /**
+             * We can store JSON objects on the localStorage.
+             * This method, allows us to get the JSON object stored in localStorage
+             *
+             * objName:{
+             *     prop: value,
+             *     prop: value,
+             *     prop: value
+             * }
+             *
+             * @param objName {String}: Name of the object to get
+             */
+            function getStorageObj( objName ){
+                return ( JSON && localStorage ) ?
+                    localStorage.getItem( objName ) :
+                    null;
+            }
+
+            /**
+             * @param objName {String}: Name of the object to get
+             * @param value {Object}: MUST BE a javascript Object!
+             */
+            function setStorageObj( objName, objValue ){
+                if( JSON && localStorage ){
+                    localStorage.setItem( objName, JSON.stringify( objValue ) );
+                }
+            }
+
+            /**
+             * Gets the localstorage value of the specified property, from the
+             * localStorage specified object
+             *
+             * @param objName {String}: Name of the object to get
+             * @param propName {String}: Name of the property to get
+             */
+            function getStorageProp( objName, propName ){
+                var objName = getStorageObj( objName ),
+                    objParsed = JSON.parse( objName );
+
+                if( objParsed === null || typeof objParsed != "object" ){
+                    return null;
+                }
+
+                return objParsed[ propName ];
+            }
+
+            function setStorageProp( objName, propName, propValue ){
+                var objName = getStorageObj( objName ),
+                    objParsed = JSON.parse( objName );
+
+                if( objParsed === null || typeof objParsed != "object" ){
+                    return;
+                }
+
+                objParsed[ propName ] = propValue;
+                setStorageObj( objName, objParsed );
+
+            }
+
+            return {
+                getStorageObj: getStorageObj,
+                setStorageObj: setStorageObj,
+                getStorageProp: getStorageProp,
+                setStorageProp: setStorageProp
+            }
+        })();
+
+        /**
+         * sectionPickerPPTExporter
+         *
+         * A UI dialog is displayed to the user, which allows him to choose whatever sections he/she
+         * wants to export to the PPT.
+         *
+         * - We store the user preferences on the UA localStorage.
+         * - We send via XHR POST (api.postPPTX) the data stored on the UA localStorage, instead of
+         *   the checkbox. We are not using any <form> to do that.
+         */
+
+        ttg.sectionPickerPPTExporter = function(){
+
+            // Quick configuration object
+            var config = {
+                cssClass: "ttg_section_picker_dialog",
+                title: "{!JSENCODE($Label.common_export_to_powerpoint)}",
+                width: "500px",
+                localStorageObjectName: "ompptexportsetting",
+                instructions: "<p>{!JSENCODE($Label.COMMON_EXPORT_POWERPOINT_ELEMENTS)}</p>",
+                errors: {
+                    noChecksChecked: "<p>{!JSENCODE($Label.ppt_at_least_one_plan_element_has_to_be_checked)}</p>",
+                    noChecksDisplayed: "<p>At the moment your configuration means that no plan elements are available for selection.</p><p>Please ask an appropriate user, such as the system administrator, to check the Altify Powerpoint custom settings and the settings in the relevant Plan Type.</p>"
+                }
+            };
+
+            /**
+             * User can export a section if isAvailable, which depends on:
+             *      - License Settings
+             *      - Altify PPT Settings
+             *      - Plan Detail Settings
+             *
+             * Regardless of the model structure, we can display or not the checkbox on the dialong,
+             * depending on the "isDisplayed" property value.
+             *
+             * {
+             *    label       : DOM <label> text
+             *    id          : DOM <input id>
+             *    isAvailable : Check for Licences, PPT Settings and Plan Detail Settings
+             *    isDisplayed : If we want to hide the checkbox to the user
+             *    dependsOnId : We check first if we can export the parent!
+             * }
+             */
+
+            var sectionsModel = [
+
+                // Overview
+                {
+
+                    label: '{!JSENCODE($Label.common_overview)}',
+                    id: "omAddOverview",
+                    isAvailable: {! isOmAddOverviewEnabled },
+                    isDisplayed: true
+                },
+
+                // Competitors
+                {
+                    label: '{!JSENCODE($Label.STRAT_COMPETITORS)}',
+                    id: "omAddCompetitors",
+                    isAvailable: {! isOmAddCompetitorsEnabled },
+                    isDisplayed: true
+                },
+
+                // Process
+                {
+                    label: '{!JSENCODE($Label.resource_Playbook)}',
+                    id: "omAddPlaybook",
+                    isAvailable: {! isOmAddPlaybookEnabled },
+                    isDisplayed: true
+                },
+
+                // Assessment
+                {
+                    label: '{!JSENCODE($Label.resource_Assessment)}',
+                    id: "omAddAssessment",
+                    isAvailable: {! isOmAddAssessmentEnabled },
+                    isDisplayed: true
+                },
+
+                // Assessment
+                {
+                    label: '{!JSENCODE($Label.common_assessment_notes)}',
+                    id: "omAddAssessmentNotes",
+                    isAvailable: {! isOmAddAssessmentNotesEnabled },
+                    isDisplayed: true
+                },
+
+                // Political Map
+                {
+                    label: '{!JSENCODE($Label.resource_Politics)}',
+                    id: "omAddPoliticalMap",
+                    isAvailable: {! isOmAddPoliticalMapEnabled },
+                    isDisplayed: true
+                },
+
+                // Decision Criteria is not supported
+
+                // Insight Map
+                {
+                    label: '{!JSENCODE($Label.resource_Insight)}',
+                    id: "omAddInsightMaps",
+                    isAvailable: {! isOmAddInsightMapsEnabled },
+                    isDisplayed: true
+                },
+
+                // Strategy
+                {
+                    label: '{!JSENCODE($Label.resource_Strategy)}',
+                    id: "omAddCompetitiveStrategy",
+                    isAvailable: {! isOmAddCompetitiveStrategyEnabled },
+                    isDisplayed: true
+                },
+
+                // Actions
+                {
+                    label: '{!JSENCODE($Label.resource_Actions)}',
+                    id: "omAddPrimeActions",
+                    isAvailable: {! isOmAddPrimeActionsEnabled },
+                    isDisplayed: true
+                },
+                
+                // Test & Improve
+                {
+                    label: '{!JSENCODE($Label.resource_deal_review)}',
+                    id: "omAddDealReviews",
+                    isAvailable: {! isOmAddTandIEnabled },
+                    isDisplayed: true
+                }
+            ];
+            
+
+                
+
+            var sectionsView = _.template("<% if ( isAvailable === true && isDisplayed === true ) { %>" + 
+                "   <li class=\"ui-helper-clearfix\">\n" +
+                "       <div class=\"slds-form-element\">\n" +
+                "           <div class=\"slds-form-element__control\">\n" +
+                "               <div class=\"slds-checkbox\">\n" +
+                "               <input type=\"checkbox\" id=\"<%= id %>\" value=\"<%= id %>\" />\n" +
+                "               <label class=\"slds-checkbox__label\" for=\"<%= id %>\">\n" +
+                "                   <span class=\"slds-checkbox_faux\"></span>\n" +
+                "                   <span class=\"slds-form-element__label\"><%= label %></span>\n" +
+                "               </label>\n" +
+                "               </div>\n" +
+                "           </div>\n" +
+                "       </div>\n" +
+                "   </li>\n" +
+                "<% } %>");
+
+            
+
+            
+
+            function getDialogContentHtml() {
+
+                var sectionsModelColumn1 = [];
+                var sectionsModelColumn2 = [];
+
+                _.each( sectionsModel, function( elm, index, list ){
+                    var sectionsModelColumnToUse = (index < 5) ? sectionsModelColumn1 : sectionsModelColumn2;
+                    sectionsModelColumnToUse.push(elm);
+                });
+
+      
+                return  "<div class=\"slds-panel slds-size_medium slds-panel_docked slds-panel_docked-left slds-is-open ppt_export_top_level\" aria-hidden=\"false\">\n" +
+                        "   <div class=\"slds-panel__header slds-panel__header_align-center\">\n" +
+                        "       <h2 class=\"slds-panel__header-title slds-text-heading_small slds-truncate\" title=\"" + config.title + "\">" + config.title + "</h2>\n" +
+                        "   </div>\n" +
+                        "   <div class=\slds-panel__body\">\n" +
+                        "       <div class=\"slds-form-element\">\n" +
+                        "           <label class=\"slds-form-element__label\" for=\"form-element-01\">" + config.instructions + "</label>\n" +
+                        "           <div class=\"slds-grid\">\n" +
+                        "               <div class=\"slds-col\">\n" +
+                        "                   <ul>\n\t" + _.map( sectionsModelColumn1, sectionsView ).join('') + "</ul>\n" +
+                        "               </div>\n" +
+                        "               <div class=\"slds-col\">\n" +
+                        "                   <ul>\n\t" + _.map( sectionsModelColumn2, sectionsView ).join('') + "</ul>\n" +
+                        "               </div>\n" +
+                        "           </div>\n" +
+                        "       </div>\n" +
+                        "   </div>\n" +
+                        "</div>";
+            }
+
+            /**
+             * @desc: Giving an sectionId, get the value of the specified property from the
+             *        sectionModel.
+             *
+             * @param sectionId {String}
+             * @param propName {String}
+             * @return { whatever } or empty {String}
+             */
+            function getSectionModelProp( sectionId, propName ){
+               var obj = _.find( sectionsModel, function( section ){
+                   return section.id === sectionId;
+               });
+
+               return obj[ propName ] || "";
+            }
+
+            function strToBoolean( str ){
+                return ( str === "true" || str === true ) ? true : false;
+            }
+
+            /**
+             * @param sectionId {String}
+             * @return {Boolean}
+             */
+            function isChecked( sectionId ){
+                var jqCheckbox = jqContent.find( "#" + sectionId );
+
+                return ( jqCheckbox.length > 0 ) ?
+                    jqCheckbox.prop( "checked" ) :
+                    false;
+            }
+
+            /**
+             * Check if we have at least one checkbox to display on the dialog
+             *
+             * "isDisplayed" must be true
+             * "isAvailable" must be true
+             *
+             * @return {Boolean}
+             */
+            function isAllCheckboxHidden(){
+                var atLeastOneDisplayed = _.findWhere( sectionsModel, {
+                    "isDisplayed":true,
+                    "isAvailable":true
+                });
+                return atLeastOneDisplayed ? false : true;
+            }
+
+            /**
+             * @desc: We check if that sectionId
+             *       - has isAvailable === true (depending on license and settings)
+             *       - has been displayed and has been checked by user
+             *       - has not been displayed but isAvailable
+             *       - depends on any other section to be displayed or not
+             *
+             * @param sectionId {String}
+             * @return {Boolean}
+             */
+            function canBeExported( sectionId ){
+                var secIsChecked   = isChecked( sectionId ), // Boolean
+                    secIsDisplayed = getSectionModelProp( sectionId, "isDisplayed" ), // Boolean
+                    secIsAvailable = getSectionModelProp( sectionId, "isAvailable" ), // Boolean
+                    secDependsId   = getSectionModelProp( sectionId, "dependsOnId" ); // String
+
+                //Turn off Relationship Details if Relationships box is checked
+                if(sectionId == 'amAddOrgChartDetail'){
+                    secIsChecked = isChecked('amAddOrgChart');
+                    secIsDisplayed = getSectionModelProp( 'amAddOrgChart', "isDisplayed" );
+                }
+
+
+                // No license or settings off
+                if( secIsAvailable === false ){
+                    return false;
+                }
+
+                // Depends on other section to be displayed
+                if( secDependsId !== "" ){
+                    return canBeExported( secDependsId );
+                }
+
+                if( secIsDisplayed === true ){
+                    return secIsChecked; // Displayed and checked
+                }
+
+                return true; // Not displayed but available
+
+            }
+
+            /**
+             * @desc: Set the checkbox value of the given sectionId
+             * @param sectionId {String}
+             * @param checked {String} or {Boolean}
+             */
+            function setCheckbox( sectionId, checked ){
+                jqContent.find( "#" + sectionId ).prop( "checked",  strToBoolean( checked ) );
+            }
+
+            /**
+             * @desc: Updates all checkboxes with the value stored in localstorage.
+             */
+            function setupChecboxes(){
+                if( isAllCheckboxHidden() ){
+                    displaySystemMsg( config.errors.noChecksDisplayed );
+                    return;
+                }
+                _.each( sectionsModel, function( elm, index, list ){
+                    setCheckbox(
+                        elm.id,
+                        ttg.localStorageService.getStorageProp(
+                            config.localStorageObjectName,
+                            elm.id
+                        ) || "true" // Default value if not set before
+                    );
+                });
+            }
+
+            /**
+             * @desc: Updates localStorage object with the data we have to send to server
+             */
+            function updateLocalStorage(){
+                var param = {};
+                _.each( sectionsModel, function( elm, index, list ){
+                    param[ elm.id ] = canBeExported( elm.id ).toString();
+                });
+                ttg.localStorageService.setStorageObj( config.localStorageObjectName, param );
+            }
+
+            function getTotalChecked(){
+                return jqContent.find( "input:checked" ).length;
+            }
+
+
+
+            function getElmIdFromEvent( evt ){
+                return evt.target && evt.target.id;
+            }
+
+            function onClickCheckbox( evt ){
+                evt.stopPropagation();
+                //updateSectionsModel( getElmIdFromEvent( evt ) );
+                //validateForm();
+            }
+
+            function unbindEvents(){
+                jqContent.off( "click", "input" );
+            }
+
+            function bindEvents(){
+                jqContent.on( "click", "input", onClickCheckbox );
+            }
+
+
+
+            function onOpen( event, ui ) {
+                bindEvents();
+                setupChecboxes();
+                //validateForm();
+            }
+
+
+
+
+
+            var jqContent = null;
+
+            function setUp() {
+                jqContent = jQuery('#omPPTExportSelections').html( getDialogContentHtml() );
+                onOpen();
+            }
+
+            function doExport() {
+                updateLocalStorage();
+                ttg.simpleFlatPPTExporter('{!JSENCODE($CurrentPage.parameters.id)}', {!isLicensedForPPT}, {!isPPTLightingPopupEnabled});
+            }
+
+            function tearDown() {
+                unbindEvents();
+
+            }    
+
+            return {
+                setUp: setUp,
+                doExport: doExport,
+                tearDown: tearDown
+            }
+        };
+
+        ttg_sectionPickerPPTExporter = ttg.sectionPickerPPTExporter({});
+
+	</script>
+
+</apex:page>

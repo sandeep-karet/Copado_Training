@@ -1,0 +1,219 @@
+<messaging:emailTemplate subject="New Implementation Request For '{!relatedTo.Type}' Opportunity on Account '{!relatedTo.Account.Name}'" recipientType="User" relatedToType="Opportunity">
+    <messaging:HTMLEmailBody >
+        <body style="font-family: 'Trebuchet MS'">
+        <h2 style="color:#6b008d;text-align:center;">Action Required: New Implementation Request</h2>
+        <h2 style="color:#6b008d;text-align:center;">Opportunity: {!relatedTo.Name}</h2>
+        <!-- <hr style="border: solid thin #6b008d" /> -->
+        
+        <p style="color:#6b008d; font-size: 18px">*Client Implementation Leadership – Please assign Client Implementation Lead</p>
+        <p style="color:#6b008d; font-size: 18px">*Client Management Leadership – Please assign Client Manager/Executive (If Over 1,000 Lives)</p>        
+        <apex:outputlink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+relatedTo.Id}">Click to view the Client Opportunity Details</apex:outputlink> <br /> <br />
+
+        <table cellpadding="5" style="border-collapse: collapse" width="100%">
+            <tr>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Client Legal Name:</i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Account.Name}</b>
+                </td>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Sub-Type:</i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Sub_Type__c}</b>
+                </td>
+            </tr>
+            <tr>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Client Friendly Name:</i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Account.Friendly_Account_Name__c}</b>
+                </td>
+                 <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Livongo Flag:</i>
+                </td>
+                <td width="35%">
+                    <b>{!RelatedTo.Livongo_Flag__c}</b>
+                </td>
+            </tr>
+            <tr>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Phone:</i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Account.Phone}</b>
+                </td>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                </td>
+                <td width="35%">
+                </td>
+            </tr>
+            <tr>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Address:</i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Account.BillingStreet}</b> <br />
+                    <b>{!relatedTo.Account.BillingCity} , {!relatedTo.Account.BillingState}</b> <br />
+                    <b>{!relatedTo.Account.BillingPostalCode}</b>
+                </td>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Total Number of Employees:</i>
+                </td>
+                <td width="35%">
+                    <b><apex:outputText value="{0,number,0}">
+                        <apex:param value="{!relatedTo.Initial_of_Lives__c}" />
+                    </apex:outputText></b>
+                </td>
+            </tr>
+            <tr>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Country and Business Region:</i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Country__c} / {!relatedTo.Business_Region__c}</b>
+                </td>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Revenue Effective Date:</i>
+                </td>
+                <td width="35%">
+                    <b><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!relatedTo.CloseDate}" />
+                    </apex:outputText></b>
+                </td>
+            </tr>
+            <tr>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Account Owner:</i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Account.Owner.Name}</b>
+                </td>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                </td>
+                <td width="35%">               
+                </td>
+            </tr>
+            <tr>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Account Manager: </i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Account.Account_Manager__c}</b> <br />
+                </td>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Type: </i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Type}</b> <br />
+                </td>
+            </tr>
+            <tr>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Opportunity Owner:</i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Owner.Name}</b>
+                </td>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Sub-Channel:</i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Sub_Channel__c}</b>
+                </td>
+            </tr>
+            <tr>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Description:</i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Description}</b>
+                </td>
+                <td align="right"
+                    style="border-right-style: solid; border-right-width: thick; border-right-color: #6b008d;"
+                    width="15%">
+                    <i>Special Instructions:</i>
+                </td>
+                <td width="35%">
+                    <b>{!relatedTo.Account.Special_Instructions_for_Implementatio__c}</b>
+                </td>
+            </tr>
+        </table>
+        <br />
+
+        <table cellpadding="5" style="border-collapse: collapse" width="100%">
+            <tr>
+                <td style="background-color: #6b008d; color: #FFFFFF">
+                    <b>Product Name</b>
+                </td>
+                <td style="background-color: #6b008d; color: #FFFFFF">
+                    <b>Quantity</b>
+                </td>
+                <td style="background-color: #6b008d; color: #FFFFFF">
+                    <b>Membership Fee</b>
+                </td>
+                <td style="background-color: #6b008d; color: #FFFFFF">
+                    <b>Consult Fee</b>
+                </td>
+            </tr>
+            <apex:repeat value="{!relatedTo.OpportunityLineItems}" var="lineItem">
+                <tr>
+                    <td>
+                        {!lineItem.Product2.Name}
+                    </td>
+                    <td>
+                        {!lineItem.Quantity}
+                    </td>
+                    <td>
+                        <apex:outputText value="{0, number, Currency}">
+                            <apex:param value="{!lineItem.Membership_Fee__c}" />
+                        </apex:outputText>
+                    </td>
+                    <td>
+                        <apex:outputText value="{0, number, Currency}">
+                            <apex:param value="{!lineItem.Consult_Fees__c}" />
+                        </apex:outputText>
+                    </td>
+
+                </tr>
+            </apex:repeat>
+        </table>
+        </body>
+    </messaging:HTMLEmailBody>
+</messaging:emailTemplate>

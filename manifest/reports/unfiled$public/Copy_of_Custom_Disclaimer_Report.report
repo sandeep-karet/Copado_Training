@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Mbr_Group__c$Id</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Member_Group_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Active_Date__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Name</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Name__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Client_Account__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Client_Account_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Disclaimer_Teladoc__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Disclaimer_Client__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Disclaimer_Custom__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Captures groups with custom disclaimers</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <column>Mbr_Group__c$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ACTIVE,PENDING</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Mbr_Group__c$Client_Account__c.Account_Manager__c.UserRole</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Stephanie Mangos,Annette Ulc,Steven Solomon,Isabelle Moreau,Robin Cooper,Gabriela Mantilla,Nizar Ferzli</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Mbr_Group__c$Service_Brand__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Teladoc (Canada),Teladoc Health (Internal),HealthiestYou</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Copy of Custom Disclaimer Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Member_Groups__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Mbr_Group__c$Client_Account__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Mbr_Group__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

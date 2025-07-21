@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label>Référence du contrat actif</label>
+        <name>SBQQ__ActiveContractLookup</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Business Region --></label>
+        <name>Business_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto-Renew Minutes --></label>
+        <name>CPQU__Auto_Renew_Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto-Renew Quote Minutes --></label>
+        <name>CPQU__Auto_Renew_Quote_Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Generate Renewal Quote ? Days Before End --></label>
+        <name>CPQU__Generate_Renewal_Quote_Days_Before_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- CPQ Pricebook --></label>
+        <name>CPQ_Pricebook__c</name>
+    </fields>
+    <fields>
+        <label><!-- CTR_Source Id --></label>
+        <name>CTR_Source_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier --></label>
+        <name>Carrier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Rate --></label>
+        <name>Channel_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- CustomActiveContract --></label>
+        <name>CustomActiveContract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Description --></label>
+        <name>Data_Quality_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Score --></label>
+        <name>Data_Quality_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- GCRM Contract ID --></label>
+        <name>GCRM_Contract_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- HHS Discharges --></label>
+        <name>HHS_Discharges__c</name>
+    </fields>
+    <fields>
+        <label><!-- HHS EBITDA --></label>
+        <name>HHS_EBITDA__c</name>
+    </fields>
+    <fields>
+        <label><!-- HHS Employees --></label>
+        <name>HHS_Employees__c</name>
+    </fields>
+    <fields>
+        <label><!-- HHS Outpatient Visits --></label>
+        <name>HHS_Outpatient_Visits__c</name>
+    </fields>
+    <fields>
+        <label><!-- HHS Staffed Bed Size --></label>
+        <name>HHS_Staffed_Bed_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- HHS Total Revenue --></label>
+        <name>HHS_Total_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- HealthPlan Opt-In --></label>
+        <name>HealthPlan_Opt_In__c</name>
+    </fields>
+    <fields>
+        <label><!-- Insurance Company --></label>
+        <name>Insurance_Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Insurance Policy --></label>
+        <name>Insurance_Policy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Id --></label>
+        <name>Legacy_Id__c</name>
+        <relationshipLabel><!-- Legacy Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Line of Business --></label>
+        <name>Line_of_Business__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opt In --></label>
+        <name>Opt_In__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pricing Model --></label>
+        <name>Pricing_Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Record Type Id --></label>
+        <name>Quote_Record_Type_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines if this contract is in effect. --></help>
+        <label>Contrat actif</label>
+        <name>SBQQ__ActiveContract__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record Type of the Amendment Opportunity, unless otherwise specified. --></help>
+        <label>ID type enregistrement opp. amendement</label>
+        <name>SBQQ__AmendmentOpportunityRecordTypeId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The current stage of the Amendment Opportunity. --></help>
+        <label>Étape de l&apos;opportunité d&apos;amendement</label>
+        <name>SBQQ__AmendmentOpportunityStage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Owner of the original opportunity. --></help>
+        <label>Propriétaire de l&apos;amendement</label>
+        <name>SBQQ__AmendmentOwner__c</name>
+        <relationshipLabel><!-- Contracts (Amendment Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Price Book Id of your Amendment. --></help>
+        <label>ID du catalogue de prix d&apos;amendement</label>
+        <name>SBQQ__AmendmentPricebookId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The basis for which a Renewal Start Date and Amendment End Date are calculated. --></help>
+        <label>Comportement amendement renouvellement</label>
+        <name>SBQQ__AmendmentRenewalBehavior__c</name>
+        <picklistValues>
+            <masterLabel>Earliest End Date</masterLabel>
+            <translation><!-- Earliest End Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latest End Date</masterLabel>
+            <translation><!-- Latest End Date --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Start Date of your Amendment. If blank, Amendment will start on today&apos;s date. --></help>
+        <label>Date de début de l&apos;amendement</label>
+        <name>SBQQ__AmendmentStartDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select to include contact roles from the original opportunity in the renewal opportunity. --></help>
+        <label>Rôles contact renouvellement par défaut</label>
+        <name>SBQQ__DefaultRenewalContactRoles__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select to include the original opportunity partners in renewal opportunity. --></help>
+        <label>Partenaires de renouvellement par défaut</label>
+        <name>SBQQ__DefaultRenewalPartners__c</name>
+    </fields>
+    <fields>
+        <help><!-- If unchecked, the Amendment Quote End Date will be set according to the Amendment &amp; Renewal Behavior setting. If checked, then no End Date will be set. --></help>
+        <label>Désactiver durée identique amendement</label>
+        <name>SBQQ__DisableAmendmentCoTerm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the contract is evergreen. --></help>
+        <label>Permanent</label>
+        <name>SBQQ__Evergreen__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contract end date for use in time-based workflows. --></help>
+        <label>Date d&apos;expiration</label>
+        <name>SBQQ__ExpirationDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defines how segmented subscription products will appear on renewal quotes. De-Segmented will renew as a standard quote line with the last segment&apos;s data. --></help>
+        <label>Comportement de renouvellement MDQ</label>
+        <name>SBQQ__MDQRenewalBehavior__c</name>
+        <picklistValues>
+            <masterLabel>De-segmented</masterLabel>
+            <translation><!-- De-segmented --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select to designate this contract as the master contract for this account. Upon renewal, all contracts will be rolled into this one. --></help>
+        <label>Contrat principal</label>
+        <name>SBQQ__MasterContract__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the Price Book used from the original Opportunity. --></help>
+        <label>ID catalogue prix opportunité ou devis</label>
+        <name>SBQQ__OpportunityPricebookId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Opportunity from which this Contract was created. --></help>
+        <label>Opportunité</label>
+        <name>SBQQ__Opportunity__c</name>
+        <relationshipLabel>Contrats</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Commande</label>
+        <name>SBQQ__Order__c</name>
+        <relationshipLabel>Contrats</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select checkbox to maintain bundle hierarchy on renewal quotes. --></help>
+        <label>Préserver structure offre groupée</label>
+        <name>SBQQ__PreserveBundleStructureUponRenewals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Quote from which this Contract was created. --></help>
+        <label>Devis</label>
+        <name>SBQQ__Quote__c</name>
+        <relationshipLabel>Contrats</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select to trigger the generation of a renewal opportunity for forecasting purposes. Does not automatically generate a renewal quote. --></help>
+        <label>Prévision de renouvellement</label>
+        <name>SBQQ__RenewalForecast__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record type of renewal opportunity if different from the default. --></help>
+        <label>ID de type enregistrement opp. renouvel.</label>
+        <name>SBQQ__RenewalOpportunityRecordTypeId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Override the default opportunity stage for this renewal. This must be done prior to selecting Renewal Forecast to take effect on the renewal opportunity. --></help>
+        <label>Étape de l&apos;opportunité de renouvellement</label>
+        <name>SBQQ__RenewalOpportunityStage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Renewal opportunity generated to track the renewal of this contract. --></help>
+        <label>Opportunité de renouvellement</label>
+        <name>SBQQ__RenewalOpportunity__c</name>
+        <relationshipLabel>Contrats de renouvellement</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Owner of the original opportunity. --></help>
+        <label>Propriétaire du renouvellement</label>
+        <name>SBQQ__RenewalOwner__c</name>
+        <relationshipLabel><!-- Contracts (Renewal Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Specify a price book ID to be used on Renewal Opportunities if you do not want to use the price book ID of the original opportunity. --></help>
+        <label>ID catalogue de prix de renouvellement</label>
+        <name>SBQQ__RenewalPricebookId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this option to automatically generate a renewal quote on renewal opportunities. --></help>
+        <label>Devis de renouvellement</label>
+        <name>SBQQ__RenewalQuoted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specify the term of the renewal. By default, it matches the original contract term. --></help>
+        <label>Durée du renouvellement</label>
+        <name>SBQQ__RenewalTerm__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rate of renewal price increases. --></help>
+        <label>Augmentation du renouvellement (%)</label>
+        <name>SBQQ__RenewalUpliftRate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select to combine quantities of Subscriptions for the same product into one line on Renewal Quotes and Amendments. --></help>
+        <label>Combiner les quantités des abonnements</label>
+        <name>SBQQ__SubscriptionQuantitiesCombined__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Channels --></label>
+        <name>Sales_Channels__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Provider IDN --></label>
+        <name>Type_of_Provider_IDN__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Only System Administrator can update the Account Name --></errorMessage>
+        <name>Account_Name_Change_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Your assigned Profile does not allow for creating new Contracts. --></errorMessage>
+        <name>Prevent_Contract_Creation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Your assigned Profile does not allow for updating Contracts. --></errorMessage>
+        <name>Prevent_Contract_Update</name>
+    </validationRules>
+    <webLinks>
+        <label>Amender</label>
+        <name>SBQQ__Amend</name>
+    </webLinks>
+    <webLinks>
+        <label>Renouveler les contrats</label>
+        <name>SBQQ__RenewContracts</name>
+    </webLinks>
+</CustomObjectTranslation>

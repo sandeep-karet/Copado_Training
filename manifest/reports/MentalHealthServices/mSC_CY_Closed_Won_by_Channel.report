@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_4865694</developerName>
+        <masterLabel>Cal Sales Channels</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Opportunity$Sales_Channels__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US Employer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>US HealthPlan</sourceValue>
+            </sourceValues>
+            <value>USGH</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Hospital and Health Systems</sourceValue>
+            </sourceValues>
+            <value>HHS</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_61395577</developerName>
+        <masterLabel>Cal Sub Channel</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Opportunity$Sub_Channel__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>HSG</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Aetna</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Blues</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Federal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Strategic Partnerships</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - United</sourceValue>
+            </sourceValues>
+            <value>HSG</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>DTE - Client Management</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - Downmarket</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - East Client Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - Labor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - West Client Sales</sourceValue>
+            </sourceValues>
+            <value>DTE</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_80738976</developerName>
+        <masterLabel>Product Group</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Opportunity.OpportunityLineItems$Product__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>MyStrength</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>MyStrength Complete</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Livongo BH 1.0</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Livongo BH 2.0</sourceValue>
+            </sourceValues>
+            <value>myStrength (legacy+Complete)</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Mental Health Care (US)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mental Health Navigator (US)</sourceValue>
+            </sourceValues>
+            <value>Legacy TD MH Care</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Account_Name__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Net_ARR__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OpportunityLineItems$SBQQ__QuoteLine__c.Net_ARR__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Initial_of_Lives__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OpportunityLineItems$SBQQ__QuoteLine__c.Participant_Quantity__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Channel__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_4865694</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Sub_Channel__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_80738976</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$Product__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$Product_Family__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Sales_Channels__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$OneTime_Net_Total_With_PG__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OpportunityLineItems$OneTime_Net_Total_With_PG__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Decision_Date__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>(9 OR (1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8)) AND 10 AND 11 AND 12</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity.OpportunityLineItems$Product__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>MyStrength Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Country__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Account_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Test this!</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>dummy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Account_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>claypool</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Renewal Business,Contract Path Change</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Sub_Channel__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>DTE - Client Management,Employer,Employer - ASO,Employer - Downmarket,Employer - East Client Sales,Employer - East Net New,Employer - Labor,Employer - Signature,Employer - West Client Sales,Employer - West Net New,HSG,HSG - Aetna,HSG - Blues,HSG - East,HSG - Federal,HSG - Strategic Partnerships,HSG - TPA/Reseller,HSG - United,HSG - West</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>BCBSA MHO Q2 extension</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunityLineItems$Product__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Psychiatry Initial Visit Fee,Psychiatry Ongoing Visit Fee,Therapy Ongoing Visit Fee</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunityLineItems$Product__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Mental Health Navigator (US)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunityLineItems$SBQQ__QuoteLine__c.Net_ARR__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>USD 0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Month</dateGranularity>
+        <field>Opportunity$Contracted_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_61395577</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>mSC CY Closed Won by Channel</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Products_CPQ__c</reportType>
+    <roleHierarchyFilter>System_Administrator</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$Contracted_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

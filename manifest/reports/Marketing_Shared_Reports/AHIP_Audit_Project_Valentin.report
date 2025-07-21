@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <columns>
+        <field>MEMBER_TYPE</field>
+    </columns>
+    <columns>
+        <field>MEMBER_STATUS</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>202102-NAR-TDH-HP-EVT-AHIP-VIP-Health-Innovation-Roundtable,202102-US-TDH-HP-WBR-AHIP-The Essential-Role-of-Whole-Person-Virtual-Care,202105-NAR-TDH-HP-WBR-AHIP-DATA-DRIVEN-MENTAL-HEALTHCARE,202105-US-TDH-HP-EVT-AHIP-Health-Innovation-Roundtable-Discussion,202106-US-TDH-HP-EVT-AHIP-Institute-Expo-Session,202109-NAR-TDH-HP-EVT-AHIP-ROUNDTABLE-LIST,202109-US-TDH-HP-EVT-AHIP-BOD-FOLLOWUP,202109-US-TDH-HP-EVT-AHIP-NAT&apos;L-CONF-MEDICAID,202109-US-TDH-HP-EVT-AHIP-NAT&apos;L-CONF-MEDICARE,202110-US-TDH-HP-WBR-AHIP-VIRTURAL-PRIMARY-CARE,202111-US-TDH-HP-EVT-AHIP-ROUNDTABLE,202112-US-TDH-HP-EVT-AHIP-CONSUMER-EXP-&amp;-Digital-Forum,202112-US-TDH-HP-EVT-AHIP-VIP-Health-Innovation-Roundtable</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>MEMBER_STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Absent,Declined Pass,Delete,Delete​,No Action,No Attending,Non-marketable,No Show,No-Show,No Showed,Not Attended,Not Attending,Unsubscribed,Waitlisted</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>AHIP Audit Project - Valentin</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignWithCampaignMembers</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

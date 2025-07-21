@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>LV CMC Association</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>LV CMC Associations</value>
+    </caseValues>
+    <fields>
+        <help><!-- The account to which the Client Member Code is associated --></help>
+        <label><!-- Account --></label>
+        <name>LVGO__Account__c</name>
+        <relationshipLabel><!-- CMC Associations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Client Member Code --></label>
+        <name>LVGO__ClientMemberCode__c</name>
+        <relationshipLabel><!-- CMC Associations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Client Member Code: Client Account --></label>
+        <name>LVGO__Client_Member_Code_Client_Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- The code from the master Client Member Code record --></help>
+        <label><!-- Code --></label>
+        <name>LVGO__Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Salesforce Id --></label>
+        <name>LVGO__Legacy_Salesforce_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Program Overview associated to the parent Client Member Code --></help>
+        <label><!-- Program Overview --></label>
+        <name>LVGO__ProgramOverview__c</name>
+        <relationshipLabel><!-- Program Overview Associations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program Name --></label>
+        <name>LVGO__Program_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Number --></label>
+        <name>LVGO__Program_Number_Hyperlink__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Overview Name --></label>
+        <name>LVGO__Program_Overview_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration Only Code --></label>
+        <name>LVGO__RegistrationCode__c</name>
+        <relationshipLabel><!-- Registration Only Associations --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <label><!-- CMC to Program --></label>
+        <name>LVGO__CMC_to_Program</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- CMC to Registration --></label>
+        <name>LVGO__CMC_to_Registration</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

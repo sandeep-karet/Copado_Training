@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LVGO__ClientMemberCode__c.LVGO__Client_Member_Code_ID_Long__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__ClientMemberCode__c.LVGO__Account__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>LVGO__ClientMemberCode__c.LVGO__OneApp_Access__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__ClientMemberCode__c.LVGO__OneApp_Migration_Date__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>CRMINT-37693</description>
+    <format>Tabular</format>
+    <name>CRMINT-37693 Report 1</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$LVGO__ClientMemberCode__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LVGO__ClientMemberCode__c.LVGO__OneApp_Migration_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

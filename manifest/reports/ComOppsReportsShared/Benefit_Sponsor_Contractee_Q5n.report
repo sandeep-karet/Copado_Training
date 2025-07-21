@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Acct_Rel__c$Name</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.GUID__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c.Name</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c.GUID__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Contract_Type__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$End_Date__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows contractee relationships</description>
+    <filter>
+        <criteriaItems>
+            <column>Acct_Rel__c$Relationship_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Contractee</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Benefit Sponsor - Contractee</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_Relationships__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Acct_Rel__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>LVGO__Programs__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Programs</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>BH</fullName>
+                    <default>false</default>
+                    <label>BH</label>
+                </value>
+                <value>
+                    <fullName>Default</fullName>
+                    <default>false</default>
+                    <label>Default</label>
+                </value>
+                <value>
+                    <fullName>DM</fullName>
+                    <default>true</default>
+                    <label>DM</label>
+                </value>
+                <value>
+                    <fullName>DM + BH</fullName>
+                    <default>false</default>
+                    <label>DM + BH</label>
+                </value>
+                <value>
+                    <fullName>DM + DPP</fullName>
+                    <default>false</default>
+                    <label>DM + DPP</label>
+                </value>
+                <value>
+                    <fullName>DM + DPP + HTN</fullName>
+                    <default>false</default>
+                    <label>DM + DPP + HTN</label>
+                </value>
+                <value>
+                    <fullName>DM + DPP + HTN + WM + BH</fullName>
+                    <default>false</default>
+                    <label>DM + DPP + HTN + WM + BH</label>
+                </value>
+                <value>
+                    <fullName>DM + HTN</fullName>
+                    <default>false</default>
+                    <label>DM + HTN</label>
+                </value>
+                <value>
+                    <fullName>DPP</fullName>
+                    <default>false</default>
+                    <label>DPP</label>
+                </value>
+                <value>
+                    <fullName>HTN</fullName>
+                    <default>false</default>
+                    <label>HTN</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__Registration_Code_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Registration Code ID</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__SPA_CMC_Prefix__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>SPA CMC Prefix</label>
+        <referenceTo>LVGO__SPA_CMC_Prefix__mdt</referenceTo>
+        <relationshipLabel>SPA Reg Codes</relationshipLabel>
+        <relationshipName>SPA_Reg_Codes</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <label>SPA Reg Code</label>
+    <listViews>
+        <fullName>LVGO__SPA_Reg_Code_View</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>LVGO__Programs__c</columns>
+        <columns>LVGO__SPA_CMC_Prefix__c</columns>
+        <columns>LVGO__Registration_Code_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>SPA Reg Code View</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>SPA Reg Codes</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

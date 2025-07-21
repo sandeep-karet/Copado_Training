@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LVGO__Contract__c$Name</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c.LVGO__LVGO_Opportunities__r$Name</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c.LVGO__LVGO_Opportunities__r.LVGO__LGVO_OpportunityProducts__r$Name</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__ContractNumber__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows LV Contracts w at least one opportunity with at least one opportunity product (program)</description>
+    <format>Tabular</format>
+    <name>Contracts w Opportunities w Programs_v2</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contracts_with_Opportunities_and_Programs_LV2__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LVGO__Contract__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

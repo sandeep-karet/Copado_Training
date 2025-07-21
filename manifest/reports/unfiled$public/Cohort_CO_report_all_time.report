@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LVGO__Contract__c$LVGO__CSM__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Status__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$Name</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Contract_ID_Long__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Population_Type__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$RecordType</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Report showing all active and expired cohorts. Using this report for bulk update of contract termination date</description>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3) AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <column>LVGO__Contract__c$LVGO__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Active,Expired</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LVGO__Contract__c$LVGO__Population_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ASO downmarket</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LVGO__Contract__c$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>cohort</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LVGO__Contract__c$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>LVGO__Contract__c.LVGO__Client_Overview</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LVGO__Contract__c$LVGO__Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Ascent Aerospace,CIRCOR International,Clark Construction Group,LLC,Claypool Consulting Testingzzz Account,Colson Associates,HealthNow New York,Compsych Management Corporation,Teijin Automotive Technologies,Credit Acceptance Corporation,CVR Energy,Erie Insurance Co.,Lincoln Industries,Securitas Technology Corporation,Thumb Group,Trek Health,Westpoint Home Inc</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LVGO__Contract__c$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Glen Raven HRA - BCBSNC 1/1/23 WP DM + mSC,WINSTON &amp; STRAWN - BCBS IL 1/1/23 DM+HTN,Glen Raven PPO - BCBSNC 1/1/23 mSC,BCBS OK - Muscogee Nation Gaming Enterprises 1/1/23 DM+HTN,BCBS Rhode Island - South County Health - CCM+ - 1/1/23,McKool Smith,P.C. - BCBS Texas 1/1/23 DM + HTN,Plante Moran - Meritian Health,City of Naperville – BCBS Illinois,Clark Construction Group LLC - Express Scripts,Alliant Credit Union – BCBS Illinois</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LVGO__Contract__c$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>McKool Smith</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <field>LVGO__Contract__c$LVGO__Contract_Termination_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>LVGO__Contract__c$LVGO__Account__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Cohort CO report - all time</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Client_overviews_LV__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LVGO__Contract__c$LVGO__Contract_Termination_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

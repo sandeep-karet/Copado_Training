@@ -1,0 +1,45 @@
+<template>
+    <template if:true={isLoaded}>
+        <template if:true={finalAccountContactsRelationships}>
+            <template for:each={finalAccountContactsRelationships} for:item="acr">
+                <div key={acr.Id}>
+                    <ul class="slds-has-dividers_bottom-space lgc-bg">
+                        <li class="slds-item">
+                            <lightning-tile type="media" label={acr.Contact.Name} href={acr.recordUrl}>
+                                <span slot="media">
+                                    <lightning-avatar
+                                        initials={acr.initials}
+                                        alternative-text={acr.Contact.Name}
+                                        fallback-icon-name="standard:contact">
+                                    </lightning-avatar>
+                                </span>
+                                <ul class="slds-list_vertical">
+                                    <li class="slds-item">Account: {acr.Account.Name}</li>
+                                    <li class="slds-item">Title: {acr.Contact.Title}</li>
+                                    <li class="slds-item">Phone: <lightning-formatted-phone value={acr.Contact.Phone}></lightning-formatted-phone></li>
+                                    <li class="slds-item">Email: <lightning-formatted-email value={acr.Contact.Email}></lightning-formatted-email></li>
+                                    <li class="slds-item">Include in Client Strategy Calls/Emails?: {acr.inculdeInCallsAndEmails}</li>
+                                    <li class="slds-item">Description: <lightning-formatted-text value={acr.Contact.Description} ></lightning-formatted-text></li>
+                                    <li class="slds-item">Roles: 
+                                        <template if:true={acr.rolesArray}>
+                                            <template for:each={acr.rolesArray} for:item="role">
+                                                <lightning-badge key={role} label={role}></lightning-badge>
+                                            </template>
+                                        </template>
+                                    </li>
+                                </ul>
+                            </lightning-tile>
+                        </li>
+                        <!-- More list items here -->
+                    </ul>
+                </div>
+            </template>
+        </template>
+    </template>
+    <div if:false={isLoaded} class="slds-is-relative">
+        <lightning-spinner
+            variant="brand"
+            alternative-text="Loading...">
+        </lightning-spinner>
+    </div>
+</template>

@@ -1,0 +1,16 @@
+<apex:page standardController="tinderbox__content__c" extensions="tinderbox.contentExtension">
+    <apex:stylesheet value="{!AccountURL}/assets/sfdc-adapter.css" />
+
+    <div class="vs-page-header">
+        <h1 class="page-header">Add Content To {!SObjectName}</h1>
+        <div class="done-adding">
+            <apex:outputLink value="{!$CurrentPage.parameters.retURL}" id="theLink">Done Adding</apex:outputLink>
+        </div>
+    </div>
+
+    <c:ApplicationView path="salesforce/add_content"
+                       queryString="sobject_id={!ParentID}&sobject_type={!SObjectType}"
+                       height="700px"
+                       TBAccountEndPoint="{!TBAccountEndPoint}"></c:ApplicationView>
+
+</apex:page>

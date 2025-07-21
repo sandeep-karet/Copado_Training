@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Sales_With_Logo_in_Footer</letterhead>
+    <name>Case Reassign Notification</name>
+    <style>formalLetter</style>
+    <subject>A case has reassigned back to you</subject>
+    <textOnly>Case Owner: {!Case.OwnerFullName}
+Case Number: {!Case.CaseNumber}
+Account Name: {!Case.Account}
+Case Action: {!Case.Type}
+Status: {!Case.Status}
+Priority: {!Case.Priority}
+Due Date: {!Case.Due_Date__c}
+Created By: {!Case.CreatedBy}
+Last Comment: {!Case.Last_Comment__c}
+
+{!Case.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

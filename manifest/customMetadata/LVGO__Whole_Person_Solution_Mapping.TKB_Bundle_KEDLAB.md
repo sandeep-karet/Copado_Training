@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>TKB_Bundle_KEDLAB</label>
+    <protected>false</protected>
+    <values>
+        <field>LVGO__Program_Platform_Version__c</field>
+        <value xsi:type="xsd:string">myStrength Complete</value>
+    </values>
+    <values>
+        <field>LVGO__Program_Type__c</field>
+        <value xsi:type="xsd:string">Standalone</value>
+    </values>
+    <values>
+        <field>LVGO__Program__c</field>
+        <value xsi:type="xsd:string">Home Kidney Testing Program - Results</value>
+    </values>
+    <values>
+        <field>LVGO__Provider_Based_Care__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>LVGO__Solution__c</field>
+        <value xsi:type="xsd:string">Test Kit Bundle</value>
+    </values>
+</CustomMetadata>

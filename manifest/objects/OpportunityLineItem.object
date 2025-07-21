@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddProduct</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AddProduct</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AddProduct</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChoosePricebook</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChoosePricebook</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChoosePricebook</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditAllProduct</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditAllProduct</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditAllProduct</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Opportunity_Product_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fieldSets>
+        <fullName>Fields_for_RelatedList</fullName>
+        <description>This field set is used in Opportunity Products Releated List page to display the opportunity Products as read only.</description>
+        <displayedFields>
+            <field>Product__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Consult_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Consult_Fees__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Quantity</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Membership_Fee__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Monthly_Price__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Initial_Utlization_Cap__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TotalPrice</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Fields for RelatedList</label>
+    </fieldSets>
+    <fields>
+        <fullName>Admin_Fee__c</fullName>
+        <formula>SBQQ__QuoteLine__r.Admin_Fee__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Admin Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Adolescent_Population__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Adolescent (13-17) Population</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Anchor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag to mark the anchor product of the Bundle. The anchor product holds the total price of the bundle.</description>
+        <inlineHelpText>Flag to mark the anchor product of the Bundle. The anchor product holds the total price of the bundle.</inlineHelpText>
+        <label>Anchor</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>At_Risk_Fee__c</fullName>
+        <formula>SBQQ__QuoteLine__r.At_Risk_PPPM__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>At Risk Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Attainment_Rate__c</fullName>
+        <formula>SBQQ__QuoteLine__r.Attainment_Rate_Override__c</formula>
+        <label>Attainment Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Bundle_Type__c</fullName>
+        <description>This field gets its value set from matching the Quote Line field using the CPQ Twin field feature.</description>
+        <label>Bundle Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Anchor</fullName>
+                    <default>false</default>
+                    <label>Anchor</label>
+                </value>
+                <value>
+                    <fullName>Non-Anchor</fullName>
+                    <default>false</default>
+                    <label>Non-Anchor</label>
+                </value>
+                <value>
+                    <fullName>Standalone</fullName>
+                    <default>false</default>
+                    <label>Standalone</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>C_Included_Initial_Utilization__c</fullName>
+        <description>This is the utilization % at the point of sale selected by the Sales Rep based upon the appropriate pricing sheet and number of lives. This will be the utilization rate for any proposals and/or contracts that are produced in Octiv.</description>
+        <inlineHelpText>Select the Utilization Cap % for consults included products: GenMed $0 and HY $0. If you need a value other than what is available in the pick list, please contact your Salesforce Systems Administrator.</inlineHelpText>
+        <label>Consults Included Initial Utilization</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>20%</fullName>
+                    <default>false</default>
+                    <label>20%</label>
+                </value>
+                <value>
+                    <fullName>30%</fullName>
+                    <default>false</default>
+                    <label>30%</label>
+                </value>
+                <value>
+                    <fullName>40%</fullName>
+                    <default>false</default>
+                    <label>40%</label>
+                </value>
+                <value>
+                    <fullName>50%</fullName>
+                    <default>false</default>
+                    <label>50%</label>
+                </value>
+                <value>
+                    <fullName>60%</fullName>
+                    <default>false</default>
+                    <label>60%</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Case_Rate__c</fullName>
+        <description>Case Rate</description>
+        <inlineHelpText>Case Rate</inlineHelpText>
+        <label>Case Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Consult_Fees__c</fullName>
+        <label>Consult Fees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Consult_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(SBQQ__QuoteLine__r.Consult_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Consult Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Admin_Fee__c</fullName>
+        <label>DM Admin Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DM_At_Risk_Fee__c</fullName>
+        <label>DM At Risk Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DM_Create_MSC__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>DM Create MSC</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Disable_Coaching__c</fullName>
+        <label>DM Disable Coaching</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DM_Disable_Teletherapy__c</fullName>
+        <label>DM Disable Teletherapy</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DM_Enrollment_Percentage__c</fullName>
+        <label>DM Enrollment Percentage</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DM_Fee_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Fee Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Gross_Program_ARR__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Gross Program ARR</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_LVN_Program_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>DM LVN Program Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Net_Program_ARR__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Net Program ARR</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_PMPM__c</fullName>
+        <inlineHelpText>Helper field to capture the PMPM value for Livongo BH</inlineHelpText>
+        <label>DM PMPM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DM_Participant_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Participant Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Participation_Percentage__c</fullName>
+        <label>DM Participation Percentage</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DM_Program_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Program Term</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Up_Front_Fee__c</fullName>
+        <label>DM Up Front Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Did_Not_Launch_Date__c</fullName>
+        <label>Did Not Launch Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Did_Not_Launch__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SysAdmins and SysAdmin - Teladoc Profiles have visibility and edit rights to this field even if the opportunity record is read-only</description>
+        <label>Did Not Launch</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disable_Coaching__c</fullName>
+        <label>Disable Mental Health Guidance</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Disable_Teletherapy__c</fullName>
+        <label>Disable Teletherapy</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Discount</fullName>
+    </fields>
+    <fields>
+        <fullName>Effective_Start_Date__c</fullName>
+        <description>Revenue Effective Date - source is Quote Line Item object and Effective Start Date field</description>
+        <formula>SBQQ__QuoteLine__r.SBQQ__EffectiveStartDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Revenue Effective Date from Quote Line</inlineHelpText>
+        <label>Effective Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>GCRM_Quote_Line_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>GCRM Quote Line ID</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GUID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System Generated Global UniqueId</description>
+        <externalId>true</externalId>
+        <inlineHelpText>System Generated Global UniqueId</inlineHelpText>
+        <label>GUID</label>
+        <length>36</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>GenMed_Consult_Included_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>GenMed Consult Included Flag</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HY_Product_Included_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>HY Product Included Flag</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Utlization_Cap__c</fullName>
+        <description>This is the utilization % at the point of sale based upon the appropriate pricing sheet and number of lives. This will be the utilization rate for any proposals and/or contracts that are produced in Octiv.</description>
+        <formula>SBQQ__QuoteLine__r.Initial_Utilization_Cap__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is the utilization % at the point of sale based upon the appropriate pricing sheet and number of lives. This will be the utilization rate for any proposals and/or contracts that are produced in Octiv.</inlineHelpText>
+        <label>Initial Utlization Cap</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ListPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>Membership_Fee__c</fullName>
+        <description>This is the PEPM/PMPM that includes any discounts. It is populated from the Quote Line Item Membership Fee field via the formula below. The Membership Fee is the Net Unit Fee (annual) divided by 12.</description>
+        <formula>SBQQ__QuoteLine__r.Membership_Fee__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is the PEPM/PMPM that includes any discounts.</inlineHelpText>
+        <label>Membership Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Monthly_Price__c</fullName>
+        <description>Monthly price from Quote Line</description>
+        <formula>SBQQ__QuoteLine__r.Monthly_Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Monthly Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+    </fields>
+    <fields>
+        <fullName>Net_ARR_With_PG__c</fullName>
+        <description>Twin Field to match Quote Line. Net ARR based on the Product Performance Guarantee percentage. The value is calculated in the Price rule</description>
+        <label>Net ARR With PG</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_ARR__c</fullName>
+        <label>Net ARR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Case__c</fullName>
+        <description>number of case for Complex Case Management</description>
+        <externalId>false</externalId>
+        <inlineHelpText>number of case for Complex Case Management</inlineHelpText>
+        <label>Number of Case</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OK_to_Sell_with_HY_ConsultIncluded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>OK to Sell with HY ConsultIncluded</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OK_to_sell_with_GenMed_Consults_Included__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>OK to sell with GenMed Consults Included</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OneTime_Net_Total_With_PG__c</fullName>
+        <formula>IF(ISPICKVAL(SBQQ__QuoteLine__r.SBQQ__SubscriptionPricing__c,&quot;&quot;),SBQQ__QuoteLine__r.SBQQ__NetTotal__c,0.00)+ SBQQ__QuoteLine__r.Up_Front_Fee_Total__c +  SBQQ__QuoteLine__r.Net_ARR_With_PG__c</formula>
+        <label>Bookings</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Participant_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(SBQQ__QuoteLine__r.Participant_Quantity__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Participant Quantity</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductCode</fullName>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <externalId>false</externalId>
+        <formula>SBQQ__QuoteLine__r.SBQQ__ProductFamily__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Family</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Portfolio__c</fullName>
+        <description>The field is mapped to definition at the Product level consistent with the definitions from the business.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(PricebookEntry.Product2.Product_Portfolio__c)</formula>
+        <label>Product Portfolio</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Rollup__c</fullName>
+        <externalId>false</externalId>
+        <formula>SBQQ__QuoteLine__r.Product_Rollup__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Rollup</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <formula>PricebookEntry.Product2.Name</formula>
+        <label>Product</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity</fullName>
+    </fields>
+    <fields>
+        <fullName>Revenue_Synergy_Flag__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Revenue Synergy Flag</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revenue_for_One_time__c</fullName>
+        <formula>IF(ISPICKVAL(SBQQ__QuoteLine__r.SBQQ__SubscriptionPricing__c,&quot;&quot;),SBQQ__QuoteLine__r.SBQQ__NetTotal__c,0.00)+ SBQQ__QuoteLine__r.Up_Front_Fee_Total__c</formula>
+        <label>Est. One Time Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SBQQ__ParentID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>ID of the opportunity product that came from this product&apos;s bundle.</inlineHelpText>
+        <label>Parent ID</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SBQQ__QuoteLine__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Quote line that generated this Opportunity Product.</description>
+        <label>Quote Line</label>
+        <referenceTo>SBQQ__QuoteLine__c</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>OpportunityProducts</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SBQQ__SubscriptionType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the subscription type to determine contract&apos;s pricing.</description>
+        <inlineHelpText>Indicates the subscription type to determine contract&apos;s pricing.</inlineHelpText>
+        <label>Subscription Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>SBQQ__SubscriptionType</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ServiceDate</fullName>
+    </fields>
+    <fields>
+        <fullName>Source_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Source Id</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Subtotal</fullName>
+    </fields>
+    <fields>
+        <fullName>TotalPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>UnitPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>Up_Front_Fee__c</fullName>
+        <formula>SBQQ__QuoteLine__r.Up_Front_Fee__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Up Front Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Vendor_Partner__c</fullName>
+        <label>Vendor Partner</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Vendor_Partner</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>tinderbox__Include_Content__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked it will include the associated TinderBox content for this product.</description>
+        <label>Include Content</label>
+        <type>Checkbox</type>
+    </fields>
+    <validationRules>
+        <fullName>Close_Date_Same_as_Product_Service_Date</fullName>
+        <active>false</active>
+        <description>Assures that the Opportunity Close Date is the same as the Product Date (Service Date)</description>
+        <errorConditionFormula>ServiceDate&lt;&gt;Opportunity.CloseDate</errorConditionFormula>
+        <errorDisplayField>ServiceDate</errorDisplayField>
+        <errorMessage>The Date of this Product is not the same as the Effective Revenue Date.  Please make these Dates the same.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Opportunity_Product_Creation</fullName>
+        <active>true</active>
+        <description>Rule to prevent users to not have the ability to create new Opportunity Products other than System Administrator.</description>
+        <errorConditionFormula>AND(
+ISNEW(),
+$Profile.Name != &quot;System Administrator&quot;
+)</errorConditionFormula>
+        <errorMessage>Your assigned Profile does not allow for creating new Opportunity Products.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Opportunity_Product_Update</fullName>
+        <active>true</active>
+        <description>Rule to prevent users to not have the ability to update Opportunity Products other than System Administrator.</description>
+        <errorConditionFormula>AND(
+NOT(ISNEW()),
+$Profile.Name != &quot;System Administrator&quot;
+)</errorConditionFormula>
+        <errorMessage>Your assigned Profile does not allow for updating Opportunity Products.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Quantity_cannot_exceed_Number_of_Lives</fullName>
+        <active>false</active>
+        <description>Assures that the Product Quantity cannot exceed Number of Lives on the Opportunity</description>
+        <errorConditionFormula>AND(
+  Quantity&gt;Opportunity.Initial_of_Lives__c,
+  Opportunity.CPQ_Pricebook__c &lt;&gt; &apos;HHS&apos;
+)</errorConditionFormula>
+        <errorDisplayField>Quantity</errorDisplayField>
+        <errorMessage>Your Product Quantity exceeds the Number of Lives on the Opportunity.  Please correct this issue.</errorMessage>
+    </validationRules>
+</CustomObject>

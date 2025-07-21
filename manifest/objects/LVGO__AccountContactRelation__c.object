@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>LVGO__Account_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Account</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Related Contacts</relationshipLabel>
+        <relationshipName>AccountContactRelations</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Contact_Email__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Contact__r.LVGO__Email__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Contact_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Contact__r.LVGO__FirstName__c + &quot; &quot; + LVGO__Contact__r.LVGO__LastName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Contact</label>
+        <referenceTo>LVGO__Contact__c</referenceTo>
+        <relationshipLabel>Account Contact Relations</relationshipLabel>
+        <relationshipName>AccountContactRelations</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__EndDate__c</fullName>
+        <deprecated>false</deprecated>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__IsActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Legacy_Salesforce_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Holds salesforce id&apos;s that can be referenced for existing data during migration</description>
+        <externalId>true</externalId>
+        <label>Legacy Salesforce Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Relationship_Strength__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Relationship Strength</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Strong</fullName>
+                    <default>false</default>
+                    <label>Strong</label>
+                </value>
+                <value>
+                    <fullName>Neutral</fullName>
+                    <default>false</default>
+                    <label>Neutral</label>
+                </value>
+                <value>
+                    <fullName>Weak</fullName>
+                    <default>false</default>
+                    <label>Weak</label>
+                </value>
+                <value>
+                    <fullName>Negative</fullName>
+                    <default>false</default>
+                    <label>Negative</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Acquaintance</fullName>
+                    <default>false</default>
+                    <label>Acquaintance</label>
+                </value>
+                <value>
+                    <fullName>Colleague</fullName>
+                    <default>false</default>
+                    <label>Colleague</label>
+                </value>
+                <value>
+                    <fullName>Strategic</fullName>
+                    <default>false</default>
+                    <label>Strategic</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__Roles__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Roles</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Actuary / Data Analytics</fullName>
+                    <default>false</default>
+                    <label>Actuary / Data Analytics</label>
+                </value>
+                <value>
+                    <fullName>Analyst</fullName>
+                    <default>false</default>
+                    <label>Analyst</label>
+                </value>
+                <value>
+                    <fullName>Billing POC</fullName>
+                    <default>false</default>
+                    <label>Billing POC</label>
+                </value>
+                <value>
+                    <fullName>Broker</fullName>
+                    <default>false</default>
+                    <label>Broker</label>
+                </value>
+                <value>
+                    <fullName>Budget Approver</fullName>
+                    <default>false</default>
+                    <label>Budget Approver</label>
+                </value>
+                <value>
+                    <fullName>Business Decision Maker</fullName>
+                    <default>false</default>
+                    <label>Business Decision Maker</label>
+                </value>
+                <value>
+                    <fullName>Business Influencer</fullName>
+                    <default>false</default>
+                    <label>Business Influencer</label>
+                </value>
+                <value>
+                    <fullName>Care Management Lead / POC</fullName>
+                    <default>false</default>
+                    <label>Care Management Lead / POC</label>
+                </value>
+                <value>
+                    <fullName>Client Implementation Lead / POC</fullName>
+                    <default>false</default>
+                    <label>Client Implementation Lead / POC</label>
+                </value>
+                <value>
+                    <fullName>Client Success Lead / POC</fullName>
+                    <default>false</default>
+                    <label>Client Success Lead / POC</label>
+                </value>
+                <value>
+                    <fullName>Clinical Lead / POC</fullName>
+                    <default>false</default>
+                    <label>Clinical Lead / POC</label>
+                </value>
+                <value>
+                    <fullName>Consulting Pharmacist</fullName>
+                    <default>false</default>
+                    <label>Consulting Pharmacist</label>
+                </value>
+                <value>
+                    <fullName>Enrollment Marketing POC</fullName>
+                    <default>false</default>
+                    <label>Enrollment Marketing POC</label>
+                </value>
+                <value>
+                    <fullName>Executive Sponsor</fullName>
+                    <default>false</default>
+                    <label>Executive Sponsor</label>
+                </value>
+                <value>
+                    <fullName>Gatekeeper</fullName>
+                    <default>false</default>
+                    <label>Gatekeeper</label>
+                </value>
+                <value>
+                    <fullName>Lead Consultant</fullName>
+                    <default>false</default>
+                    <label>Lead Consultant</label>
+                </value>
+                <value>
+                    <fullName>Legal Lead / POC</fullName>
+                    <default>false</default>
+                    <label>Legal Lead / POC</label>
+                </value>
+                <value>
+                    <fullName>Marketing Recipient</fullName>
+                    <default>false</default>
+                    <label>Marketing Recipient</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Procurement Lead / POC</fullName>
+                    <default>false</default>
+                    <label>Procurement Lead / POC</label>
+                </value>
+                <value>
+                    <fullName>Sales Lead / POC</fullName>
+                    <default>false</default>
+                    <label>Sales Lead / POC</label>
+                </value>
+                <value>
+                    <fullName>Scorecard Recipient</fullName>
+                    <default>false</default>
+                    <label>Scorecard Recipient</label>
+                </value>
+                <value>
+                    <fullName>Supporting ASO Executive - Commercial Partner Executive</fullName>
+                    <default>false</default>
+                    <label>Supporting ASO Executive - Commercial Partner Executive</label>
+                </value>
+                <value>
+                    <fullName>Supporting Consultant</fullName>
+                    <default>false</default>
+                    <label>Supporting Consultant</label>
+                </value>
+                <value>
+                    <fullName>Supporting Other Partner Executive</fullName>
+                    <default>false</default>
+                    <label>Supporting Other Partner Executive</label>
+                </value>
+                <value>
+                    <fullName>Supporting PBM Executive</fullName>
+                    <default>false</default>
+                    <label>Supporting PBM Executive</label>
+                </value>
+                <value>
+                    <fullName>Technical Decision Maker</fullName>
+                    <default>false</default>
+                    <label>Technical Decision Maker</label>
+                </value>
+                <value>
+                    <fullName>Technical Influencer</fullName>
+                    <default>false</default>
+                    <label>Technical Influencer</label>
+                </value>
+                <value>
+                    <fullName>Telemedicine</fullName>
+                    <default>false</default>
+                    <label>Telemedicine</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__Send_Enrollment_Survey__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>IF(INCLUDES(LVGO__Roles__c, &quot;Client Implementation Lead / POC&quot;),TRUE,
+			IF(INCLUDES(LVGO__Roles__c, &quot;Client Success Lead / POC&quot;),TRUE,
+						IF(INCLUDES(LVGO__Roles__c, &quot;Enrollment Marketing POC&quot;),TRUE,FALSE)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Send Enrollment Survey</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__StartDate__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>LV Account Contact Relationship</label>
+    <listViews>
+        <fullName>LVGO__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>ACR-{0000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>LV Account Contact Relationships</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>LVGO__Add_Relationship</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add Relationship</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!URLFOR(&apos;/lightning/o/LVGO__AccountContactRelation__c/new?defaultFieldValues=LVGO__Account__c=&apos; + LVGO__Account__c.Id)}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>LVGO__New_Contact</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Contact</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!URLFOR(&apos;/lightning/o/LVGO__Contact__c/new?nooverride=1&amp;defaultFieldValues=LVGO__Account__c=&apos; + LVGO__Account__c.Id+&apos;,Name=XYZ&apos;)}</url>
+    </webLinks>
+</CustomObject>

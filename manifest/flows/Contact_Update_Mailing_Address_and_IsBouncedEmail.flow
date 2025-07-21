@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_for_Email_and_Address_Updates</name>
+        <label>Check for Email and Address Updates</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_if_email_is_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Email</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_IsBouncedEmail</targetReference>
+            </connector>
+            <label>Check if email is changed</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>IsMailingAddressChanged</name>
+        <dataType>Boolean</dataType>
+        <expression>(ISNEW() &amp;&amp; {!$Record.Location__c} != null) || (ISCHANGED({!$Record.Location__c}) &amp;&amp; {!$Record.Location__c} != null) || ( {!$Record.Location__c} != null &amp;&amp; ({!$Record.MailingStreet}!= {!$Record.Location__r.Billing_Address__c} ||  {!$Record.MailingCity}!=  {!$Record.Location__r.Billing_City__c} || {!$Record.MailingCountry} != {!$Record.Location__r.Billing_Country__c}|| {!$Record.MailingPostalCode} != {!$Record.Location__r.Billing_Postal_Code__c}) )</expression>
+    </formulas>
+    <interviewLabel>Contact - Update Mailing Address and IsBouncedEmail {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact - Update Mailing Address and IsBouncedEmail</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_IsBouncedEmail</name>
+        <label>Update IsBouncedEmail</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>IsBouncedEmail__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_for_Email_and_Address_Updates</targetReference>
+        </connector>
+        <object>Contact</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

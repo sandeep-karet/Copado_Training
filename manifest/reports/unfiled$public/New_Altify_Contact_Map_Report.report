@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ALTF__Contact_Map_Details__c$Name</field>
+    </columns>
+    <columns>
+        <field>ALTF__Contact_Map_Details__c$ALTF__Contact__c</field>
+    </columns>
+    <columns>
+        <field>ALTF__Contact_Map_Details__c$CreatedBy.UserRole</field>
+    </columns>
+    <columns>
+        <field>ALTF__Contact_Map_Details__c$ALTF__Account_Relationship__c</field>
+    </columns>
+    <columns>
+        <field>ALTF__Contact_Map_Details__c$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>ALTF__Contact_Map_Details__c$ALTF__AltifyId__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>ALTF__Contact_Map_Details__c$CreatedBy.UserRole</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Platinum,Special,Select,Premier,Employer - Signature Rep</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ALTF__Contact_Map_Details__c$CreatedBy</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ALTF__Contact_Map_Details__c$ALTF__Account__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>New Altify Contact Map Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Altify_Contact_Map_ToD__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ALTF__Contact_Map_Details__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

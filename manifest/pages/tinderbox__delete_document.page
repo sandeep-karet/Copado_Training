@@ -1,0 +1,17 @@
+<apex:page standardController="tinderbox__Document__c" extensions="tinderbox.documentExtension" action="{! IF(len(TinderboxId)>0,null,URLFOR($Action.tinderbox__document__c.Delete, $CurrentPage.Parameters.id,[retURL=$CurrentPage.Parameters.retURL],true))}" >
+	<!-- ProCore added these elements and I don't know what purpose they serve. -->
+    <apex:form >
+    	<apex:inputhidden value="{!tinderbox__Document__c.tinderbox__TBAccount__c}" />
+    </apex:form>
+ 
+    <apex:outputText value="{!tinderbox__Document__c.tinderbox__TinderBoxId__c}" rendered="false"/>
+    <apex:outputText value="{!tinderbox__Document__c.id}" rendered="false"/>
+    <!-- End ProCore -->
+
+    <c:ApplicationView path="salesforce/{!TinderboxId}/delete_document"
+                       queryString="sfdc_document_id={!documentId}"
+                       retUrl="{!SfInstance}{!$CurrentPage.Parameters.retURL}"
+                       TBAccountEndPoint="{!TBAccountEndPoint}"
+                       height="600px"></c:ApplicationView>
+
+</apex:page>

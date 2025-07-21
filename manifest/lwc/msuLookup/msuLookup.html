@@ -1,0 +1,141 @@
+<template>
+    <template if:true={isError}>
+        <lightning-card>
+            <div class="slds-grid slds-wrap slds-align_absolute-center" style="background-color: #FFFACD">
+                <div class="slds-p-right_x-large">
+                    <lightning-icon icon-name="utility:error" title="Error!"  variant="error" size="large"></lightning-icon>
+                </div>
+                <div class=" slds-text-color_destructive">
+                    <p>{errorMeg}</p>                 
+                </div>
+            </div>                     
+        </lightning-card>
+    </template>
+
+
+    <template if:false={isError}>
+    <lightning-card class="slds-align_absolute-center" title="MSU Calculator">
+    </lightning-card>
+    <template if:true={isContact}>
+        <lightning-card>
+            <div class="slds-grid slds-wrap slds-p-horizontal_xx-large ">
+		      <div class="slds-float_left slds-size_1-of-1 ">
+			        <lightning-layout>
+			    	    <lightning-layout-item padding="around-small">
+			    		    <h1>Contact : {Name}</h1>
+			    	    </lightning-layout-item>
+	    		    </lightning-layout>
+		        </div>
+		        <div class="slds-float_left slds-size_1-of-1 ">
+			        <lightning-layout>
+				        <lightning-layout-item padding="around-small">
+					        <h1>Group</h1>
+	    			    </lightning-layout-item>
+	    			    <lightning-layout-item padding="around-small">
+	    			    	<lightning-input data-id="group" label='test' variant="label-hidden" name="searchInput" type="search"></lightning-input>
+		    		    </lightning-layout-item>
+		    	    	<lightning-layout-item padding="around-small">
+		    		    	<lightning-button variant="neutral" label="Filter" onclick={groupFilter}></lightning-button>
+		    		    </lightning-layout-item>
+		    	    </lightning-layout>
+		        </div>
+          </div>
+        </lightning-card>
+    </template>
+
+    <template if:false={isContact}>
+        <lightning-card>
+         <div class="slds-grid slds-wrap slds-p-horizontal_xx-large ">
+		        <div class="slds-float_left slds-size_1-of-1 ">
+			     <lightning-layout>
+				     <lightning-layout-item padding="around-small">
+				    	    <h1>Group : {Name}</h1>
+				        </lightning-layout-item>
+			        </lightning-layout>
+		      </div>
+		       <div class="slds-float_left slds-size_1-of-1 ">
+			        <lightning-layout>
+				        <lightning-layout-item padding="around-small">
+				    	    <h1>Contact</h1>
+			        	</lightning-layout-item>
+			        	<lightning-layout-item padding="around-small">
+			        		<lightning-input data-id="contact" label='test' variant="label-hidden" name="searchInput" type="search" ></lightning-input>
+			         	</lightning-layout-item>
+			            <lightning-layout-item padding="around-small">
+			        		<lightning-button variant="neutral" label="Filter" onclick={contactFilter}></lightning-button>
+			        	</lightning-layout-item>
+		        	</lightning-layout>
+	        	</div>
+           </div>
+      </lightning-card> 
+    </template>
+
+
+    <lightning-card class="slds-size--1-of-1 ">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-p-left_xx-large slds-p-right_xx-large" role="grid">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Odd Duck">Odd Duck</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Group Name">Group Name</div>
+                    </th> 
+                    <th scope="col">
+                        <div class="slds-truncate" title="Group Number">Group Number</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Group Status">Group Status</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Contact">Contact</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Contact Account">Contact Account</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Client Account">Client Account</div>
+                    </th>                      
+                </tr>
+            </thead>
+            <tbody >
+                <template for:each={data} for:item="msu">
+                    <tr key={msu.oddDuck}>
+                        <th scope="row">
+                            <template if:true={msu.oddDuck}>
+                                <div class="slds-truncate" title={msu.oddDuck}>&#9989;</div>
+                            </template>
+                        </th> 
+                        <th scope="row">
+                            <div class="slds-truncate" title={msu.groupName}>{msu.groupName}</div>
+                        </th>
+                        <th scope="row">
+                            <div class="slds-truncate" title={msu.msu.Mbr_Group__r.Group_Number__c}>{msu.msu.Mbr_Group__r.Group_Number__c}</div>
+                        </th> 
+                        <th scope="row">
+                            <div class="slds-truncate" title={msu.msu.Mbr_Group__r.Status__c}>{msu.msu.Mbr_Group__r.Status__c}</div>
+                        </th> 
+                        <th scope="row">
+                            <div class="slds-truncate" title={msu.msu.Contact__r.Name}>{msu.msu.Contact__r.Name}</div>
+                        </th> 
+                        <th scope="row">
+                            <div class="slds-truncate" title={msu.msu.Contact__r.Account.Name}>{msu.msu.Contact__r.Account.Name}</div>
+                        </th> 
+                        <th scope="row">
+                            <div class="slds-truncate" title={msu.msu.Mbr_Group__r.Client_Account__r.Name}>{msu.msu.Mbr_Group__r.Client_Account__r.Name}</div>
+                        </th>
+                    </tr>
+                </template>                          
+            </tbody>
+        </table>  
+        <div class="slds-m-around_medium slds-align_absolute-center">   
+            <p class="slds-m-vertical_medium content">
+                     Displaying {startingRecord} to {endingRecord} of {totalRecountCount} records.
+                     Page {page} of {totalPage}. </p>
+        </div>
+        <div class="slds-m-around_medium slds-align_absolute-center">   
+            <c-msu-page-lwc onprevious={previousHandler} onnext={nextHandler}></c-msu-page-lwc>
+        </div>           
+    </lightning-card>
+    </template>
+</template>

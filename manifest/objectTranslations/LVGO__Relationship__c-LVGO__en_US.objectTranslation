@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>LV Relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>LV Relationships</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Data Partnership --></label>
+        <name>LVGO__Account_Data_Partnership__c</name>
+        <relationshipLabel><!-- Account Data Partnership --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>LVGO__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link of the Box folder where the file is located --></help>
+        <label><!-- Box Folder Link --></label>
+        <name>LVGO__Box_Folder_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Client Account for linking to a Competitor Account. --></help>
+        <label><!-- Client Account (C) --></label>
+        <name>LVGO__Client_Competition__c</name>
+        <relationshipLabel><!-- Client-Level Competition --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to a Client Account for linking to a Partner Account. --></help>
+        <label><!-- Client Account (P) --></label>
+        <name>LVGO__Client_Partnership__c</name>
+        <relationshipLabel><!-- Client-Level Partnerships --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Links a Client Lite Account that is a part of a Cohort with a Partner&apos;s Cohort Opportunity --></help>
+        <label><!-- Cohort Opportunity --></label>
+        <name>LVGO__CohortOpportunity__c</name>
+        <relationshipLabel><!-- Cohort Clients --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Defines the product with which the Competitor Account is competing --></help>
+        <label><!-- Competing Product --></label>
+        <name>LVGO__Competing_Product__c</name>
+        <relationshipLabel><!-- Competing Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Competitor Account for linking to a Client Account. --></help>
+        <label><!-- Competitor Account (A) --></label>
+        <name>LVGO__Competitor_Competition__c</name>
+        <relationshipLabel><!-- Client-Level Competition (Competitor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Competitor Account for linking to an Opportunity. --></help>
+        <label><!-- Competitor Account (O) --></label>
+        <name>LVGO__Competitor_Oppty_Competition__c</name>
+        <relationshipLabel><!-- Opportunity-Level Competition (Competitor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The related Contract in a relationship between a deal and Partner. --></help>
+        <label><!-- Contract (P) --></label>
+        <name>LVGO__Contract_Partnership__c</name>
+        <relationshipLabel><!-- Contract-Level Partnerships (Contract) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Data Operations assigned grading based on quality of data received --></help>
+        <label><!-- Data Grade --></label>
+        <name>LVGO__Data_Grade__c</name>
+        <picklistValues>
+            <masterLabel>A+</masterLabel>
+            <translation><!-- A+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A-</masterLabel>
+            <translation><!-- A- --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B+</masterLabel>
+            <translation><!-- B+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B-</masterLabel>
+            <translation><!-- B- --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C+</masterLabel>
+            <translation><!-- C+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C-</masterLabel>
+            <translation><!-- C- --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D</masterLabel>
+            <translation><!-- D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F</masterLabel>
+            <translation><!-- F --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Type of medical or insurance information we’re receiving through this file --></help>
+        <label><!-- Data Types Included --></label>
+        <name>LVGO__Data_Type__c</name>
+        <picklistValues>
+            <masterLabel>Condition List</masterLabel>
+            <translation><!-- Condition List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact Info</masterLabel>
+            <translation><!-- Contact Info --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eligibility</masterLabel>
+            <translation><!-- Eligibility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Claims</masterLabel>
+            <translation><!-- Medical Claims --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy Claims</masterLabel>
+            <translation><!-- Pharmacy Claims --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Predefined List</masterLabel>
+            <translation><!-- Predefined List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tags</masterLabel>
+            <translation><!-- Tags --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Frequency in which we are receiving the files --></help>
+        <label><!-- Delivery Frequency --></label>
+        <name>LVGO__Delivery_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Bimonthly</masterLabel>
+            <translation><!-- Bimonthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biweekly</masterLabel>
+            <translation><!-- Biweekly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily</masterLabel>
+            <translation><!-- Daily --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Irregular</masterLabel>
+            <translation><!-- Irregular --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this feed is drivertized --></help>
+        <label><!-- Drivertized --></label>
+        <name>LVGO__Drivertized__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this file is the main source of eligibility --></help>
+        <label><!-- Eligibility Source --></label>
+        <name>LVGO__Eligibility_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>LVGO__End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email address or link associated with the file delivery --></help>
+        <label><!-- File Delivery Address --></label>
+        <name>LVGO__File_Delivery_Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- Method used to send the file to our systems --></help>
+        <label><!-- File Delivery Method --></label>
+        <name>LVGO__File_Delivery_Method__c</name>
+        <picklistValues>
+            <masterLabel>SFTP - Client Hosted</masterLabel>
+            <translation><!-- SFTP - Client Hosted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFTP - Livongo Hosted</masterLabel>
+            <translation><!-- SFTP - Livongo Hosted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secure Mail</masterLabel>
+            <translation><!-- Secure Mail --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Format in which we are receiving this file --></help>
+        <label><!-- File Format --></label>
+        <name>LVGO__File_Format__c</name>
+        <picklistValues>
+            <masterLabel>Delimited</masterLabel>
+            <translation><!-- Delimited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Excel</masterLabel>
+            <translation><!-- Excel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed Width</masterLabel>
+            <translation><!-- Fixed Width --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- File name prefix being used when sending the file --></help>
+        <label><!-- File Naming Convention --></label>
+        <name>LVGO__File_Naming_Convention__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if we receive historical data for this feed --></help>
+        <label><!-- Historical Received --></label>
+        <name>LVGO__Historical_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Salesforce Id --></label>
+        <name>LVGO__Legacy_Salesforce_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to either a Partner or Competitor Account for linking to a Client Account. --></help>
+        <label><!-- Master Vendor Account --></label>
+        <name>LVGO__Master_Account__c</name>
+        <relationshipLabel><!-- Master Vendor Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Master Client Account Name --></label>
+        <name>LVGO__Master_Client_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Client Account --></label>
+        <name>LVGO__Master_Client_Account__c</name>
+        <relationshipLabel><!-- Master Client Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Defines the master contract for the Relates To record --></help>
+        <label><!-- Master Contract --></label>
+        <name>LVGO__Master_Contract__c</name>
+        <relationshipLabel><!-- Master Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Master Opportunity --></label>
+        <name>LVGO__Master_Opportunity__c</name>
+        <relationshipLabel><!-- Master Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this is part of a multitenant file --></help>
+        <label><!-- Multi-tenant --></label>
+        <name>LVGO__Multi_tenant__c</name>
+    </fields>
+    <fields>
+        <help><!-- For Cohorts Only!  Lookup to Opportunity for linking to a Client Lite that is a part of a Cohort related to this Opportunity. --></help>
+        <label><!-- Opportunity (Cohort) --></label>
+        <name>LVGO__Opportunity_CO__c</name>
+        <relationshipLabel><!-- Opportunity to Cohorts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to Opportunity for linking to a Competitor Account. --></help>
+        <label><!-- Opportunity (C) --></label>
+        <name>LVGO__Opportunity_Competition__c</name>
+        <relationshipLabel><!-- Opportunity-Level Competition (Opportunity) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Opportunity in a relationship between an Opportunity and Partner Account. --></help>
+        <label><!-- Opportunity (P) --></label>
+        <name>LVGO__Opportunity_Partnership__c</name>
+        <relationshipLabel><!-- Opportunity-Level Partnerships (Opportunity) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Partner Account --></label>
+        <name>LVGO__Partner_Account_Text__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to a Partner Account for linking a Partner Account to a Contract. --></help>
+        <label><!-- Partner Account (C) --></label>
+        <name>LVGO__Partner_Contract_Partnership__c</name>
+        <relationshipLabel><!-- Contract-Level Partnership (Partner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to a Partner Account for linking a Partner Account to an Opportunity. --></help>
+        <label><!-- Partner Account (O) --></label>
+        <name>LVGO__Partner_Oppty_Partnership__c</name>
+        <relationshipLabel><!-- Opportunity-Level Partnership (Partner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Partner Account (A) Name --></label>
+        <name>LVGO__Partner_Partnership_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Partner or Employer Account in a relationship between a Client and Partner or Employer Account. --></help>
+        <label><!-- Partner Account (A) --></label>
+        <name>LVGO__Partner_Partnership__c</name>
+        <relationshipLabel><!-- Client-Level Partnerships (Partner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this feed is in line with ROI standards --></help>
+        <label><!-- ROI Ready --></label>
+        <name>LVGO__ROI_Ready__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defines the type of relationship between two entities. --></help>
+        <label><!-- Relationship Type --></label>
+        <name>LVGO__RelationshipType__c</name>
+        <picklistValues>
+            <masterLabel>Activity Tracking Devices</masterLabel>
+            <translation><!-- Activity Tracking Devices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Associated Health Plan</masterLabel>
+            <translation><!-- Associated Health Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asthma</masterLabel>
+            <translation><!-- Asthma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Behavioral Health</masterLabel>
+            <translation><!-- Behavioral Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefits Consultant</masterLabel>
+            <translation><!-- Benefits Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing Partner</masterLabel>
+            <translation><!-- Billing Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biometrics Screening/Health  Risk Assessment</masterLabel>
+            <translation><!-- Biometrics Screening/Health  Risk Assessment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cardiovascular Health</masterLabel>
+            <translation><!-- Cardiovascular Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Care Coordinator</masterLabel>
+            <translation><!-- Care Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Children&apos;s Health and Obesity</masterLabel>
+            <translation><!-- Children&apos;s Health and Obesity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cohort</masterLabel>
+            <translation><!-- Cohort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor</masterLabel>
+            <translation><!-- Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concierge/Coaching Advocacy</masterLabel>
+            <translation><!-- Concierge/Coaching Advocacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Path</masterLabel>
+            <translation><!-- Contract Path --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Terms</masterLabel>
+            <translation><!-- Contract Terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost Transparency</masterLabel>
+            <translation><!-- Cost Transparency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Eligibility File</masterLabel>
+            <translation><!-- Data - Eligibility File --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Email</masterLabel>
+            <translation><!-- Data - Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Medical Claims</masterLabel>
+            <translation><!-- Data - Medical Claims --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - N/A – No Livongo Marketing</masterLabel>
+            <translation><!-- Data - N/A – No Livongo Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Other</masterLabel>
+            <translation><!-- Data - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Pharmacy Claims</masterLabel>
+            <translation><!-- Data - Pharmacy Claims --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Predefined List from Biometric</masterLabel>
+            <translation><!-- Data - Predefined List from Biometric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Predefined List from EMR</masterLabel>
+            <translation><!-- Data - Predefined List from EMR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Predefined List from HRA</masterLabel>
+            <translation><!-- Data - Predefined List from HRA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Predefined List from Medical Claims</masterLabel>
+            <translation><!-- Data - Predefined List from Medical Claims --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data - Predefined List from Pharmacy Claims</masterLabel>
+            <translation><!-- Data - Predefined List from Pharmacy Claims --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Warehouse</masterLabel>
+            <translation><!-- Data Warehouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data – Condition List</masterLabel>
+            <translation><!-- Data – Condition List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dental Services Provider</masterLabel>
+            <translation><!-- Dental Services Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diabetes Prevention</masterLabel>
+            <translation><!-- Diabetes Prevention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disease Management</masterLabel>
+            <translation><!-- Disease Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drug Cost Management Services (if different than PBM)</masterLabel>
+            <translation><!-- Drug Cost Management Services (if different than PBM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EAP</masterLabel>
+            <translation><!-- EAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMR (Electronic Medical Records)</masterLabel>
+            <translation><!-- EMR (Electronic Medical Records) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eligibility Partner</masterLabel>
+            <translation><!-- Eligibility Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Wellness</masterLabel>
+            <translation><!-- Financial Wellness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Engagement Platform</masterLabel>
+            <translation><!-- Health Engagement Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Plan (Payer)</masterLabel>
+            <translation><!-- Health Plan (Payer) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hypertension</masterLabel>
+            <translation><!-- Hypertension --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incentives Administrating Party</masterLabel>
+            <translation><!-- Incentives Administrating Party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Influencer</masterLabel>
+            <translation><!-- Influencer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Source</masterLabel>
+            <translation><!-- Lead Source --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maternity</masterLabel>
+            <translation><!-- Maternity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Second Opinion</masterLabel>
+            <translation><!-- Medical Second Opinion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muskuloskeletal</masterLabel>
+            <translation><!-- Muskuloskeletal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nutrition</masterLabel>
+            <translation><!-- Nutrition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Onboarding Model</masterLabel>
+            <translation><!-- Onboarding Model --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Onsite Clinic</masterLabel>
+            <translation><!-- Onsite Clinic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open Enrollment Platform</masterLabel>
+            <translation><!-- Open Enrollment Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy Benefit Manager</masterLabel>
+            <translation><!-- Pharmacy Benefit Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Second Opinion</masterLabel>
+            <translation><!-- Second Opinion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sleep Improvement</masterLabel>
+            <translation><!-- Sleep Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smoking Cessation</masterLabel>
+            <translation><!-- Smoking Cessation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surgery Care Coordinator</masterLabel>
+            <translation><!-- Surgery Care Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telemedicine</masterLabel>
+            <translation><!-- Telemedicine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third Party Administrator</masterLabel>
+            <translation><!-- Third Party Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transparency Platform</masterLabel>
+            <translation><!-- Transparency Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vision Provider</masterLabel>
+            <translation><!-- Vision Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weight Management</masterLabel>
+            <translation><!-- Weight Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wellness Platform</masterLabel>
+            <translation><!-- Wellness Platform --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Relationship Notes --></label>
+        <name>LVGO__Relationship_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship Sort --></label>
+        <name>LVGO__Relationship_Sort__c</name>
+    </fields>
+    <fields>
+        <help><!-- Party to which reports may be sent. --></help>
+        <label><!-- Report Recipient --></label>
+        <name>LVGO__ReportRecipient__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>LVGO__Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>LVGO__Status__c</name>
+        <picklistValues>
+            <masterLabel>Competitor Currently Engaged w/ Client</masterLabel>
+            <translation><!-- Competitor Currently Engaged w/ Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor Pursuing Client</masterLabel>
+            <translation><!-- Competitor Pursuing Client --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates if this file is being used for marketing --></help>
+        <label><!-- Used for Marketing --></label>
+        <name>LVGO__Used_for_Marketing__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Competitor at the Client Account level --></description>
+        <label><!-- Account Competition --></label>
+        <name>LVGO__Account_Competition</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Account Data Partnership --></description>
+        <label><!-- Account Data Partnership (Data Operations Only) --></label>
+        <name>LVGO__Account_Data_Partnership</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Partner at the Client Account level (Health Plan/Payer, Benefits Consultant, PBM, Wellness Coordinator, or Cohort) --></description>
+        <label><!-- Account Partnership --></label>
+        <name>LVGO__Account_Partnership</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Partner at the Contract level (Admin Party, Billing Partner, Care Coordinator, Contract Path, Contract Terms, or Data) --></description>
+        <label><!-- Contract Partnership --></label>
+        <name>LVGO__Contract_Partnership</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Competitor at the Opportunity level --></description>
+        <label><!-- Opportunity Competition --></label>
+        <name>LVGO__Opportunity_Competition</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Partner at the Opportunity level (Lead Source or Influencer) --></description>
+        <label><!-- Opportunity Partnership --></label>
+        <name>LVGO__Opportunity_Partnership</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- We noticed that you selected CVS Health or Caremark as the Billing Partner.  Please select Caremark TC or Caremark PSM instead. --></errorMessage>
+        <name>LVGO__Billing_CVS_Caremark</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- We noticed that you selected CVS Health or Caremark as the Contract Path.  Please select Caremark TC or Caremark PSM instead. --></errorMessage>
+        <name>LVGO__Contract_CVS_Caremark</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- We noticed that you selected Caremark TC, Caremark PSM or CVS Health as the Lead Source.  Please select Caremark instead. --></errorMessage>
+        <name>LVGO__Influencer_CVS_Caremark</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- We noticed that you selected Caremark TC, Caremark PSM or CVS Health as the Lead Source.  Please select Caremark instead. --></errorMessage>
+        <name>LVGO__Lead_CVS_Caremark</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- We noticed that you selected CVS Health as the PBM. CVS Health represents CVS “the client”. Please select Caremark instead --></errorMessage>
+        <name>LVGO__PBM_CVS_Health</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- We noticed that you selected Caremark TC or Caremark PSM as the PBM. They represent the Billing Partner and Contract Path only. Please select Caremark instead. --></errorMessage>
+        <name>LVGO__PBM_Caremark_TC_PSM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You may only populate the Opportunity for Cohort relationship types.  Please go to the Opportunity record to capture Opportunity-specific Partner Roles. --></errorMessage>
+        <name>LVGO__Prohibit_Opportunity_for_Non_Cohort</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please input the related Opportunity for this Cohort Client. --></errorMessage>
+        <name>LVGO__Require_Opportunity_if_record_is_Cohort</name>
+    </validationRules>
+</CustomObjectTranslation>

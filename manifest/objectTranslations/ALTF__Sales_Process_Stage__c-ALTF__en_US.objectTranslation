@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Altify Sales Process Stage</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Altify Sales Process Stages</value>
+    </caseValues>
+    <fields>
+        <label><!-- AltifyId --></label>
+        <name>ALTF__AltifyId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Percentage completion (calculated as percent of achieved score on the stage) of the stage before the UI will display as amber/yellow for that stage.
+
+Enter a value from 0 - 100. The recommended default is 50 (%). --></help>
+        <label><!-- Amber --></label>
+        <name>ALTF__Amber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Length of time (in weeks) an opportunity typically takes to be worked through the stage.
+
+Note that Altify will track the length of time actually taken, so that you can see how you&apos;re tracking against expectations over time. --></help>
+        <label><!-- Duration --></label>
+        <name>ALTF__Duration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Percentage completion (calculated as percent of achieved score on the stage) on the stage before the UI will display as green for that stage.
+
+Enter a value from 0 - 100. The recommended default is 80 (%). --></help>
+        <label><!-- Green --></label>
+        <name>ALTF__Green__c</name>
+    </fields>
+    <fields>
+        <help><!-- The percentage score that must be achieved on the stage before the opportunity can move to the next stage. 
+
+Note that all &quot;mandatory&quot; qualifiers must also be achieved before the opportunity can move. --></help>
+        <label><!-- Qualification Threshold --></label>
+        <name>ALTF__Qualification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Process --></label>
+        <name>ALTF__Sales_Process__c</name>
+        <relationshipLabel><!-- Sales Process Stages --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Order of the stage within the sales process pipeline --></help>
+        <label><!-- Sort Order --></label>
+        <name>ALTF__SortOrder__c</name>
+    </fields>
+    <fields>
+        <help><!-- One of the pipeline stages associated with this Sales Process. Each process contains the Stages an Opportunity follows through its sales cycle. --></help>
+        <label><!-- Stage Name --></label>
+        <name>ALTF__Stage__c</name>
+        <relationshipLabel><!-- Sales Process Stages --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Green % must be greater than Amber % --></errorMessage>
+        <name>ALTF__Check_Green_Amber_Range</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Duration must be positive --></errorMessage>
+        <name>ALTF__Duration_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only 0-100% is valid --></errorMessage>
+        <name>ALTF__Percentage_check_AP</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only 0-100% is valid --></errorMessage>
+        <name>ALTF__Percentage_check_GP</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only 0-100% is valid --></errorMessage>
+        <name>ALTF__Percentage_check_QP</name>
+    </validationRules>
+</CustomObjectTranslation>

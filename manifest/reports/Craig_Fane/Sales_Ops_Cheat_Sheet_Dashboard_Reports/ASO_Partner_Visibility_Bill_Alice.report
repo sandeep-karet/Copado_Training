@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Contract_Path__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Contracted_Date__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND NOT 4</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity.Contract_Path__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Anthem,BCBS Tennessee,Blue Shield of California,Express Scripts - Evernorth,Independent Health,Nova Healthcare Administrators Inc.,PacificSource Master,Premera Blue Cross Master,UnitedHealthcare Commercial,UnitedHealthcare,UnitedHealthcare ASO,UMR,Optum,Healthscope,PreferredOne,Blue Cross Blue Shield of Massachusetts,Emblemhealth,Health New England,Point32,AvMed Health,Blue Cross Blue Shield of Rhode Island,Health Alliance Plan (HAP),Moda,Priority Health,Regence,Highmark,Medical Mutual of Ohio,The Health Plan,Wellmark</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPPORTUNITY_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>(For Reporting Purposes Only)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Business,Upsell to Customer,&quot;Add-on Membership, Existing Customer&quot;,Price Increase</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Contract_Path__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>UnitedHealthcare Medicaid,UnitedHealthcare Medicare &amp; Retiree</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>ASO Partner (Visibility) Bill &amp; Alice</name>
+    <params>
+        <name>open</name>
+        <value>closedwon</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Opportunity.Contract_Path__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.Contracted_Date__c</dateColumn>
+        <interval>INTERVAL_PREV1</interval>
+    </timeFrameFilter>
+</Report>

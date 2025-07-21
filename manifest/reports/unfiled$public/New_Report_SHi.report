@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LVGO__Opportunity__c$LVGO__Account__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Opportunity__c$LVGO__Opportunity_ID_Long__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Opportunity__c$LVGO__TD_Opp_Guid__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Opportunity__c$Name</field>
+    </columns>
+    <columns>
+        <field>LVGO__Opportunity__c.LVGO__LGVO_OpportunityProducts__r$LVGO__Product2__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>LVGO__Opportunity__c.LVGO__LGVO_OpportunityProducts__r$LVGO__Quantity__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Opportunity__c.LVGO__LGVO_OpportunityProducts__r$LVGO__Fee_Type__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Opportunity__c$LVGO__CloseDate__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>CRMINT-43403 -LCRM Renewal Report request</description>
+    <filter>
+        <criteriaItems>
+            <column>LVGO__Opportunity__c$LVGO__Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Renewal,Re-sign Business</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>LVGO__Opportunity__c$LVGO__Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>LCRM Renewal Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_products_LV__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LVGO__Opportunity__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

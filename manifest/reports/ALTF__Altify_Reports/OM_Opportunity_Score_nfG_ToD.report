@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_56907150</developerName>
+        <masterLabel>Opportunity Score</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Opportunity$Altify_Opportunity_Plan_Score__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>1</to>
+            </sourceValues>
+            <value>1. No Plan</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>1</from>
+                <to>21</to>
+            </sourceValues>
+            <value>2. Poor Plan</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>21</from>
+                <to>41</to>
+            </sourceValues>
+            <value>3. OK Plan</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>41</from>
+                <to>61</to>
+            </sourceValues>
+            <value>4. Good Plan</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>61</from>
+            </sourceValues>
+            <value>5. Best Plan</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>Donut</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_56907150</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>true</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Amount</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Altify_Opportunity_Plan_Score__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$ALTF__Altify_Opportunity__c.ALTF__FSM4__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$ALTF__Altify_Opportunity__c.ALTF__FSM1__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$ALTF__Altify_Opportunity__c.ALTF__FSM3__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$ALTF__Altify_Opportunity__c.ALTF__FSM2__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$ALTF__Altify_Opportunity__c.ALTF__FSM5__c</field>
+    </columns>
+    <description>Opportunity Manager - Opportunity Score
+This Report calculates the health of an opportunity but calculating the number of Plan Signals created and whether an Altify Opportunity Exists</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_56907150</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>OM - Opportunity Score</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_Altify_ToD__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

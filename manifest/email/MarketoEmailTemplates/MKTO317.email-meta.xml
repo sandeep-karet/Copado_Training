@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>OP-202304-xSeg-SVB Transfer Notification.01. Bank Transfer Notification</name>
+    <style>none</style>
+    <subject>Important Remittance Update</subject>
+    <textOnly>Reference Number: {{member.Program Member Custom Field 2:default=edit me}}
+
+Dear {{company.Company Name:default=edit me}},
+
+Due to the recent events surrounding Silicon Valley Bank, we are moving our banking relationship to J.P. Morgan, effective immediately. Please transition payments to our new account with J.P. Morgan as soon as possible. If you have already updated your bank details, please disregard this notification.
+
+Please note this is for membership and consult fee payments only. Claims remitted via payors will go to a separate company as they do today. We will be reaching out to those payors directly.
+
+The new bank details are available using the password-protected links below. You will receive a second email with your password to access the information.
+
+Teladoc Health, Inc. Membership Fees Only Bank Details &lt;https://communications.teladoc.com/finance/teladoc-health-member-fees-bank-details.pdf&gt;
+Teladoc Health Medical Group Consult Fees Only Bank Details &lt;https://communications.teladoc.com/finance/teladoc-health-medical-group-consult-bank-details.pdf&gt;
+
+
+Our preference is that all payments going forward are transacted electronically. However, for those who still need to send paper checks, they may continue to be sent to Silicon Valley Bank until lockboxes at J.P. Morgan are available. We will follow up with the updated J.P. Morgan lockbox information when it becomes available.
+
+If you have any questions, call Teladoc Billing Support at 888-260-4425 (Monday-Friday, 8:00am - 5:00pm CST), or email clientremitsupport@teladochealth.com &lt;mailto:clientremitsupport@teladochealth.com&gt; and cite the Reference Number provided at the top of this email. Please continue to send remittance information to payments@teladochealth.com &lt;mailto:payments@teladochealth.com&gt;.
+
+
+Thank you in advance for your assistance with this transition.
+About Teladoc Health: Teladoc Health is transforming the healthcare experience and empowering people everywhere to live healthier lives. Recognized as the world leader in whole-person virtual care, Teladoc Health leverages more than a decade of expertise and data-driven insights to meet the growing virtual care needs of consumers and healthcare professionals.
+Unsubscribe &lt;[[{{system.unsubscribeLink}}]]&gt;    |    
+Privacy &lt;[[https://www.teladochealth.com/legal/privacy-policy]]&gt;    |    
+Legal notice &lt;[[https://www.teladochealth.com/legal/legal-disclaimer]]&gt;
+© Teladoc Health, Inc. All rights reserved. 2 Manhattanville Road, Purchase NY, 10577.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

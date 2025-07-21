@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Sales_With_Logo_in_Footer</letterhead>
+    <name>Welcome</name>
+    <style>formalLetter</style>
+    <subject>Welcome to TeladocHealth Salesforce</subject>
+    <textOnly>Welcome!
+
+We&apos;re excited to have you get started. Please, press the button below to login using your Username : {!User.Username} and OneTime Password: {!User.OneTime_Password__c}
+
+
+https://teladochealth.my.salesforce.com
+
+
+
+If you have any questions, please email to Salesforcesupport@teladoc.com. We&apos;re&apos; always happy to help out.
+
+
+
+Thank you,
+Salesforce Support Team.
+
+
+
+
+
+
+
+The Onetime password expires after 24 hours. After expiration, the Salesforce Admin will need to reset the password again.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

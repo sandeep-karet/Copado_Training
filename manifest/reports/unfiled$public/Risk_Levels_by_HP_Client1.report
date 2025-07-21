@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$Account_Health_Score__c</field>
+    </columns>
+    <columns>
+        <field>Account$Acct_Health_Notes__c</field>
+    </columns>
+    <columns>
+        <field>Account$Account_Manager__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <column>Account$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>testingzzz</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Account_Manager__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Sarah Pils,Julie Zaura,Jake Wallach,Jason Fluchel,Stephanie Kelly,Sammy Peterson,Alex Cherry,Chip Carey,Edyta Hoffmann,Grace Ramos,Kaelyn Whisler,Kylie Groover,Nick Stein</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Account_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Health Plan</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Risk Levels by HP Client</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>EEM_Accounts_with_Opps__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

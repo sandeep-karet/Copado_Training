@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Migrated from the: Lost Opp Account status Expressed Interest workflow rule
+Workflow rule description: If a prospect has a closed no decision/lost opp, and no open opp, the status should be Prospecting - Expressed Interest&quot;</description>
+    <environments>Default</environments>
+    <interviewLabel>Lost Opp Account status Expressed Interest {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lost Opp Account status Expressed Interest</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Updating_Lost_opp_Account_status</name>
+        <label>Updating Lost opp Account status</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>LVGO__Account_Type__c</field>
+            <value>
+                <stringValue>Prospecting - Expressed Interest</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Updating_Lost_opp_Account_status</targetReference>
+        </connector>
+        <filterFormula>AND({!$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Flows__c},
+OR(ISPICKVAL({!$Record.LVGO__Account_Type__c},&quot;Prospecting&quot;), ISPICKVAL({!$Record.LVGO__Account_Type__c},&quot;Engaging&quot;)),
+{!$Record.LVGO__Open_Opportunity_Count__c}=0,{!$Record.LVGO__Closed_Won_Opportunity_Count__c}=0,OR({!$Record.LVGO__Total_Closed_No_Decision_Opps__c}!=0,{!$Record.LVGO__Total_Closed_Lost_Opps__c}!=0))</filterFormula>
+        <object>LVGO__Account__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

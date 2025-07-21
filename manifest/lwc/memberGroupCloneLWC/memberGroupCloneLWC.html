@@ -1,0 +1,242 @@
+<template>
+    <lightning-card class="slds-p-left_xx-large slds-p-right_xx-large">
+        <lightning-card>
+            <div class="slds-p-left_xx-large slds-p-right_xx-large">
+                <lightning-record-edit-form data-id="mbrGrpForm"
+                                            record-id={recordId}
+                                            object-api-name="Mbr_Group__c">  
+
+                    <div style="background-color:#F0F8FF"> 
+                        <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small slds-p-top_xx-small slds-p-bottom_xx-small">Information</h2>
+                    </div>
+                    <div class="slds-grid slds-wrap">      
+                        <lightning-input-field data-id="Name__c" field-name="Name__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small "></lightning-input-field>
+                        <lightning-input-field data-id="Group_Number__c" field-name="Group_Number__c" value="" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Client_Account__c" field-name="Client_Account__c" value={accountId} variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Status__c" field-name="Status__c" value="PENDING" variant="label-stacked" onchange={changeActiveDate} class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Client_Account_Manager__c" field-name="Client_Account_Manager__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Active_Date__c" field-name="Active_Date__c" disabled value={actDate} variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Any_Special_Instructions__c" field-name="Any_Special_Instructions__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Termination_Date__c" field-name="Termination_Date__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Migration_Group_Number__c" field-name="Migration_Group_Number__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Profile_Name__c" field-name="Profile_Name__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Is_Valid_MSU_Group__c" field-name="Is_Valid_MSU_Group__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                    </div>
+                    </br>
+                    <div style="background-color:#F0F8FF"> 
+                        <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small slds-p-top_xx-small slds-p-bottom_xx-small">Livongo Chronic Care</h2>
+                    </div>
+                    <div class="slds-grid slds-wrap boarder-bottom">      
+                        <lightning-input-field data-id="LV_Client_Code__c" field-name="LV_Client_Code__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Livongo_Registration_code__c" field-name="Livongo_Registration_code__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="LV_Client_Member_Code__c" field-name="LV_Client_Member_Code__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Enable_Livongo_Combined_Eligibility__c" field-name="Enable_Livongo_Combined_Eligibility__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="MyStrength_Global_Access_Code__c" field-name="MyStrength_Global_Access_Code__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Enable_Chronic_Care_Referrals__c" field-name="Enable_Chronic_Care_Referrals__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                    </div>
+                    </br>
+                    <div style="background-color:#F0F8FF"> 
+                        <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small slds-p-top_xx-small slds-p-bottom_xx-small">Member Group Classification</h2>
+                    </div>
+                    <div class="slds-grid slds-wrap">      
+                        <lightning-input-field data-id="Client_Account_Location__c" field-name="Client_Account_Location__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Plan_Category__c" field-name="Plan_Category__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Admin_Line_of_Business__c" field-name="Admin_Line_of_Business__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <!--Below values will be deprecated later for Contract Path LOB functionality-->
+                        <!--<lightning-input-field data-id="Client_Account_Relationship__c" field-name="Client_Account_Relationship__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>-->
+                        <lightning-input-field data-id="Plan_Type__c" field-name="Plan_Type__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="F1BReporting_Category__c" field-name="F1BReporting_Category__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <!--Below values will be deprecated later for Contract Path LOB functionality-->
+                        <!--<lightning-input-field data-id="Line_Of_Business__c" field-name="Line_Of_Business__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>-->
+                    </div>
+                    </br>
+                    <div style="background-color:#F0F8FF"> 
+                        <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small slds-p-top_xx-small slds-p-bottom_xx-small">Eligibility and Billing Information</h2>
+                    </div>
+                    <div class="slds-grid slds-wrap">      
+                        <lightning-input-field data-id="Eligibility_Option__c" field-name="Eligibility_Option__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Elig_Dep_Inc_In_File__c" field-name="Elig_Dep_Inc_In_File__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Consult_Billing_Method__c" field-name="Consult_Billing_Method__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Elig_By_Third_Party__c" field-name="Elig_By_Third_Party__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Eligibility_File_Source__c" field-name="Eligibility_File_Source__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                    </div>
+                    </br>
+                    <div style="background-color:#F0F8FF"> 
+                        <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small slds-p-top_xx-small slds-p-bottom_xx-small">New Account Setup Form Information</h2>
+                    </div>
+                    <div class="slds-grid slds-wrap">      
+                        <lightning-input-field data-id="Other_Company_Names__c" field-name="Other_Company_Names__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field required data-id="OneAppAccess__c" field-name="OneAppAccess__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small validate"></lightning-input-field>
+                        <lightning-input-field data-id="Cross_Billing__c" field-name="Cross_Billing__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Consult_Included__c" field-name="Consult_Included__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Actual_Copay_May_Be_Less__c" field-name="Actual_Copay_May_Be_Less__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div> 
+                        <lightning-input-field data-id="Allow_Conversion_to_Retail__c" field-name="Allow_Conversion_to_Retail__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Purchase_Order_Required__c" field-name="Purchase_Order_Required__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Allow_Caregiver_Program__c" field-name="Allow_Caregiver_Program__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Purchase_Order_Number__c" field-name="Purchase_Order_Number__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Sexual_Health_Opt_Out__c" field-name="Sexual_Health_Opt_Out__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Card_Template__c" field-name="Card_Template__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Allow_Geo_Fencing__c" field-name="Allow_Geo_Fencing__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div>
+                        <lightning-input-field data-id="Teladoc_Select__c" field-name="Teladoc_Select__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div>
+                        <lightning-input-field data-id="Health_Assistant__c" field-name="Health_Assistant__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Hide_SOGI_Questions__c" field-name="Hide_SOGI_Questions__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>           
+                    </div>
+                    </br>
+                    <div style="background-color:#F0F8FF">
+                        <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small slds-p-top_xx-small slds-p-bottom_xx-small">Registration/Enrollment Marketing Engagement </h2>
+                    </div>
+                    <div class="slds-grid slds-wrap boarder-bottom">      
+                        <lightning-input-field data-id="Registration_Enrollment_Engagement_Tier__c" field-name="Registration_Enrollment_Engagement_Tier__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Registration_Enrollment_Journey__c" field-name="Registration_Enrollment_Journey__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Email__c" field-name="Email__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Ongoing_Registration_Enrollment_Journey__c" field-name="Ongoing_Registration_Enrollment_Journey__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Direct_mail__c" field-name="Direct_mail__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div>
+                        <lightning-input-field data-id="EM_Phone__c" field-name="EM_Phone__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div>
+                        <lightning-input-field data-id="Text_SMS__c" field-name="Text_SMS__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div>
+                    </div>
+                    </br>
+                    <div style="background-color:#F0F8FF">
+                        <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small slds-p-top_xx-small slds-p-bottom_xx-small">Marketing Preferences </h2>
+                    </div>
+                    <div class="slds-grid slds-wrap boarder-bottom">      
+                        <lightning-input-field data-id="EM_Language__c" field-name="EM_Language__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="MK_consultarea__c" field-name="MK_consultarea__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Health_Benefit_Language__c" field-name="Health_Benefit_Language__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Consult_Message__c" field-name="Consult_Message__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Testing_Permission__c" field-name="Testing_Permission__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Consult_Message_on_WK__c" field-name="Consult_Message_on_WK__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Modeling_Permission__c" field-name="Modeling_Permission__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Preferred_Eligibility_Language__c" field-name="Preferred_Eligibility_Language__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Claims_Data__c" field-name="Claims_Data__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Disclaimer_Teladoc__c" field-name="Disclaimer_Teladoc__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div>
+                        <lightning-input-field data-id="Disclaimer_Client__c" field-name="Disclaimer_Client__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div>
+                        <lightning-input-field data-id="Disclaimer_Custom__c" field-name="Disclaimer_Custom__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div>
+                    </div>
+                    </br>
+                    <div style="background-color:#F0F8FF"> 
+                        <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small slds-p-top_xx-small slds-p-bottom_xx-small">Primary 360 Marketing</h2>
+                    </div>
+                    <div class="slds-grid slds-wrap">    
+                        <lightning-input-field data-id="P360_Brand_Relationship__c" field-name="P360_Brand_Relationship__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Virtual_First_Health_Plan_Summary__c" field-name="Virtual_First_Health_Plan_Summary__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="P360_URL__c" field-name="P360_URL__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Virtual_First_Plan_Name__c" field-name="Virtual_First_Plan_Name__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Health_Plan_Boiler_Plate_Copy__c" field-name="Health_Plan_Boiler_Plate_Copy__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Virtual_First_Health_Plan__c" field-name="Virtual_First_Health_Plan__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div>
+                        <lightning-input-field data-id="Referral_Required__c" field-name="Referral_Required__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                    </div>
+                    </br>
+                    <div style="background-color:#F0F8FF"> 
+                        <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small slds-p-top_xx-small slds-p-bottom_xx-small">Welcome Kit Basics</h2>
+                    </div>
+                    <div class="slds-grid slds-wrap">      
+                        <lightning-input-field data-id="Service_Brand__c" field-name="Service_Brand__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="WK_Template__c" field-name="WK_Template__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Card_Name__c" field-name="Card_Name__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="WK_Card_Includes_Logo__c" field-name="WK_Card_Includes_Logo__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div>                           
+                        <lightning-input-field data-id="Co_Brand_with_Logo__c" field-name="Co_Brand_with_Logo__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="WK_Retroactive__c" field-name="WK_Retroactive__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Tri_Brand_with_Logo__c" field-name="Tri_Brand_with_Logo__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="WK_Retroactive_Date__c" field-name="WK_Retroactive_Date__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Shipping_Class__c" field-name="Shipping_Class__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="WK_Send_Card_Date__c" field-name="WK_Send_Card_Date__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>                
+                    </div>
+                    </br>
+                    <div style="background-color:#F0F8FF"> 
+                        <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small slds-p-top_xx-small slds-p-bottom_xx-small">Welcome Kit Advanced</h2>
+                    </div>
+                    <div class="slds-grid slds-wrap">      
+                        <lightning-input-field data-id="Company_Copy__c" field-name="Company_Copy__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="CMSCode__c" field-name="CMSCode__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Welcome_Letter_Consult_Message__c" field-name="Welcome_Letter_Consult_Message__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="MK_Welcomemessage__c" field-name="MK_Welcomemessage__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Communication_Mode__c" field-name="Communication_Mode__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="MK_Idcardfront1__c" field-name="MK_Idcardfront1__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div>
+                        <lightning-input-field data-id="MK_Idcardfront2__c" field-name="MK_Idcardfront2__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="WK_Includes_Insert__c" field-name="WK_Includes_Insert__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Insert_Document_Name__c" field-name="Insert_Document_Name__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="WK_Mail_to__c" field-name="WK_Mail_to__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Client_Form_Number__c" field-name="Client_Form_Number__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="WK_Mail_to_Address__c" field-name="WK_Mail_to_Address__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <div class="slds-size--1-of-2"></div>
+                    </div>
+                    </br>
+                    <div style="background-color:#F0F8FF"> 
+                        <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small slds-p-top_xx-small slds-p-bottom_xx-small">Logo</h2>
+                    </div>
+                    <div class="slds-grid slds-wrap">      
+                        <lightning-input-field data-id="logoTag" field-name="Logo_Tag_ID__c" variant="label-stacked" onchange={showLogoTagDelay} class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="logo1" field-name="Logo1_ID__c" value={Logo1_ID} variant="label-stacked" onchange={showLogo1Delay} class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <template if:true={renderLogoT}>
+                            <lightning-input-field data-id="Logo__c" field-name="Logo__c" value={Logo__c} variant="label-hidden" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        </template>
+                        <template if:false={renderLogoT}>
+                            <div class="slds-size--1-of-2"></div>                      
+                        </template>
+                        <template if:true={renderLogo1}>
+                            <lightning-input-field data-id="Logo1__c" field-name="Logo1__c" value={Logo1__c} variant="label-hidden" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        </template>
+                        <template if:false={renderLogo1}>
+                            <div class="slds-size--1-of-2"></div>                      
+                        </template>
+                        <lightning-input-field data-id="logo3" field-name="Logo3_ID__c" variant="label-stacked" onchange={showLogo3Delay} class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="logo4" field-name="Logo4_ID__c" variant="label-stacked" onchange={showLogo4Delay} class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <template if:true={renderLogo3}>
+                            <lightning-input-field data-id="Logo3__c" field-name="Logo3__c" value={Logo3__c} variant="label-hidden" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        </template>
+                        <template if:false={renderLogo3}>
+                            <div class="slds-size--1-of-2"></div>                      
+                        </template>
+                        <template if:true={renderLogo4}>
+                            <lightning-input-field data-id="Logo4__c" field-name="Logo4__c" value={Logo4__c} variant="label-hidden" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        </template>
+                        <template if:false={renderLogo4}>
+                            <div class="slds-size--1-of-2"></div>                      
+                        </template>
+                        <lightning-input-field data-id="logoA1" field-name="AltLogo1_ID__c" variant="label-stacked" onchange={showLogoA1Delay} class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="logoA2" field-name="AltLogo2_ID__c" variant="label-stacked" onchange={showLogoA2Delay} class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <template if:true={renderLogoA1}>
+                            <lightning-input-field data-id="AltLogo1__c" field-name="AltLogo1__c" value={AltLogo1__c} variant="label-hidden" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        </template>
+                        <template if:false={renderLogoA1}>
+                            <div  class="slds-size--1-of-2"></div>                      
+                        </template>
+                        <template if:true={renderLogoA2}>
+                            <lightning-input-field data-id="AltLogo2__c" field-name="AltLogo2__c" value={AltLogo2__c} variant="label-hidden" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        </template>
+                        <template if:false={renderLogoA2}>
+                            <div  class="slds-size--1-of-2"></div>                      
+                        </template>             
+                    </div>
+                    <div style="background-color:#F0F8FF"> 
+                        <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small slds-p-top_xx-small slds-p-bottom_xx-small">System Information</h2>
+                    </div>
+                    <div class="slds-grid slds-wrap">      
+                        <lightning-input-field data-id="AF_Included__c" field-name="AF_Included__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Est_MSU_Cnt__c" field-name="Est_MSU_Cnt__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="GUID__c" field-name="GUID__c" value="" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Source__c" field-name="Source__c" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                        <lightning-input-field data-id="Source_Id__c" field-name="Source_Id__c" value="" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                    </div>
+                    </br>
+                </lightning-record-edit-form>                
+            </div>
+            <div class="slds-docked-form-footer">
+                <lightning-button variant="Neutral" label="Close" onclick={close} class="slds-p-right_x-large"></lightning-button>    
+                <lightning-button variant="Brand" label="Save" onclick={saveMbrGrp}></lightning-button> 
+              </div>
+        </lightning-card>
+    </lightning-card>
+</template>

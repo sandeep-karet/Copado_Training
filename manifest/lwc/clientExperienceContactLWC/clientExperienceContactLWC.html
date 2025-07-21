@@ -1,0 +1,49 @@
+<template>
+    <lightning-card class="slds-grid slds-wrap slds-size--1-of-1">
+        <div class="slds-size--1-of-1 slds-grid slds-wrap slds-align_absolute-center slds-p-bottom_medium">
+            <button type="submit" class="slds-button slds-button_neutral yesBtn dynamicCSS slds-p-right_large" onclick={yesContact}><div >Existing Contact</div></button>   
+            <button type="submit" class="slds-button slds-button_neutral noBtn "  onclick={noContact}><div >Create New</div></button>
+        </div>
+        <template if:true={isContact}>
+            <lightning-record-edit-form data-id="ContactForm"
+                                        record-id={contactId}
+                                        onsubmit={saveExistingContact}
+                                        onsuccess={contactSuccess}
+                                        onerror={handleError}
+                                        object-api-name="Experience_Center_Contact__c">          
+                <div class="slds-size--1-of-1 slds-grid slds-wrap slds-align_absolute-center">
+                    <lightning-input-field field-name="Experience_Center_Briefing_Request__c" data-id="briefingId" disabled value={recordId} variant="label-stacked" class="slds-size--1-of-1 slds-p-horizontal_x-small "></lightning-input-field>
+                    <lightning-input-field field-name="Attendee__c" variant="label-stacked" class="slds-size--1-of-1 slds-p-horizontal_x-small"></lightning-input-field>
+                    <lightning-input-field field-name="Contact__c" variant="label-stacked" class="slds-size--1-of-1 slds-p-horizontal_x-small width"></lightning-input-field>
+                </div>
+            </lightning-record-edit-form>
+            <div class="slds-wrap slds-p-top_large slds-align_absolute-center">        
+                <lightning-button variant="Neutral" label="Cancel" onclick={close} class="slds-p-right_small"></lightning-button>   
+                <lightning-button variant="Neutral" label="Save" onclick={saveExistingContact} class="slds-p-right_small"></lightning-button> 
+                <lightning-button variant="Neutral" label="Save and New" onclick={saveAndNewExisting}></lightning-button>
+            </div>      
+        </template>   
+        <template if:true={isInteral}>
+            <lightning-record-edit-form data-id="newContact"
+                                        record-id={newConId}
+                                        onsubmit={saveNewTdContact}
+                                        onsuccess={newConSuccess}
+                                        onerror={handleConError}
+                                        object-api-name="Contact">          
+                <div class="slds-size--1-of-1 slds-grid slds-wrap slds-align_absolute-center">
+                    <lightning-input type="checkbox" label="Attended Event" class="slds-size--1-of-1 slds-p-horizontal_x-small slds-p-bottom_xx-small"></lightning-input>
+                    <lightning-input-field field-name="AccountId" name="accountId" variant="label-stacked" class="slds-size--1-of-1 slds-p-horizontal_x-small "></lightning-input-field>
+                    <lightning-input-field field-name="FirstName" required variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small "></lightning-input-field>
+                    <lightning-input-field field-name="LastName" required variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                    <lightning-input-field field-name="Email" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small width"></lightning-input-field>
+                    <lightning-input-field field-name="Phone" variant="label-stacked" class="slds-size--1-of-2 slds-p-horizontal_x-small width"></lightning-input-field>
+                </div>
+            </lightning-record-edit-form>
+            <div class="slds-wrap slds-p-top_large slds-align_absolute-center">        
+                <lightning-button variant="Neutral" label="Cancel" onclick={close} class="slds-p-right_small"></lightning-button>   
+                <lightning-button variant="Neutral" label="Save" onclick={saveNewTdContact} class="slds-p-right_small"></lightning-button>
+                <lightning-button variant="Neutral" label="Save and New" onclick={saveAndNew}></lightning-button>
+            </div>
+        </template>     
+    </lightning-card>
+</template>

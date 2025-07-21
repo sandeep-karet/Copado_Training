@@ -1,0 +1,4041 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>memberGroupWrapper</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>memberGroupWrapper</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>MemberGroup</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>New_Member_Group_Lightning_page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AF_Included__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for NASF</description>
+        <inlineHelpText>Used for NASF</inlineHelpText>
+        <label>AF Included</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ASO_TPA_Account_Name__c</fullName>
+        <description>This field is updated by a process builder when a member group role type payer is added to this group. This field is used for reporting purposes only.</description>
+        <externalId>false</externalId>
+        <label>ASO/TPA Account Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Active_Date__c</fullName>
+        <description>Date Group was built in Admin</description>
+        <inlineHelpText>Date Group was built in Admin</inlineHelpText>
+        <label>Active Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Copay_May_Be_Less__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for RTE clients where copay amount is determined by their deductible or individual file, and may be less than the listed consult fee.  This value at Group level will determine if PSF records will have this box checked or not.</description>
+        <inlineHelpText>Used for RTE clients where copay amount is determined by their deductible or individual file, and may be less than the listed consult fee</inlineHelpText>
+        <label>Actual Copay May Be Less</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Admin_Line_of_Business__c</fullName>
+        <label>Admin Line of Business</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Children&apos;s Health Insurance Program (CHIP)</fullName>
+                    <default>false</default>
+                    <label>Children&apos;s Health Insurance Program (CHIP)</label>
+                </value>
+                <value>
+                    <fullName>Commercial ASO</fullName>
+                    <default>false</default>
+                    <label>Commercial ASO</label>
+                </value>
+                <value>
+                    <fullName>Commercial FI</fullName>
+                    <default>false</default>
+                    <label>Commercial FI</label>
+                </value>
+                <value>
+                    <fullName>Dual Eligible Special Needs Plans (DSNP)</fullName>
+                    <default>false</default>
+                    <label>Dual Eligible Special Needs Plans (DSNP)</label>
+                </value>
+                <value>
+                    <fullName>LOBTYPE_NOTKNOWN</fullName>
+                    <default>false</default>
+                    <label>LOBTYPE_NOTKNOWN</label>
+                </value>
+                <value>
+                    <fullName>Marketplace</fullName>
+                    <default>false</default>
+                    <label>Marketplace</label>
+                </value>
+                <value>
+                    <fullName>Medicaid FFS</fullName>
+                    <default>false</default>
+                    <label>Medicaid FFS</label>
+                </value>
+                <value>
+                    <fullName>Medicaid Managed Care</fullName>
+                    <default>false</default>
+                    <label>Medicaid Managed Care</label>
+                </value>
+                <value>
+                    <fullName>Medicaid Supplement</fullName>
+                    <default>false</default>
+                    <label>Medicaid Supplement</label>
+                </value>
+                <value>
+                    <fullName>Medicare Advantage</fullName>
+                    <default>false</default>
+                    <label>Medicare Advantage</label>
+                </value>
+                <value>
+                    <fullName>Medicare Advantage Part D (MAPD)</fullName>
+                    <default>false</default>
+                    <label>Medicare Advantage Part D (MAPD)</label>
+                </value>
+                <value>
+                    <fullName>Medicare FFS</fullName>
+                    <default>false</default>
+                    <label>Medicare FFS</label>
+                </value>
+                <value>
+                    <fullName>Medicare-Medicaid Plan (MMP)</fullName>
+                    <default>false</default>
+                    <label>Medicare-Medicaid Plan (MMP)</label>
+                </value>
+                <value>
+                    <fullName>Temporary Assistance for Needy Families (TANF)</fullName>
+                    <default>false</default>
+                    <label>Temporary Assistance for Needy Families (TANF)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Allow_Caregiver_Program__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Option to allow group members the caregiver program functionality</description>
+        <inlineHelpText>Option to allow group members the caregiver program functionality</inlineHelpText>
+        <label>Allow Caregiver Program</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Allow_Conversion_to_Retail__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Option to allow group members the option to convert to Retail</description>
+        <inlineHelpText>Option to allow group members the option to convert to Retail</inlineHelpText>
+        <label>Allow Conversion to Retail</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Allow_Geo_Fencing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Option to allow Geo-Fencing</description>
+        <inlineHelpText>Option to allow Geo-Fencing</inlineHelpText>
+        <label>Allow Geo-Fencing</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Allow_Minor_Registration__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Allow Minor Registration</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AltLogo1_ID__c</fullName>
+        <description>Enter the logo document name for logo to appear.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the logo document name for logo to appear.</inlineHelpText>
+        <label>AltLogo1 ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AltLogo1__c</fullName>
+        <label>AltLogo1</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AltLogo2_ID__c</fullName>
+        <description>Enter the logo document name for logo to appear.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the logo document name for logo to appear.</inlineHelpText>
+        <label>AltLogo2 ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AltLogo2__c</fullName>
+        <label>AltLogo2</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Any_Special_Instructions__c</fullName>
+        <description>Special instructions or information for fulfillment</description>
+        <inlineHelpText>Special instructions or information for fulfillment</inlineHelpText>
+        <label>Any Special Instructions</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Approved_Marketing_Start_Date__c</fullName>
+        <label>Approved Marketing Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMSCode__c</fullName>
+        <description>Used if a CMS Code is required on Welcome Kit</description>
+        <inlineHelpText>Used if a CMS Code is required on Welcome Kit</inlineHelpText>
+        <label>CMSCode</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>0070_WCM_66496E_C_Internal_Approved_09132022_204-22-14</fullName>
+                    <default>false</default>
+                    <label>0070_WCM_66496E_C_Internal_Approved_09132022_204-22-14</label>
+                </value>
+                <value>
+                    <fullName>0820.MA.M.LT</fullName>
+                    <default>false</default>
+                    <label>0820.MA.M.LT</label>
+                </value>
+                <value>
+                    <fullName>17-677-057 Rev 00 10/17 MH ACO 02142018</fullName>
+                    <default>false</default>
+                    <label>17-677-057 Rev 00 10/17 MH ACO 02142018</label>
+                </value>
+                <value>
+                    <fullName>19-801-037 Rev. 00 9/19 MH ACO 02142018</fullName>
+                    <default>false</default>
+                    <label>19-801-037 Rev. 00 9/19 MH ACO 02142018</label>
+                </value>
+                <value>
+                    <fullName>19-802-027 Rev. 00 9/19 MH ACO 02142018</fullName>
+                    <default>false</default>
+                    <label>19-802-027 Rev. 00 9/19 MH ACO 02142018</label>
+                </value>
+                <value>
+                    <fullName>19-803-024 Rev. 00 9/19 MH ACO 02142018</fullName>
+                    <default>false</default>
+                    <label>19-803-024 Rev. 00 9/19 MH ACO 02142018</label>
+                </value>
+                <value>
+                    <fullName>C2105-345L004-X9999</fullName>
+                    <default>false</default>
+                    <label>C2105-345L004-X9999</label>
+                </value>
+                <value>
+                    <fullName>CC-446-14</fullName>
+                    <default>false</default>
+                    <label>CC-446-14</label>
+                </value>
+                <value>
+                    <fullName>First Issue 6/1/15</fullName>
+                    <default>false</default>
+                    <label>First Issue 6/1/15</label>
+                </value>
+                <value>
+                    <fullName>GA-MED-M-1539717</fullName>
+                    <default>false</default>
+                    <label>GA-MED-M-1539717</label>
+                </value>
+                <value>
+                    <fullName>H0562_19_11462EGLTR_BIL_C</fullName>
+                    <default>false</default>
+                    <label>H0562_19_11462EGLTR_BIL_C</label>
+                </value>
+                <value>
+                    <fullName>H0562_19_11955EGLTR_C</fullName>
+                    <default>false</default>
+                    <label>H0562_19_11955EGLTR_C</label>
+                </value>
+                <value>
+                    <fullName>H0562_19_11955EGLTR_C_04252019</fullName>
+                    <default>false</default>
+                    <label>H0562_19_11955EGLTR_C_04252019</label>
+                </value>
+                <value>
+                    <fullName>H0913_WCM_87884E_C_Internal_Approved_09132022_204-22-14</fullName>
+                    <default>false</default>
+                    <label>H0913_WCM_87884E_C_Internal_Approved_09132022_204-22-14</label>
+                </value>
+                <value>
+                    <fullName>H0913_WCM_87884E_C INTERNAL APPROVED_09212021</fullName>
+                    <default>false</default>
+                    <label>H0913_WCM_87884E_C INTERNAL APPROVED_09212021</label>
+                </value>
+                <value>
+                    <fullName>H2134_WCM_92750E_C Internal Approved10102022</fullName>
+                    <default>false</default>
+                    <label>H2134_WCM_92750E_C Internal Approved10102022</label>
+                </value>
+                <value>
+                    <fullName>H2174_19_10434CARD_C_12142018</fullName>
+                    <default>false</default>
+                    <label>H2174_19_10434CARD_C_12142018</label>
+                </value>
+                <value>
+                    <fullName>H2470_W_2017_ 51 {HPMS status MMDDYYYY} (16-685-217 Rev. 00 12/16)</fullName>
+                    <default>false</default>
+                    <label>H2470_W_2017_ 51 {HPMS status MMDDYYYY} (16-685-217 Rev. 00 12/16)</label>
+                </value>
+                <value>
+                    <fullName>H2491_WCM_67338E_C_Internal_Approved_01152021</fullName>
+                    <default>false</default>
+                    <label>H2491_WCM_67338E_C Internal Approved 01152021</label>
+                </value>
+                <value>
+                    <fullName>H2915_WCM_94336E_C Internal Approved10112022</fullName>
+                    <default>false</default>
+                    <label>H2915_WCM_94336E_C Internal Approved10112022</label>
+                </value>
+                <value>
+                    <fullName>H2986_PD20501_C_NS</fullName>
+                    <default>false</default>
+                    <label>H2986_PD20501_C_NS</label>
+                </value>
+                <value>
+                    <fullName>H3237_21_23881LTR_BIL</fullName>
+                    <default>false</default>
+                    <label>H3237_21_23881LTR_BIL</label>
+                </value>
+                <value>
+                    <fullName>H3259_23TDWlcmLtr_C (02/23)</fullName>
+                    <default>false</default>
+                    <label>H3259_23TDWlcmLtr_C (02/23)</label>
+                </value>
+                <value>
+                    <fullName>H3660_19_630NS_C 12192018</fullName>
+                    <default>false</default>
+                    <label>H3660_19_630NS_C 12192018</label>
+                </value>
+                <value>
+                    <fullName>H3660_20_770NS_C 01102020</fullName>
+                    <default>false</default>
+                    <label>H3660_20_770NS_C 01102020</label>
+                </value>
+                <value>
+                    <fullName>H3660_SC1134_C 07232024</fullName>
+                    <default>false</default>
+                    <label>H3660_SC1134_C 07232024</label>
+                </value>
+                <value>
+                    <fullName>H4506_WCM_67339E_C_Internal_Approved_01152021</fullName>
+                    <default>false</default>
+                    <label>H4506_WCM_67339E_C Internal Approved 01152021</label>
+                </value>
+                <value>
+                    <fullName>H5628_NSR_18_MA_659_UTHEDTeladLtr 12/14/2017</fullName>
+                    <default>false</default>
+                    <label>H5628_NSR_18_MA_659_UTHEDTeladLtr 12/14/2017</label>
+                </value>
+                <value>
+                    <fullName>H5859_TEL0001_C</fullName>
+                    <default>false</default>
+                    <label>H5859_TEL0001_C</label>
+                </value>
+                <value>
+                    <fullName>H5859_TEL0002_C</fullName>
+                    <default>false</default>
+                    <label>H5859_TEL0002_C</label>
+                </value>
+                <value>
+                    <fullName>H7607_23_CM1466_C 12072022</fullName>
+                    <default>false</default>
+                    <label>H7607_23_CM1466_C 12072022</label>
+                </value>
+                <value>
+                    <fullName>H7917_23TLDCFlr_C (03/23)</fullName>
+                    <default>false</default>
+                    <label>H7917_23TLDCFlr_C (03/23)</label>
+                </value>
+                <value>
+                    <fullName>H8225_20_17119LTR_C</fullName>
+                    <default>false</default>
+                    <label>H8225_20_17119LTR_C</label>
+                </value>
+                <value>
+                    <fullName>H8452_OH-MYC-M-1272724</fullName>
+                    <default>false</default>
+                    <label>H8452_OH-MYC-M-1272724</label>
+                </value>
+                <value>
+                    <fullName>H8578_2016_372</fullName>
+                    <default>false</default>
+                    <label>H8578_2016_372</label>
+                </value>
+                <value>
+                    <fullName>H8578_2016_530v2</fullName>
+                    <default>false</default>
+                    <label>H8578_2016_530v2</label>
+                </value>
+                <value>
+                    <fullName>H8578_2017_604 Accepted</fullName>
+                    <default>false</default>
+                    <label>H8578_2017_604 Accepted</label>
+                </value>
+                <value>
+                    <fullName>H8928_220697_C Approved 01302020</fullName>
+                    <default>false</default>
+                    <label>H8928_220697_C Approved 01302020</label>
+                </value>
+                <value>
+                    <fullName>H8947.2025.03.0098_M</fullName>
+                    <default>false</default>
+                    <label>H8947.2025.03.0098_M</label>
+                </value>
+                <value>
+                    <fullName>H9001_200431_C</fullName>
+                    <default>false</default>
+                    <label>H9001_200431_C</label>
+                </value>
+                <value>
+                    <fullName>H9001_200500_C Approved 01302020</fullName>
+                    <default>false</default>
+                    <label>H9001_200500_C Approved 01302020</label>
+                </value>
+                <value>
+                    <fullName>H9001_210235_C</fullName>
+                    <default>false</default>
+                    <label>H9001_210235_C</label>
+                </value>
+                <value>
+                    <fullName>H9001_F_2017_ 151 {HPMS status MMDDYYYY} (16-686-225 Rev. 00 12/16)</fullName>
+                    <default>false</default>
+                    <label>H9001_F_2017_ 151 {HPMS status MMDDYYYY} (16-686-225 Rev. 00 12/16)</label>
+                </value>
+                <value>
+                    <fullName>H9001_F_2018_61 Accepted 03242018</fullName>
+                    <default>false</default>
+                    <label>H9001_F_2018_61 Accepted 03242018</label>
+                </value>
+                <value>
+                    <fullName>H9001_N_2017_ 92 {HPMS status MMDDYYYY} (16-679-245 Rev. 00 12/16)</fullName>
+                    <default>false</default>
+                    <label>H9001_N_2017_ 92 {HPMS status MMDDYYYY} (16-679-245 Rev. 00 12/16)</label>
+                </value>
+                <value>
+                    <fullName>H9001_N_2018_45 Accepted 03312018</fullName>
+                    <default>false</default>
+                    <label>H9001_N_2018_45 Accepted 03312018</label>
+                </value>
+                <value>
+                    <fullName>H9207_HPM-624-15 Accepted 5/2015</fullName>
+                    <default>false</default>
+                    <label>H9207_HPM-624-15 Accepted 5/2015</label>
+                </value>
+                <value>
+                    <fullName>IL Meridian_TeladocWelcomeLtr</fullName>
+                    <default>false</default>
+                    <label>IL Meridian_TeladocWelcomeLtr</label>
+                </value>
+                <value>
+                    <fullName>MCA_ZZ321 Approved 11/25/2019</fullName>
+                    <default>false</default>
+                    <label>MCA_ZZ321 Approved 11/25/2019</label>
+                </value>
+                <value>
+                    <fullName>MCDR EDI 11955</fullName>
+                    <default>false</default>
+                    <label>MCDR EDI 11955</label>
+                </value>
+                <value>
+                    <fullName>MCDR to provide material ID</fullName>
+                    <default>false</default>
+                    <label>MCDR to provide material ID</label>
+                </value>
+                <value>
+                    <fullName>MHO-4270</fullName>
+                    <default>false</default>
+                    <label>MHO-4270</label>
+                </value>
+                <value>
+                    <fullName>Multi-EXC-M-1272723</fullName>
+                    <default>false</default>
+                    <label>Multi-EXC-M-1272723</label>
+                </value>
+                <value>
+                    <fullName>Multi-EXC-M-1272725</fullName>
+                    <default>false</default>
+                    <label>Multi-EXC-M-1272725</label>
+                </value>
+                <value>
+                    <fullName>Multi-EXC-M-1272726</fullName>
+                    <default>false</default>
+                    <label>Multi-EXC-M-1272726</label>
+                </value>
+                <value>
+                    <fullName>Multi-EXC-M-1272727</fullName>
+                    <default>false</default>
+                    <label>Multi-EXC-M-1272727</label>
+                </value>
+                <value>
+                    <fullName>Multi-EXC-M-1272728</fullName>
+                    <default>false</default>
+                    <label>Multi-EXC-M-1272728</label>
+                </value>
+                <value>
+                    <fullName>Multi-EXC-M-1272729</fullName>
+                    <default>false</default>
+                    <label>Multi-EXC-M-1272729</label>
+                </value>
+                <value>
+                    <fullName>OH-MED-M-12724</fullName>
+                    <default>false</default>
+                    <label>OH-MED-M-12724</label>
+                </value>
+                <value>
+                    <fullName>SHP_20194984A</fullName>
+                    <default>false</default>
+                    <label>SHP_20194984A</label>
+                </value>
+                <value>
+                    <fullName>SHP_20194997E</fullName>
+                    <default>false</default>
+                    <label>SHP_20194997E</label>
+                </value>
+                <value>
+                    <fullName>SHP_20195490</fullName>
+                    <default>false</default>
+                    <label>SHP_20195490</label>
+                </value>
+                <value>
+                    <fullName>XXXXX-XXXXX</fullName>
+                    <default>false</default>
+                    <label>XXXXX-XXXXX</label>
+                </value>
+                <value>
+                    <fullName>Y0020_19_10429CARD_C_11212018</fullName>
+                    <default>false</default>
+                    <label>Y0020_19_10429CARD_C_11212018</label>
+                </value>
+                <value>
+                    <fullName>Y0020_19_10435CARD_C_12192018</fullName>
+                    <default>false</default>
+                    <label>Y0020_19_10435CARD_C_12192018</label>
+                </value>
+                <value>
+                    <fullName>Y0020_20_16472LTR_C_12102019</fullName>
+                    <default>false</default>
+                    <label>Y0020_20_16472LTR_C_12102019</label>
+                </value>
+                <value>
+                    <fullName>Y0020_20_17119LTR_C_02062020</fullName>
+                    <default>false</default>
+                    <label>Y0020_20_17119LTR_C_02062020</label>
+                </value>
+                <value>
+                    <fullName>Y0020_20_18291LTR_C_05262020</fullName>
+                    <default>false</default>
+                    <label>Y0020_20_18291LTR_C_05262020</label>
+                </value>
+                <value>
+                    <fullName>Y0020_20_21765LTR_C_09182020</fullName>
+                    <default>false</default>
+                    <label>Y0020_20_21765LTR_C_09182020</label>
+                </value>
+                <value>
+                    <fullName>Y0020_WCM_74953E_C INTERNAL APPROVED_12162021</fullName>
+                    <default>false</default>
+                    <label>Y0020_WCM_74953E_C INTERNAL APPROVED_12162021</label>
+                </value>
+                <value>
+                    <fullName>Y0020_WCM_94746E_C Internal Approved 03042022</fullName>
+                    <default>false</default>
+                    <label>Y0020_WCM_94746E_C Internal Approved 03042022</label>
+                </value>
+                <value>
+                    <fullName>Y0020_ WCM_ C  INTERNAL APPROVED MMDDYYYY^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^NA2WCMLTR74953E</fullName>
+                    <default>false</default>
+                    <label>Y0020_ WCM_ C  INTERNAL APPROVED MMDDYYYY^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^NA2WCMLTR74953E</label>
+                </value>
+                <value>
+                    <fullName>Y0026_200579_C</fullName>
+                    <default>false</default>
+                    <label>Y0026_200579_C</label>
+                </value>
+                <value>
+                    <fullName>Y0026_201654</fullName>
+                    <default>false</default>
+                    <label>Y0026_201654</label>
+                </value>
+                <value>
+                    <fullName>Y0026_201655</fullName>
+                    <default>false</default>
+                    <label>Y0026_201655</label>
+                </value>
+                <value>
+                    <fullName>Y0026_205759_C</fullName>
+                    <default>false</default>
+                    <label>Y0026_205759_C</label>
+                </value>
+                <value>
+                    <fullName>Y0038_21_198_C</fullName>
+                    <default>false</default>
+                    <label>Y0038_21_198_C</label>
+                </value>
+                <value>
+                    <fullName>Y0039_2019_TeladocWL_C</fullName>
+                    <default>false</default>
+                    <label>Y0039_2019_TeladocWL_C</label>
+                </value>
+                <value>
+                    <fullName>Y0050_NSR_18_MA_659_LRHEDTeladLtr 12/14/2017</fullName>
+                    <default>false</default>
+                    <label>Y0050_NSR_18_MA_659_LRHEDTeladLtr 12/14/2017</label>
+                </value>
+                <value>
+                    <fullName>Y0067_MM_TELADOC1_1214 CMS Accepted 12/10/2014</fullName>
+                    <default>false</default>
+                    <label>Y0067_MM_TELADOC1_1214 CMS Accepted 12/10/2014</label>
+                </value>
+                <value>
+                    <fullName>Y0070_WCM_66496E_C_Internal_Approved_09132022_204-22-14</fullName>
+                    <default>false</default>
+                    <label>Y0070_WCM_66496E_C_Internal_Approved_09132022_204-22-14</label>
+                </value>
+                <value>
+                    <fullName>Y0070_WCM_66496E_C_Internal_Approved_01152021</fullName>
+                    <default>false</default>
+                    <label>Y0070_WCM_66496E_C Internal Approved 01152021</label>
+                </value>
+                <value>
+                    <fullName>Y0083_24ABM_TDH_WELCOME_LTR_C</fullName>
+                    <default>false</default>
+                    <label>Y0083_24ABM_TDH_WELCOME_LTR_C</label>
+                </value>
+                <value>
+                    <fullName>Y0084_MBR_TDOC_2023_C</fullName>
+                    <default>false</default>
+                    <label>Y0084_MBR_TDOC_2023_C</label>
+                </value>
+                <value>
+                    <fullName>Y0084_MBR_TDOC_2024_C</fullName>
+                    <default>false</default>
+                    <label>Y0084_MBR_TDOC_2024_C</label>
+                </value>
+                <value>
+                    <fullName>Y0119_Multi-DSNP-M-1539743_C</fullName>
+                    <default>false</default>
+                    <label>Y0119_Multi-DSNP-M-1539743_C</label>
+                </value>
+                <value>
+                    <fullName>Y0119_OH-MA-M-1539740_C</fullName>
+                    <default>false</default>
+                    <label>Y0119_OH-MA-M-1539740_C</label>
+                </value>
+                <value>
+                    <fullName>Y0129_20MX059_C</fullName>
+                    <default>false</default>
+                    <label>Y0129_20MX059_C</label>
+                </value>
+                <value>
+                    <fullName>Y0158_2023_250_M</fullName>
+                    <default>false</default>
+                    <label>Y0158_2023_250_M</label>
+                </value>
+                <value>
+                    <fullName>Y0158_2024_257_M</fullName>
+                    <default>false</default>
+                    <label>Y0158_2024_257_M</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Card_Name__c</fullName>
+        <description>Client name as they want it printed on the Welcome Kit cards</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Client name as they want it printed on the Welcome Kit cards. 43 spaces maximum.
+12/31/14- increased to 65 characters.</inlineHelpText>
+        <label>WK - Client Name for Card</label>
+        <length>65</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Card_Template__c</fullName>
+        <description>This populates the Send Card checkbox field on the NASF.  If Card Template value = No Card or Email or NULL then Send Card is NOT checked.  If Card Template value = Logo Card or STND then the box is Send Card box is checked on the NASF.</description>
+        <label>Card Template</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Logo Card</fullName>
+                    <default>false</default>
+                    <label>Logo Card</label>
+                </value>
+                <value>
+                    <fullName>STND Card</fullName>
+                    <default>false</default>
+                    <label>STND Card</label>
+                </value>
+                <value>
+                    <fullName>No Card</fullName>
+                    <default>false</default>
+                    <label>No Card</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Claims_Data__c</fullName>
+        <inlineHelpText>No - Client does not provide claims data for marketing use
+Yes - Expert Medical only - Client provides claims data for use on Expert Medical marketing only (VCO)
+Yes - All - Client provides claims data for use across all product marketing categories available</inlineHelpText>
+        <label>Claims Data</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes - Expert Medical only</fullName>
+                    <default>false</default>
+                    <label>Yes - Expert Medical only</label>
+                </value>
+                <value>
+                    <fullName>Yes - All</fullName>
+                    <default>false</default>
+                    <label>Yes - All</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_Account_Location__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Client Account Location associated with the Group</description>
+        <inlineHelpText>This links the member group to a specific location on the client account.</inlineHelpText>
+        <label>Client Account Location</label>
+        <lookupFilter>
+            <active>false</active>
+            <errorMessage>Location not found on Client Account</errorMessage>
+            <filterItems>
+                <field>Location__c.Location_HQ__r.Id</field>
+                <operation>equals</operation>
+                <valueField>$Source.Client_Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Location__c</referenceTo>
+        <relationshipLabel>Member Groups</relationshipLabel>
+        <relationshipName>Member_Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Client_Account_Manager__c</fullName>
+        <description>Formula field to read Client Account Manager</description>
+        <externalId>false</externalId>
+        <formula>Client_Account__r.Account_Manager__r.FirstName + &quot; &quot; + Client_Account__r.Account_Manager__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Client Manager of the account the group is created</inlineHelpText>
+        <label>Client Account Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Account_Relationship__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Connects the member group to an account relationship object record.</description>
+        <inlineHelpText>This links the member group to a specific relationship on the client account.  For example, group can be linked to a specific health plan relationship to show it is under medicaid, commercial, etc.</inlineHelpText>
+        <label>*Deprecated* Client Account Relationship</label>
+        <referenceTo>Acct_Rel__c</referenceTo>
+        <relationshipLabel>Member Groups</relationshipLabel>
+        <relationshipName>Member_Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Client_Account__c</fullName>
+        <description>Account that the Group is created</description>
+        <inlineHelpText>Account that the Group is created</inlineHelpText>
+        <label>Client Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Member Groups</relationshipLabel>
+        <relationshipName>Member_Groups</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Client_Form_Number__c</fullName>
+        <description>Allows clients to enter an internal reference number to be shown on welcome letters.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Client internal reference number to appear on Welcome Letters</inlineHelpText>
+        <label>Client Form Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Co_Brand_with_Logo__c</fullName>
+        <description>Identifies this group should have 2 logo brands on the WK</description>
+        <inlineHelpText>Identifies this group should have 2 logo brands on the WK</inlineHelpText>
+        <label>Co-Brand with Logo</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Communication_Mode__c</fullName>
+        <description>Determines if specific Comm. Mode verbiage needs to be used on Welcome Letter</description>
+        <inlineHelpText>Determines if specific Comm. Mode verbiage needs to be used on Welcome Letter</inlineHelpText>
+        <label>Communication Mode</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Default</fullName>
+                    <default>true</default>
+                    <label>Default</label>
+                </value>
+                <value>
+                    <fullName>By phone</fullName>
+                    <default>false</default>
+                    <label>By phone</label>
+                </value>
+                <value>
+                    <fullName>By video</fullName>
+                    <default>false</default>
+                    <label>By video</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Company_Copy__c</fullName>
+        <description>Small line of text above disclaimer (255 character length)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Small line of text above disclaimer (255 character length)</inlineHelpText>
+        <label>Company Copy</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Consult_Billing_Method__c</fullName>
+        <description>Select &quot;Claims&quot; if group will pay via claims.  Select &quot;Invoice&quot; if group will pay via invoice.  Select &quot;Invoice + Claims&quot; if group will pay via invoice but want claims for informational purposes.</description>
+        <inlineHelpText>Select &quot;Claims&quot; if group will pay via claims.  Select &quot;Invoice&quot; if group will pay via invoice.  Select &quot;Invoice + Claims&quot; if group will pay via invoice but want claims for informational purposes.</inlineHelpText>
+        <label>Consult Billing Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Invoice</fullName>
+                    <default>false</default>
+                    <label>Invoice</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+                <value>
+                    <fullName>Claims</fullName>
+                    <default>false</default>
+                    <label>Claims</label>
+                </value>
+                <value>
+                    <fullName>Informational Claims</fullName>
+                    <default>false</default>
+                    <label>Informational Claims</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Consult_Included__c</fullName>
+        <description>If Group has a product that is consults included</description>
+        <inlineHelpText>If Group has a product that is consults included</inlineHelpText>
+        <label>Consult Included</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Consult_Message__c</fullName>
+        <externalId>false</externalId>
+        <label>Consult Message</label>
+        <length>160</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Consult_Message_on_WK__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines if the consult message should be present on Welcome Letters</description>
+        <inlineHelpText>Determines if the consult message should be present on Welcome Letters</inlineHelpText>
+        <label>Consult Message on WK?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cross_Billing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Cross Billing</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Direct_mail__c</fullName>
+        <label>Direct mail</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>true</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Not Provided</fullName>
+                    <default>false</default>
+                    <label>Not Provided</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Disable_Flow__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Disable Flow</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disclaimer_Client__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The unique client disclaimer that contains the STND Teladoc disclaimer, along with client specific messaging embeded within or surrounding Teladocs disclaimer.</description>
+        <inlineHelpText>This is the standard-format client, unique to the client, disclaimer that contains the STND Teladoc disclaimer, along with client specific messaging embedded within or surrounding Teladoc&apos;s disclaimer.</inlineHelpText>
+        <label>Disclaimer - Client</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Disclaimers__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Disclaimer</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Disclaimers__c</referenceTo>
+        <relationshipLabel>Disclaimers - Client</relationshipLabel>
+        <relationshipName>Disclaimers_Client</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Disclaimer_Custom__c</fullName>
+        <description>This is purely for the marketing site only and should only be used for legal client specific disclaimer. This will ride above any other disclaimers and below the companycopy field and has a max character limit of 1400.</description>
+        <inlineHelpText>Text field accommodating client legal disclaimers. Displayed on printed/digital marketing material. Note that non Latin-based characters are NOT supported. Disclaimers containing these characters must be handled by an inserted disclaimer sheet. Max 1400</inlineHelpText>
+        <label>Disclaimer - Custom</label>
+        <length>1400</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Disclaimer_Teladoc__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the disclaimer that flows into the marketing site and the welcome kit</description>
+        <inlineHelpText>This is the disclaimer that flows into the marketing site and the welcome kit</inlineHelpText>
+        <label>Disclaimer - Teladoc</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Disclaimers__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Disclaimer</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Disclaimers__c</referenceTo>
+        <relationshipLabel>Disclaimers - Teladoc</relationshipLabel>
+        <relationshipName>Disclaimers_Teladoc</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Domestic_Country__c</fullName>
+        <description>This field will be used with the Global Care product to tell Admin when a member calls in if they get GCOD service based on the country they are calling from.</description>
+        <label>Domestic Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>USA</fullName>
+                    <default>false</default>
+                    <label>USA</label>
+                </value>
+                <value>
+                    <fullName>Canada</fullName>
+                    <default>false</default>
+                    <label>Canada</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EM_Language__c</fullName>
+        <inlineHelpText>ENGLISH = Commercial Default, all campaigns to members are sent in English only
+Bilingual (Spanish) = Care/Caid Default, all campaigns to members are sent in bilingual English-Spanish
+Bilingual (French) = Canada Default, all campaigns to members are sent in bilingual English-French</inlineHelpText>
+        <label>Language</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>English only</fullName>
+                    <default>true</default>
+                    <label>English only</label>
+                </value>
+                <value>
+                    <fullName>English-Spanish bilingual</fullName>
+                    <default>false</default>
+                    <label>English-Spanish bilingual</label>
+                </value>
+                <value>
+                    <fullName>English-French bilingual (Canada only)</fullName>
+                    <default>false</default>
+                    <label>English-French bilingual (Canada only)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EM_Phone__c</fullName>
+        <inlineHelpText>Indicates client permission to outreach members assuming member consent to telephone marketing is provided</inlineHelpText>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Not Provided</fullName>
+                    <default>false</default>
+                    <label>Not Provided</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Elig_By_Third_Party__c</fullName>
+        <description>If Eligibility is provided by a Third Party</description>
+        <inlineHelpText>If Eligibility is provided by a Third Party</inlineHelpText>
+        <label>Eligibility By Third Party</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Elig_Dep_Inc_In_File__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Will eligibility dependents be included in the stage file?</description>
+        <inlineHelpText>Will eligibility dependents be included in the stage file?</inlineHelpText>
+        <label>Eligibility Dependents Included In File</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Eligibility_File_Source__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Account that will be sending the eligibility file</description>
+        <inlineHelpText>Account that will be sending the eligibility file</inlineHelpText>
+        <label>Third-Party Eligibility File Source</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Member Groups (Third-Party Eligibility File Source)</relationshipLabel>
+        <relationshipName>Groups6</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Eligibility_Option__c</fullName>
+        <description>Eligibility type</description>
+        <inlineHelpText>Eligibility type</inlineHelpText>
+        <label>Eligibility Option</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>API(Staged Eligibility &amp; Open)</fullName>
+                    <default>false</default>
+                    <label>API (Staged Eligibility &amp; Open)</label>
+                </value>
+                <value>
+                    <fullName>Client Site</fullName>
+                    <default>false</default>
+                    <label>Client Site</label>
+                </value>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>false</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>RTE</fullName>
+                    <default>false</default>
+                    <label>RTE</label>
+                </value>
+                <value>
+                    <fullName>Staged Eligibility</fullName>
+                    <default>false</default>
+                    <label>Staged Eligibility</label>
+                </value>
+                <value>
+                    <fullName>Staged Eligibility &amp; RTE</fullName>
+                    <default>false</default>
+                    <label>Staged Eligibility &amp; RTE</label>
+                </value>
+                <value>
+                    <fullName>Staged Registration</fullName>
+                    <default>false</default>
+                    <label>Staged Registration</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>true</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Not Provided</fullName>
+                    <default>false</default>
+                    <label>Not Provided</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Enable_Chronic_Care_Referrals__c</fullName>
+        <label>Enable Chronic Care Referrals</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Livongo</fullName>
+                    <default>false</default>
+                    <label>Livongo</label>
+                </value>
+                <value>
+                    <fullName>MyStrength Global</fullName>
+                    <default>false</default>
+                    <label>MyStrength Global</label>
+                </value>
+                <value>
+                    <fullName>All</fullName>
+                    <default>false</default>
+                    <label>All</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Enable_Livongo_Combined_Eligibility__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Check this box when a client will provide a singular Eligibility file for processing.  Required for myStrength Complete.</inlineHelpText>
+        <label>Enable Livongo Combined Eligibility</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Livongo_Referrals__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Check this box to enable digital front door and provider referrals to Livongo for all members associated with this group. Required for myStrength Complete.</inlineHelpText>
+        <label>Enable Livongo Referrals</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Est_MSU_Cnt__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated MSU Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>F1BReporting_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>F1BReporting Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GUID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System Generated Global UniqueId</description>
+        <externalId>true</externalId>
+        <inlineHelpText>System Generated Global UniqueId</inlineHelpText>
+        <label>GUID</label>
+        <length>36</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This is the Legacy Group ID number from Admin</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Legacy Group ID number from Admin</inlineHelpText>
+        <label>Group Number</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Health_Assistant__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Only Groups that have BOTH General Medical (GM) + Expert Medical Opinion (EMO) should have this box checked.</description>
+        <inlineHelpText>Health Assistant should be checked for ALL OneApp groups - Health Assistant turns on the chat bot functionality within the app.</inlineHelpText>
+        <label>Health Assistant</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Health_Benefit_Language__c</fullName>
+        <inlineHelpText>Text appears in marketing with plan sponsor logos. Text will show directly as provided in these options, or &quot;Do not show&quot; may be selected and no text will appear with logos.</inlineHelpText>
+        <label>Health Benefit Language</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Made available by</fullName>
+                    <default>true</default>
+                    <label>Made available by</label>
+                </value>
+                <value>
+                    <fullName>A benefit provided by</fullName>
+                    <default>false</default>
+                    <label>A benefit provided by</label>
+                </value>
+                <value>
+                    <fullName>This program is provided by</fullName>
+                    <default>false</default>
+                    <label>This program is provided by</label>
+                </value>
+                <value>
+                    <fullName>Do not show</fullName>
+                    <default>false</default>
+                    <label>Do not show</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Health_Plan_Boiler_Plate_Copy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <inlineHelpText>Client supplied copy to provide members with information on billing and other administrative components of the plan.</inlineHelpText>
+        <label>Health Plan Boiler Plate Copy</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Disclaimers__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Virtual First Boiler Plate</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Disclaimers__c</referenceTo>
+        <relationshipLabel>Member Groups (Health Plan Boiler Plate Copy)</relationshipLabel>
+        <relationshipName>Member_Groups1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Hide_SOGI_Questions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Hide SOGI Questions</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Incentives_Opt_In__c</fullName>
+        <label>Incentives Opt-In?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Insert_Document_Name__c</fullName>
+        <description>Name of insert document being included.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of insert document being included.</inlineHelpText>
+        <label>Insert Document Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Valid_MSU_Group__c</fullName>
+        <formula>and(
+OR(ISPICKVAL(Status__c,&apos;Active&apos;),ISPICKVAL(Status__c,&apos;Pending&apos;)),
+Group_Number__c &lt;&gt; NULL,
+NOT(ISPICKVAL(Client_Account__r.Type,&apos;Former Customer&apos;))
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Valid MSU Group</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LV_Client_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>LV_Client_Member_Code__r.LVGO__ClientMemberCode__c</formula>
+        <label>LV Client Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LV_Client_Member_Code__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>LV Client Member Code Lookup</label>
+        <referenceTo>LVGO__ClientMemberCode__c</referenceTo>
+        <relationshipLabel>Member Groups</relationshipLabel>
+        <relationshipName>Member_Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Reference to the former Account which got converted into Legacy Id on Master Account</description>
+        <label>Legacy Id</label>
+        <referenceTo>Legacy_Id__c</referenceTo>
+        <relationshipLabel>Legacy Member Groups</relationshipLabel>
+        <relationshipName>Legacy_Member_Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Line_Of_Business__c</fullName>
+        <description>Formula field to return the line of business value from the account relationship object linked in the Client Account Relationship field.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Client_Account_Relationship__r.Line_of_Business__c)</formula>
+        <inlineHelpText>Line of Business from the Client Account Relationship</inlineHelpText>
+        <label>*Deprecated* Relationship LineOfBusiness</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Livongo_Client_Code__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Member groups with Chronic Care products require the Client Code (CMC) to be present for combined eligibility processing.</inlineHelpText>
+        <label>*Deprecated* Livongo Client Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Livongo_Registration_code__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Member groups with Chronic Care products require a Registration Code to be present for referral purposes.</inlineHelpText>
+        <label>Livongo Registration Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Logo1_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Logo1_ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Logo1__c</fullName>
+        <label>Logo1</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Logo2_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Logo2_ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Logo2__c</fullName>
+        <label>Logo2</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Logo3_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Logo3_ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Logo3__c</fullName>
+        <label>Logo3</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Logo4_ID__c</fullName>
+        <description>This field will be used for French logos</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is to only be used for Canadian clients with an alternate French logo.</inlineHelpText>
+        <label>Logo4 ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Logo4__c</fullName>
+        <description>This will be used for French Logos</description>
+        <label>Logo4</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Logo_Tag_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Logo Tag# ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Logo_Tag_Image__c</fullName>
+        <description>Display document as image</description>
+        <externalId>false</externalId>
+        <formula>IMAGE(&quot;/servlet/servlet.ImageServer?id=015K0000002C5k3&amp;oid=00DK000000XGKbi&quot;, Logo_Tag_ID__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Display document as image</inlineHelpText>
+        <label>Logo Tag Image</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Logo__c</fullName>
+        <label>Logo Tag #</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>MK_Idcardfront1__c</fullName>
+        <description>ID Card 1 (front)</description>
+        <inlineHelpText>ID Card 1 (front)</inlineHelpText>
+        <label>MK_Idcardfront1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Default</fullName>
+                    <default>true</default>
+                    <label>Default</label>
+                </value>
+                <value>
+                    <fullName>IDF1_Covered_txt</fullName>
+                    <default>false</default>
+                    <label>IDF1_Covered_txt</label>
+                </value>
+                <value>
+                    <fullName>IDF1_ID_no_dep</fullName>
+                    <default>false</default>
+                    <label>IDF1_ID_no_dep</label>
+                </value>
+                <value>
+                    <fullName>IDF1_Txt</fullName>
+                    <default>false</default>
+                    <label>IDF1_Txt</label>
+                </value>
+                <value>
+                    <fullName>IDF1_Txt_ES</fullName>
+                    <default>false</default>
+                    <label>IDF1_Txt_ES</label>
+                </value>
+                <value>
+                    <fullName>IDF1_No_Cardname</fullName>
+                    <default>false</default>
+                    <label>IDF1_No_Cardname</label>
+                </value>
+                <value>
+                    <fullName>IDF1_NoDep_No Cardname</fullName>
+                    <default>false</default>
+                    <label>IDF1_NoDep_No Cardname</label>
+                </value>
+                <value>
+                    <fullName>IDF1_NoUserID</fullName>
+                    <default>false</default>
+                    <label>IDF1_NoUserID</label>
+                </value>
+                <value>
+                    <fullName>IDF1_NoDep_No_CardName</fullName>
+                    <default>false</default>
+                    <label>IDF1_NoDep_No_CardName</label>
+                </value>
+                <value>
+                    <fullName>IDF1_Covered_Txt_S</fullName>
+                    <default>false</default>
+                    <label>IDF1_Covered_Txt_S</label>
+                </value>
+                <value>
+                    <fullName>IDF1_OnlyMadeAvailBy</fullName>
+                    <default>false</default>
+                    <label>IDF1_OnlyMadeAvailBy</label>
+                </value>
+                <value>
+                    <fullName>IDF1_Txt_URL_Phone</fullName>
+                    <default>false</default>
+                    <label>IDF1_Txt_URL_Phone</label>
+                </value>
+                <value>
+                    <fullName>IDF1_Txt_ES_URL_Phone</fullName>
+                    <default>false</default>
+                    <label>IDF1_Txt_ES_URL_Phone</label>
+                </value>
+                <value>
+                    <fullName>IDF1_No_MadeAvailableBy</fullName>
+                    <default>false</default>
+                    <label>IDF1_No_MadeAvailableBy</label>
+                </value>
+                <value>
+                    <fullName>IDF1_NoCard</fullName>
+                    <default>false</default>
+                    <label>IDF1_NoCard</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MK_Idcardfront2__c</fullName>
+        <description>ID Card 2 (front)</description>
+        <inlineHelpText>ID Card 2 (front)</inlineHelpText>
+        <label>MK_Idcardfront2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Default</fullName>
+                    <default>false</default>
+                    <label>Default</label>
+                </value>
+                <value>
+                    <fullName>IDF2_GenMed_Fee</fullName>
+                    <default>false</default>
+                    <label>IDF2_GenMed_Fee</label>
+                </value>
+                <value>
+                    <fullName>IDF2_GenMed_Fee_ES</fullName>
+                    <default>false</default>
+                    <label>IDF2_GenMed_Fee_ES</label>
+                </value>
+                <value>
+                    <fullName>IDF2_NoMadeAvailable</fullName>
+                    <default>false</default>
+                    <label>IDF2_NoMadeAvailable</label>
+                </value>
+                <value>
+                    <fullName>IDF2_NoMadeAvailable_WithFee</fullName>
+                    <default>false</default>
+                    <label>IDF2_NoMadeAvailable_WithFee</label>
+                </value>
+                <value>
+                    <fullName>IDF2_NoMadeAvailable_WirthFee_ES</fullName>
+                    <default>false</default>
+                    <label>IDF2_NoMadeAvailable_WirthFee_ES</label>
+                </value>
+                <value>
+                    <fullName>IDF2_GM_EMO</fullName>
+                    <default>false</default>
+                    <label>IDF2_GM_EMO</label>
+                </value>
+                <value>
+                    <fullName>IDF2_EMO</fullName>
+                    <default>false</default>
+                    <label>IDF2_EMO</label>
+                </value>
+                <value>
+                    <fullName>A benefit provided by</fullName>
+                    <default>false</default>
+                    <label>A benefit provided by</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MK_Welcomemessage__c</fullName>
+        <description>Greeting and introduction to Teladoc</description>
+        <inlineHelpText>Greeting and introduction to Teladoc</inlineHelpText>
+        <label>MK - Welcomemessage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>CenteneAZ_MST</fullName>
+                    <default>false</default>
+                    <label>CenteneAZ_MST</label>
+                </value>
+                <value>
+                    <fullName>Default</fullName>
+                    <default>true</default>
+                    <label>Default</label>
+                </value>
+                <value>
+                    <fullName>Dell</fullName>
+                    <default>false</default>
+                    <label>Dell</label>
+                </value>
+                <value>
+                    <fullName>KY_Molina</fullName>
+                    <default>false</default>
+                    <label>KY_Molina</label>
+                </value>
+                <value>
+                    <fullName>MinutesToHour</fullName>
+                    <default>false</default>
+                    <label>MinutesToHour</label>
+                </value>
+                <value>
+                    <fullName>MinutesToHour_ES</fullName>
+                    <default>false</default>
+                    <label>MinutesToHour_ES</label>
+                </value>
+                <value>
+                    <fullName>MK_WhereYouAre</fullName>
+                    <default>false</default>
+                    <label>MK_WhereYouAre</label>
+                </value>
+                <value>
+                    <fullName>MS_Molina</fullName>
+                    <default>false</default>
+                    <label>MS_Molina</label>
+                </value>
+                <value>
+                    <fullName>NY_Molina</fullName>
+                    <default>false</default>
+                    <label>NY_Molina</label>
+                </value>
+                <value>
+                    <fullName>Teladoc_Member_Exclude_New</fullName>
+                    <default>false</default>
+                    <label>Teladoc_Member_Exclude_New</label>
+                </value>
+                <value>
+                    <fullName>W_CardName</fullName>
+                    <default>false</default>
+                    <label>W_CardName</label>
+                </value>
+                <value>
+                    <fullName>W_CardName_and_MinutesToHour</fullName>
+                    <default>false</default>
+                    <label>W_CardName_and_MinutesToHour</label>
+                </value>
+                <value>
+                    <fullName>W_CardName_and_MinutesToHour_ES</fullName>
+                    <default>false</default>
+                    <label>W_CardName_and_MinutesToHour_ES</label>
+                </value>
+                <value>
+                    <fullName>W_CardName_ES</fullName>
+                    <default>false</default>
+                    <label>W_CardName_ES</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MK_consultarea__c</fullName>
+        <description>Consult pricing area</description>
+        <inlineHelpText>Consult pricing area</inlineHelpText>
+        <label>MK_consultarea</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>BHUpdatedToMH</fullName>
+                    <default>false</default>
+                    <label>BHUpdatedToMH</label>
+                </value>
+                <value>
+                    <fullName>CA_Gratis</fullName>
+                    <default>false</default>
+                    <label>CA_Gratis</label>
+                </value>
+                <value>
+                    <fullName>CA_No BH</fullName>
+                    <default>false</default>
+                    <label>CA_No BH</label>
+                </value>
+                <value>
+                    <fullName>CA_No BH_No Derm</fullName>
+                    <default>false</default>
+                    <label>CA_No BH_No Derm</label>
+                </value>
+                <value>
+                    <fullName>CA_NoCost</fullName>
+                    <default>false</default>
+                    <label>CA_NoCost</label>
+                </value>
+                <value>
+                    <fullName>CA_NoCost_ES</fullName>
+                    <default>false</default>
+                    <label>CA_NoCost_ES</label>
+                </value>
+                <value>
+                    <fullName>CA_No Derm</fullName>
+                    <default>false</default>
+                    <label>CA_No Derm</label>
+                </value>
+                <value>
+                    <fullName>CA_No Gen Med</fullName>
+                    <default>false</default>
+                    <label>CA_No Gen Med</label>
+                </value>
+                <value>
+                    <fullName>CA_No Gen Med_No BH</fullName>
+                    <default>false</default>
+                    <label>CA_No Gen Med_No BH</label>
+                </value>
+                <value>
+                    <fullName>CA_No Gen Med_No Derm</fullName>
+                    <default>false</default>
+                    <label>CA_No Gen Med_No Derm</label>
+                </value>
+                <value>
+                    <fullName>CA_None</fullName>
+                    <default>false</default>
+                    <label>CA_None</label>
+                </value>
+                <value>
+                    <fullName>CA_NoPsych</fullName>
+                    <default>false</default>
+                    <label>CA_NoPsych</label>
+                </value>
+                <value>
+                    <fullName>CA_NoPsychologist</fullName>
+                    <default>false</default>
+                    <label>CA_NoPsychologist</label>
+                </value>
+                <value>
+                    <fullName>CA_Waived</fullName>
+                    <default>false</default>
+                    <label>CA_Waived</label>
+                </value>
+                <value>
+                    <fullName>CA_Zero</fullName>
+                    <default>false</default>
+                    <label>CA_Zero</label>
+                </value>
+                <value>
+                    <fullName>CenteneAZ_MST</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>CenteneAZ_MST</label>
+                </value>
+                <value>
+                    <fullName>Default</fullName>
+                    <default>true</default>
+                    <label>Default</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MSU_Group__c</fullName>
+        <inlineHelpText>The user group determines what materials display for contacts assigned t this group on the Teladoc Health Engagement Center</inlineHelpText>
+        <label>MSU Group</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All Client Group</fullName>
+                    <default>false</default>
+                    <label>All Client Group</label>
+                </value>
+                <value>
+                    <fullName>Aetna</fullName>
+                    <default>false</default>
+                    <label>Aetna</label>
+                </value>
+                <value>
+                    <fullName>Aetna AM</fullName>
+                    <default>false</default>
+                    <label>Aetna AM</label>
+                </value>
+                <value>
+                    <fullName>Aetna FI</fullName>
+                    <default>false</default>
+                    <label>Aetna FI</label>
+                </value>
+                <value>
+                    <fullName>B2B Team</fullName>
+                    <default>false</default>
+                    <label>B2B Team</label>
+                </value>
+                <value>
+                    <fullName>Best Doctors</fullName>
+                    <default>false</default>
+                    <label>Best Doctors</label>
+                </value>
+                <value>
+                    <fullName>Client Managers</fullName>
+                    <default>false</default>
+                    <label>Client Managers</label>
+                </value>
+                <value>
+                    <fullName>HealthiestYou</fullName>
+                    <default>false</default>
+                    <label>HealthiestYou</label>
+                </value>
+                <value>
+                    <fullName>Hospital Team</fullName>
+                    <default>false</default>
+                    <label>Hospital Team</label>
+                </value>
+                <value>
+                    <fullName>Default FI</fullName>
+                    <default>false</default>
+                    <label>Default FI</label>
+                </value>
+                <value>
+                    <fullName>Best Doctors Canada</fullName>
+                    <default>false</default>
+                    <label>Best Doctors Canada</label>
+                </value>
+                <value>
+                    <fullName>Teladoc Canada</fullName>
+                    <default>false</default>
+                    <label>Teladoc Canada</label>
+                </value>
+                <value>
+                    <fullName>UHCSR</fullName>
+                    <default>false</default>
+                    <label>UHCSR</label>
+                </value>
+                <value>
+                    <fullName>Joint Integrated</fullName>
+                    <default>false</default>
+                    <label>Joint Integrated</label>
+                </value>
+                <value>
+                    <fullName>Joint Separate</fullName>
+                    <default>false</default>
+                    <label>Joint Separate</label>
+                </value>
+                <value>
+                    <fullName>EMS 2.0</fullName>
+                    <default>false</default>
+                    <label>EMS 2.0</label>
+                </value>
+                <value>
+                    <fullName>Joint 2.0</fullName>
+                    <default>false</default>
+                    <label>Joint 2.0</label>
+                </value>
+                <value>
+                    <fullName>Client Managers Canada</fullName>
+                    <default>false</default>
+                    <label>Client Managers Canada</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Marketing_Approved__c</fullName>
+        <label>Marketing Approved?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Member_Group_Id_18__c</fullName>
+        <description>Salesforce 18 digit ID</description>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Id)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Member Group Id 18</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Migration_Group_Number__c</fullName>
+        <description>Key to match migrated Group to its source (CADR Salesforce ID, AmeriDoc, etc.)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Key to match migrated Group to its source (CADR Salesforce ID, AmeriDoc, etc.)</inlineHelpText>
+        <label>Migration Group Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Modeling_Permission__c</fullName>
+        <inlineHelpText>DEFAULT = Yes - Client consents to modeling appiled to marketing communications
+NO - Client does not allow modeling for marketing communications</inlineHelpText>
+        <label>Modeling Permission</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>true</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MyStrength_Global_Access_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>MyStrength Global Access Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <description>Enter a descriptive Member Group Name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a descriptive Member Group Name.</inlineHelpText>
+        <label>Name</label>
+        <length>80</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OneAppAccess__c</fullName>
+        <inlineHelpText>OneApp = Yes, unless they are HealthiestYou, PLI (private label), SDK, or international, or the org hasn&apos;t migrated.</inlineHelpText>
+        <label>OneApp Access</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OneApp_Access__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>OneApp Access</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ongoing_Registration_Enrollment_Journey__c</fullName>
+        <inlineHelpText>DEFAULT = YES - Client participates in all other ongoing enrollment communications outside of Enrollment Journey
+No - Client does not participate in other enrollment communications outside of Enrollment Journey</inlineHelpText>
+        <label>Ongoing Registration/Enrollment Journey</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>true</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_Company_Names__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Tags</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>P360_Brand_Relationship__c</fullName>
+        <inlineHelpText>What brand will marketing materials be sent under? Teladoc (uses Teladoc branding only), Co-branded (client brand pre registraton and Teladoc post registration), or White Label (client branded for all)</inlineHelpText>
+        <label>P360 Brand Relationship</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Teladoc</fullName>
+                    <default>false</default>
+                    <label>Teladoc</label>
+                </value>
+                <value>
+                    <fullName>Co-branded</fullName>
+                    <default>false</default>
+                    <label>Co-branded</label>
+                </value>
+                <value>
+                    <fullName>White Label</fullName>
+                    <default>false</default>
+                    <label>White Label</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>P360_URL__c</fullName>
+        <label>P360 URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PSF_Count__c</fullName>
+        <description>Count number of Plan-Specific Fee records associated with Member Group</description>
+        <label>PSF Count</label>
+        <summaryForeignKey>Plan_Specific_Fees__c.Member_Group__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Plan_Category__c</fullName>
+        <description>Specify the type of plan category the member group is classified.  Admin Hierarchy Field - ACA Plan Category (Bronze, Silver, Gold….etc.)</description>
+        <inlineHelpText>Specify the type of plan category the member group is classified.  Admin Hierarchy Field - ACA Plan Category (Bronze, Silver, Gold….etc.)</inlineHelpText>
+        <label>Plan Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bronze</fullName>
+                    <default>false</default>
+                    <label>Bronze</label>
+                </value>
+                <value>
+                    <fullName>Silver</fullName>
+                    <default>false</default>
+                    <label>Silver</label>
+                </value>
+                <value>
+                    <fullName>Gold</fullName>
+                    <default>false</default>
+                    <label>Gold</label>
+                </value>
+                <value>
+                    <fullName>Platinum</fullName>
+                    <default>false</default>
+                    <label>Platinum</label>
+                </value>
+                <value>
+                    <fullName>Catastrophic</fullName>
+                    <default>false</default>
+                    <label>Catastrophic</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Plan_Type__c</fullName>
+        <description>Specifies the type of plan the member group is classified.  Admin Hierarchy Field - ACA Plan Type (HMO, PPO, EPO, HDHP, HSA…etc.)</description>
+        <inlineHelpText>Specifies the type of plan the member group is classified.  Admin Hierarchy Field - ACA Plan Type (HMO, PPO, EPO, HDHP, HSA…etc.)</inlineHelpText>
+        <label>Plan Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>HMO</fullName>
+                    <default>false</default>
+                    <label>HMO</label>
+                </value>
+                <value>
+                    <fullName>PPO</fullName>
+                    <default>false</default>
+                    <label>PPO</label>
+                </value>
+                <value>
+                    <fullName>EPO</fullName>
+                    <default>false</default>
+                    <label>EPO</label>
+                </value>
+                <value>
+                    <fullName>POS</fullName>
+                    <default>false</default>
+                    <label>POS</label>
+                </value>
+                <value>
+                    <fullName>HDHP</fullName>
+                    <default>false</default>
+                    <label>HDHP</label>
+                </value>
+                <value>
+                    <fullName>HSA</fullName>
+                    <default>false</default>
+                    <label>HSA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Preferred_Eligibility_Language__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>lookup to Eligibility Language object</description>
+        <inlineHelpText>Applies to EMS mailers specifying dependent language.</inlineHelpText>
+        <label>Preferred Eligibility Language</label>
+        <referenceTo>Eligibility_Language__c</referenceTo>
+        <relationshipLabel>Member Groups</relationshipLabel>
+        <relationshipName>Member_Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Profile_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Profile Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Purchase_Order_Number__c</fullName>
+        <description>Purchase Order # if one is required</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Purchase Order # if one is required</inlineHelpText>
+        <label>Purchase Order Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Purchase_Order_Required__c</fullName>
+        <description>Is a Purchase Order required for this Group?</description>
+        <inlineHelpText>Is a Purchase Order required for this Group?</inlineHelpText>
+        <label>Purchase Order Required</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Referral_Required__c</fullName>
+        <description>Select this field if the Virtual First Health Plan REQUIRES a referral from a Teladoc Health Primary Care provider prior to seeking in-person specialty care (“gated” health plan model).</description>
+        <inlineHelpText>Select this field if the Virtual First Health Plan REQUIRES a referral from a Teladoc Health Primary Care provider prior to seeking in-person specialty care (“gated” health plan model).</inlineHelpText>
+        <label>Referral Required</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Virtual_First_Health_Plan__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>YES</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>NO</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Registration_Enrollment_Engagement_Tier__c</fullName>
+        <inlineHelpText>Tier 1 — CDMMERTCAL DEFAULT Campaign approval not required
+Tier 2 — CARE/CAID DEFAULT Client campaign approval is required
+Tier 3 — No campaigns, Engagement Center only
+Tier 4 — No marketing
+Tier 5 — White Label, requires Marketing approval</inlineHelpText>
+        <label>Registration/Enrollment Engagement Tier</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Fully Engaged</fullName>
+                    <default>false</default>
+                    <label>1 - Fully Engaged</label>
+                </value>
+                <value>
+                    <fullName>2 - Campaign Approval Required</fullName>
+                    <default>false</default>
+                    <label>2 - Campaign Approval Required</label>
+                </value>
+                <value>
+                    <fullName>3 - Self Support Only</fullName>
+                    <default>false</default>
+                    <label>3 - Self Support Only</label>
+                </value>
+                <value>
+                    <fullName>4 - No Marketing Support</fullName>
+                    <default>false</default>
+                    <label>4 - No Marketing Support</label>
+                </value>
+                <value>
+                    <fullName>5 - White Label (Campaign Approval required)</fullName>
+                    <default>false</default>
+                    <label>5 - White Label (Campaign Approval required)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Registration_Enrollment_Journey__c</fullName>
+        <inlineHelpText>Launch - DEFAULT Launch. 
+Launch Lite - Reduced touchpoints from Launch Welcome Comm only - one-touch only EM and/or DMM. 
+No Welcome Journey - Does not participate. 
+Custom - Client-specific journey modifications, requires Marketing approval</inlineHelpText>
+        <label>Registration/Enrollment Journey</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Welcome Communication Only</fullName>
+                    <default>false</default>
+                    <label>Welcome Communication Only</label>
+                </value>
+                <value>
+                    <fullName>Launch</fullName>
+                    <default>true</default>
+                    <label>Launch</label>
+                </value>
+                <value>
+                    <fullName>Launch Lite</fullName>
+                    <default>false</default>
+                    <label>Launch Lite</label>
+                </value>
+                <value>
+                    <fullName>No welcome Journey</fullName>
+                    <default>false</default>
+                    <label>No welcome Journey</label>
+                </value>
+                <value>
+                    <fullName>Custom Journey</fullName>
+                    <default>false</default>
+                    <label>Custom Journey</label>
+                </value>
+                <value>
+                    <fullName>Optimized Enrollment Plan (OEP)</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Optimized Enrollment Plan (OEP)</label>
+                </value>
+                <value>
+                    <fullName>Optimized Enrollment Plan LITE (OEP-LITE)</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Optimized Enrollment Plan LITE (OEP-LITE)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Request_Date__c</fullName>
+        <label>Request Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_Brand__c</fullName>
+        <description>This field is set to set the Service Brand for EMO Product. The trigger on PSF set the default value to &apos;Taledoc&apos; for EMO2 Product and &apos;BestDoctors&apos; for EMO product. User can overwrite the value set by the trigger.</description>
+        <label>Service Brand</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Teladoc (Aetna)</fullName>
+                    <default>false</default>
+                    <label>Teladoc (Aetna)</label>
+                </value>
+                <value>
+                    <fullName>Teladoc (Canada)</fullName>
+                    <default>false</default>
+                    <label>Teladoc (Canada)</label>
+                </value>
+                <value>
+                    <fullName>Teladoc (US)</fullName>
+                    <default>false</default>
+                    <label>Teladoc (US)</label>
+                </value>
+                <value>
+                    <fullName>Teladoc Health (Internal)</fullName>
+                    <default>false</default>
+                    <label>Teladoc Health (Internal)</label>
+                </value>
+                <value>
+                    <fullName>HealthiestYou</fullName>
+                    <default>false</default>
+                    <label>HealthiestYou</label>
+                </value>
+                <value>
+                    <fullName>Livongo</fullName>
+                    <default>false</default>
+                    <label>Livongo</label>
+                </value>
+                <value>
+                    <fullName>BestDoctors</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>BestDoctors</label>
+                </value>
+                <value>
+                    <fullName>Teladoc</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Teladoc</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sexual_Health_Opt_Out__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Option to allow Sexual Health product for group members</description>
+        <inlineHelpText>Option to allow Sexual Health product for group members</inlineHelpText>
+        <label>Allow Sexual Health</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Shipping_Class__c</fullName>
+        <description>Standard, First or Drop ship Welcome Letters.  If different from &quot;Standard&quot; then must obtain approval from Welcome Kit team.</description>
+        <inlineHelpText>Standard, First or Drop ship Welcome Letters.  If different from &quot;Standard&quot; then must obtain approval from Welcome Kit team.</inlineHelpText>
+        <label>Shipping Class</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>S</fullName>
+                    <default>true</default>
+                    <label>S</label>
+                </value>
+                <value>
+                    <fullName>F</fullName>
+                    <default>false</default>
+                    <label>F</label>
+                </value>
+                <value>
+                    <fullName>D</fullName>
+                    <default>false</default>
+                    <label>D</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Source_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Salesforce ID from original system record was migrated</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Salesforce ID from original system record was migrated</inlineHelpText>
+        <label>Source Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <description>Use this as a backend field to identify the source of member group record</description>
+        <inlineHelpText>Use this as a backend field to identify the source of member group record</inlineHelpText>
+        <label>Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Data_Source</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Group Status</description>
+        <inlineHelpText>Group Status</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ACTIVE</fullName>
+                    <default>false</default>
+                    <label>ACTIVE</label>
+                </value>
+                <value>
+                    <fullName>PENDING</fullName>
+                    <default>true</default>
+                    <label>PENDING</label>
+                </value>
+                <value>
+                    <fullName>TERMED</fullName>
+                    <default>false</default>
+                    <label>TERMED</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Teladoc_Select__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Option to allow group members select a specific doctor</description>
+        <inlineHelpText>Option to allow group members select a specific doctor</inlineHelpText>
+        <label>Teladoc Select</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Termination_Date__c</fullName>
+        <description>This date will allow for staged terminations in the future.  A nightly batch job will check if this date has passed and set status to termed along with all blank term dates on associated PSF records.</description>
+        <label>Termination Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Testing_Permission__c</fullName>
+        <inlineHelpText>DEFAULT = Yes - Client consents to marketing tests among their population. 
+No - Client does not allow marketing tests among their population.</inlineHelpText>
+        <label>Testing Permission</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>true</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Text_SMS__c</fullName>
+        <inlineHelpText>Text is SMS; Indicates client permission to outreach members assuming member consent to Text/SMS marketing is provided</inlineHelpText>
+        <label>Text (SMS)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Not Provided</fullName>
+                    <default>false</default>
+                    <label>Not Provided</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Tri_Brand_with_Logo__c</fullName>
+        <description>Specifies if group should have 3 branded logos on Welcome Letter</description>
+        <inlineHelpText>Specifies if group should have 3 branded logos on Welcome Letter</inlineHelpText>
+        <label>Tri-Brand with Logo</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>URL_for_Custom_WK_LU__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>URL for Custom WK</label>
+        <referenceTo>Web_URLs__c</referenceTo>
+        <relationshipLabel>Member Groups</relationshipLabel>
+        <relationshipName>Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Virtual_First_Health_Plan_Summary__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <inlineHelpText>Client provided description of the virtual first health plan offering.</inlineHelpText>
+        <label>Virtual First Health Plan Summary</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Disclaimers__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Virtual First Summary</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Disclaimers__c</referenceTo>
+        <relationshipLabel>Member Groups (Virtual First Health Plan Summary)</relationshipLabel>
+        <relationshipName>Member_Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Virtual_First_Health_Plan__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check this field only if the group is a Virtual First Health Plan.</description>
+        <inlineHelpText>Check this field only if the group is a Virtual First Health Plan.</inlineHelpText>
+        <label>Virtual First Health Plan</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Virtual_First_Plan_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Virtual First Plan Name</label>
+        <length>60</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WK_Card_Includes_Logo__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Does the welcome kit card have the client logo on it?</description>
+        <inlineHelpText>Does the welcome kit card have the client logo on it?</inlineHelpText>
+        <label>WK Card Includes Logo?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WK_Includes_Insert__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Will these welcome kits include an MHD insert?  Used by the printer for fulfillment.</description>
+        <inlineHelpText>Will these welcome kits include an MHD insert?  Used by the printer for fulfillment.</inlineHelpText>
+        <label>WK - Includes Insert?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WK_Mail_to_Address__c</fullName>
+        <description>If Mail-to option is not Member, what address should the WK be sent to?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If Mail-to option is not Member, what address should the WK be sent to?</inlineHelpText>
+        <label>WK Mail-to Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WK_Mail_to__c</fullName>
+        <description>Where to mail the welcome kit</description>
+        <inlineHelpText>Where to mail the welcome kit</inlineHelpText>
+        <label>WK Mail-to</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Member</fullName>
+                    <default>true</default>
+                    <label>Member</label>
+                </value>
+                <value>
+                    <fullName>Client (fee applies)</fullName>
+                    <default>false</default>
+                    <label>Client (fee applies)</label>
+                </value>
+                <value>
+                    <fullName>TPA (fee applies)</fullName>
+                    <default>false</default>
+                    <label>TPA (fee applies)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>WK_Retroactive_Date__c</fullName>
+        <label>Retroactive Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>WK_Retroactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Retroactive Welcome Kit</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WK_Send_Card_Date__c</fullName>
+        <label>Send Card Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>WK_Template__c</fullName>
+        <description>Determines appearance and language of Welcome Letters,added new option rimary360_VF</description>
+        <inlineHelpText>Determines appearance and language of Welcome Letters</inlineHelpText>
+        <label>WK Template</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10C100_HF</fullName>
+                    <default>false</default>
+                    <label>10C100_HF</label>
+                </value>
+                <value>
+                    <fullName>10CH100</fullName>
+                    <default>false</default>
+                    <label>10CH100</label>
+                </value>
+                <value>
+                    <fullName>10CMCare_Healthfirst</fullName>
+                    <default>false</default>
+                    <label>10CMCare_Healthfirst</label>
+                </value>
+                <value>
+                    <fullName>10E100_BSC</fullName>
+                    <default>false</default>
+                    <label>10E100_BSC</label>
+                </value>
+                <value>
+                    <fullName>10E100_CloverMCare</fullName>
+                    <default>false</default>
+                    <label>10E100_CloverMCare</label>
+                </value>
+                <value>
+                    <fullName>10E100_Fallon</fullName>
+                    <default>false</default>
+                    <label>10E100_Fallon</label>
+                </value>
+                <value>
+                    <fullName>10E100_FallonMCare</fullName>
+                    <default>false</default>
+                    <label>10E100_FallonMCare</label>
+                </value>
+                <value>
+                    <fullName>10E100_HF</fullName>
+                    <default>false</default>
+                    <label>10E100_HF</label>
+                </value>
+                <value>
+                    <fullName>10E100_MolinaMCare</fullName>
+                    <default>false</default>
+                    <label>10E100_MolinaMCare</label>
+                </value>
+                <value>
+                    <fullName>10E100_Premera</fullName>
+                    <default>false</default>
+                    <label>10E100_Premera</label>
+                </value>
+                <value>
+                    <fullName>10E100_TD_EMS</fullName>
+                    <default>false</default>
+                    <label>10E100_TD_EMS</label>
+                </value>
+                <value>
+                    <fullName>10E100MCare_2019</fullName>
+                    <default>false</default>
+                    <label>10E100MCare_2019</label>
+                </value>
+                <value>
+                    <fullName>10EJ100_Nippon</fullName>
+                    <default>false</default>
+                    <label>10EJ100_Nippon</label>
+                </value>
+                <value>
+                    <fullName>10EK100_Nippon</fullName>
+                    <default>false</default>
+                    <label>10EK100_Nippon</label>
+                </value>
+                <value>
+                    <fullName>10EMcare</fullName>
+                    <default>false</default>
+                    <label>10EMcare</label>
+                </value>
+                <value>
+                    <fullName>10EMCare_Centene</fullName>
+                    <default>false</default>
+                    <label>10EMCare_Centene</label>
+                </value>
+                <value>
+                    <fullName>10EMCare_City of New York</fullName>
+                    <default>false</default>
+                    <label>10EMCare_City of New York</label>
+                </value>
+                <value>
+                    <fullName>10EMCare_Healthfirst</fullName>
+                    <default>false</default>
+                    <label>10EMCare_Healthfirst</label>
+                </value>
+                <value>
+                    <fullName>10EMCAREHNE</fullName>
+                    <default>false</default>
+                    <label>10EMCAREHNE</label>
+                </value>
+                <value>
+                    <fullName>10ES_Centene_Commercial</fullName>
+                    <default>false</default>
+                    <label>10ES_Centene_Commercial</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Medicaid</fullName>
+                    <default>false</default>
+                    <label>10ES100_Medicaid</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Medicaid_Affinity</fullName>
+                    <default>false</default>
+                    <label>10ES100_Medicaid_Affinity</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Medicaid_IN</fullName>
+                    <default>false</default>
+                    <label>10ES100_Medicaid_IN</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Medicaid_NY</fullName>
+                    <default>false</default>
+                    <label>10ES100_Medicaid_NY</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Medicaid_OR</fullName>
+                    <default>false</default>
+                    <label>10ES100_Medicaid_OR</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Medicaid_TX</fullName>
+                    <default>false</default>
+                    <label>10ES100_Medicaid_TX</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Medicaid_WA</fullName>
+                    <default>false</default>
+                    <label>10ES100_Medicaid_WA</label>
+                </value>
+                <value>
+                    <fullName>10ES100_MedicareMedicaid_TX</fullName>
+                    <default>false</default>
+                    <label>10ES100_MedicareMedicaid_TX</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Molina</fullName>
+                    <default>false</default>
+                    <label>10ES100_Molina</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Molina2019</fullName>
+                    <default>false</default>
+                    <label>10ES100_Molina2019</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Nippon</fullName>
+                    <default>false</default>
+                    <label>10ES100_Nippon</label>
+                </value>
+                <value>
+                    <fullName>10ES100Medicaid_2019</fullName>
+                    <default>false</default>
+                    <label>10ES100Medicaid_2019</label>
+                </value>
+                <value>
+                    <fullName>10ESMCaid_Centene_NM</fullName>
+                    <default>false</default>
+                    <label>10ESMCaid_Centene_NM</label>
+                </value>
+                <value>
+                    <fullName>10ESMCARE</fullName>
+                    <default>false</default>
+                    <label>10ESMCARE</label>
+                </value>
+                <value>
+                    <fullName>10ESMCARE_Integra</fullName>
+                    <default>false</default>
+                    <label>10ESMCARE_Integra</label>
+                </value>
+                <value>
+                    <fullName>10ESMCAREHPP</fullName>
+                    <default>false</default>
+                    <label>10ESMCAREHPP</label>
+                </value>
+                <value>
+                    <fullName>10R100_HF</fullName>
+                    <default>false</default>
+                    <label>10R100_HF</label>
+                </value>
+                <value>
+                    <fullName>10S100_CloverMCare</fullName>
+                    <default>false</default>
+                    <label>10S100_CloverMCare</label>
+                </value>
+                <value>
+                    <fullName>10S100_HF</fullName>
+                    <default>false</default>
+                    <label>10S100_HF</label>
+                </value>
+                <value>
+                    <fullName>10SMCare_Healthfirst</fullName>
+                    <default>false</default>
+                    <label>10SMCare_Healthfirst</label>
+                </value>
+                <value>
+                    <fullName>30E311</fullName>
+                    <default>false</default>
+                    <label>30E311</label>
+                </value>
+                <value>
+                    <fullName>BSC_Commercial_Eng</fullName>
+                    <default>false</default>
+                    <label>BSC_Commercial_Eng</label>
+                </value>
+                <value>
+                    <fullName>BSC_ES_Medicare_Medicaid</fullName>
+                    <default>false</default>
+                    <label>BSC_ES_Medicare_Medicaid</label>
+                </value>
+                <value>
+                    <fullName>CFWN_BOB_E</fullName>
+                    <default>false</default>
+                    <label>CFWN_BOB_E</label>
+                </value>
+                <value>
+                    <fullName>HOLD</fullName>
+                    <default>false</default>
+                    <label>HOLD</label>
+                </value>
+                <value>
+                    <fullName>Medicaid_Centene_2020</fullName>
+                    <default>false</default>
+                    <label>Medicaid_Centene_2020</label>
+                </value>
+                <value>
+                    <fullName>Medicaid_ES_4thGrade</fullName>
+                    <default>false</default>
+                    <label>Medicaid_ES_4thGrade</label>
+                </value>
+                <value>
+                    <fullName>Medicare_Centene_2020</fullName>
+                    <default>false</default>
+                    <label>Medicare_Centene_2020</label>
+                </value>
+                <value>
+                    <fullName>Medicare_E_4thGrade</fullName>
+                    <default>false</default>
+                    <label>Medicare_E_4thGrade</label>
+                </value>
+                <value>
+                    <fullName>Primary360</fullName>
+                    <default>false</default>
+                    <label>Primary360</label>
+                </value>
+                <value>
+                    <fullName>Primary360_Aetna</fullName>
+                    <default>false</default>
+                    <label>Primary360_Aetna</label>
+                </value>
+                <value>
+                    <fullName>Primary360_BankOfAmerica</fullName>
+                    <default>false</default>
+                    <label>Primary360_BankOfAmerica</label>
+                </value>
+                <value>
+                    <fullName>CFWN_BOB_E_CG</fullName>
+                    <default>false</default>
+                    <label>CFWN_BOB_E_CG</label>
+                </value>
+                <value>
+                    <fullName>CFWN_BOB_ES</fullName>
+                    <default>false</default>
+                    <label>CFWN_BOB_ES</label>
+                </value>
+                <value>
+                    <fullName>Primary360_VF</fullName>
+                    <default>false</default>
+                    <label>Primary360_VF</label>
+                </value>
+                <value>
+                    <fullName>Primary360_FEP_Anthem</fullName>
+                    <default>false</default>
+                    <label>Primary360_FEP_Anthem</label>
+                </value>
+                <value>
+                    <fullName>BSC_EngagementPt</fullName>
+                    <default>false</default>
+                    <label>BSC_EngagementPt</label>
+                </value>
+                <value>
+                    <fullName>CFWN_MCare_E</fullName>
+                    <default>false</default>
+                    <label>CFWN_MCare_E</label>
+                </value>
+                <value>
+                    <fullName>CFWN_MCare_ES</fullName>
+                    <default>false</default>
+                    <label>CFWN_MCare_ES</label>
+                </value>
+                <value>
+                    <fullName>CFWN_MCaid_ES</fullName>
+                    <default>false</default>
+                    <label>CFWN_MCaid_ES</label>
+                </value>
+                <value>
+                    <fullName>10EMCare_OE</fullName>
+                    <default>false</default>
+                    <label>10EMCare_OE</label>
+                </value>
+                <value>
+                    <fullName>10ESMCare_OE</fullName>
+                    <default>false</default>
+                    <label>10ESMCare_OE</label>
+                </value>
+                <value>
+                    <fullName>Primary360_NoQR</fullName>
+                    <default>false</default>
+                    <label>Primary360_NoQR</label>
+                </value>
+                <value>
+                    <fullName>0EMCare_OE</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>0EMCare_OE</label>
+                </value>
+                <value>
+                    <fullName>10A100</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10A100</label>
+                </value>
+                <value>
+                    <fullName>10E100</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100</label>
+                </value>
+                <value>
+                    <fullName>10E100ACC</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100ACC</label>
+                </value>
+                <value>
+                    <fullName>10E100_Aetna</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_Aetna</label>
+                </value>
+                <value>
+                    <fullName>10E100_Aetna_Caregiver</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_Aetna_Caregiver</label>
+                </value>
+                <value>
+                    <fullName>10E100_Aetna_Caregiver_EMS</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_Aetna_Caregiver_EMS</label>
+                </value>
+                <value>
+                    <fullName>10E100_Aetna_EMS</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_Aetna_EMS</label>
+                </value>
+                <value>
+                    <fullName>10E100_Aetna_Fairfax</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_Aetna_Fairfax</label>
+                </value>
+                <value>
+                    <fullName>10E100_BD_EMS</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_BD_EMS</label>
+                </value>
+                <value>
+                    <fullName>10E100_BH</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_BH</label>
+                </value>
+                <value>
+                    <fullName>10E100_Derm</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_Derm</label>
+                </value>
+                <value>
+                    <fullName>10E100_EMOTD</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_EMOTD</label>
+                </value>
+                <value>
+                    <fullName>10E100_FrontPricing</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_FrontPricing</label>
+                </value>
+                <value>
+                    <fullName>10E100_FrontPricingCgvr</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_FrontPricingCgvr</label>
+                </value>
+                <value>
+                    <fullName>10E100_Gordon</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_Gordon</label>
+                </value>
+                <value>
+                    <fullName>10E100_HPE_Kaiser</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_HPE_Kaiser</label>
+                </value>
+                <value>
+                    <fullName>10E100_JJ</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_JJ</label>
+                </value>
+                <value>
+                    <fullName>10E100_JJGM</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_JJGM</label>
+                </value>
+                <value>
+                    <fullName>10E100_NonMember</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_NonMember</label>
+                </value>
+                <value>
+                    <fullName>10E100_PremeraMicrosoft</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_PremeraMicrosoft</label>
+                </value>
+                <value>
+                    <fullName>10E100_THD_HDHP</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_THD_HDHP</label>
+                </value>
+                <value>
+                    <fullName>10E100_THD_PPO</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10E100_THD_PPO</label>
+                </value>
+                <value>
+                    <fullName>10ES100</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10ES100</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Aetna</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10ES100_Aetna</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Aetna_EMS</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10ES100_Aetna_EMS</label>
+                </value>
+                <value>
+                    <fullName>10ES100_GMD</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10ES100_GMD</label>
+                </value>
+                <value>
+                    <fullName>10ES100_NoMulti</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10ES100_NoMulti</label>
+                </value>
+                <value>
+                    <fullName>10ES100_Premera</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10ES100_Premera</label>
+                </value>
+                <value>
+                    <fullName>10EUNION</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10EUNION</label>
+                </value>
+                <value>
+                    <fullName>Primary360_HCSC</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Primary360_HCSC</label>
+                </value>
+                <value>
+                    <fullName>WK_Corning_CHP</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>WK_Corning_CHP</label>
+                </value>
+                <value>
+                    <fullName>WK_Corning_PPO</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>WK_Corning_PPO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Welcome_Letter_Consult_Message__c</fullName>
+        <description>This consult message field to be only used for new Welcome Letter and has a 160 char limit.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This consult message field to be only used for new Welcome Letter and has a 160 char limit.</inlineHelpText>
+        <label>Welcome Letter Consult Message</label>
+        <length>160</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>hlp_Benefit_Sponsors__c</fullName>
+        <description>Count of Benefit Sponsors in Member Group Roles</description>
+        <label>Benefit Sponsors</label>
+        <summaryFilterItems>
+            <field>Mbr_Group_Role__c.Role_Type__c</field>
+            <operation>equals</operation>
+            <value>Benefit Sponsor</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Mbr_Group_Role__c.Mbr_Group__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>hlp_Payers__c</fullName>
+        <description>Count of Payers in Member Group Roles</description>
+        <label>Payers</label>
+        <summaryFilterItems>
+            <field>Mbr_Group_Role__c.Role_Type__c</field>
+            <operation>equals</operation>
+            <value>Payer</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Mbr_Group_Role__c.Mbr_Group__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Member Group</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Name__c</columns>
+        <columns>NAME</columns>
+        <columns>Active_Date__c</columns>
+        <columns>Client_Account__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>BCBSNC</fullName>
+        <columns>Member_Group_Id_18__c</columns>
+        <columns>NAME</columns>
+        <columns>Card_Template__c</columns>
+        <columns>Disclaimer_Custom__c</columns>
+        <columns>Disclaimer_Client__c</columns>
+        <columns>Disclaimer_Teladoc__c</columns>
+        <columns>MK_consultarea__c</columns>
+        <columns>Consult_Message_on_WK__c</columns>
+        <columns>Welcome_Letter_Consult_Message__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Client_Account__c</field>
+            <operation>equals</operation>
+            <value>Blue Cross Blue Shield of NC</value>
+        </filters>
+        <label>BCBSNC</label>
+    </listViews>
+    <listViews>
+        <fullName>Blank_Logo_Tag_ID</fullName>
+        <columns>Client_Account__c</columns>
+        <columns>Member_Group_Id_18__c</columns>
+        <columns>NAME</columns>
+        <columns>Logo_Tag_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Client_Account__c</field>
+            <operation>equals</operation>
+            <value>Allegheny County Schools Health Insurance Consortium (ACSHIC)</value>
+        </filters>
+        <filters>
+            <field>Logo_Tag_ID__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Blank Logo Tag# ID</label>
+    </listViews>
+    <listViews>
+        <fullName>Termed_20220128</fullName>
+        <columns>NAME</columns>
+        <columns>Name__c</columns>
+        <columns>Client_Account__c</columns>
+        <columns>Status__c</columns>
+        <columns>Termination_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>TERMED</value>
+        </filters>
+        <filters>
+            <field>Termination_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2022</value>
+        </filters>
+        <label>Termed 2022</label>
+    </listViews>
+    <nameField>
+        <displayFormat>MG-{00000000}</displayFormat>
+        <label>Member Group Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Member Groups</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Client_Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Client_Account_Manager__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Group_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Client_Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Group_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Client_Account_Manager__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Client_Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Client_Account_Manager__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Group_Number__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Approved_Marketing_Start_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(NOT($Setup.Validation_Rule_Setting__c.Disable_Validation_Rule__c),
+Approved_Marketing_Start_Date__c &lt;= TODAY() + 13
+)</errorConditionFormula>
+        <errorMessage>Approved Marketing Start Date must be at least 14 days in advance.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_Make_Active_without_PSF</fullName>
+        <active>true</active>
+        <description>In order for a Member Group to become Active, there must be a PSF associated with the Member Group.</description>
+        <errorConditionFormula>AND(OR(ISNEW(),ISCHANGED(Status__c)),TEXT(Status__c)=&quot;Active&quot;,PSF_Count__c = 0, 
+			 $Permission.Bypass_PSFs_To_Make_MemberGroup_Active = FALSE, 
+			 $Profile.Name &lt;&gt; &apos;System Administrator&apos;)</errorConditionFormula>
+        <errorMessage>A Member Group must have a PSF associated to be marked Active.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Client_Account_Location</fullName>
+        <active>true</active>
+        <description>Validate if  Location HQ Account Id is same as Client Account Id</description>
+        <errorConditionFormula>AND((Client_Account_Location__r.Location_HQ__r.Id &lt;&gt; Client_Account__r.Id),(Client_Account_Location__c &lt;&gt; Null))</errorConditionFormula>
+        <errorDisplayField>Client_Account_Location__c</errorDisplayField>
+        <errorMessage>Location not found on Client Account</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DNA_SF_Admins_Only_for_FD</fullName>
+        <active>false</active>
+        <description>Prevents non-sfdc admins from setting this field to F or D</description>
+        <errorConditionFormula>if(OR(ischanged(Shipping_Class__c),isnew()),
+if(and($Profile.Name != &apos;System Administrator&apos;,or(ISPICKVAL(Shipping_Class__c, &apos;F&apos;),ISPICKVAL(Shipping_Class__c, &apos;D&apos;)))
+, TRUE
+, FALSE)
+,FALSE)</errorConditionFormula>
+        <errorMessage>Please contact the System Administrator if you require a shipping class of &apos;F&apos; or &apos;D&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Disclaimer_value_cant_be_same</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (Disclaimer_Teladoc__c ==  Disclaimer_Client__c, !ISBLANK(Disclaimer_Teladoc__c  ) )</errorConditionFormula>
+        <errorDisplayField>Disclaimer_Teladoc__c</errorDisplayField>
+        <errorMessage>Disclaimer Teladoc and Disclaimer Client can not be the same value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Requirement_for_Client_Code</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( Enable_Livongo_Combined_Eligibility__c, OR( Livongo_Client_Code__c == &apos;&apos;, Livongo_Client_Code__c == null))</errorConditionFormula>
+        <errorMessage>If Enable Livongo Combined Eligibility box is checked then Livongo Client Code
+ is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Send_Card_Date_and_Retroactive_Date</fullName>
+        <active>true</active>
+        <description>Send Card Date and Retroactive Date must not be null is Welcome Retroactive check is selected</description>
+        <errorConditionFormula>AND( $User.Alias &lt;&gt; &apos;tsale&apos;,
+OR(AND(WK_Retroactive__c, ISNULL(WK_Send_Card_Date__c)),AND(WK_Retroactive__c, ISNULL(WK_Retroactive_Date__c))))</errorConditionFormula>
+        <errorMessage>Send Card Date and Retroactive Date can not be null</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VF_Health_Plan_Referral_Required</fullName>
+        <active>true</active>
+        <description>Rule to trigger if Virtual First Health Plan checkbox is true then Referral Required field cannot be null.</description>
+        <errorConditionFormula>AND(
+    Virtual_First_Health_Plan__c = TRUE, 
+				ISBLANK(TEXT(Referral_Required__c))
+)</errorConditionFormula>
+        <errorDisplayField>Referral_Required__c</errorDisplayField>
+        <errorMessage>Referral Required field cannot be left blank if Virtual First Health Plan is checked.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Calc_MSUs</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>870</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Calc MSUs</masterLabel>
+        <openType>newWindow</openType>
+        <position>topLeft</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/msuLookup?gid={!Mbr_Group__c.Id}</url>
+        <width>1190</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Clone_Group</fullName>
+        <availability>online</availability>
+        <description>This button will prevent source and source id field from cloning</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Clone Group</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!Mbr_Group__c.Id}/e?clone=1&amp;retURL=%2F{!Mbr_Group__c.Id}&amp;00Nf400000Nlb4S=&amp;00Nf400000Nlb44=&amp;00Nf400000Nlb3b=&amp;00Nf400000Nlb4T=PENDING&amp;00Nf400000TyYft=HUB</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_PSF</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New PSF</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/psfByProduct?gid={! Mbr_Group__c.Id }</url>
+    </webLinks>
+</CustomObject>

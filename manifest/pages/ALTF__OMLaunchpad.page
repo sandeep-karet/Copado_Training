@@ -1,0 +1,712 @@
+<apex:page showHeader="false"
+    standardStyleSheets="true"
+    standardController="Opportunity"
+    extensions="ALTF.SummaryController,ALTF.BrandOverrideController,ALTF.ServerSideDeviceDetection"
+    cache="false"
+    name="Altify Opportunity Manager"
+    label="Altify Opportunity Manager"
+    action="{!logLaunchpadUsage}"
+>
+
+    <div id="AltifyOpportunityLaunchpad"></div>
+    
+    <apex:outputPanel title="" rendered="{! opportunity.id != null}">
+        <c:jQuery />
+        <c:MobileRedirect smartOM="true" applyLightning="true"/>
+
+        <style>
+            body, td {
+                color: #222222;
+                font-family: "Salesforce Sans", Arial, sans-serif;
+            }
+
+            body {
+                font-family: "Salesforce Sans", Arial, sans-serif;
+                font-size: 75%;
+            }
+
+            div#smartOM {
+                background-color: #FFF;
+                border: 1px solid #CCC;
+                border-radius: 8px;
+                cursor: default;
+                padding: 45px 2px 3px 10px;
+                position: relative;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+
+
+            div#smartOMBranding {
+                position:absolute;
+                width:100%;
+                display:block;
+                left:0px;
+                top:0px;
+                border-radius:8px 8px 0px 0px;
+                -moz-border-radius:8px 8px 0px 0px;
+                -webkit-border-radius:8px 8px 0px 0px;
+                height: 32px;
+            }
+
+            div.smartOMToolbarTitle {
+                font-weight: bold;
+                font-size: 14px;
+                margin-bottom: 7px;
+            }
+
+            div.smartOMToolbarTitleNoWrap {
+                white-space:nowrap;
+            }
+
+
+            div.smartOMToolbarItem {
+                float: left;
+                margin: 0 10px 10px 0;
+                position: relative;
+                text-align: center;
+                width: 110px;
+                            
+            }
+
+            div.smartOMToolbarItem a {
+                text-decoration: none;
+                padding: 10px; 
+            }
+
+            div.smartOMToolbarItem [class^="sldsico-"],
+            div.smartOMToolbarItem [class^="altifyico-"],
+            div.smartOMToolbarItem [class*=" altifyico-"] {
+                font-size: 3em;
+            }
+
+            ul.list_small span[class^="altifyico-"],
+            ul.list_small span[class*=" altifyico-"] {
+                font-size: 1.5em;
+                vertical-align: middle;
+                display: inline-block;
+                width: 25px;
+                text-align: center;
+            }
+
+            ul.list_small label {
+                vertical-align: middle;
+                margin-left: 15px;
+                color: #286ed2;
+                font-weight: bold;
+            }
+
+            div.smartOMToolbarItemLast {
+                margin-right:0px;
+            }
+
+            .smartOMToolbarImage {
+                cursor: pointer;
+                margin: 0 auto;
+                padding: 13px 0px 50% 0px;
+                display: block;
+            }
+
+            div.smartOMToolbarItem a {
+                display: block;
+                border: 1px solid #e9ecee;
+                border-radius: 5px;
+            }
+
+            div.smartOMToolbarItem a:hover{
+            background-color: #f4f6f9;
+                -webkit-transition: background-color 25ms linear;
+                -moz-transition: background-color 25ms linear;
+                -o-transition: background-color 25ms linear;
+                -ms-transition: background-color 25ms linear;
+                transition: background-color 25ms linear;
+            }
+                
+                div.smartOMToolbarItem a .altifyico-process,
+                ul.list_small span.altifyico-process {
+                    color: #FA975C;
+                }
+                div.smartOMToolbarItem a .altifyico-assessment,
+                ul.list_small span.altifyico-assessment {
+                    color: #4BC076;
+                }
+                div.smartOMToolbarItem a .altifyico-milestones,
+                ul.list_small span.altifyico-milestones {
+                    color: #25B4E9;
+                }
+                div.smartOMToolbarItem a .altifyico-relationships,
+                ul.list_small span.altifyico-relationships {
+                    color: #BF5A88;
+                }
+                div.smartOMToolbarItem a .altifyico-decision-criteria,
+                ul.list_small span.altifyico-decision-criteria {
+                    color: #F5675B;
+                }
+                div.smartOMToolbarItem a .altifyico-insights,
+                ul.list_small span.altifyico-insights {
+                    color: #3c97dd;
+                }
+                div.smartOMToolbarItem a .altifyico-competitive-strategy,
+                ul.list_small span.altifyico-competitive-strategy {
+                    color: #FA975C;
+                }
+                div.smartOMToolbarItem a .altifyico-actions,
+                ul.list_small span.altifyico-actions {
+                    color: #FA975C;
+                }
+                div.smartOMToolbarItem a .altifyico-overview,
+                ul.list_small span.altifyico-overview {
+                    color: #3c97dd;
+                }
+                div.smartOMToolbarItem a .altifyico-ti,
+                ul.list_small span.altifyico-ti {
+                    color: #4BC076;
+                }
+
+            div.smartOMToolbarSummary {
+                color: #16325C;
+                margin-top: 5px;
+            }
+
+            div#smartOMBrandingLeft {
+                display: flex;
+                align-items: center;
+                font-size: 1rem;
+                color: #4A4A4A;
+                padding: 6px 2px 0 10px;
+            }
+
+            div#smartOMBrandingLeft .branding-product-name {
+                border-left: 1px solid #E4E7EA;
+                padding-left: .3rem;
+            }
+
+            div#smartOMBrandingLeft img {
+                height: 35px;
+            }
+            div#smartOMBrandingLeft img.dealReviewBadge {
+                margin-left: 25px;
+            }
+            div#smartOMBrandingLeft div strong {
+                display: block;
+            }
+            div#smartOMBrandingRight {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin-left: 30px;
+            }
+            div.dealReviewBadge {
+                position: absolute;
+            }
+            div#smartOMBrandingRight img {
+                margin-right: 10px;
+            }
+
+            .noLicenseText {
+                text-align: center;
+                margin: 30px auto;
+            }
+
+            .noLicenseTextMobile {
+                line-height: 5em;
+                padding: 20px;
+                text-align: center;
+                margin: 20px auto;
+            }
+
+            .noShadowText {
+                text-align: center;
+            }
+
+            #TRANSPARENCY #enableLink {
+                color: #3E3E3C;
+                font-size: 16px;
+                line-height: 21px;
+                font-weight: 600;
+            }
+
+            .enableLinkMobile { position: relative; }
+
+            div#TRANSPARENCY {
+                background-color: white;
+                border-radius: 8px;
+                -moz-border-radius: 8px;
+                -webkit-border-radius: 8px;
+                color: #6060E0;
+                font-size: large;
+                height: 100%;
+                left: 0;
+                opacity: 0.8;
+                position: absolute;
+                text-align: center;
+                top: 0;
+                width: 100%;
+            }
+
+            DIV#TRANSPARENCY A {
+                color: #16325C;
+                display: block;
+                padding: 84px 0;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            DIV#TRANSPARENCY SPAN.NOTAVAILABLE {
+                color: #000;
+                display: block;
+                padding: 84px 0;
+                font-weight: bold;
+            }
+
+            DIV#TRANSPARENCY A:hover {
+                text-decoration: underline;
+            }
+
+                DIV.omSummaryErrors {
+                    display: block;
+                    text-decoration: none;
+                    text-align: left;
+                    padding-top: 25px;
+                    padding-bottom: 150px;
+                }
+
+            /* Salesforce1-specific styles */
+            html.salesforce1 { height: auto; }
+
+            .salesforce1 body { background: transparent !important; }
+
+
+            /* start: redesigned Mobile launchpad CSS */
+
+            #tas_app_container {
+                border:1px solid #CCCCCC;
+                background-color:#FFFFFF;
+                border-radius:5px;
+                display:block;
+                width:100%;
+            }
+
+            #tas_app_container.extraPadding {
+                margin: 7% 0% 0% 1.5%;
+                width: 97%;
+            }
+
+            #tas_app_header {
+                position:relative;
+                background-color:#e3e3e3;
+                height:30px;
+                border-bottom:1px solid #CCCCCC;
+            }
+
+                #tas_app_header #tas_app_brand {
+                    height:30px;
+                }
+
+                    #tas_app_header #tas_app_brand img {
+                        height:100%;
+                        vertical-align: bottom;
+                    }
+
+                #tas_app_header #tas_app_logo {
+                    height:10px;
+                    position:absolute;
+                    right:10px;
+                    top:10px;
+                    margin:0px;
+                    padding:0px;
+                    line-height:10px;
+                }
+
+                    #tas_app_header #tas_app_logo img {
+                        height:100%;
+                        vertical-align:bottom;
+                    }
+
+                    #tas_app_header #tas_app_logo_mobile {
+                        height:10px;
+                        position:absolute;
+                        right:10px;
+                        top: 0px;
+                        margin:0px;
+                        padding:0px;
+                        line-height:10px;
+                    }
+
+                        #tas_app_header #tas_app_logo_mobile img {
+                            vertical-align:bottom;
+                        }
+
+            /* end: redesigned Mobile launchpad CSS */
+
+
+            div.mobile_notification {
+                background: url('{!URLFOR($Resource.ALTF__SmartOM, 'images/icon_flag.png')}') no-repeat scroll 9px 7px / 16px 16px #4e6b8d;
+                border-radius: 5px;
+                color: #ffffff;
+                display: block;
+                line-height: 10px;
+                margin-bottom: 10px;
+                padding: 10px 5px 10px 30px;
+                margin-top: 5px;
+            }
+
+            ul.list_small > li {
+                background: #f4faff;
+                margin: 0 0 5px;
+                display: block;
+                border-radius: 5px;
+                padding: 15px;
+            }
+
+        .launchpad_lightning_class div#smartOM {
+                min-width: 100%;
+            }
+        
+
+        .launchpad_lightning_class body {
+                    padding: 0 !important;
+            }
+
+            .empty_icon {
+                height: 36px;
+                width: 36px;
+                display: block;
+            }
+
+            @media only screen 
+            and (min-device-width : 768px) 
+            and (max-device-width : 1024px)  { 
+
+                /* REMOVES LAUNCHPAD MINIMUM WIDTH IN LIGHTNING ANDY */
+                .aloha_min_width{
+                    min-width: 0px !important;
+                }
+
+                div#smartOM{
+                    width: 93%;
+                }
+
+                div#smartOM {
+                    padding: 45px 7px 3px 10px;
+                } 
+
+            }
+
+            @media only screen and (min-width : 0px) and (max-width : 800px)  {
+
+                .launchpad_lightning_class div#smartOM {
+                    padding: 45px 7px 3px 10px;
+                }
+            }
+
+
+
+            <apex:outputText rendered="{! (isMobile == true)}">
+                /* smartphones (portrait and landscape) ----------- */
+                @media only screen and (min-width : 0px) and (max-width : 599px)  {
+
+                    div#smartOM {
+                        background-color: transparent;
+                        border: 0px solid #CCC;
+                        border-radius: 5px;
+                        cursor: default;
+                        float: none;
+                        display:block;
+                        margin: 0 auto;
+                        width: 97%;
+                        min-width:285px;
+                        padding: 0px 2px 0px 0px;
+                        position: relative;
+                        margin-left: 0px;
+                    }
+
+                }
+            </apex:outputText>
+
+
+            @media only screen and (min-width : 0px) and (max-width : 650px)  {
+
+                .launchpad_lightning_class div#smartOM {
+                    width: 96%;
+                }
+            }       
+
+            @media only screen and (max-width: 500px) and (min-width: 0px){
+                .launchpad_lightning_class div#smartOM {
+                    width: 96%;
+                }
+            }
+        
+            @media only screen and (max-device-width: 1280px) {
+            div#smartOM {
+                width: 100%;
+            }
+
+            }
+        </style>
+
+        <apex:outputText >
+            <div id="smartOM" class="aloha_min_width">
+
+                <c:Launchpad id="Launchpad"
+                    isLaunch="true"
+                    isRender="{! (isMobile == false)}"
+                    isMob="false"
+                    opportunityId="{!opportunity.id}"
+                    isLicensedForOppManager="{!isLicensedForOppManager}"
+                />
+
+                <!-- branding for Mobile Launchpad -->
+                <apex:outputText rendered="{! (isMobile == true)}">
+                    <div id="tas_app_container" class="lpad omanager">
+                        <div id="tas_app_header">
+                            <div id="tas_app_brand">
+                                <apex:image url="{!URLFOR($Resource.ALTF__Mobile, 'images/AltifyLogo_SmartOM50@2x.png')}" alt="Altify Logo"/>
+                            </div>
+                            <div id="tas_app_logo">
+                                <apex:image url="{!URLFOR($Resource.ALTF__Common, 'images/company_logo.png')}" alt="{! $Setup.ALTF__Core_Settings__c.ALTF__Company_Name__c} Logo" rendered="{!NOT(hasBrandOverrideLogo)}"/>
+                            </div>
+                            <div id="tas_app_logo_mobile">
+                                <apex:image url="{!brandOverrideLogo}" rendered="{!hasBrandOverrideLogo}"/>
+                            </div>
+                        </div>
+
+
+                        <apex:outputText value="Current user has no licenses for any module" styleClass="noLicenseTextMobile" rendered="{!hasNoLicenses && (isMobile == true)}"/>
+
+                        <c:LaunchpadMobile id="LaunchpadMobile"
+                            isLaunch="true"
+                            isRender="{! (isMobile == true)}"
+                            isMob="true"
+                            opportunityId="{!opportunity.id}"
+                            isLicensedForOppManager="{!isLicensedForOppManager}"
+                        />
+
+                    </div>
+
+                </apex:outputText>
+
+                <apex:outputText rendered="{!hasNoLicenses && (isMobile == false)}">
+                        <p class="noLicenseText">{!JSENCODE($Label.altf__launchpad_no_licenses_for_any_module)}</p>
+                </apex:outputText>
+
+                <apex:outputText rendered="{! (isMobile == false)}">
+
+                    <div id="smartOMBranding">
+                        <div id="smartOMBrandingLeft">
+                            <apex:image url="{!URLFOR($Resource.ALTF__Common, 'panel/images/AltifyLogo_SmartOM50@2x.png')}" /><span class="branding-product-name">Opportunity Manager</span>
+                        </div>
+                        <div id="smartOMBrandingRight">
+                            <apex:image url="{!URLFOR($Resource.ALTF__Common, 'images/company_logo.png')}" alt="{! $Setup.ALTF__Core_Settings__c.ALTF__Company_Name__c} Logo" rendered="{!NOT(hasBrandOverrideLogo)}"/>
+                            <apex:image url="{!brandOverrideLogo}" rendered="{!hasBrandOverrideLogo}"/>
+                        </div>
+                    </div>
+                </apex:outputText>
+
+                <apex:form id="omLinkForm">
+
+                    <apex:outputText styleClass="noShadowText" rendered="{! hasNoShadowOpp && hasNoLicenses == false}">
+                        <div id="TRANSPARENCY">
+                            <apex:outputText styleClass="noShadowText" rendered="{!dmlFailed=false}">
+                                <apex:outputText styleClass="NOTAVAILABLE" value="{!JSENCODE($Label.altf__om_launchpad_altify_not_avaialble_for_this_opp)}" rendered="{!editable == false}"/>
+
+                                <apex:outputText styleClass="noShadowText" rendered="{!editable}">
+                                    <a href="#" id="enableLink" class="{!IF(isMobile, 'enableLinkMobile','')}">{!$Label.OM_LAUNCHPAD_CLICK_TO_START_USING_ALTIFY}</a>
+                                </apex:outputText>
+                            </apex:outputText>
+                            <apex:outputText id="omSummaryErrors" rendered="{!dmlFailed=true}">
+                                <div class="omSummaryErrors">
+                                    <apex:pageMessages />
+                                </div>
+                            </apex:outputText>
+                        </div>
+                    </apex:outputText>
+                    <apex:actionFunction name="enableAltifyOpportunity"
+                        action="{!enableAltifyOpportunity}"
+                        rerender="omLinkForm"
+                    />
+                </apex:form>
+
+            </div>
+        </apex:outputText>
+
+        <!-- <apex:includeScript value="{!URLFOR($Resource.ttgomjs, 'ttg/lib/modernizr.js')}"/> -->
+        <apex:includeScript value="{!URLFOR($Resource.ALTF__ttgomjs, 'ttg/lib/ttgutils.js')}"/>
+
+        <style>
+            .tas_alert_item .launchpad_container .tas_done_container .tas_error_msg,
+            .tas_alert_item .launchpad_container .tas_defer_container .tas_error_msg{
+                background-color: #F3CBCB;
+                border: 1px solid #E57F7F;
+                border-radius: 5px;
+                color: #C00;
+                line-height: 27px;
+                padding: 0px 0px 0px 1px;
+                display: block;
+                width: 445px;
+                float: left;
+                margin-top: -29px;
+                margin-left: 206px;
+            }
+        </style>
+
+        <script>
+
+            /*
+            * Copyright © {! JSENCODE($Setup.ALTF__Core_Settings__c.ALTF__Company_Name__c)}. All rights reserved.
+            *
+            */
+
+
+            function setup() {
+
+                var numberOfIcons = {!MAX(numberOfIcons, numberOfIcons)};
+
+                if(ttg.isMobilePhone()) {
+
+                    var onFullPage = (jQuery(window).height() > 300);
+
+                    if(onFullPage) {
+                        jQuery('div#tas_app_container').addClass('extraPadding');
+
+                        // jQuery('#tas_app_header').hide();
+
+                    } else {
+                        jQuery('div#tas_app_container').addClass('launchpad');
+
+                        // jQuery('#tas_app_header').show();
+                    }
+
+                    jQuery('#TRANSPARENCY').width(jQuery('#tas_app_container').width())
+                        .css({
+
+                            'margin': jQuery('.extraPadding').css('margin'),
+                            'margin-left': (onFullPage ? '16px' : '1px'),
+                            'margin-top': '1px'
+                    });
+
+
+                } else if(ttg.isTouchScreen() || ttg.isWindows8Tab() 
+                || (navigator.userAgent.match(/Touch/i) != null && screen.height > screen.width)) { /* Need to factor in Win8 Tablet Portrait mode*/
+
+                    //jQuery('div.smartOMToolbarTitle').css('font-size', '80%');
+                    //jQuery('div.smartOMToolbarTitle').css('line-height', '1em');
+                    jQuery('.smartOMToolbarTitleNoWrap').removeClass('smartOMToolbarTitleNoWrap');
+                    jQuery('div.smartOMToolbarSummary').css('font-size', '75%');
+
+                    //jQuery('#smartOM').css('padding', '45px 5px 15px');
+
+                    jQuery('.smartOMToolbarItem').css('width', '9%');
+                    //jQuery('.div#smartOM').css('padding-left', '16px');
+                    jQuery('div.smartOMToolbarSummary').addClass('smartOMToolbarSummarySmall');
+                    jQuery('div.smartOMToolbarItem a').addClass('smallItem');
+
+
+                    jQuery('div.smartOMToolbarItem').css('margin-right', '1%');
+                    jQuery('div.smartOMToolbarItemLast').css('margin-right', '0px');
+
+                }
+                else if(screen.width > 790 && screen.width < 1040) {
+
+                    //jQuery('div.smartOMToolbarTitle').css('font-size', '80%');
+                    //jQuery('div.smartOMToolbarTitle').css('line-height', '1em');
+                    jQuery('.smartOMToolbarTitleNoWrap').removeClass('smartOMToolbarTitleNoWrap');
+                    jQuery('div.smartOMToolbarSummary').css('font-size', '75%');
+
+                    jQuery('#smartOM').css('padding', '45px 5px 15px');
+
+                    jQuery('.smartOMToolbarItem').css('width', '75px');
+                    jQuery('div.smartOMToolbarSummary').addClass('smartOMToolbarSummarySmall');
+                    jQuery('div.smartOMToolbarItem a').addClass('smallItem');
+
+
+                    jQuery('div.smartOMToolbarItem').css('margin-right', '3px');
+                    jQuery('div.smartOMToolbarItemLast').css('margin-right', '0px');
+
+                } else {
+                    // DMDEV-5740
+                    if(numberOfIcons === 9) {
+                        //
+                        if (screen.width < 1325) { // 1325px -> minumum screen width that will fit a min-width of 1025px
+                            jQuery('.smartOMToolbarItem').css('margin-right', '7px');
+                            var outerWidth = jQuery('.smartOMToolbarItem').outerWidth(true);
+                            //jQuery('#smartOM').css('min-width', outerWidth * 9 + 'px');
+                        } else {
+                            //jQuery('#smartOM').css('min-width', '1025px');
+                        }
+                    }
+                    else if(numberOfIcons === 7) {
+                        jQuery('#smartOM').css('min-width', '910px');
+                        jQuery('.smartOMToolbarItem').css('margin-right', '30px');
+                    }
+
+                    if ( navigator.userAgent.match(/Touch/i) != null && screen.height < screen.width ) {
+                        jQuery('div.smartOMToolbarTitle').css('line-height', '2em');
+                        jQuery('.smartOMToolbarTitleNoWrap').addClass('smartOMToolbarTitleNoWrap');
+                        jQuery('div.smartOMToolbarSummary').css('font-size', '0.95em');
+
+                        jQuery('#smartOM').css('padding', '49px 14px 9px');
+
+                        jQuery('.smartOMToolbarItem').css('width', '100px');
+                        jQuery('div.smartOMToolbarSummary').removeClass('smartOMToolbarSummarySmall');
+                        jQuery('div.smartOMToolbarItem a').removeClass('smallItem');
+
+
+                        jQuery('div.smartOMToolbarItem').css('margin-right', '15px');
+                        jQuery('div.smartOMToolbarItemLast').css('margin-right', '0px');
+
+                    }
+                }
+
+
+                if((ttg.isTouchScreen() || (navigator.userAgent.match(/Touch/i) != null)) && (screen.width >= 768 && screen.width <= 1280)) {
+                    jQuery('#smartOM').css('min-width', '310px');
+                }
+
+                var height = jQuery('#smartOM').height();
+
+                var enableLinkClicked = false;
+
+                jQuery('#TRANSPARENCY').height(
+
+                    (jQuery('.lpad').length > 0) ? jQuery('.lpad').height() : '100%'
+                );
+
+                jQuery('#enableLink').click(function() {
+                    if(!enableLinkClicked) {
+                        enableLinkClicked = true;
+                        enableAltifyOpportunity();
+                    }
+                }).dblclick(function(e) {
+                    e.preventDefault();
+                    return false;
+                });
+
+            }
+
+            jQuery(function() {
+
+                setup();
+
+                if (ttg_salesforce1) {
+
+                    // Salesforce1 navigation
+                    jQuery('a.smallItem').click(function() {
+
+                        jQuery('.overlay').toggle();
+                    });
+                }
+            });
+
+            // Win8 Tablets trigger a resize event when they change orientation
+            if ( navigator.userAgent.match(/Touch/i) != null ) {
+                jQuery(window).resize(function(){
+                    setup();
+                });
+            }
+
+        </script>
+    </apex:outputPanel>
+
+</apex:page>

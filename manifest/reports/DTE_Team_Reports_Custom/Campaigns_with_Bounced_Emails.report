@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Campaign$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Email</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$EmailBouncedDate</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$EmailBouncedReason</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$HasOptedOutOfEmail</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows contacts in a campaign with bounced emails.</description>
+    <filter>
+        <criteriaItems>
+            <column>Campaign.ContactCampaignMembers$IsEmailBounced</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Campaigns with Bounced Emails</name>
+    <params>
+        <name>scopeid</name>
+        <value>701f4000000EawC</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Campaigns_with_Contacts__c</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Campaign$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>ALTF__Log__c.CreatedDate:UNIQUE</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel># Days with AM Activity</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>ALTF__Log__c.User_ID_for_Reports__c:UNIQUE</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel># Users</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_9733410</developerName>
+        <masterLabel>Area</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>ALTF__Log__c$ALTF__Page__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Plan Details</sourceValue>
+            </sourceValues>
+            <value>Plan Details</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Opportunity Map</sourceValue>
+            </sourceValues>
+            <value>Opportunity Map</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Relationships</sourceValue>
+            </sourceValues>
+            <value>Relationships</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Insight Map</sourceValue>
+            </sourceValues>
+            <value>Insights</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Objectives</sourceValue>
+            </sourceValues>
+            <value>Objectives</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Actions</sourceValue>
+            </sourceValues>
+            <value>Actions</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>AM Test &amp; Improve</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Test &amp; Improve</sourceValue>
+            </sourceValues>
+            <value>Test &amp; Improve</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>ALTF__Log__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>ALTF__Log__c$ALTF__User__c.Manager</field>
+    </columns>
+    <columns>
+        <field>ALTF__Log__c$ALTF__Account__c</field>
+    </columns>
+    <columns>
+        <field>ALTF__Log__c$ALTF__Page__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows, by User, the number of views and updates on key Account Manager pages (e.g. Opportunity Map, Relationships, Insights etc.) in the Current FY</description>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3) AND 4 AND 5</booleanFilter>
+        <criteriaItems>
+            <column>ALTF__Log__c$Opportunity_ID_for_Reports__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ALTF__Log__c$Account_ID_for_Reports__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ALTF__Log__c$ALTF__Account_Plan__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ALTF__Log__c$ALTF__Page__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Relationships,Insight Map,Actions,Test &amp; Improve,Plan Overview,Plan Details,Segmentation,Opportunity Map,Value Map,Objectives,Plan Settings,AM Test &amp; Improve,Altify Account</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ALTF__Log__c$ALTF__User__c.Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Louis Mione,Haard Shah,Jacob Rzeszutko,Zia Zielinski,Chun Lin,Natalie Raines,Nicholas Lurowist,Swati Kapadia,Vivekananth Rajkumar</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ALTF__Log__c$ALTF__User__c.Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_9733410</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ALTF__Log__c$ALTF__Log_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>AM User Activity Current FY</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AltfRep_Altify_Activity_Logs__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ALTF__Log__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

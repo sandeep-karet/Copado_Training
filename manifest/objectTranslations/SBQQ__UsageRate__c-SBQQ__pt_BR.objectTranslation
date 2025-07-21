@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Taxa de uso (reservada)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Taxas de uso (reservadas)</value>
+    </caseValues>
+    <fields>
+        <label>Descrição</label>
+        <name>SBQQ__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lower bound of the usage range for this usage rate --></help>
+        <label>Limite inferior</label>
+        <name>SBQQ__LowerBound__c</name>
+    </fields>
+    <fields>
+        <help><!-- Choose a price book for this usage rate to reference --></help>
+        <label>Catálogo de preços</label>
+        <name>SBQQ__PriceBook__c</name>
+        <relationshipLabel>Taxas de uso</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Tipo de preço</label>
+        <name>SBQQ__PriceType__c</name>
+        <picklistValues>
+            <masterLabel>Flat Fee</masterLabel>
+            <translation><!-- Flat Fee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Per Unit</masterLabel>
+            <translation><!-- Per Unit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Price for the active currency. Use this field in multi-currency orgs. --></help>
+        <label>Preço</label>
+        <name>SBQQ__Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- Upper bound of the usage range for this usage rate --></help>
+        <label>Limite superior</label>
+        <name>SBQQ__UpperBound__c</name>
+    </fields>
+    <fields>
+        <label>Método de precificação de uso</label>
+        <name>SBQQ__UsagePriceMethod__c</name>
+        <picklistValues>
+            <masterLabel>Included Quantity</masterLabel>
+            <translation><!-- Included Quantity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overage (per unit)</masterLabel>
+            <translation><!-- Overage (per unit) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Per Unit</masterLabel>
+            <translation><!-- Per Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Period High Water Mark</masterLabel>
+            <translation><!-- Period High Water Mark --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Usage Ceiling Quantity (Maximum)</masterLabel>
+            <translation><!-- Usage Ceiling Quantity (Maximum) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Usage Floor Quantity (Minimum)</masterLabel>
+            <translation><!-- Usage Floor Quantity (Minimum) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Define a number for Salesforce Billing to use when ordering usage rates for processing --></help>
+        <label>Pedido de processamento de uso</label>
+        <name>SBQQ__UsageProcessingOrder__c</name>
+    </fields>
+    <fields>
+        <help><!-- Parent usage rate card for this usage rate --></help>
+        <label>Cartão de taxa de uso</label>
+        <name>SBQQ__UsageRateCard__c</name>
+        <relationshipLabel>Taxas de uso</relationshipLabel>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Taxa de uso</nameFieldLabel>
+</CustomObjectTranslation>

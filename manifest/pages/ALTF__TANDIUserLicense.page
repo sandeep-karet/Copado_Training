@@ -1,0 +1,143 @@
+<apex:page controller="ALTF.TANDIUserLicensePageController" 
+    showHeader="true" 
+    sidebar="false" 
+    docType="html-5.0">
+
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <apex:slds />
+
+    <script>
+        var copyToClipboard = function(){
+            console.log('CopyToClipboard function called');
+            var copyText = document.getElementById("linkToCopy");
+            
+            var aux = document.createElement("input");
+            aux.setAttribute("value", document.getElementById("linkToCopy").value);
+            document.body.appendChild(aux);
+            aux.select();
+            
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+            document.body.removeChild(aux);
+            /* Alert the copied text */
+            console.log("Copied the text: " + copyText.value);
+        }
+    </script>
+    
+
+    <div class="slds-scope">
+        <ul>
+            <li>
+                <span class="slds-text-title_bold">{!$Label.TANDI_ADMIN_ALLOCATE_ALTIFY_LICENSE_TO_USER}</span>
+            </li>
+            <li>
+                &nbsp;
+            </li>
+            <li>
+                {!$Label.TANDI_ADMIN_ALLOCATE_ALTIFY_LICENSE_DESCRIPTION} <span class="slds-text-title_bold">{!$Label.TANDI_ADMIN_REFRESH_PAGE}</span>
+            </li>
+            <li>
+                &nbsp;
+            </li>
+            <li>
+                {!licensePageDetails.descriptionExtraOne}
+            </li>
+            <li>
+                &nbsp;
+            </li>
+            <li>
+                {!licensePageDetails.descriptionExtraTwo} <span class="slds-text-title_bold"><apex:outputText value="{!$Label.altf__tandi_admin_contact_altify_csm_for_new_licenses}" rendered="{!licensePageDetails.noLicensesAvailable}" /></span>
+            </li>
+            <li>
+                &nbsp;
+            </li>
+            <li>
+                <dl class="slds-dl_horizontal">
+                    
+                    <dt class="slds-dl_horizontal__label"><a href="{!licensePageDetails.linkOne}" target="_blank">{!$Label.TANDI_ADMIN_ASSIGN_MISSING_ALTIFY_LICENSE}</a></dt>
+                    <dd class="slds-dl_horizontal__detail">
+                        <apex:outputText value="{!$Label.altf__tandi_admin_completed}" rendered="{!licensePageDetails.linkOneCompleted}" />
+                        <apex:outputText rendered="{!!licensePageDetails.linkOneCompleted}">
+                            <apex:outputText value="{!$Label.altf__tandi_admin_incomplete}"/>
+                            <span class="slds-icon_container slds-icon-utility-warning" title="incomplete"> 
+                                <svg aria-hidden="true" class="slds-icon slds-icon-text-warning slds-icon_small"> 
+                                    <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                                </svg>
+                                <span class="slds-assistive-text">incomplete</span>
+                            </span>
+                        </apex:outputText>    
+                    </dd>
+                    
+                    <dt class="slds-dl_horizontal__label"><a href="{!licensePageDetails.linkTwo}" target="_blank">{!$Label.altf__tandi_admin_assign_user_permission_set}</a></dt>
+                    <dd class="slds-dl_horizontal__detail">
+                        <apex:outputText value="{!$Label.altf__tandi_admin_completed}" rendered="{!licensePageDetails.linkTwoCompleted}" />
+                        <apex:outputText rendered="{!!licensePageDetails.linkTwoCompleted}">
+                            <apex:outputText value="{!$Label.altf__tandi_admin_incomplete}"/>
+                            <span class="slds-icon_container slds-icon-utility-warning" title="incomplete"> 
+                                <svg aria-hidden="true" class="slds-icon slds-icon-text-warning slds-icon_small"> 
+                                    <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                                </svg>
+                                <span class="slds-assistive-text">incomplete</span>
+                            </span>
+                        </apex:outputText>
+                    </dd>
+                    <dt class="slds-dl_horizontal__label">
+                    <apex:outputPanel id="opportunity-link" layout="block" rendered="{!licensePageDetails.isOM}">
+                        <a href="{!licensePageDetails.linkOpportunity}" target="_blank">{!$Label.altf__placeholder_1}</a>
+                        <dd class="slds-dl_horizontal__detail">
+                            <apex:outputText value="{!$Label.altf__tandi_admin_completed}" rendered="{!licensePageDetails.linkOpportunityCompleted}" />
+                            <apex:outputText rendered="{!!licensePageDetails.linkOpportunityCompleted}">
+                                <apex:outputText value="{!$Label.altf__tandi_admin_incomplete}"/>
+                                <span class="slds-icon_container slds-icon-utility-warning" title="incomplete"> 
+                                    <svg aria-hidden="true" class="slds-icon slds-icon-text-warning slds-icon_small"> 
+                                        <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">incomplete</span>
+                                </span>
+                            </apex:outputText>
+                        </dd>
+                    </apex:outputPanel>
+                    </dt>
+                </dl>
+            </li>
+        </ul>
+        <div>&nbsp;</div>
+        <div>
+            <apex:outputText value="{!$Label.altf__placeholder_2}"/>
+                        
+        </div>
+         <div>
+                        <ul style="list-style: inside">
+                            <li><apex:outputText value="{!$Label.altf__placeholder_3}"/></li>
+                            <li><apex:outputText value="{!$Label.altf__placeholder_4}"/> {!licensePageDetails.inviteeUserName}</li>
+                            <li><apex:outputText value="{!$Label.altf__placeholder_5}"/></li>
+                        </ul>
+         </div>
+         <div>&nbsp;</div>
+         <div class="">
+                <input id="linkToCopy" disabled="disabled" type="text" style="width: 60%; line-height: 1.5rem;"  value="{!licensePageDetails.linkFour}"/>
+                <button class="slds-button slds-button_icon slds-button_icon-border-filled" title="Copy" onclick="javascipt:copyToClipboard();">
+                    <span class="slds-icon_container" title="Copy to clipboard"> 
+                        <svg aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon_small"> 
+                            <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#copy_to_clipboard')}"></use>
+                        </svg>
+                    </span>
+                </button>
+        </div>
+        
+        <div class="slds-dl_horizontal">
+            <dt><a href="{!licensePageDetails.linkThree}" target="_blank">{!$Label.TANDI_ADMIN_CLICK_HERE_TO_LOGIN_AS} {!licensePageDetails.inviteeUserName}</a></dt>
+        </div>
+
+       
+
+        <br/>
+
+    
+        <apex:form >
+            <apex:commandButton disabled="{! !licensePageDetails.linkOneCompleted || !licensePageDetails.linkTwoCompleted || (licensePageDetails.isOM && !licensePageDetails.linkOpportunityCompleted)}" action="{!SendInviteEmail}" value="{!$Label.altf__tandi_admin_send_invite_email}"/>
+        </apex:form>
+    </div>
+    </html>
+</apex:page>

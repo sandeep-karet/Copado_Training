@@ -1,0 +1,297 @@
+<apex:page standardController="Plan_Specific_Fees__c"  lightningStylesheets="true">
+    
+    <apex:form id="psfSelForm">
+        <apex:pageBlock id="psfBlock">
+            <apex:pageBlockSection title="Classic disalbed" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <div>
+                        <span style="font-size:15px;font-weight:bold">PSF Page in Classic is no longer supported, Please use Lightning Version</span>
+                    </div>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <!---
+<apex:outputPanel id="msg">
+<apex:pageMessages />
+</apex:outputPanel>
+
+<apex:sectionHeader title="Plan-Specific Fees by Product Edit" subtitle="{!Subtitle}"/>
+
+    <apex:form id="psfSelForm">
+        <apex:pageBlock id="psfBlock">
+            <apex:pageBlockSection title="{! subscriptionTitle }" columns="1" collapsible="false" rendered="{!prodUnderContractList.size>0}">
+                <apex:PageBlockTable value="{!subWrapperList}" var="sw"
+                                     width="80%" align="center"
+                                     onRowClick="highlight(this);" id="psfTable">
+                    <apex:column id="prodCol">
+                        <apex:outputpanel id="prodSelect">
+                            <apex:outputText value="In Use" rendered="{! ! sw.showSelect && allowSubSelection}" />
+                            <apex:outputText value="Assigned" rendered="{! ! sw.showSelect && !allowSubSelection}" />
+                            <apex:outputLink value="#" rendered="{! sw.showSelect }">Select
+                                <apex:actionSupport event="onclick"
+                                                    action="{!selProduct}"
+                                                    rerender="prodDetail,msg,prodSelect"
+                                                    id="selectProductItem">
+                                    <apex:param name="prod" assignTo="{!selSubId}" value="{!sw.sub.Id}"/>
+                                </apex:actionSupport>
+                            </apex:outputLink>
+                        </apex:outputpanel>
+                    </apex:column>
+
+                    <apex:column headerValue="Product">
+                        <apex:outputText value="{!sw.sub.SBQQ__Product__r.Name}" id="curprod1"/>
+                    </apex:column>
+
+                    <apex:column headerValue="Subscription" id="Subscription">
+                        <apex:outputText value="{!sw.sub.Name}"/>
+                    </apex:column>
+
+                    <!--<apex:column headerValue="SubId" id="psfSubId">-->
+                        <!--<apex:outputText value="{!sub.Id}" id="psfSubValue" />-->
+                    <!--</apex:column>
+
+                    <apex:column headerValue="Account">
+                        <apex:outputText value="{!sw.sub.SBQQ__Account__r.name}"
+                                         id="accid"/>
+                    </apex:column>
+
+                    <apex:column headerValue="Opportunity">
+                        <apex:outputText value="{!sw.sub.SBQQ__QuoteLine__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.name}"
+                                         id="oppid"/>
+                    </apex:column>
+
+                    <apex:column headerValue="Status" id="status">
+                        <apex:outputText value="{!sw.sub.Status__c}"/>
+                    </apex:column>
+
+                    <apex:column headerValue="Consult Type">
+                        <apex:outputText value="{!sw.sub.Consult_Type__c}"/>
+                    </apex:column>
+
+                    <apex:column headerValue="Current Membership Fee">
+                        <apex:outputText value="{!sw.sub.Current_Membership_Fee__c}"/>
+                    </apex:column>
+
+                    <apex:column headerValue="Start Date">
+                        <apex:inputField value="{!sw.sub.SBQQ__StartDate__c}" required="true"/>
+                    </apex:column>
+
+                    <apex:column headerValue="Sort Order">
+                        <apex:outputText value="{!sw.sub.Sort_Order__c}"/>
+                    </apex:column>
+                </apex:PageBlockTable>
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+    </apex:form>
+    <apex:form id="psfEditForm">
+        <apex:OutputPanel id="prodDetail">
+            <apex:PageBlock rendered="{!showProduct}" title="Plan Specific Fees">
+                <apex:pageBlockSection title="Information"  collapsible="false">
+                    <apex:pageBlockSectionItem rendered="true" helpText="{!$ObjectType.Mbr_Group__c.fields.Name__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Mbr_Group__c.fields.Name__c.Label}"/>
+                        <apex:outputField value="{!grp.Name__c}"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem rendered="false" helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Member_Group__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Member_Group__c.Label}"/>
+                        <apex:inputField value="{!groupProdRec.Member_Group__c}">
+                            <apex:actionSupport event="onchange" action="{!selGroup}" rerender="msg,prodDetail"/>
+                        </apex:inputField>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="prosectitemid1" helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Subscription__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Subscription__c.Label}"/>
+                        <apex:outputField id="subcribeid" value="{!groupProdRec.Subscription__c}" />
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="actcopaySecId" helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Actual_Copay_May_Be_Less__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Actual_Copay_May_Be_Less__c.Label}"/>
+                        <apex:inputField id="actcopayId" value="{!groupProdRec.Actual_Copay_May_Be_Less__c}"
+                                         taborderhint="1"  rendered="{! allowSave }" />
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Product Start Date"/>
+                        <apex:inputField value="{!groupProdRec.Product_Start_Date__c}" required="true" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem />
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Product End Date"/>
+                        <apex:inputField value="{!groupProdRec.Product_End_Date__c}" />
+                    </apex:pageBlockSectionItem>
+
+                </apex:pageBlockSection>
+
+                <apex:pageBlockSection title="Selected Product" rendered="{! isOther }" collapsible="false">
+                    <apex:pageBlockSectionItem >
+                        <div>
+                            <span style="font-size:15px;font-weight:bold">{! selProductName }</span>
+
+
+                            <br />
+                            <br />
+                            <em>This product does not have member or plan fees.</em>
+                        </div>
+
+                    </apex:pageBlockSectionItem>
+
+                </apex:pageBlockSection>
+
+
+                <apex:pageBlockSection title="{! selProductName } Fee Structure" rendered="{! !isOther }" collapsible="false">
+                    <apex:pageBlockSectionItem id="EMO2consultfeeMbr" rendered="{! isEMO2 }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Mbr_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Mbr_Pd__c.Label}"/>
+                        <apex:inputField id="emscfid" value="{!groupProdRec.Consult_Fee_Mbr_Pd__c}" taborderhint="1" />
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="EMO2consultfeePl" rendered="{! isEMO2 }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Plan_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Plan_Pd__c.Label}"/>
+                        <apex:inputField id="emscfpid" value="{!groupProdRec.Consult_Fee_Plan_Pd__c}" taborderhint="2"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="GMconsultfeeMbr" rendered="{! isGenMed }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Mbr_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Mbr_Pd__c.Label}"/>
+                        <apex:inputField id="gmcfid" value="{!groupProdRec.Consult_Fee_Mbr_Pd__c}" taborderhint="1" />
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="GMconsultfeePl" rendered="{! isGenMed }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Plan_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Plan_Pd__c.Label}"/>
+                        <apex:inputField id="gmcfpid" value="{!groupProdRec.Consult_Fee_Plan_Pd__c}" taborderhint="2"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="TobaccoMbrFee" rendered="{! isTobacco }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.TC_Mbr_Case_Rate_Fee__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.TC_Mbr_Case_Rate_Fee__c.Label}"/>
+                        <apex:inputField id="TCMbrFee" value="{!groupProdRec.TC_Mbr_Case_Rate_Fee__c}"
+                                         taborderhint="3"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="TobaccoClientFee" rendered="{! isTobacco }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.TC_Client_Case_Rate_Fee__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.TC_Client_Case_Rate_Fee__c.Label}"/>
+                        <apex:inputField id="TCClientFee" value="{!groupProdRec.TC_Client_Case_Rate_Fee__c}"
+                                         taborderhint="4"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="DermconsultfeeMbr" rendered="{! isDerm }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.DERMConsult_Fee_Mbr_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.DERMConsult_Fee_Mbr_Pd__c.Label}"/>
+                        <apex:inputField id="DermCFM" value="{!groupProdRec.DERMConsult_Fee_Mbr_Pd__c}"
+                                         taborderhint="5"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="DermconsultfeePl" rendered="{! isDerm }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.DERMConsult_Fee_Plan_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.DERMConsult_Fee_Plan_Pd__c.Label}"/>
+                        <apex:inputField id="DermCFP" value="{!groupProdRec.DERMConsult_Fee_Plan_Pd__c}"
+                                         taborderhint="6"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="BHconsultfeeMbr" rendered="{! isBehavior }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Initial_Diagnostic_Mbr_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Initial_Diagnostic_Mbr_Pd__c.Label}"/>
+                        <apex:inputField id="bhp1id" value="{!groupProdRec.Consult_Fee_Initial_Diagnostic_Mbr_Pd__c}"
+                                         taborderhint="7"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="BHconsultfeePl" rendered="{! isBehavior }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Initial_Diagnostic_Plan_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Initial_Diagnostic_Plan_Pd__c.Label}"/>
+                        <apex:inputField id="bhcp1pl" value="{!groupProdRec.Consult_Fee_Initial_Diagnostic_Plan_Pd__c}"
+                                         taborderhint="8" />
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="BHconsultfeeOnMbr" rendered="{! isBehavior }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Ongoing_MD_Mbr_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Ongoing_MD_Mbr_Pd__c.Label}"/>
+                        <apex:inputField id="bhpoid" value="{!groupProdRec.Consult_Fee_Ongoing_MD_Mbr_Pd__c}"
+                                         taborderhint="9"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="BHconsultfeeOnPl" rendered="{! isBehavior }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Ongoing_MD_Plan_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Ongoing_MD_Plan_Pd__c.Label}"/>
+                        <apex:inputField id="bhpcfpid" value="{!groupProdRec.Consult_Fee_Ongoing_MD_Plan_Pd__c}"
+                                         taborderhint="10"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="BHconsultfeeOnNonMr" rendered="{! isBehavior }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Ongoing_Non_MD_Mbr_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Ongoing_Non_MD_Mbr_Pd__c.Label}"/>
+                        <apex:inputField id="bhnpid" value="{!groupProdRec.Consult_Fee_Ongoing_Non_MD_Mbr_Pd__c}"
+                                         taborderhint="11"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="BHconsultfeeOnNonPl" rendered="{! isBehavior }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Ongoing_Non_MD_Plan_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Ongoing_Non_MD_Plan_Pd__c.Label}"/>
+                        <apex:inputField id="bhnplid1" value="{!groupProdRec.Consult_Fee_Ongoing_Non_MD_Plan_Pd__c}"
+                                         taborderhint="12"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="GlobalCareconsultfeeMbr" rendered="{! isGlobalCare }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Mbr_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Mbr_Pd__c.Label}"/>
+                        <apex:inputField id="glcfid" value="{!groupProdRec.Consult_Fee_Mbr_Pd__c}" taborderhint="1" />
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="GlobalCareconsultfeePl" rendered="{! isGlobalCare }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Plan_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Plan_Pd__c.Label}"/>
+                        <apex:inputField id="glcfpid" value="{!groupProdRec.Consult_Fee_Plan_Pd__c}" taborderhint="2"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="BackCareconsultfeeMbr" rendered="{! isBackCare }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Mbr_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Mbr_Pd__c.Label}"/>
+                        <apex:inputField id="glcfid" value="{!groupProdRec.Consult_Fee_Mbr_Pd__c}" taborderhint="1" />
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="BackCareconsultfeePl" rendered="{! isBackCare }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Plan_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Plan_Pd__c.Label}"/>
+                        <apex:inputField id="glcfpid" value="{!groupProdRec.Consult_Fee_Plan_Pd__c}" taborderhint="2"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="NutritionconsultfeeMbr" rendered="{! isNutrition }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Mbr_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Mbr_Pd__c.Label}"/>
+                        <apex:inputField id="glcfid" value="{!groupProdRec.Consult_Fee_Mbr_Pd__c}" taborderhint="1" />
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem id="NutritionconsultfeePl" rendered="{! isNutrition }"
+                                               helpText="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Plan_Pd__c.InlineHelpText}">
+                        <apex:outputLabel value="{!$ObjectType.Plan_Specific_Fees__c.fields.Consult_Fee_Plan_Pd__c.Label}"/>
+                        <apex:inputField id="glcfpid" value="{!groupProdRec.Consult_Fee_Plan_Pd__c}" taborderhint="2"/>
+                    </apex:pageBlockSectionItem>
+
+
+
+                </apex:pageBlockSection>
+
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Save" action="{!Save}" rendered="{! allowSave }"/>
+                    <apex:commandButton value="Save and New" action="{!SaveAndNew}" rendered="{! allowSave && isNewSub }"/>
+                    <apex:commandButton value="Delete" action="{!DeleteSub}" immediate="true" onclick="if(!confirm('This will delete {! groupProdRec.Name }. Are you sure?')){return false};" rendered="{! !IsNewSub }"/>
+                    <apex:commandButton value="Close" action="{!Cancel}" immediate="true"/>
+                </apex:pageBlockButtons>
+            </apex:PageBlock>
+        </apex:OutputPanel>
+    </apex:form>
+
+    <apex:pageBlock title="Plan-Specific-Fees History">
+        <apex:pageBlockTable value="{!Plan_Specific_Fees__c.Histories}" var="psf">
+            <apex:column headerValue="Date" value="{!psf.CreatedDate}"/>
+            <apex:column headerValue="User" value="{!psf.CreatedBy.Name}"/>
+            <apex:column headerValue="Action" value="{!psf.Field}"/>
+            <apex:column headerValue="Old Value" value=" {!psf.OldValue}"/>
+            <apex:column headerValue="New Value" value=" {!psf.NewValue}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+-->
+</apex:page>

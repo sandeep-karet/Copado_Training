@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>BG-Mail Order Meds</label>
+    <protected>false</protected>
+    <values>
+        <field>LVGO__Initial_Message_Content__c</field>
+        <value xsi:type="xsd:string">Don’t waste time running around town to fill your diabetes meds. Have them delivered right to your door. Get details on your Rx delivery benefits.</value>
+    </values>
+    <values>
+        <field>LVGO__Initial_Message__c</field>
+        <value xsi:type="xsd:string">BG-Mail Order Meds</value>
+    </values>
+</CustomMetadata>

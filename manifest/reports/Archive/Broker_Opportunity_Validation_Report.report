@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.CloseDate</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.StageName</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Broker_Account_Name__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Servicing_Account__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Broker_Contact__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Contact_Location__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Name</field>
+    </columns>
+    <currency>USD</currency>
+    <description>To review Broker Opportunity Relationship data</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Broker Opportunity Validation Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Broker_Opportunity_Relationships__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Broker_Opp_Rel__c$Opp_Broker__c.StageName</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Broker_Opp_Rel__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

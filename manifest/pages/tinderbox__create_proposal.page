@@ -1,0 +1,11 @@
+<apex:page standardController="tinderbox__Proposal__c" extensions="tinderbox.proposalExtension">
+    <apex:form >
+    	<apex:inputhidden value="{!tinderbox__Proposal__c.tinderbox__TBAccount__c}" />
+    </apex:form>
+
+    <c:ApplicationView path="salesforce/new_proposal"
+                       queryString="ext_opportunity={!ParentID}&sobject_type=Opportunity"
+                       TBAccountEndPoint="{!TBAccountEndPoint}"
+                       height="800px"></c:ApplicationView>
+
+</apex:page>

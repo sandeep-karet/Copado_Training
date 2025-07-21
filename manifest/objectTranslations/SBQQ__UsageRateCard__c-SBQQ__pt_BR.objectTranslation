@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Cartão de taxa de uso (reservado)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Cartões de taxa de uso (reservados)</value>
+    </caseValues>
+    <fields>
+        <help><!-- Group usage rates by the selected field during document output and billing --></help>
+        <label>Campo de atributo</label>
+        <name>SBQQ__AttributeField__c</name>
+        <picklistValues>
+            <masterLabel>UsagePriceMethod__c</masterLabel>
+            <translation><!-- UsagePriceMethod__c --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Frequência de faturamento</label>
+        <name>SBQQ__BillingFrequency__c</name>
+    </fields>
+    <fields>
+        <label>Descrição</label>
+        <name>SBQQ__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The usage rate card that you cloned to create this usage rate card --></help>
+        <label>Cartão de taxa de uso original</label>
+        <name>SBQQ__OriginalUsageRateCard__c</name>
+        <relationshipLabel>Cartões de taxa de uso (Cartão de taxa de uso original)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The quote line that this usage rate card covers --></help>
+        <label>Linha de cotação</label>
+        <name>SBQQ__QuoteLine__c</name>
+        <relationshipLabel>Cartões de taxa de uso</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The subscription that this usage rate card covers --></help>
+        <label>Assinatura</label>
+        <name>SBQQ__Subscription__c</name>
+        <relationshipLabel>Cartões de taxa de uso</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The usage rate card that you added to the original quote --></help>
+        <label>Cartão de taxa de modelo</label>
+        <name>SBQQ__TemplateRateCard__c</name>
+        <relationshipLabel>Cartões de taxa de cotação</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Choose how Salesforce Billing bills usage rates for this usage rate card. Range bills a single rate while slab bills all applicable usage rates. --></help>
+        <label>Tipo</label>
+        <name>SBQQ__Type__c</name>
+        <picklistValues>
+            <masterLabel>Range</masterLabel>
+            <translation><!-- Range --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slab</masterLabel>
+            <translation><!-- Slab --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nome do cartão de taxa de uso</nameFieldLabel>
+    <webLinks>
+        <label>Clonar com relacionado</label>
+        <name>SBQQ__CloneWithRelated</name>
+    </webLinks>
+    <webLinks>
+        <label>Clonar com relacionado</label>
+        <name>SBQQ__CloneWithRelatedClassic</name>
+    </webLinks>
+</CustomObjectTranslation>

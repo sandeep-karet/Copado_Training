@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Jenga#1448 - Opp wizard enhancement. Created a mapping between program and participants percentage based on opp covered lives.</description>
+    <fields>
+        <fullName>LVGO__ParticipantPercentage__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>ParticipantPercentage</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Program_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Program Name</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Livongo for Diabetes</fullName>
+                    <default>false</default>
+                    <label>Livongo for Diabetes</label>
+                </value>
+                <value>
+                    <fullName>Livongo for Hypertension</fullName>
+                    <default>false</default>
+                    <label>Livongo for Hypertension</label>
+                </value>
+                <value>
+                    <fullName>Livongo for Weight Management</fullName>
+                    <default>false</default>
+                    <label>Livongo for Weight Management</label>
+                </value>
+                <value>
+                    <fullName>Livongo Diabetes Prevention Program</fullName>
+                    <default>false</default>
+                    <label>Livongo Diabetes Prevention Program</label>
+                </value>
+                <value>
+                    <fullName>Livongo for Behavioral Health by myStrength 1.0</fullName>
+                    <default>false</default>
+                    <label>Livongo for Behavioral Health by myStrength 1.0</label>
+                </value>
+                <value>
+                    <fullName>Livongo for Behavioral Health by myStrength 2.0</fullName>
+                    <default>false</default>
+                    <label>Livongo for Behavioral Health by myStrength 2.0</label>
+                </value>
+                <value>
+                    <fullName>DM Solution</fullName>
+                    <default>false</default>
+                    <label>DM Solution</label>
+                </value>
+                <value>
+                    <fullName>DP Solution</fullName>
+                    <default>false</default>
+                    <label>DP Solution</label>
+                </value>
+                <value>
+                    <fullName>CV Solution</fullName>
+                    <default>false</default>
+                    <label>CV Solution</label>
+                </value>
+                <value>
+                    <fullName>CV + DM</fullName>
+                    <default>false</default>
+                    <label>CV + DM</label>
+                </value>
+                <value>
+                    <fullName>CV + DP</fullName>
+                    <default>false</default>
+                    <label>CV + DP</label>
+                </value>
+                <value>
+                    <fullName>CV + DM + DP</fullName>
+                    <default>false</default>
+                    <label>CV + DM + DP</label>
+                </value>
+                <value>
+                    <fullName>Teladoc Telehealth Services</fullName>
+                    <default>false</default>
+                    <label>Teladoc Telehealth Services</label>
+                </value>
+                <value>
+                    <fullName>Teladoc Expert Medical Services</fullName>
+                    <default>false</default>
+                    <label>Teladoc Expert Medical Services</label>
+                </value>
+                <value>
+                    <fullName>CKD Solution</fullName>
+                    <default>false</default>
+                    <label>CKD Solution</label>
+                </value>
+                <value>
+                    <fullName>myStrength</fullName>
+                    <default>false</default>
+                    <label>myStrength</label>
+                </value>
+                <value>
+                    <fullName>myStrength Complete</fullName>
+                    <default>false</default>
+                    <label>myStrength Complete</label>
+                </value>
+                <value>
+                    <fullName>Diabetes w/ CKD Aware Variant</fullName>
+                    <default>false</default>
+                    <label>Diabetes w/ CKD Aware Variant</label>
+                </value>
+                <value>
+                    <fullName>Hypertension w/ CKD Aware Variant</fullName>
+                    <default>false</default>
+                    <label>Hypertension w/ CKD Aware Variant</label>
+                </value>
+                <value>
+                    <fullName>HF Solution</fullName>
+                    <default>false</default>
+                    <label>HF Solution</label>
+                </value>
+                <value>
+                    <fullName>A1C Test Kits - Results</fullName>
+                    <default>false</default>
+                    <label>A1C Test Kits - Results</label>
+                </value>
+                <value>
+                    <fullName>A1C Test Kits</fullName>
+                    <default>false</default>
+                    <label>A1C Test Kits</label>
+                </value>
+                <value>
+                    <fullName>Diabetes DeviceFlex</fullName>
+                    <default>false</default>
+                    <label>Diabetes DeviceFlex</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Management</fullName>
+                    <default>false</default>
+                    <label>Diabetes Management</label>
+                </value>
+                <value>
+                    <fullName>Hypertension Management</fullName>
+                    <default>false</default>
+                    <label>Hypertension Management</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Management Plus</fullName>
+                    <default>false</default>
+                    <label>Diabetes Management Plus</label>
+                </value>
+                <value>
+                    <fullName>Hypertension Management Plus</fullName>
+                    <default>false</default>
+                    <label>Hypertension Management Plus</label>
+                </value>
+                <value>
+                    <fullName>Prediabetes Management Plus</fullName>
+                    <default>false</default>
+                    <label>Prediabetes Management Plus</label>
+                </value>
+                <value>
+                    <fullName>Prediabetes Management</fullName>
+                    <default>false</default>
+                    <label>Prediabetes Management</label>
+                </value>
+                <value>
+                    <fullName>Weight Management</fullName>
+                    <default>false</default>
+                    <label>Weight Management</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Management w/ CKD Aware Variant</fullName>
+                    <default>false</default>
+                    <label>Diabetes Management w/ CKD Aware Variant</label>
+                </value>
+                <value>
+                    <fullName>Hypertension Management w/ CKD Aware Variant</fullName>
+                    <default>false</default>
+                    <label>Hypertension Management w/ CKD Aware Variant</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Care</fullName>
+                    <default>false</default>
+                    <label>Diabetes Care</label>
+                </value>
+                <value>
+                    <fullName>Hypertension Care</fullName>
+                    <default>false</default>
+                    <label>Hypertension Care</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Care Complete</fullName>
+                    <default>false</default>
+                    <label>Diabetes Care Complete</label>
+                </value>
+                <value>
+                    <fullName>Hypertension Care Complete</fullName>
+                    <default>false</default>
+                    <label>Hypertension Care Complete</label>
+                </value>
+                <value>
+                    <fullName>Prediabetes Care Complete</fullName>
+                    <default>false</default>
+                    <label>Prediabetes Care Complete</label>
+                </value>
+                <value>
+                    <fullName>myStrength Plus</fullName>
+                    <default>false</default>
+                    <label>myStrength Plus</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Program Participant</label>
+    <listViews>
+        <fullName>LVGO__All_Participant_Percentages</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>LVGO__Program_Name__c</columns>
+        <columns>LVGO__ParticipantPercentage__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Participant Percentages</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>Program Participants</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

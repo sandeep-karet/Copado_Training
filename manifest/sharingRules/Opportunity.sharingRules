@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Contracting_Closed_Won_to_Contract_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Contracting Closed Won to Contract Team</label>
+        <sharedTo>
+            <roleAndSubordinates>Contracts</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>StageName</field>
+            <operation>equals</operation>
+            <value>Contracting</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Implementation_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Implementation Team</label>
+        <sharedTo>
+            <group>Implementation_Team</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Opp_Guid__c</field>
+            <operation>notEqual</operation>
+            <value>null</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Start_Implementation</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Allows users with CM role to Read/Write opportunities in Contracting</description>
+        <label>Start Implementation</label>
+        <sharedTo>
+            <group>Client_Management_Roles</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>StageName</field>
+            <operation>equals</operation>
+            <value>Contracting</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Broker_Opps_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This rule shares opportunities owned by Sales Broker role to EditBrokerOpp</description>
+        <label>Broker Opps Share</label>
+        <sharedTo>
+            <group>EditBrokerOpp</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Broker_SVP</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Employer_Downmarket_Opps_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This rule shares opportunities owned by Employer Downmarket role to EditBrokerOpp</description>
+        <label>Employer Downmarket Opps Share</label>
+        <sharedTo>
+            <group>EditBrokerOpp</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Employer_Downmarket_SVP</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

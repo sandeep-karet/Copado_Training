@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_45002048</developerName>
+        <masterLabel>Health Plan Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Lead$Owner</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Theresa Nute</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jack Rose</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paul Cameron</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Suzanne Kane</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Terry Beck</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bryan Spaits</sourceValue>
+            </sourceValues>
+            <value>Net new Clients</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Lee Blossom</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kathy Warrick</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rachel Bennett</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Keith Jacobs</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Patrick Williams</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Robyn Racheotes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Megan Conrad</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Resha Wafer</sourceValue>
+            </sourceValues>
+            <value>Core Clients</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Robin Kingston</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shannon Stepp</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sara Sweat</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Vince Colaberdino</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kristin Hausherr</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matt Suppin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brooke Petty</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lex Igras</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Chad Baugh</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Allison Fleming</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nicole Fleck</sourceValue>
+            </sourceValues>
+            <value>Key Client</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Bill Hepfinger</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>William Hepfinger</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jim Plack</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Roger Marwill</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>JT Malone</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>William J. Hepfinger</sourceValue>
+            </sourceValues>
+            <value>ASO</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Rick Gailunas</sourceValue>
+            </sourceValues>
+            <value>Consultant</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Kathleen Brand</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Teri Condon</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lisa Ferguson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sommer Crain</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lisa DeLarso</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Wendy Milligan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rebecca Schulz</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kristen Dominique</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Amy Hill</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alice Addis</sourceValue>
+            </sourceValues>
+            <value>Strategic</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_79776459</developerName>
+        <masterLabel>Qualified Lead Total</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Lead$Status</sourceColumnName>
+        <useOther>false</useOther>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_45002048</groupingColumn>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Lead$Owner</field>
+    </columns>
+    <columns>
+        <field>Lead$Title</field>
+    </columns>
+    <columns>
+        <field>Lead$Company</field>
+    </columns>
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead$Reason_Disqualified__c</field>
+    </columns>
+    <columns>
+        <field>Lead$Account_Type__c</field>
+    </columns>
+    <columns>
+        <field>Lead$How_did_you_hear_about_us__c</field>
+    </columns>
+    <columns>
+        <field>Lead$LeadSource</field>
+    </columns>
+    <columns>
+        <field>Lead$Lead_Owner_Role_Profile__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Lead$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>AQL,MQL,SAL,Rejected</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$LeadSource</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Marketing</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Lead_Owner_Role_Profile__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Sales - HP Enterprise,Client Management - Key HealthPlan,Client Management - Core HealthPlan,Client Management - Aetna,Sales Operations - Client Management - Aetna,Sales Operations - Client Management - Core HealthPlan,Sales Operations - Client Management - Key HealthPlan,Sales Operations - Sales - HP EnterpriseSales Operations - Sales - HP Enterprise,UHG,Aetna</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Year</dateGranularity>
+        <field>Lead$LastTransferDate</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_45002048</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead$Status</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>yoy Health Plan Leads By Rep-DB</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Lead_Lifecycle__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Lead$LastTransferDate</dateColumn>
+        <interval>INTERVAL_PREVCUR2FY</interval>
+    </timeFrameFilter>
+</Report>

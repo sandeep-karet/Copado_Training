@@ -1,0 +1,761 @@
+<apex:page id="MemberGroup" standardController="Mbr_Group__c" lightningStylesheets="true" showHeader="true" Title="Member Group Edit" applyHtmlTag="true">   
+    <apex:form id="psfSelForm">
+        <apex:pageBlock id="psfBlock">
+            <apex:pageBlockSection title="Classic disalbed" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <div>
+                        <span style="font-size:15px;font-weight:bold">Member Group New/Edit Page in Classic is no longer supported, Please use Lightning Version</span>
+                    </div>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+                        
+     <!--
+    <apex:outputPanel id="messages">
+        <apex:pageMessages />
+    </apex:outputPanel>
+
+    <apex:form >
+        <apex:sectionHeader title="{! sectiontitle }" subTitle="{! sectionsubtitle }"/>
+        <apex:pageBlock title="Member Group Detail">
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton action="{!newPSF}" value="Create a new PSF" rendered="{! !isNew }"/>
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+
+            <!------------------------------------------------------------------------->
+            <!-- MEMBER GROUP DETAIL SECTION                                    -->
+            <!------------------------------------------------------------------------->
+     <!--
+            <apex:pageBlockSection columns="2" title="Information" collapsible="false">
+
+                <!-- Name -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Name__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Name__c.Label}"/>
+                    <apex:outputPanel >
+                        <apex:InputField value="{! selGroup.Name__c }"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <!-- Group Number -->
+     <!--
+                <apex:pageBlockSectionItem >
+                    <apex:OutputLabel value="Group Number"/>
+                    <apex:InputField value="{! selGroup.Group_Number__c }"/>
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+
+            <apex:actionRegion >
+                <!-- this is wrapped in an Action Region so status can update Activity Date -->
+     <!--
+                <apex:pageBlockSection columns="2" collapsible="false" id="actDate">
+                    <!-- Client Account --><!--
+                    <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Client_Account__c.InlineHelpText}">
+                        <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Client_Account__c.Label}"/>
+                        <apex:outputPanel >
+                            <apex:InputField value="{! selGroup.Client_Account__c }" rendered="{! !hasAccount }"/>
+                            <apex:OutputField value="{! selGroup.Client_Account__c }" rendered="{! hasAccount }"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+
+                    <!-- Status -->
+     <!--
+                    <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Status__c.InlineHelpText}">
+                        <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Status__c.Label}"/>
+
+                        <apex:InputField value="{! selGroup.Status__c }">
+                            <apex:actionSupport event="onchange" action="{! setActiveDate }" reRender="actDate"/>
+                        </apex:InputField>
+
+                    </apex:pageBlockSectionItem>
+                    <!-- Client Account Manager -->
+     <!--
+                    <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Client_Account_Manager__c.InlineHelpText}">
+                        <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Client_Account_Manager__c.Label}"/>
+                        <apex:InputField value="{! selGroup.Client_Account_Manager__c }"/>
+                    </apex:pageBlockSectionItem>
+
+                    <!-- Active Date -->
+     <!--
+                    <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Active_Date__c.InlineHelpText}">
+                        <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Active_Date__c.Label}"/>
+                        <apex:outputPanel >
+                            <apex:OutputField value="{! selGroup.Active_Date__c }"
+                                              rendered="{! selGroup.Status__c == 'ACTIVE' }"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                                              
+                                              
+
+                </apex:pageBlockSection>
+            </apex:actionRegion>
+
+            <apex:pageBlockSection columns="2" collapsible="false">
+
+                <!-- Special Instructions -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Any_Special_Instructions__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Any_Special_Instructions__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Any_Special_Instructions__c }"/>
+                </apex:pageBlockSectionItem>
+                    
+                <!-- Termination Date -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Termination_Date__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Termination_Date__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Termination_Date__c }"/>
+                </apex:pageBlockSectionItem>
+
+
+                <!-- Migration Group Number -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Migration_Group_Number__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Migration_Group_Number__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Migration_Group_Number__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Profile Name -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Profile_Name__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Profile_Name__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Profile_Name__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Is Valid MSU Group -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Is_Valid_MSU_Group__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Is_Valid_MSU_Group__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Is_Valid_MSU_Group__c }"/>
+                </apex:pageBlockSectionItem>
+                    
+                <!-- Domestic_Country__c -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Domestic_Country__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Domestic_Country__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Domestic_Country__c }"/>
+                </apex:pageBlockSectionItem>
+                    
+                
+
+
+            </apex:pageBlockSection>
+
+
+            <!------------------------------------------------------------------------->
+            <!-- MEMBER GROUP CLASSIFICATION SECTION                                 -->
+            <!------------------------------------------------------------------------->
+     <!--
+            <apex:pageBlockSection columns="2" title="Member Group Classification" collapsible="true">
+
+                <!-- Client Account Location -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Client_Account_Location__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Client_Account_Location__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Client_Account_Location__c }"/>
+                </apex:pageBlockSectionItem>
+
+
+                <!-- Plan Category -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Plan_Category__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Plan_Category__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Plan_Category__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Client Account Relationship -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Client_Account_Relationship__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Client_Account_Relationship__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Client_Account_Relationship__c }"/>
+                </apex:pageBlockSectionItem>
+
+
+                <!-- Plan Type -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Plan_Type__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Plan_Type__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Plan_Type__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Line of Business -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Line_Of_Business__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Line_Of_Business__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Line_Of_Business__c }"/>
+                </apex:pageBlockSectionItem>
+
+
+            </apex:pageBlockSection>
+
+
+            <!------------------------------------------------------------------------->
+            <!-- MEMBER GROUP INFORMATION SECTION: ELIGIBILITY                       -->
+            <!------------------------------------------------------------------------->
+     <!--
+            <apex:pageBlockSection columns="2" title="Eligibility and Billing Information" collapsible="true">
+                <!-- Eligibility Option -->      <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Eligibility_Option__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Eligibility_Option__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Eligibility_Option__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Eligibility Dependents Included in File -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Elig_Dep_Inc_In_File__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Elig_Dep_Inc_In_File__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Elig_Dep_Inc_In_File__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Consult Billing Instructions -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Consult_Billing_Method__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Consult_Billing_Method__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Consult_Billing_Method__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Eligibility By Third Party -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Elig_By_Third_Party__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Elig_By_Third_Party__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Elig_By_Third_Party__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Eligibility File Source -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Eligibility_File_Source__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Eligibility_File_Source__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Eligibility_File_Source__c }"/>
+                </apex:pageBlockSectionItem>
+
+
+            </apex:pageBlockSection>
+
+            <!------------------------------------------------------------------------->
+            <!-- MEMBER GROUP INFORMATION SECTION: NASF Fields                       -->
+            <!------------------------------------------------------------------------->
+     <!--
+            <apex:pageBlockSection columns="2" title="New Account Setup Form Information" collapsible="true">
+                <!-- Actual Copay May Be Less -->      <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Other_Company_Names__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Other_Company_Names__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Other_Company_Names__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Actual Copay May Be Less -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Actual_Copay_May_Be_Less__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Actual_Copay_May_Be_Less__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Actual_Copay_May_Be_Less__c }"/>
+                </apex:pageBlockSectionItem>
+                <!-- Consult Included -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Consult_Included__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Consult_Included__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Consult_Included__c }"/>
+                </apex:pageBlockSectionItem>
+                <!-- Allow Conversion to Retail -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Allow_Conversion_to_Retail__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Allow_Conversion_to_Retail__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Allow_Conversion_to_Retail__c }"/>
+                </apex:pageBlockSectionItem>
+                <!-- Purchase Order Required -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Purchase_Order_Required__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Purchase_Order_Required__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Purchase_Order_Required__c }"/>
+                </apex:pageBlockSectionItem>
+                <!-- Allow Caregiver Program -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Allow_Caregiver_Program__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Allow_Caregiver_Program__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Allow_Caregiver_Program__c }"/>
+                </apex:pageBlockSectionItem>
+                <!-- Purchase Order Number -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Purchase_Order_Number__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Purchase_Order_Number__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Purchase_Order_Number__c }"/>
+                </apex:pageBlockSectionItem>
+                <!-- Allow Sexual Health-->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Sexual_Health_Opt_Out__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Sexual_Health_Opt_Out__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Sexual_Health_Opt_Out__c }"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />
+                <!-- Allow Geofencing -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Allow_Geo_Fencing__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Allow_Geo_Fencing__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Allow_Geo_Fencing__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Spacer -->
+     <!--
+                <apex:pageBlockSectionItem />
+
+                <!-- Teladoc Select -->
+         <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Teladoc_Select__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Teladoc_Select__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Teladoc_Select__c }"/>
+                </apex:pageBlockSectionItem>
+
+            <!-- MSU Group -->
+     <!--
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.MSU_Group__c.InlineHelpText}">
+                <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.MSU_Group__c.Label}"/>
+                <apex:InputField value="{! selGroup.MSU_Group__c }"/>
+            </apex:pageBlockSectionItem>
+
+            <!-- Health Assistant -->
+         <!--
+
+            <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Health_Assistant__c.InlineHelpText}">
+                <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Health_Assistant__c.Label}"/>
+                <apex:InputField value="{! selGroup.Health_Assistant__c }"/>
+            </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <!------------------------------------------------------------------------->
+            <!-- MEMBER GROUP INFORMATION SECTION: Welcome Kit                       -->
+            <!------------------------------------------------------------------------->
+            <!--<apex:actionRegion >-->
+     <!--
+            <apex:pageBlockSection columns="2" title="Welcome Kit Basics" collapsible="true">
+				
+                <!-- Template # -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Service_Brand__c	.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Service_Brand__c	.Label}"/>
+                    <apex:InputField value="{! selGroup.Service_Brand__c	 }"/>
+                </apex:pageBlockSectionItem>
+                    
+                <!-- Template # -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.WK_Template__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.WK_Template__c.Label}"/>
+                    <apex:InputField value="{! selGroup.WK_Template__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Teladoc -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Disclaimer_Teladoc__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Disclaimer_Teladoc__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Disclaimer_Teladoc__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Card Name -->
+     <!--
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Card_Name__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Card_Name__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Card_Name__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Client -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Disclaimer_Client__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Disclaimer_Client__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Disclaimer_Client__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Card Template -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Card_Template__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Card_Template__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Card_Template__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Custom -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Disclaimer_Custom__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Disclaimer_Custom__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Disclaimer_Custom__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- WK Card Included Logo  -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.WK_Card_Includes_Logo__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.WK_Card_Includes_Logo__c.Label}"/>
+                    <apex:InputField value="{! selGroup.WK_Card_Includes_Logo__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem />
+
+                <!-- WK Co Brand Logo  -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Co_Brand_with_Logo__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Co_Brand_with_Logo__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Co_Brand_with_Logo__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Retroactive Welcome Kit -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.WK_Retroactive__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.WK_Retroactive__c.Label}"/>
+                    <apex:InputField value="{! selGroup.WK_Retroactive__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- WK Tri Brand Logo  -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Tri_Brand_with_Logo__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Tri_Brand_with_Logo__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Tri_Brand_with_Logo__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Eligibility By Third Party -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.WK_Retroactive_Date__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.WK_Retroactive_Date__c.Label}"/>
+                    <apex:InputField value="{! selGroup.WK_Retroactive_Date__c }"/>
+                </apex:pageBlockSectionItem>
+
+
+                <!-- Shipping Class -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Shipping_Class__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Shipping_Class__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Shipping_Class__c }" required="true"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Send Card Date -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.WK_Send_Card_Date__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.WK_Send_Card_Date__c.Label}"/>
+                    <apex:outputPanel id="wkSend">
+                        <apex:InputField value="{! selGroup.WK_Send_Card_Date__c }"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+            <!--</apex:actionRegion>-->
+
+            <!------------------------------------------------------------------------->
+            <!-- MEMBER GROUP INFORMATION SECTION: Welcome Kit Advance                     -->
+            <!------------------------------------------------------------------------->
+            <!--<apex:actionRegion >-->     <!--
+
+            <apex:pageBlockSection columns="2" title="Welcome Kit Advanced" collapsible="true">
+
+                <!-- Company Copy -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Company_Copy__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Company_Copy__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Company_Copy__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Consult Message -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Consult_Message__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Consult_Message__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Consult_Message__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- CMS Code -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.CMSCode__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.CMSCode__c.Label}"/>
+                    <apex:InputField value="{! selGroup.CMSCode__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Welcome Letter Consult Message -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Welcome_Letter_Consult_Message__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Welcome_Letter_Consult_Message__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Welcome_Letter_Consult_Message__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Welcome Message -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.MK_Welcomemessage__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.MK_Welcomemessage__c.Label}"/>
+                    <apex:InputField value="{! selGroup.MK_Welcomemessage__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Consult Message on WK -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Consult_Message_on_WK__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Consult_Message_on_WK__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Consult_Message_on_WK__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Consult Area -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.MK_consultarea__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.MK_consultarea__c.Label}"/>
+                    <apex:InputField value="{! selGroup.MK_consultarea__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Communication Mode -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Communication_Mode__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Communication_Mode__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Communication_Mode__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Id Card 1 -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.MK_Idcardfront1__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.MK_Idcardfront1__c.Label}"/>
+                    <apex:InputField value="{! selGroup.MK_Idcardfront1__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Include Insert -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.WK_Includes_Insert__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.WK_Includes_Insert__c.Label}"/>
+                    <apex:InputField value="{! selGroup.WK_Includes_Insert__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- MK_Idcardfront2__c  -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.MK_Idcardfront2__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.MK_Idcardfront2__c.Label}"/>
+                    <apex:InputField value="{! selGroup.MK_Idcardfront2__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Insert Doc Name -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Insert_Document_Name__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Insert_Document_Name__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Insert_Document_Name__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Mail To -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.WK_Mail_to__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.WK_Mail_to__c.Label}"/>
+                    <apex:InputField value="{! selGroup.WK_Mail_to__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Client Form Number -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Client_Form_Number__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Client_Form_Number__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Client_Form_Number__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Mailto Address -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.WK_Mail_to_Address__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.WK_Mail_to_Address__c.Label}"/>
+                    <apex:InputField value="{! selGroup.WK_Mail_to_Address__c }"/>
+                </apex:pageBlockSectionItem>
+
+                <!-- Preferred Eligibility Language -->     <!--
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.Mbr_Group__c.fields.Preferred_Eligibility_Language__c.InlineHelpText}">
+                    <apex:OutputLabel value="{!$ObjectType.Mbr_Group__c.fields.Preferred_Eligibility_Language__c.Label}"/>
+                    <apex:InputField value="{! selGroup.Preferred_Eligibility_Language__c }"/>
+                </apex:pageBlockSectionItem>
+
+
+            </apex:pageBlockSection>
+
+            <!------------------------------------------------------------------------->
+            <!-- LOGOS                                                               -->
+            <!------------------------------------------------------------------------->     <!--
+
+            <apex:actionRegion immediate="true">
+                <apex:pageBlockSection columns="2" title="Logos" collapsible="false">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputPanel id="logotag">
+                            Logo Tag Id<br/>
+                            <apex:InputField value="{! selGroup.Logo_Tag_ID__c }">
+                                <apex:actionSupport action="{! validateLogos }" event="onchange"
+                                                    reRender="logotag,messages"/>
+                            </apex:InputField>
+                            <br/>
+                            <apex:OutputField value="{! selGroup.Logo__c }"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputPanel id="logo1">
+                            Logo 1 Id<br/>
+                            <apex:InputField value="{! selGroup.Logo1_ID__c }">
+                                <apex:actionSupport action="{! validateLogos }" event="onchange"
+                                                    reRender="logo1,messages"/>
+                            </apex:InputField>
+                            <br/>
+                            <apex:OutputField value="{! selGroup.Logo1__c }"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    
+                    
+                    <apex:pageBlockSectionItem >
+                    <apex:outputPanel id="logo3">
+                    Logo 3 Id<br/>
+                    <apex:InputField value="{! selGroup.Logo3_ID__c }">
+                    <apex:actionSupport action="{! validateLogos }" event="onchange" reRender="logo3,messages" />
+                    </apex:InputField>
+                    <br />
+                    <apex:OutputField value="{! selGroup.Logo3__c }" />
+                    </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                    <apex:outputPanel id="logo4">
+                    Logo 4 Id<br/>
+                    <apex:InputField value="{! selGroup.Logo4_ID__c }">
+                    <apex:actionSupport action="{! validateLogos }" event="onchange" reRender="logo4,messages" />
+                    </apex:InputField>
+                    <br />
+                    <apex:OutputField value="{! selGroup.Logo4__c }" />
+                    </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputPanel id="altlogo1">
+                            Alt Logo 1 Id<br/>
+                            <apex:InputField value="{! selGroup.AltLogo1_ID__c }">
+                                <apex:actionSupport action="{! validateLogos }" event="onchange"
+                                                    reRender="altlogo1,messages"/>
+                            </apex:InputField>
+                            <br/>
+                            <apex:OutputField value="{! selGroup.AltLogo1__c }"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                    <apex:outputPanel id="altlogo2">
+                    Alt Logo 2 Id<br/>
+                    <apex:InputField value="{! selGroup.AltLogo2_ID__c }">
+                    <apex:actionSupport action="{! validateLogos }" event="onchange" reRender="altlogo2,messages" />
+                    </apex:InputField>
+                    <br />
+                    <apex:OutputField value="{! selGroup.AltLogo2__c }" />
+                    </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:actionRegion>
+            <!------------------------------------------------------------------------->
+            <!-- ROLE LIST                                                           -->
+            <!------------------------------------------------------------------------->     <!--
+
+            <A name="r"></A>
+            <apex:outputPanel id="roles">
+                <apex:pageBlockSection columns="1" title="Roles" collapsible="false">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputPanel >
+                            <table class="list" border="0" cellpadding="0" cellspacing="0">
+                                <!-- Headers -->     <!--
+
+                                <tr class="headerRow">
+                                    <th class="headerRow">Action</th>
+                                    <th class="headerRow">{!$ObjectType.Mbr_Group_Role__c.fields.Name.Label}</th>
+                                    <th class="headerRow">{!$ObjectType.Mbr_Group_Role__c.fields.Role_Type__c.Label}</th>
+                                    <th class="headerRow">{!$ObjectType.Mbr_Group_Role__c.fields.Source_Account__c.Label}</th>
+                                    <th class="headerRow">{!$ObjectType.Mbr_Group_Role__c.fields.Source_Contact__c.Label}</th>
+                                </tr>
+
+                                <!-- New Item row -->     <!--
+
+                                <apex:actionRegion >
+                                    <tr class="dataRow">
+                                        <td class="dataRow">
+                                            <apex:commandLink action="{! addRole }" value="Add"
+                                                              reRender="roles,messages" rendered="{! canAddRole }"
+                                                              style="color: #015ba7; text-decoration: none; font-weight: normal;width=5%">
+                                            </apex:commandLink>
+                                        </td>
+                                        <td class="dataRow"></td>
+                                        <td class="dataRow">
+                                            <apex:selectList value="{! newRoleWrapper.role.Role_Type__c }"
+                                                             multiSelect="false"
+                                                             size="1" style="{! newRoleWrapper.roleTypeStyle }">
+                                                <apex:selectOptions value="{! validRoleTypes }"/>
+                                            </apex:selectList>
+
+                                        </td>
+                                        <td class="dataRow">
+                                            <apex:InputField value="{! newRoleWrapper.role.Source_Account__c }"
+                                                             required="false"
+                                                             style="{! newRoleWrapper.sourceAccountStyle }"/>
+                                        </td>
+                                        <td class="dataRow">
+                                            <apex:InputField value="{! newRoleWrapper.role.Source_Contact__c }"
+                                                             required="false"/>
+                                        </td>
+                                    </tr>
+                                </apex:actionRegion>
+
+                                <!-- Role List -->     <!--
+
+                                <apex:Repeat value="{! roleList }" var="x">
+                                    <apex:actionRegion >
+                                        <tr class="dataRow">
+                                            <td class="dataRow">
+                                                <apex:commandLink action="{! deleteRole }" value="Del"
+                                                                  reRender="roles,messages" rendered="{! !x.isNewItem}"
+                                                                  style="color: #015ba7; text-decoration: none; font-weight: normal;width=5%"
+                                                                  onclick="if(!confirm('This role will be permanently deleted. Are you sure?')){return false};">
+                                                    <apex:param name="roleId" value="{! x.role.Id }"
+                                                                assignTo="{! selRoleId }"/>
+                                                </apex:commandLink>
+                                                <apex:commandLink action="{! deleteRole }" value="Del"
+                                                                  reRender="roles,messages" rendered="{! x.isNewItem}"
+                                                                  style="color: #015ba7; text-decoration: none; font-weight: normal;width=5%">
+                                                    <apex:param name="roleIndex" value="{! x.newItemIndex }"
+                                                                assignTo="{! selRoleIndex }"/>
+                                                </apex:commandLink>
+                                            </td>
+                                            <td class="dataRow">
+                                                <apex:OutputField value="{! x.role.Name }"
+                                                                  rendered="{! !x.IsNewItem }"/>
+                                                <div style="color: #c00;">
+                                                    <apex:OutputText value="* new / unsaved *"
+                                                                     rendered="{! x.IsNewItem }"/>
+                                                </div>
+                                            </td>
+                                            <td class="dataRow">
+                                                <!--<apex:selectList value="{! x.role.Role_Type__c }" multiSelect="false"-->
+                                                <!--size="1" style="{! newRoleWrapper.roleTypeStyle }">-->
+                                                <!--<apex:selectOptions value="{! validRoleTypes }" />-->
+                                                <!--</apex:selectList>-->     <!--
+
+                                                <apex:InputField value="{! x.role.Role_Type__c }" required="false"
+                                                                 style="{! x.roleTypeStyle }"/>
+                                            </td>
+                                            <td class="dataRow">
+                                                <apex:InputField value="{! x.role.Source_Account__c }" required="false"
+                                                                 style="{! x.sourceAccountStyle }"/>
+                                            </td>
+                                            <td class="dataRow">
+                                                <apex:InputField value="{! x.role.Source_Contact__c }"/>
+                                            </td>
+                                        </tr>
+                                    </apex:actionRegion>
+                                </apex:Repeat>
+                            </table>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+
+            <apex:outputPanel id="psfclone" rendered="{! isClone }">
+                <apex:pageBlockSection columns="1" title="PSFs" collapsible="false">
+                    <apex:pageBlockSectionItem >
+                        The following Plan Specific Fees will be cloned upon save.
+                    </apex:pageBlockSectionItem>
+                    <apex:PageBlockTable value="{! psfList }" var="psf" title="PSF list" rendered="{!hasPSFs}">
+                        <apex:column value="{! psf.Name }"/>
+                        <apex:column value="{! psf.Product__c }"/>
+                        <apex:column value="{! psf.Membership_fee__c }"/>
+                        <apex:column value="{! psf.Subscription__r.Name }"/>
+                    </apex:PageBlockTable>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+
+        </apex:pageBlock>
+    </apex:form>
+                        
+-->
+</apex:page>

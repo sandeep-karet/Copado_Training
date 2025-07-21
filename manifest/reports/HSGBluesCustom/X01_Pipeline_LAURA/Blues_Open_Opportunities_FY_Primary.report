@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Opportunities$OneTime_Net_Total_With_PG__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Line_of_Business_CP__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Opportunities$OneTime_Net_Total_With_PG__c.CONVERT</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Decision_Date__c</field>
+    </columns>
+    <columns>
+        <field>CDF1</field>
+    </columns>
+    <columns>
+        <field>Account$BillingState</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Owner</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Contract_Path__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Opportunity_Owner_Role__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Business_Unit__c</field>
+    </columns>
+    <columns>
+        <field>Account$Owner.UserRole</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Est_Fiscal_Period__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Pricebook2</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$RecordType</field>
+    </columns>
+    <currency>USD</currency>
+    <customDetailFormulas>
+        <calculatedFormula>if (isnull(Opportunity.Contracted_Date__c),Opportunity.Decision_Date__c,Opportunity.Contracted_Date__c)</calculatedFormula>
+        <dataType>DateOnly</dataType>
+        <description>For &quot;open&quot; opportunities use Est Close Date, for Closed use Contracted Date</description>
+        <developerName>CDF1</developerName>
+        <label>Forecast Date</label>
+        <scale>2</scale>
+    </customDetailFormulas>
+    <description>#USGH Sales Ops : Open Opportunities for Blues accounts (custom list provided by Laura Wetli)</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND NOT (4 AND 5) AND 6 AND 7 AND 8</booleanFilter>
+        <criteriaItems>
+            <column>Account.Opportunities$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Prospect,Discovery,Proposal,Review/Negotiation,Contracting</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$Sub_Channel__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Business,Upsell to Customer,&quot;Add-on Membership, Existing Customer&quot;,Hunting License,Price Increase</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Business,Upsell to Customer,&quot;Add-on Membership, Existing Customer&quot;,Renewal Business,Contract Path Change</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$Sub_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ASO Opt-Out</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>dummy,test,fep,aso</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Account_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Health Plan</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Anthem,blue,bcbs,cambia,carefirst,hmsa,hcsc,healthcare services corporation,highmark,horizon,Cambia Health,regence,wellmark,Excellus,Triple-S,BC,BCI,Capital,HCSC,Premera,IBC,hawaii,Arkansas Blue Cross Blue Shield</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Opportunities$StageName</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Blues Open Opportunities FY Primary</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>EEM_Accounts_with_Opps__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <sortColumn>CDF1</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account.Opportunities$Decision_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

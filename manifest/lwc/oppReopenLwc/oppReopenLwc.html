@@ -1,0 +1,73 @@
+<template>
+    <lightning-card class="slds-grid slds-wrap slds-size--1-of-1 ">
+            <lightning-card class="slds-size--1-of-1 ">                                         
+                <div class="slds-grid slds-wrap slds-align_absolute-center" style="background-color: #FFFACD">
+                    <div class="slds-p-right_x-large">
+                        <lightning-icon icon-name="standard:opportunity" variant="warning"></lightning-icon>
+                    </div>
+                    <div> 
+                        <h1 class="slds-text-heading--medium">Opportunity Details</h1>							
+                    </div>
+                </div> 
+                <lightning-card class="slds-p-left_xx-large slds-p-right_xx-large">
+                    <lightning-record-edit-form data-id="editOppForm"
+                                                record-id={recordId}
+                                                onsubmit={saveopp}
+                                                onsuccess={oppSuccess}
+                                                object-api-name="Opportunity">                    
+                        <lightning-card class="slds-size--1-of-1 ">                      
+                            <div class="slds-grid slds-wrap slds-align_absolute-center">
+                                <lightning-input-field field-name= "Name" variant="label-stacked"  class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                                <lightning-input-field field-name= "AccountId" variant="label-stacked"  class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                                <lightning-input-field data-id='stage' onchange={changeProbability} field-name= "StageName" variant="label-stacked"  class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                                <lightning-input-field data-id='probability' value={probs} field-name= "Probability" variant="label-stacked"  class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                                <lightning-input-field field-name= "SBQQ__Contracted__c" variant="label-stacked"  class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-input-field>
+                                <lightning-combobox data-id='combobox' name="select" label="Record Type" options={rtOptions} onchange={changeRt} class="slds-size--1-of-2 slds-p-horizontal_x-small"></lightning-combobox>
+                            </div>
+                        </lightning-card>
+                    </lightning-record-edit-form>              
+                </lightning-card>
+            </lightning-card>
+            <lightning-card class="slds-size--1-of-1 ">              
+                <lightning-accordion allow-multiple-sections-open active-section-name={activeSections}>
+                    <lightning-accordion-section name="A" label="Contract List">
+                        <lightning-datatable key-field="Id"
+                                             data={contractData}
+                                             columns={contractCol}
+                                             hide-checkbox-column=true>
+                        </lightning-datatable> 
+                    </lightning-accordion-section> 
+                    
+                    <lightning-accordion-section name="B" label="Subscription List">
+                        <lightning-datatable key-field="Id"
+                                             data={subData}
+                                             columns={subCol}
+                                             hide-checkbox-column=true>
+                        </lightning-datatable> 
+                    </lightning-accordion-section> 
+
+                    <lightning-accordion-section name="C" label="PSF List">
+                        <lightning-datatable key-field="Id"
+                                             data={psfData}
+                                             columns={psfCol}
+                                             hide-checkbox-column=true>
+                        </lightning-datatable> 
+                    </lightning-accordion-section>
+
+                    <lightning-accordion-section name="D" label="Asset List">
+                        <lightning-datatable key-field="Id"
+                                             data={assetData}
+                                             columns={assetCol}
+                                             hide-checkbox-column=true>
+                        </lightning-datatable> 
+                    </lightning-accordion-section>
+                </lightning-accordion>                                   
+            </lightning-card>
+            
+            <div class="slds-m-top_medium modal-footer slds-modal__footer slds-size_1-of-1">
+                <lightning-button variant="brand" type="submit" name="save" label="Confirm and Save" onclick={saveOpp}></lightning-button> 
+                <lightning-button variant="neutral" label="Cancel" onclick={cancelDialog}></lightning-button>                             
+            </div>
+
+    </lightning-card>  
+</template>

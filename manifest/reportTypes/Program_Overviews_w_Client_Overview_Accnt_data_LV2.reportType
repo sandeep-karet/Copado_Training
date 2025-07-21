@@ -1,0 +1,3927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>LVGO__Account__c</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>LV Report Type</description>
+    <join>
+        <outerJoin>true</outerJoin>
+        <relationship>LVGO__ProgramOverviews__r</relationship>
+    </join>
+    <label>Program Overviews (w Client Overview/Account data) LV(V2)</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>LV Account ID</displayNameOverride>
+            <field>Id</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner</displayNameOverride>
+            <field>Owner</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Name</displayNameOverride>
+            <field>Name</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Currency</displayNameOverride>
+            <field>CurrencyIsoCode</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Record Type</displayNameOverride>
+            <field>RecordType</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Activity Date</displayNameOverride>
+            <field>LastActivityDate</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ACA Population</displayNameOverride>
+            <field>LVGO__ACA_Population__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ASO Population</displayNameOverride>
+            <field>LVGO__ASO_Population__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Acc Migrate Status</displayNameOverride>
+            <field>LVGO__Acc_Migrate_Status__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Accessible lives</displayNameOverride>
+            <field>LVGO__Accessible_lives__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>AccountNumber</displayNameOverride>
+            <field>LVGO__AccountNumber__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Source</displayNameOverride>
+            <field>LVGO__AccountSource__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Clean Request</displayNameOverride>
+            <field>LVGO__Account_Clean_Request__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Grouping</displayNameOverride>
+            <field>LVGO__Account_Grouping__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Health Score Color</displayNameOverride>
+            <field>LVGO__Account_Health_Score_Color__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account ID_Long</displayNameOverride>
+            <field>LVGO__Account_ID_Long__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account NPS</displayNameOverride>
+            <field>LVGO__Account_NPS__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Narrative</displayNameOverride>
+            <field>LVGO__Account_Narrative__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Next Steps</displayNameOverride>
+            <field>LVGO__Account_Next_Steps__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Owner Active?</displayNameOverride>
+            <field>LVGO__Account_Owner_Active__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Owner Role</displayNameOverride>
+            <field>LVGO__Account_Owner_Role__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Transition Date</displayNameOverride>
+            <field>LVGO__Account_Transition_Date__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Status</displayNameOverride>
+            <field>LVGO__Account_Type__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account interested in following products</displayNameOverride>
+            <field>LVGO__Account_interested_in_following_products__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account is used in Downmarket CMCs</displayNameOverride>
+            <field>LVGO__Account_is_used_in_Downmarket_CMCs__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Acct Guid</displayNameOverride>
+            <field>LVGO__Acct_Guid__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Acct Rev Synergy Flag</displayNameOverride>
+            <field>LVGO__Acct_Rev_Synergy_Flag__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Activated Percent (HTN)</displayNameOverride>
+            <field>LVGO__Activated_Percent_HTN__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Activated Total (Diabetes)</displayNameOverride>
+            <field>LVGO__Activated_Total_Diabetes__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Activated Total (HTN)</displayNameOverride>
+            <field>LVGO__Activated_Total_HTN__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Activated Percent (Diabetes)</displayNameOverride>
+            <field>LVGO__Activation__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Allow multiple &apos;Active&apos; CO&apos;s per CP</displayNameOverride>
+            <field>LVGO__Allow_multiple_Active_Client_Overviews__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Annual Revenue</displayNameOverride>
+            <field>LVGO__AnnualRevenue__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approval Required for Pilot Campaigns</displayNameOverride>
+            <field>LVGO__Approval_Required_for_Pilot_Campaigns__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>BAA Signed</displayNameOverride>
+            <field>LVGO__BAA_Signed_del__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>BOX Contract URL</displayNameOverride>
+            <field>LVGO__BOX_Contract_URL__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Benefit Plan Year</displayNameOverride>
+            <field>LVGO__Benefit_Plan_Year__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Benefits-eligible Employees</displayNameOverride>
+            <field>LVGO__Benefits_eligible_Employees__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>BillingAddress</displayNameOverride>
+            <field>LVGO__BillingAddress__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>BillingCity</displayNameOverride>
+            <field>LVGO__BillingCity__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>BillingState</displayNameOverride>
+            <field>LVGO__BillingState__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing City</displayNameOverride>
+            <field>LVGO__Billing_City__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Country</displayNameOverride>
+            <field>LVGO__Billing_Country__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing State(Backend)</displayNameOverride>
+            <field>LVGO__Billing_State_Backend__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing State/Province</displayNameOverride>
+            <field>LVGO__Billing_State_Province__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Street</displayNameOverride>
+            <field>LVGO__Billing_Street__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Zip/Postal Code</displayNameOverride>
+            <field>LVGO__Billing_Zip_Postal_Code__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing</displayNameOverride>
+            <field>LVGO__Billing__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Bypass Address Verification</displayNameOverride>
+            <field>LVGO__Bypass_Address_Verification__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CMC Prefix</displayNameOverride>
+            <field>LVGO__CMC_Prefix__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Commercial CSM</displayNameOverride>
+            <field>LVGO__CSM__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign &amp; Risk Notes</displayNameOverride>
+            <field>LVGO__Campaign_Risk_Notes__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client ARR</displayNameOverride>
+            <field>LVGO__Client_ARR__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Implementation Manager</displayNameOverride>
+            <field>LVGO__Client_Implementation_Manager__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Overview Count_Term/Exp</displayNameOverride>
+            <field>LVGO__Client_Overview_Count_Term_Exp__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Overview Count</displayNameOverride>
+            <field>LVGO__Client_Overview_Count__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Health Notes</displayNameOverride>
+            <field>LVGO__Client_Risk_Notes__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Health Score</displayNameOverride>
+            <field>LVGO__Client_Risk__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Segment</displayNameOverride>
+            <field>LVGO__Client_Segment__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Tier Comments</displayNameOverride>
+            <field>LVGO__Client_Tier_Comments__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Tier</displayNameOverride>
+            <field>LVGO__Client_Tier__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client approves use of logo</displayNameOverride>
+            <field>LVGO__Client_approves_use_of_logo__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client details regarding referrals</displayNameOverride>
+            <field>LVGO__Client_details_regarding_referrals__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client has seen ngTDC?</displayNameOverride>
+            <field>LVGO__Client_has_seen_ngTDC__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client open to speaking engagements?</displayNameOverride>
+            <field>LVGO__Client_open_to_speaking_engagements__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Conversation had with?</displayNameOverride>
+            <field>LVGO__Conversation_had_with__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Cost of diabetes testing supplies</displayNameOverride>
+            <field>LVGO__Cost_of_diabetes_testing_supplies__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Covered Lives</displayNameOverride>
+            <field>LVGO__Covered_Lives__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Current Diabetes Supply Spend PPPM</displayNameOverride>
+            <field>LVGO__Current_Diabetes_Supply_Spend_PPPM__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Custom marketing requirements?</displayNameOverride>
+            <field>LVGO__Custom_marketing_requirements__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Custom marketing requirements detail</displayNameOverride>
+            <field>LVGO__Custom_marketing_requirements_detail__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DUNS Employees</displayNameOverride>
+            <field>LVGO__DUNS_Employees__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Description</displayNameOverride>
+            <field>LVGO__Description__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrollment Marketing Lead</displayNameOverride>
+            <field>LVGO__EML__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Earliest Active Initial Launch Date</displayNameOverride>
+            <field>LVGO__Earliest_Active_Initial_Launch_Date__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>EffectiveDate</displayNameOverride>
+            <field>LVGO__EffectiveDate__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email Coverage Percentage (DM)</displayNameOverride>
+            <field>LVGO__Email_Coverage_Percentage_DM__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email Coverage Percentage (HTN)</displayNameOverride>
+            <field>LVGO__Email_Coverage_Percentage_HTN__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Employer Identification Number (EIN)</displayNameOverride>
+            <field>LVGO__Employer_Identification_Number_EIN__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>EndDate</displayNameOverride>
+            <field>LVGO__EndDate__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrolled BG200</displayNameOverride>
+            <field>LVGO__Enrolled_BG200__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrolled BG300</displayNameOverride>
+            <field>LVGO__Enrolled_BG300__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrolled BG300i</displayNameOverride>
+            <field>LVGO__Enrolled_BG300i__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrollment Percentage (rPwDs)</displayNameOverride>
+            <field>LVGO__Enrollment_Percentage_rPwDs__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrollment_Percentage_rPwDs__c</displayNameOverride>
+            <field>LVGO__Enrollment_Percentage_rPwDs_c__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrollment Percentage (rPwHs)</displayNameOverride>
+            <field>LVGO__Enrollment_Percentage_rPwHs__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Exclude from Inside Sales / Lead Gen</displayNameOverride>
+            <field>LVGO__Exclude_from_Inside_Sales_Lead_Gen__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Exit Interview Doc URL</displayNameOverride>
+            <field>LVGO__Exit_Interview_Doc_URL__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fax</displayNameOverride>
+            <field>LVGO__Fax__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fiscal Year</displayNameOverride>
+            <field>LVGO__Fiscal_Year__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fortune 1000 Rank</displayNameOverride>
+            <field>LVGO__Fortune_1000_Rank__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fortune 100</displayNameOverride>
+            <field>LVGO__Fortune_100__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fortune 500</displayNameOverride>
+            <field>LVGO__Fortune_500__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fully Insured Population</displayNameOverride>
+            <field>LVGO__Fully_Insured_Population__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Global Employees</displayNameOverride>
+            <field>LVGO__Global_Employees__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Review URL</displayNameOverride>
+            <field>LVGO__Google_Slides_Strategic_Plan_URL__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>HP CSM</displayNameOverride>
+            <field>LVGO__HP_CSM__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>HSS Account Executive</displayNameOverride>
+            <field>LVGO__HSS_Account_Executive__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Historic notes (if not in Salesforce)</displayNameOverride>
+            <field>LVGO__Historic_notes_if_not_in_Salesforce__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ignore all CSM mirroring effects</displayNameOverride>
+            <field>LVGO__Ignore_all_CSM_mirroring_effects__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Impending Client Termination Date</displayNameOverride>
+            <field>LVGO__Impending_Client_Termination_Date__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Incentives: Content Guides - SPA</displayNameOverride>
+            <field>LVGO__Incentives_Content_Guides_SPA__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Incentives: Gift Cards - SPA</displayNameOverride>
+            <field>LVGO__Incentives_Gift_Cards_SPA__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Incentives: Goods and Services - SPA</displayNameOverride>
+            <field>LVGO__Incentives_Goods_and_Services_SPA__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Industry</displayNameOverride>
+            <field>LVGO__Industry__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>IsActive</displayNameOverride>
+            <field>LVGO__IsActive__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is this account a Strategic Account?</displayNameOverride>
+            <field>LVGO__Is_this_account_a_Strategic_Account__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Jigsaw</displayNameOverride>
+            <field>LVGO__Jigsaw__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Activity by Livongo Rep</displayNameOverride>
+            <field>LVGO__Last_Activity_by_Livongo_Rep__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Event Completed Date by Sales Rep</displayNameOverride>
+            <field>LVGO__Last_Event_Completed_Date_by_Sales_Rep__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Event by Livongo Rep</displayNameOverride>
+            <field>LVGO__Last_Event_by_Livongo_Rep__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Task by Sales Rep Completed Dat</displayNameOverride>
+            <field>LVGO__Last_Task_by_Sales_Rep_Completed_Date__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Updated ECS DateTime</displayNameOverride>
+            <field>LVGO__Last_Updated_ECS_DateTime__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Updated ECS</displayNameOverride>
+            <field>LVGO__Last_Updated_ECS__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Livongo Financial Impact (ROI) - Actual</displayNameOverride>
+            <field>LVGO__Livongo_Financial_Impact_ROI_Actual__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Location Size Accuracy</displayNameOverride>
+            <field>LVGO__Location_Size_Accuracy__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Location Size Unit of Measure</displayNameOverride>
+            <field>LVGO__Location_Size_Unit_of_Measure__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Location Size</displayNameOverride>
+            <field>LVGO__Location_Size__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>MD Personator Results</displayNameOverride>
+            <field>LVGO__MD_Personator_Results__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marketing Account Subtype</displayNameOverride>
+            <field>LVGO__Marketing_Account_SubType__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marketing Account Type</displayNameOverride>
+            <field>LVGO__Marketing_Account_Type__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Medicaid Population</displayNameOverride>
+            <field>LVGO__Medicaid_Population__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Medicare Advantage</displayNameOverride>
+            <field>LVGO__Medicare_Advantage__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Member NPS</displayNameOverride>
+            <field>LVGO__Member_NPS__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Member recruitment began</displayNameOverride>
+            <field>LVGO__Member_recruitment_began__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Participants Enrolled</displayNameOverride>
+            <field>LVGO__Members_Enrolled__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Migrated myStrength Account</displayNameOverride>
+            <field>LVGO__Migrated_myStrength_Account__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Migration ID</displayNameOverride>
+            <field>LVGO__Migration_ID__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Most Recent Event by Sales Rep</displayNameOverride>
+            <field>LVGO__Most_Recent_Event_by_Sales_Rep__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Most Recent Task by Sales Rep</displayNameOverride>
+            <field>LVGO__Most_Recent_Task_by_Sales_Rep__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>NAICS Industry Classification</displayNameOverride>
+            <field>LVGO__NAICS_Industry_Classification__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Next Business Review</displayNameOverride>
+            <field>LVGO__Next_Business_Review__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>NumberOfEmployees</displayNameOverride>
+            <field>LVGO__NumberOfEmployees__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of POs</displayNameOverride>
+            <field>LVGO__Number_of_POs__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Open Enrollment Date</displayNameOverride>
+            <field>LVGO__Open_Enrollment_Date__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Open Enrollment Period</displayNameOverride>
+            <field>LVGO__Open_Enrollment_Period__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other CSM</displayNameOverride>
+            <field>LVGO__Other_CSM__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ownership</displayNameOverride>
+            <field>LVGO__Ownership__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Pipeline Request</displayNameOverride>
+            <field>LVGO__PBM_Partner_Pipeline_Request__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Parent Account</displayNameOverride>
+            <field>LVGO__ParentId__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Payer Lines of Business</displayNameOverride>
+            <field>LVGO__Payer_Lines_of_Business__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Payer Sales Cycle</displayNameOverride>
+            <field>LVGO__Payer_Sales_Cycle__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone</displayNameOverride>
+            <field>LVGO__Phone__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Plan Year Start Month</displayNameOverride>
+            <field>LVGO__Plan_Year_Start_Month__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride># of Accts_PO1</displayNameOverride>
+            <field>LVGO__Power_of_1__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Primary CS Point of Contact</displayNameOverride>
+            <field>LVGO__Primary_CS_POC__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Prior Account Status</displayNameOverride>
+            <field>LVGO__Prior_Account_Status__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Prior Year Number of Employees</displayNameOverride>
+            <field>LVGO__Prior_Year_Number_of_Employees__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Prior Year Revenue</displayNameOverride>
+            <field>LVGO__Prior_Year_Revenue__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Overview Count_Term/Exp</displayNameOverride>
+            <field>LVGO__Program_Overview_Count_Term_Exp__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Overview Count_Upcoming</displayNameOverride>
+            <field>LVGO__Program_Overview_Count_Upcoming__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Overview Count</displayNameOverride>
+            <field>LVGO__Program_Overview_Count__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Prospect Update &amp; Next Steps</displayNameOverride>
+            <field>LVGO__Prospect_Update_Next_Steps__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Provider Sponsored Population</displayNameOverride>
+            <field>LVGO__Provider_Sponsored_Population__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>RPwDs from Claims</displayNameOverride>
+            <field>LVGO__RPwDs_from_Claims_Data__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>RPwHs from Claims</displayNameOverride>
+            <field>LVGO__RPwHs_from_Claims__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Rating</displayNameOverride>
+            <field>LVGO__Rating__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reduction in A1c - Actual</displayNameOverride>
+            <field>LVGO__Reduction_in_A1c_Actual__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client willing to serve as reference</displayNameOverride>
+            <field>LVGO__Reference_Account__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reference Client</displayNameOverride>
+            <field>LVGO__Reference_Client__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>RegCodes</displayNameOverride>
+            <field>LVGO__RegCodes__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Request CIM</displayNameOverride>
+            <field>LVGO__RequestCIM__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Request CSM</displayNameOverride>
+            <field>LVGO__RequestCSM__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Risk Color</displayNameOverride>
+            <field>LVGO__Risk_Color__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>SPS Program Manager</displayNameOverride>
+            <field>LVGO__SPS_Program_Manager__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>S&amp;P 500</displayNameOverride>
+            <field>LVGO__S_P_500__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Savings PPPM (ROI) - Actual</displayNameOverride>
+            <field>LVGO__Savings_PPPM_ROI_Actual__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ShippingAddress</displayNameOverride>
+            <field>LVGO__ShippingAddress__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping City</displayNameOverride>
+            <field>LVGO__Shipping_City__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping Country</displayNameOverride>
+            <field>LVGO__Shipping_Country__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping State(Backend)</displayNameOverride>
+            <field>LVGO__Shipping_State_Backend__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping State/Province</displayNameOverride>
+            <field>LVGO__Shipping_State_Province__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping Street</displayNameOverride>
+            <field>LVGO__Shipping_Street__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping Zip/Postal Code</displayNameOverride>
+            <field>LVGO__Shipping_Zip_Postal_Code__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>SicDesc</displayNameOverride>
+            <field>LVGO__SicDesc__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sic</displayNameOverride>
+            <field>LVGO__Sic__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Single or Multi Program</displayNameOverride>
+            <field>LVGO__Single_or_Multi_Program2__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Site</displayNameOverride>
+            <field>LVGO__Site__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Source ID</displayNameOverride>
+            <field>LVGO__Source_ID__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Source</displayNameOverride>
+            <field>LVGO__Source__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Split Billing?</displayNameOverride>
+            <field>LVGO__Split_Billing__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>TD Acct Guid</displayNameOverride>
+            <field>LVGO__TD_Acct_Guid__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>MSA Target Close Date</displayNameOverride>
+            <field>LVGO__Target_payer_close_date__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Termination Forecast Date</displayNameOverride>
+            <field>LVGO__Termination_Forecast_Date__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Termination Rationale Summary</displayNameOverride>
+            <field>LVGO__Termination_Rationale_Summary__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Termination Reason</displayNameOverride>
+            <field>LVGO__Termination_Reason__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>TickerSymbol</displayNameOverride>
+            <field>LVGO__TickerSymbol__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Type</displayNameOverride>
+            <field>LVGO__Type__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Type of Incentive to Exclude - SPA</displayNameOverride>
+            <field>LVGO__Type_of_Incentive_to_Exclude_SPA__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Union Population</displayNameOverride>
+            <field>LVGO__Union_Population__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Usage % Last 30 day (Diabetes)</displayNameOverride>
+            <field>LVGO__Usage_Last_30_day_Diabetes__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Usage % Last 30 day (HTN)</displayNameOverride>
+            <field>LVGO__Usage_Last_30_day_HTN__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Usage % Last 90 day (Diabetes)</displayNameOverride>
+            <field>LVGO__Usage_Last_90_day_Diabetes__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Usage % Last 90 day (HTN)</displayNameOverride>
+            <field>LVGO__Usage_Last_90_day_HTN__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Use for Activation/Usage? - SPA</displayNameOverride>
+            <field>LVGO__Use_for_Activation_Usage_SPA__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Website</displayNameOverride>
+            <field>LVGO__Website__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Doing business as</displayNameOverride>
+            <field>LVGO__dba__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Playbooks Account Close Score Updated</displayNameOverride>
+            <field>LVGO__isdc_closedate__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Playbooks Account Close Score</displayNameOverride>
+            <field>LVGO__isdc_closescore__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Playbooks Account Close Score Grade</displayNameOverride>
+            <field>LVGO__isdc_closescoregrade__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>myStrengthAcctExtId</displayNameOverride>
+            <field>LVGO__myStrengthAcctExtId__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>myStrength Account</displayNameOverride>
+            <field>LVGO__myStrength_Account__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>myStrength Partner</displayNameOverride>
+            <field>LVGO__myStrength_Partner__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride># of Enrolled RPwDs to date</displayNameOverride>
+            <field>LVGO__of_Enrolled_RPwDs_to_date__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride># of Enrolled RPwHs to Date</displayNameOverride>
+            <field>LVGO__of_Enrolled_RPwHs_to_Date__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride># of Retirees</displayNameOverride>
+            <field>LVGO__of_Retirees__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>test delete</displayNameOverride>
+            <field>LVGO__test_delete__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Closed Won Cross Sell Opp Count</displayNameOverride>
+            <field>LVGO__Closed_Won_Cross_Sell_Opp_Count__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Closed Won Opportunity Count</displayNameOverride>
+            <field>LVGO__Closed_Won_Opportunity_Count__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Earliest Closed Won Opportunity</displayNameOverride>
+            <field>LVGO__Earliest_Closed_Won_Opportunity__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Latest Closed Won Opp Date</displayNameOverride>
+            <field>LVGO__Latest_Closed_Won_Opp_Date__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Open Cross-Sell Opportunity Count</displayNameOverride>
+            <field>LVGO__Open_Cross_Sell_Opportunity_Count__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Open Opportunity Count</displayNameOverride>
+            <field>LVGO__Open_Opportunity_Count__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Open Renewal Opportunity Count</displayNameOverride>
+            <field>LVGO__Open_Renewal_Opportunity_Count__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Closed Lost Opps</displayNameOverride>
+            <field>LVGO__Total_Closed_Lost_Opps__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Closed No Decision Opps</displayNameOverride>
+            <field>LVGO__Total_Closed_No_Decision_Opps__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Open Opportunities</displayNameOverride>
+            <field>LVGO__Total_Open_Opportunities__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Opportunity Count</displayNameOverride>
+            <field>LVGO__Total_Opportunity_Count__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride># of Open Opportunities</displayNameOverride>
+            <field>LVGO__of_Open_Opportunities__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Address Verified</displayNameOverride>
+            <field>LVGO__Address_Verified__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CurrentUser_CIM</displayNameOverride>
+            <field>LVGO__CurrentUser_CIM__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CurrentUser_CSM</displayNameOverride>
+            <field>LVGO__CurrentUser_CSM__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Estimated Diabetes</displayNameOverride>
+            <field>LVGO__Estimated_Diabetes__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Expected Client Tier</displayNameOverride>
+            <field>LVGO__Expected_Client_Tier__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Activity Completed Date by Sales</displayNameOverride>
+            <field>LVGO__Last_Activity_Completed_Date_by_Sales__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Task/Event by Livongo Rep</displayNameOverride>
+            <field>LVGO__Last_Task_Event_by_Livongo_Rep__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Most Recent Task/Event by Sales Rep</displayNameOverride>
+            <field>LVGO__Most_Recent_Task_Event_by_Sales_Rep__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Risk Description</displayNameOverride>
+            <field>LVGO__Risk_Description__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>myStrength Indicator</displayNameOverride>
+            <field>LVGO__myStrength_Indicator__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Closed Won Livongo for Diabetes PwD Sum</displayNameOverride>
+            <field>LVGO__Closed_Won_Livongo_For_Diabetes_PwD_Sum__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Open Opportunity PwDs</displayNameOverride>
+            <field>LVGO__Open_Opportunity_PwDs__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Overall Account Score</displayNameOverride>
+            <field>LVGO__Overall_Account_Score__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Overall DM Score</displayNameOverride>
+            <field>LVGO__Overall_DM_Score__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Overall HTN Score</displayNameOverride>
+            <field>LVGO__Overall_HTN_Score__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PO#_WholePerson</displayNameOverride>
+            <field>LVGO__PO_WholePerson__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PwBH Sold</displayNameOverride>
+            <field>LVGO__PwBH_Sold__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PwDPP Sold</displayNameOverride>
+            <field>LVGO__PwDPP_Sold__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PwH Sold</displayNameOverride>
+            <field>LVGO__PwH_Sold__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PwO Sold</displayNameOverride>
+            <field>LVGO__PwO_Sold__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PwWM+DPP Sold</displayNameOverride>
+            <field>LVGO__PwWM_DPP_Sold__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PwWM Sold</displayNameOverride>
+            <field>LVGO__PwWM_Sold__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Primary Products</displayNameOverride>
+            <field>LVGO__Total_Primary_Products__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Won Opportunities (Non-Renewals)</displayNameOverride>
+            <field>LVGO__Total_Won_Opportunities__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Count</displayNameOverride>
+            <field>LVGO__Program_Count3__c</field>
+            <table>LVGO__Account__c</table>
+        </columns>
+        <masterLabel>Accounts</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride># of Contracts_PO1</displayNameOverride>
+            <field>LVGO__of_Contracts_PO1__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>100% paid for by</displayNameOverride>
+            <field>LVGO__X100_paid_for_by__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>A1c Reduction</displayNameOverride>
+            <field>LVGO__A1cReduction__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ability to run ROI analysis?</displayNameOverride>
+            <field>LVGO__Ability_to_run_ROI_analysis__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Access to Employee Emails</displayNameOverride>
+            <field>LVGO__Access_to_Employee_Emails__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Accessible Covered Lives</displayNameOverride>
+            <field>LVGO__Accessible_Covered_Lives__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account</displayNameOverride>
+            <field>LVGO__Account__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account (Client Overview)</displayNameOverride>
+            <field>LVGO__Account_Client_Overview__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account (Partner Agreement)</displayNameOverride>
+            <field>LVGO__Account_Partner_Agreement__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account has SLAs?</displayNameOverride>
+            <field>LVGO__Account_has_SLAs__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Activate Contract</displayNameOverride>
+            <field>LVGO__ActivateContract__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ActivatedById</displayNameOverride>
+            <field>LVGO__ActivatedBy__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ActivatedDate</displayNameOverride>
+            <field>LVGO__ActivatedDate__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Active</displayNameOverride>
+            <field>LVGO__Active__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Additional information</displayNameOverride>
+            <field>LVGO__Additional_information__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approach to health and wellness</displayNameOverride>
+            <field>LVGO__Approach_to_health_and_wellness__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Are there marketing &amp; DOPS requirements</displayNameOverride>
+            <field>LVGO__Are_there_marketing_DOPS_requirements__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>At No Cost to You Alt Text</displayNameOverride>
+            <field>LVGO__At_No_Cost_to_You_Alt_Text__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Auto Renewal</displayNameOverride>
+            <field>LVGO__Auto_Renewal__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Automated Enrollment Injection</displayNameOverride>
+            <field>LVGO__Automated_Enrollment_Injection__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>BAA Signed?</displayNameOverride>
+            <field>LVGO__BAA_Signed__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Behavioral Health ID</displayNameOverride>
+            <field>LVGO__Behavioral_Health_ID__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Bill Early Termination Through Claims</displayNameOverride>
+            <field>LVGO__Bill_Early_Termination_Through_Claims__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Address</displayNameOverride>
+            <field>LVGO__BillingAddress__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Method</displayNameOverride>
+            <field>LVGO__Billing_Method__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Partner</displayNameOverride>
+            <field>LVGO__BillingPartner__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Partner Fee</displayNameOverride>
+            <field>LVGO__Billing_Partner_Admin_Fee__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Partner Fee Type</displayNameOverride>
+            <field>LVGO__Billing_Partner_Fee_Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Point Of Contact</displayNameOverride>
+            <field>LVGO__Billing_POC__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Bundled Pricing Discount</displayNameOverride>
+            <field>LVGO__BundledPricingDiscount__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Business Review Stipulations</displayNameOverride>
+            <field>LVGO__Business_Review_Stipulations__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Lifecycle Participation</displayNameOverride>
+            <field>LVGO__Campaign_Lifecycle_Participation__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Options</displayNameOverride>
+            <field>LVGO__Custom_Campaign__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Participation</displayNameOverride>
+            <field>LVGO__Campaign_Participation__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Participation EoA Date</displayNameOverride>
+            <field>LVGO__Campaign_Participation_EoA_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Participation EoA Include</displayNameOverride>
+            <field>LVGO__Campaign_Participation_EoA_Include__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Participation TLC Included</displayNameOverride>
+            <field>LVGO__Campaign_Participation_TLC_Included__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Type</displayNameOverride>
+            <field>LVGO__Campaign_Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CDC Enrollment Source</displayNameOverride>
+            <field>LVGO__CDC_Enrollment_Source__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CDC Payer Type</displayNameOverride>
+            <field>LVGO__CDC_Payer_Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Chronic Kidney Disease Id</displayNameOverride>
+            <field>LVGO__Chronic_Kidney_Disease_Id__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CKD Aware Variant</displayNameOverride>
+            <field>LVGO__CKD_Aware_Variant__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Claims Configuration</displayNameOverride>
+            <field>LVGO__Claims_Configuration__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Able to Send HR Comms?</displayNameOverride>
+            <field>LVGO__Client_Able_to_Send_HR_Comms__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Able to Whitelist?</displayNameOverride>
+            <field>LVGO__Client_Able_to_Whitelist__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Allows A/B Testing of:</displayNameOverride>
+            <field>LVGO__Client_Allows_AB_Testing_of__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Allows Targeted Marketing?</displayNameOverride>
+            <field>LVGO__Client_Allows_Targeted_Marketing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Documentation Structure</displayNameOverride>
+            <field>LVGO__Client_Documentation_Structure__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Expects ROI</displayNameOverride>
+            <field>LVGO__Client_expects_ROI__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Implementation Manager</displayNameOverride>
+            <field>LVGO__CIM__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Implementation Status</displayNameOverride>
+            <field>LVGO__Client_Implementation_Status__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Incentive Step 1</displayNameOverride>
+            <field>LVGO__cbi_step1__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Incentive Step 2</displayNameOverride>
+            <field>LVGO__cbi_step2__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Incentive Step 3</displayNameOverride>
+            <field>LVGO__cbi_step3__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Incentive Type</displayNameOverride>
+            <field>LVGO__Client_Incentive_Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Incentives Disclaimer</displayNameOverride>
+            <field>LVGO__cbi_disclaimer__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Incentives Header</displayNameOverride>
+            <field>LVGO__cbi_header__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Logo Link</displayNameOverride>
+            <field>LVGO__Client_Logo_Link__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Must Approve Assets</displayNameOverride>
+            <field>LVGO__Client_Must_Approve_Assets__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Overview</displayNameOverride>
+            <field>LVGO__Client_Overview__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Overview CSM</displayNameOverride>
+            <field>LVGO__Client_Overview_CSM__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Overview Id</displayNameOverride>
+            <field>LVGO__Client_Overview_Id__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Overview Status</displayNameOverride>
+            <field>LVGO__Client_Overview_Status__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Plan Design Inclusions</displayNameOverride>
+            <field>LVGO__Client_Plan_Design_Inclusions__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Renewal Terms</displayNameOverride>
+            <field>LVGO__Client_Renewal_Terms__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Success Manager</displayNameOverride>
+            <field>LVGO__CSM__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client Termination Notice Period</displayNameOverride>
+            <field>LVGO__Client_Termination_Notice_Period__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Client/Partner Required Tags</displayNameOverride>
+            <field>LVGO__Client_Partner_Required_Tags__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Clients Can Contract Through Partner?</displayNameOverride>
+            <field>LVGO__Clients_Can_Contract_Through_Partner__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Clinical Data Sharing and Access</displayNameOverride>
+            <field>LVGO__Clinical_Data_Sharing_and_Access__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Clinical Model</displayNameOverride>
+            <field>LVGO__Clinical_Model__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Clinical Model Details</displayNameOverride>
+            <field>LVGO__Clinical_Model_Details__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Clinical Referrals</displayNameOverride>
+            <field>LVGO__Clinical_Referrals__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CO Name + Number</displayNameOverride>
+            <field>LVGO__CO_Name_Number__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Co-branding Channels</displayNameOverride>
+            <field>LVGO__Co_branding_Channels__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Co-branding Preferences</displayNameOverride>
+            <field>LVGO__Co_branding_Preferences__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Communication Language Preference</displayNameOverride>
+            <field>LVGO__Communication_Language_Preference__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CompanySignedDate</displayNameOverride>
+            <field>LVGO__CompanySignedDate__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CompanySignedId</displayNameOverride>
+            <field>LVGO__CompanySigned__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Complete Per Legal</displayNameOverride>
+            <field>LVGO__Complete_Per_Legal__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Complex Escalation Details</displayNameOverride>
+            <field>LVGO__Escalation_Details__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Consecutive Inactive Months to Lapsed</displayNameOverride>
+            <field>LVGO__Consecutive_Inactive_Months_to_Lapsed__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract Data Certified by</displayNameOverride>
+            <field>LVGO__Contract_Data_Certified_by__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract Data Entry Owner</displayNameOverride>
+            <field>LVGO__Contract_Data_Entry_Owner__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract Effective Date</displayNameOverride>
+            <field>LVGO__Contract_Effective_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract End Date</displayNameOverride>
+            <field>LVGO__EndDate__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract Hyperlink</displayNameOverride>
+            <field>LVGO__Contract_Hyperlink__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract ID Long</displayNameOverride>
+            <field>LVGO__Contract_ID_Long__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract Name (Hyperlink)</displayNameOverride>
+            <field>LVGO__Contract_Name_Hyperlink__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract Number</displayNameOverride>
+            <field>LVGO__ContractNumber__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract Path</displayNameOverride>
+            <field>LVGO__Contract_Path__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract Path [Deprecated]</displayNameOverride>
+            <field>LVGO__Contract_Path_Deprecated__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract Start Date</displayNameOverride>
+            <field>LVGO__StartDate__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract Term</displayNameOverride>
+            <field>LVGO__Contract_Term__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract Termination Date</displayNameOverride>
+            <field>LVGO__Contract_Termination_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract Type</displayNameOverride>
+            <field>LVGO__Contract_Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ContractTerm</displayNameOverride>
+            <field>LVGO__ContractTerm__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contractual Reporting Required?</displayNameOverride>
+            <field>LVGO__Contractual_Reporting_Required__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contractual Reporting Requirement Timing</displayNameOverride>
+            <field>LVGO__Reporting_Requirement_Timing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contractual Reporting Requirements</displayNameOverride>
+            <field>LVGO__Reporting_Requirements__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CountOfCMCA</displayNameOverride>
+            <field>LVGO__CountOfCMCA__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Cross-sell Recruitment Began Date</displayNameOverride>
+            <field>LVGO__Cross_sell_Recruitment_Began_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CS Action Required for Renewal</displayNameOverride>
+            <field>LVGO__CS_Action_Required_for_Renewal__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Currency</displayNameOverride>
+            <field>CurrencyIsoCode</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CurrentUser_CIM</displayNameOverride>
+            <field>LVGO__CurrentUser_CIM__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Custom Claims Configuration</displayNameOverride>
+            <field>LVGO__Custom_Claims_Configuration__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Custom PG Type</displayNameOverride>
+            <field>LVGO__CustomPGType__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CustomerSignedDate</displayNameOverride>
+            <field>LVGO__CustomerSignedDate__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CustomerSignedTitle</displayNameOverride>
+            <field>LVGO__CustomerSignedTitle__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CVS/TDC Eligibility Criteria</displayNameOverride>
+            <field>LVGO__CVS_TDC_Eligibility_Criteria__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data Privacy and Security Reqs In Place?</displayNameOverride>
+            <field>LVGO__Data_Privacy_and_Security_Reqs_In_Place__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data Reconciliation Action Items</displayNameOverride>
+            <field>LVGO__Data_Reconciliation_Action_Items__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data Reconciliation Status</displayNameOverride>
+            <field>LVGO__Data_Reconciliation_Status__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data Sharing Agreement in Place?</displayNameOverride>
+            <field>LVGO__Data_Sharing_Agreement_in_Place__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data Sharing Stipulations</displayNameOverride>
+            <field>LVGO__Data_Sharing_Stipulations__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Date Completed By Legal</displayNameOverride>
+            <field>LVGO__Date_Completed_By_Legal__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Date Enrollment Cap Reached</displayNameOverride>
+            <field>LVGO__Date_Enrollment_Cap_Reached__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Date Marketing Put On Hold</displayNameOverride>
+            <field>LVGO__Date_Marketing_Put_On_Hold__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Days Notice for Term for Convenience</displayNameOverride>
+            <field>LVGO__Days_Notice_for_Term_for_Convenience__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Days Notice for Termination</displayNameOverride>
+            <field>LVGO__Days_Notice_for_Termination__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Demographics of population</displayNameOverride>
+            <field>LVGO__Demographics_of_population__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deprecated Add a Union Bug to Marketing</displayNameOverride>
+            <field>LVGO__Add_a_Union_Bug_to_Marketing_Material__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deprecated Campaign ParticipationTLCDate</displayNameOverride>
+            <field>LVGO__Campaign_Participation_TLC_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deprecated Direct Mail Only?</displayNameOverride>
+            <field>LVGO__Direct_Mail_Only__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deprecated Personalization</displayNameOverride>
+            <field>LVGO__Personalization__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deprecated Personalization Date</displayNameOverride>
+            <field>LVGO__Personalization_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deprecated Union Printer</displayNameOverride>
+            <field>LVGO__Union_Printer__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Description</displayNameOverride>
+            <field>LVGO__Description__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Detailed Invoice Recipient(s)</displayNameOverride>
+            <field>LVGO__Detailed_Invoice_Recipients__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Detailed Invoice Tags</displayNameOverride>
+            <field>LVGO__Detailed_Invoice_Tags__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Detailed Invoice?</displayNameOverride>
+            <field>LVGO__Detailed_Invoice__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Diabetes Id</displayNameOverride>
+            <field>LVGO__DiabetesId__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Disable BH</displayNameOverride>
+            <field>LVGO__Disable_BH__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Disable Live Program Eligibility Check</displayNameOverride>
+            <field>LVGO__Disable_Live_Program_Eligibility_Check__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Disable Mental Health Guidance</displayNameOverride>
+            <field>LVGO__Disable_BH_Coaching__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Disable Teletherapy</displayNameOverride>
+            <field>LVGO__Disable_Teletherapy__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Disclaimer</displayNameOverride>
+            <field>LVGO__Disclaimer__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Disclaimer DM + HTN</displayNameOverride>
+            <field>LVGO__Disclaimer_DM_HTN__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Do Not Use Provided Email Addresses</displayNameOverride>
+            <field>LVGO__Do_Not_Use_Provided_Email_Addresses__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Downmarket</displayNameOverride>
+            <field>LVGO__Downmarket__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DPP Id</displayNameOverride>
+            <field>LVGO__DPPId__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Eligibility Escalation Path</displayNameOverride>
+            <field>LVGO__Eligibility_Escalation_Path__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Eligibility Exceptions/Rules</displayNameOverride>
+            <field>LVGO__Eligibility_Exceptions_Rules__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Eligibility File Cadence</displayNameOverride>
+            <field>LVGO__Eligibility_File_Cadence__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Eligibility or Census Data Grade</displayNameOverride>
+            <field>LVGO__Eligibility_or_Census_Data_Grade__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Eligibility Sentence</displayNameOverride>
+            <field>LVGO__Eligibility_Sentence__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Eligibility Sentence DM + HTN</displayNameOverride>
+            <field>LVGO__Eligibility_Sentence_DM_HTN__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Eligibility Team Notes</displayNameOverride>
+            <field>LVGO__Eligibility_Team_Notes__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Eligibility Verification Method</displayNameOverride>
+            <field>LVGO__Eligibility_Verification_Method__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Eligible Group IDs</displayNameOverride>
+            <field>LVGO__Eligible_Group_IDs__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Eligible Member Communication Method</displayNameOverride>
+            <field>LVGO__Eligible_Member_Communication_Method__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email Access</displayNameOverride>
+            <field>LVGO__Email_Access__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email Notification of sFTP Upload</displayNameOverride>
+            <field>LVGO__Email_Notification_of_sFTP_Upload__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Employee Title</displayNameOverride>
+            <field>LVGO__Employee_Title__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrolled in Livongo Reports</displayNameOverride>
+            <field>LVGO__Enrolled_in_Livongo_Reports__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrolled in Partner-Standard Report</displayNameOverride>
+            <field>LVGO__Enrolled_in_PartnerStandard_Report__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrollment Cap</displayNameOverride>
+            <field>LVGO__Product_Enrollment_Cap__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrollment Marketing Blocked</displayNameOverride>
+            <field>LVGO__Enrollment_Marketing_Blocked__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrollment Marketing Conversation Needed</displayNameOverride>
+            <field>LVGO__Enrollment_Marketing_Conversation_Needed__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrollment Marketing Customizations</displayNameOverride>
+            <field>LVGO__Enrollment_Marketing_Customizations__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrollment Marketing Lead</displayNameOverride>
+            <field>LVGO__EML__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrollment on Autopilot</displayNameOverride>
+            <field>LVGO__Enrollment_on_Autopilot__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Escalation Contact</displayNameOverride>
+            <field>LVGO__Escalation_Contact__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Expected Launch Date</displayNameOverride>
+            <field>LVGO__Expected_Launch_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fast Start Close Date</displayNameOverride>
+            <field>LVGO__Fast_Start_Close_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fast Start Credit Offered?</displayNameOverride>
+            <field>LVGO__Fast_Start_Credit_Offered__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fast Start Credit Offered? (OLD)</displayNameOverride>
+            <field>LVGO__Fast_Start_Credit_Offered_old__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fast Start Credit Type</displayNameOverride>
+            <field>LVGO__Fast_Start_Credit_Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fast Start Custom</displayNameOverride>
+            <field>LVGO__Fast_Start_Custom__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fast Start Launch Date</displayNameOverride>
+            <field>LVGO__Fast_Start_Launch_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fast Start Participation Rate</displayNameOverride>
+            <field>LVGO__Fast_Start_Participation_Rate__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fast Start Participation Rate Date Met</displayNameOverride>
+            <field>LVGO__Fast_Start_Participation_Rate_Date_Met__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Frequency of Award</displayNameOverride>
+            <field>LVGO__Frequency_of_Award__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>General Disclaimer</displayNameOverride>
+            <field>LVGO__General_Disclaimer__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>General Eligibility Sentence</displayNameOverride>
+            <field>LVGO__General_Eligibility_Sentence__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>General Spanish Disclaimer</displayNameOverride>
+            <field>LVGO__General_Spanish_Disclaimer__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>General Spanish Eligibility Sentence</displayNameOverride>
+            <field>LVGO__General_Spanish_Eligibility_Sentence__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Global NDA in place?</displayNameOverride>
+            <field>LVGO__Global_NDA_in_place__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Goals for Livongo</displayNameOverride>
+            <field>LVGO__Goals_for_Livongo__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Has Broker?</displayNameOverride>
+            <field>LVGO__Has_Broker__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Health Benefit Alt Text</displayNameOverride>
+            <field>LVGO__Health_Benefit_Alt_Text__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Health Plan Partner Customizations</displayNameOverride>
+            <field>LVGO__Partner_Customizations__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Health System Data Grade</displayNameOverride>
+            <field>LVGO__Health_System_Data_Grade__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Heart Failure Id</displayNameOverride>
+            <field>LVGO__Heart_Failure_Id__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>HIPAA Covered Entity</displayNameOverride>
+            <field>LVGO__HIPAA_Covered_Entity__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hold All Marketing</displayNameOverride>
+            <field>LVGO__Hold_All_Marketing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hold Member Marketing</displayNameOverride>
+            <field>LVGO__Hold_Member_Marketing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>HR Communications</displayNameOverride>
+            <field>LVGO__HR_Communications__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>HSS Contract</displayNameOverride>
+            <field>LVGO__HSS_Contract__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hypertension Id</displayNameOverride>
+            <field>LVGO__HypertensionId__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Identification Responsibility</displayNameOverride>
+            <field>LVGO__Identification_Responsibility__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Incentive API Start Date</displayNameOverride>
+            <field>LVGO__Incentive_API_Start_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Incentive Criteria</displayNameOverride>
+            <field>LVGO__Incentive_Criteria__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Incentive Reporting Partner</displayNameOverride>
+            <field>LVGO__Incentive_Reporting_Partner__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Incentives API Partner</displayNameOverride>
+            <field>LVGO__Incentives_API_Partner__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Incentives Report Delivery</displayNameOverride>
+            <field>LVGO__Incentives_Report_Delivery__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Incentives Report Frequency</displayNameOverride>
+            <field>LVGO__Incentives_Report_Frequency__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Initial Launch Date</displayNameOverride>
+            <field>LVGO__Actual_Launch_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Initial Member Recruitment</displayNameOverride>
+            <field>LVGO__Member_Recruitment_Began__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Initial Targeted Marketing</displayNameOverride>
+            <field>LVGO__Initial_Targeted_Marketing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Interested in OE Integration</displayNameOverride>
+            <field>LVGO__Interested_in_OE_Integration__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Invoice Prefix</displayNameOverride>
+            <field>LVGO__Invoice_Prefix__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Cloned</displayNameOverride>
+            <field>LVGO__Is_Cloned__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is there a lapsed user clause</displayNameOverride>
+            <field>LVGO__Is_there_a_lapsed_user_clause__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is there a PTMM?</displayNameOverride>
+            <field>LVGO__Is_there_a_PTMM__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is there Lapse Criteria?</displayNameOverride>
+            <field>LVGO__Is_there_Lapse_Criteria__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Jira Key</displayNameOverride>
+            <field>LVGO__Jira_Key__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Join Alt Text</displayNameOverride>
+            <field>LVGO__Join_Alt_Text__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Kickoff Date</displayNameOverride>
+            <field>LVGO__Kickoff_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapse Criteria</displayNameOverride>
+            <field>LVGO__Lapse_Criteria__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapsed Clause - Data: Compliant?</displayNameOverride>
+            <field>LVGO__Lapsed_Clause_Data_Compliant__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapsed Clause - Incentives: Compliant?</displayNameOverride>
+            <field>LVGO__Lapsed_Clause_Incentives_Compliant__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapsed Clause - MCM: Compliant?</displayNameOverride>
+            <field>LVGO__Lapsed_Clause_MCM_Compliant__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapsed Clause - OEP: Compliant?</displayNameOverride>
+            <field>LVGO__Lapsed_Clause_OEP_Compliant__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapsed Clause Compliant?</displayNameOverride>
+            <field>LVGO__Lapsed_Clause_Compliant__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapsed Clause: Claims Data</displayNameOverride>
+            <field>LVGO__Lapsed_Clause_Claims_Data__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapsed Clause: Multi-Channel Marketing</displayNameOverride>
+            <field>LVGO__Lapsed_Clause_Multi_Channel_Marketing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapsed Clause: Optimized Enrollment Plan</displayNameOverride>
+            <field>LVGO__Lapsed_Clause_Optimized_Enrollment_Plan__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapsed Clause: Use of Incentives</displayNameOverride>
+            <field>LVGO__Lapsed_Clause_Use_of_Incentives__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapsed Criteria Source</displayNameOverride>
+            <field>LVGO__Lapsed_Criteria_Source__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapsed User Custom Detail</displayNameOverride>
+            <field>LVGO__Product_Lapsed_User_Custom_Detail__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lapsed User Detail</displayNameOverride>
+            <field>LVGO__Lapsed_User_Detail__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Activity Date</displayNameOverride>
+            <field>LastActivityDate</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Date of Data Refresh</displayNameOverride>
+            <field>LVGO__Last_Date_of_Data_Refresh__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Latest Launch Date</displayNameOverride>
+            <field>LVGO__Latest_Launch_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Launch Date (Expected)</displayNameOverride>
+            <field>LVGO__Launch_Date_Expected__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Launch Date doesn&apos;t match Start Date</displayNameOverride>
+            <field>LVGO__Launch_Date_doesn_t_match_Start_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Legal Name</displayNameOverride>
+            <field>LVGO__Legal_Name__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Link to Box folder - PHI Release</displayNameOverride>
+            <field>LVGO__Link_to_Box_folder_PHI_Release__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Links to Eligibility Verification Folder</displayNameOverride>
+            <field>LVGO__Links_to_Eligibility_Verification_Files__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Livongo DPP Pricing</displayNameOverride>
+            <field>LVGO__Livongo_DPP_Pricing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Livongo for Diabetes Pricing</displayNameOverride>
+            <field>LVGO__Livongo_for_Diabetes_Pricing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Livongo for Hypertension Pricing</displayNameOverride>
+            <field>LVGO__Livongo_for_Hypertension_Pricing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Livongo Incentive Content Guide Date</displayNameOverride>
+            <field>LVGO__Livongo_Incentive_Content_Guide_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Livongo Incentive for Automation</displayNameOverride>
+            <field>LVGO__Livongo_Incentive_for_Automation__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Livongo Incentive Gift Cards Date</displayNameOverride>
+            <field>LVGO__Livongo_Incentive_Gift_Cards_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Livongo Incentive Good and Service Date</displayNameOverride>
+            <field>LVGO__Livongo_Incentive_Good_and_Service_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Livongo Incentives: Content Guides</displayNameOverride>
+            <field>LVGO__Livongo_Incentives_Content_Guides__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Livongo Incentives: Gift Cards</displayNameOverride>
+            <field>LVGO__Livongo_Incentives_Gift_Cards__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Livongo Incentives: Goods and Services</displayNameOverride>
+            <field>LVGO__Livongo_Incentives_Goods_and_Services__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Livongo Led?</displayNameOverride>
+            <field>LVGO__Livongo_Led__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Location of Partner Data Files</displayNameOverride>
+            <field>LVGO__Location_of_Partner_Data_Files__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Logo File Name</displayNameOverride>
+            <field>LVGO__Logo_File_Name__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lost/Damaged Device 1</displayNameOverride>
+            <field>LVGO__Lost_Damaged_Device_1__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lost/Damaged Device 2</displayNameOverride>
+            <field>LVGO__Lost_Damaged_Device_2__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lost/Damaged Device Price 1</displayNameOverride>
+            <field>LVGO__Replacement_Fee__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lost/Damaged Device Price 2</displayNameOverride>
+            <field>LVGO__Lost_Damaged_Device_Price_2__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lost/Damaged Device Responsibility</displayNameOverride>
+            <field>LVGO__Replacement_Device_Responsibility__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lowercase Registration Code</displayNameOverride>
+            <field>LVGO__Lowercase_Registration_Code__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>LV Contract ID</displayNameOverride>
+            <field>Id</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Manual Check</displayNameOverride>
+            <field>LVGO__Manual_Check__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marketing Channel Type</displayNameOverride>
+            <field>LVGO__Marketing_Channel_Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marketing Name</displayNameOverride>
+            <field>LVGO__Marketing_Name__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Master Client Overview</displayNameOverride>
+            <field>LVGO__Master_Client_Overview__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Member Comms Need Client Approval</displayNameOverride>
+            <field>LVGO__Member_Comms_Need_Client_Approval__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Member Support Details</displayNameOverride>
+            <field>LVGO__Member_Support_Details__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Member Support Phone</displayNameOverride>
+            <field>LVGO__Member_support_phone__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Member Support URL</displayNameOverride>
+            <field>LVGO__Member_Support_URL__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Method of Delivery</displayNameOverride>
+            <field>LVGO__Method_of_Delivery__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Migrated myStrength Contracts</displayNameOverride>
+            <field>LVGO__Migrated_myStrength_Contracts__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Milestone Billing</displayNameOverride>
+            <field>LVGO__Milestone_Billing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Milestone Billing Configuration</displayNameOverride>
+            <field>LVGO__Milestone_Billing_Configuration__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Minimum Number of Participants</displayNameOverride>
+            <field>LVGO__Minimum_Number_of_Participants__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Monthly Escalation Path</displayNameOverride>
+            <field>LVGO__Monthly_Escalation_Path__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Multiprogram Discount</displayNameOverride>
+            <field>LVGO__Multiprogram_Discount__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>myStrength 1.0 Transition Date</displayNameOverride>
+            <field>LVGO__myStrength_1_0_Transition_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>myStrength 1.0 Transitioning Client</displayNameOverride>
+            <field>LVGO__myStrength_1_0_Transitioning_Client__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>myStrength Contract Amount</displayNameOverride>
+            <field>LVGO__myStrength_Contract_Amount__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>MyStrength Transition Date</displayNameOverride>
+            <field>LVGO__MyStrength_Transition_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>myStrengthContractExtId</displayNameOverride>
+            <field>LVGO__myStrengthContractExtId__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Name</displayNameOverride>
+            <field>Name</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>New Device Type</displayNameOverride>
+            <field>LVGO__New_Device_Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>New Member Shipping (days)</displayNameOverride>
+            <field>LVGO__New_Member_Shipping_days__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>No Email Addresses for Population</displayNameOverride>
+            <field>LVGO__No_Email_Addresses_for_Population__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of Closed Won Opps</displayNameOverride>
+            <field>LVGO__Number_of_Closed_Won_Opps__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of MsC</displayNameOverride>
+            <field>LVGO__Number_of_MsC__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>OE Month End</displayNameOverride>
+            <field>LVGO__OE_Month_End__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>OE Month Start</displayNameOverride>
+            <field>LVGO__OE_Month_Start__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>OE Period Length</displayNameOverride>
+            <field>LVGO__OE_Period_Length__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Open Enrollment Platform</displayNameOverride>
+            <field>LVGO__Open_Enrollment_Platform__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Marketing Channels</displayNameOverride>
+            <field>LVGO__Other_Marketing_Channels__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Outreach Owner</displayNameOverride>
+            <field>LVGO__Outreach_Owner__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Outreach Stratification</displayNameOverride>
+            <field>LVGO__Outreach_Stratification__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Outreach Stratification Date</displayNameOverride>
+            <field>LVGO__Outreach_Stratification_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Outreach Stratification Previous Value</displayNameOverride>
+            <field>LVGO__Outreach_Stratification_Previous_Value__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner</displayNameOverride>
+            <field>Owner</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Participant Satisfaction</displayNameOverride>
+            <field>LVGO__ParticipantSatisfaction__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Participant Term Minimum Months</displayNameOverride>
+            <field>LVGO__Participant_Term_Minimum_Months__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Participants</displayNameOverride>
+            <field>LVGO__Participants__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Consultant Relations Contact</displayNameOverride>
+            <field>LVGO__Partner_Consultant_Relations_Contact__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Fees</displayNameOverride>
+            <field>LVGO__Partner_Fees__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Has Right To Audit?</displayNameOverride>
+            <field>LVGO__Partner_Has_Right_To_Audit__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Pass Through Price</displayNameOverride>
+            <field>LVGO__Partner_Pass_Through_Price__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Type</displayNameOverride>
+            <field>LVGO__Partner_Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Payment Submission Method</displayNameOverride>
+            <field>LVGO__Payment_Submission_Method__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Payment Terms</displayNameOverride>
+            <field>LVGO__Payment_Terms__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PBM Data Grade</displayNameOverride>
+            <field>LVGO__PBM_Data_Grade__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Performance Guarantee Type</displayNameOverride>
+            <field>LVGO__Performance_Guarantee_Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Performance Guarantee(s)? (OLD)</displayNameOverride>
+            <field>LVGO__Performance_Guarantees_old__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Performance Guarantees?</displayNameOverride>
+            <field>LVGO__Performance_Guarantees__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PG A1c Reduction %</displayNameOverride>
+            <field>LVGO__PG_A1c_Reduction__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PG A1c Reduction $PPPM</displayNameOverride>
+            <field>LVGO__PG_A1c_Reduction_PPPM__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PG Analysis Due Date</displayNameOverride>
+            <field>LVGO__PG_Analysis_Due_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PG Custom Detail</displayNameOverride>
+            <field>LVGO__PG_Custom_Detail__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PG Reduction in Out of Range Time %</displayNameOverride>
+            <field>LVGO__PG_Reduction_in_Out_of_Range_Time__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PG Reduction in Out of Range Time $PPPM</displayNameOverride>
+            <field>LVGO__PG_Reduction_in_Out_of_Range_Time_PPPM__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PG Satisfaction %</displayNameOverride>
+            <field>LVGO__PG_Satisfaction__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PG Satisfaction $PPPM</displayNameOverride>
+            <field>LVGO__PG_Satisfaction_PPPM__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone Campaign</displayNameOverride>
+            <field>LVGO__Phone_Campaign__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PMPM</displayNameOverride>
+            <field>LVGO__PMPM__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pop Refresh Start Date</displayNameOverride>
+            <field>LVGO__Pop_Refresh_Start_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Population Data Sources</displayNameOverride>
+            <field>LVGO__Population_Data_Sources__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Population Demographics</displayNameOverride>
+            <field>LVGO__Population_Demographics__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Population of Coverage</displayNameOverride>
+            <field>LVGO__Population_of_Coverage__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Population Type</displayNameOverride>
+            <field>LVGO__Population_Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PPPM</displayNameOverride>
+            <field>LVGO__PPPM__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PPPM Billing Trigger</displayNameOverride>
+            <field>LVGO__PPPM_Billing_Trigger__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pricebook</displayNameOverride>
+            <field>LVGO__Pricebook2__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pricing Model</displayNameOverride>
+            <field>LVGO__Pricing_Model__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Products</displayNameOverride>
+            <field>LVGO__Products__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program</displayNameOverride>
+            <field>LVGO__Program_Name__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Began as Pilot</displayNameOverride>
+            <field>LVGO__Program_Began_as_Pilot__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Eligibility Flag</displayNameOverride>
+            <field>LVGO__Program_Eligibility_Flag__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program End Date</displayNameOverride>
+            <field>LVGO__Program_End_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Implementation Status</displayNameOverride>
+            <field>LVGO__Program_Implementation_status__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Name + Contract Path</displayNameOverride>
+            <field>LVGO__Program_Name_Contract_Path__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Platform Version</displayNameOverride>
+            <field>LVGO__Program_Platform_Version__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Qualification Dependency</displayNameOverride>
+            <field>LVGO__Program_Qualification_Dependency__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Renewal Notice Date</displayNameOverride>
+            <field>LVGO__ContractRenewalDate__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Start Date</displayNameOverride>
+            <field>LVGO__Program_Start_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Transition Date</displayNameOverride>
+            <field>LVGO__Program_Transition_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Program Type</displayNameOverride>
+            <field>LVGO__Program_Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Programs Covered by Partner Agreement</displayNameOverride>
+            <field>LVGO__Programs_Covered_by_Partner_Agreement__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Prorated Enrollment</displayNameOverride>
+            <field>LVGO__Prorated_Enrollment__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Provider Based Care</displayNameOverride>
+            <field>LVGO__Provider_Based_Care__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ready for Automation</displayNameOverride>
+            <field>LVGO__Ready_for_Automation__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Record Type</displayNameOverride>
+            <field>RecordType</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Recruitable Population - Current</displayNameOverride>
+            <field>LVGO__Recruitable_Pop_Current__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Recruitable Population (D+HTN) - Current</displayNameOverride>
+            <field>LVGO__Recruitable_Population_D_HTN_Current__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reduction in BG</displayNameOverride>
+            <field>LVGO__ReductioninBG__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Registration Customizations</displayNameOverride>
+            <field>LVGO__Registration_Customizations__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Registration Flow Scenarios</displayNameOverride>
+            <field>LVGO__Registration_Flow_Scenarios__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Registration Name</displayNameOverride>
+            <field>LVGO__Registration_Name__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Registration Status</displayNameOverride>
+            <field>LVGO__Registration_Status__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Relaunch Start Date</displayNameOverride>
+            <field>LVGO__Relaunch_Start_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Remaining Mths &lt; 9 Early Term Fee</displayNameOverride>
+            <field>LVGO__Remaining_Mths_less_9_Early_Term_Fee__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Remaining Mths &gt;= 9 Early Term Fee</displayNameOverride>
+            <field>LVGO__Remaining_Mths_greater_9_Early_Term_Fee__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Remove ‘New&apos;</displayNameOverride>
+            <field>LVGO__Remove_New__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Remove Spanish</displayNameOverride>
+            <field>LVGO__Remove_Spanish__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Remove Unlimited</displayNameOverride>
+            <field>LVGO__Remove_Unlimited__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Renewal Notice Period</displayNameOverride>
+            <field>LVGO__Renewal_Notice_Period__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Replacement Device Coverage</displayNameOverride>
+            <field>LVGO__Replacement_Device_Coverage__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Required Data for ROI Received</displayNameOverride>
+            <field>LVGO__Required_Data_for_ROI_Received__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Responsibility of Transaction Taxes</displayNameOverride>
+            <field>LVGO__Responsibility_of_Transaction_Taxes__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>RetroTimeBasedWorkflow</displayNameOverride>
+            <field>LVGO__RetroTimeBasedWorkflow__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Revenue Bucket</displayNameOverride>
+            <field>LVGO__Revenue_Bucket__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Send New Client Gift</displayNameOverride>
+            <field>LVGO__Send_New_Client_Gift__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Separate BAA required for clients?</displayNameOverride>
+            <field>LVGO__Separate_BAA_required_for_clients__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>sFTP in Place?</displayNameOverride>
+            <field>LVGO__sFTP_in_Place__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ShippingAddress</displayNameOverride>
+            <field>LVGO__ShippingAddress__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>SLA Details</displayNameOverride>
+            <field>LVGO__SLA_Details__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Social Media Advertising</displayNameOverride>
+            <field>LVGO__Social_Media_Advertising__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Spanish Disclaimer Sentence</displayNameOverride>
+            <field>LVGO__Spanish_Disclaimer_Sentence__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Spanish Disclaimer Sentence DM+HTN</displayNameOverride>
+            <field>LVGO__Spanish_Disclaimer_Sentence_DM_HTN__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Spanish Eligibility Sentence</displayNameOverride>
+            <field>LVGO__Spanish_Eligibility_Sentence__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Spanish Eligibility Sentence DM + HTN</displayNameOverride>
+            <field>LVGO__Spanish_Eligibility_Sentence_DM_HTN__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>SSO Partner</displayNameOverride>
+            <field>LVGO__SSO_Partner__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Status</displayNameOverride>
+            <field>LVGO__Status__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Strips and Lancets Alt Text</displayNameOverride>
+            <field>LVGO__Strips_and_Lancets_Alt_Text__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Subcontractors with PHI</displayNameOverride>
+            <field>LVGO__Subcontractors_with_PHI__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Subcontractors with PHI Notes</displayNameOverride>
+            <field>LVGO__Subcontractors_with_PHI_Notes__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Targeted Recruitable Data</displayNameOverride>
+            <field>LVGO__Targeted_Recruitable_Data__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>TaskRay Parent Project Id</displayNameOverride>
+            <field>LVGO__TaskRay_Parent_Project_Id__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Termination Fee</displayNameOverride>
+            <field>LVGO__Termination_Fee__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Termination for Convenience?</displayNameOverride>
+            <field>LVGO__Termination_for_Convenience__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tier2 Partner Fee</displayNameOverride>
+            <field>LVGO__Tier2_Partner_Fee__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tier2 Partner Fee Start Month</displayNameOverride>
+            <field>LVGO__Tier2_Partner_Fee_Start_Month__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tier2 PPPM</displayNameOverride>
+            <field>LVGO__Tier2_PPPM__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tier2 PPPM Start Month</displayNameOverride>
+            <field>LVGO__Tier2_PPPM_Start_Month__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tier3 PPPM</displayNameOverride>
+            <field>LVGO__Tier3_PPPM__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tier3 PPPM Start Month</displayNameOverride>
+            <field>LVGO__Tier3_PPPM_Start_Month__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Transitioning DPP Year 2 members</displayNameOverride>
+            <field>LVGO__Transitioning_DPP_Year_2_members__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>True-up Frequency</displayNameOverride>
+            <field>LVGO__True_up_Frequency__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Type of Incentive to Exclude</displayNameOverride>
+            <field>LVGO__Type__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>U18 Marketing?</displayNameOverride>
+            <field>LVGO__U18_Marketing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Union Client</displayNameOverride>
+            <field>LVGO__Union_Client__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unique Contract Terms</displayNameOverride>
+            <field>LVGO__Unique_Contract_Terms__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Upfront Per Member</displayNameOverride>
+            <field>LVGO__Up_Front_Per_Member__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Use Contract Path for Marketing?</displayNameOverride>
+            <field>LVGO__Use_Contract_Path_for_Marketing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Use for Activation/Usage?</displayNameOverride>
+            <field>LVGO__Use_for_Activation_Usage__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Vendor Name</displayNameOverride>
+            <field>LVGO__Vendor_Name__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Weight Management Id</displayNameOverride>
+            <field>LVGO__Weight_ManagementId__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Welcome Kits Shipped by UPS, not Fedex</displayNameOverride>
+            <field>LVGO__Welcome_Kits_Shipped_by_UPS_not_Fedex__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Whole Person</displayNameOverride>
+            <field>LVGO__Whole_Person__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Whole Person Transition Date</displayNameOverride>
+            <field>LVGO__Whole_Person_Transition_Date__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>WM + DP ID</displayNameOverride>
+            <field>LVGO__WM_DP_ID__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>WP Transition Member Recruitment</displayNameOverride>
+            <field>LVGO__WP_Transition_Member_Recruitment__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>WP Transition Target Marketing</displayNameOverride>
+            <field>LVGO__WP_Transition_Target_Marketing__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <masterLabel>Program Overviews</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Low Acuity Price</displayNameOverride>
+            <field>LVGO__Low_Acuity_Price__c</field>
+            <table>LVGO__Account__c.LVGO__ProgramOverviews__r</table>
+        </columns>
+        <masterLabel>LV Contracts</masterLabel>
+    </sections>
+</ReportType>

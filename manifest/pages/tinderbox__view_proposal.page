@@ -1,0 +1,13 @@
+<apex:page standardController="tinderbox__Proposal__c" extensions="tinderbox.proposalExtension" docType="html-5.0">
+    <!-- ProCore added these elements and I don't think they do anything. -->
+    <apex:form >
+        <apex:inputhidden value="{!tinderbox__Proposal__c.tinderbox__TBAccount__c}" />
+    </apex:form>
+    <apex:outputText value="{!tinderbox__Proposal__c.tinderbox__Views__c}" rendered="false"/>
+    <apex:outputText value="{!tinderbox__Proposal__c.tinderbox__tinderboxid__c}" rendered="false"/>
+    <!-- End -->
+
+    <c:ApplicationView path="documents/{!TinderboxId}"
+       TBAccountEndPoint="{!TBAccountEndPoint}"></c:ApplicationView>
+     
+</apex:page>

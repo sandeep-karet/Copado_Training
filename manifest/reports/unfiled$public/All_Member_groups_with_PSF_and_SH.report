@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Mbr_Group__c$Id</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Name</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Active_Date__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Name</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Product_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Subscription__c.SBQQ__ProductId__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Subscription__c.SBQQ__ProductName__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Subscription__c.SBQQ__StartDate__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Product__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Sexual_Health_Opt_Out__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Report that shows Member group, PSF with Product SH</description>
+    <filter>
+        <criteriaItems>
+            <column>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Product__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Sexual health</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>All Member groups with PSF and SH</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Member_Groups_with_Plan_Specific_Fees__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Subscription__c.SBQQ__ProductName__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Mbr_Group__c$Active_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

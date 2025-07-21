@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Edit these fields on Salesforce Account Detail Page
+
+* myStrength Account checkbox
+* myStrength Partner</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LVGO__Account__c.LVGO__myStrength_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LVGO__Account__c.LVGO__myStrength_Partner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Edit myStrenght Account fields</label>
+</PermissionSet>

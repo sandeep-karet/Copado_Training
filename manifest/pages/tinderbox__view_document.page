@@ -1,0 +1,12 @@
+<apex:page standardController="tinderbox__Document__c" extensions="tinderbox.documentExtension">
+    <!-- ProCore added these elements. No idea what they do for us but they are needed. -->
+    <apex:form >
+        <apex:inputhidden value="{!tinderbox__Document__c.tinderbox__TBAccount__c}" />
+    </apex:form>
+    <apex:outputText value="{!tinderbox__Document__c.tinderbox__TinderBoxId__c}" rendered="false"/>
+    <!-- End -->
+
+    <c:ApplicationView path="documents/{!TinderboxId}"
+       TBAccountEndPoint="{!TBAccountEndPoint}"></c:ApplicationView>
+          
+</apex:page>

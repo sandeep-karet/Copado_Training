@@ -1,0 +1,82 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="opportunityReopenLwcController">
+    
+    <aura:html tag="style">       
+        .cuf-content {
+        padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+        padding: 0rem !important;
+        }       
+        .slds-modal__content{
+        height:unset !important;
+        max-height:unset !important;        
+        }
+        .slds-modal__container{
+        max-width:80% !important;
+        width:unset !important;
+        }
+    </aura:html> 
+    
+    <aura:attribute name="oppRdy" type="boolean" default="false"/>
+    <aura:attribute name="ErrorMsg" type="string" default="" />
+    <aura:attribute name="disclaimer" type="boolean" default="false"/>
+    <aura:attribute name="isLoading" type="boolean" default="true"/>
+    <aura:attribute name="oppList" type="list" />
+    
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:if isTrue="{!isLoading}">
+        <aura:set attribute="else"> 
+            
+            <aura:if isTrue="{!v.disclaimer}">
+                <div class="slds-text-heading_medium slds-m-top_medium slds-modal__header slds-size_1-of-1">
+                    <div class="slds-p-right_x-large slds-grid slds-wrap slds-align_absolute-center">
+                        <b>Re-Open Opportunity</b>
+                    </div>
+                    
+                </div> 
+                <lightning:card class="slds-size--1-of-1 ">                                         
+                    <div class="slds-grid slds-wrap slds-align_absolute-center">          
+                        <div>
+                            <lightning:card class="slds-size--1-of-1 "> 
+                                <p class="slds-text-heading--medium">
+                                    This opportunity can not be reopened because it is related to amendment opportunity that has CPQ record created from them.
+                                </p><br></br>
+                                <p  class="slds-text-heading--medium">
+                                    Here is the related opportunity need to be reopened first: 
+                                </p><br></br>
+                                
+                                <aura:iteration items="{!v.oppList}" var="opp">
+                                    <a class="slds-text-heading--medium" href="{!'/one/one.app?#/sObject/'+ opp.Id + '/view'}" target="_blank">{! opp.Name }</a>
+                                    <br></br> 
+                                </aura:iteration>
+                            </lightning:card>
+                        </div>
+                    </div> 
+                </lightning:card>   
+                <div class="slds-m-top_medium modal-footer slds-modal__footer slds-size_1-of-1">
+                    <lightning:button aura:id="cancelBtn" variant="neutral" label="Cancel"  onclick="{!c.cancel}"/>
+                </div> 
+                <aura:set attribute="else">   
+                    <aura:if isTrue="{!v.oppRdy}">
+                        <div class="slds-grid slds-wrap slds-align_absolute-center">
+                            <c:oppReopenLwc recordId="{!v.recordId}"/>
+                        </div>
+                        <aura:set attribute="else">
+                            <lightning:card class="slds-size--1-of-1 ">                                         
+                                <div class="slds-grid slds-wrap slds-align_absolute-center">
+                                    <div class="slds-p-right_x-large">
+                                        <lightning:icon iconName="utility:error" title="Error!"  variant="error" size="large"/>
+                                    </div>             
+                                </div> 
+                                <div class="slds-grid slds-wrap slds-align_absolute-center slds-p-top_large">
+                                    <h2>{!v.ErrorMsg}</h2>
+                                </div>
+                            </lightning:card>
+                        </aura:set>
+                    </aura:if> 
+                </aura:set> 
+            </aura:if>
+        </aura:set>
+    </aura:if>
+</aura:component>

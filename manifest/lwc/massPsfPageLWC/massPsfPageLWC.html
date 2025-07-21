@@ -1,0 +1,859 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <header class="slds-modal__header">
+    <template if:true={renderNew}>
+      <div class="slds-grid slds-wrap slds-align_absolute-center">
+        <div class="slds-p-right_x-large">
+          <lightning-icon icon-name="custom:custom32" variant="warning" size="large"></lightning-icon>
+        </div>
+        <div>
+          <h1 class="slds-text-heading--medium"><b> New Plan-Specific Fees by Product</b></h1>
+        </div>
+      </div>
+    </template>
+    <template if:false={renderNew}>
+      <div class="slds-grid slds-wrap slds-align_absolute-center">
+        <div class="slds-p-right_x-large">
+          <lightning-icon icon-name="custom:custom32" variant="warning" size="large"></lightning-icon>
+        </div>
+        <div>
+          <h1 class="slds-text-heading--medium"><b> Edit Record: Plan-Specific Fees by Product </b></h1>
+        </div>
+      </div>
+    </template>
+  </header>
+  <lightning-card>
+    <div class="slds-p-left_xx-large slds-p-right_xx-large slds-p-bottom_small slds-scrollable" style="max-height:70vh">
+      <table class="slds-p-left_xx-large slds-p-right_xx-large" role="grid">
+        <thead>
+          <tr class="slds-text-title_caps">
+            <th style="width: 3.25rem;" class="slds-text-align_right">
+              <template if:true={renderNewTable}>
+                <lightning-input type="checkbox" onchange={checkAll} name="checkAll"></lightning-input>
+              </template>
+            </th>
+            <th scope="col">
+              <div class="slds-truncate" title="Product">Product</div>
+            </th>
+            <th scope="col">
+              <div class="slds-truncate" title="Subscription">Subscription</div>
+            </th>
+            <th scope="col">
+              <div class="slds-truncate" title="Account">Account</div>
+            </th>
+            <th scope="col">
+              <div class="slds-truncate" title="Opportunity">Opportunity</div>
+            </th>
+            <th scope="col">
+              <div class="slds-truncate" title="Bundle Type">Bundle Type</div>
+            </th>
+            <th scope="col">
+              <div class="slds-truncate" title="Consult Type">Consult Type</div>
+            </th>
+            <th scope="col">
+              <div class="slds-truncate" title="Current Membership Fee">
+                Current Membership Fee
+              </div>
+            </th>
+            <th scope="col">
+              <div class="slds-truncate" title="Start Date">Start Date</div>
+            </th>
+            <th scope="col">
+              <div class="slds-truncate" title="Sort Order">Fee Type</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <template if:true={renderNewTable}>
+            <template for:each={subList} for:item="sub" for:index="index">
+              <tr key={sub.objSub.Id}>
+                <th scope="row" class="slds-text-align_right" style="width: 3.25rem;">
+                  <div class="slds-truncate">
+                    <template if:true={sub.isUsed}>
+                      <p>In Use</p>
+                    </template>
+                    <template if:false={sub.isUsed}>
+                      <lightning-input type="checkbox" onchange={checkBox} value={index} data-index={index}>
+                      </lightning-input>
+                    </template>
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={sub.objSub.SBQQ__Product__r.Name}>
+                    {sub.objSub.SBQQ__Product__r.Name}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={sub.objSub.Name}>
+                    {sub.objSub.Name}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={sub.objSub.SBQQ__Account__r.Name}>
+                    {sub.objSub.SBQQ__Account__r.Name}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate"
+                    title={sub.objSub.SBQQ__QuoteLine__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.Name}>
+                    {sub.objSub.SBQQ__QuoteLine__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.Name}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={sub.objSub.Status__c}>
+                    {sub.objSub.Bundle_Type__c}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={sub.objSub.Consult_Type__c}>
+                    {sub.objSub.Consult_Type__c}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={sub.objSub.Current_Membership_Fee__c}>
+                    {sub.objSub.Current_Membership_Fee__c}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={sub.objSub.SBQQ__StartDate__c}>
+                    {sub.objSub.SBQQ__StartDate__c}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={sub.objSub.Fee_Type__c}>
+                    {sub.objSub.Fee_Type__c}
+                  </div>
+                </th>
+              </tr>
+            </template>
+          </template>
+          <template if:true={renderExistTable}>
+            <tr>
+              <th></th>
+              <th scope="row">
+                <div class="slds-truncate" title={subProductName}>
+                  {subRecord.SBQQ__Product__r.Name}
+                </div>
+              </th>
+              <th scope="row">
+                <div class="slds-truncate" title={subName}>
+                  {subRecord.Name}
+                </div>
+              </th>
+              <th scope="row">
+                <div class="slds-truncate" title={acctName}>
+                  {subRecord.SBQQ__Account__r.Name}
+                </div>
+              </th>
+              <th scope="row">
+                <div class="slds-truncate" title={oppName}>{oppName}</div>
+              </th>
+              <th scope="row">
+                <div class="slds-truncate" title={subStatus}>
+                  {subRecord.Status__c}
+                </div>
+              </th>
+              <th scope="row">
+                <div class="slds-truncate" title={conType}>
+                  {subRecord.Consult_Type__c}
+                </div>
+              </th>
+              <th scope="row">
+                <div class="slds-truncate" title={cmFee}>
+                  {subRecord.Current_Membership_Fee__c}
+                </div>
+              </th>
+              <th scope="row">
+                <div class="slds-truncate" title={startDate}>
+                  {subRecord.SBQQ__StartDate__c}
+                </div>
+              </th>
+              <th scope="row">
+                <div class="slds-truncate" title={feeType}>
+                  {subRecord.Fee_Type__c}
+                </div>
+              </th>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+    <template if:true={renderNewTable}>
+      <div class="slds-p-top_large slds-p-bottom_small slds-align_absolute-center">
+        <lightning-button variant="brand-outline" label="Next" onclick={handleNext} disabled={isNextDisable}
+          class="slds-p-right_x-small slds-p-left_x-small"></lightning-button>
+        <lightning-button variant="brand-outline" label="Close" onclick={close}
+          class="slds-p-right_x-small slds-p-left_x-small"></lightning-button>
+      </div>
+    </template>
+    <template if:true={isSelectSub}>
+      <lightning-tabset class="slds-grid slds-wrap slds-size--1-of-2 slds-align_absolute-center slds-m-top_x-large">
+        <lightning-tab label="Details">
+          <div class="slds-grid slds-wrap slds-size--1-of-1" style="border: 1px dotted #a8a9ac;">
+            <template if:true={vpcFee}>
+              <div class="slds-grid slds-wrap slds-size--1-of-1 slds-align_absolute-center"
+                style="background-color: #fffacd;">
+                <div class="slds-p-right_x-large">
+                  <lightning-icon icon-name="action:announcement" variant="error"></lightning-icon>
+                </div>
+                <div>
+                  <p>
+                    Default fee ${wrapper.assetMap.NEWPATCF.Consult_Fees__c} for
+                    Primary Care Initial Visit Fee
+                  </p>
+                  <p>
+                    Default fee ${wrapper.assetMap.PRIMCARECF.Consult_Fees__c}
+                    for Primary Care Ongoing Visit Fee
+                  </p>
+                  <p>
+                    Default fee ${wrapper.assetMap.PRIMCAREACF.Consult_Fees__c}
+                    for Primary Care Annual Checkup Visit Fee
+                  </p>
+                  <template if:true={wrapper.assetMap.PRIMCAREFCF}>
+                    <p>
+                      Default fee ${wrapper.assetMap.PRIMCAREFCF.Consult_Fees__c}
+                      for Primary Care Initial Flex Visit Fee
+                    </p>
+                  </template>
+                </div>
+              </div>
+            </template>
+            <template if:true={bhFee}>
+              <div class="slds-grid slds-wrap slds-size--1-of-1 slds-align_absolute-center"
+                style="background-color: #fffacd;">
+                <div class="slds-p-right_x-large">
+                  <lightning-icon icon-name="action:announcement" variant="error"></lightning-icon>
+                </div>
+                <div>
+                  <p>
+                    Default fee ${wrapper.assetMap.BHP1T.Consult_Fees__c} for
+                    Psychiatry Initial Visit Fee
+                  </p>
+                  <p>
+                    Default fee ${wrapper.assetMap.BHPOT.Consult_Fees__c} for
+                    Psychiatry Ongoing Visit Fee
+                  </p>
+                  <p>
+                    Default fee ${wrapper.assetMap.BHNPT.Consult_Fees__c} for
+                    Therapy Ongoing Visit Fee
+                  </p>
+                </div>
+              </div>
+            </template>
+            <template if:true={MSCOMPFee}>
+              <div class="slds-grid slds-wrap slds-size--1-of-1 slds-align_absolute-center"
+                style="background-color: #fffacd;">
+                <div class="slds-p-right_x-large">
+                  <lightning-icon icon-name="action:announcement" variant="error"></lightning-icon>
+                </div>
+                <div>
+                  <p>
+                    Default fee ${wrapper.assetMap.BHP1T.Consult_Fees__c} for
+                    Psychiatry Initial Visit Fee
+                  </p>
+                  <p>
+                    Default fee ${wrapper.assetMap.BHPOT.Consult_Fees__c} for
+                    Psychiatry Ongoing Visit Fee
+                  </p>
+                  <p>
+                    Default fee ${wrapper.assetMap.BHNPT.Consult_Fees__c} for
+                    Therapy Ongoing Visit Fee
+                  </p>
+                </div>
+              </div>
+            </template>
+            <template if:true={mhFee}>
+              <div class="slds-grid slds-wrap slds-size--1-of-1 slds-align_absolute-center"
+                style="background-color: #fffacd;">
+                <div class="slds-p-right_x-large">
+                  <lightning-icon icon-name="action:announcement" variant="error"></lightning-icon>
+                </div>
+                <div>
+                  <p>
+                    Default fee ${wrapper.assetMap.BHP1T.Consult_Fees__c} for
+                    Psychiatry Initial Visit Fee
+                  </p>
+                  <p>
+                    Default fee ${wrapper.assetMap.BHPOT.Consult_Fees__c} for
+                    Psychiatry Ongoing Visit Fee
+                  </p>
+                  <p>
+                    Default fee ${wrapper.assetMap.BHPOOT.Consult_Fees__c} for
+                    Psychologist Ongoing Visit Fee
+                  </p>
+                  <p>
+                    Default fee ${wrapper.assetMap.BHNPT.Consult_Fees__c} for
+                    Therapy Ongoing Visit Fee
+                  </p>
+                </div>
+              </div>
+            </template>
+            <template if:true={elseFee}>
+              <div class="slds-grid slds-wrap slds-size--1-of-1 slds-align_absolute-center"
+                style="background-color: #fffacd;">
+                <div class="slds-p-right_x-large">
+                  <lightning-icon icon-name="action:announcement" variant="error"></lightning-icon>
+                </div>
+                <div>
+                  <p>Default fee ${generalFee} for Consult Fee</p>
+                </div>
+              </div>
+            </template>
+            <template if:true={feeError}>
+              <div class="slds-grid slds-wrap slds-size--1-of-1 slds-align_absolute-center"
+                style="background-color: #e7c4b4;">
+                <div class="slds-p-right_x-large">
+                  <lightning-icon icon-name="utility:warning" alternative-text="Warning!" variant="warning"
+                    size="large"></lightning-icon>
+                </div>
+                <div>
+                  <p>Default Fee Missing in Assets for {proCode} Consult Fee</p>
+                </div>
+              </div>
+            </template>
+            <lightning-record-edit-form data-id="createPSFForm" record-id={psfId} onsubmit={handleSubmit}
+              onsuccess={handleSuccess} class="slds-size--1-of-1" onerror={handleError}
+              object-api-name="Plan_Specific_Fees__c">
+              <div class="slds-grid slds-wrap slds-size--1-of-1 slds-p-bottom_x-large">
+                <h1
+                  class="slds-text-heading_medium slds-size--1-of-3 slds-p-horizontal_x-small slds-p-top_small slds-align_absolute-center">
+                  <b>Plan Specific Fee</b>
+                </h1>
+              </div>
+              <template if:true={isWrongFormat}>
+                <div class="slds-grid slds-wrap slds-align_absolute-center" style="background-color: #e7c4b4;">
+                  <div class="slds-p-right_x-large">
+                    <lightning-icon icon-name="utility:error" title="Error!" variant="error" size="large">
+                    </lightning-icon>
+                  </div>
+                  <div>
+                    <h4>
+                      <b
+                        >This PSF record is not in the current PSF structure,
+                        please reach out to system administrator
+                      </b>
+                    </h4>
+                    <h4>
+                      Subscription: <a href={subLink}>{subRecord.Name}</a>
+                    </h4>
+                    <h4>ProductCode: {proCode}</h4>
+                  </div>
+                </div>
+              </template>
+              <div
+                class="slds-grid slds-wrap slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large slds-m-bottom--medium slds-p-top_x-small slds-p-bottom_x-small"
+                style="background-color: #f0f8ff;">
+                <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small">
+                  <b>Information</b>
+                </h2>
+              </div>
+              <div class="slds-grid slds-wrap slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large">
+                <div
+                  class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small slds-m-bottom--medium">
+                  <p class="slds-m-bottom--xx-small">Name</p>
+                  {mgName}
+                </div>
+                <div
+                  class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small slds-m-bottom--medium">
+                  <p class="slds-m-bottom--xx-small">Subscription</p>
+                  <a href={subLink}>{subRecord.Name}</a>
+                </div>
+                <div
+                  class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small slds-m-bottom--medium">
+                <!-- Added as part of SCDEV-5357-->
+                  <template if:true={showVendorPartner}>
+                    <p class="slds-m-bottom--xx-small">Vendor Partner</p>
+                    {subRecord.Vendor_Partner__c}
+                  </template>
+                </div>
+                <div
+                  class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small slds-m-bottom--medium">
+                  <p class="slds-m-bottom--xx-small">Opportunity GUID</p>
+                  {subRecord.SBQQ__QuoteLine__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.Opp_Guid__c}
+                </div>
+                <!--Sold To Account Details START-->
+                <div
+                  class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small slds-m-bottom--medium">
+                  <template if:true={isGeneralMedicalProduct}>
+                    <lightning-input-field data-id="AppOptOut" field-name="USGH_APP_Opt_Out__c" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input-field>
+                  </template>
+                </div>
+                <!--Promotion field START SCDEV-5535-->
+                 <div
+                  class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small slds-m-bottom--medium">
+                  </div>
+                <template if:true={showPromotion}>
+                  <lightning-input-field data-id="PromotionEnable" field-name="Promotion__c" variant="label-stacked"
+                  class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                  </lightning-input-field>
+                </template>
+                <template if:false={showPromotion}> 
+                  <div
+                  class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small slds-m-bottom--medium">
+                  </div>
+                </template>   
+                <!--Promotion field end SCDEV-5535-->
+                <div
+                  class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small slds-m-bottom--medium">
+                  <p class="slds-m-bottom--xx-small">Sold To Account Name</p>
+                  {subRecord.SBQQ__Account__r.Name}
+                </div>
+                <template if:true={showGLP1Model}>
+                  <lightning-input-field data-id="GLPModel" field-name="GLP_1_Model__c" variant="label-stacked"
+                    class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                  </lightning-input-field>
+                </template>
+                <template if:false={showGLP1Model}> 
+                  <div
+                    class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small slds-m-bottom--medium">
+                  </div>
+                </template> 
+                <div
+                  class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small slds-m-bottom--medium">
+                  <p class="slds-m-bottom--xx-small">Sold To Account GUID</p>
+                  {subRecord.SBQQ__Account__r.GUID__c}
+                </div>
+                <!--Sold To Account Details END-->
+                <lightning-input-field data-id="ActualCoPay" field-name="Actual_Copay_May_Be_Less__c"
+                  variant="label-stacked"
+                  class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                </lightning-input-field>
+                <lightning-input-field data-id="startDate" required field-name="Product_Start_Date__c"
+                  variant="label-stacked"
+                  class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                </lightning-input-field>
+
+                <template if:true={renderFlag}>
+                  <lightning-input-field data-id="coaching" disabled value={coaching} field-name="Disable_Coaching__c"
+                    variant="label-stacked"
+                    class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                  </lightning-input-field>
+                </template>
+                <template if:false={renderFlag}>
+                  <template if:true={renderVPC}>
+                    <lightning-input-field data-id="pg" field-name="PG__c" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input-field>
+                  </template>
+                  <template if:false={renderVPC}>
+                    <div class="slds-size--1-of-2 slds-p-horizontal_x-small"></div>
+                  </template>
+                </template>
+
+                <lightning-input-field data-id="endDate" field-name="Product_End_Date__c" variant="label-stacked"
+                  class="slds-size--1-of-2 slds-medium-size--1-of-2 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                </lightning-input-field>
+
+                <template if:false={renderFlag}>
+                  <template if:true={renderVPC}>
+                    <template if:true={isPPPM}>
+                      <lightning-input-field data-id="gm" field-name="GM_100_Covered__c" variant="label-stacked"
+                        class="slds-size--1-of-2 slds-medium-size--1-of-2 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                      </lightning-input-field>
+                      <lightning-input-field data-id="mh" field-name="MH_100_Covered__c" variant="label-stacked"
+                        class="slds-size--1-of-2 slds-medium-size--1-of-2 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                      </lightning-input-field>
+                      <!--  <lightning-input-field data-id="derm" field-name="DERM_100_Covered__c" variant="label-stacked" class="slds-size--1-of-3 slds-medium-size--1-of-3 slds-large-size--1-of-3 slds-p-horizontal_x-small"></lightning-input-field> -->
+                    </template>
+                  </template>
+                </template>
+                <template if:true={renderFlag}>
+                  <lightning-input-field data-id="teletherapy" disabled value={teletherapy}
+                    field-name="Disable_Teletherapy__c" variant="label-stacked"
+                    class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                  </lightning-input-field>
+                </template>
+              </div>
+              <template if:true={renderFeeConstruct}>
+                <div
+                  class="slds-grid slds-wrap slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large slds-m-bottom--medium slds-p-top_x-small slds-p-bottom_x-small"
+                  style="background-color: #f0f8ff;">
+                  <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small">
+                    <b>{subRecord.SBQQ__Product__r.Name} Fee Structure</b>
+                  </h2>
+                </div>
+                <div
+                  class="slds-grid slds-wrap slds-size--1-of-1 slds-p-bottom_medium slds-p-left_xx-large slds-p-right_xx-large slds-m-bottom_medium">
+                  <template if:true={renderElse}>
+                    <lightning-input-field data-id="elseMbr" field-name="Consult_Fee_Mbr_Pd__c" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input-field>
+                    <lightning-input-field data-id="elsePlan" field-name="Consult_Fee_Plan_Pd__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input-field>
+                  </template>
+                  <template if:true={renderBH}>
+                    <lightning-input data-id="bhFistMbr" type="number" formatter="currency" step=".01"
+                      label="Psychiatry Initial Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="bhFistPlan" type="number" formatter="currency" step=".01"
+                      label="Psychiatry Initial Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="bhOnMbr" type="number" formatter="currency" step=".01"
+                      label="Psychiatry Ongoing Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="bhOnPlan" type="number" formatter="currency" step=".01"
+                      label="Psychiatry Ongoing Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="bhNonMbr" type="number" formatter="currency" step=".01"
+                      label="Therapy Ongoing Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="bhNonPlan" type="number" formatter="currency" step=".01"
+                      label="Therapy Ongoing Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                  </template>
+
+                  <template if:true={renderMSCOMP}>
+                    <lightning-input data-id="MyStr1stMbr" type="number" formatter="currency" step=".01"
+                      label="Psychiatry Initial Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="MyStr1stPlan" type="number" formatter="currency" step=".01"
+                      label="Psychiatry Initial Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="MyStrOnMbr" type="number" formatter="currency" step=".01"
+                      label="Psychiatry Ongoing Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="MyStrOnPlan" type="number" formatter="currency" step=".01"
+                      label="Psychiatry Ongoing Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="MyStrNonMbr" type="number" formatter="currency" step=".01"
+                      label="Therapy Ongoing Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="MyStrNonPlan" type="number" formatter="currency" step=".01"
+                      label="Therapy Ongoing Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                  </template>
+                  <template if:true={renderMH}>
+                    <lightning-input data-id="psyBHP1TMbr" type="number" formatter="currency" step=".01"
+                      label="Psychiatry Initial Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="psyBHP1TPln" type="number" formatter="currency" step=".01"
+                      label="Psychiatry Initial Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="psyBHPOTMbr" type="number" formatter="currency" step=".01"
+                      label="Psychiatry Ongoing Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="psyBHPOTPln" type="number" formatter="currency" step=".01"
+                      label="Psychiatry Ongoing Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="psyBHPOOTMbr" type="number" formatter="currency" step=".01"
+                      label="Psychologist Ongoing Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="psyBHPOOTPln" type="number" formatter="currency" step=".01"
+                      label="Psychologist Ongoing Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="psyBHNPTMbr" type="number" formatter="currency" step=".01"
+                      label="Therapy Ongoing Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="psyBHNPTPln" type="number" formatter="currency" step=".01"
+                      label="Therapy Ongoing Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                  </template>
+                  <template if:true={renderVPC}>
+                    <lightning-input data-id="NEWPATCFMbr" type="number" formatter="currency" step=".01"
+                      label="Primary Care Initial Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="NEWPATCFPln" type="number" formatter="currency" step=".01"
+                      label="Primary Care Initial Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="PRIMCARECFMbr" type="number" formatter="currency" step=".01"
+                      label="Primary Care Ongoing Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="PRIMCARECFPln" type="number" formatter="currency" step=".01"
+                      label="Primary Care Ongoing Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="PRIMCAREACFMbr" type="number" formatter="currency" step=".01"
+                      label="Primary Care Annual Checkup Visit Fee - Mbr Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <lightning-input data-id="PRIMCAREACFPln" type="number" formatter="currency" step=".01"
+                      label="Primary Care Annual Checkup Visit Fee - Plan Pd" variant="label-stacked"
+                      class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                    </lightning-input>
+                    <template if:true={wrapper.assetMap.PRIMCAREFCF}>
+                      <lightning-input data-id="PRIMCAREFCFMbr" type="number" formatter="currency" step=".01"
+                        label="Primary Care Initial Flex Visit Fee - Mbr Pd" variant="label-stacked"
+                        class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                      </lightning-input>
+                      <lightning-input data-id="PRIMCAREFCFPln" type="number" formatter="currency" step=".01"
+                        label="Primary Care Initial Flex Visit Fee - Plan Pd" variant="label-stacked"
+                        class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal_x-small">
+                      </lightning-input>
+                    </template>
+                  </template>
+                </div>
+              </template>
+              <template if:false={renderFeeConstruct}>
+                <div
+                  class="slds-grid slds-wrap slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large slds-p-top_small slds-p-bottom_small"
+                  style="background-color: #f0f8ff;">
+                  <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small">
+                    Select Product
+                  </h2>
+                </div>
+                <lightning-card class="slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large">
+                  <div class="slds-grid slds-wrap slds-p-left_xx-large slds-p-right_xx-large">
+                    <h1 class="slds-text-heading_large slds-size--1-of-1 slds-text-title_bold">
+                      {subRecord.SBQQ__Product__r.Name}
+                    </h1>
+                    <p>This product does not have member or plan fees.</p>
+                  </div>
+                  <br/>
+                  <br/>
+                </lightning-card>
+              </template>
+              <!--Bill To Account Details-->
+              <div
+                class="slds-grid slds-wrap slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large slds-m-bottom--medium slds-p-top_x-small slds-p-bottom_x-small"
+                style="background-color: #f0f8ff;">
+                <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small">
+                  <b>Bill to Account</b>
+                </h2>
+              </div>
+              <template if:true={isRenderBillAcc}>
+                <div class="slds-p-left_xx-large slds-p-right_xx-large">
+                  <table class="slds-table slds-p-left_xx-large slds-p-right_xx-large" role="grid">
+                    <thead>
+                      <tr class="slds-text-title_caps">
+                        <th style="width: 3.25rem;" class="slds-text-align_right" scope="col">
+                          <div class="slds-truncate"></div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Account Name">Account Name</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Account GUID">Account GUID</div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <template for:each={billingMbrGroupRoleList} for:item="billToMbrRole">
+                        <tr key={billToMbrRole.objMbrGrpRole.Source_Account__c}>
+                          <th style="width: 3.25rem;" class="slds-text-align_right" scope="row">
+                            <div class="slds-truncate" title={billToMbrRole.objMbrGrpRole.Source_Account__r.Name}>
+
+                              <template if:true={billToMbrRole.isAccInUse}>
+                                <p>In Use</p>
+                              </template>
+                              <template if:true={checkBillingAcc}>
+                                <template if:false={billToMbrRole.isAccInUse}>
+                                  <input type="radio" name="billingAcc" onclick={handleBillToRadio} data-id={billToMbrRole.objMbrGrpRole.Source_Account__c} value={billToMbrRole.objMbrGrpRole.Source_Account__c} checked = "checked">
+                                </template>
+                              </template>
+                              <template if:false={checkBillingAcc}>
+                                <template if:false={billToMbrRole.isAccInUse}>
+                                  <input type="radio" name="billingAcc" onclick={handleBillToRadio} data-id={billToMbrRole.objMbrGrpRole.Source_Account__c} value={billToMbrRole.objMbrGrpRole.Source_Account__c}>
+                                </template>
+                              </template>
+                            </div>
+                          </th>
+                          <th scope="row">
+                            <div class="slds-truncate" title={billToMbrRole.objMbrGrpRole.Source_Account__r.Name}>
+                              {billToMbrRole.objMbrGrpRole.Source_Account__r.Name}
+                            </div>
+                          </th>
+                          <th scope="row">
+                            <div class="slds-truncate" title={billToMbrRole.objMbrGrpRole.Source_Account__r.GUID__c}>
+                              {billToMbrRole.objMbrGrpRole.Source_Account__r.GUID__c}
+                            </div>
+                          </th>
+                        </tr>
+                      </template>
+                    </tbody>
+                  </table>
+                </div>
+              </template>
+              <template if:false={isRenderBillAcc}>
+                <div class="slds-grid slds-wrap slds-p-left_xx-large slds-p-right_xx-large">
+                  <p> There are no member group roles with Role Type as Billing. </p>
+                </div>
+              </template>
+              <br/>
+              <!--Payer Account Details-->
+              <div
+                class="slds-grid slds-wrap slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large slds-m-bottom--medium slds-p-top_x-small slds-p-bottom_x-small"
+                style="background-color: #f0f8ff;">
+                <h2 class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small">
+                  <b>Payer Account</b>
+                </h2>
+              </div>
+              <template if:true={isRenderPayerAcc}>
+                <div class="slds-p-left_xx-large slds-p-right_xx-large">
+                  <table class="slds-table slds-p-left_xx-large slds-p-right_xx-large" role="grid">
+                    <thead>
+                      <tr class="slds-text-title_caps">
+                        <th style="width: 3.25rem;" class="slds-text-align_right" scope="col">
+                          <div class="slds-truncate"></div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Account Name">Account Name</div>
+                        </th>
+                        <th scope="col">
+                          <div class="slds-truncate" title="Account GUID">Account GUID</div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <template for:each={payerMbrGroupRoleList} for:item="pyMbrRole">
+                        <tr key={pyMbrRole.objMbrGrpRole.Source_Account__c}>
+                          <th style="width: 3.25rem;" class="slds-text-align_right" scope="row">
+                            <div class="slds-truncate" title={pyMbrRole.objMbrGrpRole.Source_Account__r.Name}>
+                              <template if:true={pyMbrRole.isAccInUse}>
+                                <p>In Use</p>
+                              </template>
+                              <template if:true={checkPayerAcc}>
+                                <template if:false={pyMbrRole.isAccInUse}>
+                                  <input type="radio" name="payerAcc" onclick={handlePayerRadio} data-id={pyMbrRole.objMbrGrpRole.Source_Account__c} value={pyMbrRole.objMbrGrpRole.Source_Account__c} checked = "checked">
+                                </template>
+                              </template>
+                              <template if:false={checkPayerAcc}>
+                                <template if:false={pyMbrRole.isAccInUse}>
+                                  <input type="radio" name="payerAcc" onclick={handlePayerRadio} data-id={pyMbrRole.objMbrGrpRole.Source_Account__c} value={pyMbrRole.objMbrGrpRole.Source_Account__c}>
+                                </template>
+                              </template>
+
+                            </div>
+                          </th>
+                          <th scope="row">
+                            <div class="slds-truncate" title={pyMbrRole.objMbrGrpRole.Source_Account__r.Name}>
+                              {pyMbrRole.objMbrGrpRole.Source_Account__r.Name}
+                            </div>
+                          </th>
+                          <th scope="row">
+                            <div class="slds-truncate" title={pyMbrRole.objMbrGrpRole.Source_Account__r.GUID__c}>
+                              {pyMbrRole.objMbrGrpRole.Source_Account__r.GUID__c}
+                            </div>
+                          </th>
+                        </tr>
+                      </template>
+                    </tbody>
+                  </table>
+                </div>
+              </template>
+              <template if:false={isRenderPayerAcc}>
+                <div class="slds-grid slds-wrap slds-p-left_xx-large slds-p-right_xx-large">
+                  <p> There are no member group roles with Role Type as Payer. </p>
+                </div>
+              </template>
+              <br/>
+              <div class="slds-p-top_large slds-p-bottom_small slds-float_right">
+                <template if:true={renderNew}>
+                  <lightning-button variant="brand-outline" label="Re-Select Subscription" onclick={reselectSubs}
+                    class="slds-p-right_x-small slds-p-left_x-small"></lightning-button>
+                  <template if:true={lastPSF}>
+                    <lightning-button variant="brand-outline" label="Save" onclick={savePSF} disabled={disabledSaveNextButton}
+                      class="slds-p-right_x-small slds-p-left_x-small"></lightning-button>
+                  </template>
+                  <template if:false={lastPSF}>
+                    <lightning-button variant="brand-outline" label="Save and Next" onclick={savePSF}
+                      disabled={disabledSaveNextButton} class="slds-p-right_x-small slds-p-left_x-small"></lightning-button>
+                  </template>
+                </template>
+                <template if:false={renderNew}>
+                  <lightning-button variant="brand-outline" label="Save" onclick={updatePSF}
+                    class="slds-p-right_x-small slds-p-left_x-small"></lightning-button>
+                  <lightning-button variant="brand-outline" label="Delete" onclick={deletePSF}
+                    class="slds-p-right_x-small slds-p-left_x-small"></lightning-button>
+                </template>
+                <lightning-button variant="brand-outline" label="Close" onclick={close}
+                  class="slds-p-right_x-small slds-p-left_x-small"></lightning-button>
+              </div>
+            </lightning-record-edit-form>
+          </div>
+        </lightning-tab>
+        <template if:true={renderExist}>
+          <lightning-tab label="PSF History">
+            <div class="slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large slds-p-bottom_xx-large">
+              <h1 class="slds-text-heading_medium slds-size--1-of-1 slds-p-horizontal_x-small">
+                <b>Plan-Specific-Fees History</b>
+              </h1>
+              <table class="slds-table slds-p-left_xx-large slds-p-right_xx-large" role="grid">
+                <thead>
+                  <tr class="slds-text-title_caps">
+                    <th scope="col">
+                      <div class="slds-truncate" title="Date">Date</div>
+                    </th>
+                    <th scope="col">
+                      <div class="slds-truncate" title="User">User</div>
+                    </th>
+                    <th scope="col">
+                      <div class="slds-truncate" title="Action">Action</div>
+                    </th>
+                    <th scope="col">
+                      <div class="slds-truncate" title="Old Value">
+                        Old Value
+                      </div>
+                    </th>
+                    <th scope="col">
+                      <div class="slds-truncate" title="New Value">
+                        New Value
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template for:each={hisList} for:item="his">
+                    <tr key={his.Field}>
+                      <th scope="row">
+                        <div class="slds-truncate" title={his.CreatedDate}>
+                          {his.CreatedDate}
+                        </div>
+                      </th>
+                      <th scope="row">
+                        <div class="slds-truncate" title={his.CreatedBy.Name}>
+                          {his.CreatedBy.Name}
+                        </div>
+                      </th>
+                      <th scope="row">
+                        <div class="slds-truncate" title={his.Field}>
+                          {his.Field}
+                        </div>
+                      </th>
+                      <th scope="row">
+                        <div class="slds-truncate" title={his.OldValue}>
+                          {his.OldValue}
+                        </div>
+                      </th>
+                      <th scope="row">
+                        <div class="slds-truncate" title={his.NewValue}>
+                          {his.NewValue}
+                        </div>
+                      </th>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </lightning-tab>
+        </template>
+      </lightning-tabset>
+    </template>
+  </lightning-card>
+</template>

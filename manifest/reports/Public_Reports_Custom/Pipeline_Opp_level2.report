@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_37536874</developerName>
+        <masterLabel>Sales Channel</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Opportunity.Sub_Channel__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Employer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - Downmarket</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - East Client Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - Labor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - Net New</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - UHC Employees</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - West Client Sales</sourceValue>
+            </sourceValues>
+            <value>Employer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>HSG - Aetna</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - ASO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Blues</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Federal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - National</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Strategic Partnerships</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - United</sourceValue>
+            </sourceValues>
+            <value>HSG</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account.GUID__c</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Sub_Type__c</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Sub_Channel__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Contract_Path__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OneTime_Net_Total_With_PG__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Est_Fiscal_Period__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Decision_Date__c</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>BucketField_37536874</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Closed_Date__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Built for Agy</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,New Business,Upsell to Customer,&quot;Add-on Membership, Existing Customer&quot;,Hunting License,Price Increase</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Sub_Channel__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Canada,DTE - Client Management,HHS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPPORTUNITY_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>(For Reporting Purposes Only)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>testingzzz</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OneTime_Net_Total_With_PG__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>USD 0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Pipeline Opp level</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>BucketField_37536874</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.Decision_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

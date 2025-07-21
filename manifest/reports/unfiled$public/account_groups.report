@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.Account_Type__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>EMPLOYEES</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SALES</field>
+    </columns>
+    <columns>
+        <field>USERS.NAME</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 OR 2 OR 3 OR 4 OR 5</booleanFilter>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Abbott Laboratories,Alera Group - Pittsburgh,&quot;Alliance Business Solutions, LLC&quot;,Amedisys,American Express Global Business Travel,Anderson Corporate Solutions Inc,Apple Inc.,Arca Continental Coca-Cola Southwest Beverages,&quot;Astellas US, LLC&quot;,Avery Dennison Corporation,Axion RMS,Bayer Corporation - Direct,Boehringer Ingelheim - Parent,BOK Financial Insurance - CO,&quot;Brown &amp; Brown Insurance - HQ - Daytona Beach, FL&quot;,Brown &amp; Brown Insurance - Rocky Hill CT,BURNHAM BENEFITS INSURANCE SERVICES,&quot;Capital Services, Inc&quot;,&quot;CBIZ Benefits &amp; Insurance Services, Inc. - Cleveland, OH HQ&quot;,Church Pension Group,&quot;Cisco Systems, Inc.&quot;,Cognizant Technology Solutions Corp.,&quot;Crest Insurance - Fort Collins, CO&quot;,CSL Behring L.L.C. - Parent,Cummins Inc.,Dixon Valve &amp; Coupling Co.,Edgewood Partners Insurance Center (EPIC) Insurance Brokers and Consultants,EPIC- Edgewood Partners Insurance Center - HQ,Facebook - Parent,Federal Reserve Bank,&quot;Foundation Risk Partners, Corp.&quot;,Gallagher Benefit Services - HQ,&quot;Gcg Financial, Inc.&quot;,Goodwill Industries of NW North Carolina Inc,Henderson Brothers,Hilcorp Energy Company,Holmes Murphy - Minneapolis,Houchens Benefits,HUB International Limited - Raleigh NC,Huntington Ingalls Industries</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>&quot;Insurance Office of America - Longwood, FL HQ&quot;,International Business Machines Corporation (IBM) - Parent,&quot;Interwest Insurance Services, Inc.&quot;,&quot;J.B. Hunt Transport Services, Inc.&quot;,&quot;JELD-WEN, INC.&quot;,&quot;Johnson, Mirmiran &amp; Thompson (JMT)&quot;,KIRCHHOFF Automotive,Kohler Company (BHCG),Komatsu America Corp,Lipscomb Pitts Insurance,&quot;Lockton Companies, Inc.&quot;,Lockton Companies - Kansas City (HQ),Martinrea International Inc.,&quot;McGriff Insurance Services- Durham, NC -HQ&quot;,&quot;McKinsey &amp; Company, Inc.&quot;,&quot;Medtronic, Inc.&quot;,Miller-Loughry-Beach Insurance Services Inc.,MMA - HQ,MMA St Louis,National Financial Partners Corp. - HQ,&quot;New Balance Athletics, Inc.&quot;,NFP - New York,&quot;Nike, Inc.&quot;,&quot;Nissan North America, Inc.&quot;,Oklahoma Heart Hospital,&quot;OneDigital HQ - Atlanta, GA&quot;,Oracle Corporation,Paragon Partners,Paypal,Pfizer,Railroad Employees National Health and Welfare Fund (NRLC) MASTER ORG,Raytheon Technologies (RTX),Redline Health,Relph Benefit Advisors,Rice University,&quot;Rogers Benefit Group, Inc. - HQ&quot;,Self-Insured Schools of California (SISC),&quot;SRC-Arthur J Gallagher &amp; Co.-Chicago, IL&quot;,Suburban Teamsters of Northern Illinois Welfare Fund,Sunrise Community Inc.,SYSCO Corporation - Parent,TechnipFMC (formerly FMC Technologies),The Benefit Company</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>The Clorox Company,&quot;The ForWard Insurance Agency, Inc.&quot;,The Home Depot Inc.,The Miller Group- KS,&quot;The Plexus Groupe - Oklahoma City, OK&quot;,TIS Insurance Services Inc.,Towers Watson - HQ,&quot;TriNet Group, Inc. - Parent&quot;,Union Pacific Railroad Company Inc,UnitedHealth Group,UPS - EMS,USI-Charleston SC,USI Insurance Services - HQ,Vertus Benefits,Vitas Healthcare Corporation,VSP,Western Digital Corporation,Westlake Chemical Corporation - Parent,Westrock,&quot;Willis Group - Chicago, IL (HQ)&quot;,WillisTowersWatson,Wood Gutmann &amp; Bogart Insurance Brokers</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Verizon Communications Inc.,AbbVie,Abbvie Inc.,ACAP Health,&quot;Accolade, Inc. (Employees)&quot;,Adobe Systems - Parent,AEIS - Advanced Estate &amp; Insurance Services,Alliant Employee Benefits,&quot;Alliant Insurance Services, Inc. - Newport Beach, CA - HQ&quot;,Allstate Insurance Company,&quot;Altec, Inc.&quot;,&quot;AON Consulting, Inc.&quot;,Aon Hewitt,Aon Hewitt - Tampa,Aramark,Ashley&apos;s Furniture,Atria Senior Living Inc,Avis Budget Group,Becton Dickinson,Boise Cascade Company,&quot;Brasfield and Gorrie, LLC&quot;,Brightview Senior Living,Campbell Soup Company,Capital One,Castlight,Christian Brothers Services,Chubb,Comcast Corporation,Concordia Plan Services,&quot;Cox Enterprises, Inc.&quot;,Crown Equipment Corporation,Curtiss-Wright Corporation,Eastman Chemical,Employees Retirement System of Texas (ERS),Enbridge Employee Services,Fifth Third Bancorp,First American Corporation,FIS,&quot;Foot Locker, Inc.&quot;,Freeman Company,Fresenius Medical Care North America,GEICO companies,&quot;Global Medical Response, Inc&quot;,Global Medical Response Inc,Google,Harsco Corporation,H-E-B,&quot;Hilton Domestic Operating Company, Inc.&quot;,Honda Health &amp; Welfare Benefits Plan,Hyland Software,IBM,Jellyvision,Kent State University,Kroger Corporate - Parent,Leonardo DRS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>&quot;Magna International, Inc.&quot;,&quot;Maximus, Inc.&quot;,&quot;Mercer - New York, NY (HQ)&quot;,Microsoft Corporation,Nelnet Inc.,&quot;NRG Energy, Inc.&quot;,OPKO Health Companies,PBF Energy,Penske Corporation,&quot;Pentair, Inc. - Master&quot;,Pinnacle Financial Partners Inc,Portico Benefits - Lutheran Church,Procter &amp; Gamble,PSEG,Publix Super Markets Inc,Ralph Lauren Corporation,Rock Central,SAP America,SC Johnson,Sherwin-Williams Company,State of New Jersey,&quot;Steel Dynamics, Inc.&quot;,&quot;SunGard Data Systems, Inc.&quot;,Sun Life Financial,Sunrise Senior Living,Target Corporation,Tempur Sealy International,The Circle K Corporation,The J.M. Smucker Company,The Segal Company - NY (HQ),The University of VA Health Plan,TRACTOR SUPPLY CO,Tuesday Morning Corporation,Turner Acceptance Corporation (HY Legacy),&quot;Tyson Foods, Inc.&quot;,UNUM,Verizon,Vf Corporation,Virgin Pulse,Wal-Mart Stores Inc,WEA Insurance Trust,Welltok,Windstream</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ACCOUNT.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>account groups-Q3 21 Anchor</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

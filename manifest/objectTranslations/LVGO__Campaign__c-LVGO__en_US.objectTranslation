@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>LV Campaign</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>LV Campaigns</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Cost in Campaign --></label>
+        <name>LVGO__ActualCost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value Opportunities in Campaign --></label>
+        <name>LVGO__AmountAllOpportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value Won Opportunities in Campaign --></label>
+        <name>LVGO__AmountWonOpportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budgeted Cost in Campaign --></label>
+        <name>LVGO__BudgetedCost__c</name>
+    </fields>
+    <fields>
+        <help><!-- If TRUE, this field stops the auto-naming workflow from firing. --></help>
+        <label><!-- Campaign Auto Name Override --></label>
+        <name>LVGO__Campaign_Auto_Name_Override__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the campaign end date is not null, then based on Livongo&apos;s fiscal/calendar year, this field returns a numbered month. --></help>
+        <label><!-- Campaign End Date Month (Text) --></label>
+        <name>LVGO__Campaign_End_Date_Month_Text__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the campaign end date is not null, then based on Livongo&apos;s fiscal/calendar year, this field returns a the year in text format. This field helps facilitate reporting that features column groupings. --></help>
+        <label><!-- Campaign End Date Year (Text) --></label>
+        <name>LVGO__Campaign_End_Date_Year_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaign ID Long --></label>
+        <name>LVGO__Campaign_ID_Long__c</name>
+    </fields>
+    <fields>
+        <help><!-- Picklist describes the line of business this campaign is intended to engage. --></help>
+        <label><!-- Campaign Line of Business --></label>
+        <name>LVGO__Campaign_Line_of_Business__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit Consultants</masterLabel>
+            <translation><!-- Benefit Consultants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer</masterLabel>
+            <translation><!-- Employer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Plans</masterLabel>
+            <translation><!-- Health Plans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Systems</masterLabel>
+            <translation><!-- Health Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor</masterLabel>
+            <translation><!-- Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBMS</masterLabel>
+            <translation><!-- PBMS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- A written description that explains the main purpose of the event, email, etc... --></help>
+        <label><!-- Campaign Objective --></label>
+        <name>LVGO__Campaign_Objective__c</name>
+        <picklistValues>
+            <masterLabel>Brand Awareness</masterLabel>
+            <translation><!-- Brand Awareness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Generation</masterLabel>
+            <translation><!-- Lead Generation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship Development</masterLabel>
+            <translation><!-- Relationship Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thought Leadership</masterLabel>
+            <translation><!-- Thought Leadership --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If the campaign start date is not null, then based on Livongo&apos;s fiscal/calendar year, this field returns a the year in text format. This field helps facilitate reporting that features column groupings. --></help>
+        <label><!-- Campaign Start Date Month (Text) --></label>
+        <name>LVGO__Campaign_Start_Date_Month_Text__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the campaign start date is not null, then based on Livongo&apos;s fiscal/calendar year, this field returns a the year in text format. This field helps facilitate reporting that features column groupings. --></help>
+        <label><!-- Campaign Start Date Year (Text) --></label>
+        <name>LVGO__Campaign_Start_Date_Year_Text__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describes the method of delivery for out bound messaging and inbound data capture. This clarifies to the user how the campaign is intending on how to capture audience data. --></help>
+        <label><!-- Delivery Method Detail --></label>
+        <name>LVGO__Delivery_Method_Detail__c</name>
+        <picklistValues>
+            <masterLabel>Direct Mail</masterLabel>
+            <translation><!-- Direct Mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Pardot Form</masterLabel>
+            <translation><!-- Non-Pardot Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Pardot Whitepaper</masterLabel>
+            <translation><!-- Non-Pardot Whitepaper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pardot Asset</masterLabel>
+            <translation><!-- Pardot Asset --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pardot Email</masterLabel>
+            <translation><!-- Pardot Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pardot Form</masterLabel>
+            <translation><!-- Pardot Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pardot LandingPage</masterLabel>
+            <translation><!-- Pardot LandingPage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pardot URL</masterLabel>
+            <translation><!-- Pardot URL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pardot Whitepaper</masterLabel>
+            <translation><!-- Pardot Whitepaper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Post</masterLabel>
+            <translation><!-- Social Post --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Webinar RSVP Form</masterLabel>
+            <translation><!-- Webinar RSVP Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Website RFI Form</masterLabel>
+            <translation><!-- Website RFI Form --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field unpacks record type into &apos;Delivery Methods&apos; so that marketers can intuitively report on campaigns by delivery. --></help>
+        <label><!-- Delivery Method --></label>
+        <name>LVGO__Delivery_Method__c</name>
+        <picklistValues>
+            <masterLabel>Direct Mail</masterLabel>
+            <translation><!-- Direct Mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email/Digital</masterLabel>
+            <translation><!-- Email/Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Campaign-No Delivery</masterLabel>
+            <translation><!-- Internal Campaign-No Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sign-up</masterLabel>
+            <translation><!-- Sign-up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subscribe/Opt-In</masterLabel>
+            <translation><!-- Subscribe/Opt-In --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>LVGO__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>LVGO__End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Response (%) --></label>
+        <name>LVGO__ExpectedResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Revenue in Campaign --></label>
+        <name>LVGO__ExpectedRevenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Cost in Hierarchy --></label>
+        <name>LVGO__HierarchyActualCost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value Opportunities in Hierarchy --></label>
+        <name>LVGO__HierarchyAmountAllOpportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value Won Opportunities in Hierarchy --></label>
+        <name>LVGO__HierarchyAmountWonOpportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budgeted Cost in Hierarchy --></label>
+        <name>LVGO__HierarchyBudgetedCost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Revenue in Hierarchy --></label>
+        <name>LVGO__HierarchyExpectedRevenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contacts in Hierarchy --></label>
+        <name>LVGO__HierarchyNumberOfContacts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Converted Leads in Hierarchy --></label>
+        <name>LVGO__HierarchyNumberOfConvertedLeads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Leads in Hierarchy --></label>
+        <name>LVGO__HierarchyNumberOfLeads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunities in Hierarchy --></label>
+        <name>LVGO__HierarchyNumberOfOpportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Responses in Hierarchy --></label>
+        <name>LVGO__HierarchyNumberOfResponses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Won Opportunities in Hierarchy --></label>
+        <name>LVGO__HierarchyNumberOfWonOpportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num Sent in Hierarchy --></label>
+        <name>LVGO__HierarchyNumberSent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>LVGO__IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Parent Campaign --></label>
+        <name>LVGO__Is_Parent_Campaign__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates that the campaign is being used as a template. Impacts auto-naming conventions. --></help>
+        <label><!-- Is Template --></label>
+        <name>LVGO__Is_Template__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Salesforce Id --></label>
+        <name>LVGO__Legacy_Salesforce_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Text that describes the internal short-hand for the segmentation and/or audience that the campaign articulates. --></help>
+        <label><!-- List Segment/Audience --></label>
+        <name>LVGO__List_Segment_Audience__c</name>
+    </fields>
+    <fields>
+        <label><!-- Migration ID --></label>
+        <name>LVGO__Migration_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contacts in Campaign --></label>
+        <name>LVGO__NumberOfContacts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Converted Leads in Campaign --></label>
+        <name>LVGO__NumberOfConvertedLeads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Leads in Campaign --></label>
+        <name>LVGO__NumberOfLeads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunities in Campaign --></label>
+        <name>LVGO__NumberOfOpportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Responses in Campaign --></label>
+        <name>LVGO__NumberOfResponses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Won Opportunities in Campaign --></label>
+        <name>LVGO__NumberOfWonOpportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num Sent in Campaign --></label>
+        <name>LVGO__NumberSent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Campaign --></label>
+        <name>LVGO__ParentId__c</name>
+        <relationshipLabel><!-- Campaigns --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Text field that is populated with a recommended folder that should either be used and/or created if integrating this child campaign in integrating in Pardot --></help>
+        <label><!-- Recommended Pardot Folder --></label>
+        <name>LVGO__Recommended_Pardot_Folder__c</name>
+    </fields>
+    <fields>
+        <help><!-- Workflow populates this field with recommended tags that should be used when integrating with Pardot. --></help>
+        <label><!-- Recommended Pardot Tags --></label>
+        <name>LVGO__Recommended_Pardot_Tags__c</name>
+    </fields>
+    <fields>
+        <label><!-- Round/Sequence of Campaign Communication --></label>
+        <name>LVGO__Round_Sequence_of_Campaign_Communication__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the internal name that will be used for the campaign. This will help support reporting and list view columns. --></help>
+        <label><!-- Short Name --></label>
+        <name>LVGO__Short_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>LVGO__Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>LVGO__Status__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation><!-- Aborted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned</masterLabel>
+            <translation><!-- Planned --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>LVGO__Type__c</name>
+        <picklistValues>
+            <masterLabel>Direct Mail</masterLabel>
+            <translation><!-- Direct Mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event</masterLabel>
+            <translation><!-- Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Webinar</masterLabel>
+            <translation><!-- Webinar --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <description><!-- This is a record type that should be used for marketing users and child marketing campaigns that expresses Leads/Contacts that will be engaged through direct mail delivery methods. --></description>
+        <label><!-- Direct Mail List --></label>
+        <name>LVGO__Direct_Mail_List</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This is a record type that should be used for marketing users and child marketing campaigns that expresses Leads/Contacts that will be engaged through Email and/or digital delivery methods. --></description>
+        <label><!-- Email/Digital Delivery List --></label>
+        <name>LVGO__Email_Digital_Delivery_List</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This is a record type that should be used for marketing users and child marketing campaigns that expresses Leads/Contacts that have opted into a list as a result of providing interest area data, product purchases, and/or by subscribing to campaigns. --></description>
+        <label><!-- Interest Area/Product/Subscription List --></label>
+        <name>LVGO__Interest_Area_Product_Subscription_List</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This is a record type that should be used for Marketing users who want to express up to 3 levels of campaign hierarchy, which facilities campaign rollups for reporting on ROI. --></description>
+        <label><!-- Parent Campaign List --></label>
+        <name>LVGO__Parent_Campaign_List</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This is a record type that should be used for marketing users and child marketing campaigns that expresses Leads/Contacts that have taken an action to sign-up for something. This should be used for event RSVPs, Webinar sign-ups, and RFI sign-ups, etc. --></description>
+        <label><!-- Sign-up List --></label>
+        <name>LVGO__Sign_up_List</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This is a record type that should be used for non-marketing users and non marketing campaigns --></description>
+        <label><!-- Standard --></label>
+        <name>LVGO__Standard</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This is a record type that should be used for users to express Leads/Contacts that should be suppressed from other lists. --></description>
+        <label><!-- Suppression List --></label>
+        <name>LVGO__Suppression_List</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Campaign cannot be updated by Sales Team member. Please work with marketing to update the campaign. --></errorMessage>
+        <name>LVGO__No_update_by_SalesTeam_member</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,22 @@
+<apex:page standardController="SBQQ__Quote__c">
+    <apex:pageBlock rendered="{!AND(SBQQ__Quote__c.Approvals__c == Null)}">
+        <div style="width:100%; height:100%; color:green; text-align:center; font-weight:bolder;">
+            No Approval Required
+        </div>
+    </apex:pageBlock>
+    <apex:pageBlock rendered="{!AND(SBQQ__Quote__c.Approvals__c != Null, SBQQ__Quote__c.SBQQ__Status__c != 'Approved', SBQQ__Quote__c.SBQQ__Primary__c != True)}">
+        <div style="width:100%; height:100%; color:red; text-align:center; font-weight:bolder;">
+            ** Requires Approval **
+        </div>
+    </apex:pageBlock>
+    <apex:pageBlock rendered="{!AND(SBQQ__Quote__c.Approvals__c != Null, SBQQ__Quote__c.SBQQ__Status__c != 'Approved', SBQQ__Quote__c.SBQQ__Primary__c == True)}">
+        <div style="width:100%; height:100%; color:red; text-align:center; font-weight:bolder;">
+            ** Requires Approval **
+        </div>
+    </apex:pageBlock>
+    <apex:pageBlock rendered="{!AND(SBQQ__Quote__c.Approvals__c != Null, SBQQ__Quote__c.SBQQ__Status__c == 'Approved')}">
+        <div style="width:100%; height:100%; color:green; text-align:center; font-weight:bolder;">
+            Approved
+        </div>
+    </apex:pageBlock>
+</apex:page>

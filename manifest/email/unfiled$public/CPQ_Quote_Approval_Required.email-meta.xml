@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Sales_With_Logo_in_Footer</letterhead>
+    <name>CPQ - Quote - Approval Required</name>
+    <style>formalLetter</style>
+    <subject>Approval Required! Non-Standard Sale Quote Request</subject>
+    <textOnly>{!SBQQ__Quote__c.SBQQ__SalesRep__c} is requesting your approval on Quote {!SBQQ__Quote__c.Name} that is considered “non-standard”.
+
+
+CPQ Pricebook: {!SBQQ__Quote__c.CPQ_Pricebook__c}
+
+
+
+Approval Reason:
+
+{!SBQQ__Quote__c.Approvals__c}
+
+
+Account:  {!SBQQ__Quote__c.SBQQ__Account__c}
+Start Date:  {!SBQQ__Quote__c.SBQQ__StartDate__c}
+Number of Lives:  {!SBQQ__Quote__c.Number_of_Lives__c}
+Net Monthly Revenue:  {!SBQQ__Quote__c.Net_Monthly_Revenue__c}
+Net Annual Revenue:  {!SBQQ__Quote__c.Net_Annual_Amount_Calc__c}
+Notes:  {!SBQQ__Quote__c.SBQQ__Notes__c}
+
+Please click on the Quote and either approve or reject the request.
+
+You may also approve or reject this message by replying with Approved or Rejected in the body.  You may enter comments in the email using the next line down (hit Enter key only once after Approved or Rejected)</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

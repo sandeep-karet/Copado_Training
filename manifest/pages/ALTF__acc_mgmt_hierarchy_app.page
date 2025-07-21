@@ -1,0 +1,9 @@
+<apex:page docType="html-5.0"
+	showHeader="false" 
+	sidebar="false"
+	standardController="Account"
+>
+    <c:jQueryStyles jQueryUI="true"/>
+	<c:acc_mgmt_hierarchy_app /> 
+    <apex:includeScript value="{! URLFOR($Resource.JQueryUI, 'js/jquery.paging.min.js') }" />
+</apex:page>

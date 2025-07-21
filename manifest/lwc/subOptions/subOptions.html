@@ -1,0 +1,29 @@
+<template>
+        <lightning-card >
+            <div class="slds-grid slds-wrap slds-align_absolute-center">
+                <div>
+                    <h1 class="slds-text-heading--medium">Subscription and Asset Options</h1>
+                </div>
+            </div> 
+            <div class="slds-grid slds-p-horizontal_xx-large">
+                <div class="slds-col">              
+                    <lightning-input data-id="searchInput" label="Parent Account GUID" type="search" onchange={seasrchSubs}></lightning-input>  
+                </div>           
+            </div>
+            <div class="slds-p-around_medium slds-p-top_xx-large">
+                <h1 class="slds-text-heading--large">Subscription and Asset for <b>{acctName}</b> </h1> 
+                <br/>       
+                <lightning-datatable data-id="datatable"
+                                     key-field="Id"
+                                     data={data}
+                                     columns={columns}
+                                     sorted-by={sortBy}
+                                     sorted-direction={sortDirection}
+                                     onsort={handleSortdata}
+                                     hide-checkbox-column="true">
+                                    </lightning-datatable>         
+                <br/>
+                  
+            </div>                           
+    </lightning-card> 
+</template>

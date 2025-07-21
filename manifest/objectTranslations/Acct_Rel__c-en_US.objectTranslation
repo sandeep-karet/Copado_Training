@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Relationships</value>
+    </caseValues>
+    <fields>
+        <label><!-- Benefit Sponsor Name --></label>
+        <name>Benefit_Sponsor_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup the Benefit Sponsor Account (Account receiving services) of the Relationship --></help>
+        <label><!-- Benefit Sponsor Account --></label>
+        <name>Benefit_Sponsor__c</name>
+        <relationshipLabel><!-- Servicing Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup the Contact Name of Broker --></help>
+        <label><!-- Broker Contact --></label>
+        <lookupFilter>
+            <errorMessage><!-- Contact - Value does not exist or does not match filter criteria. --></errorMessage>
+        </lookupFilter>
+        <name>Broker_Contact__c</name>
+        <relationshipLabel><!-- Account Relationships --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the Flat Rate Commission for Broker --></help>
+        <label><!-- Broker Flat-Rate --></label>
+        <name>Broker_Flat_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the Broker&apos;s Location/Local Office Name --></help>
+        <label><!-- Broker Loc. Name --></label>
+        <name>Broker_Loc_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup the Broker&apos;s Location --></help>
+        <label><!-- Broker Location ID --></label>
+        <lookupFilter>
+            <errorMessage><!-- Location - Value does not exist or does not match filter criteria. --></errorMessage>
+        </lookupFilter>
+        <name>Broker_Location__c</name>
+        <relationshipLabel><!-- Account Relationships --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the Percentage Commission Amount for Broker --></help>
+        <label><!-- Broker Percentage --></label>
+        <name>Broker_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Chronic Care Broker Flat Rate --></label>
+        <name>Chronic_Care_Broker_Flat_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Chronic Care Broker Percentage --></label>
+        <name>Chronic_Care_Broker_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Composite Key --></label>
+        <name>Composite_Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Required on Contractee/Broker --></help>
+        <label><!-- Servicing Contract Type --></label>
+        <name>Contract_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contractee Relationships --></label>
+        <name>Contractee_Relationships__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the Date Relationship Terminated --></help>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flat Source Id --></label>
+        <name>Flat_Source_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Id --></label>
+        <name>Legacy_Id__c</name>
+        <relationshipLabel><!-- Former Relationships --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select the Line of Business --></help>
+        <label><!-- Line of Business --></label>
+        <name>Line_of_Business__c</name>
+        <picklistValues>
+            <masterLabel>CINUP</masterLabel>
+            <translation><!-- CINUP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chambers of Commerce</masterLabel>
+            <translation><!-- Chambers of Commerce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Children’s Health Insurance Program (CHIP)</masterLabel>
+            <translation><!-- Children’s Health Insurance Program (CHIP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Administrative Services Only (ASO)</masterLabel>
+            <translation><!-- Commercial Administrative Services Only (ASO) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Fully Insured (FI)</masterLabel>
+            <translation><!-- Commercial Fully Insured (FI) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Critical Illness</masterLabel>
+            <translation><!-- Critical Illness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dual Eligible Special Needs Plans (DSNP)</masterLabel>
+            <translation><!-- Dual Eligible Special Needs Plans (DSNP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extended Health Care</masterLabel>
+            <translation><!-- Extended Health Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Plan Commercial Solutions</masterLabel>
+            <translation><!-- Health Plan Commercial Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketplace Exchange</masterLabel>
+            <translation><!-- Marketplace Exchange --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maximum Benefit</masterLabel>
+            <translation><!-- Maximum Benefit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicaid Fee for Service (FFS)</masterLabel>
+            <translation><!-- Medicaid Fee for Service (FFS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicaid Managed Care</masterLabel>
+            <translation><!-- Medicaid Managed Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Advantage (MA)</masterLabel>
+            <translation><!-- Medicare Advantage (MA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Advantage with Part D (MAPD)</masterLabel>
+            <translation><!-- Medicare Advantage with Part D (MAPD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Fee for Service (FFS)</masterLabel>
+            <translation><!-- Medicare Fee for Service (FFS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Supplement</masterLabel>
+            <translation><!-- Medicare Supplement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare-Medicaid Plan (MMP)</masterLabel>
+            <translation><!-- Medicare-Medicaid Plan (MMP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temporary Assistance for Needy Families (TANF)</masterLabel>
+            <translation><!-- Temporary Assistance for Needy Families (TANF) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select the type of Relationship for the Servicing Account. --></help>
+        <label><!-- Servicing Account Role --></label>
+        <name>Relationship_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the Date Relationship Started --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Account Name --></label>
+        <name>Svc_Acct_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup the Servicing Account of the Relationship --></help>
+        <label><!-- Servicing Account --></label>
+        <name>Svc_Acct__c</name>
+        <relationshipLabel><!-- Benefit Sponsor Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- TD Acct --></label>
+        <name>TD_Acct__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the specific nature of the relationship. --></help>
+        <label><!-- Relationship Type - Detail --></label>
+        <name>relationship_type_detail__c</name>
+        <picklistValues>
+            <masterLabel>Activity Tracking Devices</masterLabel>
+            <translation><!-- Activity Tracking Devices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Associated Health Plan</masterLabel>
+            <translation><!-- Associated Health Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asthma</masterLabel>
+            <translation><!-- Asthma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Behavioral Health</masterLabel>
+            <translation><!-- Behavioral Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefits Consultant</masterLabel>
+            <translation><!-- Benefits Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biometrics Screening/Health  Risk Assessment</masterLabel>
+            <translation><!-- Biometrics Screening/Health  Risk Assessment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cardiovascular Health</masterLabel>
+            <translation><!-- Cardiovascular Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Children&apos;s Health and Obesity</masterLabel>
+            <translation><!-- Children&apos;s Health and Obesity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cohort</masterLabel>
+            <translation><!-- Cohort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concierge/Coaching Advocacy</masterLabel>
+            <translation><!-- Concierge/Coaching Advocacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost Transparency</masterLabel>
+            <translation><!-- Cost Transparency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Warehouse</masterLabel>
+            <translation><!-- Data Warehouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dental Services Provider</masterLabel>
+            <translation><!-- Dental Services Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diabetes Prevention</masterLabel>
+            <translation><!-- Diabetes Prevention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disease Management</masterLabel>
+            <translation><!-- Disease Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EAP</masterLabel>
+            <translation><!-- EAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMR (Electronic Medical Records)</masterLabel>
+            <translation><!-- EMR (Electronic Medical Records) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eligibility Partner</masterLabel>
+            <translation><!-- Eligibility Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Wellness</masterLabel>
+            <translation><!-- Financial Wellness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Engagement Platform</masterLabel>
+            <translation><!-- Health Engagement Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Plan (Payer)</masterLabel>
+            <translation><!-- Health Plan (Payer) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hypertension</masterLabel>
+            <translation><!-- Hypertension --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Source</masterLabel>
+            <translation><!-- Lead Source --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maternity</masterLabel>
+            <translation><!-- Maternity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Second Opinion</masterLabel>
+            <translation><!-- Medical Second Opinion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muskuloskeletal</masterLabel>
+            <translation><!-- Muskuloskeletal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nutrition</masterLabel>
+            <translation><!-- Nutrition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Onsite Clinic</masterLabel>
+            <translation><!-- Onsite Clinic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open Enrollment Platform</masterLabel>
+            <translation><!-- Open Enrollment Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy Benefit Manager</masterLabel>
+            <translation><!-- Pharmacy Benefit Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Second Opinion</masterLabel>
+            <translation><!-- Second Opinion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sleep Improvement</masterLabel>
+            <translation><!-- Sleep Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smoking Cessation</masterLabel>
+            <translation><!-- Smoking Cessation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surgery Care Coordinator</masterLabel>
+            <translation><!-- Surgery Care Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telemedicine</masterLabel>
+            <translation><!-- Telemedicine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third Party Administrator</masterLabel>
+            <translation><!-- Third Party Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transparency Platform</masterLabel>
+            <translation><!-- Transparency Platform --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vision Provider</masterLabel>
+            <translation><!-- Vision Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weight Management</masterLabel>
+            <translation><!-- Weight Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wellness Platform</masterLabel>
+            <translation><!-- Wellness Platform --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Broker flat fee commission OR Broker commission percentage must be filled in for  BROKERS --></errorMessage>
+        <name>Broker_Fee_Pct_CANNOT_be_blank</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Relationship Type must be Broker in order to input Broker Information fields --></errorMessage>
+        <name>Broker_related_field_must_be_broker</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only one of the broker commission rate fields need to be filled in, not both --></errorMessage>
+        <name>Either_Fee_or_Percentage</name>
+    </validationRules>
+</CustomObjectTranslation>
