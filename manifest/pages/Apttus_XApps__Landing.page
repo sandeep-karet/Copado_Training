@@ -1,0 +1,57 @@
+<!-- 
+    Apttus XAuthor Apps
+    Landing
+     
+    @2010-2015 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page controller="Apttus_XApps.LandingController" >
+    
+    <apex:form >
+        <apex:pageBlock title="{!$Label.Apttus_XApps__InstallXAuthor}" mode="edit">
+            
+            <apex:pageBlockSection columns="1">
+    
+                <div style="width: 50%; float:left; text-align: justify;margin-top:10px;">
+                    <p>{!$Label.InfoText1}</p>
+                    <p>{!$Label.InfoText2}</p>
+                </div>
+                <div style="width: 50%; float:left;">
+                    <img src="{!URLFOR($Resource.AppBuilder, 'img/x-author_logo.png')}" style="margin: 0px 0 0 40px;" />
+                </div>
+               
+    
+            </apex:pageBlockSection>
+    
+            <apex:pageBlockSection title="{!$Label.Apttus_XApps__Download}">                
+                
+                <p><a href="https://community.conga.com/s/installcenter" target="_blank">{!$Label.ClientDownloadLink}</a></p>
+                <div style="margin-bottom: 20px;"></div>
+                
+            </apex:pageBlockSection>
+           
+            <apex:pageBlockSection id="idLicense" title="{!$Label.Apttus_XApps__License}">
+                
+                <apex:commandLink value="{!$Label.Apttus_XApps__RefreshLicense}" 
+                                  action="{!doRefreshLicense}"  
+                                  status="idPleaseWait" 
+                                  reRender="idLicense" >
+                    
+                    <apex:param name="sessionId" value="{!$Api.Session_ID}" />
+                    <apex:param name="serverUrl" value="{!$Api.Partner_Server_URL_300}" />
+                    
+                </apex:commandLink>
+                
+                <apex:actionStatus id="idPleaseWait">
+                    <apex:facet name="start">
+                        {!$Label.PleaseWait}...
+                        <img src="/apexpages/devmode/img/saveStatus.gif" />
+                    </apex:facet>
+                    <apex:facet name="stop" />
+                </apex:actionStatus>        
+                    
+           </apex:pageBlockSection>     
+                           
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

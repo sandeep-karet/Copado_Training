@@ -1,0 +1,150 @@
+<template>
+    
+    <template if:true={showAmendFlowOptions}>
+        <lightning-quick-action-panel header="Manage Install Base">
+            <lightning-card>
+                <lightning-formatted-rich-text value={amendFlowOptionsHeader}></lightning-formatted-rich-text>
+                <div style="margin-left:3%;">
+                    <template for:each={flowOptions} for:item="item">
+                        <fieldset key={item.value} style="display: block; float: left;" class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <span class="slds-radio">
+                                    <input type="radio" id={item.value} value={item.value} data-id="amendFlowOption" name="radiogroup" onclick={handleActionSelection} checked={item.flag}/>
+                                    <label class="slds-radio__label" for={item.value}>
+                                        <span class="slds-radio_faux"></span>
+                                        <span class="slds-form-element__label">
+                                            <lightning-formatted-rich-text value={item.helptext}></lightning-formatted-rich-text>
+                                        </span>
+                                    </label>
+                                </span>
+                            </div>
+                        </fieldset>
+                    </template><br/><br/>
+                </div>
+            </lightning-card>
+            <div slot="footer">
+                <div class="slds-clearfix">
+                    <div class="slds-float_left slds-m-left_x-small">
+                        <button class="slds-button slds-button_brand slds-button_stretch footer-button" onclick={handleCancel} >Cancel</button>
+                        <button class="slds-button slds-button_brand slds-button_stretch footer-button" onclick={handleNext} disabled={disableNext}>Next</button>
+                    </div>
+                </div>
+            </div>
+        </lightning-quick-action-panel>
+        
+    </template>
+    <template if:true={showAmendSubTypeOptions}>
+        <lightning-quick-action-panel header="Manage Install Base">
+            <lightning-card>
+                
+                <lightning-formatted-rich-text value={amendSubTypeHeader}></lightning-formatted-rich-text>
+                <div style="margin-left:3%;"> 
+                    <template for:each={amendmentOptions} for:item="amendoption">
+                        <fieldset key={amendoption.value} style="display: block; float: left;" class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <span class="slds-radio">
+                                    <input name="radiogroup" id={amendoption.value} type="radio" value={amendoption.value} onchange={handleAmendOptionSelection} checked={amendoption.flag}/>
+                                    <label class="slds-radio__label" for={amendoption.value}>
+                                        <span class="slds-radio_faux"></span>
+                                        <span class="slds-form-element__label"> 
+                                            <lightning-formatted-rich-text
+                                                value={amendoption.helptext}
+                                            ></lightning-formatted-rich-text>
+                                        </span>
+                                    </label>
+                                </span>
+                            </div>
+                        </fieldset>
+                    </template><br/><br/>
+                </div>
+            </lightning-card>
+            <div slot="footer">
+                <div class="slds-clearfix">
+                    <div class="slds-float_left slds-m-left_x-small">
+                        <button class="slds-button slds-button_brand slds-button_stretch footer-button" onclick={handleCancel}>Cancel</button>
+                        <button class="slds-button slds-button_brand slds-button_stretch footer-button" onclick={handleBack} disabled={disableBack}>Back</button>
+                        <button class="slds-button slds-button_brand slds-button_stretch footer-button" onclick={handleNext}>Next</button>
+                    </div>
+                </div>
+            </div>
+        </lightning-quick-action-panel>
+    </template>
+    <template if:true={showUpdateContact}>
+        <!--Update Contact Screen for Assets Only-->
+        <lightning-quick-action-panel header="Update Contact on Account">
+            <lightning-layout>
+                <lightning-record-edit-form record-id={recordId} object-api-name="Account"  onsuccess ={handleNext}>
+                    <lightning-layout-item  flexibility="shrink">
+                        <div class="slds-clearfix">
+                            <div class="slds-float_right">
+                                <div class="slds-align_absolute-center" >
+                                    <lightning-formatted-rich-text value={contractListNote2}></lightning-formatted-rich-text>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-input-field field-name="L2O_Amend_Asset_Contact__c" required="true"></lightning-input-field>
+                    
+                    <lightning-layout-item  flexibility="shrink">
+                        <div class="slds-clearfix">
+                            <div class="slds-float_right" style="margin-top: 5px">
+                                <lightning-button class="slds-button slds-button_brand slds-button_stretch footer-button" variant="brand" onclick={handleCancel} name="Cancel" label="Cancel"></lightning-button>
+                                <lightning-button class="slds-button slds-button_brand slds-button_stretch footer-button" variant="brand" onclick={handleBack} name="Back" label="Back"></lightning-button>
+                                <lightning-button class="slds-button slds-button_brand slds-button_stretch footer-button" variant="brand" type="submit" name="update" label="Next"></lightning-button>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-record-edit-form>
+            </lightning-layout>
+        </lightning-quick-action-panel>
+    </template>
+    <template if:true={showAllContracts}>
+        <lightning-quick-action-panel header="Manage Install Base">
+            
+            <template if:true={error}>
+                <div class="slds-align_absolute-center"> 
+                    <b style="font-size: 15px; color:red">{errorMessage}</b>
+                </div>
+            </template>
+            
+            <lightning-card>
+                <lightning-formatted-rich-text value={allContractsHeader}></lightning-formatted-rich-text>
+                <div style="margin-left:7%;">
+                    <template for:each={resultContracts} for:item="contract">
+                        <fieldset key={contract.Id} style="display: block; float: left;" class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <span class="slds-radio">
+                                    <input name="radiogroup" id={contract.Id} type="radio" value={contract.Id} onchange={handleContractChange} checked={contract.flag} />
+                                    <label class="slds-radio__label" for={contract.Id}>
+                                        <span class="slds-radio_faux"></span>
+                                        <span class="slds-form-element__label purple-text">{contract.Name}<br/><br/></span>
+                                    </label>
+                                </span>
+                            </div>
+                        </fieldset>
+                    </template>
+                </div>
+                
+                <lightning-layout-item  flexibility="shrink">
+                    <div class="slds-clearfix">
+                        <div class="slds-float_right">
+                            <div class="slds-align_absolute-center" >
+                                <lightning-formatted-rich-text value={contractListNote}></lightning-formatted-rich-text>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-layout-item>
+            </lightning-card>
+            <div slot="footer">
+                <div class="slds-clearfix">
+                    <div class="slds-float_left slds-m-left_x-small">
+                        <button class="slds-button slds-button_brand slds-button_stretch footer-button" onclick={handleCancel} >Cancel</button>
+                        <button class="slds-button slds-button_brand slds-button_stretch footer-button" onclick={handleBack} >Back</button>
+                        <button class="slds-button slds-button_brand slds-button_stretch footer-button" onclick={handleNext} >Next</button>
+                    </div>
+                </div>
+            </div>
+        </lightning-quick-action-panel>
+    </template>
+
+</template>

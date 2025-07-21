@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DocuSign Callout Transient</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DocuSign Callout Transients</value>
+    </caseValues>
+    <fields>
+        <help><!-- This filed defines what kind of job should use this record.
+Like Upload attachments docs or download and attach documents to parent. --></help>
+        <label><!-- Batch Apex Job Type --></label>
+        <name>Apttus_DocuApi__BatchApexJobType__c</name>
+        <picklistValues>
+            <masterLabel>Download Completed Documents</masterLabel>
+            <translation><!-- Download Completed Documents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upload Documents</masterLabel>
+            <translation><!-- Upload Documents --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Envelop id saved here to Batch Apex use Upload attachments and Download completed signed documents --></help>
+        <label><!-- Envelope Id --></label>
+        <name>Apttus_DocuApi__EnvelopeId__c</name>
+    </fields>
+    <fields>
+        <help><!-- system data --></help>
+        <label><!-- Transient Data --></label>
+        <name>Apttus_DocuApi__TransientData__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

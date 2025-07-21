@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Wizard Step Runtime (Deprecated)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Wizard Step Runtime</value>
+    </caseValues>
+    <fields>
+        <help><!-- Identifies the next page if its not a Wizard Step (URL, SUBMIT, ACKNOWLEDGEMENT) --></help>
+        <label><!-- Next Page --></label>
+        <name>Apttus__NextPage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Not supported yet. Identifies the next wizard runtime during navigation --></help>
+        <label><!-- Next Wizard Runtime --></label>
+        <name>Apttus__NextWizardRuntimeId__c</name>
+        <relationshipLabel><!-- Wizard Step Runtime (Next Wizard Runtime) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Look up to wizard step runtime --></help>
+        <label><!-- Next Wizard Step Runtime --></label>
+        <name>Apttus__NextWizardStepRuntimeId__c</name>
+        <relationshipLabel><!-- Wizard Step Runtime --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference/Lookup to wizard runtime this step belongs to --></help>
+        <label><!-- Wizard Runtime --></label>
+        <name>Apttus__WizardRuntimeId__c</name>
+        <relationshipLabel><!-- Wizard Step Runtime (Wizard Runtime) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference/Lookup to Wizard Step design from which this runtime step is instantiated --></help>
+        <label><!-- Wizard Step --></label>
+        <name>Apttus__WizardStepId__c</name>
+        <relationshipLabel><!-- Wizard Step Runtime --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

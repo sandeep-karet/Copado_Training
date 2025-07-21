@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email Notification sent to Review and provide a reason</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Teladoc_LetterHead</letterhead>
+    <name>Agreement Review/Approval</name>
+    <style>formalLetter</style>
+    <subject>Review/Approval Needed - {!Apttus__APTS_Agreement__c.Apttus__Account__c} : {!Apttus__APTS_Agreement__c.APTS_Record_Type_Name__c}</subject>
+    <textOnly>Dear Reviewer,
+
+This agreement requires your review based on the below criteria:
+
+Agreement Link: {!Apttus__APTS_Agreement__c.Link}
+If these terms are agreeable, please reply to this message with &quot;Approved&quot;. If these are not agreeable please reply &quot;Rejected&quot; followed with the reasons for rejection. 
+
+If more information is needed please reply to this email with your inquires. 
+
+Thank you,
+{!User.FirstName}
+{!User.LastName}
+{!User.Title}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

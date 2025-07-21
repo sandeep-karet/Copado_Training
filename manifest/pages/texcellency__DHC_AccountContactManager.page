@@ -1,0 +1,60 @@
+<apex:page standardController="Account" 
+	extensions="texcellency.DHC_AccountContactManagerExtension"
+	action="{!initialize}">
+	<apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" />
+    <apex:includeScript value="{!$Resource.texcellency__defhc_client}" />
+    <apex:stylesheet value="{!$Resource.texcellency__def_styles}" />
+	<apex:form >
+		<apex:pageBlock >
+		<apex:pageMessages />
+
+		<apex:pageBlockButtons >
+			<apex:commandButton action="{!importExecutives}" rendered="{!(EligibleExecutivesFound && !ImportCompleted)}" value="Import Executives" />
+			<apex:commandButton action="{!previousPage}" rendered="{!(HasPreviousExecDataSet)}" value="Load Previous Set of Executives" />
+			<apex:commandButton action="{!nextPage}" rendered="{!(HasNextExecDataSet)}" value="Load Next Set of Executives" />
+			<apex:commandButton rendered="{!!ImportCompleted}" action="{!cancel}" value="Cancel" />
+			<apex:commandButton rendered="{!(ImportCompleted || !EligibleExecutivesFound)}" action="{!goBack}" value="Go Back" />
+		</apex:pageBlockButtons>
+		<apex:pageBlockSection rendered="{!(!ImportCompleted && EligibleExecutivesFound)}" title="Managing Contacts for {!Account.Name}" columns="1" collapsible="false">
+				<apex:outputText value="DHC ID: {0}">
+					<apex:param value="{!AttachedHospitalId}" />
+				</apex:outputText>
+				<apex:outputText value="Showing {0} to {1} of {2} total executives">
+					<apex:param value="{!StartRecord}" />
+					<apex:param value="{!EndRecord}" />
+					<apex:param value="{!TotalHitCount}" />
+				</apex:outputText>
+				<apex:pageblockSectionItem >
+	                <apex:outputLabel for="createDuplicatesWhenConflict">Create duplicate contacts when matched contact can not be updated</apex:outputLabel>
+	                <apex:inputCheckbox value="{!CreateDuplicatesWhenConflicting}" id="createDuplicatesWhenConflict" disabled="{!!HasConflicts}" />
+	            </apex:pageblockSectionItem>
+		</apex:pageBlockSection>
+		<apex:pageBlockTable title="Executives" rendered="{!(!ImportCompleted)}" value="{!Executives}" var="w" styleClass="checkAllContainer">
+                <apex:facet name="header">
+                    <apex:outputPanel >
+                        <apex:outputText value="Showing {!StartRecord} to {!EndRecord} of {!TotalHitCount} total Executive(s)." ></apex:outputText>
+                    </apex:outputPanel>
+                </apex:facet>            
+	            <apex:column StyleClass="{!w.cssClass}" style="width:5%;">
+	                <apex:facet name="header">
+	                    <input type="checkbox" id="accountList_CheckAll" class="checkAllHeader" />
+	                </apex:facet>
+	                <apex:inputCheckbox value="{!w.checked}" styleClass="checkAllRow" />
+	            </apex:column>
+				<!-- <apex:column StyleClass="{!w.cssClass}" value="{!w.ExecutiveId}" headerValue="Executive ID" style="width:10%;"/> -->
+				<apex:column StyleClass="{!w.cssClass}" value="{!w.FullName} " headerValue="Name"/>
+				<apex:column StyleClass="{!w.cssClass}" value="{!w.Title} " headerValue="Title"/>
+				<apex:column StyleClass="{!w.cssClass}" value="{!w.Email}" headerValue="Email" />
+				<apex:column StyleClass="{!w.cssClass}" value="{!w.Phone}" headerValue="Phone" />
+				<apex:column StyleClass="{!w.cssClass}" style="width:24%;" headerValue="Matched Contact">
+					<apex:outputLink value="/{!w.MatchedContact.ID}" target="childProfile">
+						<apex:outputText value="{!w.MatchedContact.Name}">
+						</apex:outputText>
+					</apex:outputLink>
+				</apex:column>
+				<apex:column StyleClass="{!w.cssClass}" value="{!w.MappingMethod}" headerValue="Mapping Method" />
+				<apex:column StyleClass="{!w.cssClass}" value="{!w.TargetAction}" headerValue="Action"  style="width:5%;"/>
+		</apex:pageBlockTable>
+	</apex:pageBlock>
+	</apex:form>
+</apex:page>

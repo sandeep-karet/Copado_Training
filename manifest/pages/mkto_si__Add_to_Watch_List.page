@@ -1,0 +1,53 @@
+<apex:page controller="mkto_si.WatchListController"
+  action="{!addToWatchList}"
+  standardStylesheets="false"
+  sidebar="false"
+>
+  <c:CssAndJavascript2 />
+  <c:Analytics hierarchy="marketo"
+/>
+  <div class="add-to-watch-list mkto mkt-page-container">
+    <apex:slds />
+
+    <c:MsePageHeader title="{!$Label.mkto_si__Watch_List}"
+    />
+    <div class="slds-scope marketo-lightning">
+      <div class="slds-form mkt-page-content">
+        <div class="add-to-watch-list-message">
+          <apex:outputText value="{!statusMessage}"/>
+        </div>
+
+        <apex:form styleClass="add-to-watch-list-form">
+          <apex:commandButton action="{!cancel}"
+            rendered="{!!goBack}"
+            value="{!$Label.mkto_si__Back}"
+            styleClass="slds-button slds-button_neutral marketo-cancel-button"
+          />
+          <apex:commandButton rendered="{!goBack}"
+            value="{!$Label.mkto_si__Back}"
+            action="{!back}"  
+            styleClass="slds-button slds-button_neutral marketo-cancel-button"
+          />
+          <apex:commandButton action="{!goToWatchList}"
+            value="{!$Label.mkto_si__go_to_watch_list}"
+            styleClass="slds-button slds-button_neutral marketo-save-button"
+          />
+        </apex:form>
+      </div>
+      <div class="mktDisplay-{!debug}">
+        <apex:outputText value="{!contactNames} ({!contactCount})"/>
+      </div>
+    </div>
+  </div>
+  <script>
+    $j( document ).ready(function() {
+      var paramObj = getParamsAsObject(location.search);
+      AdobeAnalytics.initGlobalData();
+      if(paramObj.isBulk){
+        AdobeAnalytics.disableAutotrack();
+        AdobeAnalytics.trackPageAsync(  'list-view-navigation' , paramObj.contactType+':'+paramObj.contactIds ,'list-view-add-to-watchlist' , 'load' ); 
+        AdobeAnalytics.trackEventsAsync('list-view-navigation' , paramObj.contactType+':'+paramObj.contactIds ,'list-view-add-to-watchlist' , 'click');
+      }
+  }); 
+  </script>
+</apex:page>

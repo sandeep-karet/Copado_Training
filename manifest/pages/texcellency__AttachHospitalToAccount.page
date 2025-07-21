@@ -1,0 +1,60 @@
+<apex:page standardController="Account"
+    extensions="texcellency.AccountDefHospitalAttacherExtension" action="{!initialize}">
+    <apex:stylesheet value="{!$Resource.texcellency__def_styles}" />
+    <apex:facet name="header">
+        <apex:outputPanel styleClass="dh_title">
+            <apex:image url="{!$Resource.texcellency__def_logo_small}"
+                styleClass="dh_logoSmall" />
+            <h3>Definitive Healthcare</h3>
+        </apex:outputPanel>
+    </apex:facet>
+    <apex:pageBlock title="Confirm Definitive Hospital Selection">
+        <apex:pageMessages />
+        <apex:pageblockSection title="Salesforce Account" columns="1"
+            collapsible="false">
+            <apex:outputField value="{!account.name}" label="Name" />
+            <apex:outputField value="{!account.BillingStreet}" label="Street" />
+            <apex:outputField value="{!account.BillingCity}" label="City" />
+            <apex:outputField value="{!account.BillingState}" label="State" />
+        </apex:pageblockSection>
+        <apex:pageblockSection title="Definitive Hospital" columns="1"
+            collapsible="false">
+            <apex:pageblockSectionItem >
+                <apex:outputLabel for="hid">Id</apex:outputLabel>
+                <apex:outputText value="{!defHospital.id}" id="hid" />
+            </apex:pageblockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="name">Name</apex:outputLabel>
+                <apex:outputLink value="{!defHospital.dhcProfile}" id="name"
+                    target="_blank">{!defHospital.name}</apex:outputLink>
+            </apex:pageBlockSectionItem>
+            <apex:pageblockSectionItem >
+                <apex:outputLabel for="firmType">Firm Type</apex:outputLabel>
+                <apex:outputText value="{!defHospital.firmType}" id="firmType" />
+            </apex:pageblockSectionItem>
+            <apex:pageblockSectionItem >
+                <apex:outputLabel for="address">Address</apex:outputLabel>
+                <apex:outputText value="{!defHospital.address}" id="address" />
+            </apex:pageblockSectionItem>
+            <apex:pageblockSectionItem >
+                <apex:outputLabel for="city">City</apex:outputLabel>
+                <apex:outputText value="{!defHospital.hqCity}" id="city" />
+            </apex:pageblockSectionItem>
+            <apex:pageblockSectionItem >
+                <apex:outputLabel for="State">State</apex:outputLabel>
+                <apex:outputText value="{!defHospital.state}" id="state" />
+            </apex:pageblockSectionItem>
+            <apex:pageblockSectionItem >
+                <apex:outputLabel for="web">Web Site</apex:outputLabel>
+                <apex:outputLink value="http://{!defHospital.webSite}" id="web">{!defHospital.webSite}</apex:outputLink>
+            </apex:pageblockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:form >
+                    <apex:CommandButton action="{!confirmAttachHospital}"
+                        value="Attach Definitive Firm to Account" />
+                    <apex:CommandButton action="{!cancel}" value="Cancel" />
+                </apex:form>
+            </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:page>

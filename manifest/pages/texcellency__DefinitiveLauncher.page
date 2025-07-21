@@ -1,0 +1,14 @@
+<apex:page standardController="Account"
+    extensions="texcellency.AccountDefHospitalExtension" action="{!launcher}">
+    <h3>Please wait while you are redirected to another page...</h3>
+    <apex:form >
+        <apex:inputHidden value="{!account.texcellency__DefHC_HospitalID__c}"
+            id="theHiddenInput" />
+    </apex:form>
+    <apex:pageBlock title="API Access blocked" rendered="{!isDefHCAccessBlocked}">
+        <apex:pageMessage summary="Access to the Definitive Healthcare Database Denied"
+            severity="error" strength="1"
+            rendered="{!isDefHCAccessBlocked}" />
+        <apex:pageMessages />
+    </apex:pageBlock>
+</apex:page>

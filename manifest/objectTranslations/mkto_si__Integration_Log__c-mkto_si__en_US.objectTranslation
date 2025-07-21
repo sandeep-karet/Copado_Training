@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Integration Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Integration Logs</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Latest Logs --></label>
+        <name>mkto_si__Latest_Logs</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Account --></label>
+        <name>mkto_si__Account__c</name>
+        <relationshipLabel><!-- Integration Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Direction --></label>
+        <name>mkto_si__Direction__c</name>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound</masterLabel>
+            <translation><!-- Outbound --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>mkto_si__Duration_Formatted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration ms --></label>
+        <name>mkto_si__Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Time --></label>
+        <name>mkto_si__End_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Endpoint --></label>
+        <name>mkto_si__Endpoint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>mkto_si__Error_Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- Anything below 3secs is considered a good time --></help>
+        <label><!-- Duration --></label>
+        <name>mkto_si__Flag_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Method --></label>
+        <name>mkto_si__Flag_Method__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module --></label>
+        <name>mkto_si__Flag_Module__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>mkto_si__Flag_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Method --></label>
+        <name>mkto_si__Method__c</name>
+        <picklistValues>
+            <masterLabel>&gt;Platform Event</masterLabel>
+            <translation><!-- &gt;Platform Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DELETE</masterLabel>
+            <translation><!-- DELETE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GET</masterLabel>
+            <translation><!-- GET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PATCH</masterLabel>
+            <translation><!-- PATCH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POST</masterLabel>
+            <translation><!-- POST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PUT</masterLabel>
+            <translation><!-- PUT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Module --></label>
+        <name>mkto_si__Module_High_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module --></label>
+        <name>mkto_si__Module__c</name>
+        <picklistValues>
+            <masterLabel>Module</masterLabel>
+            <translation><!-- Module --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Origin Data --></label>
+        <name>mkto_si__Origin_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Integration Log --></label>
+        <name>mkto_si__Parent_Integration_Log__c</name>
+        <relationshipLabel><!-- Children Integration Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quiddity --></label>
+        <name>mkto_si__Quiddity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Ids --></label>
+        <name>mkto_si__Record_Ids__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Agent --></label>
+        <name>mkto_si__Request_Agent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Body 2 --></label>
+        <name>mkto_si__Request_Body_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Body 3 --></label>
+        <name>mkto_si__Request_Body_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Body --></label>
+        <name>mkto_si__Request_Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Headers --></label>
+        <name>mkto_si__Request_Headers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Id --></label>
+        <name>mkto_si__Request_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Body 2 --></label>
+        <name>mkto_si__Response_Body_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Body 3 --></label>
+        <name>mkto_si__Response_Body_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Body --></label>
+        <name>mkto_si__Response_Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Headers --></label>
+        <name>mkto_si__Response_Headers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Status Code --></label>
+        <name>mkto_si__Response_StatusCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retry Data --></label>
+        <name>mkto_si__Retry_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retry # --></label>
+        <name>mkto_si__Retry_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Time --></label>
+        <name>mkto_si__Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Successful --></label>
+        <name>mkto_si__Successful__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

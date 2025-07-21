@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Async Action Info</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Async Actions Info</value>
+    </caseValues>
+    <fields>
+        <help><!-- The id of the async apex job associated with this action --></help>
+        <label><!-- Async Action Job --></label>
+        <name>Apttus_Approval__AsyncActionJobId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approval action being performed asynchronously --></help>
+        <label><!-- Async Action --></label>
+        <name>Apttus_Approval__AsyncAction__c</name>
+        <picklistValues>
+            <masterLabel>Approve</masterLabel>
+            <translation><!-- Approve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancel</masterLabel>
+            <translation><!-- Cancel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preview</masterLabel>
+            <translation><!-- Preview --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reject</masterLabel>
+            <translation><!-- Reject --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submit</masterLabel>
+            <translation><!-- Submit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- ID of the associated business object --></help>
+        <label><!-- Business Object --></label>
+        <name>Apttus_Approval__BusinessObjectId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Object Ids --></label>
+        <name>Apttus_Approval__BusinessObjectIds__c</name>
+    </fields>
+    <fields>
+        <help><!-- The business object type --></help>
+        <label><!-- Business Object Type --></label>
+        <name>Apttus_Approval__BusinessObjectType__c</name>
+    </fields>
+    <fields>
+        <help><!-- Async action processing end time --></help>
+        <label><!-- End Time --></label>
+        <name>Apttus_Approval__EndTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Information about the failure --></help>
+        <label><!-- Error Msg Info2 --></label>
+        <name>Apttus_Approval__ErrorMsgInfo2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Information about the failure --></help>
+        <label><!-- Error Msg Info (DEPRECATED) --></label>
+        <name>Apttus_Approval__ErrorMsgInfo__c</name>
+    </fields>
+    <fields>
+        <help><!-- Technical information about the failure. Error call stack and other related information --></help>
+        <label><!-- Error Stack Info --></label>
+        <name>Apttus_Approval__ErrorStackInfo__c</name>
+    </fields>
+    <fields>
+        <help><!-- Associate business object name --></help>
+        <label><!-- Object Name --></label>
+        <name>Apttus_Approval__ObjectName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Async action processing start date time --></help>
+        <label><!-- Start Time --></label>
+        <name>Apttus_Approval__StartTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Async processing current status from the ApexJob table --></help>
+        <label><!-- Status --></label>
+        <name>Apttus_Approval__Status__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation><!-- Aborted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queued</masterLabel>
+            <translation><!-- Queued --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Async action submit time --></help>
+        <label><!-- Submit Time --></label>
+        <name>Apttus_Approval__SubmitTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- User who performed the action --></help>
+        <label><!-- Submitter --></label>
+        <name>Apttus_Approval__Submitter__c</name>
+        <relationshipLabel><!-- Async Actions Info --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

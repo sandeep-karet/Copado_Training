@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DocuSign Envelope Recipient Status</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DocuSign Envelope Recipient Status</value>
+    </caseValues>
+    <fields>
+        <help><!-- Batch job id will be used to trigger extension package task history update(System use only field do not add to layout) --></help>
+        <label><!-- Batch Job Id --></label>
+        <name>Apttus_DocuApi__BatchJobId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient Company name from DocuSign Tab/Tag --></help>
+        <label><!-- Company --></label>
+        <name>Apttus_DocuApi__Company__c</name>
+    </fields>
+    <fields>
+        <help><!-- eSignature decline reason --></help>
+        <label><!-- Declined Reason --></label>
+        <name>Apttus_DocuApi__DeclinedReason__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient Delivered Date Time --></help>
+        <label><!-- Delivered Date --></label>
+        <name>Apttus_DocuApi__DeliveredDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- DocuSign Envelope Id master record id (SFDC ID) --></help>
+        <label><!-- DocuSign Envelope Id --></label>
+        <name>Apttus_DocuApi__DocuSignEnvelopeId__c</name>
+        <relationshipLabel><!-- DocuSign Envelope Recipient Status --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Store envelope id in upper case, used in webhook integration. --></help>
+        <label><!-- Docusign Envelope Id (Upper) --></label>
+        <name>Apttus_DocuApi__DocusignUpperEnvelopeId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient Email ID --></help>
+        <label><!-- Email --></label>
+        <name>Apttus_DocuApi__Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference field for the DocuSign Envelope linked to parent  SFDC  object id --></help>
+        <label><!-- Envelope Parent Id --></label>
+        <name>Apttus_DocuApi__EnvelopeParentId__c</name>
+    </fields>
+    <fields>
+        <help><!-- System internal use only. Make limited SOQL query find the current recipient status --></help>
+        <label><!-- Envelope Recipient Status --></label>
+        <name>Apttus_DocuApi__EnvelopeRecipientStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Recipient from DocuSign (sent as part of the Envelope) --></help>
+        <label><!-- Recipient Name --></label>
+        <name>Apttus_DocuApi__RecipientName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient Tab from DocuSign --></help>
+        <label><!-- RecipientTab --></label>
+        <name>Apttus_DocuApi__RecipientTab__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient Role Name --></help>
+        <label><!-- Role Name --></label>
+        <name>Apttus_DocuApi__RoleName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient Routing Order Number --></help>
+        <label><!-- Routing Order --></label>
+        <name>Apttus_DocuApi__RoutingOrder__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipients Signed Date Time --></help>
+        <label><!-- Signed Date --></label>
+        <name>Apttus_DocuApi__SignedDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Envelope Recipient Status --></help>
+        <label><!-- Status --></label>
+        <name>Apttus_DocuApi__Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient Title name from DocuSign Tab/Tag --></help>
+        <label><!-- Title --></label>
+        <name>Apttus_DocuApi__Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- Update status when webhook enabled. --></help>
+        <label><!-- Webhook Status --></label>
+        <name>Apttus_DocuApi__WebhookStatus__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

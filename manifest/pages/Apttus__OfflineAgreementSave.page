@@ -1,0 +1,99 @@
+<!-- 
+    Apttus Contract Management
+    OfflineAgreementSave
+     
+    @2009-2018 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus__APTS_Agreement__c" 
+		   extensions="Apttus.QueryParamController"   
+		   showHeader="true">
+		   
+	<script type="text/javascript" src="/soap/ajax/50.0/connection.js"></script>
+	<script type="text/javascript" src="/soap/ajax/50.0/apex.js"></script>
+	<apex:include pageName="Apttus__ComplyJSLibInclude" />
+	<apex:include pageName="Apttus__YUILibrary" />
+	<script>
+	// Function called when the DOM is ready to create the dialog,
+	// render the dialog into the document body, add our dialog skin
+	// css to the body tag, and wire up the buttons on our dialog   
+	YUI().use('event-base', function (Y) {
+			Y.on('domready', function () {
+					console.log("Once Dom Ready ");
+					var intelligentImport = "{!intelligentImport}";
+					if("true" == intelligentImport) {
+						alert("{!$Label.IntelligentImportSuccess}");
+					}
+					// build the wait panel
+					YUI.force.com.showWaitPanel();
+					// post save
+					// delay to display progress message	
+					setTimeout(function() {
+						// post save
+						afterSave();
+					
+					}, 2000);
+
+			});
+	});
+	</script>	
+	
+	<script type="text/javascript">
+    
+	   	/**
+		 * Initializes the call
+		 */
+		function initCall() {
+		
+			try {
+				sforce.connection.sessionId = "{!$Api.Session_ID}"; //to avoid session timeout
+			} catch(e) {
+				erroralert(cERROR_UNKNOWN,e);
+				
+			}
+		
+		}
+    
+	    /**
+		 * Callback invoked after the created agreement is saved
+		 */
+		function afterSave() {
+			
+			// get parameters
+			// created agreement id
+			var agreementId = "{!JSENCODE(agreementId)}";
+			var intelligentImport = "{!intelligentImport}";
+			var agreementPreviousStatus = "{!agreementPreviousStatus}";
+			var agreementPreviousStatusCategory = "{!agreementPreviousStatusCategory}";
+			
+			try {
+				// STEP I - initialize the call
+				initCall();
+				// STEP II - perform after create tasks
+				afterCreateOffline(agreementId);
+				// STEP III - update document properties
+				updateImportedAgreementDocs(agreementId);
+				
+				// STEP IV - invoke intelligent Import processing.
+				if("true" == intelligentImport) {
+                    afterCreateIntelligentImport(agreementId, "{!$Label.CreateOfflineAgreement}", null);
+                    updateIDEJobRecordAfterCreateIntelligentImport(agreementId,agreementPreviousStatus,agreementPreviousStatusCategory);
+                }
+				
+			} catch(ex) {
+				// hide modal panel
+				 YUI.force.com.hideWaitPanel();
+				// display the error
+				erroralert(cERROR_UNKNOWN, ex);
+				
+			} finally {
+				// open the agreement in view mode
+				navigateTo("/" + agreementId);
+				
+			}
+		
+		}
+	
+    </script>
+	
+</apex:page>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Doc Assembly Component --></value>
+    </caseValues>
+    <fields>
+        <help>添付ファイルId</help>
+        <label><!-- Attachment Id --></label>
+        <name>Apttus__AttachmentId__c</name>
+    </fields>
+    <fields>
+        <help>条項=条項ドキュメント、添付ファイル（Id）＝ハードコードされた添付ファイルID、添付ファイル（オブジェクト/フィールド）＝フィールド内の添付ファイルID、親（オブジェクト/フィールド）＝フィールドで表示される親データの中の最初の添付ファイル、コンテンツ（オブジェクト/フィールド）＝フィールドの生データ</help>
+        <label><!-- Component Type --></label>
+        <name>Apttus__ComponentType__c</name>
+        <picklistValues>
+            <masterLabel>Attachment (Id)</masterLabel>
+            <translation>添付ファイル (Id)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attachment (Object/Field)</masterLabel>
+            <translation>添付ファイル（オブジェクト/フィールド）</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clause</masterLabel>
+            <translation>条項</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Content (Object/Field)</masterLabel>
+            <translation>コンテンツ（オブジェクト/フィールド）</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent (Object/Field)</masterLabel>
+            <translation>親(オブジェクト/フィールド)</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>ComponentTypeがコンテンツ（オブジェクト/フィールド）の場合のコンテンツフィールドの種類</help>
+        <label><!-- Content Field Type --></label>
+        <name>Apttus__ContentFieldType__c</name>
+        <picklistValues>
+            <masterLabel>HTML</masterLabel>
+            <translation><!-- HTML --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IMAGE</masterLabel>
+            <translation>画像</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TEXT</masterLabel>
+            <translation>テキスト</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>URL</masterLabel>
+            <translation><!-- URL --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>コンポーネントのコンテンツID</help>
+        <label><!-- Content --></label>
+        <name>Apttus__ContentId__c</name>
+        <relationshipLabel><!-- Doc Assembly Components --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ターゲットコンポーネントにつながるフィールド名</help>
+        <label><!-- Field Name --></label>
+        <name>Apttus__FieldName__c</name>
+    </fields>
+    <fields>
+        <help>コンポーネントがインライン化された後に改ページを挿入</help>
+        <label><!-- Insert Page Break --></label>
+        <name>Apttus__InsertPageBreak__c</name>
+    </fields>
+    <fields>
+        <help>関連するルールID</help>
+        <label><!-- Rule --></label>
+        <name>Apttus__RuleId__c</name>
+        <relationshipLabel><!-- Components --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>コンポーネント順番</help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help>コンポーネントタイプ</help>
+        <label><!-- Type --></label>
+        <name>Apttus__Type__c</name>
+        <picklistValues>
+            <masterLabel>Footer</masterLabel>
+            <translation>フッター</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Header</masterLabel>
+            <translation>ヘッダ</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logo</masterLabel>
+            <translation>ロゴ</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terms and Conditions</masterLabel>
+            <translation>規約と条件</translation>
+        </picklistValues>
+    </fields>
+    <nameFieldLabel><!-- Component Id --></nameFieldLabel>
+</CustomObjectTranslation>

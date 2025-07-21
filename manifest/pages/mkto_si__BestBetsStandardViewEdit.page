@@ -1,0 +1,123 @@
+<apex:page controller="mkto_si.BestBetsStandardViewEditController"
+  tabStyle="Marketo__tab"
+  standardStylesheets="false" 
+  sidebar="false"
+>
+    <c:CssAndJavascript2 />
+    <link rel="Stylesheet" type="text/css" href="{!$Resource.web}/mkto/css/msi_view_edit.css" />
+
+    <div class="mkto edit-view edit-standard-view mkt-page-container">
+        <apex:slds />
+        <c:SalesInsightsHeader />
+        <div class="slds-scope marketo-lightning">
+            <div class="slds-form mkt-page-content">
+                <div class="mkt-page-name">
+                    <apex:outputText value="{!$Label.mkto_si__Edit_View}"/>
+                </div>
+                <apex:outputPanel styleClass="mkt-page-messages" id="message-panel">
+                    <c:MktPageMessage severity="Error" rendered="{!errorMessage != null}" summary="{!errorMessage}" />
+                    <c:MktPageMessage severity="Error" rendered="{!errorException != null && debug}" summary="{!errorException}" />
+                </apex:outputPanel>
+                <div>
+                    <apex:form id="editForm" styleClass="mkt-edit-view-form">
+                        <apex:actionStatus id="loadingStatus"
+                          onStart="Marketo.setLoading(this.parentNode.parentNode)"
+                          onStop="Marketo.unsetLoading(this.parentNode.parentNode)"
+                        />
+
+                        <apex:outputPanel layout="block" styleClass="fields-block">
+                            <div class="slds-form-element_horizontal slds-is-editing mkt-edit-standard-view-inputs">
+                                <apex:outputLabel value="{!$Label.mkto_si__Maximum_Pages}" styleClass="slds-form-element__label"/>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-select_container">
+                                        <apex:selectList value="{!maxPages}" required="true" size="1" styleClass="slds-select">
+                                            <apex:selectOption itemValue="1"/>
+                                            <apex:selectOption itemValue="2"/>
+                                            <apex:selectOption itemValue="3"/>
+                                            <apex:selectOption itemValue="4"/>
+                                            <apex:selectOption itemValue="5"/>
+                                            <apex:selectOption itemValue="6"/>
+                                            <apex:selectOption itemValue="7"/>
+                                            <apex:selectOption itemValue="8"/>
+                                            <apex:selectOption itemValue="9"/>
+                                            <apex:selectOption itemValue="10"/>
+                                            <apex:selectOption itemValue="11"/>
+                                            <apex:selectOption itemValue="12"/>
+                                            <apex:selectOption itemValue="13"/>
+                                            <apex:selectOption itemValue="14"/>
+                                            <apex:selectOption itemValue="15"/>
+                                            <apex:selectOption itemValue="16"/>
+                                            <apex:selectOption itemValue="17"/>
+                                            <apex:selectOption itemValue="18"/>
+                                            <apex:selectOption itemValue="19"/>
+                                            <apex:selectOption itemValue="20"/>
+                                        </apex:selectList>
+                                    </div>
+                                </div>
+                            </div>
+                            <apex:outputPanel rendered="{!showTerritoryTree}">
+                                <div class="slds-form-element_horizontal slds-is-editing mkt-territory-tree-field">
+                                    <apex:outputLabel value="{!$Label.mkto_si__Choose_Territory}" styleClass="slds-form-element__label"/>
+                                    <div class="slds-form-element__control">
+                                        <apex:outputPanel >
+                                            <apex:stylesheet value="{!$Resource.mkto_si__web}/mkto/extjs/resources/css/ext-all.css" />
+                                            <apex:stylesheet value="{!$Resource.mkto_si__web}/mkto/extjs/resources/css/xtheme-gray.css" />
+                                            <apex:includeScript value="{!$Resource.mkto_si__web}/mkto/extjs/adapter/ext/ext-base.js" />
+                                            <apex:includeScript value="{!$Resource.mkto_si__web}/mkto/extjs/ext-all.js" />
+                                            <apex:includeScript value="{!$Resource.mkto_si__territoryTree}" />
+
+                                            <style>
+                                                .earth_location .x-tree-node-icon,
+                                                .earth_location .x-tree-node-icon {
+                                                    background-image: url({!$Resource.mkto_si__web}/mkto/images/earth_location.png);
+                                                    margin-right: 2px;
+                                                }
+                                            </style>
+
+                                            <script type="text/javascript">
+                                                var geoFilterArray = <apex:outputText value="{!geoFilterJson}" />;
+                                                Ext.onReady(function(){
+                                                    Mkt.territory.buildTerritoryTree('mktTerritoryTree', geoFilterArray);
+                                                });
+                                            </script>
+
+                                            <div style="padding: 10px 0">
+                                                <div id="mktTerritoryTree" class="mkt-territory-tree"></div>
+                                            </div>
+                                            <apex:inputHidden id="geoFilterJsonHidden" value="{!geoFilterJson}"/>
+                                            <script  type="text/javascript">
+                                                if(Mkt && Mkt.territory) {
+                                                    Mkt.territory.territoryField = document.getElementById('{!$Component.geoFilterJsonHidden}');
+                                                }
+                                            </script>
+                                        </apex:outputPanel>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+
+                            <div class="slds-form-element__control">
+                                <div class="mkt-edit-standard-view-inputs">
+                                    <div class="mkt-page-buttons">
+                                        <apex:commandButton value="{!$Label.mkto_si__Cancel}"
+                                            action="{!doCancel}"
+                                            status="loadingStatus"
+                                            rerender="message-panel"
+                                            immediate="true"
+                                            styleClass="slds-button slds-button_neutral marketo-cancel-button"
+                                        />
+                                        <apex:commandButton value="{!$Label.mkto_si__Save}"
+                                            action="{!doSave}"
+                                            rerender="message-panel"
+                                            status="loadingStatus"
+                                            styleClass="slds-button slds-button_neutral marketo-save-button"
+                                        /> 
+                                    </div>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:form>
+                </div>
+            </div>
+        </div>
+    </div>
+</apex:page>

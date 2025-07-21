@@ -1,0 +1,124 @@
+<template>
+
+    <lightning-card title="Inactive Parent/Stand alone Order Products">
+        
+        <lightning-button 
+            label="Save" 
+            slot="actions"
+            onclick={handleSave}
+            disabled={disableSave}>
+        </lightning-button>
+        <lightning-button 
+            label="Cancel" 
+            slot="actions"
+            onclick={handleCancel}>
+        </lightning-button>
+
+        <div class="slds-p-around_x-small">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Order Product Number">Order Product Number</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Product Name">Product Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Quantity">Quantity</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Start Date">Start Date</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Activated">Activated</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Hold Order">Hold Order</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Send RMA">Send RMA</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="PO Number">PO Number</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Shipping Account">Shipping Account</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Shipping Contact">Shipping Contact</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Shipping Address">Shipping Address</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={orderProductslist} for:item="op"> 
+                        <tr key={op.Id} class="slds-hint-parent">
+                            <td data-label="Order Product Number">
+                                <div class="slds-truncate" title="Order Product Number">{op.OrderItemNumber}</div>
+                            </td>
+                            <td data-label="Product Name">
+                                <div class="slds-truncate" title="Product Name">{op.Product2.Name}</div>
+                            </td>
+                            <td data-label="Quantity">
+                                <div class="slds-truncate" title="Quantity">{op.Quantity}</div>
+                            </td>
+                            <td data-label="Start Date">
+                                <div class="slds-truncate" title="Start Date">{op.ServiceDate}</div>
+                            </td>
+                            <td data-label="Activated">
+                                <div>
+                                    <lightning-input name="activated" id={op.Id} data-record-id={op.Id} data-id={op.Id} data-name={op.Id} class="slds-p-left_xx-small" type="checkbox" checked={op.SBQQ__Activated__c} onchange={handleChange}></lightning-input>
+                                </div>
+                            </td>
+                            <td data-label="Hold Order">
+                                <div>
+                                    <lightning-input name="holdOrder" id={op.Id} data-record-id={op.Id} data-id={op.Id} data-name={op.Id} class="slds-p-left_xx-small" type="checkbox" checked={op.L2O_Hold_Order__c} onchange={handleChange}></lightning-input>
+                                </div>
+                            </td>
+                            <td data-label="Send RMA">
+                                <div>
+                                    <lightning-input name="sendRMA" id={op.Id} data-record-id={op.Id} data-id={op.Id} data-name={op.Id} class="slds-p-left_xx-small" type="checkbox" checked={op.L2O_Send_RMA__c} onchange={handleChange}></lightning-input>
+                                </div>
+                            </td>
+                            <td data-label="PO Number">
+                                <div>
+                                    <lightning-input name="poNumber" id={op.Id} data-record-id={op.Id} data-id={op.Id} data-name={op.Id} class="slds-p-left_xx-small" type="text" value={op.L2O_PO_Number__c} onchange={handleChange}></lightning-input>
+                                </div>
+                            </td>
+                            <td data-label="Shipping Account">
+                                <c-look-Up 
+                                    unique-key={op.Id} 
+                                    value-id={op.SBQQ__ShippingAccount__c} 
+                                    obj-name="Account"
+                                    icon-name="custom:custom85" 
+                                    label-name="ShippingContact" 
+                                    onvalueselect={handleShipAccountSelection}
+                                    create-record=false>
+                                </c-look-Up>
+                            </td>
+                            <td data-label="Shipping Contact">
+                                <c-look-Up 
+                                    unique-key={op.Id} 
+                                    value-id={op.Shipping_Contact__c} 
+                                    obj-name="Contact" 
+                                    icon-name="custom:custom85" 
+                                    label-name="ShippingContact" 
+                                    onvalueselect={handleShipContactSelection}
+                                    filter={op.SBQQ__ShippingAccount__c}
+                                    create-record=false>
+                                </c-look-Up>
+                            </td>
+                            <td data-label="Shipping Address">
+                                <div class="slds-truncate" title="Shipping Address">{op.L2O_Shipping_Address_Text__c}</div>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+
+</template>

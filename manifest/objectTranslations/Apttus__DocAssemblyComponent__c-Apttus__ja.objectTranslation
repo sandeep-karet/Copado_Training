@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Doc Assembly Component --></value>
+    </caseValues>
+    <fields>
+        <help><!-- Id of the attachment --></help>
+        <label>添付ファイルId</label>
+        <name>Apttus__AttachmentId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Clause = clause document, Attachment (Id) = hardcoded attachment id, Attachment (Object/Field) = attachment id in a field, Parent (Object/Field) = first attachment in the parent represented by the field, Content (Object/Field) =  raw content of the field. --></help>
+        <label>コンポーネントタイプ</label>
+        <name>Apttus__ComponentType__c</name>
+        <picklistValues>
+            <masterLabel>Attachment (Id)</masterLabel>
+            <translation><!-- Attachment (Id) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attachment (Object/Field)</masterLabel>
+            <translation><!-- Attachment (Object/Field) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clause</masterLabel>
+            <translation><!-- Clause --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Content (Object/Field)</masterLabel>
+            <translation><!-- Content (Object/Field) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent (Object/Field)</masterLabel>
+            <translation><!-- Parent (Object/Field) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Type of the content field when the ComponentType is Content (Object/Field) --></help>
+        <label>コンテンツフィールドタイプ</label>
+        <name>Apttus__ContentFieldType__c</name>
+        <picklistValues>
+            <masterLabel>HTML</masterLabel>
+            <translation><!-- HTML --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IMAGE</masterLabel>
+            <translation><!-- IMAGE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TEXT</masterLabel>
+            <translation><!-- TEXT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>URL</masterLabel>
+            <translation><!-- URL --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- ID of the content for the component --></help>
+        <label>コンテンツ</label>
+        <name>Apttus__ContentId__c</name>
+        <relationshipLabel>ドキュメントアセンブリコンポーネント</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Name of the field that leads to the target component --></help>
+        <label>フィールド名</label>
+        <name>Apttus__FieldName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Inserts a page break after the component is inlined --></help>
+        <label>改ページを挿入</label>
+        <name>Apttus__InsertPageBreak__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the associated rule --></help>
+        <label>ルール</label>
+        <name>Apttus__RuleId__c</name>
+        <relationshipLabel>コンポーネント</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The component sequence --></help>
+        <label>順番</label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- The component type --></help>
+        <label>種別</label>
+        <name>Apttus__Type__c</name>
+        <picklistValues>
+            <masterLabel>Footer</masterLabel>
+            <translation><!-- Footer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Header</masterLabel>
+            <translation><!-- Header --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logo</masterLabel>
+            <translation><!-- Logo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terms and Conditions</masterLabel>
+            <translation><!-- Terms and Conditions --></translation>
+        </picklistValues>
+    </fields>
+    <nameFieldLabel><!-- Component Id --></nameFieldLabel>
+</CustomObjectTranslation>

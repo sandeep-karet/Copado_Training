@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Async Merge Call --></value>
+    </caseValues>
+    <fields>
+        <label>操作</label>
+        <name>Apttus__Action__c</name>
+        <picklistValues>
+            <masterLabel>Activate Agreement</masterLabel>
+            <translation><!-- Activate Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Generate</masterLabel>
+            <translation><!-- Generate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Generate Supporting Document</masterLabel>
+            <translation><!-- Generate Supporting Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preview</masterLabel>
+            <translation><!-- Preview --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Publish</masterLabel>
+            <translation><!-- Publish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regenerate</masterLabel>
+            <translation><!-- Regenerate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send for Parallel Review</masterLabel>
+            <translation><!-- Send for Parallel Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send for Review</masterLabel>
+            <translation><!-- Send for Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send for Signature</masterLabel>
+            <translation><!-- Send for Signature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submit Request</masterLabel>
+            <translation><!-- Submit Request --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Additional information for Async Request --></help>
+        <label><!-- Additional Information --></label>
+        <name>Apttus__AdditionalInformation__c</name>
+    </fields>
+    <fields>
+        <label>合意</label>
+        <name>Apttus__Agreement__c</name>
+        <relationshipLabel><!-- Async Merge Calls --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>問い合わせタイプ</label>
+        <name>Apttus__CallType__c</name>
+        <picklistValues>
+            <masterLabel>Activate Document</masterLabel>
+            <translation><!-- Activate Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merge Document</masterLabel>
+            <translation><!-- Merge Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O365 Add Reviewer</masterLabel>
+            <translation><!-- O365 Add Reviewer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O365 End Review</masterLabel>
+            <translation><!-- O365 End Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O365 Review</masterLabel>
+            <translation><!-- O365 Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parallel Review</masterLabel>
+            <translation><!-- Parallel Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Protect Document and Send Email</masterLabel>
+            <translation><!-- Protect Document and Send Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Publish Document</masterLabel>
+            <translation><!-- Publish Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Publish Document (Job)</masterLabel>
+            <translation><!-- Publish Document (Job) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Split File</masterLabel>
+            <translation><!-- Split File --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- ID of the associated custom object --></help>
+        <label>カスタムオブジェクト</label>
+        <name>Apttus__CustomObjectId__c</name>
+    </fields>
+    <fields>
+        <label>ドキュメントフォーマット</label>
+        <name>Apttus__DocumentFormat__c</name>
+        <picklistValues>
+            <masterLabel>DOC</masterLabel>
+            <translation><!-- DOC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PDF</masterLabel>
+            <translation><!-- PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTF</masterLabel>
+            <translation><!-- RTF --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>終了時間</label>
+        <name>Apttus__EndTime__c</name>
+    </fields>
+    <fields>
+        <label>例外</label>
+        <name>Apttus__Exception__c</name>
+    </fields>
+    <fields>
+        <label>ドラフト</label>
+        <name>Apttus__IsDraft__c</name>
+    </fields>
+    <fields>
+        <label>プロテクションレベル</label>
+        <name>Apttus__ProtectionLevel__c</name>
+        <picklistValues>
+            <masterLabel>Fill in form fields only</masterLabel>
+            <translation><!-- Fill in form fields only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full access</masterLabel>
+            <translation><!-- Full access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insert comments and tracked changes only</masterLabel>
+            <translation><!-- Insert comments and tracked changes only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insert comments only</masterLabel>
+            <translation><!-- Insert comments only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Read only</masterLabel>
+            <translation><!-- Read only --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Response represents the output from external systems --></help>
+        <label><!-- Response --></label>
+        <name>Apttus__Response__c</name>
+    </fields>
+    <fields>
+        <label>結果</label>
+        <name>Apttus__Result__c</name>
+    </fields>
+    <fields>
+        <label>開始時間</label>
+        <name>Apttus__StartTime__c</name>
+    </fields>
+    <fields>
+        <label>ステータス</label>
+        <name>Apttus__Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queued</masterLabel>
+            <translation><!-- Queued --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>テンプレート</label>
+        <name>Apttus__Template__c</name>
+        <relationshipLabel><!-- Async Merge Calls --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- ID of the associated document version detail --></help>
+        <label>バージョン詳細</label>
+        <name>Apttus__VersionDetailId__c</name>
+        <relationshipLabel><!-- Async Merge Calls --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- CallId --></nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,111 @@
+<apex:page Controller="texcellency.DHCHomeTabExecutiveSearchController" action="{!initialize}" tabStyle="DHC_Data_Tab__tab">
+<apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" />
+<apex:includeScript value="{!$Resource.texcellency__defhc_client}" />
+<apex:sectionHeader title="Definitive Healthcare" subtitle="Search Executives" />
+<apex:form > 
+    <apex:pageBlock >
+        <apex:pageMessages />
+        <apex:pageBlockSection title="Executive Lead Search" columns="2" showHeader="true" collapsible="false">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="definitiveId">Definitive ID</apex:outputLabel>
+                <apex:inputText value="{!searchDefinitiveId}" id="definitiveId"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel > </apex:outputLabel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="title">Title</apex:outputLabel>
+                <apex:inputText value="{!searchTitle}" id="title"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel > </apex:outputLabel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="zipCode">Zip Code</apex:outputLabel>
+                <apex:inputText value="{!searchHQZipCode}" id="zipCode"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="hqCity">City</apex:outputLabel>
+                <apex:inputText value="{!searchHQCity}" id="hqCity"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="functionalGroup">Functional Group</apex:outputLabel>
+                <apex:selectList value="{!searchFunctionalGroup}" id="functionalGroup" 
+                    multiselect="true"
+                    size="4" required="false"> 
+                    <apex:selectOptions value="{!functionalGroups}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="positionLevel">Position Level</apex:outputLabel>
+                <apex:selectList value="{!searchPositionLevel}" id="positionLevel" 
+                    multiselect="true"
+                    size="4" required="false">
+                    <apex:selectOptions value="{!positionLevels}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+            <apex:pageblockSectionItem >
+                <apex:outputLabel for="firmTypeList">Firm Type</apex:outputLabel>
+                <apex:selectList value="{!searchFirmType}" multiselect="true"
+                    size="4" required="false">
+                    <apex:selectOptions value="{!firmTypes}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageblockSectionItem>
+            <apex:pageblockSectionItem >
+                <apex:outputLabel for="stateList">State</apex:outputLabel>
+                <apex:selectList value="{!searchState}" multiselect="true"
+                    size="4">
+                    <apex:selectOptions value="{!states}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageblockSectionItem>
+            <apex:pageblockSectionItem >
+                <apex:outputLabel for="stateList">Standardized Title</apex:outputLabel>
+                <apex:selectList value="{!searchStandardizedTitles}" multiselect="true"
+                    size="4">
+                    <apex:selectOptions value="{!standardizedTitles}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageblockSectionItem>
+            <apex:pageblockSectionItem >
+                <apex:outputLabel for="isPhysicianLeader">Is Physician Leader</apex:outputLabel>
+                <apex:selectList value="{!isPhysicianLeader}" multiselect="false" size="1">
+                    <apex:selectOptions value="{!optionalYesNo}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageblockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Executive Search Results"
+                rendered="{!(executives != null)}" columns="1"
+                collapsible="false">
+            <apex:pageBlockTable value="{!executives}" var="e" styleClass="checkAllContainer">
+                <apex:facet name="header">
+                    <apex:outputPanel >
+                        <apex:outputText value="Showing {!StartRecord} to {!EndRecord} of {!TotalHitCount} total Executive(s)." ></apex:outputText>
+                    </apex:outputPanel>
+                </apex:facet>            
+                <apex:facet name="footer">
+                    <apex:outputPanel styleClass="dhc-pager" >
+                        <apex:commandLink action="{!prevPage}" value="Prev Page" id="execListPrevPageLink" rendered="{!hasPrevPage}" />
+                        <apex:commandLink action="{!nextPage}" style="padding-left: 10px;" value="Next Page" id="execListNextPageLink"  rendered="{!HasNextPage}"/>
+                    </apex:outputPanel>
+                </apex:facet>
+                <apex:column StyleClass="{!'someclass'}">
+                    <apex:facet name="header">
+                        <input type="checkbox" id="executiveList_CheckAll" class="checkAllHeader" />
+                    </apex:facet> 
+                    <apex:inputCheckbox value="{!e.checked}" styleClass="checkAllRow" />
+                </apex:column>
+                <apex:column value="{!e.ExecName}" headerValue="Name" />
+                <apex:column value="{!e.Title}" headerValue="Title" />
+                <apex:column value="{!e.CompanyName}" headerValue="Company" />
+                <apex:column value="{!e.FirmType}" headerValue="Firm Type" />
+                <apex:column value="{!e.HQCity}" headerValue="City" />                
+                <apex:column value="{!e.HQZipCode}" headerValue="ZipCode" />
+                <apex:column value="{!e.HQState}" headerValue="State" />
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Search" action="{!searchExecutives}"/>
+            <apex:commandButton value="Import as Leads" action="{!importExecutivesAsLeads}" rendered="{!(executives != null)}" />
+        </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>追跡値</value>
+    </caseValues>
+    <fields>
+        <help><!-- Opportunity associated with the Tracked Value --></help>
+        <label>商談</label>
+        <name>sbaa__Opportunity__c</name>
+        <relationshipLabel>追跡値</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Tracked Field that generated this Tracked Value --></help>
+        <label>追跡項目</label>
+        <name>sbaa__TrackedField__c</name>
+        <relationshipLabel>追跡値</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Stored value if data type is date --></help>
+        <label>値 (日付)</label>
+        <name>sbaa__ValueDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stored value if data type is number --></help>
+        <label>値 (数値)</label>
+        <name>sbaa__ValueNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stored value if data type is text --></help>
+        <label>値 (テキスト)</label>
+        <name>sbaa__ValueText__c</name>
+    </fields>
+    <nameFieldLabel>追跡値番号</nameFieldLabel>
+</CustomObjectTranslation>

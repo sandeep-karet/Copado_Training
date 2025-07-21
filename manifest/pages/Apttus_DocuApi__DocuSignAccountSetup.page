@@ -1,0 +1,88 @@
+<!-- 
+    Apttus DocuSign API 
+    DocuSignAccountSetup
+       
+    @2010-2012 Apttus Inc. All rights reserved.
+ -->
+<apex:page controller="Apttus_DocuApi.DocuSignAccountSetupController"
+    showHeader="{!ShowHeader}" sidebar="true" cache="false"
+    tabStyle="Apttus_DocuApi__DocuSignEnvelope__c">
+
+    <apex:form id="idDocuSignAccountSetup">
+        <apex:pageBlock >
+            <apex:pageMessages />
+            <b><apex:outputText value="{!saveStatus}"/></b>
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:pageBlock >
+                        <apex:pageBlockButtons location="bottom">
+                            <apex:commandButton value="{!$Label.Apttus_DocuApi__Login}" action="{!doSave}" />
+                        </apex:pageBlockButtons>
+                        <apex:pageBlockSection columns="1"
+                            title="{!$Label.Apttus_DocuApi__LogintoExistingDSAccount}"
+                            showHeader="true" collapsible="false">
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="{!$Label.Apttus_DocuApi__Email}" for="idEmailOld" />
+                                <apex:inputText id="idEmailOld" value="{!docuSignUserName}" style="width:200px" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="{!$Label.Apttus_DocuApi__Password}" for="idPasswordOld" />
+                                <apex:inputSecret id="idPasswordOld"
+                                    value="{!docuSignUserpassword}" style="width:200px" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="{!$Label.Apttus_DocuApi__DocuSignAccountId}" for="idDocuSignAccount" />
+                                <apex:inputText id="idDocuSignAccount"
+                                    value="{!docuSignAccountId}" style="width:200px" />
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+
+                    </apex:pageBlock>
+                </apex:pageBlockSectionItem>
+                <!-- DSIGN 429 -->
+                <!-- <apex:pageBlockSectionItem >
+                    <apex:pageBlock >
+                        <apex:pageBlockButtons location="bottom">
+                            <apex:commandButton value="{!$Label.CreateAccount}" action="{!doCreateAccount}" disabled="{!hasAccount}"/>
+                        </apex:pageBlockButtons>
+                        
+                        <apex:pageBlockSection columns="1"
+                            title="{!$Label.CreateNewDSAccount}" showHeader="true"
+                            collapsible="false">
+                            
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="{!$Label.Apttus_DocuApi__Email}" for="idEmailNew" />
+                                <apex:outputText id="idEmailNew" value="{!userEmail}" />
+                            </apex:pageBlockSectionItem>
+                            
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="{!$Label.CompanyName}" for="idCompanyName" />
+                                <apex:outputText id="idCompanyName" value="{!userCompanyName}"/>
+                            </apex:pageBlockSectionItem>
+                            
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="{!$Label.FirstName}" for="idFirstName" />
+                                <apex:outputText id="idFirstName" value="{!userFirstName}"/>
+                            </apex:pageBlockSectionItem>
+                            
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="{!$Label.LastName}" for="idLastName" />
+                                <apex:outputText id="idLastName" value="{!userLastName}"/>
+                            </apex:pageBlockSectionItem>
+                            
+                            <apex:pageBlockSectionItem >
+                                <apex:inputCheckbox label="" value="{!agreeToTerms}"
+                                    id="idAgree" disabled="{!hasAccount}"/>
+                                    <apex:outputLink value="{!$Label.TermsAndConditionsLink}" title="{!$Label.AgreeToTermsAndConditions}" id="idTermsAndConditionsLink" target="_blank">
+                                        {!$Label.AgreeToTermsAndConditions}
+                                    </apex:outputLink>    
+                            </apex:pageBlockSectionItem>
+                            
+                        </apex:pageBlockSection>
+                    </apex:pageBlock>
+                </apex:pageBlockSectionItem>-->
+            </apex:pageBlockSection>
+            <apex:outputText id="idShowActivationMsg" value="{!$Label.Apttus_DocuApi__DocuSignAccountActivationMessage}" style="font-weight:bold;color:red" rendered="{!isAccountCreated}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

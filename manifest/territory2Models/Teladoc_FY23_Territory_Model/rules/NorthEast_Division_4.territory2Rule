@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Territory2Rule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <booleanFilter>(1 AND 4) OR (2 AND 5) OR (3 AND 6)</booleanFilter>
+    <name>NorthEast Division 4</name>
+    <objectType>Account</objectType>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Kent,NewCastle,Sussex</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Allegany,AnneArundel,Baltimore,BaltimoreCity,Calvert,Caroline,Carroll,Cecil,Charles,Dorchester,Frederick,Garrett,Harford,Howard,Kent,Montgomery,PrinceGeorges,QueenAnne&apos;s,SaintMarys,Somerset,Talbot,Washington,Wicomico,Worcester</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Adams,Allegheny,Beaver,Bedford,Berks,Bucks,Chester,Cumberland,Dauphin,Delaware,Fayette,Franklin,Fulton,Greene,Huntingdon,Juniata,Lancaster,Lebanon,Lehigh,Mifflin,Montgomery,Northampton,Perry,Philadelphia,Schuylkill,Somerset,Washington,Westmoreland,York</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>DE</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>MD</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>PA</value>
+    </ruleItems>
+</Territory2Rule>

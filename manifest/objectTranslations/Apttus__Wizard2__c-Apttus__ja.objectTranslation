@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Wizard Runtime View Fieldset --></label>
+        <name>Apttus__WizardRuntimeViewFieldset</name>
+    </fieldSets>
+    <fields>
+        <label>操作（非推奨）</label>
+        <name>Apttus__Action__c</name>
+    </fields>
+    <fields>
+        <help><!-- Context record this wizard record is associated with --></help>
+        <label>コンテキストId</label>
+        <name>Apttus__ContextId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Context type this wizard record is associated with --></help>
+        <label>コンテキストタイプ</label>
+        <name>Apttus__ContextType__c</name>
+    </fields>
+    <fields>
+        <help><!-- External id --></help>
+        <label>外部ID</label>
+        <name>Apttus__ExternalId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of this wizard runtime --></help>
+        <label>ステータス</label>
+        <name>Apttus__Status__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation><!-- Aborted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the user who submitted this runtime --></help>
+        <label>申請者</label>
+        <name>Apttus__SubmittedById__c</name>
+        <relationshipLabel>ウィザード</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to wizard design --></help>
+        <label>ウィザードデザイン</label>
+        <name>Apttus__WizardDesignId__c</name>
+        <relationshipLabel>ウィザード</relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Wizard Name --></nameFieldLabel>
+</CustomObjectTranslation>

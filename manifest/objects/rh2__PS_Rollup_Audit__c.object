@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Tracks field history on Date Sync</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>rh2__Blank_Overwrite__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether Rollup Helper will overwrite populated fields with a blank value.</description>
+        <inlineHelpText>Controls whether Rollup Helper will overwrite populated fields with a blank value.</inlineHelpText>
+        <label>Blank Overwrite fields</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__Dedup_Flag__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether Rollup Helper will deduplicate multipicklist values when rolling them up</description>
+        <inlineHelpText>Controls whether Rollup Helper will deduplicate multipicklist values when rolling them up</inlineHelpText>
+        <label>Dedup Flag</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__Disable_Realtime__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether the Rollup can be triggered in real-time.</description>
+        <inlineHelpText>Controls whether the Rollup can be triggered in real-time.</inlineHelpText>
+        <label>Disable Realtime Flag</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__Last_Activation_Change__c</fullName>
+        <deprecated>false</deprecated>
+        <description>String of the date and time the rollup&apos;s active status was changed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>String of the date and time the rollup&apos;s active status was changed</inlineHelpText>
+        <label>Last Activation Change</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__Last_Active_Status_Changed_By__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Who last changed the active status of this rollup</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Who last changed the active status of this rollup</inlineHelpText>
+        <label>Last Active Status Changed By</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__Last_Run_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Last Manual Rollup Run Date</description>
+        <externalId>false</externalId>
+        <label>Last Manual Rollup Run Date</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__Last_Run_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Last Manual Rollup Run Duration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Manual Rollup Run Duration</inlineHelpText>
+        <label>Last Manual Rollup Run Duration</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__Last_Run_User__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Last Manual Rollup Run User</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Manual Rollup Run User</inlineHelpText>
+        <label>Last Manual Rollup Run User</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__Null_counts_toward_average__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Determines whether a null counts as a zero when calculating an AVG Rollup.</description>
+        <inlineHelpText>Determines whether a null counts as a zero when calculating an AVG Rollup.</inlineHelpText>
+        <label>Nulls Count Toward Average</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__Number_Of_Manual_Runs__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of Manual Runs For Rollup</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__Number_Of_Past_Records__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of Records For Last Manual Rollup</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__Overwrite__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether Rollup Helper will overwrite populated fields.</description>
+        <inlineHelpText>Controls whether Rollup Helper will overwrite populated fields.</inlineHelpText>
+        <label>Overwrite fields</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__Parent_Record_Filter_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Manual Parent Filter Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__Remove_Trailing_Delimeters__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether Rollup Helper will trim any delimiters that would be placed at the end of the rolled-up text value.</description>
+        <inlineHelpText>Controls whether Rollup Helper will trim any delimiters that would be placed at the end of the rolled-up text value.</inlineHelpText>
+        <label>Remove Trailing Delimeters</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__RollupLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Label for the rollup (the value that is displayed to the user, as opposed to the name value which is used internally)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Label for the rollup (the value that is displayed to the user, as opposed to the name value which is used internally)</inlineHelpText>
+        <label>Rollup Label</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__Rollup_Groups__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rollup Group Names this rollup belongs to</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rollup Group Names this rollup belongs to</inlineHelpText>
+        <label>Rollup Groups</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__SourceFieldObject__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The sObject of the Lookup Field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The sObject of the Lookup Field</inlineHelpText>
+        <label>Source Field Object</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__appendTrailingWhitespace__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether TXT rollups will append a space at the end of each delimiter.</description>
+        <inlineHelpText>Controls whether TXT rollups will append a space at the end of each delimiter.</inlineHelpText>
+        <label>Append Trailing Whitespace</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__append__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether TXT rollups will append text while overwrite is turned off.</description>
+        <inlineHelpText>Controls whether TXT rollups will append text while overwrite is turned off.</inlineHelpText>
+        <label>Append to target field</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__childExistsCheckboxRollup__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, Rollup Helper will use the source field isDeleted to determine if a source record exists. 
+        If a source record exists on the target record, then the target field checkbox will be set to true. 
+        The target field will be set to false if no source records exist for the target record.</description>
+        <inlineHelpText>Checks the target checkbox if a source record exists</inlineHelpText>
+        <label>Child Exists Checkbox Rollup</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__condition__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the filter on this rollups, if one exists.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the filter on this rollups, if one exists.</inlineHelpText>
+        <label>Condition</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__conditional__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether the rollup is active.</description>
+        <inlineHelpText>Controls whether the rollup is active.</inlineHelpText>
+        <label>Active</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__conversionDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom conversion date for multicurrency orgs.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom conversion date for multicurrency orgs.</inlineHelpText>
+        <label>Conversion Date</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__createdBy__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The user that created the rollup.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The user that created the rollup.</inlineHelpText>
+        <label>Rollup Created By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__createdDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>String of the date and time the rollup was created.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>String of the date and time the rollup was created.</inlineHelpText>
+        <label>Rollup Created Date</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__delim__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores custom delimiter for concatenated rollups</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores custom delimiter for concatenated rollups</inlineHelpText>
+        <label>Delimiter</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__description__c</fullName>
+        <defaultValue>&quot;&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The description of the Rollup.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The description of the Rollup.</inlineHelpText>
+        <label>Description</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__disableDefaultMaxMinSort__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, sort orders from child filters or a custom sort field can be used instead of the default max/min sort. If unchecked, max/min rollup will be sorted by the source field.</description>
+        <inlineHelpText>If checked, sort orders from child filters or a custom sort field can be used instead of the default max/min sort. If unchecked, max/min rollup will be sorted by the source field.</inlineHelpText>
+        <label>Disable Default Max/Min Sort</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__disable_multipicklist_split__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether Rollup Helper will count each selection in a multipicklist as a separate child value.</description>
+        <inlineHelpText>Controls whether Rollup Helper will count each selection in a multipicklist as a separate child value.</inlineHelpText>
+        <label>Disable Multipicklist Split</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__enumerateResults__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether TXT rollups will number each child record value.</description>
+        <inlineHelpText>Controls whether TXT rollups will number each child record value.</inlineHelpText>
+        <label>Enumerate Text Rollup Results</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__escapeSpecialCharacters__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, will escape special reserved characters in SOQL</description>
+        <inlineHelpText>When checked, will escape special reserved characters in SOQL</inlineHelpText>
+        <label>Escape Special Characters</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__exceptionMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Contains any exceptions caused by this rollup</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains any exceptions caused by this rollup</inlineHelpText>
+        <label>Exception Message</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__intermediaryObjectName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The sObject of the Intermediary Lookup Field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The sObject of the Intermediary Lookup Field</inlineHelpText>
+        <label>Intermediary Object Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__intermediaryRelationshipFieldName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API Name of the Rollup&apos;s intermediary relationship field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the Rollup&apos;s intermediary relationship field</inlineHelpText>
+        <label>Intermediary Relationship Field Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__intermediaryRelationshipField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Lookup Relationship field on the intermediary object which points to the target object. For example: Opportunity.AccountId</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Lookup Relationship field on the intermediary object which points to the target object. For example: Opportunity.AccountId</inlineHelpText>
+        <label>Intermediary Relationship Field</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__isGrandchildRollup__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the rollup is a grandchild rollup.</description>
+        <inlineHelpText>Indicates whether the rollup is a grandchild rollup.</inlineHelpText>
+        <label>Is Grandchild Rollup</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__lastModifiedBy__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The user that last modified the rollup.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The user that last modified the rollup.</inlineHelpText>
+        <label>Rollup Last Modified By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__lastModifiedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>String of the date and time the rollup was last modified.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>String of the date and time the rollup was last modified.</inlineHelpText>
+        <label>Rollup Last Modified Date</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__logic__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of Rollup (MAX, MIN, SUM, etc.)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The type of Rollup (MAX, MIN, SUM, etc.)</inlineHelpText>
+        <label>Type</label>
+        <length>3</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__maxOrMinSortField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The field on the source object being sorted on in a MAX or MIN String rollup</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The field on the source object being sorted on in a MAX or MIN String rollup</inlineHelpText>
+        <label>Max / Min Sort Field</label>
+        <length>150</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__modeTiebreaker__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Mode Tiebreaker</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__parentCondition__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Parent Condition</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__queryArchive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether Rollup Helper queries for deleted records.</description>
+        <inlineHelpText>Controls whether Rollup Helper queries for deleted records.</inlineHelpText>
+        <label>Query Archive</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__relationshipFieldName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API Name of the Rollup&apos;s relationship field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the Rollup&apos;s relationship field</inlineHelpText>
+        <label>Relationship Field Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__relationshipField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Lookup Relationship field on the source object which points to the target object. For example: Opportunity.AccountId</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Lookup Relationship field on the source object which points to the target object. For example: Opportunity.AccountId</inlineHelpText>
+        <label>Relationship Field</label>
+        <length>100</length>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__rollupPicklistLabels__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Controls whether rollups from picklist source fields will rollup the label of the picklist value.</description>
+        <inlineHelpText>Controls whether rollups from picklist source fields will rollup the label of the picklist value.</inlineHelpText>
+        <label>Rollup Picklist Labels</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__rollup__c</fullName>
+        <defaultValue>&quot;&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The date sync for this audit record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date sync for this audit record.</inlineHelpText>
+        <label>Rollup</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__setZeroResultToNull__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, when no matching child records are found for SUM or AVG rollups, Rollup Helper will roll up the results as null instead of 0.</description>
+        <label>Roll Up Zero As Null</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rh2__sourceFieldName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API Name of the Rollup&apos;s source field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the Rollup&apos;s source field</inlineHelpText>
+        <label>Source Field Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__sourceFieldType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field type of the Rollup&apos;s source field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field type of the Rollup&apos;s source field</inlineHelpText>
+        <label>Source Field Type</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__sourceField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The field in which rollup results are sourced from. For example: Opportunity.Amount</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The field in which rollup results are sourced from. For example: Opportunity.Amount</inlineHelpText>
+        <label>Source Field</label>
+        <length>150</length>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__sourceObjectName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API Name of the Rollup&apos;s source object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the Rollup&apos;s source object</inlineHelpText>
+        <label>Source Object Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__targetCurrencyIso__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The ISO code of the currency that rollup results should be converted into.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The ISO code of the currency that rollup results should be converted into. Example: USD, CAD, GBP.</inlineHelpText>
+        <label>Target Currency ISO Code</label>
+        <length>3</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__targetFieldName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API Name of the Rollup&apos;s target field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the Rollup&apos;s target field</inlineHelpText>
+        <label>Target Field Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__targetFieldType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field type of the Rollup&apos;s target field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field type of the Rollup&apos;s target field</inlineHelpText>
+        <label>Target Field Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__targetField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The object/field combination in which rollup results are populated. For example: Account.Site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The object/field combination in which rollup results are populated. For example: Account.Site</inlineHelpText>
+        <label>Target Field</label>
+        <length>150</length>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__targetObjectName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API Name of the Rollup&apos;s target object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API Name of the Rollup&apos;s target object</inlineHelpText>
+        <label>Target Object Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__useCommaAndDelim__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, comma-separated rollup results will be formatted in the form &quot;one, two, and three.&quot; If unchecked, rollup results will be formatted as &quot;one, two, three.&quot;</description>
+        <inlineHelpText>If checked, comma-separated rollup results will be formatted in the form &quot;one, two, and three.&quot; If unchecked, rollup results will be formatted as &quot;one, two, three.&quot;</inlineHelpText>
+        <label>Use Comma-And Delimiter</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Rollup Audit</label>
+    <nameField>
+        <label>Rollup Audit Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Rollup Audits</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,104 @@
+<apex:page controller="texcellency.FieldMappingManagerController" showHeader="true" sidebar="true" action="{!initialize}">
+	<apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" />
+    <apex:includeScript value="{!$Resource.texcellency__defhc_client}" />
+    <apex:stylesheet value="{!$Resource.texcellency__def_styles}" />
+    <apex:stylesheet value="{!URLFOR($Resource.texcellency__dhc_styles, 'styles.css')}" />
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageMessages />
+			<apex:pageBlockSection >
+	           	<apex:pageBlockSectionItem >
+	                <apex:outputLabel for="objectType">Select Mapping Type</apex:outputLabel>
+	                <apex:selectList value="{!selectedObjectType}" id="objectType" size="1"
+	                    multiselect="false" required="true"> 
+	                    <apex:selectOptions value="{!ObjectTypes}"></apex:selectOptions>
+	                </apex:selectList>
+	            </apex:pageBlockSectionItem>
+	           	<apex:pageBlockSectionItem >
+	                <apex:outputLabel for="chkShowSystem">Show System Mappings</apex:outputLabel>
+	                <apex:inputCheckbox id="chkShowSystem" value="{!showSystemMappings}"/>
+	       		</apex:pageBlockSectionItem>
+<!-- 	       		<apex:pageBlockSectionItem>
+	                        <apex:outputLink value="/apex/APIFieldCatalog" target="_blank">View all API Fields</apex:outputLink>
+	       		</apex:pageBlockSectionItem>
+ -->        	</apex:pageBlockSection>
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!viewMappings}" value="View Mappings" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection columns="1">
+	            <apex:pageBlockTable value="{!fieldMappings}" var="fm">
+	                <apex:facet name="header">
+	                    <apex:outputPanel >
+	                        <apex:outputText value="Field Mappings" ></apex:outputText>
+	                    </apex:outputPanel>
+	                </apex:facet>
+	                <apex:column headerValue="Name" style="{!fm.NameStyle}">
+	                	<apex:outputText value="{!fm.FMW.Mapping.Name}" styleClass="{!fm.NameIcon}" title="{!fm.FMW.Mapping.Name}" />
+	            	</apex:column>
+	                <apex:column headerValue="Source" styleClass="{!fm.SourceStyle}">
+	                	<apex:outputText value="{!fm.FMW.Mapping.Source}" styleClass="{!fm.SourceIcon}" title="{!fm.FMW.Mapping.Source}" />
+	            	</apex:column>
+	                <apex:column headerValue="Destination" style="{!fm.DestinationStyle}">
+	                	<apex:outputText value="{!fm.FMW.Mapping.Destination}" 
+	                	styleClass="{!fm.DestinationIcon}"
+	                	title="{!fm.FMW.Mapping.Destination}" />
+	            	</apex:column>
+	                <apex:column >
+	                	<apex:facet name="header">
+	                		<apex:outputPanel >
+		                		<apex:outputText value="NEW " />
+		                		<apex:image value="/s.gif" styleClass="helpIcon" title="If set to true, this mapping will apply for new records being inserted. If false, it will not apply for new records. Flag value: 1" />
+	                		</apex:outputPanel>
+	                	</apex:facet>
+	                	<apex:inputCheckbox value="{!fm.FMW.Mapping.Chk_ApplyForNew}" disabled="true" />
+	                </apex:column>
+	                <apex:column >
+	                	<apex:facet name="header">
+	                		<apex:outputPanel >
+		                		<apex:outputText value="UPD " />
+		                		<apex:image value="/s.gif" styleClass="helpIcon" title="If set to true, this mapping will apply for existing records being updated. If false, it will not appply for updating records. Flag value: 2" />
+	                		</apex:outputPanel>
+	                	</apex:facet>
+	                	<apex:inputCheckbox value="{!fm.FMW.Mapping.Chk_ApplyForUpdate}" disabled="true" />
+	                </apex:column>
+	                <apex:column >
+	                	<apex:facet name="header">
+	                		<apex:outputPanel >
+		                		<apex:outputText value="NON DHC " />
+		                		<apex:image value="/s.gif" styleClass="helpIcon" title="If set to true, this mapping will apply for records who's Source is not equal to 'DefinitiveHC'. If false, mapping will not apply for records with a different Source value. Flag value: 4" />
+	                		</apex:outputPanel>
+	                	</apex:facet>
+	                	<apex:inputCheckbox value="{!fm.FMW.Mapping.Chk_ApplyForNonDHCSourcedRecords}" disabled="true" />
+	                </apex:column>
+	                <apex:column >
+	                	<apex:facet name="header">
+	                		<apex:outputPanel >
+		                		<apex:outputText value="OVWR NON DHC " />
+		                		<apex:image value="/s.gif" styleClass="helpIcon" title="If set to true, this mapping will apply for records who's Source is not equal to 'DefinitiveHC' and overwrite any existing value. If set to false, it will only write to the field if it is currently empty. Flag value: 8" />
+	                		</apex:outputPanel>
+	                	</apex:facet>
+	                	<apex:inputCheckbox value="{!fm.FMW.Mapping.Chk_OverwriteExitingValuesOfNonDHCTargets}" disabled="true" />
+	                </apex:column>
+	                <apex:column >
+	                	<apex:facet name="header">
+	                		<apex:outputPanel >
+		                		<apex:outputText value="SYSTEM " />
+		                		<apex:image value="/s.gif" styleClass="helpIcon" title="Indicates if this mapping is a system mapping. You can not alter system mappings." />
+	                		</apex:outputPanel>
+	                	</apex:facet>
+	                	<apex:inputCheckbox value="{!fm.IsSystem}" disabled="true" />
+	                </apex:column>
+	                <apex:column >
+	                	<apex:facet name="header">
+	                		<apex:outputPanel >
+		                		<apex:outputText value="Enabled " />
+		                		<apex:image value="/s.gif" styleClass="helpIcon" title="Indicates if this mapping is currently enabled. Disabled mappings are ignored by the application." />
+	                		</apex:outputPanel>
+	                	</apex:facet>
+	                	<apex:inputCheckbox value="{!fm.IsEnabled}" disabled="true" />
+	                </apex:column>
+	            </apex:pageBlockTable>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

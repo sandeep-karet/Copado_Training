@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Records to map User Role and Opportunity Channel Segment and Sub - Channel Segment.</description>
+    <fields>
+        <fullName>L2O_DefaultUserCurrency__c</fullName>
+        <description>To store the User&apos;s default currency ISO code.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Default User Currency</label>
+        <length>3</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L2O_Opportunity_Channel_Segment__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Opportunity Channel Segment</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L2O_Opportunity_Sub_Channel_Segment__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Opportunity Sub - Channel Segment</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>L2O_User_Role__c</fullName>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>User Role</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>User Role &amp; Opportunity Channel Mapping</label>
+    <pluralLabel>User Role &amp; Opportunity Channel Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

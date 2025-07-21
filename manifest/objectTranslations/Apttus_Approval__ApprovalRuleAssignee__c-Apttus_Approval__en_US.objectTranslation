@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Approval Rule Assignee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Approval Rule Assignees</value>
+    </caseValues>
+    <fields>
+        <help><!-- This field is set to true if this rule assignee should be auto-escalated by the system if it not approved, rejected, or reassigned by the expected completion date. --></help>
+        <label><!-- Assignee Auto Escalate --></label>
+        <name>Apttus_Approval__AssigneeAutoEscalate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignee Description --></label>
+        <name>Apttus_Approval__AssigneeDescription__c</name>
+    </fields>
+    <fields>
+        <help><!-- The id of the assignee the request will be escalated to if it is escalated at the rule assignee level. --></help>
+        <label><!-- Assignee Escalate To Id --></label>
+        <name>Apttus_Approval__AssigneeEscalateToId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the assignee the request will be escalated to if it is escalated at the rule assignee level. --></help>
+        <label><!-- Assignee Escalate To Name --></label>
+        <name>Apttus_Approval__AssigneeEscalateToName__c</name>
+    </fields>
+    <fields>
+        <help><!-- The type of assignee the request will be escalated to if it is escalated at the rule assignee level. --></help>
+        <label><!-- Assignee Escalate To Type --></label>
+        <name>Apttus_Approval__AssigneeEscalateToType__c</name>
+        <picklistValues>
+            <masterLabel>Backup Admin User</masterLabel>
+            <translation><!-- Backup Admin User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Related User</masterLabel>
+            <translation><!-- Related User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Approval Matrix Next Approver</masterLabel>
+            <translation><!-- User Approval Matrix Next Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Delegated Approver</masterLabel>
+            <translation><!-- User Delegated Approver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Manager</masterLabel>
+            <translation><!-- User Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The number of expected days that this approval rule assignee needs to be completed in (approved or rejected) before a request is automatically escalated. --></help>
+        <label><!-- Assignee Expected Days To Complete --></label>
+        <name>Apttus_Approval__AssigneeExpectedDaysToComplete__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of expected hours that this approval rule assignee needs to be completed in (approved or rejected) before a request is automatically escalated. --></help>
+        <label><!-- Assignee Expected Hours To Complete --></label>
+        <name>Apttus_Approval__AssigneeExpectedHoursToComplete__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the assignee. Only applicable for User, Role or Queue. Internally maintained by the application. --></help>
+        <label><!-- Assignee Id --></label>
+        <name>Apttus_Approval__AssigneeId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignee Label --></label>
+        <name>Apttus_Approval__AssigneeLabel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignee Type --></label>
+        <name>Apttus_Approval__AssigneeType__c</name>
+        <picklistValues>
+            <masterLabel>Approval Matrix</masterLabel>
+            <translation><!-- Approval Matrix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Queue</masterLabel>
+            <translation><!-- Custom Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Role</masterLabel>
+            <translation><!-- Custom Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom User</masterLabel>
+            <translation><!-- Custom User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Related User</masterLabel>
+            <translation><!-- Related User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Role</masterLabel>
+            <translation><!-- Role --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assignee Value --></label>
+        <name>Apttus_Approval__AssigneeValue2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignee Value (Deprecated) --></label>
+        <name>Apttus_Approval__AssigneeValue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Flag to indicate if the request should be auto approved --></help>
+        <label><!-- Auto Complete --></label>
+        <name>Apttus_Approval__AutoComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignee Depends On --></label>
+        <name>Apttus_Approval__DependsOn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Designates whether the assignee receives a notification only for the approval request (when set to true) or gets the request assigned to them and receives notification as well (false, which is the default). --></help>
+        <label><!-- Notify Only --></label>
+        <name>Apttus_Approval__NotifyOnly__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rule Entry --></label>
+        <name>Apttus_Approval__RuleEntryId__c</name>
+        <relationshipLabel><!-- Assignees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Send Email --></label>
+        <name>Apttus_Approval__SendEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Reminders --></label>
+        <name>Apttus_Approval__SendReminders__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignee Sequence --></label>
+        <name>Apttus_Approval__Sequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- When this box is checked if the assignee cannot be resolved at runtime then the step will be skipped instead of getting assigned to the Backup Admin. --></help>
+        <label><!-- Skip Unresolved Assignee --></label>
+        <name>Apttus_Approval__SkipUnresolvedAssignee__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

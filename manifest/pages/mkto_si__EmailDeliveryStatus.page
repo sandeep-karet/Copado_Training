@@ -1,0 +1,27 @@
+<apex:page controller="mkto_si.BaseSobjectController" tabStyle="Marketo__tab" showHeader="true" sidebar="true">
+  <c:CssAndJavascript2 />
+
+  <div class="mkt-page-container">
+    <c:SalesInsightsHeader />
+
+    <apex:outputPanel styleClass="mkt-page-content" rendered="{!!isSalesforceOne}" layout="block">
+
+      <apex:outputPanel styleClass="mkt-page-name" layout="block">
+        <apex:outputText value="{!$Label.mkto_si__email_delivery_status_for} {!currentSObjectName}" rendered="{!currentSObjectName != ''}" />
+        <apex:outputText value="{!$Label.mkto_si__email_delivery_status}" rendered="{!currentSObjectName == ''}" />
+      </apex:outputPanel>
+
+      <c:EmailDeliveryStatus sObjectId="{!currentSObjectId}"
+        sObjectType="{!currentSObjectType}"
+        sObjectName="{!HTMLENCODE(currentSObjectName)}"
+        rendered="{!!showExceededContactsNumberMessage}"
+      />
+
+      <c:BigAccountMessage rendered="{!showExceededContactsNumberMessage}"
+        mode="StatusPage"
+        maxContacts="{!maxContactsInAccount}"
+      />
+    </apex:outputPanel>
+
+  </div>
+</apex:page>

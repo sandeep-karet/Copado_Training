@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Step (Deprecated) --></value>
+    </caseValues>
+    <fields>
+        <help><!-- Signifies that the Step within a Wizard Design is Active. Setting Wizard Design as Active automatically activates the included steps. --></help>
+        <label>有効</label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defaults to Step Design label and is used by the Wizard Step Runtime as the banner. --></help>
+        <label>バナーステートメント</label>
+        <name>Apttus__BannerStatement__c</name>
+    </fields>
+    <fields>
+        <help><!-- Controlling the subcategory field, whose list values shall allow users to search, find, and select Steps --></help>
+        <label>カテゴリ</label>
+        <name>Apttus__Category__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Business object context, used to filter and align inputs. --></help>
+        <label>コンテキストオブジェクト</label>
+        <name>Apttus__ContextObject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of context, whether its All or Object. 
+All means that any input can be used in the step design. 
+Object means that only aligned (same object) inputs can be used in the step design. --></help>
+        <label>コンテキストタイプ</label>
+        <name>Apttus__ContextType__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Object</masterLabel>
+            <translation><!-- Object --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Describes the expected use of this step as a designer --></help>
+        <label>説明</label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <label>編集ビュー</label>
+        <name>Apttus__EditorView__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Input Name</masterLabel>
+            <translation><!-- Input Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Input Q / S</masterLabel>
+            <translation><!-- Input Q / S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Input Response</masterLabel>
+            <translation><!-- Input Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Input Sequence List</masterLabel>
+            <translation><!-- Input Sequence List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q / S &amp; Response</masterLabel>
+            <translation><!-- Q / S &amp; Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rule Editors</masterLabel>
+            <translation><!-- Rule Editors --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Additional field for use in search and selection --></help>
+        <label>キーワード</label>
+        <name>Apttus__Keywords__c</name>
+    </fields>
+    <fields>
+        <help><!-- Label for the Step in Design Time --></help>
+        <label>ラベル</label>
+        <name>Apttus__Label__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes what sequence should proceed this step in order to appear. In the form (1) (1 OR 2) (1 AND 2) etc. --></help>
+        <label>順位</label>
+        <name>Apttus__Precedence__c</name>
+    </fields>
+    <fields>
+        <help><!-- Line Items, Tables --></help>
+        <label>繰り返し可能</label>
+        <name>Apttus__Repeatable__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe what the runtime user can see as a help or instruction description of this Step. --></help>
+        <label>実行時間ヘルプテキスト</label>
+        <name>Apttus__RuntimeDescription__c</name>
+    </fields>
+    <fields>
+        <help><!-- The order in which the screen should be displayed to the user. --></help>
+        <label>ステップ順番</label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- Dependent on the category field, whose list values shall allow users to search, find, and select Steps --></help>
+        <label>サブカテゴリ</label>
+        <name>Apttus__Subcategory__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Step added to a wizard is in Transient state until the Wizard is saved. --></help>
+        <label>トランジェント</label>
+        <name>Apttus__Transient__c</name>
+    </fields>
+    <fields>
+        <label>種別</label>
+        <name>Apttus__Type__c</name>
+        <picklistValues>
+            <masterLabel>Input Control</masterLabel>
+            <translation><!-- Input Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rule</masterLabel>
+            <translation><!-- Rule --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Version number (counter) of step design. This identifies the step uniquely in the chronology of creation. --></help>
+        <label>バージョン</label>
+        <name>Apttus__Version__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to wizard this step belongs to. --></help>
+        <label>ウィザード</label>
+        <name>Apttus__WizardId__c</name>
+        <relationshipLabel>ウィザードステップ(ウィザード)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Wizard this step belongs to --></help>
+        <label>ウィザード</label>
+        <name>Apttus__Wizard__c</name>
+        <relationshipLabel>ウィザードステップ(ウィザード)</relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Step Name --></nameFieldLabel>
+</CustomObjectTranslation>

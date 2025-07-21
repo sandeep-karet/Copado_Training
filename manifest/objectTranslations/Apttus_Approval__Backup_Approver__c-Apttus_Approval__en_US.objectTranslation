@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Backup/Delegate Approver</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Backup/Delegate Approvers</value>
+    </caseValues>
+    <fields>
+        <help><!-- Action to activate or deactivate the backup --></help>
+        <label><!-- Backup/Delegate Action --></label>
+        <name>Apttus_Approval__Backup_Action__c</name>
+    </fields>
+    <fields>
+        <help><!-- The backup/delegate user for the current user. --></help>
+        <label><!-- Backup/Delegate User --></label>
+        <name>Apttus_Approval__Backup_User__c</name>
+        <relationshipLabel><!-- Backup/Delegate Approvers (Backup/Delegate User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The date on which approval requests will stop getting assigned to the backup/delegate. --></help>
+        <label><!-- Cancellation Date --></label>
+        <name>Apttus_Approval__Cancellation_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a comment to the person you are setting as your backup/delegate. --></help>
+        <label><!-- Comment --></label>
+        <name>Apttus_Approval__Comment__c</name>
+    </fields>
+    <fields>
+        <help><!-- The user who for whom the backup or delegate approver applies. --></help>
+        <label><!-- Current User --></label>
+        <name>Apttus_Approval__Current_User__c</name>
+        <relationshipLabel><!-- Backup/Delegate Approvers (Current User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- IDs of approvers who are designated as delegates of the current user. --></help>
+        <label><!-- Delegate Users --></label>
+        <name>Apttus_Approval__DelegateUserIds__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter an effective date only if you are not activating it immediately. Otherwise use the Activate button to activate the backup/delegate approver immediately. --></help>
+        <label><!-- Effective Date --></label>
+        <name>Apttus_Approval__Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter an expiration date only if you need the system to expire it automatically at a future date. Otherwise use the Deactivate button to cancel the backup/delegate immediately. --></help>
+        <label><!-- Expiration Date --></label>
+        <name>Apttus_Approval__Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked this means this backup/delegate is in effect.  A backup/delegate can be active, in effect, or both.  In order for requests to be actively assigned to the backup/delegate they must be active and in effect. --></help>
+        <label><!-- In Effect --></label>
+        <name>Apttus_Approval__InEffect__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked this means this backup/delegate is active but not necessarily in effect.  A backup/delegate can be active, in effect, or both.  In order for requests to be actively assigned to the backup/delegate they must be active and in effect. --></help>
+        <label><!-- Is Active --></label>
+        <name>Apttus_Approval__IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- If unchecked, requests assigned to the current user get assigned to the backup instead.  When checked, requests assigned to the current user remain assigned to them but their delegates are notified and can take action on the requests as well. --></help>
+        <label><!-- Is Delegate --></label>
+        <name>Apttus_Approval__IsDelegate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicator to enable/disable notification to Delegate Approver. --></help>
+        <label><!-- Suppress Delegate Notification --></label>
+        <name>Apttus_Approval__SuppressDelegateNotification__c</name>
+    </fields>
+    <fields>
+        <help><!-- All in-flight and pending approval requests will be directed to the person designated as backup/delegate. --></help>
+        <label><!-- Transfer in-flight --></label>
+        <name>Apttus_Approval__Transfer_in_flight__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Activate --></label>
+        <name>Apttus_Approval__Activate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Cancel --></label>
+        <name>Apttus_Approval__Cancel</name>
+    </webLinks>
+</CustomObjectTranslation>

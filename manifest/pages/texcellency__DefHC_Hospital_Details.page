@@ -1,0 +1,56 @@
+<apex:page standardController="Account"
+    extensions="texcellency.AccountDefHospitalExtension">
+    <apex:stylesheet value="{!$Resource.texcellency__def_styles}" />
+    <apex:pageblock title="Definitive Hospital Details">
+        <apex:pageblockSection columns="2" rendered="{!isHospitalAttached}">
+            <apex:pageblockSectionItem >
+                <apex:outputLabel for="hid">DHC_ID</apex:outputLabel>
+                <apex:outputText value="{0, number, ########}" id="hid">
+                    <apex:param value="{!account.texcellency__DefHC_HospitalID__c}" />
+                </apex:outputText>
+            </apex:pageblockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="networkId">Network ID</apex:outputLabel>
+                <apex:outputText value="{!account.texcellency__DefHC_NetworkID__c}"
+                    id="networkId" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="profile">Profile</apex:outputLabel>
+                <apex:outputlink value="{!account.texcellency__DefHC_Hospital_Profile__c}"
+                    id="profile" target="_blank">{!account.texcellency__DefHC_Hospital_Profile__c}</apex:outputlink>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="networkName">Network Name</apex:outputLabel>
+                <apex:outputText value="{!account.texcellency__DefHC_Network_Name__c}"
+                    id="networkName" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="netRevenue">Number of Beds</apex:outputLabel>
+                <apex:outputText value="{!account.texcellency__DefHC_NumBeds__c}" id="netRevenue" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="networkId">Parent Network ID</apex:outputLabel>
+                <apex:outputText value="{!account.texcellency__DefHC_Parent_NetworkID__c}"
+                    id="networkId" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="networkName">Parent Network Name</apex:outputLabel>
+                <apex:outputText value="{!account.texcellency__DefHC_Parent_Network_Name__c}"
+                    id="networkName" />
+            </apex:pageBlockSectionItem>
+        </apex:pageblockSection>
+        <apex:pageBlockSection columns="1" rendered="{!!isHospitalAttached}">
+            This Account is not currently linked to a Definitive Healthcare Record, please click Import DHC Data to link the account and allow for importing of data.
+        </apex:pageBlockSection>
+        <apex:facet name="header">
+            <apex:outputPanel styleClass="dh_title">
+                <apex:image url="{!$Resource.texcellency__def_logo_small}"
+                    styleClass="dh_logoSmall" />
+                <h3>Definitive Healthcare</h3>
+            </apex:outputPanel>
+        </apex:facet>
+    </apex:pageblock>
+</apex:page>

@@ -1,0 +1,56 @@
+<!-- This Component is for Quote Line Items values for Email Template -->
+<!-- L2O_ApprovalController is the controller class for this component -->
+<apex:component access="global" controller="L2O_ApprovalController">
+    <!-- quoteIdValue contains the quote Id, for which Email Template needs to be sent. -->
+    <apex:attribute name="quoteIdValue" type="String" description="This is the Id of the quote" assignTo="{!quoteId}" access="global" />
+    <!-- Table Borders and styling -->
+	<table class="table" border="1" style="border-collapse: separate">
+            <thead>    
+                 <!-- Table Headers for Quote Line Items -->
+                <tr>
+                    <th>Quote Line</th>
+                    <th>Product</th>
+                    <th>Parent Product Code</th>
+                    <th>Quantity</th>
+                    <th>List Unit Price ($) </th>
+                    <th>Per Unit Discount (%) </th>
+                    <th>Subscription Fee ($)</th>
+                    <th>Consult Fee ($) </th>
+                    <th>Effective Start Date </th>
+                    <th>Net Total ($)</th>
+                </tr>
+            </thead>        
+            <tbody>
+                <!-- Table Body for Quote Line Items -->
+            <tr>
+                <!-- Iterate over the lineItems -->
+            	<apex:repeat value="{!lineItems}" var="lineItem"> 
+                    <!-- lineItem variable contains quote lines values -->
+                	<tr>
+                         <!-- QuoteLine Name -->
+                    	<td><apex:outputlink value="{!lineItem.SBQQ__Quote__r.L2O_ORG_LINK__c+lineItem.Id}">{!lineItem.Name}</apex:outputlink></td>
+                        <!-- Product Name -->
+                    	<td>{!lineItem.SBQQ__ProductName__c}</td>
+                        <!-- Parent Product Code -->
+                    	<td>{!lineItem.L2O_Parent_Product_Code__c}</td>
+                         <!-- Product Quantity Name -->
+                        <td>{!lineItem.SBQQ__Quantity__c}</td>
+                         <!-- Product List Price-->
+                        <td>{!lineItem.SBQQ__ListPrice__c}</td>
+                         <!-- Per Unit Discount -->
+                        <td>{!lineItem.L2O_Per_Unit_Discount__c}</td>
+                        <!-- Subscription Fee -->
+                        <td>{!lineItem.L2O_Membership_Fee__c}</td>
+                        <!-- Consult Fee -->
+                        <td>{!lineItem.L2O_Consult_Fee__c}</td>
+                        <!-- Effective Start Date -->
+                        <td><apex:outputText value="{0,date,MM-dd-yyyy}">
+                            <apex:param value="{!lineItem.SBQQ__EffectiveStartDate__c}"/></apex:outputText></td>
+                        <!-- Product Net Total -->
+                        <td>{!lineItem.SBQQ__NetTotal__c}</td> 
+                    </tr>
+            	</apex:repeat>                                             
+           </tr>           
+            </tbody>   
+	</table>
+</apex:component>

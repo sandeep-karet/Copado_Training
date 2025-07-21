@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Template --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Batch Template Publish Result FieldSet --></label>
+        <name>Apttus__BatchTemplatePublishResultFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Browse Templates Result FieldSet --></label>
+        <name>Apttus__BrowseTemplatesResultFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Checkin Template Field Set --></label>
+        <name>Apttus__CheckinTemplateFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Create Template Field Set --></label>
+        <name>Apttus__CreateTemplateFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Template List Column Field Set --></label>
+        <name>Apttus__TemplateListColumnFieldSet</name>
+    </fieldSets>
+    <fields>
+        <label>有効バージョン</label>
+        <name>Apttus__ActivateVersion__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to active version of the template --></help>
+        <label>有効バージョン</label>
+        <name>Apttus__ActiveVersionId__c</name>
+        <relationshipLabel>テンプレート（テンプレート版）</relationshipLabel>
+    </fields>
+    <fields>
+        <label>合意種別</label>
+        <name>Apttus__Agreement_Types__c</name>
+        <picklistValues>
+            <masterLabel>BAA StandAlone</masterLabel>
+            <translation><!-- BAA StandAlone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer Service Agreement - Self Service PDF</masterLabel>
+            <translation><!-- Employer Service Agreement - Self Service PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer Services Agreement</masterLabel>
+            <translation><!-- Employer Services Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equipment Schedule</masterLabel>
+            <translation><!-- Equipment Schedule --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HHS Order Form Agreement</masterLabel>
+            <translation><!-- HHS Order Form Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HHS Services Agreement</masterLabel>
+            <translation><!-- HHS Services Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Disclosure Agreement</masterLabel>
+            <translation><!-- Non Disclosure Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Disclosure Agreement - Self Service PDF</masterLabel>
+            <translation><!-- Non Disclosure Agreement - Self Service PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Form</masterLabel>
+            <translation><!-- Order Form --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The API name of the business object associated with the template --></help>
+        <label>商品構成</label>
+        <name>Apttus__BusinessObject__c</name>
+        <picklistValues>
+            <masterLabel>Apttus_Proposal__Proposal__c</masterLabel>
+            <translation><!-- Apttus_Proposal__Proposal__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apttus__APTS_Agreement__c</masterLabel>
+            <translation><!-- Apttus__APTS_Agreement__c --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>カテゴリ</label>
+        <name>Apttus__Category__c</name>
+        <picklistValues>
+            <masterLabel>BAA Standalone</masterLabel>
+            <translation><!-- BAA Standalone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer Services Agreement</masterLabel>
+            <translation><!-- Employer Services Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial</masterLabel>
+            <translation><!-- Financial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Guarantee</masterLabel>
+            <translation><!-- Performance Guarantee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Term/Termination</masterLabel>
+            <translation><!-- Term/Termination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- User who has checked out the template --></help>
+        <label>チェックアウトした人</label>
+        <name>Apttus__CheckoutById__c</name>
+        <relationshipLabel>テンプレート</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Date when the template was checked out --></help>
+        <label>チェックアウト日</label>
+        <name>Apttus__CheckoutDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Version id that the user checked out for edit --></help>
+        <label>チェックアウトバージョン</label>
+        <name>Apttus__CheckoutVersionId__c</name>
+        <relationshipLabel>テンプレート（チェックアウト版）</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field is currently applicable only for read-only clauses. Set the field value as Default to indicate the read-only clause cannot be deleted. Set the field value as Delete Read-only to permit users to delete the read-only clause. --></help>
+        <label><!-- Clause Behavior --></label>
+        <name>Apttus__ClauseBehavior__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delete Read-Only</masterLabel>
+            <translation><!-- Delete Read-Only --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Type of clause --></help>
+        <label><!-- Clause Type --></label>
+        <name>Apttus__ClauseType__c</name>
+        <picklistValues>
+            <masterLabel>Alternate Clause</masterLabel>
+            <translation><!-- Alternate Clause --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- ID of the clause or template this was cloned from --></help>
+        <label>コピー元</label>
+        <name>Apttus__ClonedFromId__c</name>
+        <relationshipLabel>コピー</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference identifier of the clause or template this was cloned from --></help>
+        <label>参照からコピー</label>
+        <name>Apttus__ClonedFromReferenceId__c</name>
+    </fields>
+    <fields>
+        <label>説明</label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enables tracking of agreement clause changes --></help>
+        <label>合意概要条項の追跡</label>
+        <name>Apttus__EnableAgreementClauseTracking__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies the child objects to exclude for a given parent from the merge process. Only applicable when a child object has multiple parents. --></help>
+        <label>除外済マージオブジェクト（子）</label>
+        <name>Apttus__ExcludedMergeChildObjects__c</name>
+    </fields>
+    <fields>
+        <help><!-- Template framework format --></help>
+        <label>フレームワークフォーマット</label>
+        <name>Apttus__FrameworkFormat__c</name>
+        <picklistValues>
+            <masterLabel>FX2</masterLabel>
+            <translation><!-- FX2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre FX2</masterLabel>
+            <translation><!-- Pre FX2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>ガイダンス</label>
+        <name>Apttus__Guidance__c</name>
+    </fields>
+    <fields>
+        <label>有効</label>
+        <name>Apttus__IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if the template is a transient record. Usually when a template is created without checking in the document --></help>
+        <label>一時的</label>
+        <name>Apttus__IsTransient__c</name>
+    </fields>
+    <fields>
+        <label>キーワード</label>
+        <name>Apttus__Keywords__c</name>
+    </fields>
+    <fields>
+        <label>言語</label>
+        <name>Apttus__Language__c</name>
+        <picklistValues>
+            <masterLabel>Chinese (Simplified)</masterLabel>
+            <translation><!-- Chinese (Simplified) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chinese (Traditional)</masterLabel>
+            <translation><!-- Chinese (Traditional) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dutch</masterLabel>
+            <translation><!-- Dutch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English</masterLabel>
+            <translation><!-- English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>French</masterLabel>
+            <translation><!-- French --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>German</masterLabel>
+            <translation><!-- German --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italian</masterLabel>
+            <translation><!-- Italian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japanese</masterLabel>
+            <translation><!-- Japanese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Korean</masterLabel>
+            <translation><!-- Korean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portugese (Brazilian)</masterLabel>
+            <translation><!-- Portugese (Brazilian) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spanish</masterLabel>
+            <translation><!-- Spanish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swedish</masterLabel>
+            <translation><!-- Swedish --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>ロケール</label>
+        <name>Apttus__Locale__c</name>
+        <picklistValues>
+            <masterLabel>Chinese</masterLabel>
+            <translation><!-- Chinese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English (Canada)</masterLabel>
+            <translation><!-- English (Canada) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English (Ireland)</masterLabel>
+            <translation><!-- English (Ireland) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English (United Kingdom)</masterLabel>
+            <translation><!-- English (United Kingdom) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English (United States)</masterLabel>
+            <translation><!-- English (United States) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>German</masterLabel>
+            <translation><!-- German --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greek(Greece)</masterLabel>
+            <translation><!-- Greek(Greece) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italian</masterLabel>
+            <translation><!-- Italian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japanese</masterLabel>
+            <translation><!-- Japanese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Korean</masterLabel>
+            <translation><!-- Korean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Norwegian</masterLabel>
+            <translation><!-- Norwegian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Polish</masterLabel>
+            <translation><!-- Polish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portuguese</masterLabel>
+            <translation><!-- Portuguese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russian</masterLabel>
+            <translation><!-- Russian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spanish</masterLabel>
+            <translation><!-- Spanish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swedish</masterLabel>
+            <translation><!-- Swedish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thai</masterLabel>
+            <translation><!-- Thai --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Merge fields used both in the template and clauses nested in the template. Automatically maintained by the Apttus Author. --></help>
+        <label>マージフィールド</label>
+        <name>Apttus__Mergefields2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Merge fields used in the template. --></help>
+        <label>マージフィールド（内部）</label>
+        <name>Apttus__Mergefields__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the template needs to be published. --></help>
+        <label>公開が必要</label>
+        <name>Apttus__NeedsPublishing__c</name>
+    </fields>
+    <fields>
+        <label>次回改定日</label>
+        <name>Apttus__Next_Revision_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the number of clauses associated with the template --></help>
+        <label>条項数</label>
+        <name>Apttus__NumberOfClauses__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Visualforce page to render a simple document in PDF format --></help>
+        <label>出力ページ</label>
+        <name>Apttus__OutputPage__c</name>
+    </fields>
+    <fields>
+        <label>公開済みドキュメントID</label>
+        <name>Apttus__PubDocId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The template publish status --></help>
+        <label>公開ステータス</label>
+        <name>Apttus__PublishStatus__c</name>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Published</masterLabel>
+            <translation><!-- Published --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>公開</label>
+        <name>Apttus__Publish__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date when the template was published --></help>
+        <label>公開日</label>
+        <name>Apttus__PublishedDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- A unique external reference identifier --></help>
+        <label>参照</label>
+        <name>Apttus__ReferenceId__c</name>
+    </fields>
+    <fields>
+        <label>サブカテゴリ</label>
+        <name>Apttus__Subcategory__c</name>
+        <picklistValues>
+            <masterLabel>Chronic Condition Management</masterLabel>
+            <translation><!-- Chronic Condition Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer</masterLabel>
+            <translation><!-- Employer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HHS</masterLabel>
+            <translation><!-- HHS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virtual Care Services</masterLabel>
+            <translation><!-- Virtual Care Services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- ID of the term exception associated with the clause or section --></help>
+        <label>例外条項</label>
+        <name>Apttus__TermExceptionId__c</name>
+        <relationshipLabel>セクション/条項</relationshipLabel>
+    </fields>
+    <fields>
+        <label>テキスト内容</label>
+        <name>Apttus__TextContent__c</name>
+    </fields>
+    <fields>
+        <label>種別</label>
+        <name>Apttus__Type__c</name>
+        <picklistValues>
+            <masterLabel>Agreement</masterLabel>
+            <translation><!-- Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clause</masterLabel>
+            <translation><!-- Clause --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposal</masterLabel>
+            <translation><!-- Proposal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Section</masterLabel>
+            <translation><!-- Section --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supporting Document</masterLabel>
+            <translation><!-- Supporting Document --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>未公開</label>
+        <name>Apttus__Unpublish__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <nameFieldLabel><!-- Name --></nameFieldLabel>
+</CustomObjectTranslation>

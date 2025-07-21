@@ -1,0 +1,42 @@
+<!-- 
+    Conga Approvals
+    AgreementTermExApprovalSummary
+     
+    @2010-2021 Conga Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus_Approval__Approval_Request__c"
+           extensions="Apttus_Approval.AgreementTermExApprovalSummaryController"
+           showHeader="true" 
+           sidebar="true"
+           cache="false" 
+           tabstyle="Apttus_Approval__Approval_Request__c" >
+           
+    <apex:sectionHeader title="{!$Label.Apttus_Approval__ApprovalRequest}" 
+                        subtitle="{!$ObjectType.Apttus__Agreement_Term_Exception__c.Label} {!Apttus_Approval__Approval_Request__c.Related_Agreement_Term_Exception__r.Name}"/>
+    
+    <apex:pageBlock title="{!$ObjectType.Apttus__Agreement_Term_Exception__c.Label} {!$Label.Apttus_Approval__Information}">
+        
+        <apex:pageBlockSection columns="1">
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement_Term_Exception__r.Apttus__Agreement__c}"/>
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement_Term_Exception__r.Apttus__Agreement__r.Apttus__Account__c}"/>
+            <!--<apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.AgreementType}" 
+                                  for="idAgreementType" />
+                <apex:outputText id="idAgreementType" value="{AgreementRecordType}" />
+            </apex:pageBlockSectionItem>-->
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement_Term_Exception__r.Apttus__Agreement__r.OwnerId}"/>
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement_Term_Exception__r.Apttus__Exception_Name__c}"/>
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement_Term_Exception__r.Apttus__Exception__c}"/>
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement_Term_Exception__r.Apttus__Description__c}"/>
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement_Term_Exception__r.Apttus__Comments__c}"/>
+            <p/>&nbsp;
+        </apex:pageBlockSection>
+        
+        <apex:include pageName="Apttus_Approval__ApprovalAction" />
+        
+    </apex:pageBlock>
+    
+    <apex:include pageName="Apttus_Approval__ApprovalRequestsList"/>
+        
+</apex:page>

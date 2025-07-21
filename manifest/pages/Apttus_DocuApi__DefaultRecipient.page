@@ -1,0 +1,59 @@
+<!-- 
+    Apttus DocuSign API
+    DefaultRecipient
+     
+    @2013-2014 Apttus Inc. All rights reserved.
+	
+	parameters
+    ==========
+    Name			| Required | Description
+    ================|==========|======================================================================================
+    id 				| Yes      | The record id of the parent context (either agreement or quote/proposal)
+                    |          |
+    recordTypeId    | No       | The id of the recipient record type. If this parameter is not provided, the record type 
+                    |          | selection page may be displayed if there are more than one record type to choose from.
+                    |          |
+    ===================================================================================================================
+    
+ -->
+<apex:page controller="Apttus_DocuApi.DefaultRecipientController" 
+		    >
+	
+	<apex:form >
+		<apex:outputPanel id="message">
+            <p/>
+            <apex:outputText value="{!$Label.Apttus_DocuApi__SelectRecipientRecordTypeInstruction}" /> <p/>
+        </apex:outputPanel>
+		<apex:pageBlock title="{!$Label.Apttus_DocuApi__SelectRecipientRecordType}" mode="edit">
+			<apex:pageMessages />
+			<apex:pageBlockButtons location="bottom" >
+				<apex:commandButton action="{!doContinue}" 
+									value="{!$Label.Apttus_DocuApi__Continue}" />
+				<apex:commandButton action="{!doCancel}" 
+									value="{!$Label.Apttus_DocuApi__Cancel}" 
+									immediate="true"/>
+			</apex:pageBlockButtons>
+			<apex:outputLabel >{!$Label.RecordTypeOfNewRecord} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</apex:outputLabel>
+			<apex:selectList value="{!recordTypeId}" size="1" required="true">
+				<apex:selectOptions value="{!RecordTypeItems}" />
+			</apex:selectList>
+		</apex:pageBlock>
+		<apex:outputPanel id="info">
+			<p/>
+			<apex:outputText style="font-weight: bold" value="{!$Label.Apttus_DocuApi__AvailableRecipientRecordTypes}" /><p/>
+        </apex:outputPanel>
+		<apex:pageBlock mode="detail">
+		<apex:pageBlockTable value="{!RecordTypes}" 
+							 var="item" 
+							 columns="2">
+				<apex:column headerValue="{!$Label.Apttus_DocuApi__RecordTypeName}" >
+					<apex:outputText value="{!item.Name}"/>
+				</apex:column>
+				<apex:column headerValue="{!$ObjectType.RecordType.Fields.Description.Label}" >
+					<apex:outputText value="{!item.Description}"/>
+				</apex:column>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+	</apex:form>
+	
+</apex:page>

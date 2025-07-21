@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Wizard Runtime (Deprecated)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Wizard Runtime</value>
+    </caseValues>
+    <fields>
+        <help><!-- Indicates status of a wizard as being completed or in progress --></help>
+        <label><!-- Completed --></label>
+        <name>Apttus__Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this action to continue an In-Progress wizard --></help>
+        <label><!-- Continue --></label>
+        <name>Apttus__Continue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this action to review a completed wizard --></help>
+        <label><!-- Review --></label>
+        <name>Apttus__Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference/Lookup to wizard design --></help>
+        <label><!-- Wizard --></label>
+        <name>Apttus__WizardId__c</name>
+        <relationshipLabel><!-- Wizard Runtime --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Auto number (counter) of Wizard runtime. This identifies the Wizard runtime uniquely in the chronology of creation. --></help>
+        <label><!-- Wizard Instance Number --></label>
+        <name>Apttus__WizardInstanceNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference/Lookup to start step --></help>
+        <label><!-- Wizard Step --></label>
+        <name>Apttus__WizardStepStartId__c</name>
+        <relationshipLabel><!-- Wizard Runtime --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

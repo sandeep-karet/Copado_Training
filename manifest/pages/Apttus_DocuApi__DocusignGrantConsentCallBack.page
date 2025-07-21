@@ -1,0 +1,53 @@
+<!-- 
+    Conga DocuSign API 
+    DocusignGrantConsentCallBack
+       
+    @2022 Conga Inc. All rights reserved.
+ -->
+<apex:page controller="Apttus_DocuApi.DocusignGrantContentController" action="{!doRedirect}" >
+    <style>
+
+        .message {
+            justify-content:unset !important;
+        }
+
+        .authHeader {
+            padding: 15px 10px !important;
+            background-color: white;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .ptBody {
+            padding-bottom: 0.25rem !important;
+        }
+
+        .sfdcBody {
+            background-color: white !important;
+        }
+
+    </style>
+    <apex:stylesheet value="{!URLFOR($Resource.Apttus_DocuApi__LightningResource, 'css/DocusignSendForESignature.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.Apttus_DocuApi__LightningResource,'css/page-icon.css')}" />
+<apex:form >
+        <div class="bPageTitle bpageTitleExtra authHeader">
+            <div class="ptBody">
+                <div class="content">
+                    <img src="{!URLFOR($Resource.LightningResource, '/images/headericons/Admin.png')}" class="pageIconPadding" />
+                    <h1 class="pageType">{!$Label.AuthenticationSetting}</h1>
+                    <h2 class="pageDescription">{!$Label.DocuSignAuthentication}</h2>
+                </div>
+            </div>
+        </div>
+        <apex:pageBlock rendered="{!!isError}" >
+            <apex:pageMessage summary="Consent is provided successfully" title="{!$Label.Apttus_DocuApi__DocuSignConsentApproved}" severity="confirm" strength="3" />
+            <div>
+                <apex:commandButton value="{!$Label.Apttus_DocuApi__SaveAndContinue}" action="{!redirectToDocusignPage}" />
+            </div>
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!isError}" >
+            <apex:pageMessage summary="Consent is not provided" title="You need to provide consent to move forward" severity="warning" strength="3" />            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

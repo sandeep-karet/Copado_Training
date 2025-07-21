@@ -1,0 +1,105 @@
+<!-- 
+    Apttus DocuSign API 
+    DocuSignRecallEnvByEnvId
+       
+    @2010-2014 Apttus Inc. All rights reserved.
+ -->
+<apex:page Controller="Apttus_DocuApi.DocuSignRecallEnvByEnvIdController"
+            showHeader="true"
+            sidebar="true" 
+            standardStylesheets="true"    
+            cache="false"  
+            tabStyle="Apttus_DocuApi__DocuSignEnvelope__c">
+
+    <head>
+        <style type="text/css">
+
+        .contentcenter {
+            align:center;
+        }
+
+        .logainImage {
+            vertical-align: test-middle; 
+            margin: 10px;
+        }
+
+        .textmiddle {
+            vertical-align: middle; 
+            margin: 10px;
+        }
+
+        #page_header{
+            font-family: proxima-nova, sans-serif;
+            font-weight: lighter;
+            text-align: left;
+            font-size: 24px;
+        }
+
+        #header_text{
+            margin-top: 8px;
+        }
+
+        .body_text{
+            font-family: proxima-nova, sans-serif;
+            font-size: 15px;
+            padding-top: 10px;
+            font-weight: lighter;
+        }
+
+        .body_text input{
+            background: #31A6DE;
+            border: solid 1px #009FDE;
+            color: white;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            font-size: 14px;
+            padding: 4px 15px 4px 15px;
+            margin: 5px 5px 5px 5px;
+        }
+
+        .body_text > .no_button{
+            background: white;
+            border: solid 1px #E8E8E8;
+            color: #3D5A70;
+            font-size: 14px;
+        }
+        
+        .standard_input {
+             font-family: proxima-nova, sans-serif;
+             font-size: 14px;
+             width: 35%;
+             border: 1px solid #cecece;
+             border-radius: 5px;
+             -moz-border-radius: 5px;
+             padding: 7px;
+             color: #758495;
+             outline: none;
+         }
+
+        </style>
+    </head>
+    <apex:form >
+		    <apex:outputPanel id="recallSuccessMessage">
+					<script type="text/javascript">
+							function recallSuccesful()
+							{
+								alert('{!$Label.RecallEnvelopeSuccessfulMessage}');
+							}
+					</script>
+				</apex:outputPanel>
+				<apex:actionFunction name="cancelEnvelopeById" action="{!cancelEnvelopeById}" rerender="recallSuccessMessage"/>
+        <div id="header_text">
+            <h1 id="page_header">{!$Label.Apttus_DocuApi__RecallEnvelopeHeader}</h1>
+        </div>
+        <div class="body_text">
+            <p>{!$Label.Apttus_DocuApi__RecallEnvelopeMessage}</p>
+            <apex:commandButton value="{!$Label.Apttus_DocuApi__RecallEnvelopeYes}" id="yes_button" styleClass="yes_button" onclick="cancelEnvelopeById();" oncomplete="recallSuccesful();"/>
+            <apex:commandButton action="{!doCancel}" value="{!$Label.Apttus_DocuApi__RecallEnvelopeNo}" id="no_button" styleClass="no_button"/>   
+        </div>
+        <div>
+        	<apex:inputTextArea styleClass="standard_input" html-placeholder="{!$Label.Apttus_DocuApi__RecallReason}" id="void_reason" html-maxlength="200" rows="5" cols="40" value="{!voidReason}" />
+        </div>
+    </apex:form>
+
+</apex:page>

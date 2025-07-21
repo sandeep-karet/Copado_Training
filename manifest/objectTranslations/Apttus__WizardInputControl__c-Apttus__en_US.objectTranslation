@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Wizard Input Control (Deprecated)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Wizard Input Controls</value>
+    </caseValues>
+    <fields>
+        <help><!-- Signifies that the Input control within a step is Active. Setting Wizard Design as Active automatically activates the included input controls. --></help>
+        <label><!-- Active --></label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Controlling the subcategory field, whose list values shall allow users to search, find, and select Input Controls --></help>
+        <label><!-- Category --></label>
+        <name>Apttus__Category__c</name>
+        <picklistValues>
+            <masterLabel>Category 1</masterLabel>
+            <translation><!-- Category 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Business object context, used to filter and align inputs within steps and wizard designs. --></help>
+        <label><!-- Context Object --></label>
+        <name>Apttus__ContextObject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of context, whether its All or Object. 
+All means that this input can be used in any step design. 
+Object means that this input can be used only in aligned (same object) step design. --></help>
+        <label><!-- Context Type --></label>
+        <name>Apttus__ContextType__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Object</masterLabel>
+            <translation><!-- Object --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Place a desired default response value here or leave blank --></help>
+        <label><!-- Default Response --></label>
+        <name>Apttus__DefaultResponse__c</name>
+    </fields>
+    <fields>
+        <help><!-- For the user to understand the intended use of the Input Control --></help>
+        <label><!-- Description --></label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Wizard Input Field - A field which exists only within the wizard to make determinations 
+Object Field - A field which exists only as a salesforce object to make determinations --></help>
+        <label><!-- Field Class --></label>
+        <name>Apttus__FieldClass__c</name>
+        <picklistValues>
+            <masterLabel>Object Field</masterLabel>
+            <translation><!-- Object Field --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wizard Input Field</masterLabel>
+            <translation><!-- Wizard Input Field --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Name of the salesforce object field the question applies to --></help>
+        <label><!-- Field Name --></label>
+        <name>Apttus__FieldName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Data type of the field --></help>
+        <label><!-- Field Type --></label>
+        <name>Apttus__FieldType__c</name>
+        <picklistValues>
+            <masterLabel>Checkbox</masterLabel>
+            <translation><!-- Checkbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Currency</masterLabel>
+            <translation><!-- Currency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date</masterLabel>
+            <translation><!-- Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date/Time</masterLabel>
+            <translation><!-- Date/Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number</masterLabel>
+            <translation><!-- Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation><!-- Percent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Picklist</masterLabel>
+            <translation><!-- Picklist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text</masterLabel>
+            <translation><!-- Text --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text Area</masterLabel>
+            <translation><!-- Text Area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>URL</masterLabel>
+            <translation><!-- URL --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Place a desired runtime information statement here or leave blank. --></help>
+        <label><!-- Ghost Response --></label>
+        <name>Apttus__GhostResponse__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sequence of inputs in a tabular input group from left to right --></help>
+        <label><!-- Horizontal Sequence --></label>
+        <name>Apttus__HorizontalSequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- The definition of the data type entered in by the designer. --></help>
+        <label><!-- Interface Definition --></label>
+        <name>Apttus__InterfaceDefinition__c</name>
+        <picklistValues>
+            <masterLabel>Checkbox</masterLabel>
+            <translation><!-- Checkbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Currency &lt;Type, Chars, Dec&gt;</masterLabel>
+            <translation><!-- Currency &lt;Type, Chars, Dec&gt; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date &lt;Format&gt;</masterLabel>
+            <translation><!-- Date &lt;Format&gt; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expression Formula</masterLabel>
+            <translation><!-- Expression Formula --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number &lt;Chars, Dec&gt;</masterLabel>
+            <translation><!-- Number &lt;Chars, Dec&gt; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent &lt;Dec&gt;</masterLabel>
+            <translation><!-- Percent &lt;Dec&gt; --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Picklist Dropdown</masterLabel>
+            <translation><!-- Picklist Dropdown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Picklist Radio Button</masterLabel>
+            <translation><!-- Picklist Radio Button --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text Entry</masterLabel>
+            <translation><!-- Text Entry --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Additional field for use in search and selection --></help>
+        <label><!-- Keywords --></label>
+        <name>Apttus__Keywords__c</name>
+    </fields>
+    <fields>
+        <help><!-- The label for the input control. --></help>
+        <label><!-- Label --></label>
+        <name>Apttus__Label__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the object that qualifies the field the question resolves --></help>
+        <label><!-- Object Name --></label>
+        <name>Apttus__ObjectName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes what sequence should proceed this input in order to appear. In the form (1) (1 OR 2) (1 AND 2) etc. --></help>
+        <label><!-- Precedence --></label>
+        <name>Apttus__Precedence__c</name>
+    </fields>
+    <fields>
+        <help><!-- The question or instruction statement that is used to direct the end user when completing the wizard after setup.  Defaults to Input Label --></help>
+        <label><!-- Question/Instruction --></label>
+        <name>Apttus__Question__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies if an input control value can be edited by the runtime user --></help>
+        <label><!-- Read Only --></label>
+        <name>Apttus__ReadOnly__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates this is a repeatable question. --></help>
+        <label><!-- Repeatable --></label>
+        <name>Apttus__Repeatable__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates that an input value is required for the end user to continue the wizard --></help>
+        <label><!-- Required --></label>
+        <name>Apttus__Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- The data type of the response by the end user. --></help>
+        <label><!-- Response Data Type --></label>
+        <name>Apttus__ResponseDataType__c</name>
+        <picklistValues>
+            <masterLabel>Checkbox</masterLabel>
+            <translation><!-- Checkbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concatenation</masterLabel>
+            <translation><!-- Concatenation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Currency</masterLabel>
+            <translation><!-- Currency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date</masterLabel>
+            <translation><!-- Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>List</masterLabel>
+            <translation><!-- List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number</masterLabel>
+            <translation><!-- Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation><!-- Percent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text</masterLabel>
+            <translation><!-- Text --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Comma separated list of values for making determinations on. --></help>
+        <label><!-- Response --></label>
+        <name>Apttus__Response__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describes what the runtime user can see as a help or instruction description of this input control. --></help>
+        <label><!-- Runtime Help Text --></label>
+        <name>Apttus__RuntimeDescription__c</name>
+    </fields>
+    <fields>
+        <help><!-- The sequence in which this input entry should be displayed during runtime --></help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- Dependent on the category field, whose list values shall allow users to search, find, and select Input Controls --></help>
+        <label><!-- Subcategory --></label>
+        <name>Apttus__Subcategory__c</name>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sub-Category 1</masterLabel>
+            <translation><!-- Sub-Category 1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Input added to a Step is in Transient state until the Step is saved. --></help>
+        <label><!-- Transient --></label>
+        <name>Apttus__Transient__c</name>
+    </fields>
+    <fields>
+        <help><!-- List of values to be displayed during runtime. --></help>
+        <label><!-- Validation Input --></label>
+        <name>Apttus__Validation2__c</name>
+    </fields>
+    <fields>
+        <help><!-- List of values to be displayed during runtime. --></help>
+        <label><!-- Validation Input (Deprecated) --></label>
+        <name>Apttus__Validation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Version number (counter) of input control design. This identifies the input control uniquely in the chronology of creation. --></help>
+        <label><!-- Version --></label>
+        <name>Apttus__Version__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sequence of input in an input group rendered from top to bottom --></help>
+        <label><!-- Vertical Sequence --></label>
+        <name>Apttus__VerticalSequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the input group that this input control belongs to --></help>
+        <label><!-- Wizard Input Group --></label>
+        <name>Apttus__WizardInputGroupId__c</name>
+        <relationshipLabel><!-- Wizard Input Controls --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to ruleset for input expression --></help>
+        <label><!-- Wizard Ruleset --></label>
+        <name>Apttus__WizardRulesetId__c</name>
+        <relationshipLabel><!-- Wizard Input Controls --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the step this input control belongs to --></help>
+        <label><!-- Wizard Step --></label>
+        <name>Apttus__WizardStepId__c</name>
+        <relationshipLabel><!-- Wizard Input Controls (Wizard Step) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Wizard Step this Input belongs to --></help>
+        <label><!-- Wizard Step --></label>
+        <name>Apttus__WizardStep__c</name>
+        <relationshipLabel><!-- Wizard Input Controls (Wizard Step) --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

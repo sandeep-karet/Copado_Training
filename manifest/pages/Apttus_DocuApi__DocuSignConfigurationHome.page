@@ -1,0 +1,190 @@
+<!-- 
+    Conga DocuSign API 
+    DocuSignConfigurationHome
+       
+    @2010-2022 Conga Inc. All rights reserved.
+ -->
+ <apex:page tabStyle="Apttus_DocuApi__DocuSignEnvelope__c" controller="Apttus_DocuApi.DocuSignConfigurationHomeController" action="{!doRedirect}"  >
+    <style>
+        .width400 {
+            width: 400px;
+        }
+        .spinner-placeholder{
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            bottom: 0; 
+            opacity: 0.75; 
+            z-index: 1000; 
+            background-color: grey;
+        }
+        .spinner{
+            position: fixed; 
+            left: 0; 
+            top: 0; 
+            bottom: 0; 
+            right: 0; 
+            z-index: 1001; 
+            margin: 22% 42%;
+        }
+        .message{
+            justify-content:unset !important;
+        }
+        .mouseOverInfo{
+            bottom: 0 !important;
+            text-align: left;
+        }
+    </style>
+    <apex:stylesheet value="{!URLFOR($Resource.Apttus_DocuApi__LightningResource,'css/page-icon.css')}" />
+    
+    <apex:outputPanel id="docuSignConfigForm">  
+        <script> 
+            /* function for redirect to DocuSign URL. */
+            function redirectToDocuSignAuth(){
+                var redirectURL = '{!JSENCODE(docuSignAuthURL)}';
+                window.open(redirectURL,'_top');
+            }  
+        </script>
+        <apex:outputPanel >
+            <div class="bPageTitle bpageTitleExtra">
+                <div class="ptBody">
+                    <div class="content">
+                        <img src="{!URLFOR($Resource.LightningResource, '/images/headericons/Admin.png')}" class="pageIconPadding" />
+                        <h1 class="pageType">{!$Label.AuthenticationSetting}</h1>
+                        <h2 class="pageDescription">{!$Label.DocuSignAuthentication}</h2>
+                    </div>
+                </div>
+            </div>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!isLoading}">
+            <div styleClass="spinner-placeholder">
+                &nbsp;
+            </div>
+            <div styleClass="spinner">
+                <img src="{!URLFOR($Resource.LightningResource, '/images/Image_LoadingPage.gif')}" width="80" height="80" />
+            </div>
+        </apex:outputPanel>
+        
+        
+        <apex:tabPanel switchType="client" selectedTab="Account Setup" id="idDocuSignAdminHome" tabClass="activeTab" inactiveTabClass="inactiveTab">
+            <apex:tab label="{!$Label.Apttus_DocuApi__SigningGroup}" name="{!$Label.Apttus_DocuApi__SigningGroup}" id="idSigningGroups">
+                <apex:include pageName="Apttus_DocuApi__DocuSignSigningGroupSetup"/>
+            </apex:tab>
+            <apex:tab label="{!$Label.Apttus_DocuApi__SetupDocuSignAccountTab}" name="Account Setup" id="idAccountSetup" disabled="{!NOT(isAccessible)}">
+                <apex:form >
+                    <apex:actionPoller action="{!checkMetaDataEntered}"  interval="5" reRender="docuSignConfigForm" enabled="{!!isMetaDataAvailable}"/>
+                    <apex:pageBlock >
+                        <apex:pageMessages escape="false" />
+                        <apex:outputPanel id="tokenPanel">
+                            <apex:pageBlockSection columns="1">
+                                <apex:pageBlockSectionItem helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__Environment__c.InlineHelpText}">
+                                    <apex:outputPanel >
+                                        <apex:outputLabel value="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__Environment__c.label}" />
+                                        <c:HelpTextHelper helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__Environment__c.label}" rendered="{!lightningExperienceOnly}" />
+                                    </apex:outputPanel>
+                                    <apex:selectList value="{!selectedEnvironment}" size="1" styleClass="width400" disabled="{!isReadOnly}">
+                                        <apex:selectOptions value="{!Environment}" />
+                                    </apex:selectList>
+                                </apex:pageBlockSectionItem>
+
+                                <apex:pageBlockSectionItem helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__DocusignAdminUserAPIID__c.InlineHelpText}">
+                                    <apex:outputPanel >
+                                        <apex:outputLabel value="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__DocusignAdminUserAPIID__c.label}" />
+                                        <c:HelpTextHelper helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__DocusignAdminUserAPIID__c.InlineHelpText}" rendered="{!lightningExperienceOnly}" />
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                                        <apex:outputPanel layout="block" styleClass="requiredBlock"></apex:outputPanel>
+                                        <apex:inputText value="{!docusignAdminUserAPIID}" styleClass="width400"  disabled="{!isReadOnly}" />
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+
+                                <apex:pageBlockSectionItem helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__DocusignAPIAccountID__c.InlineHelpText}">
+                                    <apex:outputPanel >
+                                        <apex:outputLabel value="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__DocusignAPIAccountID__c.label}" />
+                                        <c:HelpTextHelper helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__DocusignAPIAccountID__c.InlineHelpText}" rendered="{!lightningExperienceOnly}" />
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                                        <apex:outputPanel layout="block" styleClass="requiredBlock"></apex:outputPanel>
+                                        <apex:inputText value="{!docusignAccountAPIID}" styleClass="width400"  disabled="{!isReadOnly}" />
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+
+                                <apex:pageBlockSectionItem helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__IntegrationKey__c.InlineHelpText}">
+                                    <apex:outputPanel >
+                                        <apex:outputLabel value="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__IntegrationKey__c.label}" />
+                                        <c:HelpTextHelper helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__IntegrationKey__c.InlineHelpText}" rendered="{!lightningExperienceOnly}" />
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                                        <apex:outputPanel layout="block" styleClass="requiredBlock"></apex:outputPanel>
+                                        <apex:inputText value="{!integrationKey}" styleClass="width400" disabled="{!isReadOnly}" />
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+
+                                <apex:pageBlockSectionItem helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__DocusignAccountBaseURI__c.InlineHelpText}">
+                                    <apex:outputPanel >
+                                        <apex:outputLabel value="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__DocusignAccountBaseURI__c.label}" />
+                                        <c:HelpTextHelper helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__DocusignAccountBaseURI__c.InlineHelpText}" rendered="{!lightningExperienceOnly}" />
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                                        <apex:outputPanel layout="block" styleClass="requiredBlock"></apex:outputPanel>
+                                        <apex:inputText value="{!accountURL}" styleClass="width400" disabled="{!isReadOnly}" />
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+
+                                <apex:pageBlockSectionItem helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__DocusignAccountID__c.InlineHelpText}">
+                                    <apex:outputPanel >
+                                        <apex:outputLabel value="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__DocusignAccountID__c.label}" />
+                                        <c:HelpTextHelper helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__DocusignAccountID__c.InlineHelpText}" rendered="{!lightningExperienceOnly}" />
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                                        <apex:outputPanel layout="block" styleClass="requiredBlock"></apex:outputPanel>
+                                        <apex:inputText value="{!accountNumber}" styleClass="width400" disabled="{!isReadOnly}" />
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+
+                                <apex:pageBlockSectionItem helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__PrivateKey__c.InlineHelpText}">
+                                    <apex:outputPanel >
+                                        <apex:outputLabel value="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__PrivateKey__c.label}"  />
+                                        <c:HelpTextHelper helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__PrivateKey__c.InlineHelpText}" rendered="{!lightningExperienceOnly}" />
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                                        <apex:outputPanel layout="block" styleClass="requiredBlock"></apex:outputPanel>
+                                        <apex:inputTextarea value="{!privateKey}" rows="10" styleClass="width400" disabled="{!isReadOnly}" />
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+
+                                <apex:pageBlockSectionItem helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__PublicKey__c.InlineHelpText}">
+                                    <apex:outputPanel >
+                                        <apex:outputLabel value="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__PublicKey__c.label}" />
+                                        <c:HelpTextHelper helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__PublicKey__c.InlineHelpText}" rendered="{!lightningExperienceOnly}" />
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                                        <apex:outputPanel layout="block" styleClass="requiredBlock"></apex:outputPanel>
+                                        <apex:inputTextarea value="{!publicKey}" rows="10" styleClass="width400" disabled="{!isReadOnly}"/>
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+
+                                <apex:pageBlockSectionItem helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__EnableAdminConsent__c.InlineHelpText}">
+                                    <apex:outputPanel >
+                                        <apex:outputLabel value="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__EnableAdminConsent__c.label}" />
+                                        <c:HelpTextHelper helpText="{!$ObjectType.Apttus_DocuApi__DocusignAuthentication__mdt.fields.Apttus_DocuApi__EnableAdminConsent__c.InlineHelpText}" rendered="{!lightningExperienceOnly}" />
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="block" >
+                                        <apex:outputPanel layout="block"></apex:outputPanel>
+                                        <apex:inputCheckbox value="{!adminConsent}" disabled="{!isReadOnly}"/>
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                        </apex:outputPanel>
+                        <apex:pageBlockButtons location="bottom">
+                            <apex:commandButton action="{!handleNext}" value="{!$Label.Apttus_DocuApi__NextButton}" rendered="{!!isReadOnly}" reRender="docuSignConfigForm" oncomplete="return redirectToDocuSignAuth();"></apex:commandButton>
+                            <apex:commandButton action="{!handleEdit}" value="{!$Label.Apttus_DocuApi__EditButton}" rendered="{!isReadOnly}"></apex:commandButton>
+                            <apex:commandButton action="{!getGrantConsentUrl}" value="Grant Consent" rendered="{!isReadOnly}" reRender="docuSignConfigForm" oncomplete="return redirectToDocuSignAuth();"></apex:commandButton>
+                        </apex:pageBlockButtons>
+                    </apex:pageBlock>
+                </apex:form>
+            </apex:tab>
+        </apex:tabPanel>
+    </apex:outputPanel>
+</apex:page>
