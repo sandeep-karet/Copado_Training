@@ -4,6 +4,11 @@
     <description>System Administrator(Profileid)</description>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Git_int_Test__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Sample_Acc_field__c</field>
         <readable>true</readable>
     </fieldPermissions>
