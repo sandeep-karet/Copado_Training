@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Altify Relationships Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Altify Relationships Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- The API name of the Formula field on the Altify Contact Map Details object. When specified, this determines the appearance of the color bar on the relationship map contacts, replacing the default. --></help>
+        <label><!-- Color Field --></label>
+        <name>ALTF__Color_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reorder the details displayed on the Relationship Map side panel. The value of this field should be a comma-separated list (with or without gaps) of the details in your required order. Here is an example of an entered list (using the valid name of each detail): Quicklinks, Relationships, Contact Details, Attributes, Division, Target, Notes, Owner, Other --></help>
+        <label><!-- Contact Details Side Panel Named Order --></label>
+        <name>ALTF__Contact_Details_Side_Panel_Named_Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- A custom title field for relationship map contacts that replaces the standard Title field. --></help>
+        <label><!-- Contact Title Field --></label>
+        <name>ALTF__Contact_Title_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API name of a custom field on the Contact object to be shown by default on relationship map contact cards. This must be one of the fields in the map’s Display Options drop-down. (These are specified in Contact Field custom settings.) --></help>
+        <label><!-- Default Display Attribute --></label>
+        <name>ALTF__Default_Display_Attribute__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this checkbox to remove the Adaptability attribute type from relationship maps. --></help>
+        <label><!-- Disable Adaptability --></label>
+        <name>ALTF__Disable_Adaptability__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this checkbox to remove the Buying Role attribute type from relationship maps. --></help>
+        <label><!-- Disable Buying Role --></label>
+        <name>ALTF__Disable_Buyer_Role__c</name>
+    </fields>
+    <fields>
+        <help><!-- Disable contact creation on relationship map. --></help>
+        <label><!-- Disable contact creation on rel map --></label>
+        <name>ALTF__Disable_Contact_Creation_Rel_Map__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this checkbox to remove the Coverage attribute type from relationship maps. --></help>
+        <label><!-- Disable Coverage --></label>
+        <name>ALTF__Disable_Coverage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this checkbox to remove the Decision Orientation attribute type from relationship maps. --></help>
+        <label><!-- Disable Decision Orientation --></label>
+        <name>ALTF__Disable_Decision_Orientation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Disable opportunity search for the import contact dialog on Account level relationship maps. --></help>
+        <label><!-- Disable Import Contact Opp Search --></label>
+        <name>ALTF__Disable_Opp_Search_AM__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this checkbox to remove the Political Status attribute type from relationship maps. --></help>
+        <label><!-- Disable Political Status --></label>
+        <name>ALTF__Disable_Political__c</name>
+    </fields>
+    <fields>
+        <help><!-- Disable the print buttons on the Relationship Maps and Insight Map pages. --></help>
+        <label><!-- Disable Print Buttons --></label>
+        <name>ALTF__Disable_Print_Buttons__c</name>
+    </fields>
+    <fields>
+        <help><!-- When this checkbox is selected, a relationship map contact card uses a contact’s uploaded image or their initials rather than their Twitter profile image. (The Twitter image is used by default if the map links to the Twitter account.) --></help>
+        <label><!-- Disable Social Photos --></label>
+        <name>ALTF__Disable_Social_Photos__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this checkbox to remove the Support attribute type from relationship maps. --></help>
+        <label><!-- Disable Support --></label>
+        <name>ALTF__Disable_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API name of a custom field on the Altify Contact Map Details object that determines whether a relationship map contact is a Key Player. If specified, this is used instead of the default ‘Is Key Player’ formula field. --></help>
+        <label><!-- Key Player Field --></label>
+        <name>ALTF__Key_Player_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API name of a custom field on the Contact object that can be used to specify the contact’s LinkedIn handle. This provides access to the contact’s LinkedIn page from a relationship map. --></help>
+        <label><!-- LinkedIn Handle Field --></label>
+        <name>ALTF__LinkedIn_Handle_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field specifies the image shown on the first page of the onboarding window for an empty relationship map. --></help>
+        <label><!-- Onboarding URL 1 --></label>
+        <name>ALTF__Onboarding_URL_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field specifies the image shown on the second page of the onboarding window for an empty relationship map. --></help>
+        <label><!-- Onboarding URL 2 --></label>
+        <name>ALTF__Onboarding_URL_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field specifies the image shown on the third page of the onboarding window for an empty relationship map. --></help>
+        <label><!-- Onboarding URL 3 --></label>
+        <name>ALTF__Onboarding_URL_3__c</name>
+    </fields>
+    <fields>
+        <help><!-- A comma-separated list of LinkedIn modules to display in the Sales Navigator pop-up on individual relationship map contacts. Enter OFF to hide the pop-up. --></help>
+        <label><!-- SNAP Modules (DEPRECATED) --></label>
+        <name>ALTF__SNAP_Modules__c</name>
+    </fields>
+    <fields>
+        <help><!-- A comma-separated list of LinkedIn modules to display in the Sales Navigator area on a relationship map&apos;s right-hand panel. Enter OFF to hide Sales Navigator. --></help>
+        <label><!-- SNAP Side Panel Modules (DEPRECATED) --></label>
+        <name>ALTF__SNAP_Side_Panel_Modules__c</name>
+    </fields>
+    <fields>
+        <help><!-- The height and width (expressed as HTML style attributes) to apply to the Sales Navigator area on a relationship map&apos;s right-hand panel. --></help>
+        <label><!-- SNAP Side Panel Style (DEPRECATED) --></label>
+        <name>ALTF__SNAP_Side_Panel_Style__c</name>
+    </fields>
+    <fields>
+        <help><!-- The height and minimum width (expressed as HTML style attributes) to apply to the Sales Navigator pop-up on individual relationship map contacts. --></help>
+        <label><!-- SNAP Style (DEPRECATED) --></label>
+        <name>ALTF__SNAP_Style__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario. --></help>
+        <label><!-- Temp10 --></label>
+        <name>ALTF__Temp10__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario. --></help>
+        <label><!-- Disable Upload Photo in Relationship Map --></label>
+        <name>ALTF__Temp1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario. --></help>
+        <label><!-- Temp2 --></label>
+        <name>ALTF__Temp2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario. --></help>
+        <label><!-- Temp3 --></label>
+        <name>ALTF__Temp3__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario. --></help>
+        <label><!-- Temp4 --></label>
+        <name>ALTF__Temp4__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario. --></help>
+        <label><!-- Temp5 --></label>
+        <name>ALTF__Temp5__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario. --></help>
+        <label><!-- Temp6 --></label>
+        <name>ALTF__Temp6__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario. --></help>
+        <label><!-- Temp7 --></label>
+        <name>ALTF__Temp7__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario. --></help>
+        <label><!-- Temp8 --></label>
+        <name>ALTF__Temp8__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario. --></help>
+        <label><!-- Temp9 --></label>
+        <name>ALTF__Temp9__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario --></help>
+        <label><!-- TempStr10 --></label>
+        <name>ALTF__TempStr10__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario --></help>
+        <label><!-- TempStr1 --></label>
+        <name>ALTF__TempStr1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario --></help>
+        <label><!-- TempStr2__c --></label>
+        <name>ALTF__TempStr2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario --></help>
+        <label><!-- TempStr3__c --></label>
+        <name>ALTF__TempStr3__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario --></help>
+        <label><!-- TempStr4 --></label>
+        <name>ALTF__TempStr4__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario --></help>
+        <label><!-- TempStr5 --></label>
+        <name>ALTF__TempStr5__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario --></help>
+        <label><!-- TempStr6 --></label>
+        <name>ALTF__TempStr6__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario --></help>
+        <label><!-- TempStr7 --></label>
+        <name>ALTF__TempStr7__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario --></help>
+        <label><!-- TempStr8 --></label>
+        <name>ALTF__TempStr8__c</name>
+    </fields>
+    <fields>
+        <help><!-- Temporary custom config setting that may be used in a patch scenario --></help>
+        <label><!-- TempStr9 --></label>
+        <name>ALTF__TempStr9__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API name of a custom field on the Contact object that can be used to specify the contact’s Twitter handle. This provides access to the contact’s Twitter page from a relationship map. --></help>
+        <label><!-- Twitter Handle Field --></label>
+        <name>ALTF__Twitter_Handle_Field__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Conga Turbo Pricing Reverse Sync Job</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Conga Turbo Pricing Reverse Sync Jobs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Batch Size --></label>
+        <name>Apttus_Base2__BatchSize__c</name>
+    </fields>
+    <fields>
+        <help><!-- Http method (GET, POST) used for the job. --></help>
+        <label><!-- Endpoint Http Method --></label>
+        <name>Apttus_Base2__EndpointHttpMethod__c</name>
+        <picklistValues>
+            <masterLabel>GET</masterLabel>
+            <translation><!-- GET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POST</masterLabel>
+            <translation><!-- POST --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates if the Reverse Sync Job is active --></help>
+        <label><!-- Is Active --></label>
+        <name>Apttus_Base2__IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Implementation class for handling the job. --></help>
+        <label><!-- Job Handler Class --></label>
+        <name>Apttus_Base2__JobHandlerClass__c</name>
+    </fields>
+    <fields>
+        <help><!-- Shows the Date/Time of the last run. --></help>
+        <label><!-- Last Run Time --></label>
+        <name>Apttus_Base2__LastRunTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comma separated list of objects to be synced by Reverse Sync process. --></help>
+        <label><!-- Objects To Sync --></label>
+        <name>Apttus_Base2__ObjectsToSync__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if the Job run type is Batchable or Queueable --></help>
+        <label><!-- Run Type --></label>
+        <name>Apttus_Base2__RunType__c</name>
+        <picklistValues>
+            <masterLabel>Batchable</masterLabel>
+            <translation><!-- Batchable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queueable</masterLabel>
+            <translation><!-- Queueable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Sequence of the job run. --></help>
+        <label><!-- Sequence --></label>
+        <name>Apttus_Base2__Sequence__c</name>
+    </fields>
+    <fields>
+        <help><!-- SOQL Query to run to select objects based on the cartId (for eg: Line Items) to process.  This is required to if your Handler class is implementing Batchable. eg: SELECT Id, Apttus_Config2__PrimaryLineNumber__c FROM Apttus_Config2__LineItem__c WHERE Apttus_Config2__ConfigurationId__c = :cartId --></help>
+        <label><!-- Soql Query --></label>
+        <name>Apttus_Base2__SoqlQuery__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box if you have to sync base objects (like Line Items, Summary groups etc...) also along with line item related objects --></help>
+        <label><!-- Sync Base Objects --></label>
+        <name>Apttus_Base2__SyncBaseObjects__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

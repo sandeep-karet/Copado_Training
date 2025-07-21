@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Wizard Runtime View Fieldset --></label>
+        <name>Apttus__WizardRuntimeViewFieldset</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Action (DEPRECATED) --></label>
+        <name>Apttus__Action__c</name>
+    </fields>
+    <fields>
+        <help>このウィザードレコードが関連付けられているコンテキストレコード</help>
+        <label><!-- Context Id --></label>
+        <name>Apttus__ContextId__c</name>
+    </fields>
+    <fields>
+        <help>このウィザードレコードが関連付けられているコンテキストタイプ</help>
+        <label><!-- Context Type --></label>
+        <name>Apttus__ContextType__c</name>
+    </fields>
+    <fields>
+        <help>外部ID</help>
+        <label><!-- External Id --></label>
+        <name>Apttus__ExternalId__c</name>
+    </fields>
+    <fields>
+        <help>このウィザードの実行時のステータス</help>
+        <label><!-- Status --></label>
+        <name>Apttus__Status__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation>保留済</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation>進行中</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation>申請済</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>この実行を送信したユーザーへの参照</help>
+        <label><!-- Submitted By --></label>
+        <name>Apttus__SubmittedById__c</name>
+        <relationshipLabel><!-- Wizards --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ウィザードデザインを参照</help>
+        <label><!-- Wizard Design --></label>
+        <name>Apttus__WizardDesignId__c</name>
+        <relationshipLabel><!-- Wizards --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Wizard Name --></nameFieldLabel>
+</CustomObjectTranslation>

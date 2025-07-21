@@ -1,0 +1,47 @@
+<messaging:emailTemplate subject="CCI Data extraction Failed" recipientType="User" relatedToType="Apttus__APTS_Agreement__c">
+<messaging:htmlEmailBody >
+<style>
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: #000000;
+        text-decoration: none;
+    }
+    .parentDiv {
+        background-color:#FFFFFF;
+        width:550;
+    }
+    .innerDiv {
+        border: 4px solid red;
+        border-radius: 5px;
+        padding : 20px
+    }
+</style>
+<center>
+        <div class="parentDiv">
+            <div class="innerDiv">
+                <br/>
+                <strong>Conga Contract Intelligence </strong>data extraction process has failed!
+                
+                <br/><br/>
+                <div>Intelligent data extraction failed. Kindly submit the document for Intelligent data extraction again.
+                </div>
+                <div>
+                <br/>
+                </div>
+                <div> <br/> Details :</div>
+                 <apex:outputPanel id="agreementId" layout="block" rendered="{!If(relatedTo.id != NULL , true,false ) }">
+                    <div>Agreement Name : {!relatedTo.Name}</div>
+                </apex:outputPanel>
+                <div>Document Name : $documentName$</div>
+                <div>Status : $status$</div>
+                <br/>
+                <br/>
+                <div><a href="https://www.conga.com">www.conga.com</a></div>
+                <div>Questions : <a href="https://conga.com/support">We are here to help</a></div>
+            </div>
+        </div>
+    </center>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

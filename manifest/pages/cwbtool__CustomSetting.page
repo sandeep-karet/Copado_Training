@@ -1,0 +1,80 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 02-26-2023
+  @last modified by  : Kanishk Singh
+-->
+<apex:page controller="cwbtool.CustomSettingController" sidebar="false" tabStyle="CWB_Tool__tab">
+   <!-- <c:customsetting mapFullCustomSettingaDetail="{!mapFullCustomSettingaDetail}" /> 
+   contenttype="application/x-excel#FullCustomSettingtDetail_{!Now()}.xls" readOnly="true"
+  -->
+
+  <c:requiredJSAndCSS />
+  <style>
+   .Btn-group > .Btn:first-child {
+       margin-left: 0;
+       max-width: 300px;
+       overflow: hidden;
+   }
+</style>
+<script>
+    function hideOverLay21(){
+         $('.slds-spinner_container').hide();
+     }
+  </script>
+
+<apex:form id="frmId" styleClass="CWB">
+  
+<!--<apex:pagemessages rendered="{!lstObject==null || lstObject.size==0}" />-->
+<c:lightningspinner />
+<c:lightningScript ></c:lightningScript>
+
+<apex:actionFunction name="getCustomSettingDataAction" action="{!getCustomSettingData}" />
+<apex:actionFunction name="refresh" action="{!refresh}" reRender="refreshPanel,msgId" />
+
+<apex:outputpanel id="refreshPanel">
+ 
+  <apex:actionPoller action="{!resultfound}" reRender="refreshPanel,msgId" interval="5" enabled="{!isStart}" oncomplete="if({!isProcessed}){hideOverLay21();initTab();init();}"
+  />
+</apex:outputpanel>
+<div class="slds-box slds-theme--shade" role="banner">
+  <div class="slds-grid slds-wrap slds-form--inline">
+     
+      <div class="slds-form-element">
+
+          <fieldset class="slds-form-element">
+              <legend class="slds-form-element__legend slds-form-element__label">Custom Setting</legend>
+              <div class="slds-form-element__control">
+                
+                  <apex:selectList value="{!lstCustomSettingName}" multiselect="true" size="1" styleclass="slds-select multiselect genericMultiSelect" style="margin-right:40px;display:none1;">
+                          <apex:selectOption rendered="{!lstObject.size==0}" itemValue="" itemLabel=""/>   
+                  <apex:selectOptions rendered='{!lstObject.size>=1}' value="{!lstObject[0]}" />
+                      <apex:selectOptions rendered='{!lstObject.size>=2}' value="{!lstObject[1]}" />
+                      <apex:selectOptions rendered='{!lstObject.size>=3}' value="{!lstObject[2]}" />
+                  </apex:selectList>
+                  
+              </div>
+          </fieldset>
+      </div>
+      <div class="slds-form-element">
+          <div class="slds-button-group" role="group">
+             
+                  <button type='button' onclick='showOverLay();refresh();getCustomSettingDataAction();' class="slds-button slds-button--brand slds-not-selected"
+                      style='margin-top:19px;' aria-live="assertive" actiondetail='Download Profile Layout Assignment '>
+                      <span class="slds-text-not-selected">
+                          <span class='ion-ios-plus-empty'></span>Download Custom Setting Data</span>
+                  </button>
+             
+            
+          </div>
+      </div>
+  </div>
+  
+  <apex:pagemessages id="msgId" />
+  <c:saveFilter lstSelectedComponentName="{!lstCustomSettingName}" type="CustomSetting" displayMessage="CustomSetting"></c:saveFilter>
+</div>
+
+
+</apex:form>
+</apex:page>

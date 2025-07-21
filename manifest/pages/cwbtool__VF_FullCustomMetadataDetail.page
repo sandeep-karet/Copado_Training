@@ -1,0 +1,13 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 09-23-2022
+  @last modified by  : Kanishk Singh
+-->
+<apex:page controller="cwbtool.DescribeCustomMetadata"  contenttype="application/x-excel#FullCustomMetadataObjectDetail_{!Now()}.xls" readOnly="true">
+
+<c:VFC_CustomMetadata mapFullCustomMetadataDetail="{!mapFullCustomMetadataDetail}" rendered="{!!showDataInColumn}"/> 
+<c:VFC_CustomMetadataV2 mapFullCustomMetadataDetail="{!mapFullCustomMetadataDetail}" rendered="{!showDataInColumn}"/> 
+
+</apex:page>

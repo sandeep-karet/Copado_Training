@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Altify Sales Process</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Altify Sales Process</value>
+    </caseValues>
+    <fields>
+        <label><!-- AltifyId --></label>
+        <name>ALTF__AltifyId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the size of a typical or average sales opportunity. --></help>
+        <label><!-- Average Deal Size --></label>
+        <name>ALTF__Average_Deal_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of days typically taken to close an opportunity after all steps have been completed.  This can be zero. --></help>
+        <label><!-- Closure Duration (Days) --></label>
+        <name>ALTF__Closure_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- ComparisionJSONFileName --></label>
+        <name>ALTF__ComparisionJSONFileName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Process --></label>
+        <name>ALTF__Default_Process__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a description for the Sales Process that conveys sufficient information when you are subsequently viewing or editing the process. --></help>
+        <label><!-- Description --></label>
+        <name>ALTF__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disabled Process --></label>
+        <name>ALTF__Disabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the probability of the opportunity closing after all steps have been completed.  This is usually 100% --></help>
+        <label><!-- Final Stage Probability % --></label>
+        <name>ALTF__Final_Stage_Probability__c</name>
+    </fields>
+    <fields>
+        <help><!-- The industry that is relevant for your Sales Process. --></help>
+        <label><!-- Industry Vertical --></label>
+        <name>ALTF__Industry_Vertical__c</name>
+        <picklistValues>
+            <masterLabel>Build My Own</masterLabel>
+            <translation><!-- Build My Own --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Energy &amp; Power</masterLabel>
+            <translation><!-- Energy &amp; Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Services</masterLabel>
+            <translation><!-- Financial Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Technology</masterLabel>
+            <translation><!-- High Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrials</masterLabel>
+            <translation><!-- Industrials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Materials</masterLabel>
+            <translation><!-- Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services</masterLabel>
+            <translation><!-- Professional Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telecommunications</masterLabel>
+            <translation><!-- Telecommunications --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Not in use --></help>
+        <label><!-- Active --></label>
+        <name>ALTF__IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do you usually sell to a single individual or are there many people involved in the buying process? Select Multiple or Single buyer. --></help>
+        <label><!-- Multiple Buyers --></label>
+        <name>ALTF__Multiple_Buyers__c</name>
+    </fields>
+    <fields>
+        <help><!-- Not in use --></help>
+        <label><!-- Order Number --></label>
+        <name>ALTF__Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pebble Percentage --></label>
+        <name>ALTF__Pebble_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pebble Value --></label>
+        <name>ALTF__Pebble_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rock Percentage --></label>
+        <name>ALTF__Rock_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rock Value --></label>
+        <name>ALTF__Rock_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of days that it usually takes to close a sales opportunity from the time when it first became an opportunity to when you close the deal --></help>
+        <label><!-- Sales Cycle Duration (Days) --></label>
+        <name>ALTF__Sales_Cycle_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sum Of Stages Duration --></label>
+        <name>ALTF__Sum_Of_Stages_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Genius Stage List --></label>
+        <name>ALTF__Template_Stage_List__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for Forecasting. 
+
+An opportunity must achieve the threshold percentage (and be within the forecasting close date) in order to be deemed &quot;Projected&quot; in the Forecast Analysis for Altify. --></help>
+        <label><!-- Projected Threshold --></label>
+        <name>ALTF__Threshold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Sales Cycle Duration --></label>
+        <name>ALTF__Total_Sales_Cycle_Duration__c</name>
+    </fields>
+    <fields>
+        <help><!-- A version number for the sales process. Auto-incremented. DO NOT UPDATE MANUALLY.
+
+On change of a sales process, existing opportunities will be associated with the &quot;old&quot; version id. Altify can then identify any opps that need to be &quot;reset&quot;. --></help>
+        <label><!-- Version --></label>
+        <name>ALTF__Version__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Closure duration must be positive --></errorMessage>
+        <name>ALTF__Closure_Duration_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Closure Duration cannot be greater than 1000 days --></errorMessage>
+        <name>ALTF__Closure_duration_length</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot have a disabled default process --></errorMessage>
+        <name>ALTF__Disabled_Default_Block</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only 0-100% is valid --></errorMessage>
+        <name>ALTF__Percentage_check_FSP</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only 0-100% is valid --></errorMessage>
+        <name>ALTF__Percentage_check_PP</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only 0-100% is valid --></errorMessage>
+        <name>ALTF__Percentage_check_PT</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only 0-100% is valid --></errorMessage>
+        <name>ALTF__Percentage_check_RP</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Export --></label>
+        <name>ALTF__Export</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Export_Dealmaker_Stages --></label>
+        <name>ALTF__Export_Dealmaker_Stages</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Export_Global_Qualifiers --></label>
+        <name>ALTF__Export_Global_Qualifiers</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Export_Quicklinks --></label>
+        <name>ALTF__Export_Quicklinks</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Export_Sales_Process --></label>
+        <name>ALTF__Export_Sales_Process</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Import --></label>
+        <name>ALTF__Import</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Import_Dealmaker_Stages --></label>
+        <name>ALTF__Import_Dealmaker_Stages</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Import_Global_Qualifiers --></label>
+        <name>ALTF__Import_Global_Qualifiers</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Import_Quicklinks --></label>
+        <name>ALTF__Import_Quicklinks</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Load_For_Comparision --></label>
+        <name>ALTF__Load_For_Comparision</name>
+    </webLinks>
+</CustomObjectTranslation>

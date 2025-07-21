@@ -1,0 +1,81 @@
+<apex:page standardController="Account"
+    extensions="texcellency.AccountDefHospitalSearchExtension" action="{!initialize}">
+    <apex:stylesheet value="{!$Resource.texcellency__def_styles}" />
+    <apex:form >
+        <apex:inputHidden value="{!account.texcellency__DefHC_HospitalID__c}"
+            id="theHiddenInput" />
+        <apex:pageBlock title="Search Definitive Hospitals">
+            <apex:facet name="header">
+                <apex:outputPanel styleClass="dh_title">
+                    <apex:image url="{!$Resource.texcellency__def_logo_small}"
+                        styleClass="dh_logoSmall" />
+                    <h3>Definitive Healthcare</h3>
+                </apex:outputPanel>
+            </apex:facet>
+            <apex:pageblockSection title="Salesforce Account" columns="1"
+                collapsible="false">
+                <apex:outputField value="{!account.name}" label="Name" />
+                <apex:outputField value="{!account.BillingCity}" label="City"/>
+                <apex:outputField value="{!account.BillingState}" label="State"/>
+            </apex:pageblockSection>
+            <apex:pageBlockSection title="Search Definitive Healthcare Data"
+                columns="1" collapsible="false">
+                <apex:pageMessage summary="This account is not currently linked with a Definitive Healthcare organization. 
+                        Please search through the Definitive Healthcare database using the form below to attach the 
+                        Salesforce account record to Definitive Healthcare. 
+                        Search by filling in either the Search Text or Definitive ID (exact match) fields."
+                    severity="info" strength="1"
+                    rendered="{!(hospitals == null && !isHospitalAttached && !hasPageError)}" />
+                <apex:pageMessages />
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="sName">Search Text</apex:outputLabel>
+                    <apex:inputText value="{!searchtext}" id="sName" />
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="firmTypeList">Firm Type</apex:outputLabel>
+                    <apex:selectList value="{!searchFirmType}" multiselect="false"
+                        size="1" required="false">
+                        <apex:selectOptions value="{!firmTypes}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageblockSectionItem>                
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="stateList">State</apex:outputLabel>
+                    <apex:selectList value="{!searchState}" multiselect="false"
+                        size="1">
+                        <apex:selectOptions value="{!states}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="hospitalId">Definitive ID (exact match)</apex:outputLabel>
+                    <apex:inputText value="{!searchHospitalId}" id="hospitalId" />
+                </apex:pageblockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Search Results"
+                rendered="{!(hospitals != null && !isHospitalAttached)}" columns="1"
+                collapsible="false">
+                <apex:pageBlockTable value="{!hospitals}" var="h">
+                    <apex:column width="150px">
+                        <apex:commandLink value="Attach with Account"
+                            action="{!redirectToConfirmationPage}" styleClass="btn">
+
+                            <apex:param name="selHospital" value="{!h.dh.id}"
+                                assignTo="{!selectedHospitalId}" />
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column value="{!h.dh.id}" rendered="false" />
+                    <apex:column headerValue="Name">
+                        <apex:outputlink value="{!h.dh.dhcProfile}" target="_blank">{!h.dh.name}</apex:outputlink>
+                    </apex:column>
+                    <apex:column value="{!h.dh.firmType}" headerValue="Firm Type" />
+                    <apex:column value="{!h.dh.Address}" headerValue="Address" />
+                    <apex:column value="{!h.dh.hqCity}" headerValue="City" />
+                    <apex:column value="{!h.dh.state}" headerValue="State" />
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!SearchHospitals}" value="Search" />
+                <apex:commandButton action="{!CancelSearchHospitals}" value="Cancel" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

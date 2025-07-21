@@ -1,0 +1,40 @@
+<messaging:emailTemplate recipientType="User"
+    relatedToType="Apttus_Approval__AsyncActionInfo__c"
+    subject="ERROR in Async Job '{!relatedTo.Name}'." 
+    replyTo="{!recipient.email}">
+    
+    <messaging:htmlEmailBody >
+        <html>
+            <body>
+                An error occured during asynchronous processing:
+                <br/><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Name.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Name}" /><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Apttus_Approval__AsyncAction__c.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Apttus_Approval__AsyncAction__c}" /><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Apttus_Approval__AsyncActionJobId__c.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Apttus_Approval__AsyncActionJobId__c}" /><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Apttus_Approval__Status__c.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Apttus_Approval__Status__c}" /><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Apttus_Approval__Submitter__c.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Submitter__r.Name}" /><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Apttus_Approval__SubmitTime__c.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Apttus_Approval__SubmitTime__c}" /><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Apttus_Approval__StartTime__c.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Apttus_Approval__StartTime__c}" /><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Apttus_Approval__EndTime__c.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Apttus_Approval__EndTime__c}" /><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Apttus_Approval__BusinessObjectType__c.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Apttus_Approval__BusinessObjectType__c}" /><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Apttus_Approval__BusinessObjectId__c.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Apttus_Approval__BusinessObjectId__c}" /><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Apttus_Approval__BusinessObjectIds__c.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Apttus_Approval__BusinessObjectIds__c}" /><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Apttus_Approval__ErrorMsgInfo2__c.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Apttus_Approval__ErrorMsgInfo2__c}" /><br/>
+                <b><apex:outputText value="{!$ObjectType.Apttus_Approval__AsyncActionInfo__c.Fields.Apttus_Approval__ErrorStackInfo__c.Label & ': '}" /></b>
+                <apex:outputField value="{!relatedTo.Apttus_Approval__ErrorStackInfo__c}" /><br/>
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

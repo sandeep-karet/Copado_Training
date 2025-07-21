@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Genehmigungsbedingung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Genehmigungsbedingungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Genehmigungsbedingung --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Genehmigungsbedingungen --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Genehmigungsbedingung --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Genehmigungsbedingungen --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Genehmigungsbedingung --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Genehmigungsbedingungen --></value>
+    </caseValues>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rule to which this Condition applies. --></help>
+        <label>Genehmigungsregel</label>
+        <name>sbaa__ApprovalRule__c</name>
+        <relationshipLabel>Genehmigungsbedingungen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enables Smart Approvals for this approval Condition. If approval snapshot does not change, condition will not be fired. --></help>
+        <label>Intelligente Genehmigungen aktivieren</label>
+        <name>sbaa__EnableSmartApproval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field to evaluate the the Tested Field/Variable against --></help>
+        <label>Filterfeld</label>
+        <name>sbaa__FilterField__c</name>
+        <picklistValues>
+            <masterLabel>Name</masterLabel>
+            <translation><!-- Name --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Type of filter used during Tested Field/Variable evaluation --></help>
+        <label>Filtertyp</label>
+        <name>sbaa__FilterType__c</name>
+        <picklistValues>
+            <masterLabel>Field</masterLabel>
+            <translation><!-- Field --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value</masterLabel>
+            <translation><!-- Value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Variable</masterLabel>
+            <translation><!-- Variable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Static value to evaluate the Tested Field/Variable against --></help>
+        <label>Filterwert</label>
+        <name>sbaa__FilterValue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approval Variable to evaluate the Tested Field/Variable against --></help>
+        <label>Filtervariable</label>
+        <name>sbaa__FilterVariable__c</name>
+        <relationshipLabel>Genehmigungsbedingung (Filtervariable)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Assign an unique number to this Condition to reference it in the Approval Rule&apos;s Advanced Condition. --></help>
+        <label>Index</label>
+        <name>sbaa__Index__c</name>
+    </fields>
+    <fields>
+        <help><!-- Operator used for the evaluation --></help>
+        <label>Operator</label>
+        <name>sbaa__Operator__c</name>
+        <picklistValues>
+            <masterLabel>contains</masterLabel>
+            <translation><!-- contains --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>does not contain</masterLabel>
+            <translation><!-- does not contain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ends with</masterLabel>
+            <translation><!-- ends with --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>equals</masterLabel>
+            <translation><!-- equals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>greater or equals</masterLabel>
+            <translation><!-- greater or equals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>greater than</masterLabel>
+            <translation><!-- greater than --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less or equals</masterLabel>
+            <translation><!-- less or equals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less than</masterLabel>
+            <translation><!-- less than --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>not equals</masterLabel>
+            <translation><!-- not equals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>starts with</masterLabel>
+            <translation><!-- starts with --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Field tested when evaluating the Condition --></help>
+        <label>Getestetes Feld</label>
+        <name>sbaa__TestedField__c</name>
+        <picklistValues>
+            <masterLabel>Additional Disc. (%)</masterLabel>
+            <translation><!-- Additional Disc. (%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amount</masterLabel>
+            <translation><!-- Amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2O_Approval_support_product__c</masterLabel>
+            <translation><!-- L2O_Approval_support_product__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2O_Auto_Approve__c</masterLabel>
+            <translation><!-- L2O_Auto_Approve__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2O_Bypass_CO_Approval__c</masterLabel>
+            <translation><!-- L2O_Bypass_CO_Approval__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2O_Fee_Type__c</masterLabel>
+            <translation><!-- L2O_Fee_Type__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2O_Hardware_Discount__c</masterLabel>
+            <translation><!-- L2O_Hardware_Discount__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2O_Inside_Sales__c</masterLabel>
+            <translation><!-- L2O_Inside_Sales__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2O_NetworkProactive_Monitoring_Discount__c</masterLabel>
+            <translation><!-- L2O_NetworkProactive_Monitoring_Discount__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2O_Number_of_Lives__c</masterLabel>
+            <translation><!-- L2O_Number_of_Lives__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2O_Professional_Service_Discount__c</masterLabel>
+            <translation><!-- L2O_Professional_Service_Discount__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2O_Software_Discount__c</masterLabel>
+            <translation><!-- L2O_Software_Discount__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2O_Sub_Channel_Segment__c</masterLabel>
+            <translation><!-- L2O_Sub_Channel_Segment__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L2O_Transaction_Type__c</masterLabel>
+            <translation><!-- L2O_Transaction_Type__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Name</masterLabel>
+            <translation><!-- Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Probability</masterLabel>
+            <translation><!-- Probability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBQQ__NetAmount__c</masterLabel>
+            <translation><!-- SBQQ__NetAmount__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBQQ__Type__c</masterLabel>
+            <translation><!-- SBQQ__Type__c --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Approval Variable tested when evaluating the Condition --></help>
+        <label>Getestete Variable</label>
+        <name>sbaa__TestedVariable__c</name>
+        <relationshipLabel>Genehmigungsbedingung (getestete Variable)</relationshipLabel>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Bedingungsname</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Sie dürfen nur einen Filtertyp angeben, und dieser muss mit &quot;Filtertyp&quot; übereinstimmen.</errorMessage>
+        <name>sbaa__Filter_Type_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Sie müssen einen Wert für &quot;Getestetes Feld&quot; oder &quot;Getestete Variable&quot; angeben.</errorMessage>
+        <name>sbaa__Tested_Target_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Reviewer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Reviewers</value>
+    </caseValues>
+    <fields>
+        <help><!-- Comments on Cancel/End Review. --></help>
+        <label><!-- Comment --></label>
+        <name>Apttus__Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Review Document Version --></label>
+        <name>Apttus__EndReviewDocumentVersion__c</name>
+        <relationshipLabel><!-- Reviewer --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Review Ended by user. --></help>
+        <label><!-- Ended/Cancelled By --></label>
+        <name>Apttus__EndedCancelledBy__c</name>
+        <relationshipLabel><!-- Reviewers --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Review End Date/time --></help>
+        <label><!-- Ended/Cancelled On --></label>
+        <name>Apttus__EndedCancelledOn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Member id of MS Teams --></help>
+        <label><!-- Member Id --></label>
+        <name>Apttus__MemberId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mode in which Review is completed --></help>
+        <label><!-- Mode --></label>
+        <name>Apttus__Mode__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Behalf</masterLabel>
+            <translation><!-- On Behalf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self</masterLabel>
+            <translation><!-- Self --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Recipient Type --></label>
+        <name>Apttus__RecipientType__c</name>
+        <picklistValues>
+            <masterLabel>Contact</masterLabel>
+            <translation><!-- Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Review Cycle Id --></help>
+        <label><!-- Review Cycle --></label>
+        <name>Apttus__ReviewCycle__c</name>
+        <relationshipLabel><!-- Reviewers --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Review Status of the reviewer. --></help>
+        <label><!-- Review Status --></label>
+        <name>Apttus__ReviewStatus__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Reviewer copy of document, submitted by reviewer --></help>
+        <label><!-- Reviewer Copy Document Version --></label>
+        <name>Apttus__ReviewerCopyDocumentVersionId__c</name>
+        <relationshipLabel><!-- Reviewers (Reviewer Copy Document Version) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Email Id of the user --></help>
+        <label><!-- Reviewer Email --></label>
+        <name>Apttus__ReviewerEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- User or Contact Id --></label>
+        <name>Apttus__UserorContactId__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

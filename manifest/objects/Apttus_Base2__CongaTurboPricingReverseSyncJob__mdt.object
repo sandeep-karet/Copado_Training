@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Conga Turbo Pricing Reverse Sync Job</description>
+    <fields>
+        <fullName>Apttus_Base2__BatchSize__c</fullName>
+        <defaultValue>50</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Batch Size</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_Base2__EndpointHttpMethod__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Http method (GET, POST) used for the job.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Http method (GET, POST) used for the job.</inlineHelpText>
+        <label>Endpoint Http Method</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>GET</fullName>
+                    <default>true</default>
+                    <label>GET</label>
+                </value>
+                <value>
+                    <fullName>POST</fullName>
+                    <default>false</default>
+                    <label>POST</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Apttus_Base2__IsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if the Reverse Sync Job is active</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Indicates if the Reverse Sync Job is active</inlineHelpText>
+        <label>Is Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_Base2__JobHandlerClass__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Implementation class for handling the job.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The Implementation class for handling the job.</inlineHelpText>
+        <label>Job Handler Class</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_Base2__LastRunTime__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Shows the Date/Time of the last run.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Shows the Date/Time of the last run.</inlineHelpText>
+        <label>Last Run Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_Base2__ObjectsToSync__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Comma separated list of objects to be synced by Reverse Sync process.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Comma separated list of objects to be synced by Reverse Sync process.</inlineHelpText>
+        <label>Objects To Sync</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_Base2__RunType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the Job run type is Batchable or Queueable</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Indicates if the Job run type is Batchable or Queueable</inlineHelpText>
+        <label>Run Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Batchable</fullName>
+                    <default>true</default>
+                    <label>Batchable</label>
+                </value>
+                <value>
+                    <fullName>Queueable</fullName>
+                    <default>false</default>
+                    <label>Queueable</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Apttus_Base2__Sequence__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The Sequence of the job run.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The Sequence of the job run.</inlineHelpText>
+        <label>Sequence</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Apttus_Base2__SoqlQuery__c</fullName>
+        <deprecated>false</deprecated>
+        <description>SOQL Query to run to select objects based on the cartId (for eg: Line Items) to process. This is required to if your Handler class is implementing Batchable.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>SOQL Query to run to select objects based on the cartId (for eg: Line Items) to process.  This is required to if your Handler class is implementing Batchable. eg: SELECT Id, Apttus_Config2__PrimaryLineNumber__c FROM Apttus_Config2__LineItem__c WHERE Apttus_Config2__ConfigurationId__c = :cartId</inlineHelpText>
+        <label>Soql Query</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Apttus_Base2__SyncBaseObjects__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Check this box if you have to sync base objects (like Line Items, Summary groups etc...) also along with line item related objects</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Check this box if you have to sync base objects (like Line Items, Summary groups etc...) also along with line item related objects</inlineHelpText>
+        <label>Sync Base Objects</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Conga Turbo Pricing Reverse Sync Job</label>
+    <pluralLabel>Conga Turbo Pricing Reverse Sync Jobs</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

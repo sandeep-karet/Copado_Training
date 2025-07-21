@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Account Hierarchy --></value>
+    </caseValues>
+    <fields>
+        <help>最下層の取引先ID。
+Root &gt; 親 &gt; 最下層</help>
+        <label><!-- Account Leaf --></label>
+        <name>Apttus__AccountLeafId__c</name>
+        <relationshipLabel><!-- Account Hierarchies --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>取引先階層の取引先の階層レベル。
+インデントを識別するために取引先階層内のツリービューで使用されます</help>
+        <label><!-- Account Level --></label>
+        <name>Apttus__AccountLevel__c</name>
+    </fields>
+    <fields>
+        <help>親取引先ID。
+Root &gt; 親 &gt; 最下層</help>
+        <label><!-- Account Parent --></label>
+        <name>Apttus__AccountParentId__c</name>
+        <relationshipLabel><!-- Account Hierarchies (Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ルートの取引先ID。 rootアカウントは、階層内の子、孫などのすべてを持っている原始アカウントです。階層に対して唯一のrootアカウントがある場合もあります。
+Root &gt; 親 &gt; 最下層</help>
+        <label><!-- Account Root --></label>
+        <name>Apttus__AccountRootId__c</name>
+        <relationshipLabel><!-- Account Hierarchies (Account) --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Account Hierarchy Name --></nameFieldLabel>
+</CustomObjectTranslation>

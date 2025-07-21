@@ -1,0 +1,141 @@
+<apex:page standardController="Account" extensions="DNBConnect.SBC_VF_ControllerExtension" sidebar="false" action="{!checkIfSBCEnabled}">
+    <apex:includeLightning />
+
+    <div id="lightning" style="height: calc(100vh - 206px);"/>
+    <script>
+    	dataLayer=[{
+            'pageCategory':'Search Before Create'
+        }];
+    </script>
+    <script>
+    	function changeIdsForAutofill(){
+    		if( document.getElementById("bizName") !== null)
+                document.getElementById("bizName").getElementsByTagName("input")[0].id = "sbcInputBizname";
+            if( document.getElementById("dunsNumber") !== null)
+                document.getElementById("dunsNumber").getElementsByTagName("input")[0].id = "sbcInputDunsNumber";
+            if( document.getElementById("Website") !== null)
+                document.getElementById("Website").getElementsByTagName("input")[0].id = "sbcInputWebsite";
+            if( document.getElementById("bizRegNumber") !== null)
+                document.getElementById("bizRegNumber").getElementsByTagName("input")[0].id = "sbcInputBizRegNumber";
+            if( document.getElementById("Address") !== null)
+                document.getElementById("Address").getElementsByTagName("input")[0].id = "sbcInputAddress";
+            if( document.getElementById("city") !== null)
+                document.getElementById("city").getElementsByTagName("input")[0].id = "sbcInputCity";
+            if( document.getElementById("state") !== null)
+                document.getElementById("state").getElementsByTagName("input")[0].id = "sbcInputState";
+            if( document.getElementById("country") !== null)
+                document.getElementById("country").getElementsByTagName("input")[0].id = "sbcInputCountry";
+            if( document.getElementById("phoneNumber") !== null)
+                document.getElementById("phoneNumber").getElementsByTagName("input")[0].id = "sbcInputPhoneNumber";
+            if( document.getElementById("industry") !== null)
+                document.getElementById("industry").getElementsByTagName("input")[0].id = "sbcInputIndustry";
+        }
+    </script>
+    <script>
+    $Lightning.use("{!JSENCODE(NamespacePrefix)}:Search_Before_Create_ClassicExp", function() { // Lightning out app 
+            // Create component dynamically
+            $Lightning.createComponent("{!JSENCODE(NamespacePrefix)}:SBCComponent", // name of the lighting component
+                                     {"pageNumber" : "1", "mainObject" : "Account"}, // attributes to set on the component when it’s created
+                                     "lightning", //The DOM element or element ID that indicates where on the page to insert the created component. 
+                                     function(cmp) { //A function to call once the component is added to and active on the page. 
+                                         //The callback receives the component created as its only argument.
+                console.log("Lightning Componenet was created");
+
+                $A.eventService.addHandler({
+                    event: 'force:createRecord',
+                    handler: function(event) { 
+                        
+                        var link = '{!URLFOR($Action.Account.New, null, null, true)}';
+                        var myEventData = event.getParam("defaultFieldValues");
+                        var recordTypeSelection = event.getParam("recordTypeId");
+                        for(value in myEventData) {
+                            
+                            if(myEventData[value] !== undefined)
+                                myEventData[value] = replaceCharacters(myEventData[value]);
+                            else
+                                myEventData[value] = '';
+                        }
+                        if(Object.keys(myEventData).length > 1){
+                            var querySomething = '{!$RemoteAction.SBC_VF_ControllerExtension.fetchFieldIDFromName}';
+                            Visualforce.remoting.Manager.invokeAction(
+                                querySomething,
+                                myEventData,
+                                function (result, events) {
+                                    //do stuff with result
+                                    if(events.status) {
+                                        var params='';
+                                        for(var key in result){
+                                            params = params + "&" + result[key] + "=" + myEventData[key];
+                                        }
+                                        params = params + (recordTypeSelection == undefined ? '' : "&RecordType="+recordTypeSelection);
+                                        link = link + params;
+                                        if(link.includes("setup/ui/recordtypeselect.jsp")){
+                                            link = link.replace("setup/ui/recordtypeselect.jsp","001/e");
+                                        }
+                                        window.location = link;
+                                    }
+                                }
+                            );
+                        }
+                        else{
+                            var params='';
+                            params = params + "&acc2" + "=" + myEventData["Name"] + (recordTypeSelection == undefined ? '' : "&RecordType="+recordTypeSelection);
+                            link = link + params;
+                            if(link.includes("setup/ui/recordtypeselect.jsp")){
+                                link = link.replace("setup/ui/recordtypeselect.jsp","001/e");
+                            }
+                            window.location = link;
+                        }
+                    }
+                });
+
+                $A.eventService.addHandler({
+                    event: 'force:navigateToSObject',
+                    handler: function(event) { 
+                        var recordId =  event.getParam("recordId");
+                        
+                        window.location = '/'+recordId;
+                    }
+                });
+
+                $A.eventService.addHandler({
+                    event:'{!JSENCODE(NamespacePrefix)}:tagManagerEvent',
+                    handler:function(event){
+                        console.log(event.getParam("element"));
+                        var element = event.getParam("element");
+                        dataLayer.push({'event': element+'-click'});
+                    }
+                });
+                changeIdsForAutofill();
+            });
+        });
+    </script>
+    <script>
+    	let header = document.getElementById("AppBodyHeader");
+    	if(header == null){
+            document.getElementById("lightning").style.height = "100vh";
+        }
+        function replaceCharacters(value){
+            return encodeURIComponent(value);
+        }
+    </script>
+
+    <!-- Google Tag Manager (noscript) -->
+	<noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PX5V4GS"
+            height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+    <!-- Google Tag Manager -->
+	<script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PX5V4GS');
+    </script>
+	<!-- End Google Tag Manager -->
+
+</apex:page>

@@ -1,0 +1,32 @@
+<!-- 
+    /**
+     *  Conga Approvals
+     *  OpportunityProductsList
+     *   
+     *  @2011-2021 Conga Inc. All rights reserved.
+     */
+-->
+<apex:page standardController="Apttus_Approval__Approval_Request__c"
+        extensions="Apttus_Approval.OpportunityProductsListController"
+		lightningStylesheets="{!$User.UIThemeDisplayed == 'Theme4d' ||
+								$User.UIThemeDisplayed == 'Theme4u'}">
+
+    <apex:outputText value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Opportunity__c}" rendered="false" />
+    
+    <apex:pageBlock title="{!$Label.Apttus_Approval__OpportunityProducts}" rendered="{!opptyProducts.size > 0}">
+        <apex:pageBlockTable value="{!opptyProducts}" var="opptyProduct">
+            <apex:column headerValue="{!$Label.Apttus_Approval__Name}">
+                <apex:outputLink value="/{!opptyProduct.PricebookEntry.Product2.Id}">
+                    {!opptyProduct.PricebookEntry.Product2.Name}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column value="{!opptyProduct.PricebookEntry.Product2.ProductCode}"/>
+            <apex:column value="{!opptyProduct.PricebookEntry.Product2.Description}"/>
+            <apex:column value="{!opptyProduct.ListPrice}"/>
+            <apex:column value="{!opptyProduct.UnitPrice}"/>
+            <apex:column value="{!opptyProduct.Quantity}"/>
+            <apex:column value="{!opptyProduct.TotalPrice}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+</apex:page>

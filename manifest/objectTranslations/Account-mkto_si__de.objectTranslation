@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account ID (18) --></label>
+        <name>Account_ID_18__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing County --></label>
+        <name>Billing_County__c</name>
+    </fields>
+    <fields>
+        <help><!-- Upon a successful match, D&amp;B Connect populates this field that links the Account record to a specific D-U-N-S Number for display of a custom object with D&amp;B data. --></help>
+        <label><!-- D&amp;B Connect Company Profile --></label>
+        <name>DNBConnect__D_B_Connect_Company_Profile__c</name>
+        <relationshipLabel><!-- DBConnectAccountCompanyProfile --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- A numeric value from 1 (low) up to 10 (high) indicating the level of certainty at which this possible candidate was included in this result set. --></help>
+        <label><!-- D&amp;B Match Confidence Code --></label>
+        <name>DNBConnect__D_B_Match_Confidence_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- The information that the matching process used to arrive at a match in addition to the application&apos;s business rules and parameters specified by the requestor. This is a 28-byte string consisting of 14 components of 2 bytes each. The 14 components are, in order, Name, Street Number, Street Name, Town Name, Territory Name, P.O. Box, Telephone, Post Code, D-U-N-S Number, Industry Code, Geographical Density, Location Uniqueness, Registration Number and URL. --></help>
+        <label><!-- D&amp;B Match Data Profile --></label>
+        <name>DNBConnect__D_B_Match_Data_Profile__c</name>
+    </fields>
+    <fields>
+        <help><!-- The compound rating that comprises one rating per type of data scored by a match engine. For example, in AABZBAAAFBZ the &quot;A&quot;; in the 1st position means that the Name scored between 80-100 and the &quot;A&quot;; in the 2nd position means that the Street Number had to score exactly 100. For more details, please see the Identity Resolution guide. --></help>
+        <label><!-- D&amp;B Match Grade --></label>
+        <name>DNBConnect__D_B_Match_Grade__c</name>
+    </fields>
+    <fields>
+        <help><!-- The type of match performed to identify the identified entity. May be one of the following:
+DUNS Number Lookup: D-U-N-S Number was used to perform match.
+Name and Address Lookup: Name and Address were used to perform match.
+National ID Lookup: Registration Number was used to perform match.
+Telephone Number Lookup: Telephone Number was used to perform match.
+ZIP Code Lookup: Postal Code was used to perform match.
+Note: This parameter is not applicable for Multi-Process High-Volume Match. --></help>
+        <label><!-- D&amp;B Match Type --></label>
+        <name>DNBConnect__D_B_Match_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- A number from -1 to 100 (including decimals) that indicates the detailed level of match on the name of the matched candidate.
+0 indicates no match.
+100 indicates most accurate match.
+Note: This parameter is not applicable for Multi-Process High-Volume Match. --></help>
+        <label><!-- D&amp;B Name Match Score --></label>
+        <name>DNBConnect__D_B_Name_Match_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field indicates if the D-U-N-S value on this record has been Traded Up. The D-U-N-S Trade Up feature enables D&amp;B Connect to enrich records with HQ location data directly into records matched at lower levels of the corporate family tree. --></help>
+        <label><!-- D-U-N-S Traded Up --></label>
+        <name>DNBConnect__dunsTradedUp__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field can be different from the D-U-N-S value held in the custom object. Refer to your D-U-N-S Trade Up settings within your project setup for more details on how this match was made. --></help>
+        <label><!-- Matched D-U-N-S --></label>
+        <name>DNBConnect__matchedDuns__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Enrich Status --></label>
+        <name>DOZISF__ZoomInfo_Enrich_Status__c</name>
+        <picklistValues>
+            <masterLabel>Enriched</masterLabel>
+            <translation><!-- Enriched --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error Occurred in Instant Enrich</masterLabel>
+            <translation><!-- Error Occurred in Instant Enrich --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error Occurred in Scheduled Enrich</masterLabel>
+            <translation><!-- Error Occurred in Scheduled Enrich --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insufficient Credits</masterLabel>
+            <translation><!-- Insufficient Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Match</masterLabel>
+            <translation><!-- No Match --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Enriched - Not Under Management</masterLabel>
+            <translation><!-- Not Enriched - Not Under Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo First Updated --></label>
+        <name>DOZISF__ZoomInfo_First_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Company ID --></label>
+        <name>DOZISF__ZoomInfo_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo InboxAI ID --></label>
+        <name>DOZISF__ZoomInfo_InboxAI_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- ZoomInfo Last Updated --></label>
+        <name>DOZISF__ZoomInfo_Last_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dummy Text Field --></label>
+        <name>Dummy_Text_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used by the Employer team to mark the status of an account as it pertains to the Employer channel. --></help>
+        <label><!-- Employer Account Status --></label>
+        <name>Employer_Account_Status__c</name>
+        <picklistValues>
+            <masterLabel>Disqualified</masterLabel>
+            <translation><!-- Disqualified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expansion Target</masterLabel>
+            <translation><!-- Expansion Target --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Business Target</masterLabel>
+            <translation><!-- New Business Target --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 6 Month passed after client status --></label>
+        <name>L2O_6_Month_passed_after_client_status__c</name>
+    </fields>
+    <fields>
+        <label><!-- 8A Certified Business Indicator --></label>
+        <name>L2O_8A_Certified_Business_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Health Description --></label>
+        <name>L2O_Account_Health_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Format for Notes: MM/DD/YYY (Initials) : Notes --></help>
+        <label><!-- Account Health Notes --></label>
+        <name>L2O_Account_Health_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Health &amp; Risk Rating --></label>
+        <name>L2O_Account_Health_Risk_Rating__c</name>
+        <picklistValues>
+            <masterLabel>Black</masterLabel>
+            <translation><!-- Black --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blue</masterLabel>
+            <translation><!-- Blue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orange</masterLabel>
+            <translation><!-- Orange --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account Health --></label>
+        <name>L2O_Account_Health__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Hierarchy Defined --></label>
+        <name>L2O_Account_Hierarchy_Defined__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the Account Institution&apos;s Legal Name --></help>
+        <label><!-- Account Legal Name --></label>
+        <name>L2O_Account_Legal_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date of entry and next steps to move account forward --></help>
+        <label><!-- Account Next Steps --></label>
+        <name>L2O_Account_Next_Steps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Size --></label>
+        <name>L2O_Account_Size__c</name>
+        <picklistValues>
+            <masterLabel>Enterprise (1,000+)</masterLabel>
+            <translation><!-- Enterprise (1,000+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium / Large (101-999)</masterLabel>
+            <translation><!-- Medium / Large (101-999) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small &amp; Midsized (1-100)</masterLabel>
+            <translation><!-- Small &amp; Midsized (1-100) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- &quot;Customer: Site is the financial owner of a patient access device. There may or may not be devices installed here.
+    Spoke: Site does not own an endpoint but they have one installed at this location.
+     Non-Customer: No devices owned by or at this site.&quot; --></help>
+        <label><!-- Account Status --></label>
+        <name>L2O_Account_Status__c</name>
+        <picklistValues>
+            <masterLabel>Client</masterLabel>
+            <translation><!-- Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disqualified</masterLabel>
+            <translation><!-- Disqualified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Former Client</masterLabel>
+            <translation><!-- Former Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect</masterLabel>
+            <translation><!-- Prospect --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account Sub-Type --></label>
+        <name>L2O_Account_Sub_type__c</name>
+        <picklistValues>
+            <masterLabel>Benefit Consultant</masterLabel>
+            <translation><!-- Benefit Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit program</masterLabel>
+            <translation><!-- Benefit program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broker</masterLabel>
+            <translation><!-- Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Car Insurance</masterLabel>
+            <translation><!-- Car Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Insurance</masterLabel>
+            <translation><!-- Card Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinic</masterLabel>
+            <translation><!-- Clinic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial</masterLabel>
+            <translation><!-- Commercial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Death insurance</masterLabel>
+            <translation><!-- Death insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dental Insurance</masterLabel>
+            <translation><!-- Dental Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External</masterLabel>
+            <translation><!-- External --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Insurance</masterLabel>
+            <translation><!-- General Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Insurance</masterLabel>
+            <translation><!-- Health Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health System</masterLabel>
+            <translation><!-- Health System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Insurance</masterLabel>
+            <translation><!-- Home Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospital</masterLabel>
+            <translation><!-- Hospital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor</masterLabel>
+            <translation><!-- Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor Insurance</masterLabel>
+            <translation><!-- Labor Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life and Health Insurance</masterLabel>
+            <translation><!-- Life and Health Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life insurance</masterLabel>
+            <translation><!-- Life insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logistics</masterLabel>
+            <translation><!-- Logistics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network</masterLabel>
+            <translation><!-- Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Insurance</masterLabel>
+            <translation><!-- Personal Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician</masterLabel>
+            <translation><!-- Physician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reseller</masterLabel>
+            <translation><!-- Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sport Insurance</masterLabel>
+            <translation><!-- Sport Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TPA</masterLabel>
+            <translation><!-- TPA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel insurance</masterLabel>
+            <translation><!-- Travel insurance --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account Type --></label>
+        <name>L2O_Account_Type__c</name>
+        <picklistValues>
+            <masterLabel>Employer</masterLabel>
+            <translation><!-- Employer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Plan</masterLabel>
+            <translation><!-- Health Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospital &amp; Health System</masterLabel>
+            <translation><!-- Hospital &amp; Health System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurer</masterLabel>
+            <translation><!-- Insurer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lessor</masterLabel>
+            <translation><!-- Lessor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <lookupFilter>
+            <errorMessage><!-- The contact does not exist or does belong to the account --></errorMessage>
+        </lookupFilter>
+        <name>L2O_Amend_Asset_Contact__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Amendment Opportunity SubType --></label>
+        <name>L2O_Amendment_Opportunity_SubType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broadcast Message --></label>
+        <name>L2O_Broadcast_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Region --></label>
+        <name>L2O_Business_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charter Type --></label>
+        <name>L2O_Charter_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Code --></label>
+        <name>L2O_Client_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Termination Rationale --></label>
+        <name>L2O_Client_Termination_Rationale__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client VAT Number --></label>
+        <name>L2O_Client_VAT_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client status date --></label>
+        <name>L2O_Client_status_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Email Address --></label>
+        <name>L2O_Company_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Countries of Operation --></label>
+        <name>L2O_Countries_of_Operation__c</name>
+        <picklistValues>
+            <masterLabel>Australia</masterLabel>
+            <translation><!-- Australia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>France</masterLabel>
+            <translation><!-- France --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Germany</masterLabel>
+            <translation><!-- Germany --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Great Britain</masterLabel>
+            <translation><!-- Great Britain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ireland</masterLabel>
+            <translation><!-- Ireland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italy</masterLabel>
+            <translation><!-- Italy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netherlands</masterLabel>
+            <translation><!-- Netherlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Zealand</masterLabel>
+            <translation><!-- New Zealand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poland</masterLabel>
+            <translation><!-- Poland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portugal</masterLabel>
+            <translation><!-- Portugal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Singapore</masterLabel>
+            <translation><!-- Singapore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slovenia</masterLabel>
+            <translation><!-- Slovenia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spain</masterLabel>
+            <translation><!-- Spain --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Category Code --></label>
+        <name>L2O_Customer_Category_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Est. # of Births --></label>
+        <name>L2O_DHC_Est_of_Births__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Est # of ER Visits --></label>
+        <name>L2O_DHC_Est_of_ER_Visits__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Est. # of Outpatient Visits --></label>
+        <name>L2O_DHC_Est_of_Outpatient_Visits__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Telemedicine Vendor/App --></label>
+        <name>L2O_DHC_Telemedicine_Vendor_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC # of NICU Beds --></label>
+        <name>L2O_DHC_of_NICU_Beds__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC # of NICU Days --></label>
+        <name>L2O_DHC_of_NICU_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- D-U-Ns Number --></label>
+        <name>L2O_D_U_Ns_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fortune 1000 Indicator --></label>
+        <name>L2O_Fortune_1000_Indicator__c</name>
+    </fields>
+    <fields>
+        <help><!-- System Generated Global UniqueId --></help>
+        <label><!-- GUID --></label>
+        <name>L2O_GUID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoicing Country --></label>
+        <name>L2O_Invoicing_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Integration Date --></label>
+        <name>L2O_Last_Integration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Referral Date --></label>
+        <name>L2O_Last_Referral_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- For mapping lead account type --></help>
+        <label><!-- Lead Account Type --></label>
+        <name>L2O_Lead_Account_Type__c</name>
+        <picklistValues>
+            <masterLabel>Employer</masterLabel>
+            <translation><!-- Employer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal</masterLabel>
+            <translation><!-- Federal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Plan</masterLabel>
+            <translation><!-- Health Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health System</masterLabel>
+            <translation><!-- Health System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospital</masterLabel>
+            <translation><!-- Hospital --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Lead Id --></label>
+        <name>L2O_Lead_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>L2O_Lead__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Legacy Id --></label>
+        <name>L2O_Legacy_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Source --></label>
+        <name>L2O_Legacy_Source__c</name>
+        <picklistValues>
+            <masterLabel>Comitl</masterLabel>
+            <translation><!-- Comitl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GCRM</masterLabel>
+            <translation><!-- GCRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ITH</masterLabel>
+            <translation><!-- ITH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LVGO</masterLabel>
+            <translation><!-- LVGO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USGH</masterLabel>
+            <translation><!-- USGH --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Minority Owned Business Indicator --></label>
+        <name>L2O_Minority_Owned_Business_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ownership Control Type --></label>
+        <name>L2O_Ownership_Control_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ownership Control Year --></label>
+        <name>L2O_Ownership_Control_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Account DHC Network ID --></label>
+        <name>L2O_Parent_Account_DHC_Network_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Account DHC Parent Network ID --></label>
+        <name>L2O_Parent_Account_DHC_Parent_Network_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Account Definitive ID --></label>
+        <name>L2O_Parent_Account_Definitive_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Account ID #18 --></label>
+        <name>L2O_Parent_Account_ID_18__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Business Name --></label>
+        <name>L2O_Parent_Business_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent D-U-N-S Number --></label>
+        <name>L2O_Parent_D_U_N_S_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Business Name --></label>
+        <name>L2O_Primary_Business_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Industry Code --></label>
+        <name>L2O_Primary_Industry_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Account Disqualification --></label>
+        <name>L2O_Reason_for_Account_Disqualification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referencing Client --></label>
+        <name>L2O_Referencing_Client__c</name>
+        <relationshipLabel><!-- Accounts (Referencing Client) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Referral Notes --></label>
+        <name>L2O_Referral_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referral Tier --></label>
+        <name>L2O_Referral_Tier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referral? --></label>
+        <name>L2O_Referral__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship Strength --></label>
+        <name>L2O_Relationship_Strength__c</name>
+        <picklistValues>
+            <masterLabel>Neutral</masterLabel>
+            <translation><!-- Neutral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strong</masterLabel>
+            <translation><!-- Strong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weak</masterLabel>
+            <translation><!-- Weak --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Shipping County --></label>
+        <name>L2O_Shipping_County__c</name>
+    </fields>
+    <fields>
+        <label><!-- Taxpayer Number --></label>
+        <name>L2O_Taxpayer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Territory assignment field --></label>
+        <name>L2O_Territory_assignment_field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total US Employees Benefits-Enrolled --></label>
+        <name>L2O_Total_US_Employees_Benefits_Enrolled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # of Lost Opportunities --></label>
+        <name>L2O_Total_of_Lost_Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # of Open Opportunities --></label>
+        <name>L2O_Total_of_Open_Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total # of Won Opportunities --></label>
+        <name>L2O_Total_of_Won_Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trade Style Name --></label>
+        <name>L2O_Trade_Style_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ultimate Parent Account (Legal) --></label>
+        <name>L2O_Ultimate_Parent_Account_Legal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ultimate Parent Account (TEXT) --></label>
+        <name>L2O_Ultimate_Parent_Account_TEXT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ultimate Parent Account --></label>
+        <name>L2O_Ultimate_Parent_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Veteran Owned Business Indicator --></label>
+        <name>L2O_Veteran_Owned_Business_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Woman Owned Business Indicator --></label>
+        <name>L2O_Woman_Owned_Business_Indicator__c</name>
+    </fields>
+    <fields>
+        <help><!-- May be reference for Integration to Great Plains on HHS side. --></help>
+        <label><!-- Customer Number --></label>
+        <name>L2O_customer_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fully Insured Population --></label>
+        <name>L2O_fully_insured_population__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Year Number of Employees --></label>
+        <name>L2O_prior_year_number_of_employees__c</name>
+    </fields>
+    <fields>
+        <label><!-- LinkedIn Company Id --></label>
+        <name>LID__LinkedIn_Company_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Option to combine quantities of multiple assets for the same product into one line when renewal quote is generated. --></help>
+        <label><!-- Combine Asset Quantities --></label>
+        <name>SBQQ__AssetQuantitiesCombined__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable to combine assets and subscriptions from multiple co-termed contracts. By default, each co-termed contract generates a separate group on renewal quote. --></help>
+        <label><!-- Combine Co-Termed Contracts --></label>
+        <name>SBQQ__CoTermedContractsCombined__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines when contracts are co-terminated. --></help>
+        <label><!-- Co-Termination Event --></label>
+        <name>SBQQ__CoTerminationEvent__c</name>
+        <picklistValues>
+            <masterLabel>Add-on</masterLabel>
+            <translation><!-- Add-on --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation><!-- Renewal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Determines how service and subscription contracts for this customer are co-terminated. --></help>
+        <label><!-- Contract Co-Termination --></label>
+        <name>SBQQ__ContractCoTermination__c</name>
+        <picklistValues>
+            <masterLabel>Always</masterLabel>
+            <translation><!-- Always --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Never</masterLabel>
+            <translation><!-- Never --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prompt</masterLabel>
+            <translation><!-- Prompt --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Default opportunity for this account used by an e-Commerce module to obtain the customer&apos;s price book and associate with &quot;shopping cart&quot; quotes. --></help>
+        <label><!-- Default Opportunity --></label>
+        <name>SBQQ__DefaultOpportunity__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select if contracted prices should not be inherited from the parent account. --></help>
+        <label><!-- Ignore Parent Contracted Prices --></label>
+        <name>SBQQ__IgnoreParentContractedPrices__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select checkbox to maintain bundle hierarchy on renewal quotes and amendments. --></help>
+        <label><!-- Preserve Bundle Structure --></label>
+        <name>SBQQ__PreserveBundle__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter date until which the prices must be held. --></help>
+        <label><!-- Price Hold End --></label>
+        <name>SBQQ__PriceHoldEnd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Choose Asset Based to make renewals based off of an account&apos;s assets, or choose Contract Based to make renewals based off of contracts created from a quote. --></help>
+        <label><!-- Renewal Model --></label>
+        <name>SBQQ__RenewalModel__c</name>
+        <picklistValues>
+            <masterLabel>Asset Based</masterLabel>
+            <translation><!-- Asset Based --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Based</masterLabel>
+            <translation><!-- Contract Based --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Use &quot;Same&quot; to keep the same price paid last time. Use &quot;List&quot; to use current list price. Use &quot;Uplift&quot; to use the price paid last time plus some uplift. --></help>
+        <label><!-- Renewal Pricing Method --></label>
+        <name>SBQQ__RenewalPricingMethod__c</name>
+        <picklistValues>
+            <masterLabel>List</masterLabel>
+            <translation><!-- List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Same</masterLabel>
+            <translation><!-- Same --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uplift</masterLabel>
+            <translation><!-- Uplift --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Selected if this account has active certificates --></help>
+        <label><!-- Tax-Exempt --></label>
+        <name>SBQQ__TaxExempt__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Shipping County --></label>
+        <name>Shipping_County__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exclude from D&amp;B Connect --></label>
+        <name>dnb_exclude_company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Sales Campaign --></label>
+        <name>mkto_si__Current_Sales_Campaign__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Activity by Sales --></label>
+        <name>mkto_si__Last_Activity_By_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Sales Engagement --></label>
+        <name>mkto_si__Last_Sales_Engagement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Insight --></label>
+        <name>mkto_si__Sales_Insight__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Last Replied --></label>
+        <name>mkto_si__Sales_Last_Replied__c</name>
+    </fields>
+    <fields>
+        <label><!-- Describe --></label>
+        <name>rh2__Describe__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Currency Test --></label>
+        <name>rh2__testCurrency__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC ID Holder --></label>
+        <name>texcellency__DHC_ID_Holder__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Address 1 --></label>
+        <name>texcellency__DefHC_Address1__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Address --></label>
+        <name>texcellency__DefHC_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC ACO Affiliations --></label>
+        <name>texcellency__DefHC_AffiliationsACO__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC GPO/Pharm/RPC Affiliations --></label>
+        <name>texcellency__DefHC_AffiliationsGPO__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Avg. Daily Census --></label>
+        <name>texcellency__DefHC_AvgDailyCensus__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Avg. Length of Stay --></label>
+        <name>texcellency__DefHC_AvgLengthOfStay__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Cash on Hand --></label>
+        <name>texcellency__DefHC_CashOnHand__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Date Created --></label>
+        <name>texcellency__DefHC_DateCreated__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Days Cash On Hand --></label>
+        <name>texcellency__DefHC_DaysCashOnHand__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC EMR Vendor Ambulatory --></label>
+        <name>texcellency__DefHC_EMR_Vendor_Ambulatory__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC EMR Vendor Inpatient --></label>
+        <name>texcellency__DefHC_EMR_Vendor_Inpatient__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Financial Data Date --></label>
+        <name>texcellency__DefHC_FinancialDataDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Firm Type --></label>
+        <name>texcellency__DefHC_FirmType__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC HIE Affiliations --></label>
+        <name>texcellency__DefHC_HIEAffiliations__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC City --></label>
+        <name>texcellency__DefHC_HQCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Definitive ID --></label>
+        <name>texcellency__DefHC_HospitalID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hospital Name --></help>
+        <label><!-- DHC Hospital Name --></label>
+        <name>texcellency__DefHC_Hospital_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- DefinitiveHC Hospital Profile --></help>
+        <label><!-- DHC Provider Profile --></label>
+        <name>texcellency__DefHC_Hospital_Profile__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Hospital Type --></label>
+        <name>texcellency__DefHC_Hospital_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Meaningful Use Status --></label>
+        <name>texcellency__DefHC_MeaningfulUseStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Medicare Provider Number --></label>
+        <name>texcellency__DefHC_MedicareProviderNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Net Medicare Revenue --></label>
+        <name>texcellency__DefHC_NetMedicareRevenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Net Patient Revenue --></label>
+        <name>texcellency__DefHC_NetPatientRev__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Network ID --></label>
+        <name>texcellency__DefHC_NetworkID__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Network Name --></label>
+        <name>texcellency__DefHC_Network_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC # of Affiliated Physicians --></label>
+        <name>texcellency__DefHC_NumAffiliatedPhysicians__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC # of Beds --></label>
+        <name>texcellency__DefHC_NumBeds__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC # of Discharges --></label>
+        <name>texcellency__DefHC_NumDischarges__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC # of Employees --></label>
+        <name>texcellency__DefHC_NumEmployees__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC # of Hospitals in Network --></label>
+        <name>texcellency__DefHC_NumHospitalsInNetwork__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC # of Medicare Beds --></label>
+        <name>texcellency__DefHC_NumMedicareBeds__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC # of Operating Rooms --></label>
+        <name>texcellency__DefHC_NumOperatingRooms__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Operating Income --></label>
+        <name>texcellency__DefHC_OperatingIncome__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Opt Out of Sync --></label>
+        <name>texcellency__DefHC_OptOutofSync__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Ownership Status --></label>
+        <name>texcellency__DefHC_OwnershipStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Parent Network ID --></label>
+        <name>texcellency__DefHC_Parent_NetworkID__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Parent Network Name --></label>
+        <name>texcellency__DefHC_Parent_Network_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Payor Mix % Medicaid --></label>
+        <name>texcellency__DefHC_PayorMixPctMedicaid__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Payor Mix % Medicare --></label>
+        <name>texcellency__DefHC_PayorMixPctMedicare__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Payor Mix % Private/Self/Other --></label>
+        <name>texcellency__DefHC_PayorMixPctPrivateSelf__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Phone --></label>
+        <name>texcellency__DefHC_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC State --></label>
+        <name>texcellency__DefHC_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Sync Time --></label>
+        <name>texcellency__DefHC_SyncTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Total Medicare Charges --></label>
+        <name>texcellency__DefHC_TotalMedicareCharges__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Provider Website --></label>
+        <name>texcellency__DefHC_Website__c</name>
+    </fields>
+    <fields>
+        <label><!-- DHC Zip Code --></label>
+        <name>texcellency__DefHC_ZipCode__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Please ensure the City fields are populated. Use the Google &apos;Search Address&apos; to help fill out data as needed. --></errorMessage>
+        <name>L2O_Billing_City_Validation_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please ensure the Country fields are populated. Use the Google &apos;Search Address&apos; to help fill out data as needed. --></errorMessage>
+        <name>L2O_Billing_Country_Validation_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please ensure the Postal Code fields are populated. Use the Google &apos;Search Address&apos; to help fill out data as needed. --></errorMessage>
+        <name>L2O_Billing_Postal_Code_Validation_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please ensure the State fields are populated. Use the Google &apos;Search Address&apos; to help fill out data as needed. --></errorMessage>
+        <name>L2O_Billing_State_Validation_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please ensure the Street fields are populated. Use the Google &apos;Search Address&apos; to help fill out data as needed. --></errorMessage>
+        <name>L2O_Billing_Street_Validation_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter Client Termination Rationale,as the Account Health &amp; Risk Rating is Black --></errorMessage>
+        <name>L2O_ClientTerminationRationale_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Client Managers &amp; Data Stewards may flip the Account Status back to Prospect --></errorMessage>
+        <name>L2O_Moving_Former_Client_to_Prospect</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Account Should have at least one Closed Won Opportunity to move Account Status to &quot;Client&quot; --></errorMessage>
+        <name>L2O_Moving_to_Client</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please make sure the Account Status is either &quot;Disqualified&quot; or &quot;Client&quot; before setting it to &quot;Former Client&quot; --></errorMessage>
+        <name>L2O_Moving_to_Former_Client</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill in Disqualified Reason before moving Account Status to “Disqualified” --></errorMessage>
+        <name>L2O_Reason_for_Account_Disqualification</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Contract Ops can create and edit a Lessor Account --></errorMessage>
+        <name>L2O_Restrict_Lessor_Account_Access</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please ensure the City fields are populated. Use the Google &apos;Search Address&apos; to help fill out data as needed. --></errorMessage>
+        <name>L2O_Shipping_City_Validation_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please ensure the Country fields are populated. Use the Google &apos;Search Address&apos; to help fill out data as needed. --></errorMessage>
+        <name>L2O_Shipping_Country_Validation_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please ensure the Postal Code fields are populated. Use the Google &apos;Search Address&apos; to help fill out data as needed. --></errorMessage>
+        <name>L2O_Shipping_Postal_Code_Validation_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please ensure the State fields are populated. Use the Google &apos;Search Address&apos; to help fill out data as needed. --></errorMessage>
+        <name>L2O_Shipping_State_Validation_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please ensure the Street fields are populated. Use the Google &apos;Search Address&apos; to help fill out data as needed. --></errorMessage>
+        <name>L2O_Shipping_Street_Validation_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- CompanyId should be a numeric value --></errorMessage>
+        <name>LID__Check_Company_Id_Value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Test Validation --></errorMessage>
+        <name>Test_Validation_on_Account</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- ViewAgreementHierarchyforAccount --></label>
+        <name>Apttus__ViewAgreementHierarchyforAccount</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewAgreementHierarchyforAccount2 --></label>
+        <name>Apttus__ViewAgreementHierarchyforAccount2</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Amend_Assets --></label>
+        <name>SBQQ__Amend_Assets</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Renew_Assets --></label>
+        <name>SBQQ__Renew_Assets</name>
+    </webLinks>
+    <webLinks>
+        <label>Add to Watch List auf Deutsch!</label>
+        <name>mkto_si__Add_To_Watch_List_Lightning</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Add_to_Watch_List_Detail --></label>
+        <name>mkto_si__Add_to_Watch_List_Detail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Billing --></label>
+        <name>texcellency__Billing</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- DHC_Contact_Manager --></label>
+        <name>texcellency__DHC_Contact_Manager</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- DHC_Hierarchy --></label>
+        <name>texcellency__DHC_Hierarchy</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Import_DHC_Data --></label>
+        <name>texcellency__Import_DHC_Data</name>
+    </webLinks>
+</CustomObjectTranslation>

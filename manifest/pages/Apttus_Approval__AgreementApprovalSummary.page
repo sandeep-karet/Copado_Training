@@ -1,0 +1,48 @@
+<!-- 
+    Conga Approvals
+    AgreementApprovalSummary
+     
+    @2010-2021 Conga Inc. All rights reserved.
+
+ -->
+<apex:page standardController="Apttus_Approval__Approval_Request__c"
+           extensions="Apttus_Approval.AgreementApprovalSummaryController"
+           showHeader="true" 
+           sidebar="true"
+           cache="false" 
+           tabstyle="Apttus_Approval__Approval_Request__c"
+           lightningStylesheets="{!$User.UIThemeDisplayed == 'Theme4d' ||
+                                   $User.UIThemeDisplayed == 'Theme4u' ||
+                                   $User.UIThemeDisplayed == 'Theme4t'}">
+
+    <apex:sectionHeader title="{!$Label.Apttus_Approval__ApprovalRequest}" 
+                        subtitle="{!$ObjectType.Apttus__APTS_Agreement__c.Label} {!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Name}"/>
+    
+    <apex:pageBlock title="{!$ObjectType.Apttus__APTS_Agreement__c.Label} {!$Label.Apttus_Approval__Information}">
+        
+        <apex:pageBlockSection columns="1">
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Apttus_Approval__Related_Agreement__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Account__c}" />
+            <!--<apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.AgreementType}" 
+                                  for="idAgreementType" />
+                <apex:outputText id="idAgreementType" value="{AgreementRecordType}" />
+            </apex:pageBlockSectionItem>-->
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.OwnerId}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Description__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__FF_Agreement_Number__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Status_Category__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Status__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Contract_Start_Date__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Contract_End_Date__c}" />
+            <apex:outputField value="{!Apttus_Approval__Approval_Request__c.Related_Agreement__r.Apttus__Total_Contract_Value__c}" />
+            <p/>&nbsp;
+        </apex:pageBlockSection>
+        
+        <apex:include pageName="Apttus_Approval__ApprovalAction" />
+        
+    </apex:pageBlock>
+    
+    <apex:include pageName="Apttus_Approval__ApprovalRequestsList"/>
+        
+</apex:page>

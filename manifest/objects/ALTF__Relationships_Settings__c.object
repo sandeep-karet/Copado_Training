@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ALTF__Color_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of the Formula field on the Altify Contact Map Details object. When specified, this determines the appearance of the color bar on the relationship map contacts, replacing the default.</inlineHelpText>
+        <label>Color Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Contact_Details_Side_Panel_Named_Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name the order of the Relationship Map contact detail panels.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reorder the details displayed on the Relationship Map side panel. The value of this field should be a comma-separated list (with or without gaps) of the details in your required order. Here is an example of an entered list (using the valid name of each detail): Quicklinks, Relationships, Contact Details, Attributes, Division, Target, Notes, Owner, Other</inlineHelpText>
+        <label>Contact Details Side Panel Named Order</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Contact_Title_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A custom title field for relationship map contacts that replaces the standard Title field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A custom title field for relationship map contacts that replaces the standard Title field.</inlineHelpText>
+        <label>Contact Title Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Default_Display_Attribute__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of a custom field on the Contact object to be shown by default on relationship map contact cards. This must be one of the fields in the map’s Display Options drop-down. (These are specified in Contact Field custom settings.)</inlineHelpText>
+        <label>Default Display Attribute</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Adaptability__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Select this checkbox to remove the Adaptability attribute type from relationship maps.</inlineHelpText>
+        <label>Disable Adaptability</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Buyer_Role__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Select this checkbox to remove the Buying Role attribute type from relationship maps.</inlineHelpText>
+        <label>Disable Buying Role</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Contact_Creation_Rel_Map__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Disable contact creation on relationship map.</description>
+        <inlineHelpText>Disable contact creation on relationship map.</inlineHelpText>
+        <label>Disable contact creation on rel map</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Coverage__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Select this checkbox to remove the Coverage attribute type from relationship maps.</inlineHelpText>
+        <label>Disable Coverage</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Decision_Orientation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Select this checkbox to remove the Decision Orientation attribute type from relationship maps.</inlineHelpText>
+        <label>Disable Decision Orientation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Opp_Search_AM__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Disable opportunity search for the import contact dialog on Account level relationship maps.</inlineHelpText>
+        <label>Disable Import Contact Opp Search</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Political__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Select this checkbox to remove the Political Status attribute type from relationship maps.</inlineHelpText>
+        <label>Disable Political Status</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Print_Buttons__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Disable the print buttons on the Relationship Maps and Insight Map pages.</description>
+        <inlineHelpText>Disable the print buttons on the Relationship Maps and Insight Map pages.</inlineHelpText>
+        <label>Disable Print Buttons</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Social_Photos__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>When this checkbox is selected, a relationship map contact card uses a contact’s uploaded image or their initials rather than their Twitter profile image. (The Twitter image is used by default if the map links to the Twitter account.)</inlineHelpText>
+        <label>Disable Social Photos</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Status__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Select this checkbox to remove the Support attribute type from relationship maps.</inlineHelpText>
+        <label>Disable Support</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Key_Player_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of a custom field on the Altify Contact Map Details object that determines whether a relationship map contact is a Key Player. If specified, this is used instead of the default ‘Is Key Player’ formula field.</inlineHelpText>
+        <label>Key Player Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__LinkedIn_Handle_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of a custom field on the Contact object that can be used to specify the contact’s LinkedIn handle. This provides access to the contact’s LinkedIn page from a relationship map.</inlineHelpText>
+        <label>LinkedIn Handle Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Onboarding_URL_1__c</fullName>
+        <defaultValue>&quot;https://resources.altifyhelp.com/20200001&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>This field specifies the image shown on the first page of the onboarding window for an empty relationship map.</inlineHelpText>
+        <label>Onboarding URL 1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Onboarding_URL_2__c</fullName>
+        <defaultValue>&quot;https://resources.altifyhelp.com/20200002&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>This field specifies the image shown on the second page of the onboarding window for an empty relationship map.</inlineHelpText>
+        <label>Onboarding URL 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Onboarding_URL_3__c</fullName>
+        <defaultValue>&quot;https://resources.altifyhelp.com/20200003&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>This field specifies the image shown on the third page of the onboarding window for an empty relationship map.</inlineHelpText>
+        <label>Onboarding URL 3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__SNAP_Modules__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>A comma-separated list of LinkedIn modules to display in the Sales Navigator pop-up on individual relationship map contacts. Enter OFF to hide the pop-up.</inlineHelpText>
+        <label>SNAP Modules (DEPRECATED)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__SNAP_Side_Panel_Modules__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>A comma-separated list of LinkedIn modules to display in the Sales Navigator area on a relationship map&apos;s right-hand panel. Enter OFF to hide Sales Navigator.</inlineHelpText>
+        <label>SNAP Side Panel Modules (DEPRECATED)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__SNAP_Side_Panel_Style__c</fullName>
+        <defaultValue>&quot;height:350px;width:100%;&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The height and width (expressed as HTML style attributes) to apply to the Sales Navigator area on a relationship map&apos;s right-hand panel.</inlineHelpText>
+        <label>SNAP Side Panel Style (DEPRECATED)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__SNAP_Style__c</fullName>
+        <defaultValue>&quot;min-width:320px;height:515px;&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The height and minimum width (expressed as HTML style attributes) to apply to the Sales Navigator pop-up on individual relationship map contacts.</inlineHelpText>
+        <label>SNAP Style (DEPRECATED)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp10__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp10</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Disable Upload Photo in Relationship Map</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp2</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp3__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp3</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp4__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp4</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp5__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp5</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp6__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp6</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp7__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp7</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp8__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp8</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp9__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp9</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr10__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr10</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr2__c</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr3__c</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr4__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr5__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr6__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr7__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr7</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr8__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr8</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr9__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr9</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Twitter_Handle_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of a custom field on the Contact object that can be used to specify the contact’s Twitter handle. This provides access to the contact’s Twitter page from a relationship map.</inlineHelpText>
+        <label>Twitter Handle Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Altify Relationships Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

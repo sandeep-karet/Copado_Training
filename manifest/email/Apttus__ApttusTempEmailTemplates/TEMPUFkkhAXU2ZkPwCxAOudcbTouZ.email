@@ -1,0 +1,61 @@
+<messaging:emailTemplate subject="{!$Label.apttus_approval__ApprovalRequestForAgreement} '{!relatedTo.Apttus_Approval__Related_Agreement__r.Name}' {!$Label.apttus_approval__PreviouslyAssignedTo} {!relatedTo.Apttus_Approval__PrevAssignedToName__c} {!$Label.apttus_approval__HasBeenEscalatedtoYou}" 
+                         recipientType="User" 
+                         relatedToType="Apttus_Approval__Approval_Request__c"
+                         language="{!recipient.LanguageLocaleKey}"
+                         replyTo="{!$Label.apttus_approval__ApttusEMailServiceAddress}">
+                         
+    <messaging:htmlEmailBody >
+        <html>
+        <head>
+        <div style="text-align:center; margin-right:-5px;">
+<img src='{!$Label.Delegation_Email_Template_Notification}'/>
+</div>
+        </head>
+            <body>
+            <style>
+            .my_text
+            {
+                font-family:Verdana;
+                font-size:13px;
+            }
+        </style>
+        <div class="my_text">
+                <!--  required fields -->
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Object_Type__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Object_Id__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Approval_Status__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Date__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Assigned_To_Name__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__PrevAssignedToName__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Request_Comments__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Approver_Comments__c}" rendered="false" />     
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Name}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Account__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Account__r.Name}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Owner.Name}" rendered="false" />   
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Description__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__FF_Agreement_Number__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Status_Category__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Status__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Contract_Start_Date__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Contract_End_Date__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__Related_Agreement__r.Apttus__Total_Contract_Value__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__HasDelegateApprover__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__DelegateApprover__c}" rendered="false" />
+                <apex:outputText value="{!relatedTo.Apttus_Approval__DelegateApprover__r.Name}" rendered="false" />
+                
+                Dear {!recipient.Name}:
+                <br/><br/>
+                <apex:outputText value="{!$Label.apttus_approval__ApprovalActionLinkForDelegate & ' ' & relatedTo.Apttus_Approval__Assigned_To_Name__c & '.'}" 
+                                 escape="true" 
+                                 rendered="{!relatedTo.Apttus_Approval__HasDelegateApprover__c &&
+                                            (recipient.Name == relatedTo.Apttus_Approval__DelegateApprover__r.Name)}" />
+                {!$Label.apttus_approval__ApprovalRequestForAgreement} '{!relatedTo.Apttus_Approval__Related_Agreement__r.Name}' {!$Label.apttus_approval__PreviouslyAssignedTo} {!relatedTo.Apttus_Approval__PrevAssignedToName__c} {!$Label.apttus_approval__HasBeenEscalatedtoYou}.
+                <br/><br/>
+                <Apttus_Approval:AgreementApprovalEmail ApprovalRequestSO="{!relatedTo}" ApprovalRecipientSO="{!recipient}" />
+                <br/>
+    </div>
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Term Exception Approval Condition</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Term Exception Approval Conditions</value>
+    </caseValues>
+    <fields>
+        <help><!-- Select this checkbox to include the condition in the conditions that get tested. --></help>
+        <label><!-- Active --></label>
+        <name>Apttus_Approval__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter an optional description for the condition. --></help>
+        <label><!-- Description --></label>
+        <name>Apttus_Approval__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the API field name for the field the condition applies to.  For custom field names, the  API name has a  &quot;__c&quot; appended to it. --></help>
+        <label><!-- Field --></label>
+        <name>Apttus_Approval__Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the operator to join conditions with each other. --></help>
+        <label><!-- Join --></label>
+        <name>Apttus_Approval__Join__c</name>
+        <picklistValues>
+            <masterLabel>AND</masterLabel>
+            <translation><!-- AND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OR</masterLabel>
+            <translation><!-- OR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter the number of the condition, startting with 1 and incrementing up to the number of conditions.  Conditions are evaluated in the order specified by this field.  When a condition evaluates to false, remaining conditions are ignored. --></help>
+        <label><!-- Number --></label>
+        <name>Apttus_Approval__Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Qualify the object that this condition applies to.  For example, an object qualifier of &quot;Agreement Owner&quot; means get the value of the &quot;Area__c&quot; field from the &quot;User&quot; specified by the agreement owner in the agreement related to the term exception approval. --></help>
+        <label><!-- Object Qualifier --></label>
+        <name>Apttus_Approval__Object_Qualifier__c</name>
+        <picklistValues>
+            <masterLabel>Agreement Opportunity Owner</masterLabel>
+            <translation><!-- Agreement Opportunity Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agreement Owner</masterLabel>
+            <translation><!-- Agreement Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agreement Requestor</masterLabel>
+            <translation><!-- Agreement Requestor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Current User</masterLabel>
+            <translation><!-- Current User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter the API object name for the object the condition applies to.  For custom objects, the  API name has a  &quot;__c&quot; appended to it. --></help>
+        <label><!-- Object --></label>
+        <name>Apttus_Approval__Object__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the operator for comparing the condition value with the value of the condition field name specified. --></help>
+        <label><!-- Operator --></label>
+        <name>Apttus_Approval__Operator__c</name>
+        <picklistValues>
+            <masterLabel>contains</masterLabel>
+            <translation><!-- contains --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>does not contain</masterLabel>
+            <translation><!-- does not contain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>equal to</masterLabel>
+            <translation><!-- equal to --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>greater than</masterLabel>
+            <translation><!-- greater than --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>greater than or equal to</masterLabel>
+            <translation><!-- greater than or equal to --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>in</masterLabel>
+            <translation><!-- in --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less than</masterLabel>
+            <translation><!-- less than --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>less than or equal to</masterLabel>
+            <translation><!-- less than or equal to --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>not equal to</masterLabel>
+            <translation><!-- not equal to --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>not in</masterLabel>
+            <translation><!-- not in --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>starts with</masterLabel>
+            <translation><!-- starts with --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Term Exception Approval --></label>
+        <name>Apttus_Approval__TermExceptionApprovalId__c</name>
+        <relationshipLabel><!-- Term Exception Approval Conditions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field denotes the Term Exception Approval record that this condition applies to. --></help>
+        <label><!-- Term Exception Approval (Deprecated) --></label>
+        <name>Apttus_Approval__Term_Exception_Approval__c</name>
+        <relationshipLabel><!-- Term Exception Approval Conditions (Deprecated) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter value(s) to be compared with the field name value.  Enter multiple values to be OR&apos;ed together seperated by commas.  For example, a value of &apos;val1,val2&quot; in the value field tests the condition if (fieldvalue=val1 OR fieldvalue=val2). --></help>
+        <label><!-- Value --></label>
+        <name>Apttus_Approval__Value__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

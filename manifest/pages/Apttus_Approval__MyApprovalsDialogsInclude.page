@@ -1,0 +1,717 @@
+<!-- 
+    Conga Approvals
+    MyApprovalsDialogsInclude
+     
+    @2021 Conga Inc. All rights reserved.
+
+ -->
+ <apex:page controller="Apttus_Approval.MyApprovalsController">
+
+	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+	<head>
+		<apex:slds />
+	</head>
+	<body>
+
+	<div class="slds-scope">
+
+		<!-- This panel represents the waiting dialog that will pop up -->
+		<div id="idWaitPanel"></div>
+
+		<!-- dialog to enter comments when approving request(s) -->
+		<div id="idApproveDialog" style="display:none">
+			<section id="idApproveDialogSection" role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+				<div class="slds-modal__container">
+					<apex:form id="idApproveForm">
+						<header class="slds-modal__header">
+							<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+								<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+									<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+								</svg>
+								<span class="slds-assistive-text">Close</span>
+							</button>
+							<h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{!$Label.Approve}</h2>
+						</header>
+						<div class="slds-modal__content slds-p-around_small" id="modal-content-id-1">
+							<div class="slds-form-element">
+								<apex:outputLabel value="{!$Label.Apttus_Approval__AddCommentRequired}"
+												  for="idApproveComment"
+												  rendered="{!isApprovalCommentsMandatory}"
+												  styleClass="slds-form-element__label" />
+								<apex:outputLabel value="{!$Label.Apttus_Approval__AddCommentOptional}" 
+												  for="idApproveComment"
+												  rendered="{!NOT(isApprovalCommentsMandatory)}"
+												  styleClass="slds-form-element__label" />
+								<div class="slds-form-element__control">
+									<apex:inputTextArea id="idApproveComment"
+														value="{!approvalComments}"
+														styleClass="slds-textarea" />
+								</div>
+							</div>
+						</div>
+						<footer class="slds-modal__footer">
+							<apex:commandButton value="{!$Label.Apttus_Approval__Save}"
+												onclick="onActionClickApprove(); return false;" 
+												styleClass="slds-button slds-button_brand" />
+							<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+												onclick="hideApprove(); return false;"
+												styleClass="slds-button slds-button_neutral" />
+						</footer>
+					</apex:form>
+				</div>
+			</section>
+			<div id="idApproveDialogBackdrop" class="slds-backdrop"></div>
+		</div>
+
+		<!-- dialog to enter comments when rejecting request(s) -->
+		<div id="idRejectDialog" style="display:none">
+			<section id="idRejectDialogSection" role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+				<div class="slds-modal__container">
+					<apex:form id="idRejectForm">
+						<header class="slds-modal__header">
+							<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+								<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+									<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+								</svg>
+								<span class="slds-assistive-text">Close</span>
+							</button>
+							<h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{!$Label.Reject}</h2>
+						</header>
+						<div class="slds-modal__content slds-p-around_small" id="modal-content-id-1">
+							<div class="slds-form-element">
+								<apex:outputLabel value="{!$Label.Apttus_Approval__AddCommentRequired}"
+												  for="idRejectComment"
+												  rendered="{!isApprovalCommentsMandatory}"
+												  styleClass="slds-form-element__label" />
+								<apex:outputLabel value="{!$Label.Apttus_Approval__AddCommentOptional}" 
+												  for="idRejectComment"
+												  rendered="{!NOT(isApprovalCommentsMandatory)}"
+												  styleClass="slds-form-element__label" />
+								<div class="slds-form-element__control">
+									<apex:inputTextArea id="idRejectComment"
+														value="{!approvalComments}"
+														styleClass="slds-textarea" />
+								</div>
+							</div>
+						</div>
+						<footer class="slds-modal__footer">
+							<apex:commandButton value="{!$Label.Apttus_Approval__Save}"
+												onclick="onActionClickReject(); return false;" 
+												styleClass="slds-button slds-button_brand" />
+							<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+												onclick="hideReject(); return false;"
+												styleClass="slds-button slds-button_neutral" />
+						</footer>
+					</apex:form>
+				</div>
+			</section>
+			<div id="idRejectDialogBackdrop" class="slds-backdrop"></div>
+		</div>
+
+		<!-- dialog to enter comments when saving comments to request(s) -->
+		<div id="idSaveCommentDialog" style="display:none">
+			<section id="idSaveCommentDialogSection" role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+				<div class="slds-modal__container">
+					<apex:form id="idSaveCommentForm">
+						<header class="slds-modal__header">
+							<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+								<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+									<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+								</svg>
+								<span class="slds-assistive-text">Close</span>
+							</button>
+							<h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{!$Label.SaveComment}</h2>
+						</header>
+						<div class="slds-modal__content slds-p-around_small" id="modal-content-id-1">
+							<div class="slds-form-element">
+								<apex:outputLabel value="{!$Label.Apttus_Approval__AddCommentRequired}"
+												  for="idAddComment"
+												  rendered="{!isApprovalCommentsMandatory}"
+												  styleClass="slds-form-element__label" />
+								<apex:outputLabel value="{!$Label.Apttus_Approval__AddCommentOptional}" 
+												  for="idAddComment"
+												  rendered="{!NOT(isApprovalCommentsMandatory)}"
+												  styleClass="slds-form-element__label" />
+								<div class="slds-form-element__control">
+									<apex:inputTextArea id="idAddComment"
+														value="{!approvalComments}"
+														styleClass="slds-textarea" />
+								</div>
+							</div>
+						</div>
+						<footer class="slds-modal__footer">
+							<apex:commandButton value="{!$Label.Apttus_Approval__Save}"
+												onclick="onActionClickAddComment(); return false;" 
+												styleClass="slds-button slds-button_brand" />
+							<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+												onclick="hideAddComment(); return false;"
+												styleClass="slds-button slds-button_neutral" />
+						</footer>
+					</apex:form>
+				</div>
+			</section>
+			<div id="idSaveCommentDialogBackdrop" class="slds-backdrop"></div>
+		</div>
+
+		<!-- dialog to add approvers -->
+		<!--<div id="idAddApproverDialog" style="display:none">
+			<apex:form id="idAddApproverForm">
+				<apex:pageBlock id="idAddApproverDialogError" rendered="{!hasDialogErrors}">
+					<apex:pageMessages />
+				</apex:pageBlock>
+
+				<p id="idErrorText" class="validateTips"
+					style="font-family:Salesforce-Sans, Arial, sans-serif; font-weight:normal; font-size:14px;">
+					Specify information about the approver you are adding for the selected request:
+				</p>
+
+				request id
+				<apex:inputText id="idAddApproverRequestId"
+								value="{!requestId}" style="display:none;" />
+				<script>
+					fldRequestId = j$("[id*=idAddApproverRequestId]");
+				</script>
+
+				add approver mode
+				<apex:outputLabel value="Select a sequence"
+								style="display:block; font-family:Salesforce-Sans, Arial, sans-serif; font-weight:normal; font-size:14px;" />
+				<apex:selectList id="idAddApproverMode" size="1"
+								value="{!mode}" 
+								style="display:block; width:100%;"
+								styleClass="text ui-widget-content">
+					<apex:selectOptions value="{!addApproverModes}"></apex:selectOptions>
+				</apex:selectList>
+				<p/>
+				<script>
+					fldMode = j$("[id*=idAddApproverMode]");
+				</script>
+		
+				step label
+				<apex:outputLabel value="Enter a {!$Label.StepLabel}"
+								style="display:block; font-family:Salesforce-Sans, Arial, sans-serif; font-weight:normal; font-size:14px;" />
+				<apex:inputText id="idAddApproverStepLabel"
+								value="{!stepLabel}"
+								style="display:block; width:98%; padding:2px;"
+								styleClass="text ui-widget-content" />
+				<p/>
+				<script>
+					fldStepLabel = j$("[id*=idAddApproverStepLabel]");
+				</script>
+
+				assignee type
+				<apex:outputLabel value="Select an approver type"
+								style="display:inline; font-family:Salesforce-Sans, Arial, sans-serif; 
+										font-weight:normal; font-size:14px; width:240px;" />
+				<apex:actionStatus id="idStatusWaitAssigneeType">
+					<apex:facet name="start">
+						<img src="/apexpages/devmode/img/saveStatus.gif" />
+					</apex:facet>
+					<apex:facet name="stop" />
+				</apex:actionStatus>
+				<apex:selectList id="idAddApproverAssigneeType" size="1"
+								value="{!assigneeType}" 
+								style="display:inline; width:100%;"
+								styleClass="text ui-widget-content">
+					<apex:selectOptions value="{!addApproverAssigneeTypes}"></apex:selectOptions>
+					<apex:actionSupport event="onchange"
+										action="{!doAddApproverAssigneeTypeChanged}"
+										reRender="idAddApproverForm"
+										status="idStatusWaitAssigneeType" />
+				</apex:selectList>
+				<p/>
+				<script>
+					fldAssigneeType = j$("[id*=idAddApproverAssigneeType]");
+				</script>
+
+				assignee
+				<apex:outputLabel value="Select an approver"
+								style="display:inline; font-family:Salesforce-Sans, Arial, sans-serif;
+										font-weight:normal; font-size:14px;" />
+					<apex:actionStatus id="idStatusWaitRelatedUser">
+						<apex:facet name="start">
+							<img src="/apexpages/devmode/img/saveStatus.gif" />
+						</apex:facet>
+						<apex:facet name="stop" />
+					</apex:actionStatus>
+				<apex:outputPanel rendered="{!NOT(IsAddApproverAssigneeTypeRelatedUser)}" style="display:block;">
+					<div class="search_field text ui-widget-content" style="width:100%;">
+						<apex:inputText id="idAddApproverAssigneeName"
+										value="{!assigneeName}"
+										onchange="return onChangeAddApproverAssigneeName();"
+										style="width:85%;" />
+						<button id="idSearchApproverBtn" type="button" onclick="return showAddApproverSearch();">
+							<apex:outputPanel rendered="{!$User.UIThemeDisplayed != 'Theme4d' && $User.UIThemeDisplayed != 'Theme4u'}"
+											styleClass="glyphicon glyphicon-search">
+							</apex:outputPanel>
+							<apex:image rendered="{!$User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'}" 
+										url="{!$Resource.Apttus_Approval__Image_Search}" title="{!$Label.Apttus_Approval__Search}" alt="{!$Label.Apttus_Approval__Search}" 
+										height="22px" width="22px" />
+						</button>
+					</div>
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!IsAddApproverAssigneeTypeRelatedUser}" style="display:block;">
+					<apex:selectList id="idAddApproverAssigneeNameRelatedUser" size="1"
+									value="{!assigneeName}" 
+									style="display:inline; width:100%;"
+									styleClass="text ui-widget-content" >
+						<apex:selectOptions value="{!addApproverRelatedUsers}"></apex:selectOptions>
+						<apex:actionSupport event="onchange"
+											action="{!doRelatedUserChanged}"
+											reRender="idAddApproverForm"
+											status="idStatusWaitRelatedUser" />
+					</apex:selectList>
+				</apex:outputPanel>
+				<p/>
+				<script>
+					fldAssigneeName = j$("[id*=idAddApproverAssigneeName]");
+				</script>
+		
+				assignee id
+				<apex:inputText id="idAddApproverAssigneeId"
+								value="{!assigneeId}" style="display:none;" />
+				<script>
+					fldAssigneeId = j$("[id*=idAddApproverAssigneeId]");
+				</script>
+
+				comment
+				<apex:outputLabel value="{!$Label.Apttus_Approval__AddCommentOptional}"
+								style="display:block; font-family:Salesforce-Sans, Arial, sans-serif; font-weight:normal; font-size:14px;" />
+				<apex:inputTextArea id="idAddApproverComment"
+									value="{!comment}"
+									style="display:block; width:98%; padding:2px;" rows="3"
+									styleClass="text ui-widget-content ui-corner-all" />    
+				<p/>
+				<script>
+					fldComment = j$("[id*=idAddApproverComment]");
+				</script>
+
+				<div style="text-align:left; padding-left:4px;">
+					<apex:actionRegion >
+						<apex:commandButton value="{!$Label.Apttus_Approval__Save}"
+											styleClass="btn btn-primary2"
+											onclick="onActionSaveAddApprover(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme3'}" />
+						<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+											styleClass="btn btn-default2"
+											onclick="onActionCancelAddApprover(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme3'}" />
+
+						<apex:commandButton value="{!$Label.Apttus_Approval__Save}"
+											onclick="onActionSaveAddApprover(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'}" />
+						<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+											onclick="onActionCancelAddApprover(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'}" />
+					</apex:actionRegion>
+				</div>
+			</apex:form>
+		</div>-->
+		<div id="idAddApproverDialog" style="display:none">
+			<section id="idAddApproverDialogSection" role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+				<div class="slds-modal__container">
+					<apex:form id="idAddApproverForm">
+						<header class="slds-modal__header">
+							<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+								<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+									<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+								</svg>
+								<span class="slds-assistive-text">Close</span>
+							</button>
+							<h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{!$Label.AddApprover}</h2>
+						</header>
+						<div class="slds-modal__content slds-p-around_small" id="modal-content-id-1">
+							<div class="slds-form-element">
+								<div id="idAddApproverDialogError" class="slds-text-body_regular" rendered="{!hasDialogErrors}">
+									<apex:pageMessages />
+								</div>
+							</div>
+							<div class="slds-form-element">
+								<div id="idErrorText" class="slds-text-body_regular validateTips">
+									Specify information about the approver you are adding for the selected request:
+								</div>
+							</div>
+							<div class="slds-form-element">
+								<apex:inputText id="idAddApproverRequestId" value="{!requestId}" style="display:none;" styleClass="slds-text-body_regular" />
+								<script>
+									fldRequestId = j$("[id*=idAddApproverRequestId]");
+								</script>
+							</div>
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="idAddApproverMode">
+									<abbr class="slds-required" title="required">* </abbr>Select a sequence
+								</label>
+								<div class="slds-form-element__control">
+									<div class="slds-select_container">
+										<apex:selectList id="idAddApproverMode" value="{!mode}" styleClass="slds-select" size="1">
+											<apex:selectOptions value="{!addApproverModes}" />
+										</apex:selectList>
+									</div>
+								</div>
+								<script>
+									fldMode = j$("[id*=idAddApproverMode]");
+								</script>
+							</div>
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="idAddApproverStepLabel">Enter a {!$Label.StepLabel}</label>
+								<div class="slds-form-element__control">
+									<apex:inputTextArea id="idAddApproverStepLabel" value="{!stepLabel}" styleClass="slds-textarea" />
+								</div>
+								<script>
+									fldStepLabel = j$("[id*=idAddApproverStepLabel]");
+								</script>
+							</div>
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="idAddApproverAssigneeType">
+									<abbr class="slds-required" title="required">* </abbr>Select an approver type
+								</label>
+								<div class="slds-form-element__control">
+									<apex:actionStatus id="idStatusWaitAssigneeType">
+										<apex:facet name="start">
+											<img src="/apexpages/devmode/img/saveStatus.gif" />
+										</apex:facet>
+										<apex:facet name="stop" />
+									</apex:actionStatus>
+									<div class="slds-select_container">
+										<apex:selectList id="idAddApproverAssigneeType" value="{!assigneeType}" styleClass="slds-select" size="1">
+											<apex:selectOptions value="{!addApproverAssigneeTypes}" />
+											<apex:actionSupport event="onchange"
+																action="{!doAddApproverAssigneeTypeChanged}"
+																reRender="idAddApproverForm"
+																status="idStatusWaitAssigneeType" />
+										</apex:selectList>
+									</div>
+								</div>
+								<script>
+									fldAssigneeType = j$("[id*=idAddApproverAssigneeType]");
+								</script>
+							</div>
+							<div class="slds-form-element">
+								<label class="slds-form-element__label">
+									<abbr class="slds-required" title="required">* </abbr>Select an approver
+								</label>
+								<apex:actionStatus id="idStatusWaitRelatedUser">
+									<apex:facet name="start">
+										<img src="/apexpages/devmode/img/saveStatus.gif" />
+									</apex:facet>
+									<apex:facet name="stop" />
+								</apex:actionStatus>
+								<apex:outputPanel rendered="{!NOT(IsAddApproverAssigneeTypeRelatedUser)}">
+									<apex:inputTextArea id="idAddApproverAssigneeName" value="{!assigneeName}" styleClass="slds-textarea" onchange="return onChangeAddApproverAssigneeName();" />
+									<apex:commandButton id="idSearchApproverBtn"
+														value="{!$Label.Apttus_Approval__Search}"
+														onclick="return showAddApproverSearch();"
+														styleClass="slds-button slds-button_neutral">
+									</apex:commandButton>
+								</apex:outputPanel>
+								<apex:outputPanel rendered="{!IsAddApproverAssigneeTypeRelatedUser}">
+									<div class="slds-select_container">
+										<apex:selectList id="idAddApproverAssigneeNameRelatedUser" value="{!assigneeName}" styleClass="slds-select" size="1">
+											<apex:selectOptions value="{!addApproverRelatedUsers}" />
+											<apex:actionSupport event="onchange"
+																action="{!doRelatedUserChanged}"
+																reRender="idAddApproverForm"
+																status="idStatusWaitRelatedUser" />
+										</apex:selectList>
+									</div>
+								</apex:outputPanel>
+								<script>
+									fldAssigneeName = j$("[id*=idAddApproverAssigneeName]");
+								</script>
+							</div>
+							<div class="slds-form-element">
+								<apex:inputText id="idAddApproverAssigneeId" value="{!assigneeId}" style="display:none;" />
+								<script>
+									fldAssigneeId = j$("[id*=idAddApproverAssigneeId]");
+								</script>
+							</div>
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="idAddApproverComment">{!$Label.Apttus_Approval__AddCommentOptional}</label>
+								<div class="slds-form-element__control">
+									<apex:inputTextArea id="idAddApproverComment" value="{!comment}" styleClass="slds-textarea" />
+								</div>
+								<script>
+									fldComment = j$("[id*=idAddApproverComment]");
+								</script>
+							</div>
+						</div>
+						<footer class="slds-modal__footer">
+							<apex:commandButton value="{!$Label.Apttus_Approval__Save}"
+												onclick="onActionSaveAddApprover(); return false;"
+												styleClass="slds-button slds-button_brand" />
+							<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+												onclick="onActionCancelAddApprover(); return false;"
+												styleClass="slds-button slds-button_neutral" />
+						</footer>
+					</apex:form>
+				</div>
+			</section>
+			<div id="idAddApproverDialogBackdrop" class="slds-backdrop"></div>
+		</div>
+		
+		<!-- dialog to remove approver -->
+		<div id="idRemoveApproverDialog" style="display:none">
+			<apex:form id="idRemoveApproverForm">
+				<!-- request id -->
+				<apex:inputText id="idRemoveApproverRequestId"
+								value="{!requestId}" style="display:none;" />
+				<script>
+					fldRequestId = j$("[id*=idRemoveApproverRequestId]");
+				</script>
+				
+				<div style="font-weight: bold; padding-top: 10px;">
+					<apex:outputLabel value="{!$Label.Apttus_Approval__DeleteConfirmationMessage}" />
+				</div>
+				
+				<div style="text-align:center; padding-top: 20px; align: center;">
+					<apex:actionRegion >
+						<apex:commandButton value="{!$Label.Apttus_Approval__Confirm}"
+											styleClass="btn btn-primary2"
+											onclick="onActionConfirmRemoveApprover(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme3'}" />
+						<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+											styleClass="btn btn-default2"
+											onclick="onActionCancelRemoveApprover(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme3'}" />
+											
+						<apex:commandButton value="{!$Label.Apttus_Approval__Confirm}"
+											onclick="onActionConfirmRemoveApprover(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'}" />
+						<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+											onclick="onActionCancelRemoveApprover(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'}" />
+					</apex:actionRegion>
+				</div>
+				
+			</apex:form>
+		</div>
+
+		<!-- dialog to reassign approvers -->
+		<div id="idReassignApproverDialog" style="display:none">
+			<apex:form id="idReassignApproverForm">
+				<apex:pageBlock id="idReassignApproverDialogError" rendered="{!hasDialogErrors}">
+					<apex:pageMessages />
+				</apex:pageBlock>
+
+				<apex:outputLabel id="idErrorText" styleClass="validateTips"
+								style="font-family:Salesforce-Sans, Arial, sans-serif; font-weight:bold; font-size:14px;">
+					{!$Label.Apttus_Approval__ReassignApprover}
+				</apex:outputLabel><br/>
+				<apex:outputLabel style="font-family:Salesforce-Sans, Arial, sans-serif; font-weight:normal; font-size:12px;">
+					{!request.Apttus_Approval__StepLabel__c} - {!request.Apttus_Approval__Assigned_To_Name__c}
+				</apex:outputLabel>
+				<p/>
+		
+				<!-- request id -->
+				<apex:inputText id="idReassignApproverRequestId"
+								value="{!requestId}" style="display:none;" />
+				<script>
+					fldRequestId = j$("[id*=idReassignApproverRequestId]");
+				</script>
+
+				<!-- assignee type -->
+				<apex:outputLabel value="Select an approver type"
+								style="display:inline; font-family:Salesforce-Sans, Arial, sans-serif; 
+										font-weight:normal; font-size:14px; width:240px;" />
+				<apex:actionStatus id="idStatusWaitAssigneeType">
+					<apex:facet name="start">
+						<img src="/apexpages/devmode/img/saveStatus.gif" />
+					</apex:facet>
+					<apex:facet name="stop" />
+				</apex:actionStatus>
+				<apex:selectList id="idReassignApproverAssigneeType" size="1"
+								value="{!assigneeType}" 
+								style="display:inline; width:100%;"
+								styleClass="text ui-widget-content">
+					<apex:selectOptions value="{!reassignApproverAssigneeTypes}"></apex:selectOptions>
+					<apex:actionSupport event="onchange"
+										action="{!doReassignApproverAssigneeTypeChanged}"
+										reRender="idReassignApproverForm"
+										status="idStatusWaitAssigneeType" />
+				</apex:selectList>
+				<p/>
+				<script>
+					fldAssigneeType = j$("[id*=idReassignApproverAssigneeType]");
+				</script>
+
+				<!-- assignee -->
+				<apex:outputLabel value="Select an approver"
+								style="display:inline; font-family:Salesforce-Sans, Arial, sans-serif;
+										font-weight:normal; font-size:14px;" />
+				<apex:outputPanel style="display:block;">
+					<div class="search_field text ui-widget-content" style="width:100%;">
+						<apex:inputText id="idReassignApproverAssigneeName"
+										value="{!assigneeName}"
+										onchange="return onChangeReassignApproverAssigneeName();"
+										style="width:85%"
+										styleClass="text ui-widget-content" />
+						<button id="idSearchApproverBtn" type="button" onclick="return showReassignApproverSearch();">
+							<apex:outputPanel rendered="{!$User.UIThemeDisplayed != 'Theme4d' && $User.UIThemeDisplayed != 'Theme4u'}"
+											styleClass="glyphicon glyphicon-search">
+							</apex:outputPanel>
+							<apex:image rendered="{!$User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'}" 
+										url="{!$Resource.Apttus_Approval__Image_Search}" title="{!$Label.Apttus_Approval__Search}" alt="{!$Label.Apttus_Approval__Search}" 
+										height="22px" width="22px" />
+						</button>
+					</div>
+				</apex:outputPanel>
+				<p/>
+				<script>
+					fldAssigneeName = j$("[id*=idReassignApproverAssigneeName]");
+				</script>
+		
+				<!-- assignee id -->
+				<apex:inputText id="idReassignApproverAssigneeId"
+								value="{!assigneeId}" style="display:none;" />
+				<script>
+					fldAssigneeId = j$("[id*=idReassignApproverAssigneeId]");
+				</script>
+
+				<!-- comment -->
+				<apex:outputLabel value="{!$Label.Apttus_Approval__AddCommentOptional}" 
+								style="display:block; font-family:Salesforce-Sans, Arial, sans-serif; font-weight:normal; font-size:14px;" />
+				<apex:inputTextArea id="idReassignApproverComment"
+									value="{!comment}"
+									style="display:block; width:98%; padding:2px;" rows="3"
+									styleClass="text ui-widget-content ui-corner-all" />    
+				<p/>
+				<script>
+					fldComment = j$("[id*=idReassignApproverComment]");
+				</script>
+
+				<div style="text-align:left; padding-left:4px;">
+					<apex:actionRegion >
+						<apex:commandButton value="{!$Label.Apttus_Approval__Save}"
+											styleClass="btn btn-primary2"
+											onclick="onActionSaveReassignApprover(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme3'}" />
+						<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+											styleClass="btn btn-default2"
+											onclick="onActionCancelReassignApprover(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme3'}" />
+											
+						<apex:commandButton value="{!$Label.Apttus_Approval__Save}"
+											onclick="onActionSaveReassignApprover(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'}" />
+						<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+											onclick="onActionCancelReassignApprover(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'}" />
+					</apex:actionRegion>
+				</div>
+			</apex:form>
+		</div>
+
+		<!-- dialog to search approvers for add approver action -->
+		<div id="idAddApproverSearchDialog" style="display:none">
+			<apex:form id="idAddApproverSearchForm">
+				<apex:outputPanel rendered="{!IsActionModeAddApprover && IsAddApproverAssigneeTypeUser && isCommunitiesUser}">
+					<c:UIDataTable cContainerIdAttr="idAddApproverUserTable"
+								sObjectTypeAttr="User"
+								columnFieldsAttr="Name,Email"
+								columnTitlesAttr="Name,Email"
+								modeAttr="add"
+								searchTextAttr="{!searchText}"
+								requestAttr="{!request}" />
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!IsActionModeAddApprover && IsAddApproverAssigneeTypeUser && NOT(isCommunitiesUser)}">
+					<c:UIDataTable cContainerIdAttr="idAddApproverUserTable"
+								sObjectTypeAttr="User"
+								columnFieldsAttr="Name,Email,UserRole.Name,Profile.Name"
+								columnTitlesAttr="Name,Email,Role,Profile"
+								modeAttr="add"
+								searchTextAttr="{!searchText}"
+								requestAttr="{!request}" />
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!IsActionModeAddApprover && IsAddApproverAssigneeTypeQueue}">
+					<c:UIDataTable cContainerIdAttr="idAddApproverQueueTable"
+								sObjectTypeAttr="QueueSobject"
+								columnFieldsAttr="Queue.Name,Queue.DeveloperName,Queue.Email"
+								columnTitlesAttr="Label,Name,Email"
+								modeAttr="add"
+								searchTextAttr="{!searchText}"
+								requestAttr="{!request}" />
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!IsActionModeAddApprover && IsAddApproverAssigneeTypeRole}">
+					<c:UIDataTable cContainerIdAttr="idAddApproverRoleTable"
+								sObjectTypeAttr="UserRole"
+								columnFieldsAttr="Name,RollupDescription"
+								columnTitlesAttr="Name,Role Description"
+								modeAttr="add"
+								searchTextAttr="{!searchText}"
+								requestAttr="{!request}" />
+				</apex:outputPanel>
+
+				<div style="text-align:left; padding-left:4px;">
+					<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+										styleClass="btn btn-default2"
+										onclick="hideAddApproverSearch(); return false;"
+										rendered="{!$User.UIThemeDisplayed == 'Theme3'}" />
+
+					<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+										onclick="hideAddApproverSearch(); return false;"
+										rendered="{!$User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'}" />
+				</div>
+			</apex:form>
+		</div>
+
+		<!-- dialog to search approvers for reassign action -->
+		<div id="idReassignApproverSearchDialog" style="display:none">
+		
+			<!-- base reassign search user page -->
+			<apex:form id="idReassignApproverSearchForm">
+				<apex:outputPanel rendered="{!IsActionModeReassignApprover && IsReassignApproverAssigneeTypeUser && isCommunitiesUser}">
+					<c:UIDataTable cContainerIdAttr="idReassignApproverUserTable"
+								sObjectTypeAttr="User"
+								columnFieldsAttr="Name,Username"
+								columnTitlesAttr="Name,Username"
+								modeAttr="reassign"
+								searchTextAttr="{!searchText}"
+								requestAttr="{!request}" />
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!IsActionModeReassignApprover && IsReassignApproverAssigneeTypeUser && NOT(isCommunitiesUser)}">
+					<c:UIDataTable cContainerIdAttr="idReassignApproverUserTable"
+								sObjectTypeAttr="User"
+								columnFieldsAttr="Name,UserRole.Name,Username"
+								columnTitlesAttr="Name,Role,Username"
+								modeAttr="reassign"
+								searchTextAttr="{!searchText}"
+								requestAttr="{!request}" />
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!IsActionModeReassignApprover && IsReassignApproverAssigneeTypeQueue}">
+					<c:UIDataTable cContainerIdAttr="idReassignApproverQueueTable"
+								sObjectTypeAttr="QueueSobject"
+								columnFieldsAttr="Queue.Name,Queue.DeveloperName,Queue.Email"
+								columnTitlesAttr="Label,Name,Email"
+								modeAttr="reassign"
+								searchTextAttr="{!searchText}"
+								requestAttr="{!request}" />
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!IsActionModeReassignApprover && IsReassignApproverAssigneeTypeRole}">
+					<c:UIDataTable cContainerIdAttr="idReassignApproverRoleTable"
+								sObjectTypeAttr="UserRole"
+								columnFieldsAttr="Name,RollupDescription"
+								columnTitlesAttr="Name,Role Description"
+								modeAttr="reassign"
+								searchTextAttr="{!searchText}"
+								requestAttr="{!request}" />
+				</apex:outputPanel>
+				
+				<apex:outputPanel >
+					<div style="text-align:left; padding-left:4px;">
+						<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+											styleClass="btn btn-default2"
+											onclick="hideReassignApproverSearch(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme3'}" />
+											
+						<apex:commandButton value="{!$Label.Apttus_Approval__Cancel}" 
+											onclick="hideReassignApproverSearch(); return false;"
+											rendered="{!$User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'}" />
+					</div>
+				</apex:outputPanel>
+			</apex:form>
+		</div>
+
+	</div>
+
+	</body>
+	</html>
+</apex:page>

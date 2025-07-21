@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Runtime Input --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- MetaPropertyFieldSet --></label>
+        <name>Apttus__MetaPropertyFieldSet</name>
+    </fieldSets>
+    <fields>
+        <help>この入力に入力されたコメントを保持しています</help>
+        <label><!-- Comments --></label>
+        <name>Apttus__Comments__c</name>
+    </fields>
+    <fields>
+        <help>入力制御が有効になっているかどうかを示します</help>
+        <label><!-- Enabled --></label>
+        <name>Apttus__Enabled__c</name>
+    </fields>
+    <fields>
+        <help>入力がステップ内でグループ化されている時、入力の順番を繰り返します。それ以外の場合は0</help>
+        <label><!-- Input Repeat Sequence --></label>
+        <name>Apttus__InputRepeatSequence__c</name>
+    </fields>
+    <fields>
+        <help>この入力のためのユーザーの応答</help>
+        <label><!-- Response Value --></label>
+        <name>Apttus__ResponseValue__c</name>
+    </fields>
+    <fields>
+        <help>入力の順番を示します</help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help>入力コントロールが表示されているかどうかを示します</help>
+        <label><!-- Shown --></label>
+        <name>Apttus__Shown__c</name>
+    </fields>
+    <fields>
+        <help>ウィザードインスタンス（マスター詳細）</help>
+        <label><!-- Wizard --></label>
+        <name>Apttus__WizardId__c</name>
+        <relationshipLabel><!-- Runtime Inputs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ウィザードの入力制御設計要素を参照</help>
+        <label><!-- Wizard Input Control --></label>
+        <name>Apttus__WizardInputControlId__c</name>
+        <relationshipLabel><!-- Runtime Inputs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ウィザードステップの設計要素を参照</help>
+        <label><!-- Wizard Step --></label>
+        <name>Apttus__WizardStepId__c</name>
+        <relationshipLabel><!-- Runtime Inputs --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Input Name --></nameFieldLabel>
+</CustomObjectTranslation>

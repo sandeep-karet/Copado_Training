@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Agreement Hierarchy --></value>
+    </caseValues>
+    <fields>
+        <help>合意階層内の合意の最下層の取引先ID　
+Root &gt; 親 &gt; 最下層 -取引先ID</help>
+        <label><!-- Agreement Leaf Account --></label>
+        <name>Apttus__AgreementLeafAccountId__c</name>
+        <relationshipLabel><!-- Agreement Hierarchies --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>合意階層内の親合意の合意ID。\ nRoot &gt; 親 &gt; 最下層</help>
+        <label><!-- Agreement Leaf --></label>
+        <name>Apttus__AgreementLeafId__c</name>
+        <relationshipLabel><!-- Agreement Hierarchies (Agreement) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>合意階層の合意の階層レベル。
+インデントを識別するために合意階層内のリストのツリービューで使用します</help>
+        <label><!-- Agreement Level --></label>
+        <name>Apttus__AgreementLevel__c</name>
+    </fields>
+    <fields>
+        <help>合意階層内の親合意の合意ID。\ nRoot &gt; 親 &gt; 最下層</help>
+        <label><!-- Agreement Parent --></label>
+        <name>Apttus__AgreementParentId__c</name>
+        <relationshipLabel><!-- Agreement Hierarchies (ParentId) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ルートの合意ID。ルート合意は階層内の子、孫などのすべてを持っている原始合意です。階層のため1つのルート合意のみ存在する場合もあります。 
+Root &gt; 親 &gt; 最下層</help>
+        <label><!-- Agreement Root --></label>
+        <name>Apttus__AgreementRootId__c</name>
+        <relationshipLabel><!-- Agreement Hierarchies (RootId) --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Agreement Hierarchy Name --></nameFieldLabel>
+</CustomObjectTranslation>

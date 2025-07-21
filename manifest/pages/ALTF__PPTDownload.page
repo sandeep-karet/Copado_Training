@@ -1,0 +1,309 @@
+<apex:page standardStylesheets="false"
+    sidebar="false" 
+    showHeader="false"
+    docType="html-5.0">
+
+    <apex:slds /> 
+
+	<apex:includeLightning />	
+
+	<c:common_translations />
+    <c:jQuery jQueryUI="true" underscore="true"/>
+    
+    <c:PPTAPI ></c:PPTAPI>
+	
+	<style type="text/css">
+
+        .pptButtonPage {
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+
+	</style>
+
+    <div id="omPPTExportSelections"></div>
+
+    <div class="pptButtonPage">
+        <ul class="slds-button-group-row">
+            <li class="slds-button-group-item">
+                <button class="slds-button slds-button_brand" onclick="ttg_actions.goBack()">{!JSENCODE($Label.COMMON_CLOSE)}</button>
+            </li>
+        </ul>
+    </div>
+ 
+    <apex:includeScript value="{!URLFOR($Resource.ALTF__ttgomjs, 'ttg/lib/visualforce_error_handler.js')}"/> 
+    
+    <script>
+
+        var _ACTIONS = function(spec){
+
+            var dlg = null;
+
+            function handlePPTX() {
+                ttg.simpleFlatPPTExporter('{!JSENCODE($CurrentPage.parameters.id)}', true, true);
+            }
+            
+            var menuDisplayed = false;
+
+            function displayActionsMenu(display) {
+                // console.log('_ACTIONS.displayActionsMenu, #ActionsMenu.toggle(' + display + ')');
+                jQuery('#ActionsMenu').toggle(display);
+            }
+
+            function toggleActionsMenu() {
+                menuDisplayed = !menuDisplayed;
+                // console.log('_ACTIONS.toggleActionsMenu(), menuDisplayed now:' + menuDisplayed);
+                displayActionsMenu(menuDisplayed);
+            }
+
+            function successFunction(){
+                ttg.navTabMgr().incrementPrimeActionCount();
+            }
+
+            function goBack() {
+                //history.back();
+                window.close();
+            }
+
+            return {
+                handlePPTX : handlePPTX,
+                goBack: goBack
+            };
+
+        }
+
+        var ttg_actions = _ACTIONS({});	
+
+        var ttg = ttg || {};
+        
+        ttg.simpleFlatPPTExporter = function(anchorOppId, isLicensedForPP, isPPTLightingPopupEnabled) {
+
+        
+            var api = ttg.apiLayer.PPTAPI( { 
+                sessionid : '{!JSENCODE($Api.Session_ID)}',
+                opportunityid : anchorOppId  
+            });
+            var dialogOpen = true;
+            var callCount = 0;
+
+            var spinnerImg = 
+                jQuery('<img>')
+                    .attr('id', 'tas_ajax_spinner')
+                    .addClass('spinner')
+                    .attr('src', "{!JSENCODE(URLFOR($Resource.Common, '/images/loader.gif'))}")
+                ;
+                
+            
+            function createFutureDownloadAdvice() {
+                if (isLicensedForPP) {
+                    return jQuery('<ol autofocus style="padding:0;" />')
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_ALTIFY_IS_PREPARING_YOUR_PRESENTATION)}'))
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_ONCE_COMPLETE_A_LINK_WILL_APPEAR_BELOW)}'))
+                            .append(jQuery('<div style="text-align: center;margin: 22px;"/>').attr({id: 'pptlightninglink'}))
+                }
+                else {
+                    return jQuery('<ol/>')
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_ALTIFY_IS_PREPARING_YOUR_PRESENTATION)}'))
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_ONCE_COMPLETE_A_LINK_WILL_APPEAR_BELOW)}'))
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_RIGHT_CLICK_THIS_LINK)}'))
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_OPN_THIS_SAVED_FILE_WITH_POWERPOINT)}'))
+                            .append(jQuery('<li/>').text('{!JSENCODE($Label.PPT_CLOSE_THIS_DIALOG_WHEN_SAVE_AS_HAS_COMPLETED)}'))
+                }
+            }
+
+
+            function createFutureLinkDiv() {
+                callCount = 0;
+                return  jQuery('<div/>')
+                    .css({ width : '100%', 'text-align' : 'center'})
+                    .addClass('ttg_future_ppt_exporter_linkdiv')
+                    .append(jQuery('<span/>').text('{!JSENCODE($Label.COMMON_PREPARING)}'));
+                    
+            }
+
+            function deletefuturePPTX(id) {
+                api.deletePPTX(id,
+                
+                    function() { createfuturePPTX(id) },                    
+                    function() { /* error */ },                 
+                    function() { /* complete */ }               
+                )
+                
+            }           
+            
+            
+
+            function createfuturePPTX(id) {
+                
+                api.postPPTX(
+                    id,
+                    {
+                        'param': {
+                        }
+                    },
+                    function() { checkForFuturePPTXUrl(id) },
+                    function() { },
+                    function() { }
+                )
+                
+            }                       
+
+            function checkForFuturePPTXUrl(id) {
+                function createLightningComponent(documentId) {
+                    jQuery('.ttg_future_ppt_exporter_linkdiv').html('...');
+                    $Lightning.use("ALTF:IncludeLightningOut", function() {
+                        $Lightning.createComponent("DMPPT:PPTX",
+                            { documentId : documentId },
+                            "pptlightninglink",
+                            function(cmp, status, errorMessage) {
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').html('');
+                            }
+                        );
+                    });
+                }
+
+                api.getPPTX(id,
+                
+                    function(responseData) { 
+                        if (responseData != null && responseData.downloadURL != null) {
+
+                            jQuery('.ttg_future_ppt_exporter_linkdiv').html('');
+
+                            if (isLicensedForPP) {
+                                if (isPPTLightingPopupEnabled) {
+                                    createLightningComponent(responseData.documentId);
+                                }
+                                else {
+                                    jQuery('.ttg_future_ppt_exporter_linkdiv').append(
+                                        jQuery('<div/>')
+                                                .css({width:'100%', 'text-align' : 'center' })
+                                                .append(jQuery('<iframe/>', {src : 'https://' + document.domain.replace('ALTF.'.toLowerCase(), 'dmppt.') + responseData.downloadURL, height : '40px', width : '100%', frameBorder : 0, seamless : 'seamless' }))
+                                    )
+                                }
+                            }
+                            else {
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').append(
+                                    jQuery('<a/>', {href: responseData.downloadURL })
+                                        .css({'text-decoration': 'underline', 'cursor': 'pointer'})
+                                        .text('Click to save presentation')
+                                )
+                            }
+                        }
+                        else {
+                            if (++callCount > 40) {
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').html('');
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').append(
+                                    jQuery('<a/>')
+                                        .css({'text-decoration': 'underline', 'cursor': 'pointer'})
+                                        .text('Taking too long.  Continue waiting?')
+                                        .click(function() { callCount = 0; checkForFuturePPTXUrl(id)} ) 
+                                )
+                            }
+                            else {
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').html('');
+                                jQuery('.ttg_future_ppt_exporter_linkdiv').append(
+                                    jQuery('<span/>').css({'display': 'inline-block', width: '100px', 'text-align': 'left'}).text('Waiting' + dots(callCount, 4))
+                                )
+                                if (dialogOpen) {
+                                    checkForFuturePPTXUrl(id);
+                                }
+                            }
+                            
+                        } 
+                    },
+                    function() { /* error */ },                 
+                    function() { /* complete */ }               
+                )
+
+            }
+            
+            function dots(num, mnum) {
+            
+                var s = '';
+                while(s.length < (num % mnum)) {
+                    s += '.';
+                }
+
+                while(s.length < mnum) {
+                    s += ' ';
+                }
+                
+                return s;
+            }
+
+            function futureFailure() {
+            }
+                
+            function closeDialog() {
+                dialogOpen = false;
+                jQuery('#ttg_simple_ppt_exporter_div').remove();
+            }
+            
+            function showDialog() {
+                
+                jQuery('<div/>',{ id : 'ttg_simple_ppt_exporter_div'})
+                    .addClass('ttg_simple_ppt_exporter')
+                    .append(
+                        createFutureDownloadAdvice() 
+                    )
+                    .append(
+                        createFutureLinkDiv() 
+                    )
+                    .dialog({
+                        title       :   '{!JSENCODE($Label.COMMON_EXPORT_POWERPOINT)}'
+                        , width     :   '500px',
+                        closeText   :   '{!JSENCODE($Label.COMMON_CLOSE)}',
+                        close: closeDialog
+                    });
+            }
+
+            showDialog();
+            deletefuturePPTX(anchorOppId)
+            
+            return {
+            }
+        }
+            
+        ttg.navTabMgr = function(spec) {
+            function incrementPrimeActionCount() {
+                var primeActionValue = jQuery('#NavTab_PRIMEActions span');
+                if(!primeActionValue.hasClass('smartOMTabSelected') && primeActionValue.length!=0) {
+                    var currentCount = parseInt(primeActionValue.text()) || 0;
+                    primeActionValue.text(currentCount+1);
+                }
+                var primeActionTab = jQuery('#NavTab_PRIMEActions');
+                console.log(primeActionTab)
+                if(primeActionTab && primeActionTab != null && primeActionTab.parent('li').hasClass('slds-active')){
+                    location.reload(true);
+                }
+            }
+
+            return {
+                incrementPrimeActionCount: incrementPrimeActionCount
+            }
+        }
+
+        jQuery(document).mouseup(function (e) {
+
+            var elementClicked = e.target;
+            var actionsDropdown = jQuery('#ActionsMenu');
+            var actionsDiv = jQuery('#ActionsDiv');
+            var actionsButton = jQuery('#ActionsButton');
+            if ( !actionsDropdown.is(elementClicked) && actionsDropdown.has(elementClicked).length === 0  &&
+                    !actionsDiv.is(elementClicked) && actionsDiv.has(elementClicked).length === 0  && 
+                    !actionsButton.is(elementClicked) && actionsButton.has(elementClicked).length === 0) {
+                // console.log('jQuery(document): call collapseActionsMenu');
+                // ttg_actions.collapseActionsMenu();
+            }
+
+        });
+
+
+        jQuery(document).ready(function() {
+            ttg_actions.handlePPTX();       
+        });
+
+
+	</script>
+
+</apex:page>

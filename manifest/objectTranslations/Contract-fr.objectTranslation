@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Active Contract Lookup --></label>
+        <name>SBQQ__ActiveContractLookup</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Amendment Version Number --></label>
+        <name>Amendment_Version_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract ID (18) --></label>
+        <name>Contract_ID_18__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>L2O_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Owner --></label>
+        <name>L2O_Account_Owner__c</name>
+    </fields>
+    <fields>
+        <help><!-- In order enable Amend functionality on contract, Please update the field to either Expansion or Change Order. --></help>
+        <label><!-- Amendment Opportunity SubType --></label>
+        <name>L2O_Amendment_Opportunity_SubType__c</name>
+        <picklistValues>
+            <masterLabel>Change Order</masterLabel>
+            <translation><!-- Change Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Path Change</masterLabel>
+            <translation><!-- Contract Path Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recontracting</masterLabel>
+            <translation><!-- Recontracting --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Contract is identified as Autorenewal. --></help>
+        <label><!-- Auto Renew --></label>
+        <name>L2O_AutoRenew__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Region --></label>
+        <name>L2O_Business_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Segment --></label>
+        <name>L2O_Channel_Segment__c</name>
+        <picklistValues>
+            <masterLabel>Client Management</masterLabel>
+            <translation><!-- Client Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer</masterLabel>
+            <translation><!-- Employer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Plan</masterLabel>
+            <translation><!-- Health Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospital &amp; Health System (HHS)</masterLabel>
+            <translation><!-- Hospital &amp; Health System (HHS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>International</masterLabel>
+            <translation><!-- International --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Client Line of Business --></label>
+        <name>L2O_Client_Line_of_Business__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Owner Email --></label>
+        <name>L2O_Contract_Owner_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Type --></label>
+        <name>L2O_Contract_Path_Sub_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Path --></label>
+        <name>L2O_Contract_Path__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Remaining Days --></label>
+        <name>L2O_Contract_Remaining_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contracting Account --></label>
+        <name>L2O_Contracting_Account__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Customer Number --></label>
+        <name>L2O_Customer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct Employer Business --></label>
+        <name>L2O_DirectEmployerBusiness__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Direct TDH Contract --></label>
+        <name>L2O_DirectTDHContract__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Direct Employer Business --></label>
+        <name>L2O_Direct_Employer_Business__c</name>
+        <picklistValues>
+            <masterLabel>NO</masterLabel>
+            <translation><!-- NO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YES</masterLabel>
+            <translation><!-- YES --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Direct TDH Contract --></label>
+        <name>L2O_Direct_TDH_Contract__c</name>
+        <picklistValues>
+            <masterLabel>NO</masterLabel>
+            <translation><!-- NO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YES</masterLabel>
+            <translation><!-- YES --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- GUID --></label>
+        <name>L2O_GUID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Healthplan Subtype --></label>
+        <name>L2O_Healthplan_Subtype__c</name>
+        <picklistValues>
+            <masterLabel>Carrier</masterLabel>
+            <translation><!-- Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Health Plan</masterLabel>
+            <translation><!-- US Health Plan --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Legacy Id --></label>
+        <name>L2O_Legacy_Contract_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lessor Account --></label>
+        <name>L2O_Lessor_Account__c</name>
+        <relationshipLabel><!-- Contracts (Lessor Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Plan Administration --></label>
+        <name>L2O_Plan_Administration__c</name>
+        <picklistValues>
+            <masterLabel>ASO</masterLabel>
+            <translation><!-- ASO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASO - Baseline</masterLabel>
+            <translation><!-- ASO - Baseline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASO - Custom</masterLabel>
+            <translation><!-- ASO - Custom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASO - Digital Marketing</masterLabel>
+            <translation><!-- ASO - Digital Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASO - Full Marketing</masterLabel>
+            <translation><!-- ASO - Full Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASO - Opt In</masterLabel>
+            <translation><!-- ASO - Opt In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASO - Opt Out</masterLabel>
+            <translation><!-- ASO - Opt Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASO - Standard Communications</masterLabel>
+            <translation><!-- ASO - Standard Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASO – 100% AND $0 Copay</masterLabel>
+            <translation><!-- ASO – 100% AND $0 Copay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASO – 100% or $0 Copay</masterLabel>
+            <translation><!-- ASO – 100% or $0 Copay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exchange</masterLabel>
+            <translation><!-- Exchange --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fully Insured</masterLabel>
+            <translation><!-- Fully Insured --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fully Insured and Medicare Advantage</masterLabel>
+            <translation><!-- Fully Insured and Medicare Advantage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HTN Bundle</masterLabel>
+            <translation><!-- HTN Bundle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Connect 360</masterLabel>
+            <translation><!-- Health Connect 360 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketplace/Commercial</masterLabel>
+            <translation><!-- Marketplace/Commercial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicaid</masterLabel>
+            <translation><!-- Medicaid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare</masterLabel>
+            <translation><!-- Medicare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Advantage</masterLabel>
+            <translation><!-- Medicare Advantage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Year</masterLabel>
+            <translation><!-- Multi-Year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY ASO</masterLabel>
+            <translation><!-- NY ASO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard w/ Coaching</masterLabel>
+            <translation><!-- Standard w/ Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard w/ Upfront Fee</masterLabel>
+            <translation><!-- Standard w/ Upfront Fee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 1</masterLabel>
+            <translation><!-- Tier 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 2</masterLabel>
+            <translation><!-- Tier 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pricing Model --></label>
+        <name>L2O_Pricing_Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior ARR value --></label>
+        <name>L2O_Prior_ARR_value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Bookings Total Value --></label>
+        <name>L2O_Prior_Bookings_Total_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Est First Year Revenue --></label>
+        <name>L2O_Prior_Est_First_Year_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Est. In Year Revenue --></label>
+        <name>L2O_Prior_Est_In_Year_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Est. One Time Revenue --></label>
+        <name>L2O_Prior_Est_One_Time_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Net ARR --></label>
+        <name>L2O_Prior_Net_ARR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Net ARR w/ PG --></label>
+        <name>L2O_Prior_Net_ARR_w_PG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior TCV Value --></label>
+        <name>L2O_Prior_TCV_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub-Channel Segment --></label>
+        <name>L2O_Sub_Channel_Segment__c</name>
+        <picklistValues>
+            <masterLabel>ASO</masterLabel>
+            <translation><!-- ASO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aetna</masterLabel>
+            <translation><!-- Aetna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B2B</masterLabel>
+            <translation><!-- B2B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B2C</masterLabel>
+            <translation><!-- B2C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B2H</masterLabel>
+            <translation><!-- B2H --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blues</masterLabel>
+            <translation><!-- Blues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canada</masterLabel>
+            <translation><!-- Canada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTE - Client Management</masterLabel>
+            <translation><!-- DTE - Client Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Downmarket</masterLabel>
+            <translation><!-- Downmarket --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>East</masterLabel>
+            <translation><!-- East --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>East Client Sales</masterLabel>
+            <translation><!-- East Client Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>East Net New Sales</masterLabel>
+            <translation><!-- East Net New Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer</masterLabel>
+            <translation><!-- Employer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal</masterLabel>
+            <translation><!-- Federal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HSG</masterLabel>
+            <translation><!-- HSG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospital &amp; Health System (HHS)</masterLabel>
+            <translation><!-- Hospital &amp; Health System (HHS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Labor</masterLabel>
+            <translation><!-- Labor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National</masterLabel>
+            <translation><!-- National --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Net New</masterLabel>
+            <translation><!-- Net New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signature</masterLabel>
+            <translation><!-- Signature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Partnerships</masterLabel>
+            <translation><!-- Strategic Partnerships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TPA/Reseller</masterLabel>
+            <translation><!-- TPA/Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UHC Employees</masterLabel>
+            <translation><!-- UHC Employees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United</masterLabel>
+            <translation><!-- United --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West</masterLabel>
+            <translation><!-- West --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Client Sales</masterLabel>
+            <translation><!-- West Client Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Net New Sales</masterLabel>
+            <translation><!-- West Net New Sales --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Détermine si ce contrat est en vigueur.</help>
+        <label><!-- Active Contract --></label>
+        <name>SBQQ__ActiveContract__c</name>
+    </fields>
+    <fields>
+        <help>Type d&apos;enregistrement de l&apos;opportunité d&apos;amendement, sauf indication contraire.</help>
+        <label><!-- Amendment Opportunity Record Type Id --></label>
+        <name>SBQQ__AmendmentOpportunityRecordTypeId__c</name>
+    </fields>
+    <fields>
+        <help>L&apos;étape actuelle de l&apos;opportunité d&apos;amendement.</help>
+        <label><!-- Amendment Opportunity Stage --></label>
+        <name>SBQQ__AmendmentOpportunityStage__c</name>
+    </fields>
+    <fields>
+        <help>Propriétaire de l&apos;opportunité d&apos;origine.</help>
+        <label><!-- Amendment Owner --></label>
+        <name>SBQQ__AmendmentOwner__c</name>
+        <relationshipLabel><!-- Contracts (Amendment Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ID du catalogue de prix de votre amendement.</help>
+        <label><!-- Amendment Pricebook Id --></label>
+        <name>SBQQ__AmendmentPricebookId__c</name>
+    </fields>
+    <fields>
+        <help>La base de calcul de la date de début du renouvellement et de la date de fin de l&apos;amendement.</help>
+        <label><!-- Amendment &amp; Renewal Behavior --></label>
+        <name>SBQQ__AmendmentRenewalBehavior__c</name>
+        <picklistValues>
+            <masterLabel>Earliest End Date</masterLabel>
+            <translation>Date de fin la plus proche</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latest End Date</masterLabel>
+            <translation>Dernière date de fin</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Date de début de votre amendement. Si la date est vide, l&apos;amendement commence à la date du jour.</help>
+        <label><!-- Amendment Start Date --></label>
+        <name>SBQQ__AmendmentStartDate__c</name>
+    </fields>
+    <fields>
+        <help>Sélectionnez cette case pour inclure les rôles du contact de l&apos;opportunité d&apos;origine dans l&apos;opportunité de renouvellement.</help>
+        <label><!-- Default Renewal Contact Roles --></label>
+        <name>SBQQ__DefaultRenewalContactRoles__c</name>
+    </fields>
+    <fields>
+        <help>Sélectionnez cette case pour inclure les partenaires de l&apos;opportunité d&apos;origine dans l&apos;opportunité de renouvellement.</help>
+        <label><!-- Default Renewal Partners --></label>
+        <name>SBQQ__DefaultRenewalPartners__c</name>
+    </fields>
+    <fields>
+        <help>Si cette case n&apos;est pas sélectionnée, la date de fin du devis d&apos;amendement doit être définie conformément au paramètre Comportement d&apos;amendement et de renouvellement. Si elle est sélectionnée, aucune date de fin n&apos;est définie.</help>
+        <label><!-- Disable Amendment Co-Term --></label>
+        <name>SBQQ__DisableAmendmentCoTerm__c</name>
+    </fields>
+    <fields>
+        <help>Indique si le contrat est permanent.</help>
+        <label><!-- Evergreen --></label>
+        <name>SBQQ__Evergreen__c</name>
+    </fields>
+    <fields>
+        <help>Date de fin du contrat à utiliser dans les workflows temporels.</help>
+        <label><!-- Expiration Date --></label>
+        <name>SBQQ__ExpirationDate__c</name>
+    </fields>
+    <fields>
+        <help>Définit l&apos;affichage des produits d&apos;abonnement segmentés dans les devis de renouvellement. Les produits désegmentés sont renouvelés en tant que ligne de devis standard avec les données du dernier segment.</help>
+        <label><!-- MDQ Renewal Behavior --></label>
+        <name>SBQQ__MDQRenewalBehavior__c</name>
+        <picklistValues>
+            <masterLabel>De-segmented</masterLabel>
+            <translation>Désegmenté</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Sélectionnez cette case pour désigner ce contrat en tant que contrat principal de ce compte. Lors du renouvellement, tous les contrats sont cumulés dans celui-ci.</help>
+        <label><!-- Master Contract --></label>
+        <name>SBQQ__MasterContract__c</name>
+    </fields>
+    <fields>
+        <help>ID du catalogue de prix de l’opportunité ou du devis associé.</help>
+        <label><!-- Opportunity or Quote Price Book ID --></label>
+        <name>SBQQ__OpportunityPricebookId__c</name>
+    </fields>
+    <fields>
+        <help>L&apos;opportunité à partir de laquelle ce contrat a été créé.</help>
+        <label><!-- Opportunity --></label>
+        <name>SBQQ__Opportunity__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>SBQQ__Order__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Sélectionnez la case pour préserver la hiérarchie des offres groupées dans les devis de renouvellement.</help>
+        <label><!-- Preserve Bundle Structure --></label>
+        <name>SBQQ__PreserveBundleStructureUponRenewals__c</name>
+    </fields>
+    <fields>
+        <help>Devis à partir duquel ce contrat a été créé.</help>
+        <label><!-- Quote --></label>
+        <name>SBQQ__Quote__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Sélectionnez cette case pour déclencher la génération d&apos;une opportunité de renouvellement à des fins de prévision. Ne génère pas automatiquement un devis de renouvellement.</help>
+        <label><!-- Renewal Forecast --></label>
+        <name>SBQQ__RenewalForecast__c</name>
+    </fields>
+    <fields>
+        <help>Le type d&apos;enregistrement de l&apos;opportunité de renouvellement est différent du type par défaut.</help>
+        <label><!-- Renewal Opportunity Record Type Id --></label>
+        <name>SBQQ__RenewalOpportunityRecordTypeId__c</name>
+    </fields>
+    <fields>
+        <help>Remplace l&apos;étape de l&apos;opportunité par défaut pour ce renouvellement. Doit être effectué avant de sélectionner la prévision de renouvellement pour entrer en vigueur dans l&apos;opportunité de renouvellement.</help>
+        <label><!-- Renewal Opportunity Stage --></label>
+        <name>SBQQ__RenewalOpportunityStage__c</name>
+    </fields>
+    <fields>
+        <help>Opportunité de renouvellement générée pour suivre le renouvellement de ce contrat.</help>
+        <label><!-- Renewal Opportunity --></label>
+        <name>SBQQ__RenewalOpportunity__c</name>
+        <relationshipLabel><!-- Renewal Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Propriétaire de l&apos;opportunité d&apos;origine.</help>
+        <label><!-- Renewal Owner --></label>
+        <name>SBQQ__RenewalOwner__c</name>
+        <relationshipLabel><!-- Contracts (Renewal Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Spécifiez un ID de catalogue de prix à utiliser dans les opportunités de renouvellement si vous ne souhaitez pas utiliser l&apos;ID du catalogue de prix de l&apos;opportunité d&apos;origine.</help>
+        <label><!-- Renewal Pricebook Id --></label>
+        <name>SBQQ__RenewalPricebookId__c</name>
+    </fields>
+    <fields>
+        <help>Sélectionnez cette option pour générer automatiquement un devis de renouvellement dans les opportunités de renouvellement.</help>
+        <label><!-- Renewal Quoted --></label>
+        <name>SBQQ__RenewalQuoted__c</name>
+    </fields>
+    <fields>
+        <help>Spécifiez la durée du renouvellement. Elle correspond par défaut à la durée du contrat d&apos;origine.</help>
+        <label><!-- Renewal Term --></label>
+        <name>SBQQ__RenewalTerm__c</name>
+    </fields>
+    <fields>
+        <help>Le taux du prix de renouvellement augmente.</help>
+        <label><!-- Renewal Uplift (%) --></label>
+        <name>SBQQ__RenewalUpliftRate__c</name>
+    </fields>
+    <fields>
+        <help>Sélectionnez cette option pour combiner les quantités des abonnements à un même produit sur une seule ligne dans les devis de renouvellement et les amendements hérités.</help>
+        <label><!-- Combine Subscription Quantities --></label>
+        <name>SBQQ__SubscriptionQuantitiesCombined__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Description is required. Enter the reason for moving the status to Archived. --></errorMessage>
+        <name>Description_required_upon_Archived_Statu</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Contract Status should not be &apos;In Approval Process&apos;, It should either Draft or Activated. --></errorMessage>
+        <name>Status_Should_Draft_OR_Activated</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Amend --></label>
+        <name>SBQQ__Amend</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- RenewContracts --></label>
+        <name>SBQQ__RenewContracts</name>
+    </webLinks>
+</CustomObjectTranslation>

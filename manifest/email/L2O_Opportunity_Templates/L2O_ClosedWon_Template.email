@@ -1,0 +1,30 @@
+<messaging:emailTemplate subject="New Signed Contract Announcement!" recipientType="User" relatedToType="Opportunity">
+<messaging:HtmlEmailBody >
+
+<html>
+<style>
+th, td {
+padding-top: 5px;
+padding-bottom: 10px;
+padding-left: 15px;
+padding-right: 20px;
+}
+</style>
+<body>
+<right><h1><img src="https://teladochealthglobalcrm--dev1.sandbox.file.force.com/servlet/servlet.ImageServer?id=01552000000ymzV&oid=00D52000000L5Cd&lastMod=1669717872000" height="150" width="300" align="right"/></h1></right>
+<br/>
+
+<left>
+<h1 style="color:skyBlue;font-size:160%;line-height: 0.5;">Contract for</h1>
+<h1 style="font-size:160%;"><b>{!relatedTo.Name}</b></h1>
+</left>
+
+<br/>
+
+<c:L2O_ClosedWon_VFCTemplate oppIdValue="{!relatedTo.Id}"/>
+
+
+</body>
+</html>
+</messaging:HtmlEmailBody>
+</messaging:emailTemplate>

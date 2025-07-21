@@ -1,0 +1,465 @@
+<apex:page standardController="Opportunity"
+    extensions="ALTF.PrimeActionController"
+    action="{!logActionUsageAndLoadAltifyOpp}"
+    showHeader="false"
+    standardStylesheets="false"
+    sidebar="false"
+    docType="html-5.0"
+    applyBodyTag="False"
+    applyHtmlTag="false"
+>
+
+    <c:AddTask showPRIME="{!NOT(hidePRIMETypeColumn)}" 
+        listAllActions="{!listAllActions}" 
+        dateFormat="{!jQueryUIDateFormat}" 
+        opportunityId="{!JSENCODE(Opportunity.id)}" 
+        currencyISO="{!currencyISO}"
+        useCRUD="{!NOT(enableQuickEditAction)}"
+        shieldEnabled="{!shieldSetting}"
+    />
+
+    <apex:slds />  
+
+    <c:PrimeAction_Translations />
+    
+    <c:PPTExportModal renderAngularApp="true"/>
+
+    <c:jQuery underscore="true" jQueryUI="true"/>
+
+    <c:MobileRedirect smartOM="true" notWebpack="false"/>
+
+    <style>
+        @import url("{!URLFOR($Resource.ALTF__SmartOM, 'css/summarytab.css')}");
+
+        {!if($User.UIThemeDisplayed == 'Theme4d','body { padding: 10px 20px 0 20px !important;}', '')}
+
+		#opp_mgmt__ppt_export_app .dm-spinner,
+		#om_ac_crud_polyfill_app .dm-spinner {
+			display: none !important;
+		}
+
+        /* Fix for MAX to show in Lightning, if we don't set the height then Max gets cut off and looks broken*/
+        #TAS {
+            min-height: 480px;
+        }
+
+        body #SPINNER div{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed !important;
+            background-color: rgba(176,173,171,0.5);
+        }
+
+        /* Restores spinner's original size (AMOF-813) */
+        .spinner {
+            height: auto;
+            width: auto;
+        }
+
+        .slds-table thead th {
+            color: #54698d;
+            text-transform: uppercase;
+        }
+        .slds-scope .slds-table td {
+            white-space: pre-wrap;
+        }
+
+        .slds-scope .slds-table.closed td{
+            color: rgba(34, 34, 34, 0.7) !important;
+        }
+        
+        #NEW_PRIMEACTION_BUTTON {
+            margin: 10px 0;
+        }
+
+        #NEW_PRIMEACTION_BUTTON .sldsico-utility-add {
+            padding-right: 5px;
+        }
+        
+        .slds-button_icon {                
+            opacity: .6;
+        }
+        .slds-button_icon:hover {
+            opacity: 1;
+        }
+        
+        .duedate-warning,
+        .sldsico-utility-warning {
+            color: #EB686B;
+        }
+        .sldsico-utility-warning {
+            padding-left: 3px;
+        }
+
+        .slds-panel .slds-panel__section {
+            padding: 0.5rem 1rem;
+        }
+
+        .slds-button_icon.check {
+            border: 1px solid #54698d ;
+            border-radius: 50%;
+            padding: 3px;            
+        }
+
+        .slds-button_icon.check:hover{
+            border-color: #005fb2;
+        }
+
+    </style>
+
+    <script>
+        var openActions = {
+            <apex:repeat var="action" value="{!openActions}">
+                '{!JSENCODE(action.Id)}': {
+                    'subject': '{!JSENCODE(action.Subject)}',
+                    'description': '{!JSENCODE(action.Description)}',
+                    'primeAction': '{!JSENCODE(action.ALTF__Prime_Action_Type__c)}',
+                    'contactId': '{!JSENCODE(action.Who.Id)}',
+                    'contactName': jQuery.trim('{!JSENCODE(action.Who.FirstName + " " + action.Who.LastName)}'),
+                    'dueDate': '{!action.ActivityDate}',
+                    'assignedTo': '{!JSENCODE(action.OwnerId)}',
+                    'assignedToName': '{!JSENCODE(action.Owner.Name)}',
+                    'priority': '{!JSENCODE(action.Priority)}',
+                    'status': '{!JSENCODE(action.Status)}'
+                },
+            </apex:repeat>
+            '0': ''
+        };
+
+        var closedActions = {
+            <apex:repeat var="action" value="{!closedActions}">
+                '{!JSENCODE(action.Id)}': {
+                    'subject': '{!JSENCODE(action.Subject)}',
+                    'description': '{!JSENCODE(action.Description)}',
+                    'primeAction': '{!JSENCODE(action.ALTF__Prime_Action_Type__c)}',
+                    'contactId': '{!JSENCODE(action.Who.Id)}',
+                    'contactName': jQuery.trim('{!JSENCODE(action.Who.FirstName + " " + action.Who.LastName)}'),
+                    'dueDate': '{!action.ActivityDate}',
+                    'assignedTo': '{!JSENCODE(action.OwnerId)}',
+                    'assignedToName': '{!JSENCODE(action.Owner.Name)}',
+                    'priority': '{!JSENCODE(action.Priority)}',
+                    'status': '{!JSENCODE(action.Status)}'
+                },
+            </apex:repeat>
+            '0': ''
+        };
+    </script>
+
+    <div id="TAS" class="slds-scope">
+        <apex:form id="PRIMEActionsTable" rendered="true" >
+                
+            <div class="slds-panel">
+                <div class="slds-panel__section">
+                    <h2 
+                        class="slds-truncate slds-text-heading_small" 
+                        title="{!$Label.ALTF__common_open_actions}">{!$Label.ALTF__common_open_actions}</h2>
+                </div>
+                <div class="slds-panel__section">
+                    
+                    <apex:dataTable value="{!openActions}" var="action"
+                        id="openActionsTable" styleClass="slds-table slds-table_bordered slds-table_cell-buffer">
+
+                        <apex:column width="60px" rendered="{!isEditable}" style="white-space: nowrap;">
+                            <button type="button" class="slds-button slds-button_icon check" onclick="javascript: ttg_primeactions.editAction('{!JSENCODE(action.Id)}', openActions, true);">
+                                <span class="sldsico-utility-check"></span>
+                            </button> 
+                        </apex:column>
+                        <apex:column width="15%">
+                            <apex:facet name="header">{!$Label.ALTF__COMMON_SUBJECT}</apex:facet>
+                            <apex:outputText value="{!action.Subject}" />
+                        </apex:column>
+                        <apex:column width="20%">
+                            <apex:facet name="header">{!$Label.ALTF__COMMON_COMMENTS}</apex:facet>
+                            <apex:outputText escape="true" value="{!IF(LEN(action.Description) > 297, RPAD(LEFT(action.Description,297), 300, '...'), action.Description)}" />
+                        </apex:column>
+                        <apex:column rendered="{!NOT(hidePRIMETypeColumn)}">
+                            <apex:facet name="header">{!$Label.ALTF__resource_PRIME_Action_Type}</apex:facet>
+                            <apex:outputField value="{!action.ALTF__Prime_Action_Type__c}" />
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">{!$Label.ALTF__COMMON_CONTACT}</apex:facet>
+                            <apex:outputText value="{!action.Who.FirstName + ' ' + action.Who.LastName}" />
+                        </apex:column>
+                        <apex:column width="110px">
+                            <apex:facet name="header">{!$Label.ALTF__COMMON_DUE_DATE}</apex:facet>
+                            <apex:outputPanel styleClass="{!if(action.ActivityDate != null && action.ActivityDate < TODAY(),'duedate-warning','')}">
+                                <apex:outputField value="{!action.ActivityDate}"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!IF(action.ActivityDate != null, action.ActivityDate < TODAY(), false)}" styleClass="sldsico-utility-warning">
+                            </apex:outputPanel>
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">{!$Label.ALTF__COMMON_OWNER}</apex:facet>
+                            <apex:outputField value="{!action.OwnerId}" />
+                        </apex:column>
+                        <apex:column width="80px">
+                            <apex:facet name="header">{!$Label.ALTF__COL_PRIORITY}</apex:facet>
+                            <apex:outputField value="{!action.Priority}" />
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">{!$Label.ALTF__COMMON_STATUS}</apex:facet>
+                            <apex:outputField value="{!action.Status}" />
+                        </apex:column>
+                        <apex:column width="60px" rendered="{!isEditable}" style="white-space: nowrap;">
+                            <button type="button" class="slds-button slds-button_icon" onclick="javascript: ttg_primeactions.editAction('{!JSENCODE(action.Id)}', openActions, false);">
+                                <span class="sldsico-action-edit"></span>
+                            </button>                        
+                        </apex:column>
+                    </apex:dataTable>
+
+                </div>
+            </div>
+
+            <div class="slds-panel">
+                <div class="slds-panel__section">
+                    <h2 class="slds-truncate slds-text-heading_small" title="{!$Label.ALTF__COMMON_CLOSED_ACTIONS}">{!$Label.ALTF__COMMON_CLOSED_ACTIONS}</h2>
+                </div>
+                <div class="slds-panel__section">
+            
+                    <apex:dataTable value="{!closedActions}" var="action"
+                        id="closedActionsTable" styleClass="slds-table slds-table_bordered slds-table_cell-buffer closed">
+                        <apex:column width="60px" rendered="{!isEditable}">
+                        </apex:column>
+                        <apex:column width="15%">
+                            <apex:facet name="header">{!$Label.ALTF__COMMON_SUBJECT}</apex:facet>
+                            <apex:outputText value="{!action.Subject}" />
+                        </apex:column>
+                        <apex:column width="20%">
+                            <apex:facet name="header">{!$Label.ALTF__COMMON_COMMENTS}</apex:facet>
+                            <apex:outputText value="{!IF(LEN(action.Description) > 297, RPAD(LEFT(action.Description,297), 300, '...'), action.Description)}" />
+                        </apex:column>
+                        <apex:column rendered="{!NOT(hidePRIMETypeColumn)}">
+                            <apex:facet name="header">{!$Label.ALTF__resource_PRIME_Action_Type}</apex:facet>
+                            <apex:outputField value="{!action.ALTF__Prime_Action_Type__c}" />
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">{!$Label.ALTF__COMMON_CONTACT}</apex:facet>
+                            <apex:outputText value="{!action.Who.FirstName + ' ' + action.Who.LastName}" />
+                        </apex:column>
+                        <apex:column width="110px">
+                            <apex:facet name="header">{!$Label.ALTF__COMMON_DUE_DATE}</apex:facet>
+                            <apex:outputField value="{!action.ActivityDate}" />
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">{!$Label.ALTF__COMMON_OWNER}</apex:facet>
+                            <apex:outputField value="{!action.OwnerId}" />
+                        </apex:column>
+                        <apex:column width="80px">
+                            <apex:facet name="header">{!$Label.ALTF__COL_PRIORITY}</apex:facet>
+                            <apex:outputField value="{!action.Priority}" />
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">{!$Label.ALTF__COMMON_STATUS}</apex:facet>
+                            <apex:outputField value="{!action.Status}" />
+                        </apex:column>
+                        <apex:column width="80px" rendered="{!isEditable}" style="white-space: nowrap;">
+                            <button type="button" class="slds-button slds-button_icon" id="edit_{!action.Id}" onclick="javascript: ttg_primeactions.editAction('{!JSENCODE(action.Id)}', closedActions, false);">
+                                <span class="sldsico-action-edit"></span>
+                            </button>
+                            <button type="button" class="slds-button slds-button_icon" id="del_{!action.Id}" onclick="PRIME.showDeleteConfirmDialog('deleteConfirmDialog{!JSENCODE(action.Id)}', '{!JSENCODE(action.Id)}')">
+                                <span class="sldsico-action-delete"></span>
+                            </button>
+                            <div id="deleteConfirmDialog{!action.Id}" style="display: none;"
+                                title="{!JSENCODE($Label.COMMON_DELETE_ACTION)}">
+                                <apex:outputText value="{!$Label.ALTF__DELETE_ACTION_CONFIRM}" />
+                            </div>
+                        </apex:column>
+                    </apex:dataTable>
+
+                <apex:actionFunction name="doActualDeleteAction" action="{!deleteAction}" oncomplete="location.reload(true);">
+                    <apex:param name="actionToDeleteParam" value="actionToDeleteParam"
+                        assignTo="{!selectedTaskId}" />
+                </apex:actionFunction>
+
+                </div>
+
+            </div>
+
+        </apex:form>
+    </div>
+
+    <apex:outputText rendered="{!isEditable}">
+        <script>
+            var PRIME = (function() {
+
+                var deleting = {};
+
+                var showDeleteConfirmDialog = function(id, taskid) {
+
+                    if (deleting[taskid]) {
+                        return;
+                    }
+
+                    jQuery('#' + id).dialog({
+                        resizable: false,
+                        modal: true,
+                        closeText: '{!JSENCODE($Label.ALTF__COMMON_CLOSE)}',
+                        buttons: [{
+                                text: '{!JSENCODE($Label.ALTF__COMMON_YES)}',
+                                ttgid: 'Yes',
+                                click: function() {
+                                    ttg_primeactions.showAjaxSpinner(true);
+                                    deleting[taskid] = true;
+                                    jQuery(this).dialog('close');
+                                    doActualDeleteAction(taskid);
+                                    return true;
+                                }
+                            },
+                            {
+                                text: '{!JSENCODE($Label.ALTF__COMMON_NO)}',
+                                ttgid: 'No',
+                                click: function() {
+                                    jQuery(this).dialog('close');
+                                    return false;
+                                }
+                            }
+                        ]
+                    });
+                };
+
+                var isDeleting = function(taskid) {
+                    return deleting[taskid];
+                }
+
+                return {
+                    showDeleteConfirmDialog: showDeleteConfirmDialog,
+                    isDeleting: isDeleting
+                };
+
+            }());
+        </script>
+    </apex:outputText>
+
+    <script>
+        var primeactions = [
+            <apex:repeat value="{! primeActionPicklist }" var="action">
+                { value : '{! JSENCODE(action.value)}', label : '{!JSENCODE(action.label)}'},
+            </apex:repeat>
+        ];
+
+        var statuses = [
+            <apex:repeat value="{! statuses }" var="status">
+                { value : '{! JSENCODE(status.value)}', label : '{!JSENCODE(status.label)}'},
+            </apex:repeat>
+        ];
+
+        var spec = {
+            dateformat: '{!JSENCODE(dateFormat)}',
+            opportunityid: '{!JSENCODE(Opportunity.id)}'
+        };
+
+        var ttg = ttg || {};
+
+        var ttg_primeactions = (function(_spec) {
+
+            var dateFormat = 'yy-mm-dd';
+            if(spec.dateformat) {
+                dateFormat = spec.dateformat.replace('yy', 'y').replace('yy', 'y');
+            }
+
+            var that = {};
+            var data;
+
+            var ajaxSpinnerCnt = 0;
+            var spinner;
+            var noMoreEditsFlag = false;
+
+            function showAjaxSpinner(show) {
+                if (show) {
+                    ajaxSpinnerCnt++;
+                    if (ajaxSpinnerCnt == 1) {
+                        spinner = jQuery('<div>').css('position', 'absolute').css('z-index', '2000');
+                                    jQuery('#SPINNER').append(spinner);
+                        spinner
+                            .append(jQuery('<img>').attr('id', 'tas_ajax_spinner').addClass('spinner')
+                            .attr('src', '{!JSENCODE(URLFOR($Resource.Common, '/images/loader.gif'))}'));
+                        spinner.css("top", ( jQuery(window).height() - spinner.height() ) / 2+jQuery(window).scrollTop() + "px");
+                        spinner.css("left", ( jQuery(window).width() - spinner.width() ) / 2+jQuery(window).scrollLeft() + "px");
+                    }
+                } else {
+                    ajaxSpinnerCnt--;
+                    if (ajaxSpinnerCnt <= 0) {
+                        if(spinner) {
+                           spinner.remove();
+                        }
+                        ajaxSpinnerCnt = 0;
+                    }
+                }
+            }
+
+            function renderInitial() {
+                var taskBodyRow = jQuery('<div>', {id: 'NEW_PRIMEACTION_BUTTON'});
+
+                var createBtn = jQuery('<button>', {'ttgid': 'add_new_task', 'class': 'slds-button slds-button_neutral', 'type':'button'});  
+                createBtn.append('{!JSENCODE($Label.TANDI_CREATE_ACTION)}');
+
+
+                var isEditable = '{!IF(isEditable, true, false)}';
+                if(!('true' == isEditable)) {
+                    <!-- FIX FOR DMPS-1120 -->
+
+                    return;
+                }
+
+                taskBodyRow.append(createBtn).click(function() {
+                    ttg_primeactions.createTaskDialog();
+                });
+                
+
+                var taskTable = jQuery('table[id*="openActionsTable"]');
+                taskTable.after(taskBodyRow);
+
+            }
+
+            function editAction(taskId, primeActions, close) {
+                if(PRIME && PRIME.isDeleting(taskId)) {
+                    return;
+                }
+
+                var currentTask = jQuery.extend({}, primeActions[taskId]);
+                currentTask.Id = taskId;
+                if ( close ) {
+                    currentTask.status = 'Completed'
+                }
+                ttg.taskMgr.newTaskDialog(currentTask, close, successFunc, failFunc, primeactions, statuses);
+            }
+
+            function successFunc(_data) {
+                noMoreEditsFlag = true;
+                showAjaxSpinner(true);
+                location.reload(true);
+            }
+
+            function failFunc(_data) {
+                showAjaxSpinner(false);
+            }
+
+            function createTaskDialog() {
+                ttg.taskMgr.newTaskDialog(null, null, successFunc, failFunc, primeactions, statuses);
+            }
+
+            that.createTaskDialog = createTaskDialog;
+            that.editAction = editAction;
+            that.renderInitial = renderInitial;
+            that.showAjaxSpinner = showAjaxSpinner;
+            return that;
+        })(spec);
+
+        jQuery(document).ready(function() {
+                jQuery('.smartOMPanel a#summary_add_new_task').unbind('click');
+                jQuery('.smartOMPanel a#summary_add_new_task').click(function() {
+                    console.log('here')
+                    ttg_primeactions.createTaskDialog()});
+                ttg_primeactions.renderInitial();
+            }
+        );
+
+    </script>
+
+    <div id="SPINNER"/>
+	<c:om_ac_crud_polyfill_app ></c:om_ac_crud_polyfill_app>
+	<c:Fndtn_CRUD ></c:Fndtn_CRUD>
+</apex:page>

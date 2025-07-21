@@ -1,0 +1,68 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="TDH_Lead_Controller">
+    
+    <aura:html tag="style">       
+        .cuf-content {
+        padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+        padding: 0rem !important;
+        }       
+        .slds-modal__content{
+        height:unset !important;
+        max-height:unset !important;        
+        }
+        .slds-modal__container{
+        max-width:40% !important;
+        width:unset !important;
+        }
+    </aura:html> 
+    
+    <aura:attribute name="lead" type="sObject"/>
+    <aura:attribute name="isLoading" type="boolean" default="true"/>
+    <aura:attribute name="isAllow" type="boolean" default="false"/>
+    <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="errorMsg" type="string"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:if isTrue="{!isLoading}">
+        <aura:set attribute="else"> 
+            <div class="slds-text-heading_medium slds-m-top_medium slds-modal__header slds-size_1-of-1">
+                <div class="slds-p-right_x-large slds-grid slds-wrap slds-align_absolute-center">
+                    <b>Send Lead to Other Org?</b>
+                </div>
+                
+            </div> 
+            <lightning:card class="slds-size--1-of-1 slds-p-horizontal_x-large">  
+                <aura:if isTrue="{!v.showError}">
+                    <div class="slds-grid slds-wrap slds-align_absolute-center">                
+                        <p class="slds-text-heading--small"  style="color: red"><lightning:formattedText value="{!v.errorMsg}"></lightning:formattedText></p>
+                    </div>
+                    <b/>
+                </aura:if>
+                <lightning:recordViewForm class="slds-p-top_x-large" recordId="{!v.recordId}" objectApiName="Lead">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="FirstName" />    
+                            <lightning:outputField fieldName="LastName" />    
+                            <lightning:outputField fieldName="Company" />   
+                            <lightning:outputField fieldName="Title" />
+                            <lightning:outputField fieldName="Description" />    
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="Status" />    
+                            <lightning:outputField fieldName="Address" />
+                            <lightning:outputField fieldName="Phone" />    
+                            <lightning:outputField fieldName="Email" />
+                            <lightning:outputField fieldName="Transferred_To__c" />
+                        </div>
+                    </div>
+                </lightning:recordViewForm>
+            </lightning:card>        
+            <div class="slds-m-top_medium modal-footer slds-modal__footer slds-size_1-of-1">
+                <lightning:button variant="neutral" label="Send" disabled="{!!v.isAllow}" onclick="{!c.send}"/>
+                <lightning:button variant="neutral" label="Cancel"  onclick="{!c.cancel}"/>
+            </div>     
+        </aura:set>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Broadcast Message? --></label>
+        <name>L2O_Broadcast_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- GUID --></label>
+        <name>L2O_GUID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Integration Date --></label>
+        <name>L2O_Last_Integration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Order Products Activated --></label>
+        <name>L2O_Number_of_Order_Products_Activated__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Order Products --></label>
+        <name>L2O_Number_of_Order_Products__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describes how many Order Products have the Send RMA Request = TRUE. OIC will use this to determine if the order includes Order Products that should trigger RMA processes --></help>
+        <label><!-- Send RMA Request Count --></label>
+        <name>L2O_Send_RMA_Request_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count the # of Order Products that have a Lease lines not integrated downstream yet --></help>
+        <label><!-- Unsent Lease Line Count --></label>
+        <name>L2O_Unsent_Lease_Line_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Activated &amp; Hold Order Products --></label>
+        <name>L2O_of_Activated_Hold_Order_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Integrated Backend Order Products --></label>
+        <name>L2O_of_Integrated_Backend_Order_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of USGH Order Products --></label>
+        <name>L2O_of_USGH_Order_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order ID (18) --></label>
+        <name>Order_ID_18__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Line Group --></label>
+        <name>Quote_Line_Group__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Indica se o pedido está contratado.</help>
+        <label><!-- Contracted --></label>
+        <name>SBQQ__Contracted__c</name>
+    </fields>
+    <fields>
+        <help>&quot;Por data final da assinatura&quot; cria um Contrato separado para cada Data final da assinatura única contendo apenas aquelas Assinaturas. &quot;Contrato único&quot; cria um Contrato contendo todas as Assinaturas, independentemente de quais sejam as Datas finais.</help>
+        <label><!-- Contracting Method --></label>
+        <name>SBQQ__ContractingMethod__c</name>
+    </fields>
+    <fields>
+        <help>Valor total de todos os lançamentos de produtos do pedido.</help>
+        <label><!-- Order Bookings --></label>
+        <name>SBQQ__OrderBookings__c</name>
+    </fields>
+    <fields>
+        <help>As condições de pagamento para esse pedido.</help>
+        <label><!-- Payment Term --></label>
+        <name>SBQQ__PaymentTerm__c</name>
+    </fields>
+    <fields>
+        <help>A mensagem de status de cálculo de preço</help>
+        <label><!-- Price Calculation Status Message --></label>
+        <name>SBQQ__PriceCalcStatusMessage__c</name>
+    </fields>
+    <fields>
+        <help>Indica o status do trabalho de cálculo de preço do pedido. É definido pelo sistema.</help>
+        <label><!-- Price Calculation Status --></label>
+        <name>SBQQ__PriceCalcStatus__c</name>
+    </fields>
+    <fields>
+        <help>A cotação a partir da qual o pedido é criado.</help>
+        <label><!-- Quote --></label>
+        <name>SBQQ__Quote__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Especifique o termo da renovação. Por padrão, ele corresponde ao termo do contrato original.</help>
+        <label><!-- Renewal Term --></label>
+        <name>SBQQ__RenewalTerm__c</name>
+    </fields>
+    <fields>
+        <help>Taxa de aumentos de preço de renovação.</help>
+        <label><!-- Renewal Uplift (%) --></label>
+        <name>SBQQ__RenewalUpliftRate__c</name>
+    </fields>
+    <fields>
+        <help>O valor do imposto estimado</help>
+        <label><!-- Estimated Tax --></label>
+        <name>SBQQ__TaxAmount__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Broadcast Message? can only be true once the status is Activated --></errorMessage>
+        <name>L2O_Validate_Broadcast_Message</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- An activated Order can not go back to Draft, please Amend or process new Order Lines downstream by using the &apos;Broadcast Message?&apos; checkbox. --></errorMessage>
+        <name>L2O_Validate_OrderStatus</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Order Products cannot be on Hold and Activated at the same time --></errorMessage>
+        <name>L2O_Validate_Order_Products</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Can&apos;t contract the order. Activate the order and try again. --></errorMessage>
+        <name>SBQQ__Cannot_Contract_New_Order</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- EditOrderProducts --></label>
+        <name>SBQQ__EditOrderProducts</name>
+    </webLinks>
+</CustomObjectTranslation>

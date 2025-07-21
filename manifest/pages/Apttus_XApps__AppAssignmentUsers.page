@@ -1,0 +1,106 @@
+<!-- 
+    Apttus XAuthor Apps
+    AppAssignmentUsers
+     
+    @2014 Apttus Inc. All rights reserved.
+
+ -->
+<apex:page controller="Apttus_XApps.AppAssignmentUsersController" tabstyle="Apttus_XApps__Application__c" id="userAppAssgnmnt">
+
+    <apex:includeScript value="{!URLFOR($Resource.Apttus_XApps__jquery, 'js/jquery.min.js')}"  />
+
+    <script type="text/javascript">                
+    </script>
+
+    <apex:sectionHeader title="{!$Label.apttus_xapps__AssignUsers}" subtitle="{!appName}"/>
+
+    <apex:form id="selUsrFrm">
+    
+        <script type="text/javascript">
+
+          $j = jQuery.noConflict();
+          var selection = {};
+
+          function updateSelection(input) {
+            if (input.checked)
+                selection[input.value] = true;
+            else
+                delete selection[input.value];
+          }
+
+          function submitSelection() {
+            var res = new Array();
+
+            for(var prop in selection) {
+               res.push(prop);
+            }
+
+            submitSelectedIds(JSON.stringify(res));
+          }
+
+          function stopEvent(ev) {
+            ev.preventDefault ? ev.preventDefault() : ev.returnValue = false;
+          }      
+
+          var assignedIds = '{!JSENCODE(assignedIds)}';
+        
+          $j(document).ready(function() {
+
+            for (var i = 0; i < assignedIds.length; i++) {
+                assignedIds[i] = assignedIds[i].substring(0, 15);
+            }
+
+            var actionLinks = $j(".actionLink");
+            var regex = "(https?://.*\.salesforce.com/)(.*)(/.*)";
+            var id;
+            var checked;
+
+            for (var i = 0; i < actionLinks.length; i++) {
+                actionLinks.css("display","none");
+                //alert(actionLinks[i].href.indexOf("/e?") > -1);
+                var actLnkElemt = actionLinks[i];
+                if (actLnkElemt) {
+                   var hrefElemnt = actionLinks[i].href;
+                   if (hrefElemnt && (hrefElemnt.indexOf("/e?") > -1)) {
+                        var matchIds = actionLinks[i].href.match(regex);
+                        if (matchIds && matchIds.length >= 2)
+                        id = matchIds[2];
+        
+                        if (assignedIds.indexOf(id) != -1) {
+                            checked = "checked=checked";
+                            selection[id] = true;
+                        } else {
+                            checked = "";
+                        }
+        
+                        actionLinks.eq(i).parent().append("<input type=\"checkbox\" value=\"" + id + "\" onclick=\"updateSelection(this);\" " + checked + " />");                       
+                   }
+                }
+            }
+                        
+          });
+        </script>
+        <apex:outputPanel rendered="{!isError}">
+            <apex:pageMessages />
+        </apex:outputPanel>
+            
+        <apex:actionFunction name="submitSelectedIds" action="{!save}" rerender="selUsrFrm, lstUsrVw" >
+            <apex:param name="selectedIds" value="" assignTo="{!selectedIds}" />
+        </apex:actionFunction>
+
+        <!-- <apex:actionStatus id="saveStatus" onstop="refreshPage();" /> -->
+
+        <apex:actionFunction name="refreshPage" action="{!refresh}" reRender="selUsrFrm, lstUsrVw"/>
+        
+        <div align="center" draggable="false" >
+            <apex:commandButton onclick="submitSelection();" value="{!$Label.apttus_xapps__Save}" rerender="none" disabled="{!isError && !isValidError}"/>
+            <apex:commandButton action="{!cancel}" value="{!$Label.apttus_xapps__Cancel}" /> 
+        </div>       
+    </apex:form>
+
+    <apex:outputPanel id="lstUsrVw">
+        <apex:ListViews type="User" />
+    </apex:outputPanel>
+
+
+</apex:page>

@@ -1,0 +1,48 @@
+<messaging:emailTemplate subject="Request for Approval: {!relatedTo.Quote__r.Name}" recipientType="User" relatedToType="sbaa__Approval__c">
+<messaging:HtmlEmailBody >
+<html>
+<body>
+Hello Team,
+<br/>
+<br/>
+<p>
+<p><b>Quote Number: </b>{!relatedTo.Quote__r.Name} for&nbsp;<apex:outputLink value="{!relatedTo.Quote__r.L2O_ORG_LINK__c+relatedTo.Quote__r.SBQQ__Opportunity2__r.Id}" >{!relatedTo.Quote__r.SBQQ__Opportunity2__r.Name}</apex:outputLink> has been submitted to you for approval.</p>
+
+<p>To Approve or Reject, you can reply to this email with one of these words in the first line of the email message : Approve / Approved / Yes to approve and Reject / Rejected / No to reject. Enter the comments from the second line and leave an empty line after that.</p>
+
+<p><b>Note: Comments are required when rejecting the approval.</b></p>
+
+<p><b>-------------------------------------------------------------------------------------------------------------------------</b></p>
+
+<p><b>Account: </b>&nbsp;<apex:outputLink value="{!relatedTo.Quote__r.L2O_ORG_LINK__c+relatedTo.Quote__r.SBQQ__Account__r.Id}" >{!relatedTo.Quote__r.SBQQ__Account__r.Name}</apex:outputLink> requires your approval.</p>
+
+<p><b>Opportunity: </b>&nbsp;<apex:outputLink value="{!relatedTo.Quote__r.L2O_ORG_LINK__c+relatedTo.Quote__r.SBQQ__Opportunity2__r.Id}" >{!relatedTo.Quote__r.SBQQ__Opportunity2__r.Name}</apex:outputLink></p>
+
+<p><b>Quote Type: </b>{!relatedTo.Quote__r.SBQQ__Type__c}, <b>Transaction Type: </b>{!relatedTo.Quote__r.L2O_Transaction_Type__c} </p>
+
+<p><b>Contract Start Date: </b>{!relatedTo.Quote__r.SBQQ__StartDate__c}</p>
+
+<p><b>Contract Term (in months): </b>{!relatedTo.Quote__r.SBQQ__SubscriptionTerm__c}</p>
+
+<p><b>Overall Deal Value: </b>{!relatedTo.Quote__r.SBQQ__NetAmount__c}</p>
+
+<p><b>-------------------------------------------------------------------------------------------------------------------------</b></p>
+
+<p><b>Expires On: </b>{!relatedTo.Quote__r.SBQQ__ExpirationDate__c}, <b>Days Quote Open: </b>{!relatedTo.Quote__r.SBQQ__DaysQuoteOpen__c}</p>
+
+<p><b>Reason For Approval: </b>{!relatedTo.Quote__r.L2O_Reason_for_Approval__c}</p>
+
+<p><b>Approval Chain Requested: </b>{!relatedTo.sbaa__ApprovalChain__r.Name}</p>
+
+<c:L2O_LineItemsSummary quoteIdValue="{!relatedTo.Quote__r.Id}" />
+
+<p>To directly approve in Salesforce,&nbsp;<apex:outputLink value="{!relatedTo.Quote__r.L2O_ORG_LINK__c+relatedTo.Id}" >click here</apex:outputLink></p>
+
+<p>To view all Quote details,&nbsp;<apex:outputLink value="{!relatedTo.Quote__r.L2O_ORG_LINK__c+relatedTo.Quote__r.Id}" >click here</apex:outputLink></p>
+
+<p style="color:white"><apex:outputText value="{!relatedTo.Id}"/></p>
+</p>
+</body>
+</html>
+</messaging:HtmlEmailBody>
+</messaging:emailTemplate>

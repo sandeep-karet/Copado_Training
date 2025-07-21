@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Consult Fee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Consult Fees</value>
+    </caseValues>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker/Benefit Consultant Involved --></label>
+        <name>L2O_Broker_Benefit_Consultant_Involved__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business Region --></label>
+        <name>L2O_BusinessRegion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consult Type --></label>
+        <name>L2O_ConsultType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consult Fee --></label>
+        <name>L2O_Consult_Fee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Path --></label>
+        <name>L2O_ContractPath__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Type --></label>
+        <name>L2O_Contract_Path_Sub_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contracting Account ID --></label>
+        <name>L2O_Contracting_Account_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contracting Account Name --></label>
+        <name>L2O_Contracting_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contracting Account --></label>
+        <name>L2O_Contracting_Account__c</name>
+        <relationshipLabel><!-- Consult Fees (Contracting Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>L2O_EffectiveDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>L2O_ExpirationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fee Code Formula --></label>
+        <name>L2O_Fee_Code_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fee Code --></label>
+        <name>L2O_Fee_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fee Description --></label>
+        <name>L2O_Fee_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Product Code --></label>
+        <name>L2O_Parent_Product_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Product --></label>
+        <name>L2O_Parent_Product__c</name>
+        <relationshipLabel><!-- Consult Fees (Parent Product) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Pricing Model --></label>
+        <name>L2O_Pricing_Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Code --></label>
+        <name>L2O_ProductCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>L2O_Product__c</name>
+        <relationshipLabel><!-- Consult Fees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- % Total Visits --></label>
+        <name>L2O_Total_Visits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Consult Fee Key --></label>
+        <name>Legacy_Consult_Fee_Key__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Require Pricing Model if Contracting Account is populated. --></errorMessage>
+        <name>L2O_Require_Pricing_Model</name>
+    </validationRules>
+</CustomObjectTranslation>

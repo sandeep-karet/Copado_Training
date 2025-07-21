@@ -1,0 +1,23 @@
+<apex:page showHeader="true" sidebar="false" extensions="DNBConnect.DNB_RematchUpdateUtility"  docType="html" standardController="Lead">
+    <style>
+        body .bPageTitle .ptBody h1.noSecondHeader {
+        margin-top: 2px;        
+        }
+    </style>
+    <apex:slds />
+    <!-- <apex:sectionHeader title="Connect Setup"/> -->
+    <apex:includeScript value="/lightning/lightning.out.js"/>  
+    <div id="LightningComponentid" style="margin-top:0%;"/>
+    <script>
+    $Lightning.use("{!JSENCODE(NamespacePrefix)}:DNB_RematchUpdateApp", function() {
+        $Lightning.createComponent("{!JSENCODE(NamespacePrefix)}:DNB_RematchUpdateCmp",
+          { 
+            "recordId":"{!Lead.Id}"
+          },
+          "LightningComponentid",
+          function(cmp) {
+              
+          });
+    });
+    </script>
+</apex:page>

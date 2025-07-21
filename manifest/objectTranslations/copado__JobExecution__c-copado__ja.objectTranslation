@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Job Execution --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Promotion Job Executions --></label>
+        <name>copado__Promotion_Job_Executions</name>
+    </fieldSets>
+    <fields>
+        <help><!-- An apex class that must implement copado.JobExecutionCallback interface. --></help>
+        <label>コールバック</label>
+        <name>copado__Callback__c</name>
+    </fields>
+    <fields>
+        <label>コミット</label>
+        <name>copado__Commit__c</name>
+        <relationshipLabel>ジョブ実行</relationshipLabel>
+    </fields>
+    <fields>
+        <label>コンテキスト</label>
+        <name>copado__Context__c</name>
+    </fields>
+    <fields>
+        <label>データJSON</label>
+        <name>copado__DataJson__c</name>
+    </fields>
+    <fields>
+        <label>デプロイメント</label>
+        <name>copado__Deployment__c</name>
+        <relationshipLabel>ジョブ実行</relationshipLabel>
+    </fields>
+    <fields>
+        <label>宛先</label>
+        <name>copado__Destination__c</name>
+        <relationshipLabel>ジョブ実行（宛先）</relationshipLabel>
+    </fields>
+    <fields>
+        <label>エラーメッセージ</label>
+        <name>copado__ErrorMessage__c</name>
+    </fields>
+    <fields>
+        <label>ジョブステップ</label>
+        <name>copado__Job_Step__c</name>
+        <relationshipLabel>ジョブ実行</relationshipLabel>
+    </fields>
+    <fields>
+        <label>親ID（Formula）</label>
+        <name>copado__ParentId__c</name>
+    </fields>
+    <fields>
+        <label>親ID</label>
+        <name>copado__ParentRecord_Id__c</name>
+    </fields>
+    <fields>
+        <label>パイプライン</label>
+        <name>copado__Pipeline__c</name>
+        <relationshipLabel>ジョブ実行</relationshipLabel>
+    </fields>
+    <fields>
+        <label>プロモーション</label>
+        <name>copado__Promotion__c</name>
+        <relationshipLabel>ジョブ実行</relationshipLabel>
+    </fields>
+    <fields>
+        <label>スナップショット</label>
+        <name>copado__Snapshot__c</name>
+        <relationshipLabel>ジョブ実行</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ソース</label>
+        <name>copado__Source__c</name>
+        <relationshipLabel>ジョブ実行</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ステータス</label>
+        <name>copado__Status__c</name>
+        <picklistValues>
+            <masterLabel>Canceled</masterLabel>
+            <translation><!-- Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Successful</masterLabel>
+            <translation><!-- Successful --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>テンプレート</label>
+        <name>copado__Template__c</name>
+        <relationshipLabel>ジョブ実行</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field relates to the parent User Story Commit record of the job execution --></help>
+        <label>ユーザーストーリーコミット</label>
+        <name>copado__UserStoryCommit__c</name>
+        <relationshipLabel>ジョブ実行</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ボリュームオプション</label>
+        <name>copado__VolumeOptions__c</name>
+    </fields>
+    <nameFieldLabel><!-- Job Execution Name --></nameFieldLabel>
+</CustomObjectTranslation>

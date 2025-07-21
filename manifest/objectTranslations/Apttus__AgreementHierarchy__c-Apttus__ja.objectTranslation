@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Agreement Hierarchy --></value>
+    </caseValues>
+    <fields>
+        <help><!-- The account Id of the agreement leaf in the agreement hierarchy.
+Root &gt; Parent &gt; Leaf - Account Id --></help>
+        <label>合意最下層アカウント</label>
+        <name>Apttus__AgreementLeafAccountId__c</name>
+        <relationshipLabel>合意階層</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The agreement Id of the leaf within the agreement hierarchy.
+Root &gt; Parent &gt; Leaf --></help>
+        <label>合意の最下層</label>
+        <name>Apttus__AgreementLeafId__c</name>
+        <relationshipLabel>合意階層（合意）</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The hierarchical level of the agreement of the agreement hierarchy.
+It&apos;s used in the listing tree view in the agreement hierarchy to identify the indentation. --></help>
+        <label>合意レベル</label>
+        <name>Apttus__AgreementLevel__c</name>
+    </fields>
+    <fields>
+        <help><!-- The agreement Id of the parent agreement within the agreement hierarchy.
+Root &gt; Parent &gt; Leaf --></help>
+        <label>合意親</label>
+        <name>Apttus__AgreementParentId__c</name>
+        <relationshipLabel>合意階層（ParentId）</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The agreement Id of the root. A root agreement is the primordial agreement which has all of the children, grandchildren, etc. in the hierarchy. There can be only one root agreement for a hierarchy. 
+Root &gt; Parent &gt; Leaf --></help>
+        <label>合意ルート</label>
+        <name>Apttus__AgreementRootId__c</name>
+        <relationshipLabel>合意階層（RootId）</relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Agreement Hierarchy Name --></nameFieldLabel>
+</CustomObjectTranslation>

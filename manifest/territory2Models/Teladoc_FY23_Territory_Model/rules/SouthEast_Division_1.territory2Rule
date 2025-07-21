@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Territory2Rule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <booleanFilter>(1 AND 5) OR (2 AND 6) OR (3 AND 7) OR (4 AND 8)</booleanFilter>
+    <name>SouthEast Division 1</name>
+    <objectType>Account</objectType>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>DistrictofColumbia</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Bertie,Camden,Chowan,Currituck,Dare,Edgecombe,Franklin,Gates,Granville,Halifax,Hertford,Martin,Nash,Northampton,Pasquotank,Perquimans,Tyrrell,Vance,Warren,Washington</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Accomack,Albemarle,AlexandriaCity,Alleghany,Amelia,Amherst,Appomattox,Arlington,Augusta,Bath,Bedford,Bland,Botetourt,BristolCity,Brunswick,Buchanan,Buckingham,BuenaVistaCity,Campbell,Caroline,Carroll,CharlesCity,Charlotte,CharlottesvilleCity,ChesapeakeCity,Chesterfield,Clarke,ColonialHeightsCity,CovingtonCity,Craig,Culpeper,Cumberland,DanvilleCity,Dickenson,Dinwiddie,EmporiaCity,Essex,Fairfax,FairfaxCity,FallsChurchCity,Fauquier,Floyd,Fluvanna,Franklin,FranklinCity,Frederick,FredericksburgCity,GalaxCity,Giles,Gloucester,Goochland,Grayson,Greene,Greensville,Halifax,HamptonCity,Hanover,HarrisonburgCity,Henrico,Henry,Highland,HopewellCity,IsleofWight,JamesCity,KingandQueen,KingGeorge,KingWilliam,Lancaster,Lee,LexingtonCity,Loudoun,Louisa,Lunenburg,LynchburgCity,Madison,ManassasCity,ManassasParkCity,MartinsvilleCity,Mathews,Mecklenburg,Middlesex,Montgomery,Nelson,NewKent,NewportNewsCity,NorfolkCity,Northa</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.Billing_County__c</field>
+        <operation>equals</operation>
+        <value>Barbour,Berkeley,Boone,Braxton,Brooke,Cabell,Calhoun,Clay,Doddridge,Fayette,Gilmer,Grant,Greenbrier,Hampshire,Hancock,Hardy,Harrison,Jackson,Jefferson,Kanawha,Lewis,Lincoln,Logan,Marion,Marshall,Mason,McDowell,Mercer,Mineral,Mingo,Monongalia,Monroe,Morgan,Nicholas,Ohio,Pendleton,Pleasants,Pocahontas,Preston,Putnam,Raleigh,Randolph,Ritchie,Roane,Summers,Taylor,Tucker,Tyler,Upshur,Wayne,Webster,Wetzel,Wirt,Wood,Wyoming</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>DC</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>NC</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>VA</value>
+    </ruleItems>
+    <ruleItems>
+        <field>Account.BillingStateCode</field>
+        <operation>equals</operation>
+        <value>WV</value>
+    </ruleItems>
+</Territory2Rule>

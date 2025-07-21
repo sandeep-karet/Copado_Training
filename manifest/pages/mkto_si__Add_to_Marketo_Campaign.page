@@ -1,0 +1,128 @@
+<apex:page controller="mkto_si.AddToMarketoCampaignController"
+  tabStyle="Marketo__tab"
+  sidebar="false"
+>
+  <c:CssAndJavascript2 />
+  <link rel="Stylesheet" type="text/css" href="{!$Resource.web}/mkto/css/msi_add_campaign.css" />
+  <apex:outputPanel id="mktMobileAddToCampaign" rendered="{!isSalesforceOne}">
+    <link rel="Stylesheet" type="text/css" href="{!$Resource.css_mobile}" />
+    <c:AddToMarketoCampaignMobile />
+  </apex:outputPanel>
+
+  <apex:outputPanel layout="block" id="mktDeskTopAddToCampaign" styleClass="mkt-add-to-campaign mkto mkt-page-container" rendered="{! !isSalesforceOne}">
+    <apex:slds />
+    <c:Analytics hierarchy="marketo"
+/>
+    <!-- Header -->
+    <c:MsePageHeader id="pageHeader"
+      title="{!$Label.mkto_si__Add_to_Marketo_Campaign}"
+      cancel="{!cancel}"
+      showButton="true"
+      showBackButton="{!hasReturnUrl}"
+      isRedirectBack="{!isRedirectBack}"
+      redirectInSeconds="{!redirectInSeconds}"
+    />
+    <apex:outputPanel styleClass="slds-scope marketo-lightning" layout="block">
+      <!-- Loading -->
+      <apex:actionStatus id="loadingStatus"
+        onStart="Marketo.setLoading(this.parentNode.parentNode)"
+        onStop="Marketo.unsetLoading(this.parentNode.parentNode)"
+      />
+      <div class="slds-form mkt-page-content">
+        <!-- Page Messages -->
+        <apex:outputPanel id="statusBlock" styleClass="mkt-page-messages" layout="block">
+          <c:MktPageMessage severity="Error"
+            summary="{!errorMessage}"
+            rendered="{!errorMessage != null}"
+          />
+          <div class="successMessage">
+            <c:MktPageMessage severity="success"
+              summary="{!statusMessage}"
+              rendered="{!statusMessage != null && errorMessage == null}"
+            />
+          </div>
+        </apex:outputPanel>
+
+        <div class="mkt-page-body">
+          <apex:form >
+            <apex:outputPanel rendered="{! hasContacts && hasCampaigns}">
+              <apex:outputPanel layout="block" id="mktChooseCampBlock">
+                <div class="slds-form-element_horizontal slds-is-editing">
+                  <apex:outputLabel value="{!contactTypeLabel}" styleClass="slds-form-element__label"/>
+                  <div class="slds-form-element__control">
+                    <apex:outputText value="{!contactNames}"/>
+                  </div>
+                </div>
+                <div class="slds-form-element_horizontal slds-is-editing mkt-add-to-campaign-inputs">
+                  <apex:outputLabel value="{!$Label.mkto_si__Campaign_Name}" for="mktSelectCampaign" styleClass="slds-form-element__label"/>
+                  <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                      <apex:selectList value="{!campaignId}" size="1" styleClass="slds-select">
+                        <apex:selectOptions value="{!campaignList}" id="mktSelectCampaign"/>
+                        <apex:actionSupport event="onchange"
+                          status="loadingStatus"
+                          rerender="mktChooseCampBlock, statusBlock"
+                        />
+                      </apex:selectList>
+                    </div>
+                  </div>
+                </div>
+                <div class="slds-form-element_horizontal slds-is-editing">
+                  <apex:outputLabel value="{!$Label.mkto_si__Description}" styleClass="slds-form-element__label"/>
+                  <div class="slds-form-element__control">
+                    <apex:outputText value="{!description}"/>
+                  </div>
+                </div>
+                <div class="slds-form-element__control">
+                  <div class="mkt-add-to-campaign-inputs">
+                    <div class="mkt-page-buttons">
+                      <apex:commandButton value="{!$Label.mkto_si__Close}"
+                        onclick="window.close()"
+                        rendered="{!!hasReturnUrl}"
+                        styleClass="slds-button slds-button_neutral marketo-cancel-button"
+                      />
+                      <apex:commandButton action="{!cancel}"
+                        rendered="{!hasReturnUrl}"
+                        value="{!$Label.mkto_si__Back}"
+                        styleClass="slds-button slds-button_neutral marketo-cancel-button"
+                      />
+                      <apex:commandButton value="{!$Label.mkto_si__Add_to_Marketo_Campaign}"
+                        action="{!save}"
+                        rerender="statusBlock, pageHeader"
+                        rendered="{!(hasContacts && hasCampaigns)}"
+                        status="loadingStatus"
+                        styleClass="slds-button slds-button_neutral marketo-save-button"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </apex:outputPanel>
+            </apex:outputPanel>
+
+            <c:MktPageMessage severity="warning"
+              summary="{!noContactsMessage}"
+              rendered="{!!hasContacts && hasCampaigns}"
+            />
+
+            <c:MktPageMessage severity="warning"
+              summary="{!$Label.mkto_si__There_are_no_Marketo_campaigns_available}"
+              rendered="{!!hasCampaigns}"
+            />
+          </apex:form>
+        </div>
+      </div>
+
+    </apex:outputPanel>
+  </apex:outputPanel>
+  <script>
+    $j( document ).ready(function() {
+      AdobeAnalytics.initGlobalData();
+      var paramObj = getParamsAsObject(location.search);
+       if(paramObj.isBulk) {
+        AdobeAnalytics.disableAutotrack();
+        AdobeAnalytics.trackPageAsync(  'list-view-navigation', paramObj.contactType,paramObj.contactIds ,('{!isSalesforceOne}' =='true' ? 'mobile' : 'desktop')+'-list-view-add-to-marketo-campaign' , 'load'); 
+        AdobeAnalytics.trackEventsAsync('list-view-navigation', paramObj.contactType,paramObj.contactIds ,('{!isSalesforceOne}' =='true' ? 'mobile' : 'desktop')+'-list-view-add-to-marketo-campaign' , 'click');
+      }
+  }); 
+  </script> 
+</apex:page>

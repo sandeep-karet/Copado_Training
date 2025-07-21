@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Owner</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Type</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$L2O_Net_ARR__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$L2O_Full_Value_of_Agreement__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Closed Lost,Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Re-Sign Business</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Adam Schulz,Alex Cope,Alexandrea Webb,Alexis Garcia,Allie Hamman,Allison Fleming,Allison Looft,Amanda Cunningham,Amy Hill,Andrea Heinz,Andrew Devries,Andy Blanchard,Anita Raiford,Ann King,Ashlee Slyman,Beau Cobb,Bethanne Cushin,Betsy Holman,Blake Bueltel,Brandon Kelly,Brendan Duffy,Bridgette McGibbeny,Brooke Petty,Cali Lakin,Carol Chapman,Carrie Seaver,Chip Carey,Chris Chesterfield,Christina Fendley,Christine McCarthy,CLIENT SERVICE TEAM,CLIENT SERVICES - LIVONGO,Cole Andersen,Colin MacDonald,Collin Fahey,Corey Fisher,Corinna Schuppenies,Diane Staub,Dominique Maxey,Edyta Hoffmann,Erin Holleman,Erin Murray,Erin Wong,Gaddiel Gonzalez-Alicea,Grace Ramos,Holly Saroken,Jake Wallach,Jason Fluchel,Jeff Ashmore,Jennifer Britt,Jess Ventura,Jessica Evans,Jocelyn Scott,Joe Decker,Jonathon Workman,Julie Dorsey,Julie Zaura,Kaelyn Whisler,Karen McRoberts,Katie Kulaga,Kayla Sheafer,Kelly Dockins,Kim Brinzoi,Kimberly Santillo,Kollin Jensen,Kylie Groover,Larissa Ortiz,Lisa DeLarso,Lisa Ferguson,Lisa Rubino,Lisa Uiberall-Noble,Liz Tidwell,Maggie Tihanyi,Mark Harris,Martha Hanley,Matt Wozny,Matthew Scott,Megan Conrad,Megan Thompson,Mike Liebert,Mike Steinmetz</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Miranda Freeman,Monica Nybo,Nick Stein,Nicolette Roszkowski,Paige Przybylski,Pam Babington,Pamela Slatt,Rachel Nieva,Rebecca Schulz,Sammy Peterson,Sandra Kacarka,Sarah Hathaway,Sarah Testa,Scott Douglas,Sean Craig,Shannon Snowden,Sommer Crain,Stephanie Kelly,Stephanie Porter,Thomas Young,Tiffany Delaney,Tonia Heath,Tonya Diaz,Traci Collins,Yvette Maldonado-Garcia,Zeina Elsahili,Jacqueline Plesz,Don Barwig,Jennifer Achille,Dawn Bossaller,Laura Wetli,Alex Cherry,Jennifer Baker-Grogg,Gina Howe,Laura Rideau,Shari Berry,Lara Mays,Kathleen Brand,Kimberly Barnes,Ali Ahsan,Maddie Navigato,Sarah Pils,Carin Hitchens,Patrick Heinrich,Diana Kaiser,Mary Livingood,Sara Babus,Sarony Young,Jenna Barich,Jason Pilote,John Barnes,John Wu,Lauren Blue,Alicia Mahan,Eleni Kokinis</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Account</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>USGH CM Open Renewals FY23 by Acct</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Opportunity_Team__c</reportType>
+    <roleHierarchyFilter>Chief_Executive_Officer</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,30 @@
+<apex:page standardController="Account"
+    standardStylesheets="false"
+    showHeader="false"
+    sidebar="false"
+>
+    <apex:includeLightning />
+    <apex:slds />
+    <div class="slds-scope" id="lightning"></div>
+    <script>
+        window.onload = function () { 
+            $Lightning.use("ALTF:IncludeLightningOut", function () {
+                $Lightning.createComponent("ALTF:auraAccountSummary", {
+                        recordId: '{!JSENCODE(id)}',
+                        branding: true,
+                        classic: true
+                    },
+                    "lightning",
+                    function (cmp) {
+                    }
+                );
+            });
+        }
+    </script>
+    <style>
+        .hidenastystuff button {
+            overflow: hidden;
+            white-space: nowrap !important;
+        }
+    </style>
+</apex:page>

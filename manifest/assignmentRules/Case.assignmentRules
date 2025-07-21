@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>SDR Assignment rule</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>L2O_SDR_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Standard,Demo,Other,Privacy/Security Request,SOW/Contract Support,Solution Discovery/Design,RFP/RFI Support</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

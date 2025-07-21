@@ -1,0 +1,234 @@
+<apex:page showHeader="true" sidebar="true" controller="ALTF.PermissionSetGenerator">
+    <apex:includeScript value="{!URLFOR($Resource.ALTF__JSforce)}"/>
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">      
+    <apex:slds /> 
+    <div class="slds-p-around_medium">
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span class="slds-page-header__title slds-truncate" title="{!$Label.PSG_TITLE}">{!$Label.PSG_TITLE}</span>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-p-vertical_medium">
+            <div>{!$Label.PSG_HEADER}</div>
+
+            <ul class="slds-list_dotted">
+                <li>{!$Label.PSG_MSG1}</li>
+                <li>{!$Label.PSG_MSG2}</li>
+                <!-- <li>{!$Label.PSG_MSG3}</li>
+                <li>{!$Label.PSG_MSG4}</li> -->
+                <li>{!$Label.PSG_MSG5}</li>
+            </ul>
+            <br></br>
+            <div>{!$Label.PSG_FOOTER}</div>
+        </div>
+        
+        <div class="slds-p-vertical_medium">
+            <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-5">
+                <span id="progressText"></span>
+                <span aria-hidden="true">
+                    <strong id="progressNumber">0</strong>
+                    <strong>{!$Label.PSG_PERCENT_COMPLETE}</strong>
+                </span>
+            </div>
+            <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" aria-labelledby="progress-bar-label-id-5" role="progressbar">
+                <span class="slds-progress-bar__value" style="width:0%"></span>
+            </div>
+        </div>
+        <button class="slds-button slds-button_brand" onclick="createPermissionSet()">{!$Label.PSG_UPDATE}</button>
+    </div>
+
+    <script type="text/javascript">
+            window.onerror = function(message, source, lineno, colno, error) {
+                console.error({ message: message, source: source, lineno: lineno, colno: colno, error: error });
+                log('{!JSENCODE($Label.PSG_STATUS_ERROR)} - #(1000)', 100, true);
+                if (timer) {
+                    clearInterval(timer);
+                }
+
+            };
+            
+            window.addEventListener('error', function(event) { 
+                console.error(event);
+                log('{!JSENCODE($Label.PSG_STATUS_ERROR)} - #(1001)', 100, true);
+                if (timer) {
+                    clearInterval(timer);
+                }
+             })
+
+
+            var timer;
+            var t0;
+            var previousPercent = 0;
+
+            var createPermissionSet = function () {
+                t0 = Date.now();
+                createTabs = orignalCreateTabs;
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.PermissionSetGenerator.createPermissionSet}',
+                    function(result, event){
+                        log('Create permission called', 10);
+                        timer = setInterval(function(){ 
+                            checkStatus(); 
+                        }, 1000);
+                        checkStatus(); 
+                    }
+                );
+            };
+
+            var checkStatus = function () {
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.PermissionSetGenerator.checkPermissionSet}', 
+                    function(result, event){
+                        switch(result.Status) {
+
+                            case 'Holding':
+                                log('{!JSENCODE($Label.PSG_STATUS_HOLDING)}', 30);
+                                break;
+                            case 'Queued':
+                                log('{!JSENCODE($Label.PSG_STATUS_QUEUED)}', 30);
+                                break;
+                            case 'Preparing':
+                                log('{!JSENCODE($Label.PSG_STATUS_PREPARING)}', 30);
+                                break;
+                            case 'Processing':
+                                log('{!JSENCODE($Label.PSG_STATUS_PROCESSING)}', 30);
+                                break;
+                            case 'Failed':
+                                log('{!JSENCODE($Label.PSG_STATUS_FAILED)}', 100, true);
+                                break;
+                            case 'Aborted':
+                                log('{!JSENCODE($Label.PSG_STATUS_ABORTED)}', 100, true);
+                                break;
+                            case 'Completed':
+                                log('{!JSENCODE($Label.PSG_STATUS_PROCESSING)}', 90);
+                                createTabs();
+                                break;
+                            default:
+                                log('{!JSENCODE($Label.PSG_STATUS_ERROR)} - #(0000)', 100, true);
+                        }
+                    });
+            };
+
+            var log = function(msg, p, error) {
+                console.log(msg, p, error)
+                if (previousPercent > p) {
+                    console.warn('should not go backwards; ');
+                    return;
+                }
+                previousPercent = p;
+                document.querySelector("button").setAttribute("disabled", "disabled");
+                document.querySelector("#progressText").textContent = msg;
+                document.querySelector("#progressNumber").textContent = '(' + getDuration() + 's) ' + p;
+                document.querySelector('.slds-progress-bar__value').style.width=p+'%';
+                if(p >= 90 && timer) {
+                    clearInterval(timer);
+                    timer = undefined;
+                }
+                if(p === 100) {
+                    document.querySelector("button").removeAttribute("disabled");
+                }
+                if(error){
+                    document.querySelector('.slds-progress-bar__value').style.backgroundColor = '#c23934';
+                } else if(p==100) {
+                    document.querySelector('.slds-progress-bar__value').style.backgroundColor = '#04844b';
+                } else {
+                    document.querySelector('.slds-progress-bar__value').style.backgroundColor = '#5eb4ff';
+                }
+            };
+
+            var getDuration = function() {
+                return Math.round((Date.now() - t0) / 1000);
+            };
+
+            var conn = new jsforce.Connection({ accessToken: '{!JSENCODE($Api.Session_Id)}', version: '52.0' });
+            var tabsToEnable = [
+                'ALTF__TeamView',
+                'ALTF__Account_Plan__c'
+            ];
+            var orignalCreateTabs = function () {
+                conn.query("SELECT Id FROM PermissionSet where Name='AltifyPermSet' limit 1", function(err, result) {
+                    if (result.records.length == 0) {
+                        log('{!JSENCODE($Label.PSG_STATUS_ERROR)} - #(1002)', 100, true);
+                    }
+                    else {
+                        queryTabPermissions(result.records[0].Id);
+                    }
+                })
+            }
+            var createTabs = orignalCreateTabs;
+
+            var queryTabPermissions = function(permissionSetId) {
+                 conn.tooling.query("SELECT Id, Name, ParentId, Visibility FROM PermissionSetTabSetting where ParentId='" + encodeURIComponent(permissionSetId) + "' and Name in ('" + tabsToEnable.join("','") + "')", function(err, result) {
+                    result.records = result.records || [];
+                    if (result.records.length > 0) {
+                        deleteTabPermissions(permissionSetId, result.records);
+                    }
+                    else {
+                        updateTabPermissions(permissionSetId, result.records);
+                    }
+                })
+            }
+
+            var deleteTabPermissions = function(permissionSetId, records) {
+                var ids = [];
+                var i;
+
+                for (i = 0;i < records.length; i++) {
+                    ids.push(records[i].Id)
+                }
+                try {
+                    conn.tooling.sobject("PermissionSetTabSetting").del(ids, function() {
+                        updateTabPermissions(permissionSetId, records);
+                    });
+                }
+                catch(e) {
+                    log('{!JSENCODE($Label.PSG_STATUS_ERROR)} - #(1003)', 100, true);
+                    console.error(e);
+                }
+            }
+
+
+            var updateTabPermissions = function(permissionSetId, records) {
+                var newRecords = [];
+                var i;
+                for (i = 0; i < tabsToEnable.length; i++) {
+                    newRecords.push({
+                        Name: tabsToEnable[i],
+                        ParentId: permissionSetId,
+                        Visibility: 'DefaultOn'
+                    });
+                }
+                try {
+                    conn.tooling.sobject('PermissionSetTabSetting').insert(newRecords, function(err, res) {
+                        if (err) { 
+                            log('{!JSENCODE($Label.PSG_STATUS_ERROR)} - #(1002)', 100, true);
+                        }
+                        else {
+                            log('{!JSENCODE($Label.PSG_STATUS_COMPLETED)}', 100);
+                        }
+                    });
+
+                }
+                catch(e) {
+                    log('{!JSENCODE($Label.PSG_STATUS_ERROR)} - #(1004)', 100, true);
+                    console.error(e);
+                }
+            }
+
+    </script>
+</html>
+
+</apex:page>

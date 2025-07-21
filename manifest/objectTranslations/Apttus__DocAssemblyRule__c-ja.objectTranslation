@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Doc Assembly Rule --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Doc Assembly Filter Fields --></label>
+        <name>Apttus__DocAssemblyFilterFields</name>
+    </fieldSets>
+    <fields>
+        <help>ルールが有効であるかどうかを示します</help>
+        <label><!-- Active --></label>
+        <name>Apttus__Active__c</name>
+    </fields>
+    <fields>
+        <help>一致する合意のカテゴリ</help>
+        <label><!-- Agreement Category --></label>
+        <name>Apttus__Agreement_Category__c</name>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation>会社</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>その他</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Procurement</masterLabel>
+            <translation>調達</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation>販売</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>ルールの説明</help>
+        <label><!-- Description --></label>
+        <name>Apttus__Description__c</name>
+    </fields>
+    <fields>
+        <help>関連付けされたルールセットID</help>
+        <label><!-- Ruleset --></label>
+        <name>Apttus__RulesetId__c</name>
+        <relationshipLabel><!-- Doc Assembly Rules --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ルール評価順序</help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <nameFieldLabel><!-- Rule Name --></nameFieldLabel>
+</CustomObjectTranslation>

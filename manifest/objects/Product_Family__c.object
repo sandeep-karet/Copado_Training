@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Agreement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Agreement</label>
+        <referenceTo>Apttus__APTS_Agreement__c</referenceTo>
+        <relationshipLabel>Product Families</relationshipLabel>
+        <relationshipName>Product_Families</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Client_Email_for_Invoice__c</fullName>
+        <externalId>false</externalId>
+        <label>Client Email for Invoice</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Custom_Engagement_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Custom Engagement Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Day_of_Month_for_Case_Rate_Fees_Invoice__c</fullName>
+        <label>Day of Month for Case Rate Fees Invoice</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1st</fullName>
+                    <default>false</default>
+                    <label>1st</label>
+                </value>
+                <value>
+                    <fullName>2nd</fullName>
+                    <default>false</default>
+                    <label>2nd</label>
+                </value>
+                <value>
+                    <fullName>3rd</fullName>
+                    <default>false</default>
+                    <label>3rd</label>
+                </value>
+                <value>
+                    <fullName>4th</fullName>
+                    <default>false</default>
+                    <label>4th</label>
+                </value>
+                <value>
+                    <fullName>5th</fullName>
+                    <default>false</default>
+                    <label>5th</label>
+                </value>
+                <value>
+                    <fullName>10th</fullName>
+                    <default>false</default>
+                    <label>10th</label>
+                </value>
+                <value>
+                    <fullName>15th</fullName>
+                    <default>false</default>
+                    <label>15th</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                    <label>Not Applicable</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Day_of_Month_for_Consult_Fee_Invoice__c</fullName>
+        <label>Day of Month for Consult Fee Invoice</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1st</fullName>
+                    <default>true</default>
+                    <label>1st</label>
+                </value>
+                <value>
+                    <fullName>2nd</fullName>
+                    <default>false</default>
+                    <label>2nd</label>
+                </value>
+                <value>
+                    <fullName>3rd</fullName>
+                    <default>false</default>
+                    <label>3rd</label>
+                </value>
+                <value>
+                    <fullName>4th</fullName>
+                    <default>false</default>
+                    <label>4th</label>
+                </value>
+                <value>
+                    <fullName>5th</fullName>
+                    <default>false</default>
+                    <label>5th</label>
+                </value>
+                <value>
+                    <fullName>10th</fullName>
+                    <default>false</default>
+                    <label>10th</label>
+                </value>
+                <value>
+                    <fullName>15th</fullName>
+                    <default>false</default>
+                    <label>15th</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                    <label>Not Applicable</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Day_of_Month_for_Membership_Fee_Invoice__c</fullName>
+        <defaultValue>&quot;4th&quot;</defaultValue>
+        <label>Day of Month for Membership Fee Invoice</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1st</fullName>
+                    <default>false</default>
+                    <label>1st</label>
+                </value>
+                <value>
+                    <fullName>2nd</fullName>
+                    <default>false</default>
+                    <label>2nd</label>
+                </value>
+                <value>
+                    <fullName>3rd</fullName>
+                    <default>false</default>
+                    <label>3rd</label>
+                </value>
+                <value>
+                    <fullName>4th</fullName>
+                    <default>false</default>
+                    <label>4th</label>
+                </value>
+                <value>
+                    <fullName>5th</fullName>
+                    <default>false</default>
+                    <label>5th</label>
+                </value>
+                <value>
+                    <fullName>10th</fullName>
+                    <default>false</default>
+                    <label>10th</label>
+                </value>
+                <value>
+                    <fullName>15th</fullName>
+                    <default>false</default>
+                    <label>15th</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                    <label>Not Applicable</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Dedicated_800_Number__c</fullName>
+        <defaultValue>&quot;No&quot;</defaultValue>
+        <inlineHelpText>Indicates whether the client has a dedicated 800 number</inlineHelpText>
+        <label>Dedicated 800 Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EMS_Eligibility_Audit_Rights__c</fullName>
+        <defaultValue>&quot;Standard&quot;</defaultValue>
+        <label>EMS Eligibility Audit Rights</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                    <label>Standard</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Eligbilty_File_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Eligbilty File Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Eligibility_File_Sent_by_of_Month__c</fullName>
+        <defaultValue>&quot;1st&quot;</defaultValue>
+        <label>Eligibility File Sent by __ of Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10 Days Prior to Start Date</fullName>
+                    <default>false</default>
+                    <label>10 Days Prior to Start Date</label>
+                </value>
+                <value>
+                    <fullName>1st</fullName>
+                    <default>false</default>
+                    <label>1st</label>
+                </value>
+                <value>
+                    <fullName>3rd</fullName>
+                    <default>false</default>
+                    <label>3rd</label>
+                </value>
+                <value>
+                    <fullName>5th</fullName>
+                    <default>false</default>
+                    <label>5th</label>
+                </value>
+                <value>
+                    <fullName>15th</fullName>
+                    <default>false</default>
+                    <label>15th</label>
+                </value>
+                <value>
+                    <fullName>Within 1st 10 Days</fullName>
+                    <default>false</default>
+                    <label>Within 1st 10 Days</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Eligible_Dependents__c</fullName>
+        <defaultValue>&quot;Spouses and Children&quot;</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Select type of eligible dependent(s)</inlineHelpText>
+        <label>Eligible Dependents</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Engagement_Tier__c</fullName>
+        <label>Engagement Tier</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Tier 1</fullName>
+                    <default>false</default>
+                    <label>Tier 1</label>
+                </value>
+                <value>
+                    <fullName>Tier 2</fullName>
+                    <default>false</default>
+                    <label>Tier 2</label>
+                </value>
+                <value>
+                    <fullName>Tier 3</fullName>
+                    <default>false</default>
+                    <label>Tier 3</label>
+                </value>
+                <value>
+                    <fullName>Tier 4</fullName>
+                    <default>false</default>
+                    <label>Tier 4</label>
+                </value>
+                <value>
+                    <fullName>Tier 1+5</fullName>
+                    <default>false</default>
+                    <label>Tier 1+5</label>
+                </value>
+                <value>
+                    <fullName>Tier 2+5</fullName>
+                    <default>false</default>
+                    <label>Tier 2+5</label>
+                </value>
+                <value>
+                    <fullName>Tier 3+5</fullName>
+                    <default>false</default>
+                    <label>Tier 3+5</label>
+                </value>
+                <value>
+                    <fullName>Tier 4+5</fullName>
+                    <default>false</default>
+                    <label>Tier 4+5</label>
+                </value>
+                <value>
+                    <fullName>Tier 6</fullName>
+                    <default>false</default>
+                    <label>Tier 6</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Full_Description_of_Eligible_Members__c</fullName>
+        <externalId>false</externalId>
+        <label>Full Description of Eligible Members</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>General_Product_Family_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>General Product Family Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Global_Eligible_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Global Eligible  Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Global_Eligible__c</fullName>
+        <inlineHelpText>Indicate whether eligible employees residing in other countries are eligible</inlineHelpText>
+        <label>Global Eligible</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Implementation_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Implementation Fee</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Incentives_Surcharges_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Incentives/Surcharges Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Incentives_Surcharges__c</fullName>
+        <defaultValue>&quot;No&quot;</defaultValue>
+        <label>Incentives/Surcharges</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invoice_Frequency__c</fullName>
+        <label>Invoice Frequency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>true</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Annually</fullName>
+                    <default>false</default>
+                    <label>Annually</label>
+                </value>
+                <value>
+                    <fullName>Per Case Block</fullName>
+                    <default>false</default>
+                    <label>Per Case Block</label>
+                </value>
+                <value>
+                    <fullName>Self-Bill</fullName>
+                    <default>false</default>
+                    <label>Self-Bill</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Non_Standard_Payment_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-Standard Payment Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Non_Standard_Payment_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-Standard Payment Term</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Non_Standard_Reporting_Fee_Per_Hour__c</fullName>
+        <defaultValue>200</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Non-standard hourly reporting fee, if applicable</inlineHelpText>
+        <label>Non-Standard Reporting Fee (Per Hour)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms_Days__c</fullName>
+        <label>Payment Terms (Days)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Upon Receipt</fullName>
+                    <default>false</default>
+                    <label>Upon Receipt</label>
+                </value>
+                <value>
+                    <fullName>Net 30</fullName>
+                    <default>false</default>
+                    <label>Net 30</label>
+                </value>
+                <value>
+                    <fullName>Net 45</fullName>
+                    <default>false</default>
+                    <label>Net 45</label>
+                </value>
+                <value>
+                    <fullName>Net 60</fullName>
+                    <default>false</default>
+                    <label>Net 60</label>
+                </value>
+                <value>
+                    <fullName>Net 90</fullName>
+                    <default>false</default>
+                    <label>Net 90</label>
+                </value>
+                <value>
+                    <fullName>Net 120</fullName>
+                    <default>false</default>
+                    <label>Net 120</label>
+                </value>
+                <value>
+                    <fullName>Net 180</fullName>
+                    <default>false</default>
+                    <label>Net 180</label>
+                </value>
+                <value>
+                    <fullName>Prior to 1st of Month</fullName>
+                    <default>false</default>
+                    <label>Prior to 1st of Month</label>
+                </value>
+                <value>
+                    <fullName>On the Last Day of the Month</fullName>
+                    <default>false</default>
+                    <label>On the Last Day of the Month</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Preventing_Autorenewal_Days__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates the number of days&apos; notice a client must provide to prevent products from automatically renewing</inlineHelpText>
+        <label>Preventing Autorenewal (Days)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prod_Term_for_Conv_Early_Term_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Prod Term. for Conv Early Term. Fee</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Auto_Renew__c</fullName>
+        <inlineHelpText>Select &apos;Yes&apos; if products automatically renew</inlineHelpText>
+        <label>Product Auto Renew</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Family_End_Date__c</fullName>
+        <label>Product Family End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family_Name__c</fullName>
+        <label>Product Family Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Services</fullName>
+                    <default>false</default>
+                    <label>Services</label>
+                </value>
+                <value>
+                    <fullName>Hardware</fullName>
+                    <default>false</default>
+                    <label>Hardware</label>
+                </value>
+                <value>
+                    <fullName>Software</fullName>
+                    <default>false</default>
+                    <label>Software</label>
+                </value>
+                <value>
+                    <fullName>License Platform</fullName>
+                    <default>false</default>
+                    <label>License Platform</label>
+                </value>
+                <value>
+                    <fullName>Expert Medical Services</fullName>
+                    <default>false</default>
+                    <label>Expert Medical Services</label>
+                </value>
+                <value>
+                    <fullName>Chronic Care Services</fullName>
+                    <default>false</default>
+                    <label>Chronic Care Services</label>
+                </value>
+                <value>
+                    <fullName>Virtual Care Services</fullName>
+                    <default>false</default>
+                    <label>Virtual Care Services</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Family_Perpetual__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Product Family Perpetual</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family_Start_Date__c</fullName>
+        <inlineHelpText>Indicates the first start date of the services</inlineHelpText>
+        <label>Product Family Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family_Status__c</fullName>
+        <label>Product Family Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Expired</fullName>
+                    <default>false</default>
+                    <label>Expired</label>
+                </value>
+                <value>
+                    <fullName>Terminated</fullName>
+                    <default>false</default>
+                    <label>Terminated</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Renewal_Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter comments or the condition(s) that must be met for the products to auto-renew, if applicable</inlineHelpText>
+        <label>Product Renewal Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Renewal_Notice_Date__c</fullName>
+        <label>Product Renewal Notice Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product_Renewal_Notice_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Renewal Notice Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Renewal_Term_Months__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of months a product auto-renew for. For example: if the products automatically renew for one-year terms, enter 12.</inlineHelpText>
+        <label>Product Renewal Term (Months)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Term_Termination_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Term &amp; Termination Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Term_Years__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Term (Years)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Termination_for_Conv_Window__c</fullName>
+        <inlineHelpText>Indicate when products can be terminated for convenience</inlineHelpText>
+        <label>Product Termination for Conv Window</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>At Any Time</fullName>
+                    <default>false</default>
+                    <label>At Any Time</label>
+                </value>
+                <value>
+                    <fullName>On or After 1st Anniv of Effective Date</fullName>
+                    <default>false</default>
+                    <label>On or After 1st Anniv of Effective Date</label>
+                </value>
+                <value>
+                    <fullName>1st Anniv of Start Date</fullName>
+                    <default>false</default>
+                    <label>1st Anniv of Start Date</label>
+                </value>
+                <value>
+                    <fullName>Each Anniv of Start Date</fullName>
+                    <default>false</default>
+                    <label>Each Anniv of Start Date</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Termination_for_Conv__c</fullName>
+        <inlineHelpText>Indicate whether products can be terminated for convenience, and which party(ies) can terminate for convenience</inlineHelpText>
+        <label>Product Termination for Conv</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes: Mutual</fullName>
+                    <default>false</default>
+                    <label>Yes: Mutual</label>
+                </value>
+                <value>
+                    <fullName>Yes: Client</fullName>
+                    <default>false</default>
+                    <label>Yes: Client</label>
+                </value>
+                <value>
+                    <fullName>Yes: Teladoc</fullName>
+                    <default>false</default>
+                    <label>Yes: Teladoc</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes: Within Product</fullName>
+                    <default>false</default>
+                    <label>Yes: Within Product</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Purchase_Order_Equipment_Lease__c</fullName>
+        <label>Purchase Order- Equipment Lease</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Purchase_Order_One_Time_Services__c</fullName>
+        <label>Purchase Order- One-Time Services</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Purchase_Order_Subscription_Services__c</fullName>
+        <label>Purchase Order- Subscription Services</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rate_Lock_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate Lock Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rate_Lock_Period__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate Lock Period</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reporting_Comment__c</fullName>
+        <externalId>false</externalId>
+        <label>Reporting Comment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipment_Terms__c</fullName>
+        <label>Shipment Terms</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FOB Origin</fullName>
+                    <default>false</default>
+                    <label>FOB Origin</label>
+                </value>
+                <value>
+                    <fullName>FOB Destination</fullName>
+                    <default>false</default>
+                    <label>FOB Destination</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Termination_for_Conv_Days__c</fullName>
+        <inlineHelpText>Number of days&apos; notice required to terminate for convenience</inlineHelpText>
+        <label>Termination for Conv (Days)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>30</fullName>
+                    <default>false</default>
+                    <label>30</label>
+                </value>
+                <value>
+                    <fullName>45</fullName>
+                    <default>false</default>
+                    <label>45</label>
+                </value>
+                <value>
+                    <fullName>60</fullName>
+                    <default>false</default>
+                    <label>60</label>
+                </value>
+                <value>
+                    <fullName>90</fullName>
+                    <default>false</default>
+                    <label>90</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Utilization_Reporting_Frequency__c</fullName>
+        <label>Utilization Reporting Frequency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Annually</fullName>
+                    <default>false</default>
+                    <label>Annually</label>
+                </value>
+                <value>
+                    <fullName>Semi-Annually</fullName>
+                    <default>false</default>
+                    <label>Semi-Annually</label>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Product Family</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Contract_Ops_Product_Family</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Contract Ops</label>
+        <queue>Contract_Ops</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Contract_Ops_Product_Family1</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Contract Ops</label>
+        <queue>Contract_Ops</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>PF-{0000}</displayFormat>
+        <label>Product Family</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Product Families</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

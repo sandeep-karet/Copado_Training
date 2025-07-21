@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Wizard Ruleset --></value>
+    </caseValues>
+    <fields>
+        <help>高度な数式はルール上のANDとORのオペレータの組み合わせを可能にします</help>
+        <label><!-- Advanced Expression --></label>
+        <name>Apttus__AdvancedExpression__c</name>
+    </fields>
+    <fields>
+        <help>ルールが「フォーカスオブジェクトを決定する」または「レコードタイプを決定する」タイプの場合のオブジェクト名</help>
+        <label><!-- Context Object --></label>
+        <name>Apttus__ContextObject__c</name>
+    </fields>
+    <fields>
+        <label><!-- MetaPropertyFieldName --></label>
+        <name>Apttus__MetaPropertyFieldName__c</name>
+    </fields>
+    <fields>
+        <help>オブジェクトのレコードタイプに対応するレコードタイプ</help>
+        <label><!-- Record Type --></label>
+        <name>Apttus__RecordTypeId__c</name>
+    </fields>
+    <fields>
+        <help>条件マッチにより決定された値</help>
+        <label><!-- Resultant Value --></label>
+        <name>Apttus__ResultantValue__c</name>
+    </fields>
+    <fields>
+        <help>実行時ウィザードフローをナビゲートするルールタイプはフォーカスオブジェクトとレコードタイプを決定します</help>
+        <label><!-- Rule Type --></label>
+        <name>Apttus__RuleType__c</name>
+        <picklistValues>
+            <masterLabel>Determine Focus Object</masterLabel>
+            <translation>フォーカスオブジェクトを決定</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Determine Record Type</masterLabel>
+            <translation>レコードタイプを決定</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disable This Control</masterLabel>
+            <translation>このコントロールを無効化</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enable This Control</masterLabel>
+            <translation>このコントロールを有効化</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Abort</masterLabel>
+            <translation>中止に進む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Step</masterLabel>
+            <translation>ステップに進む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go To Submit</masterLabel>
+            <translation>送信へ進む</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hide This Control</masterLabel>
+            <translation>このコントロールを非表示</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Set This Control Value</masterLabel>
+            <translation>このコントロールの値を設定</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Show This Control</masterLabel>
+            <translation>このコントロールを表示</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>ステップ/入力が属するルールセットの順番</help>
+        <label><!-- Sequence --></label>
+        <name>Apttus__Sequence__c</name>
+    </fields>
+    <fields>
+        <help>ルールタイプ「ステップに進む」に適用できます</help>
+        <label><!-- Go To Wizard Step --></label>
+        <name>Apttus__ToWizardStepId__c</name>
+        <relationshipLabel><!-- Step Rulesets (To) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ウィザード入力制御を参照</help>
+        <label><!-- Wizard Input Control --></label>
+        <name>Apttus__WizardInputControlId__c</name>
+        <relationshipLabel><!-- Input Rulesets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>ウィザードステップを参照</help>
+        <label><!-- Wizard Step --></label>
+        <name>Apttus__WizardStepId__c</name>
+        <relationshipLabel><!-- Step Rulesets --></relationshipLabel>
+    </fields>
+    <nameFieldLabel><!-- Ruleset Name --></nameFieldLabel>
+</CustomObjectTranslation>

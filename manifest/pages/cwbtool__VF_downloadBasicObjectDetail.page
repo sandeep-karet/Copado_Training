@@ -1,0 +1,12 @@
+<!--
+  @description       : 
+  @author            : Kanishk Singh
+  @group             : 
+  @last modified on  : 03-22-2022
+  @last modified by  : Kanishk Singh
+-->
+<apex:page controller="cwbtool.DescribeBasicObjectCtrl" contenttype="application/vnd.ms-excel#ObjectBasicDetail_{!Now()}.xls" readOnly="true">
+
+<c:VFC_downloadbasicObjectdetail mapSchema="{!mapSchema}"/>
+   
+</apex:page>

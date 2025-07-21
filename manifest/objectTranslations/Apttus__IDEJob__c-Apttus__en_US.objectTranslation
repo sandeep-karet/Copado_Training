@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>IDE Job</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>IDE Jobs</value>
+    </caseValues>
+    <fields>
+        <help><!-- ID of the associated agreement --></help>
+        <label><!-- Agreement --></label>
+        <name>Apttus__AgreementId__c</name>
+        <relationshipLabel><!-- IDE Jobs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Previous status category of the Agreement --></help>
+        <label><!-- Agreement Previous Status Category --></label>
+        <name>Apttus__AgreementPreviousStatusCategory__c</name>
+    </fields>
+    <fields>
+        <help><!-- Previous status of the Agreement --></help>
+        <label><!-- Agreement Previous Status --></label>
+        <name>Apttus__AgreementPreviousStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the Analyzed Attachment/File received from the IDE --></help>
+        <label><!-- Analyzed Attachment --></label>
+        <name>Apttus__AnalysedAttachmentId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please provide analyzed highlighted attachment/file ID receive from IDE --></help>
+        <label><!-- Analysed Highlighted Attachment Id --></label>
+        <name>Apttus__AnalysedHighlightedAttachmentId__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the Attachment or File --></help>
+        <label><!-- Attachment/File --></label>
+        <name>Apttus__AttachmentId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Uploaded Attachment or File --></help>
+        <label><!-- Attachment/File Name --></label>
+        <name>Apttus__AttachmentName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Includes exception details from Intelligent Discovery provider. --></help>
+        <label><!-- Exception Detail --></label>
+        <name>Apttus__ExceptionDetail__c</name>
+    </fields>
+    <fields>
+        <help><!-- Error reported by KIRA --></help>
+        <label><!-- Exception --></label>
+        <name>Apttus__Exception__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the extracted JSON Document received from KIRA --></help>
+        <label><!-- Extracted JSON Doc Id --></label>
+        <name>Apttus__ExtractedJSONDocId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The extracted JSON string containing the mapped clause/field information --></help>
+        <label><!-- Extracted JSON --></label>
+        <name>Apttus__ExtractedJSON__c</name>
+    </fields>
+    <fields>
+        <help><!-- Flag to indicate if text-match algorithm is run or not --></help>
+        <label><!-- Is Text Match Algorithm Run --></label>
+        <name>Apttus__IsTextMatchAlgorithmRun__c</name>
+    </fields>
+    <fields>
+        <help><!-- Flag to indicate if unzip is required or not --></help>
+        <label><!-- Is Unzip Require Highlighted --></label>
+        <name>Apttus__IsUnzipRequireHighlighted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether unzip is required or not --></help>
+        <label><!-- Is Unzip Required --></label>
+        <name>Apttus__IsUnzipRequire__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the checkbox to indicate that a large file is uploaded. --></help>
+        <label><!-- Is a Large File Uploaded? --></label>
+        <name>Apttus__IsaLargeFileUploaded__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional detail of the job --></help>
+        <label><!-- Job Detail --></label>
+        <name>Apttus__JobDetail__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Job Status --></help>
+        <label><!-- Job Status --></label>
+        <name>Apttus__JobStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Job Type --></help>
+        <label><!-- Job Type --></label>
+        <name>Apttus__JobType__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field displays the Language of the document imported. --></help>
+        <label><!-- Language --></label>
+        <name>Apttus__Language__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether IDD status is getting monitored. --></help>
+        <label><!-- Monitor IDD status? --></label>
+        <name>Apttus__MonitorIDDstatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mutex variable to ensure only one process may work with the record at a time --></help>
+        <label><!-- Mutex --></label>
+        <name>Apttus__Mutex__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field displays the Number of pages the document imported. --></help>
+        <label><!-- Number Of Pages --></label>
+        <name>Apttus__NumberOfPages__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide the IDE job retry count --></help>
+        <label><!-- RetryCount --></label>
+        <name>Apttus__RetryCount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Review url received from KIRA --></help>
+        <label><!-- Review URL --></label>
+        <name>Apttus__ReviewURL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Scan quality of the document --></help>
+        <label><!-- Scan Quality --></label>
+        <name>Apttus__ScanQuality__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the use case for which the record is created --></help>
+        <label><!-- Source Use Case --></label>
+        <name>Apttus__SourceUseCase__c</name>
+        <picklistValues>
+            <masterLabel>Create Offline Agreement</masterLabel>
+            <translation><!-- Create Offline Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Import Offline</masterLabel>
+            <translation><!-- Import Offline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Save and Stored Execute</masterLabel>
+            <translation><!-- Save and Stored Execute --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upload Signed Document</masterLabel>
+            <translation><!-- Upload Signed Document --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

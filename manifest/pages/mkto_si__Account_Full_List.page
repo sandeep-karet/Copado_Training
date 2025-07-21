@@ -1,0 +1,15 @@
+<apex:page standardController="Account"
+  extensions="mkto_si.ObjectProxyController"
+  tabStyle="Marketo__tab"
+  sidebar="false"
+>
+  <c:MSITabsGlobal rendered="{!errorMessage == null}"
+    mTabSObjectType="{!currentSObjectType}"
+    mTabSObjectId="{!sObjectId}"
+    mTabSObjectName="{!currentSObjectName}"
+    isSalesforceOne="{!isSalesforceOne}"
+    mTabFullList="true"
+  />
+
+  <apex:pageMessage severity="mkto_si.Error" strength="1" rendered="{!errorMessage != null}" summary="{!errorMessage}" />
+</apex:page>

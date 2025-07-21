@@ -1,0 +1,80 @@
+<!-- 
+    Conga DocuSign API 
+    DocuSignEnvStatusByEnvId
+    @2010-2022 Conga Inc. All rights reserved.
+ -->
+<apex:page Controller="Apttus_DocuApi.DocuSignEnvStatusByEnvIdController"
+           showHeader="true"
+           sidebar="true" 
+           standardStylesheets="true"    
+           cache="false"  
+           tabStyle="Apttus_DocuApi__DocuSignEnvelope__c"
+           action="{!getPREnvelopeStatusById}" >
+
+    <style type="text/css">
+        .contentcenter {align:center;}
+        .logainImage {vertical-align:test-middle; margin: 10px;}
+        .textleft {vertical-align:left; margin: 0px;}
+
+        .authHeader {
+            padding: 15px 10px !important;
+            background-color: white;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .sfdcBody {
+            background-color: white !important;
+        }
+
+    </style>
+
+    <apex:stylesheet value="{!URLFOR($Resource.Apttus_DocuApi__LightningResource, 'css/DocusignSendForESignature.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.Apttus_DocuApi__LightningResource,'css/page-icon.css')}" />
+	
+    <apex:form id="docuSignEnvStatusFrm">
+
+        <script> 
+            /* function for redirect to DocuSign URL. */
+            function redirectToDocuSignAuth(){
+                var redirectURL = '{!JSENCODE(docuSignAuthURL)}';
+                window.open(redirectURL,'_top');
+            }  
+        </script>
+
+        <apex:outputPanel rendered="{!isConsentGranted}">
+            <apex:pageBlock id="idDocuSignEnvelopeStatusByParentId" mode="detail" title="{!$Label.Apttus_DocuApi__DocuSignEnvStatusByEnvParentId}" rendered="true">
+                <apex:pageBlockButtons location="both">
+                    <apex:commandButton value="{!buttonLabel}" action="{!doCancel}" immediate="true"/>
+                </apex:pageBlockButtons> 
+                <apex:pageBlockSection id="idDocuSignEnvelopeStatusMessage" columns="1" collapsible="false" >		
+                    <apex:outputPanel id="getStatusMessage" styleClass="contentcenter" >
+                        <apex:outputText value="{!statusMessage}"  styleClass="textleft" />
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:outputPanel>
+
+        <apex:outputPanel rendered="{!!isConsentGranted}">
+            <div class="bPageTitle bpageTitleExtra authHeader">
+                <div class="ptBody">
+                    <div class="content">
+                        <img src="{!URLFOR($Resource.LightningResource, '/images/headericons/Admin.png')}" class="pageIconPadding" />
+                        <h1 class="pageType">{!$Label.AuthenticationSetting}</h1>
+                        <h2 class="pageDescription">{!$Label.DocuSignAuthentication}</h2>
+                    </div>
+                </div>
+            </div>
+            <apex:pageBlock >
+                <apex:pageMessages />
+                <div>
+                    <apex:commandButton value="{!$Label.Apttus_DocuApi__GrantConsent}" action="{!grantConsent}" reRender="docuSignEnvStatusFrm" oncomplete="return redirectToDocuSignAuth();"/>
+                </div>
+            </apex:pageBlock>
+        </apex:outputPanel>
+
+        <apex:actionPoller action="{!getBatchJobStatus}" reRender="idDocuSignEnvelopeStatusMessage" interval="8" id="idBatchJobStatus" rendered="{!idAPStendStatus && isConsentGranted}"/>
+
+	</apex:form>
+</apex:page>

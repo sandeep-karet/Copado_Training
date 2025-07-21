@@ -1,0 +1,26 @@
+<apex:page standardController="Opportunity"
+    standardStylesheets="false"
+    extensions="ALTF.AccountLaunchpadController"
+    showHeader="false"
+    sidebar="false"
+>
+    <apex:includeLightning />
+    <apex:slds />
+    <div class="slds-scope" id="lightning"></div>
+    <script>
+        window.onload = function () { 
+            $Lightning.use("ALTF:IncludeLightningOut", function () {
+                $Lightning.createComponent("ALTF:auraAccountSummary", {
+                        recordId: '{!JSENCODE(opportunity.accountId)}',
+                        opportunityId: '{!JSENCODE(opportunity.Id)}',
+                        branding: true,
+                        classic: true
+                    },
+                    "lightning",
+                    function (cmp) {
+                    }
+                );
+            });
+        }
+    </script>
+</apex:page>

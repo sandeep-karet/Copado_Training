@@ -1,0 +1,17 @@
+<apex:page controller="Apttus_DocuApi.SelectDRRecordTypeController" action="{!init}">
+
+<apex:form id="idSelectDRRecordTypeController">
+    <apex:pageBlock id="idSelectRecordType" title="{!$Label.Apttus_DocuApi__selectDefaultRecipientRecordTypeHeading}"  mode="edit">
+        
+        <apex:pageBlockSection id="idSelectReordType"  columns="1" collapsible="false" >
+            <apex:selectList value="{!selectedRecordType}" title="{!$Label.Apttus_DocuApi__SelectRecordType}"  multiselect="false" size="1">
+                <apex:selectOptions value="{!recordType}"/>
+            </apex:selectList>        
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons location="bottom" >
+            <apex:commandButton action="{!continueSelection}" value="{!$Label.Apttus_DocuApi__Continue}"/>
+            <apex:commandButton action="{!cancel}" value="{!$Label.Apttus_DocuApi__Cancel}"/>
+        </apex:pageBlockButtons>
+     </apex:pageBlock>
+</apex:form> 
+</apex:page>

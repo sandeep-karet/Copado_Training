@@ -1,0 +1,1906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Performance_Guarantees_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Performance_Guarantees_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Performance_Header_Information</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Performance_Header_Information</fullName>
+        <fields>Name</fields>
+        <fields>PG_Status__c</fields>
+        <fields>Agreement__c</fields>
+        <label>Performance Header Information</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Agreement_Line_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Agreement Line Item</label>
+        <referenceTo>Apttus__AgreementLineItem__c</referenceTo>
+        <relationshipLabel>Performance Guarantees</relationshipLabel>
+        <relationshipName>Performance_Guarantees</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Agreement__c</fullName>
+        <label>Agreement</label>
+        <referenceTo>Apttus__APTS_Agreement__c</referenceTo>
+        <relationshipLabel>Performance Guarantees</relationshipLabel>
+        <relationshipName>Performance_Guarantees</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Calculation_Method__c</fullName>
+        <label>Calculation Method</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Average</fullName>
+                    <default>false</default>
+                    <label>Average</label>
+                </value>
+                <value>
+                    <fullName>Number</fullName>
+                    <default>false</default>
+                    <label>Number</label>
+                </value>
+                <value>
+                    <fullName>Percentage</fullName>
+                    <default>false</default>
+                    <label>Percentage</label>
+                </value>
+                <value>
+                    <fullName>Days</fullName>
+                    <default>false</default>
+                    <label>Days</label>
+                </value>
+                <value>
+                    <fullName>Breakeven</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Breakeven</label>
+                </value>
+                <value>
+                    <fullName>Gap to Goal</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Gap to Goal</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>ROI</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>ROI</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Call_Center_Abandon_Rate__c</fullName>
+        <inlineHelpText>Indicate the abandon rate %</inlineHelpText>
+        <label>***Deprecated***Call Center Abandon Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Call_Center_Avg_Response_Seconds__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Average call center response in seconds</inlineHelpText>
+        <label>***DepCall Center Avg Response (Seconds)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Center_Calls_Required__c</fullName>
+        <inlineHelpText>Indicate the minimum % of call required by the PG (e.g., enter 80 if 80% of calls must be answered within 30 seconds)</inlineHelpText>
+        <label>***Deprecated*Call Center Calls Required</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Credit_or_Refund__c</fullName>
+        <label>Credit or Refund</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Credit</fullName>
+                    <default>false</default>
+                    <label>Credit</label>
+                </value>
+                <value>
+                    <fullName>Refund</fullName>
+                    <default>false</default>
+                    <label>Refund</label>
+                </value>
+                <value>
+                    <fullName>No Fees at Risk</fullName>
+                    <default>false</default>
+                    <label>No Fees at Risk</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Evaluation_Frequency__c</fullName>
+        <inlineHelpText>How often the client evaluates if we met PG</inlineHelpText>
+        <label>Evaluation Frequency</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Annually</fullName>
+                    <default>false</default>
+                    <label>Annually</label>
+                </value>
+                <value>
+                    <fullName>Semi-Annually</fullName>
+                    <default>false</default>
+                    <label>Semi-Annually</label>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Per Occurrence</fullName>
+                    <default>false</default>
+                    <label>Per Occurrence</label>
+                </value>
+                <value>
+                    <fullName>By Plan Milestones</fullName>
+                    <default>false</default>
+                    <label>By Plan Milestones</label>
+                </value>
+                <value>
+                    <fullName>First Year</fullName>
+                    <default>false</default>
+                    <label>First Year</label>
+                </value>
+                <value>
+                    <fullName>Implementation Period</fullName>
+                    <default>false</default>
+                    <label>Implementation Period</label>
+                </value>
+                <value>
+                    <fullName>One-Time</fullName>
+                    <default>false</default>
+                    <label>One-Time</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Fees_At_Risk_Payment_Term__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>&quot;Enter in number of months&quot;</inlineHelpText>
+        <label>Fees At Risk Payment Term</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fees_At_Risk_Payment_Timeframe__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>&quot;Enter in number of months&quot;</inlineHelpText>
+        <label>Fees At Risk Payment Timeframe</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fees_At_Risk_Unit__c</fullName>
+        <label>Fees At Risk Unit</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dollar</fullName>
+                    <default>false</default>
+                    <label>Dollar</label>
+                </value>
+                <value>
+                    <fullName>Percentage</fullName>
+                    <default>false</default>
+                    <label>Percentage</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Fees_at_Risk_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the fees at risk amount, if fees are at risk</inlineHelpText>
+        <label>Fees at Risk Amount</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fees_at_Risk_Type__c</fullName>
+        <label>Fees at Risk Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No Fees at Risk</fullName>
+                    <default>false</default>
+                    <label>No Fees at Risk</label>
+                </value>
+                <value>
+                    <fullName>PPPM</fullName>
+                    <default>false</default>
+                    <label>PPPM</label>
+                </value>
+                <value>
+                    <fullName>Percentage of Refund</fullName>
+                    <default>false</default>
+                    <label>Percentage of Refund</label>
+                </value>
+                <value>
+                    <fullName>PEPM</fullName>
+                    <default>false</default>
+                    <label>PEPM</label>
+                </value>
+                <value>
+                    <fullName>Administrative Fees</fullName>
+                    <default>false</default>
+                    <label>Administrative Fees</label>
+                </value>
+                <value>
+                    <fullName>Quarterly Fees</fullName>
+                    <default>false</default>
+                    <label>Quarterly Fees</label>
+                </value>
+                <value>
+                    <fullName>Total Fees</fullName>
+                    <default>false</default>
+                    <label>Total Fees</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Consult</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Consult</label>
+                </value>
+                <value>
+                    <fullName>Membership</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Membership</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Fees_at_Risk__c</fullName>
+        <label>***Deprecated***Fees at Risk</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>General_PG_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>General PG Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guarantee_Description__c</fullName>
+        <inlineHelpText>Add the PG language/details</inlineHelpText>
+        <label>Guarantee Description</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Guarantee_Origin__c</fullName>
+        <defaultValue>&apos;TDH&apos;</defaultValue>
+        <inlineHelpText>Indicate which group the PG originated from</inlineHelpText>
+        <label>***Deprecated***Guarantee Origin</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>HY</fullName>
+                    <default>false</default>
+                    <label>HY</label>
+                </value>
+                <value>
+                    <fullName>Consult a Doctor</fullName>
+                    <default>false</default>
+                    <label>Consult a Doctor</label>
+                </value>
+                <value>
+                    <fullName>AmeriDoc</fullName>
+                    <default>false</default>
+                    <label>AmeriDoc</label>
+                </value>
+                <value>
+                    <fullName>Stat Health</fullName>
+                    <default>false</default>
+                    <label>Stat Health</label>
+                </value>
+                <value>
+                    <fullName>BD</fullName>
+                    <default>false</default>
+                    <label>BD</label>
+                </value>
+                <value>
+                    <fullName>AM</fullName>
+                    <default>false</default>
+                    <label>AM</label>
+                </value>
+                <value>
+                    <fullName>Livongo</fullName>
+                    <default>false</default>
+                    <label>Livongo</label>
+                </value>
+                <value>
+                    <fullName>Canada</fullName>
+                    <default>false</default>
+                    <label>Canada</label>
+                </value>
+                <value>
+                    <fullName>TDH</fullName>
+                    <default>false</default>
+                    <label>TDH</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Guarantee_Subtype__c</fullName>
+        <label>Guarantee Subtype</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Guarantee_Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Member Contact/Case</fullName>
+                    <default>false</default>
+                    <label>Member Contact/Case</label>
+                </value>
+                <value>
+                    <fullName>Initiation/Claims</fullName>
+                    <default>false</default>
+                    <label>Initiation/Claims</label>
+                </value>
+                <value>
+                    <fullName>Submittal/Responsiveness</fullName>
+                    <default>false</default>
+                    <label>Submittal/Responsiveness</label>
+                </value>
+                <value>
+                    <fullName>Enrollment Rate</fullName>
+                    <default>false</default>
+                    <label>Enrollment Rate</label>
+                </value>
+                <value>
+                    <fullName>Engagement Rate</fullName>
+                    <default>false</default>
+                    <label>Engagement Rate</label>
+                </value>
+                <value>
+                    <fullName>Activation Rate</fullName>
+                    <default>false</default>
+                    <label>Activation Rate</label>
+                </value>
+                <value>
+                    <fullName>Coaching Response Time</fullName>
+                    <default>false</default>
+                    <label>Coaching Response Time</label>
+                </value>
+                <value>
+                    <fullName>Member Satisfaction</fullName>
+                    <default>false</default>
+                    <label>Member Satisfaction</label>
+                </value>
+                <value>
+                    <fullName>Coaching</fullName>
+                    <default>false</default>
+                    <label>Coaching</label>
+                </value>
+                <value>
+                    <fullName>NPS</fullName>
+                    <default>false</default>
+                    <label>NPS</label>
+                </value>
+                <value>
+                    <fullName>A1c Reduce and Maintain</fullName>
+                    <default>false</default>
+                    <label>A1c Reduce and Maintain</label>
+                </value>
+                <value>
+                    <fullName>Weight Loss</fullName>
+                    <default>false</default>
+                    <label>Weight Loss</label>
+                </value>
+                <value>
+                    <fullName>BP Reduce and Maintain</fullName>
+                    <default>false</default>
+                    <label>BP Reduce and Maintain</label>
+                </value>
+                <value>
+                    <fullName>Change in Diagnosis</fullName>
+                    <default>false</default>
+                    <label>Change in Diagnosis</label>
+                </value>
+                <value>
+                    <fullName>Change in Treatment Plan</fullName>
+                    <default>false</default>
+                    <label>Change in Treatment Plan</label>
+                </value>
+                <value>
+                    <fullName>Sustained Active User Engagement</fullName>
+                    <default>false</default>
+                    <label>Sustained Active User Engagement</label>
+                </value>
+                <value>
+                    <fullName>Referrals</fullName>
+                    <default>false</default>
+                    <label>Referrals</label>
+                </value>
+                <value>
+                    <fullName>PHQ-9/GAD-7</fullName>
+                    <default>false</default>
+                    <label>PHQ-9/GAD-7</label>
+                </value>
+                <value>
+                    <fullName>Provider Response Time</fullName>
+                    <default>false</default>
+                    <label>Provider Response Time</label>
+                </value>
+                <value>
+                    <fullName>New Patient/Initial Visits</fullName>
+                    <default>false</default>
+                    <label>New Patient/Initial Visits</label>
+                </value>
+                <value>
+                    <fullName>Follow-up Visits</fullName>
+                    <default>false</default>
+                    <label>Follow-up Visits</label>
+                </value>
+                <value>
+                    <fullName>Abandon Rate</fullName>
+                    <default>false</default>
+                    <label>Abandon Rate</label>
+                </value>
+                <value>
+                    <fullName>Average Speed to Answer</fullName>
+                    <default>false</default>
+                    <label>Average Speed to Answer</label>
+                </value>
+                <value>
+                    <fullName>Virtual Call Center Uptime</fullName>
+                    <default>false</default>
+                    <label>Virtual Call Center Uptime</label>
+                </value>
+                <value>
+                    <fullName>Response Time</fullName>
+                    <default>false</default>
+                    <label>Response Time</label>
+                </value>
+                <value>
+                    <fullName>Data &amp; Reporting</fullName>
+                    <default>false</default>
+                    <label>Data &amp; Reporting</label>
+                </value>
+                <value>
+                    <fullName>On-Time Implementation</fullName>
+                    <default>false</default>
+                    <label>On-Time Implementation</label>
+                </value>
+                <value>
+                    <fullName>System Availability/Uptime</fullName>
+                    <default>false</default>
+                    <label>System Availability/Uptime</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Breakeven</fullName>
+                    <default>false</default>
+                    <label>Breakeven</label>
+                </value>
+                <value>
+                    <fullName>Custom</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Custom</label>
+                </value>
+                <value>
+                    <fullName>Satisfaction Rate</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Satisfaction Rate</label>
+                </value>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Standard</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Member Experience</controllingFieldValue>
+                <valueName>Member Contact/Case</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Member Experience</controllingFieldValue>
+                <valueName>Initiation/Claims</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Member Experience</controllingFieldValue>
+                <valueName>Submittal/Responsiveness</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Member Experience</controllingFieldValue>
+                <valueName>Enrollment Rate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Member Experience</controllingFieldValue>
+                <valueName>Engagement Rate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Member Experience</controllingFieldValue>
+                <valueName>Activation Rate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Member Experience</controllingFieldValue>
+                <valueName>Coaching Response Time</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Clinical Outcomes</controllingFieldValue>
+                <valueName>A1c Reduce and Maintain</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Clinical Outcomes</controllingFieldValue>
+                <valueName>Weight Loss</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Clinical Outcomes</controllingFieldValue>
+                <valueName>BP Reduce and Maintain</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Clinical Outcomes</controllingFieldValue>
+                <valueName>Change in Diagnosis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Clinical Outcomes</controllingFieldValue>
+                <valueName>Change in Treatment Plan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Clinical Outcomes</controllingFieldValue>
+                <valueName>Sustained Active User Engagement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Clinical Outcomes</controllingFieldValue>
+                <valueName>Referrals</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Clinical Outcomes</controllingFieldValue>
+                <valueName>PHQ-9/GAD-7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Call Center</controllingFieldValue>
+                <valueName>Abandon Rate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Call Center</controllingFieldValue>
+                <valueName>Average Speed to Answer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Call Center</controllingFieldValue>
+                <valueName>Virtual Call Center Uptime</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Call Center</controllingFieldValue>
+                <valueName>Response Time</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Enrollment Target</controllingFieldValue>
+                <controllingFieldValue>ROI</controllingFieldValue>
+                <controllingFieldValue>Client/Account Management Satisfaction</controllingFieldValue>
+                <controllingFieldValue>Utilization</controllingFieldValue>
+                <valueName>None</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operational/Service SLA</controllingFieldValue>
+                <valueName>Data &amp; Reporting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operational/Service SLA</controllingFieldValue>
+                <valueName>On-Time Implementation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Operational/Service SLA</controllingFieldValue>
+                <valueName>System Availability/Uptime</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Member Satisfaction</controllingFieldValue>
+                <valueName>Member Satisfaction</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Member Satisfaction</controllingFieldValue>
+                <valueName>Coaching</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Member Satisfaction</controllingFieldValue>
+                <valueName>NPS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Access &amp; Availability</controllingFieldValue>
+                <valueName>Provider Response Time</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Access &amp; Availability</controllingFieldValue>
+                <valueName>New Patient/Initial Visits</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Access &amp; Availability</controllingFieldValue>
+                <valueName>Follow-up Visits</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Utilization</controllingFieldValue>
+                <valueName>Breakeven</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Guarantee_Type__c</fullName>
+        <label>Guarantee Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Member Experience</fullName>
+                    <default>false</default>
+                    <label>Member Experience</label>
+                </value>
+                <value>
+                    <fullName>Member Satisfaction</fullName>
+                    <default>false</default>
+                    <label>Member Satisfaction</label>
+                </value>
+                <value>
+                    <fullName>Clinical Outcomes</fullName>
+                    <default>false</default>
+                    <label>Clinical Outcomes</label>
+                </value>
+                <value>
+                    <fullName>Access &amp; Availability</fullName>
+                    <default>false</default>
+                    <label>Access &amp; Availability</label>
+                </value>
+                <value>
+                    <fullName>Call Center</fullName>
+                    <default>false</default>
+                    <label>Call Center</label>
+                </value>
+                <value>
+                    <fullName>Enrollment Target</fullName>
+                    <default>false</default>
+                    <label>Enrollment Target</label>
+                </value>
+                <value>
+                    <fullName>ROI</fullName>
+                    <default>false</default>
+                    <label>ROI</label>
+                </value>
+                <value>
+                    <fullName>Operational/Service SLA</fullName>
+                    <default>false</default>
+                    <label>Operational/Service SLA</label>
+                </value>
+                <value>
+                    <fullName>Client/Account Management Satisfaction</fullName>
+                    <default>false</default>
+                    <label>Client/Account Management Satisfaction</label>
+                </value>
+                <value>
+                    <fullName>Utilization</fullName>
+                    <default>false</default>
+                    <label>Utilization</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Call Center Abandon Rate</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Call Center Abandon Rate</label>
+                </value>
+                <value>
+                    <fullName>Call Center Avg Speed to Answer</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Call Center Avg Speed to Answer</label>
+                </value>
+                <value>
+                    <fullName>Client Satisfaction</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Client Satisfaction</label>
+                </value>
+                <value>
+                    <fullName>Combined Utilization</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Combined Utilization</label>
+                </value>
+                <value>
+                    <fullName>Guaranteed Healthcare Outcomes</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Guaranteed Healthcare Outcomes</label>
+                </value>
+                <value>
+                    <fullName>Member/Participant Satisfaction</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Member/Participant Satisfaction</label>
+                </value>
+                <value>
+                    <fullName>On-Time Implementation</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>On-Time Implementation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>L2O_Legacy_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Used for Data Migration mapping to legacy orgs</description>
+        <externalId>true</externalId>
+        <label>Legacy Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Life_of_Contract__c</fullName>
+        <inlineHelpText>If Yes, the PG will not have an End Date</inlineHelpText>
+        <label>Life of Contract</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Line_of_Business__c</fullName>
+        <label>Line of Business</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ASO</fullName>
+                    <default>false</default>
+                    <label>ASO</label>
+                </value>
+                <value>
+                    <fullName>FI</fullName>
+                    <default>false</default>
+                    <label>FI</label>
+                </value>
+                <value>
+                    <fullName>Medicare</fullName>
+                    <default>false</default>
+                    <label>Medicare</label>
+                </value>
+                <value>
+                    <fullName>Medicaid</fullName>
+                    <default>false</default>
+                    <label>Medicaid</label>
+                </value>
+                <value>
+                    <fullName>All</fullName>
+                    <default>false</default>
+                    <label>All</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Member_Satisfaction_Score__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate the complete member satisfaction score and criteria (e.g., 10%)</inlineHelpText>
+        <label>***Deprecated**Member Satisfaction Score</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Member_Satisfaction_Surveys__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate the minimum number of member satisfaction surveys required</inlineHelpText>
+        <label>***DeprecatedMember Satisfaction Surveys</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Calculation_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>***Deprecated***Other Calculation Method</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Evaluation_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Evaluation Frequency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Fees_at_Risk_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Fees at Risk Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Guarantee_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate the guarantee type if &apos;Other&apos; is selected in Guarantee Type field (Member/Participant = Patient, Client = Employer)</inlineHelpText>
+        <label>Other Guarantee Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PG_Additional_Measurement_Start_Date__c</fullName>
+        <label>PG Additional Measurement Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PG_Additional_Measurement_Term_Recurring__c</fullName>
+        <label>PG Additional Measurement Term Recurring</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PG_Additional_Measurement_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>PG Additional Measurement Term</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PG_Baseline_Threshold__c</fullName>
+        <label>PG Baseline Threshold</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                    <label>0</label>
+                </value>
+                <value>
+                    <fullName>7.5</fullName>
+                    <default>false</default>
+                    <label>7.5</label>
+                </value>
+                <value>
+                    <fullName>140</fullName>
+                    <default>false</default>
+                    <label>140</label>
+                </value>
+                <value>
+                    <fullName>40</fullName>
+                    <default>false</default>
+                    <label>40</label>
+                </value>
+                <value>
+                    <fullName>30</fullName>
+                    <default>false</default>
+                    <label>30</label>
+                </value>
+                <value>
+                    <fullName>130</fullName>
+                    <default>false</default>
+                    <label>130</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PG_Baseline_Type__c</fullName>
+        <label>PG Baseline Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Self-reported a1c</fullName>
+                    <default>false</default>
+                    <label>Self-reported a1c</label>
+                </value>
+                <value>
+                    <fullName>Estimated a1c in the first month</fullName>
+                    <default>false</default>
+                    <label>Estimated a1c in the first month</label>
+                </value>
+                <value>
+                    <fullName>Average Systolic BP during the first month</fullName>
+                    <default>false</default>
+                    <label>Average Systolic BP during the first month</label>
+                </value>
+                <value>
+                    <fullName>Self-reported BMI</fullName>
+                    <default>false</default>
+                    <label>Self-reported BMI</label>
+                </value>
+                <value>
+                    <fullName>Self-reported BP</fullName>
+                    <default>false</default>
+                    <label>Self-reported BP</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PG_Calculation_Party__c</fullName>
+        <label>PG Calculation Party</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Teladoc</fullName>
+                    <default>false</default>
+                    <label>Teladoc</label>
+                </value>
+                <value>
+                    <fullName>Client</fullName>
+                    <default>false</default>
+                    <label>Client</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PG_End_Date__c</fullName>
+        <label>PG End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PG_Engagement_Requirement__c</fullName>
+        <externalId>false</externalId>
+        <label>PG Engagement Requirement</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PG_Format__c</fullName>
+        <label>PG Format</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Generally Available</fullName>
+                    <default>false</default>
+                    <label>Generally Available</label>
+                </value>
+                <value>
+                    <fullName>Non Standard</fullName>
+                    <default>false</default>
+                    <label>Non Standard</label>
+                </value>
+                <value>
+                    <fullName>Legacy</fullName>
+                    <default>false</default>
+                    <label>Legacy</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PG_Gap_to_Goal_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>PG Gap to Goal Details</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PG_Initial_Measurement_Term_Recurring__c</fullName>
+        <label>PG Initial Measurement Term Recurring</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PG_Initial_Measurement_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>PG Initial Measurement Term</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PG_Level__c</fullName>
+        <label>PG Level</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Book of Business</fullName>
+                    <default>false</default>
+                    <label>Book of Business</label>
+                </value>
+                <value>
+                    <fullName>Client</fullName>
+                    <default>false</default>
+                    <label>Client</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PG_Minimum_Enrollment_Months__c</fullName>
+        <externalId>false</externalId>
+        <label>PG Minimum Enrollment Months</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PG_Minimum_Sample_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>PG Minimum Sample Size</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PG_Outcome_Measure__c</fullName>
+        <label>PG Outcome Measure</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>The last available reading between month seven (7) and month twelve (12)</fullName>
+                    <default>false</default>
+                    <label>The last available reading between month seven (7) and month twelve (12)</label>
+                </value>
+                <value>
+                    <fullName>The lowest available reading between month 7 and 12</fullName>
+                    <default>false</default>
+                    <label>The lowest available reading between month 7 and 12</label>
+                </value>
+                <value>
+                    <fullName>Cumulative values</fullName>
+                    <default>false</default>
+                    <label>Cumulative values</label>
+                </value>
+                <value>
+                    <fullName>The last available reading during the measurement period</fullName>
+                    <default>false</default>
+                    <label>The last available reading during the measurement period</label>
+                </value>
+                <value>
+                    <fullName>Average reduction as of the first anniversary of the Member Recruitment Start Date</fullName>
+                    <default>false</default>
+                    <label>Average reduction as of the first anniversary of the Member Recruitment Start Date</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PG_Outcome_Target_Unit__c</fullName>
+        <label>PG Outcome Target Unit</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Percentage</fullName>
+                    <default>false</default>
+                    <label>Percentage</label>
+                </value>
+                <value>
+                    <fullName>mmHg</fullName>
+                    <default>false</default>
+                    <label>mmHg</label>
+                </value>
+                <value>
+                    <fullName>Number</fullName>
+                    <default>false</default>
+                    <label>Number</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Dollar</fullName>
+                    <default>false</default>
+                    <label>Dollar</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PG_Outcome_Target__c</fullName>
+        <externalId>false</externalId>
+        <label>PG Outcome Target</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PG_Outcome_Timing_Unit__c</fullName>
+        <label>PG Outcome Timing Unit</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Seconds</fullName>
+                    <default>false</default>
+                    <label>Seconds</label>
+                </value>
+                <value>
+                    <fullName>Minutes</fullName>
+                    <default>false</default>
+                    <label>Minutes</label>
+                </value>
+                <value>
+                    <fullName>Hours</fullName>
+                    <default>false</default>
+                    <label>Hours</label>
+                </value>
+                <value>
+                    <fullName>Calendar Days</fullName>
+                    <default>false</default>
+                    <label>Calendar Days</label>
+                </value>
+                <value>
+                    <fullName>Business Days</fullName>
+                    <default>false</default>
+                    <label>Business Days</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PG_Outcome_Timing__c</fullName>
+        <externalId>false</externalId>
+        <label>PG Outcome Timing</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PG_Reporting_Delivery_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>PG Reporting Delivery Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PG_Start_Date__c</fullName>
+        <label>PG Start Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PG_Status__c</fullName>
+        <label>PG Status</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>true</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Expired</fullName>
+                    <default>false</default>
+                    <label>Expired</label>
+                </value>
+                <value>
+                    <fullName>Terminated</fullName>
+                    <default>false</default>
+                    <label>Terminated</label>
+                </value>
+                <value>
+                    <fullName>COVID Waiver</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>COVID Waiver</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <label>Product Family</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Expert Medical Service</fullName>
+                    <default>false</default>
+                    <label>Expert Medical Service</label>
+                </value>
+                <value>
+                    <fullName>Virtual Care Services</fullName>
+                    <default>false</default>
+                    <label>Virtual Care Services</label>
+                </value>
+                <value>
+                    <fullName>Chronic Care Management</fullName>
+                    <default>false</default>
+                    <label>Chronic Care Management</label>
+                </value>
+                <value>
+                    <fullName>Livongo Services</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Livongo Services</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate the product name(s) if the PG/SLA is product-specific</inlineHelpText>
+        <label>Product Name (if product specific)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_At_Risk__c</fullName>
+        <label>Program At Risk</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Total Invoice</fullName>
+                    <default>false</default>
+                    <label>Total Invoice</label>
+                </value>
+                <value>
+                    <fullName>Program Only</fullName>
+                    <default>false</default>
+                    <label>Program Only</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ROI_Guarantee__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate the ROI guarantee required by the PG (e.g., &quot;1.75:1 ROI&quot;)</inlineHelpText>
+        <label>***Deprecated***ROI Guarantee</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reporting_Frequency__c</fullName>
+        <label>Reporting Frequency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Annually</fullName>
+                    <default>false</default>
+                    <label>Annually</label>
+                </value>
+                <value>
+                    <fullName>Semi Annual</fullName>
+                    <default>false</default>
+                    <label>Semi Annual</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Source_Document__c</fullName>
+        <externalId>false</externalId>
+        <label>Source Document</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Utilization_Guarantee__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate the minimum utilization OR combined utilization to meet PG (include &quot;%&quot; if percentage and &quot;cases&quot; if based on # of case</inlineHelpText>
+        <label>***Deprecated***Utilization Guarantee</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Waiver_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>***Deprecated***Waiver Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Waiver_End_Date__c</fullName>
+        <label>***Deprecated***Waiver End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Waiver_Start_Date__c</fullName>
+        <label>***Deprecated***Waiver Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Performance Guarantees</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PG - {0000}</displayFormat>
+        <label>Performance Guarantee Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Performance Guarantees</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Agreement__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Guarantee_Description_field_is_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(Guarantee_Description__c == &apos;&apos;,
+Guarantee_Description__c  == null)</errorConditionFormula>
+        <errorMessage>Guarantee Description field is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Make_PG_Outcome_Timing_and_Unit_Required</fullName>
+        <active>true</active>
+        <description>Please make sure you have entered both PG outcome timing as well as Unit</description>
+        <errorConditionFormula>OR(AND(Text(PG_Outcome_Timing_Unit__c) = null,NOT(ISBLANK( PG_Outcome_Timing__c ))),
+AND(ISBLANK(PG_Outcome_Timing__c),Text(PG_Outcome_Timing_Unit__c) &lt;&gt;null) )</errorConditionFormula>
+        <errorMessage>Please make sure you have entered both PG outcome timing as well as Unit</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Calculation_Method_Field_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL( Calculation_Method__c, &apos;Other&apos;),
+OR( Other_Calculation_Method__c == null,
+Other_Calculation_Method__c == &apos;&apos;
+)
+)</errorConditionFormula>
+        <errorMessage>Other Calculation Method field is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Evaluation_Frequency_is_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL( Evaluation_Frequency__c , &apos;Other&apos;),
+OR( Other_Evaluation_Frequency__c == null,
+Other_Evaluation_Frequency__c == &apos;&apos;
+)
+)</errorConditionFormula>
+        <errorMessage>Other Evaluation Frequency field is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Guarantee_Type_Required</fullName>
+        <active>true</active>
+        <description>Required if Guarantee Type is Other</description>
+        <errorConditionFormula>AND(ISPICKVAL(Guarantee_Type__c , &apos;Other&apos;),
+    OR(Other_Guarantee_Type__c == null,
+       Other_Guarantee_Type__c == &apos;&apos;
+    )
+)</errorConditionFormula>
+        <errorMessage>Other Guarantee Type field is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Required_if_Fees_at_Risk_Type_is_Other</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL( Fees_at_Risk_Type__c , &apos;Other&apos;),
+OR( Other_Fees_at_Risk_Type__c == null,
+Other_Fees_at_Risk_Type__c == &apos;&apos;
+)
+)</errorConditionFormula>
+        <errorMessage>Other Fees at Risk Type field is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Required_if_Fees_at_Risk_is_Yes</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (ISPICKVAL(Fees_at_Risk__c  , &apos;Yes&apos;),
+OR( Fees_at_Risk_Amount__c == null,
+Fees_at_Risk_Amount__c == &apos;&apos;
+)
+)</errorConditionFormula>
+        <errorMessage>Fee at Risk Amount field is required</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

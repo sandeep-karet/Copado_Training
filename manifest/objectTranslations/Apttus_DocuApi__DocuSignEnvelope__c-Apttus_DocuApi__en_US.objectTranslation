@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DocuSign Envelope</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DocuSign Envelopes</value>
+    </caseValues>
+    <fields>
+        <help><!-- ID of the associated agreement --></help>
+        <label><!-- Agreement --></label>
+        <name>Apttus_CMDSign__Agreement__c</name>
+        <relationshipLabel><!-- DocuSign Envelopes --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This field to track Batch Apex currently running or not, it is only during first step of Envelope creation. --></help>
+        <label><!-- Batch Apex Status --></label>
+        <name>Apttus_DocuApi__BatchApexStatus__c</name>
+        <picklistValues>
+            <masterLabel>DONE</masterLabel>
+            <translation><!-- DONE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RUNNING</masterLabel>
+            <translation><!-- RUNNING --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Completed Document Download Status. This flag used to validate before downloading completed documents --></help>
+        <label><!-- Completed Document Download Status --></label>
+        <name>Apttus_DocuApi__CompletedDocumentDownloadStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- Document Ids selected for signatures --></help>
+        <label><!-- Document Ids --></label>
+        <name>Apttus_DocuApi__DocumentIds__c</name>
+    </fields>
+    <fields>
+        <help><!-- List of Document names stored as JSON --></help>
+        <label><!-- Document Name --></label>
+        <name>Apttus_DocuApi__DocumentName__c</name>
+    </fields>
+    <fields>
+        <help><!-- DocuSign Envelope Document Upload Status by the Batch Apex (System Use only) --></help>
+        <label><!-- Document Upload Status Message --></label>
+        <name>Apttus_DocuApi__DocumentUploadStatusMessage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Document Upload Status (System use only) --></help>
+        <label><!-- Document Upload Status --></label>
+        <name>Apttus_DocuApi__DocumentUploadStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- The subject of the email that will be sent to all recipients. This can be a maximum of 100 characters. --></help>
+        <label><!-- Email Subject --></label>
+        <name>Apttus_DocuApi__EmailSubject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Envelope Content --></label>
+        <name>Apttus_DocuApi__EnvelopeContent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Envelope Id from DocuSign --></help>
+        <label><!-- Envelope Id --></label>
+        <name>Apttus_DocuApi__EnvelopeId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number Of Documents added to this Envelope where we could download after Signing --></help>
+        <label><!-- Number Of Documents --></label>
+        <name>Apttus_DocuApi__NumberOfDocuments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Envelope OwnerId --></help>
+        <label><!-- OwnerId --></label>
+        <name>Apttus_DocuApi__OwnerId__c</name>
+        <relationshipLabel><!-- DocuSign Envelopes --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference field for the DocuSign Envelope linked to. --></help>
+        <label><!-- Parent Id --></label>
+        <name>Apttus_DocuApi__ParentId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reason for voiding/recalling the envelope. --></help>
+        <label><!-- Recall Reason --></label>
+        <name>Apttus_DocuApi__RecallReason__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date and time of last Envelope Status change. --></help>
+        <label><!-- Status Change Date --></label>
+        <name>Apttus_DocuApi__StatusChangeDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Envelope status from DocuSign --></help>
+        <label><!-- Status --></label>
+        <name>Apttus_DocuApi__Status__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

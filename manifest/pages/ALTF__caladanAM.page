@@ -1,0 +1,32 @@
+<apex:page docType="html-5.0"
+    showHeader="{! NOT( $CurrentPage.parameters.hide_summary == 'true' ) }"
+    sidebar="false"
+    applyBodyTag="false"
+    standardController="ALTF__Account_Plan__c"
+    extensions="ALTF.Objectives_Controller"
+    action="{!logAMObjectivesUsage}"
+    standardStylesheets="false"
+>
+    <script>
+        var isSalesforce1 = "{!JSENCODE($User.UIThemeDisplayed)}" == "Theme4t";
+
+        var isLightningExperience = ["Theme4d", "Theme4u"].indexOf("{!JSENCODE($User.UIThemeDisplayed)}") > -1;
+
+        if (isLightningExperience) {
+            document.querySelector("html").classList.add("launchpad_lightning_class");
+        }
+
+        if (isSalesforce1) {
+            document.querySelector("html").classList.add("salesforce1");
+        }
+    </script>
+    <apex:stylesheet value="{!URLFOR($Resource.ALTF__foundation_npm_modules_generated, 'styles/vendors.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.ALTF__foundation_npm_modules_generated, 'scripts/vendors.js')}" />
+    <apex:includeScript value="{! URLFOR($Resource.JQueryUI, 'js/jquery.paging.min.js') }" />
+    <c:vf_remoting_service />
+    <apex:include pageName="ALTF__TAMSummaryTab" />
+    <apex:include pageName="ALTF__caladan" />
+
+    <div id="TAS" class="slds altify"></div>
+
+</apex:page>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Genehmigung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Genehmigungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Genehmigung --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Genehmigungen --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Genehmigung --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Genehmigungen --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Genehmigung --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Genehmigungen --></value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- RequestFields --></label>
+        <name>sbaa__RequestFields</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Lookup to Quote. --></help>
+        <label><!-- Quote --></label>
+        <name>Quote__c</name>
+        <relationshipLabel><!-- Approvals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Aktionen</label>
+        <name>sbaa__Actions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approval Chain to which this Approval belongs --></help>
+        <label>Genehmigungskette</label>
+        <name>sbaa__ApprovalChain__c</name>
+        <relationshipLabel>Genehmigungen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Step (level) at which this approval is required. --></help>
+        <label>Genehmigungsschritt</label>
+        <name>sbaa__ApprovalStep__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the Email Template associated with Approval --></help>
+        <label>Genehmigungsvorlagen-ID</label>
+        <name>sbaa__ApprovalTemplateId__c</name>
+    </fields>
+    <fields>
+        <help><!-- User who approved this Approval --></help>
+        <label>Genehmigt von</label>
+        <name>sbaa__ApprovedBy__c</name>
+        <relationshipLabel><!-- Approvals (Approved By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used with Dynamic Approvers, to capture the field name containing the Approver value --></help>
+        <label>Genehmigerfeld</label>
+        <name>sbaa__ApproverField__c</name>
+        <picklistValues>
+            <masterLabel>Created By</masterLabel>
+            <translation><!-- Created By --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the Approver associated with this Approval. --></help>
+        <label>Genehmiger</label>
+        <name>sbaa__Approver__c</name>
+        <relationshipLabel>Genehmigungen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- When Archived Approvals is enabled, indicates that this Approval is archived --></help>
+        <label>Archiviert</label>
+        <name>sbaa__Archived__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the Group the Approval is assigned to, if applicable --></help>
+        <label>Zugewiesene Gruppen-ID</label>
+        <name>sbaa__AssignedGroupId__c</name>
+    </fields>
+    <fields>
+        <help><!-- True if the current User is also the Assigned To User --></help>
+        <label>Mir zugewiesen</label>
+        <name>sbaa__AssignedToMe__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lookup to the User to which the Approval is assigned --></help>
+        <label>Zugewiesen zu</label>
+        <name>sbaa__AssignedTo__c</name>
+        <relationshipLabel><!-- Approvals (Assigned To) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Approver&apos;s Comments --></help>
+        <label>Kommentare</label>
+        <name>sbaa__CommentsLong__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Delegated Approvals is enabled, lookup to the delegated Approver --></help>
+        <label>Delegierter Genehmiger</label>
+        <name>sbaa__DelegatedApprover__c</name>
+        <relationshipLabel>Delegierte Genehmigungen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Opportunity being approved --></help>
+        <label>Opportunity</label>
+        <name>sbaa__Opportunity__c</name>
+        <relationshipLabel>Genehmigungen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- ID of the Email Template associated with Recalls --></help>
+        <label>Widerrufvorlagen-ID</label>
+        <name>sbaa__RecallTemplateId__c</name>
+    </fields>
+    <fields>
+        <help><!-- API Name of the Approval field looking up to the record being approved --></help>
+        <label>Datensatzfeld</label>
+        <name>sbaa__RecordField__c</name>
+    </fields>
+    <fields>
+        <help><!-- User who rejected this Approval --></help>
+        <label>Abgelehnt von</label>
+        <name>sbaa__RejectedBy__c</name>
+        <relationshipLabel><!-- Approvals (Rejected By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- ID of the Email Template associated with Rejection --></help>
+        <label>Ablehnungsvorlagen-ID</label>
+        <name>sbaa__RejectionTemplateId__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the Email Template associated with Approval Requests --></help>
+        <label>Anfragenvorlagen-ID</label>
+        <name>sbaa__RequestTemplateId__c</name>
+    </fields>
+    <fields>
+        <help><!-- By default, approving any Approval will auto-approve all other Approvals assigned to the same User. If this box is checked, an Approval originated by this Rule will not be auto-approved and must be explicitly approved. --></help>
+        <label>Ausdrückliche Genehmigung erfordern</label>
+        <name>sbaa__RequireExplicitApproval__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approval rule that generated this approval. --></help>
+        <label>Regel</label>
+        <name>sbaa__Rule__c</name>
+        <relationshipLabel>Genehmigungen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Status of this approval. --></help>
+        <label>Status</label>
+        <name>sbaa__Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assigned</masterLabel>
+            <translation><!-- Assigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revoked</masterLabel>
+            <translation><!-- Revoked --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If Approver is a Group, checked if all members need to Approve in order to consider the Approval approved --></help>
+        <label>Einstimmig</label>
+        <name>sbaa__Unanimous__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Genehmigungsnummer</nameFieldLabel>
+    <webLinks>
+        <label>Genehmigen</label>
+        <name>sbaa__Approve</name>
+    </webLinks>
+    <webLinks>
+        <label>Neu zuweisen</label>
+        <name>sbaa__Reassign</name>
+    </webLinks>
+    <webLinks>
+        <label>Ablehnen</label>
+        <name>sbaa__Reject</name>
+    </webLinks>
+    <webLinks>
+        <label>Anfrage erneut senden</label>
+        <name>sbaa__ResendRequestEmail</name>
+    </webLinks>
+</CustomObjectTranslation>
