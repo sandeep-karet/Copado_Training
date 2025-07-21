@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Mbr_Group__c$Name__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Id</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Product__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Member_Group_Id_18__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Please see the attached document. One Each tab has a different product and clients that need the product turned on or off. Requesting updates in LLCRM by 1/1/25</description>
+    <filter>
+        <criteriaItems>
+            <column>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Product__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Treatment Decision Support,Mental Health Navigator,Medical Record eSummary,Mental Health Navigator (US),Find Best Care,Find a Doctor,Ask the Expert,Find Best Doctor</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Report for CRMINT-42474</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Member_Groups_with_Plan_Specific_Fees__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Mbr_Group__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

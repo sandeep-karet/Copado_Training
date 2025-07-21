@@ -1,0 +1,21 @@
+<apex:page docType="html-5.0"
+	showHeader="false" 
+
+
+	sidebar="false" 
+	 
+	standardController="Opportunity" 
+	extensions="ALTF.AssessmentController"
+	action="{!logTASAssessmentMobileUsage}"	
+		
+		
+	
+	>
+
+	<c:om_assessment_app oppExtraId="{! shadowOpportunity.Id }" /> 
+
+
+	
+	
+
+</apex:page>

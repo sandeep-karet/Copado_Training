@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_30207417</developerName>
+        <masterLabel>HP Sectors</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>FULL_NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Terry Beck</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Suzanne Kane</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Theresa Nute</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bryan Spaits</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jack Rose</sourceValue>
+            </sourceValues>
+            <value>New</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Chad Baugh</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Robin Kingston</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shannon Stepp</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sara Sweat</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Vince Colaberdino</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matt Suppin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brooke Petty</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Allison Fleming</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nicole Fleck</sourceValue>
+            </sourceValues>
+            <value>Key</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Robyn Racheotes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kathy Warrick</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Megan Conrad</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rachel Bennett</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Keith Jacobs</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Patrick Williams</sourceValue>
+            </sourceValues>
+            <value>Core</value>
+        </values>
+        <values>
+            <value>ASO</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Teri Condon</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kathleen Brand</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lisa Ferguson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sommer Crain</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lisa Delarso</sourceValue>
+            </sourceValues>
+            <value>AETNA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Alice Addis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rebecca Schulz</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kristen Dominique</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Amy Hill</sourceValue>
+            </sourceValues>
+            <value>UHG</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Rick Gailunas</sourceValue>
+            </sourceValues>
+            <value>Consultant</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Opportunity.Ann_Rec_Rev__c</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Opportunity.Contracted_Date__c</groupingColumn>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>CAMPAIGN_SOURCE</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Ann_Rec_Rev__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.In_Year_Rec_Rev__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Total_Contract_Value__c</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Type__c</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Initial_of_Lives__c</field>
+    </columns>
+    <columns>
+        <field>FISCAL_QUARTER</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>ROLLUP_DESCRIPTION</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LEAD_SOURCE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Marketing,ZoomInfo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Sub_Channel__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Aetna,HP Core,HP Enterprise,HP Key,United</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>Opportunity.Contracted_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Sub_Channel__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>2020 Health Plan #Wins</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account.Account_Type__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.Contracted_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

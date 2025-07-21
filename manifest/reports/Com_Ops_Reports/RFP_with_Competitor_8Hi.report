@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>RFP__c.Customer_Name__c</field>
+    </columns>
+    <columns>
+        <field>RFP__c.Opportunity_Name__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>RFP__c.Opportunity_Stage__c</field>
+    </columns>
+    <columns>
+        <field>RFP__c.Competition__c</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Tabular</format>
+    <name>RFP with Competitor</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$RFP__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>RFP__c.Anticipated_Award_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

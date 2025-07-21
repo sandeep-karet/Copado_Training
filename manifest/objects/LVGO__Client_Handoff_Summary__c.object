@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>LVGO__Client_Handoff_Summary_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>LVGO__Client_Handoff_Summary_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>LVGO__Client_Handoff_Summary_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>LVGO__Account_Name__c</fields>
+        <fields>LVGO__Client_Implementation_Manager__c</fields>
+        <fields>LVGO__Client_Success_Manager__c</fields>
+        <fields>LVGO__Enrollment_Marketing_Lead__c</fields>
+        <label>Client Handoff Summary Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>LVGO__Account_Health_Notes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Account__r.LVGO__Client_Risk_Notes__c</formula>
+        <label>Account Health Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Account_Health_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(LVGO__Account__r.LVGO__Client_Risk__c)</formula>
+        <label>Account Health Score</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Account_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Account__r.Name</formula>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Account_Owner__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Account__r.OwnerId.FirstName +&apos; &apos;+ Account__r.OwnerId.LastName[disable]</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Account</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Client Handoff Summary</relationshipLabel>
+        <relationshipName>Client_Handoff_Summary</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Additional_Details_Account_Contract__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Additional Details - Account &amp; Contract</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__Additional_Details_Account_Management__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Additional Details - Account Management</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__Additional_Details_BH__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Additional Details - BH</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__Additional_Details_DM__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Additional Details - DM</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__Additional_Details_DPP__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Additional Details - DPP</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__Additional_Details_HTN__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Additional Details - HTN</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__Additional_Details_Marketing__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Additional Details - Marketing</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__Additional_Details_Reporting__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Additional Details - Reporting</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__Additional_Details_WM__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Additional Details - WM</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__Box_Link_for_Legal_Documents__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Box Link for Legal Documents</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Business_reviews_available_on_Box__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Business reviews available on Box</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Business_reviews_discussed__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Business reviews discussed?</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Call_Frequency__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Call Frequency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Client_Implementation_Manager__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Account__r.LVGO__Client_Implementation_Manager__r.FirstName +&apos; &apos;+
+LVGO__Account__r.LVGO__Client_Implementation_Manager__r.LastName</formula>
+        <label>Client Implementation Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Client_Must_Approve_Assets__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(LVGO__Client_Overview__r.LVGO__Client_Must_Approve_Assets__c)</formula>
+        <label>Client Must Approve Assets</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Client_Overview__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Client Overview</label>
+        <referenceTo>LVGO__Contract__c</referenceTo>
+        <relationshipLabel>Client Handoff Summary</relationshipLabel>
+        <relationshipName>Client_Handoff_Summary</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Client_Success_Manager__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Account__r.LVGO__CSM__r.FirstName +&apos; &apos;+
+LVGO__Account__r.LVGO__CSM__r.LastName</formula>
+        <label>Client Success Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Clinical_Data_Sharing_and_Access__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Clinical_Data_Sharing_and_Access__c , &quot;None&quot;), &quot;None; &quot;, NULL)  + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Clinical_Data_Sharing_and_Access__c , &quot;Clinical Portal - Care Coordination&quot;), &quot;Clinical Portal - Care Coordination; &quot;, NULL)  + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Clinical_Data_Sharing_and_Access__c , &quot;Clinical Portal - Shared Coaching&quot;), &quot;Clinical Portal - Shared Coaching; &quot;, NULL)  + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Clinical_Data_Sharing_and_Access__c , &quot;Reporting/File Share&quot;), &quot;Reporting/File Share; &quot;, NULL) + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Clinical_Data_Sharing_and_Access__c , &quot;API Integration&quot;), &quot;API Integration; &quot;, NULL)</formula>
+        <label>Clinical Data Sharing and Access</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Clinical_Model__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(LVGO__Client_Overview__r.LVGO__Clinical_Model__c)</formula>
+        <label>Clinical Model</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Clinical_Referrals__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(LVGO__Client_Overview__r.LVGO__Clinical_Referrals__c)</formula>
+        <label>Clinical Referrals</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Contract_Effective_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(LVGO__Client_Overview__r.LVGO__Contract_Effective_Date__c)</formula>
+        <label>Contract Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Contract_Path__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Client_Overview__r.LVGO__Contract_Path__r.Name</formula>
+        <label>Contract Path</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Contract_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(LVGO__Client_Overview__r.LVGO__Contract_Type__c)</formula>
+        <label>Contract Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Do_we_receive_Emails__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Do we receive Emails?</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Eligibility_Verification_Method__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(LVGO__Client_Overview__r.LVGO__Eligibility_Verification_Method__c)</formula>
+        <label>Eligibility Verification Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Email_Frequency__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email Frequency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Enrollment_Marketing_Lead__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Account__r.LVGO__EML__r.FirstName +&apos; &apos;+
+LVGO__Account__r.LVGO__EML__r.LastName</formula>
+        <label>Enrollment Marketing Lead</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__How_does_Client_Define_Success__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>How does Client Define Success?</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Launch_Assets__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Launch Assets</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Legacy_Salesforce_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Holds salesforce id&apos;s that can be referenced for existing data during migration</description>
+        <externalId>true</externalId>
+        <label>Legacy Salesforce Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__List_legal_documents__c</fullName>
+        <deprecated>false</deprecated>
+        <label>List legal documents</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Livongo_Incentive_for_Automation__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(LVGO__Client_Overview__r.LVGO__Livongo_Incentive_for_Automation__c)</formula>
+        <label>Livongo Incentive for Automation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Livongo_Led__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>LVGO__Client_Overview__r.LVGO__Livongo_Led__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Livongo Led?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Marketing_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Client_Overview__r.LVGO__Marketing_Name__c</formula>
+        <label>Marketing Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Outreach_Stratification__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(LVGO__Client_Overview__r.LVGO__Outreach_Stratification__c)</formula>
+        <label>Outreach Stratification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Population_of_Coverage__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Employees&quot;), &quot;Employees; &quot;, NULL)  + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Spouse&quot;), &quot;Spouse; &quot;, NULL)  + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Dependents U18&quot;), &quot;Dependents U18; &quot;, NULL)  + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Dependents 18+&quot;), &quot;Dependents 18+; &quot;, NULL)  + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Employees w/o Medical&quot;), &quot;Employees w/o Medical; &quot;, NULL)  + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Patients&quot;), &quot;Patients; &quot;, NULL)  + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Retirees&quot;), &quot;Retirees; &quot;, NULL)  + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Secondary Insurance&quot;), &quot;Secondary Insurance; &quot;, NULL) + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Direct to Consumer (D2C)&quot;), &quot;Direct to Consumer (D2C); &quot;, NULL) + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Pre-65 Retirees&quot;), &quot;Pre-65 Retirees; &quot;, NULL) + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Cobra&quot;), &quot;Cobra; &quot;, NULL) + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Diabetes Under 13&quot;), &quot;Diabetes Under 13; &quot;, NULL) + 
+IF(INCLUDES( LVGO__Client_Overview__r.LVGO__Population_of_Coverage__c , &quot;Union Population&quot;), &quot;Union Population; &quot;, NULL)</formula>
+        <label>Population of Coverage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Ready_for_Automation__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>LVGO__Client_Overview__r.LVGO__Ready_for_Automation__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ready for Automation</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Recipient__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Recipient</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Scorecards_available_on_Box__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Scorecards available on Box</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>LV Client Handoff Summary</label>
+    <listViews>
+        <fullName>LVGO__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CHS# {00000}</displayFormat>
+        <label>Client Handoff Summary Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>LV Client Handoff Summary</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>LVGO__Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LVGO__Client_Overview__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

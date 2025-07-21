@@ -1,0 +1,91 @@
+<apex:page standardController="ALTF__Account_Plan__c" extensions="ALTF.AMBase_Navigation_Extension" action="{!logPlanMemberActivity}"
+    showHeader="{! NOT($CurrentPage.parameters.hide_summary == 'true') }" sidebar="false" docType="html-5.0">
+
+    <c:jQuery jQueryUI="true" underscore="true" cookies="true" tooltip="true" validate="true" paging="true" jqGrid="true" textareaMaxlength="true"
+        dropdown="true" chosen="true" />
+
+    <c:vf_remoting_service />
+
+    <c:MobileRedirect TAM="true" />
+
+    <apex:include pageName="ALTF__Quicklinks" />
+    <apex:includeScript value="{!URLFOR($Resource.ALTF__ttgomjs, 'ttg/lib/ttgutils.js')}" />
+
+
+    <apex:includeScript value="{! URLFOR($Resource.prefix) }" />
+    <script type="text/javascript" src="{! $Resource.l10njs }"></script>
+    <apex:include pageName="ALTF__tmpCommoncss" />
+
+    <script type="text/javascript" src="{! URLFOR($Resource.ttgomjs, 'ttg/lib/ttgservice.js') }"></script>
+    <apex:includeScript value="{!URLFOR($Resource.ALTF__ttgomjs, 'ttg/lib/visualforce_error_handler.js')}" />
+
+    <apex:include pageName="ALTF__tmpCommoncss" />
+
+    <style>
+        @import url("{! URLFOR($Resource.TAM,             'css/common.css') }");
+
+        .dropdown {
+            margin-left: -47px !important;
+        }
+
+        .dropdown-menu {
+            min-width: 83px !important;
+        }
+    </style>
+
+    <div id="TAS" class="altify">
+        <apex:include pageName="ALTF__TAMSummaryTab" />
+        <div id="SPINNER"></div>
+    </div>
+
+    <div style="display: none;" id="userPageLink">
+        <apex:outputLink value="/{!$User.Id}">SF Base URL Link</apex:outputLink>
+    </div>
+
+    <script>
+
+        setTimeout(
+            function () {
+                if (this.SfdcApp && this.SfdcApp.projectOneNavigator) {
+                    SfdcApp.projectOneNavigator.sendTitleToParent("{!JSENCODE($Label.altf__common_account_manager)}");
+                }
+            },
+            1
+        );
+
+        var isTouchScreen = ttg.isTouchScreen();
+        var isWindows8Tab = ttg.isWindows8Tab();
+        var ttg_salesforce1 = {!$User.UIThemeDisplayed == 'Theme4t'};
+
+        var height = .70 * jQuery(window).height();
+        var s1_height = .85 * jQuery(window).height();
+
+        var iFrame = jQuery('<iframe/>').css({
+            width: '98%',
+            'z-index': '10000',
+            height: ttg_salesforce1 ? s1_height : height,
+            margin: '0 auto',
+            display: 'block',
+            border: 'none'
+        })
+            .attr('id', 'consumption_iframe');
+
+        iFrame.appendTo('#TAS');
+
+        var the_url = document.URL;
+
+        if (the_url.indexOf("tabIndex=1") > -1) {
+            jQuery('.am_customTab1 .am_custom_tab_text').addClass('altify-nav-tab-selected');
+        } else if (the_url.indexOf("tabIndex=2") > -1) {
+            jQuery('.am_customTab2 .am_custom_tab_text').addClass('altify-nav-tab-selected');
+        } else if (the_url.indexOf("tabIndex=3") > -1) {
+            jQuery('.am_customTab3 .am_custom_tab_text').addClass('altify-nav-tab-selected');
+        }
+
+        jQuery(document).ready(function () {
+            jQuery('iframe#consumption_iframe').attr('src', 'c__{!JSENCODE(tabSrc)}?id={!JSENCODE(currentPlan.Id)}');
+        });
+
+    </script>
+
+</apex:page>

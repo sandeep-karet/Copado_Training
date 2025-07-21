@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Mbr_Group__c$Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Id</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Member_Group_Roles__r$Id</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Client_Account__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Client_Account__c.Owner</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Member_Group_Roles__r$Source_Account__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Member_Group_Roles__r$Source_Account__c.Friendly_Account_Name__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Member_Group_Roles__r$Role_Type__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Comp Audit Report</description>
+    <filter>
+        <criteriaItems>
+            <column>Mbr_Group__c$Group_Number__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>480978,573351,573357,573350,573348,480980,480981,480979,134325,575205,573373,573368,573366,573370,573369,573374,575240,575241,575242,575243,575244,575245,575246</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Member Roles</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Member_Groups_WITH_Member_Group_Roles__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Mbr_Group__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,40 @@
+<aura:component controller="CreateContractController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:html tag="style">       
+         .cuf-content {
+        padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+        padding: 0rem !important;
+        }       
+        .slds-modal__content{
+        height:unset !important;
+        max-height:unset !important;           
+        }
+        .slds-modal__container{
+        max-width:90% !important;
+        width:unset !important;
+        }
+    </aura:html> 
+    <aura:attribute name="recordId" type="string" />
+    <aura:attribute name="error" type="string" />
+    <aura:attribute name="vfURL" type="string" />
+    <aura:attribute name="renderError" type="boolean" default="false" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:if isTrue="{!v.renderError}">
+        <lightning:card class="slds-size--1-of-1 ">                                         
+            <div class="slds-grid slds-wrap slds-align_absolute-center">
+                <div class="slds-p-right_x-large">
+                    <lightning:icon iconName="utility:error" title="Error!"  variant="error" size="large"/>
+                </div>             
+            </div> 
+            <div class="slds-grid slds-wrap slds-align_absolute-center slds-p-top_large">
+                <h2>{!v.error}</h2>
+            </div>
+        </lightning:card>
+        <aura:set attribute="else">
+             <iframe src="{!v.vfURL}" id="showskill" frameborder="0" height="800px" width="100%"> </iframe>    
+        </aura:set>
+    </aura:if>  
+</aura:component>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c.HealthPlan_Team__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Account_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Line_of_Business__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Name</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows accounts with health plans as servicing accounts with servicing account role = contractee.</description>
+    <filter>
+        <criteriaItems>
+            <column>Acct_Rel__c$Relationship_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Contractee</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Acct_Rel__c$Svc_Acct__c.Account_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Health Plan</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Acct_Rel__c$Contract_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Direct</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <aggregateType>RowCount</aggregateType>
+        <dateGranularity>Day</dateGranularity>
+        <field>Acct_Rel__c$Benefit_Sponsor__c</field>
+        <sortByName>RowCount</sortByName>
+        <sortOrder>Desc</sortOrder>
+        <sortType>Aggregate</sortType>
+    </groupingsDown>
+    <name>Accounts with HP Servicing Accounts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Acct_Relationships_with_BOTH_Account_Details__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Acct_Rel__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

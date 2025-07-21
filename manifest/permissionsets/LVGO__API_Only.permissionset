@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Specifies that the user can only log in through the API. This prevents the user from being used for any purpose other than integration scenarios. https://help.salesforce.com/articleView?id=000331470&amp;type=1&amp;mode=1</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>API Only</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ApiUserOnly</name>
+    </userPermissions>
+</PermissionSet>

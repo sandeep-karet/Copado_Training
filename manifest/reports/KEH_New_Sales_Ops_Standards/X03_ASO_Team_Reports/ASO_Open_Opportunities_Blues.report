@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.Opportunities$Decision_Date__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$StageName</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$BillingState</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Opportunities$OneTime_Net_Total_With_PG__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Owner</field>
+    </columns>
+    <columns>
+        <field>CDF1</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Opportunity_Owner_Role__c</field>
+    </columns>
+    <columns>
+        <field>Account$Owner</field>
+    </columns>
+    <currency>USD</currency>
+    <customDetailFormulas>
+        <calculatedFormula>if (isnull(Opportunity.Contracted_Date__c),Opportunity.Decision_Date__c,Opportunity.Contracted_Date__c)</calculatedFormula>
+        <dataType>DateOnly</dataType>
+        <description>For &quot;open&quot; opportunities use Est Close Date, for Closed use Contracted Date</description>
+        <developerName>CDF1</developerName>
+        <label>Forecast Date</label>
+        <scale>2</scale>
+    </customDetailFormulas>
+    <description>#USGH Sales Ops : Open Opportunities where ASO is the Contract Path and Estimated Closed date is current Fiscal year</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+        <criteriaItems>
+            <column>Account.Opportunities$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Prospect,Discovery,Proposal,Review/Negotiation,Contracting</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$Sub_Channel__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>,Canada,DTE - Client Management,HHS,Undefined</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Business,Upsell to Customer,&quot;Add-on Membership, Existing Customer&quot;,Price Increase</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>testingzzz</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$Contract_Path__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Blue,BCBS,BSC,Cambia,Regence,HCSC,CareFirst,Excellus,HMSA,Hawaii Medical,Highmark,BCI,BC,Capital,Florida,Horizon,IBC,Premera,Wellmark,AmeriHealth Administrators</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$Line_of_Business_CP__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>ASO Opt-Out</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Opportunities$Contract_Path__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Opportunities$Sub_Channel__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>ASO Open Opportunities - Blues</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>EEM_Accounts_with_Opps__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CDF1</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account.Opportunities$Decision_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>G2LCRM_Item__c.MUID__c:UNIQUE</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>MUID Count</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <columns>
+        <field>G2LCRM_Item__c$Name</field>
+    </columns>
+    <columns>
+        <field>G2LCRM_Item__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>G2LCRM_Item__c$Action__c</field>
+    </columns>
+    <columns>
+        <field>G2LCRM_Item__c$Processor__c</field>
+    </columns>
+    <columns>
+        <field>G2LCRM_Item__c$CDM_Name__c</field>
+    </columns>
+    <columns>
+        <field>G2LCRM_Item__c$Source_System_Name__c</field>
+    </columns>
+    <columns>
+        <field>G2LCRM_Item__c$Status__c</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>G2LCRM_Item__c$MUID__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>G2L Items Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>G2L_Items__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>G2LCRM_Item__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

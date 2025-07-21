@@ -1,0 +1,1560 @@
+<apex:page controller="CPQU.CPQUtils" id="CPQUtils">
+    <script src="../../soap/ajax/44.0/connection.js" type="text/javascript"></script>
+    <apex:stylesheet value="/sCSS/21.0/sprites/1297816277000/Theme3/default/gc/versioning.css" />
+    <script src="{!$Resource.SBQQ__jQuery}"></script>
+    <script>
+        $.noConflict();
+        // Code that uses other library's $ can follow here.
+    </script>
+    <script src="{!$Resource.CPQU__forcetk}"></script>
+    <script src="{!$Resource.CPQU__jxon}"></script>
+    <script src="{!$Resource.CPQU__bulkTK}"></script>
+    <!-- From https://github.com/vkiryukhin/vkBeautify -->
+    <script src="{!$Resource.CPQU__vkbeautify}"></script>
+    
+    <script type="text/javascript">
+    var client = new forcetk.Client();
+    client.setSessionToken('{!$Api.Session_ID}');
+    
+    var jobId;
+    var batches;
+    
+    var $message;
+    var $importmessage;
+
+    sforce.connection.sessionId='{!GETSESSIONID()}';
+
+    function uploadConfigurationData(actualData, logelement) {
+        var job = {
+            operation : 'insert',
+            object : 'CPQU__CPQ_Configuration_Data__c',
+            contentType : 'CSV'
+        };        
+        
+        client.createJob(job, function(response) {
+            if (actualData) {
+                submitCPQConfigData(actualData, response, logelement);
+            } else {
+                submitCPQConfigData(jQuery("#file")[0].files[0], response, logelement);
+            }
+        }, showError);
+        return false;
+    }
+    
+    function submitCPQConfigData(fileInput, response, logelement) {
+        batches = 0;
+        jobId = response.jobInfo.id;
+        if (logelement) {
+            $importmessage     = jQuery("#"+logelement);
+        } else {
+            $importmessage     = jQuery("#importmessages");
+        }
+        $importmessage.text('Submitting import of CPQ Configuration Data...');
+        var mimeType = "text/csv; charset=UTF-8";
+        
+        client.addBatch(jobId, mimeType, fileInput, function(response){
+            batches++;
+            $importmessage.text('Processing CPQ Configuration Data...');
+            client.closeJob(jobId, function(response){
+                //$importmessage.text('Job state: '+response.jobInfo.state+'\n');
+                getUploadJobDetails(client, jobId);
+            }, showError);
+        }, showError);
+        return false;
+    }
+    
+    function getUploadJobDetails(client, jobId){
+        client.getJobDetails(jobId, function(response){
+            //$importmessage.text(response.jobInfo.numberRecordsProcessed+' records processed');
+            if ((response.jobInfo.numberBatchesCompleted + response.jobInfo.numberBatchesFailed) === batches) {
+                $importmessage.text('CPQ Configuration Data Import is Complete!');
+                client.getJobBatchDetails(jobId, function(response){
+                    response.batchInfoList.batchInfo.forEach(function(batch){
+                        var batchId = batch.id;
+                        client.getBatchResult(jobId, batchId, false, function(response){
+                            RichFaces.switchTab('CPQUtils:block:tabform:dataTabPanel','CPQUtils:block:tabform:import','import');
+                            
+                            getIncomingDataSets();
+                        }, showError);
+                    });
+                }, showError);
+            } else {
+                setTimeout(function(){ getUploadJobDetails(client, jobId); }, 1000);
+            }
+        }, showError);
+        return false;
+    }
+
+    function showError(jqXHR, textStatus, errorThrown) {
+        $message.append(document.createTextNode(jqXHR.responseText));
+    }
+    
+    function downloadConfigurationData(exportID, csvName) {
+        operation = 'query';
+        object = 'CPQU__CPQ_Configuration_Data__c';
+        contentType = 'CSV';
+        
+        var job = {
+            operation : operation,
+            object : object,
+        };
+        
+        job.contentType = contentType;
+        
+        client.createJob(job, function(response) {
+            batches = 0;
+            jobId = response.jobInfo.id;
+            $message.text('Submitting request for CPQ Configuration Data...');
+            
+            var soql = 'select CPQU__CSV_Name__c, CPQU__CSV_Export_Date__c, CPQU__CSV_Export_ID__c, CPQU__CSV_Export_Org_ID__c, CPQU__CSV_Object_Name__c, CPQU__CSV_Object_Order__c, CPQU__CSV_Line__c, CPQU__CSV_Line_Type__c, CPQU__Exported_SF_ID__c from CPQU__CPQ_Configuration_Data__c where CPQU__CSV_Export_ID__c=\'' + exportID + '\' and CPQU__Status__c=\'Exported\' and isDeleted=false order by CPQU__CSV_Line_Sort_Order__c';
+            var mimeType = "text/csv; charset=UTF-8";
+            
+            client.addBatch(jobId, mimeType, soql, function(response){
+                batches++;
+                $message.text('Querying configuration data...');
+                client.closeJob(jobId, function(response){
+                    //$message.append('Job state: '+response.jobInfo.state+'\n');
+                    getDownloadJobDetails(client, jobId, csvName);
+                }, showError);
+            }, showError);
+        }, showError);
+        return false;
+    }
+    
+    function getDownloadJobDetails(client, jobId, csvName) {
+        client.getJobDetails(jobId, function(response){
+            var numberOfRecordsFound = response.jobInfo.numberRecordsProcessed;
+            $message.text(numberOfRecordsFound+' records found.');
+            if ((response.jobInfo.numberBatchesCompleted + 
+                 response.jobInfo.numberBatchesFailed) === batches) {
+                client.getJobBatchDetails(jobId, function(response){
+                    response.batchInfoList.batchInfo.forEach(function(batch){
+                        var batchId = batch.id;
+                        client.getBatchResult(jobId, batchId, true, function(response){
+                            if (response['result-list'].result) {
+                                response['result-list'].result.forEach(function(result){
+                                    if (result) {
+                                        client.getBulkQueryResult(jobId, batchId, result, function(response){
+                                            var blob = new Blob([response], { type: 'text/csv' });
+                                            var link = document.createElement('a');
+                                            link.href = window.URL.createObjectURL(blob);
+                                            link.download = 'CPQConfigDataExport-'+csvName+'.csv';
+                                            
+                                            document.body.appendChild(link);
+                                            link.click();
+                                            document.body.removeChild(link);
+                                        }, showError);
+                                    } else {
+                                        $message.html(document.createTextNode('Zero records found.'));
+                                    }
+                                });
+                            }
+                        }, showError);
+                    });
+                }, showError);
+            } else {
+                setTimeout(function(){ getDownloadJobDetails(client, jobId, csvName); }, 1000);
+            }
+        }, showError);
+    }
+    
+    var jobInterval = null;
+    function deleteCPQConfigurationData() {
+        if (confirm('This action can not be undone!  Are you sure you want to DELETE the selected data records?')) {
+            document.getElementById('deletemessages').innerHTML = 'Deleting Selected Data Records...';
+            
+            // gather custom object checkbox values.
+            var customObjectCheckboxValues = getCustomObjectCheckboxValues('delete');
+            var pricebooks = getPricebooks('delete');
+            
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPQUtils.DeleteCPQConfigurationDataNew}',
+                customObjectCheckboxValues, pricebooks, 
+                function(result, event) {
+                    if (event.status) {
+                        if (result != null) {
+                            getBatchStatus(result, 'deleteConfiguration');
+                            jobInterval = setInterval(function() { getBatchStatus(result, 'deleteConfiguration'); }, 1000);
+                        } else {
+                            document.getElementById('deletemessages').innerHTML = 'No Results Found.  Selected Records not Deleted.';
+                        }
+                    } else if (event.type === 'exception') {
+                        document.getElementById("deletemessages").innerHTML = event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                    } else {
+                        document.getElementById("deletemessages").innerHTML = event.message;
+                    }
+                }, 
+                {escape: true}
+            );
+        }
+    }
+    
+    function getBatchListStatus(batchIds, batchType) {
+        if (batchIds) {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPQUtils.GetBatchListStatus}',
+                batchIds, 
+                function(result, event) {
+                    if (event.status) {
+                        if (result != null && ((result.Status != null && result.Status.indexOf('Exception:') != -1) || result.ExtendedStatus != null && result.ExtendedStatus.indexOf('error') != -1)) {
+                            document.getElementById(batchType+'messages').innerHTML = 'Job ' + result.Status + '!: ' + result.ExtendedStatus;
+                            clearInterval(jobInterval);
+                        } else {
+                            if (batchType == 'export') {
+                                var completeCount = 0;
+                                var failedCount = 0;
+                                var processingCount = 0;
+                                var holdingCount = 0;
+                                var abortedCount = 0;
+                                var failureMessage = '';
+                                for (i = 0; i < result.length; i++) {
+                                    if (result[i].Status == 'Completed') {
+                                        completeCount++;
+                                    } else if (result[i].Status == 'Aborted') {
+                                        abortedCount++;
+                                    } else if (result[i].Status == 'Failed') {
+                                        failedCount++;
+                                        failureMessage += result[i].ExtendedStatus+'<br />';
+                                    } else if (result[i].Status == 'Processing') {
+                                        processingCount++;
+                                    } else if (result[i].Status == 'Holding') {
+                                        holdingCount++;
+                                    }
+                                    document.getElementById('exportmessages').innerHTML = 'Exporting CPQ Configuration Data... Holding ('+holdingCount+'), Processing ('+processingCount+'), Complete ('+completeCount+'), Failed ('+failedCount+'), Aborted ('+abortedCount+')';
+                                }
+                                if (completeCount + failedCount + abortedCount == result.length) {
+                                    clearInterval(jobInterval);
+                                    document.getElementById('exportmessages').innerHTML = 'CPQ Configuration Data Export is Complete. Success: '+completeCount+', Failed: '+failedCount+', Aborted: '+abortedCount+' <br />'+failureMessage;
+                                    getExportDocuments();
+                                }
+                            }
+                            if (batchType == 'deleteConfiguration') {
+                                var completeCount = 0;
+                                var failedCount = 0;
+                                var processingCount = 0;
+                                var holdingCount = 0;
+                                var abortedCount = 0;
+                                var failureMessage = '';
+                                for (i = 0; i < result.length; i++) {
+                                    if (result[i].Status == 'Completed') {
+                                        completeCount++;
+                                    } else if (result[i].Status == 'Aborted') {
+                                        abortedCount++;
+                                    } else if (result[i].Status == 'Failed') {
+                                        failedCount++;
+                                        failureMessage += result[i].ExtendedStatus+'<br />';
+                                    } else if (result[i].Status == 'Processing') {
+                                        processingCount++;
+                                    } else if (result[i].Status == 'Holding') {
+                                        holdingCount++;
+                                    }
+                                    document.getElementById('deletemessages').innerHTML = 'Deleting Selected Data Records... Holding ('+holdingCount+'), Processing ('+processingCount+'), Complete ('+completeCount+'), Failed ('+failedCount+'), Aborted ('+abortedCount+')';
+                                }
+                                if (completeCount + failedCount + abortedCount == result.length) {
+                                    clearInterval(jobInterval);
+                                    document.getElementById('deletemessages').innerHTML = 'Selected Data Record Delete is Complete. Success: '+completeCount+', Failed: '+failedCount+', Aborted: '+abortedCount+' <br />'+failureMessage;
+                                    getExportDocuments();
+                                }
+                            }
+                        }
+                    } else if (event.type === 'exception') {
+                        document.getElementById(batchType+"messages").innerHTML = event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                        clearInterval(jobInterval);
+                    } else {
+                        document.getElementById(batchType+"messages").innerHTML = event.message;
+                        clearInterval(jobInterval);
+                    }
+                }, 
+                {escape: true}
+            );
+        }
+    }
+    
+    var currentBatchId = null;
+    var dots = '.';
+    function getBatchStatus(batchId, batchType, exportID, whichOne) {
+        var message = '';
+        var messageElement = '';
+        switch(batchType) {
+            case 'import': message = 'Importing CPQ Configuration Data'; messageElement = 'importmessages'; break;
+            case 'deleteExport': message = 'Deleting CPQ Configuration Export Data'; messageElement = 'deletemessages'; break;
+            case 'deleteImport': message = 'Deleting CPQ Configuration Import Logs'; messageElement = 'importmessages'; break;
+            case 'deleteConfiguration': message = 'Deleting CPQ Configuration Data'; messageElement = 'deletemessages'; break;
+            case 'installQuoteTemplate': message = 'Installing Quote Template'; messageElement = 'quotetemplatemessages'; break;
+            case 'installPriceRule': message = 'Installing Price Rule'; messageElement = 'pricerulemessages'; break;
+            case 'clearDefaultProductCPQValues': message = 'Clearing Default Product CPQ Values'; messageElement = 'utilitiesmessages'; break;
+            case 'configureAllSubscriptionProductsForMDQ': message = 'Configuring all Subscription Products for MDQ'; messageElement = 'utilitiesmessages'; break;
+            case 'ModifySFComponents': message = 'Managing Salesforce Components ('+whichOne+')'; messageElement = 'utilitiesmessages'; break;
+            case 'deployIncomingDataSet': message = 'Deploying CPQ Configuration Data'; messageElement = 'downloadimportmessage'; break;
+        }
+        
+        if (batchId) {
+            if (dots == '.') { dots = '..'; } else if (dots == '..') { dots = '...'; } else { dots = '.'; }
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPQUtils.GetBatchStatus}',
+                batchId, 
+                function(result, event) {
+                    if (event.status) {
+                        document.getElementById(messageElement).innerHTML = getPercentDoneStatus(result.TotalJobItems, result.JobItemsProcessed, message, result.Status + (result.ExtendedStatus != null ? ': ' + result.ExtendedStatus : ''));
+                        if (result.Status == 'Completed' || result.Status == 'SucceededPartial' || result.Status == 'Failed') {
+                            clearInterval(jobInterval);
+                            if (batchType == 'deleteExport') {
+                                getExportDocuments();
+                            } else if (batchType == 'installQuoteTemplate') {
+                                getQuoteTemplates();
+                            } else if (batchType == 'installPriceRule') {
+                                getPriceRules();
+                            } else if (batchType == 'deployIncomingDataSet') {
+                                GetDeploymentStatus(exportID);
+                                jobInterval = setInterval(function() { GetDeploymentStatus(exportID); }, 5000);
+                            }
+                        }
+                    }
+                }, 
+                {escape: true}
+            );
+        }
+    }
+    
+    function toggleClicked(deleteText) {
+        <apex:repeat var="cpqObjectName" value="{!cpqObjectNames}">
+            document.getElementById(deleteText+'{!cpqObjectName}Checkbox').checked = document.getElementById(deleteText+'AllCheckbox').checked;
+        </apex:repeat>
+        
+        <apex:repeat var="customObjectName" value="{!customObjectNames}">
+            document.getElementById(deleteText+'{!customObjectName}_Checkbox').checked = document.getElementById(deleteText+'AllCheckbox').checked;
+        </apex:repeat>
+        
+        <apex:repeat var="pb" value="{!pbs}">
+            document.getElementById(deleteText+'{!pb.id}_Pricebook_Checkbox').checked = document.getElementById(deleteText+'AllCheckbox').checked;
+        </apex:repeat>
+    }
+    
+    function toggleProductClicked(deleteText) {
+        <apex:repeat var="pb" value="{!pbs}">
+            document.getElementById(deleteText+'{!pb.id}_Pricebook_Checkbox').checked = document.getElementById(deleteText+'ProductsCheckbox').checked;
+        </apex:repeat>
+    }
+    
+    function toggleAllCheckbox(deleteText) {
+        var checkTheBox = true;
+        var x = document.querySelectorAll(".objectCheckbox");
+        for (i = 0; i < x.length; i++) {
+            if (!x[i].checked) {
+                checkTheBox = false;
+            }
+        }
+        if (checkTheBox) {
+            document.getElementById(deleteText+'AllCheckbox').checked = true;
+        } else {
+            document.getElementById(deleteText+'AllCheckbox').checked = false;
+        }
+    }
+    
+    function toggleProductCheckbox(deleteText) {
+        var checkTheBox = false;
+        var x = document.querySelectorAll(".pricebookCheckbox");
+        for (i = 0; i < x.length; i++) {
+            if (x[i].checked) {
+                checkTheBox = true;
+            }
+        }
+        if (checkTheBox) {
+            document.getElementById(deleteText+'ProductsCheckbox').checked = true;
+        } else {
+            document.getElementById(deleteText+'ProductsCheckbox').checked = false;
+        }
+    }
+    
+    function getCustomObjectCheckboxValues(deleteText) {
+        var customObjectCheckboxValues = {};
+        <apex:repeat var="cpqObjectName" value="{!cpqObjectNames}">
+            customObjectCheckboxValues['{!cpqObjectName}'] = document.getElementById(deleteText+'{!cpqObjectName}Checkbox').checked;
+        </apex:repeat>
+        
+        <apex:repeat var="customObjectName" value="{!customObjectNames}">
+            customObjectCheckboxValues['{!customObjectName}'] = document.getElementById(deleteText+'{!customObjectName}_Checkbox').checked;
+        </apex:repeat>
+        
+        return customObjectCheckboxValues;
+    }
+    
+    function getPricebooks(deleteText) {
+        var pricebooks = {};
+        
+        <apex:repeat var="pb" value="{!pbs}">
+            if (document.getElementById(deleteText+'{!pb.id}_Pricebook_Checkbox').checked) {
+                pricebooks['{!pb.Name}'] = '{!pb.id}';
+            }
+        </apex:repeat>
+        
+        return pricebooks;
+    }
+    
+    function toggleExportDocumentClicked() {
+        var x = document.querySelectorAll(".exportDocumentCheckbox");
+        for (i = 0; i < x.length; i++) {
+            x[i].checked = document.getElementById('AllExportDocumentsCheckbox').checked;
+        }
+    }
+    
+    function toggleAllExportDocumentsCheckbox() {
+        var checkTheBox = true;
+        var x = document.querySelectorAll(".exportDocumentCheckbox");
+        for (i = 0; i < x.length; i++) {
+            if (!x[i].checked) {
+                checkTheBox = false;
+            }
+        }
+        if (checkTheBox) {
+            document.getElementById('AllExportDocumentsCheckbox').checked = true;
+        } else {
+            document.getElementById('AllExportDocumentsCheckbox').checked = false;
+        }
+    }
+    
+    function toggleImportDocumentClicked() {
+        var x = document.querySelectorAll(".importDocumentCheckbox");
+        for (i = 0; i < x.length; i++) {
+            x[i].checked = document.getElementById('AllImportDocumentsCheckbox').checked;
+        }
+    }
+    
+    function toggleAllImportDocumentsCheckbox() {
+        var checkTheBox = true;
+        var x = document.querySelectorAll(".importDocumentCheckbox");
+        for (i = 0; i < x.length; i++) {
+            if (!x[i].checked) {
+                checkTheBox = false;
+            }
+        }
+        if (checkTheBox) {
+            document.getElementById('AllImportDocumentsCheckbox').checked = true;
+        } else {
+            document.getElementById('AllImportDocumentsCheckbox').checked = false;
+        }
+    }
+    
+    function toggleIncomingDataSetClicked() {
+        var x = document.querySelectorAll(".incomingDataSetCheckbox");
+        for (i = 0; i < x.length; i++) {
+            x[i].checked = document.getElementById('AllIncomingDataSetsCheckbox').checked;
+        }
+    }
+    
+    function toggleAllIncomingDataSetsCheckbox() {
+        var checkTheBox = true;
+        var x = document.querySelectorAll(".incomingDataSetCheckbox");
+        for (i = 0; i < x.length; i++) {
+            if (!x[i].checked) {
+                checkTheBox = false;
+            }
+        }
+        if (checkTheBox) {
+            document.getElementById('AllIncomingDataSetsCheckbox').checked = true;
+        } else {
+            document.getElementById('AllIncomingDataSetsCheckbox').checked = false;
+        }
+    }
+    
+    function toggleDeployedDataSetClicked() {
+        var x = document.querySelectorAll(".deployedDataSetCheckbox");
+        for (i = 0; i < x.length; i++) {
+            x[i].checked = document.getElementById('AllDeployedDataSetsCheckbox').checked;
+        }
+    }
+    
+    function toggleAllDeployedDataSetsCheckbox() {
+        var checkTheBox = true;
+        var x = document.querySelectorAll(".deployedDataSetCheckbox");
+        for (i = 0; i < x.length; i++) {
+            if (!x[i].checked) {
+                checkTheBox = false;
+            }
+        }
+        if (checkTheBox) {
+            document.getElementById('AllDeployedDataSetsCheckbox').checked = true;
+        } else {
+            document.getElementById('AllDeployedDataSetsCheckbox').checked = false;
+        }
+    }
+    
+    function getInstanceFromURL() {
+        var winHost = window.location.host;
+        if (winHost.indexOf('--') > -1) {
+            // window.location.host is xxx--xxx--cpqu.csxx.visual.force.com and needs to be converted to xxx--xxx.cs13.my.salesforce.com
+            return cut(winHost.split('.visual')[0], '--cpqu')+'.my.salesforce.com';
+        } else {
+            // window.location.host is cpqu.naxxx.visual.force.com and needs to be converted to naxxx.salesforce.com
+            return winHost.split('.')[1]+'.salesforce.com';
+        }
+    }
+    
+    function cut(str, cutStr) {
+        var cutStart = str.indexOf(cutStr);
+        var cutEnd = str.indexOf(cutStr) + cutStr.length - 1;
+        return str.substr(0,cutStart) + str.substr(cutEnd+1);
+    }
+
+    // ******************************************************************************
+    //                             EXPORT METHODS
+    // ******************************************************************************
+    function exportCPQConfigurationDataNew() {
+        document.getElementById('exportmessages').innerHTML = 'Exporting CPQ Configuration Data...';
+        
+        // gather custom object checkbox values.
+        var customObjectCheckboxValues = getCustomObjectCheckboxValues('');
+        var pricebooks = getPricebooks('');
+        
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.CPQUtils.ExportCPQConfigurationDataNew}',
+            customObjectCheckboxValues, pricebooks,
+            function(result, event) {
+                if (event.status) {
+                    if (result != null && result.indexOf('Exception:') == 0) {
+                        document.getElementById('exportmessages').innerHTML = 'Export Failed! ' + result;
+                    } else if (result.length == 0) {
+                        document.getElementById('exportmessages').innerHTML = 'There are no records to export for the chosen object(s).';
+                    } else {
+                        getBatchListStatus(result, 'export');
+                        jobInterval = setInterval(function() { getBatchListStatus(result, 'export'); }, 1000);
+                    }
+                } else if (event.type === 'exception') {
+                    document.getElementById("exportmessages").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("exportmessages").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+    
+    function getExportDocuments() {
+        var html = '<table width="100%"><tr style="background-color:#cccccc;"><th><input type="checkbox" id="AllExportDocumentsCheckbox" onclick="toggleExportDocumentClicked();" /></th><th width="0%">Action</th><th width="30%">Export Name</th><th>Size</th><th>Date Created</th></tr>';
+        html += '<tr><td colspan="5" style="text-align:center;">Loading...</td></tr>';
+        html += '</table>';
+        document.getElementById('exportFilesList').innerHTML = html;
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.CPQUtils.GetExportConfigurationData}',
+            function(result, event) {
+                if (event.status) {
+                    if (result != null && result.length > 0) {
+                        var html = '<table width="100%"><tr style="background-color:#cccccc;"><th><input type="checkbox" id="AllExportDocumentsCheckbox" onclick="toggleExportDocumentClicked();" /></th><th width="0%">Action</th><th width="30%">Export Name</th><th>Size</th><th>Date Created</th></tr>';
+                        for (var i = 0; i < result.length; i++) {
+                            html += '<tr><td><input type="checkbox" class="exportDocumentCheckbox" id="'+result[i]['CPQU__CSV_Export_ID__c']+'" onclick="toggleAllExportDocumentsCheckbox();" /></td>'+
+                                '<td style="text-align:left;"><input type="button" value="Download" onclick="return downloadConfigurationData(\''+result[i]['CPQU__CSV_Export_ID__c']+'\', \''+result[i]['CPQU__CSV_Name__c']+'\');" /></td>'+
+                                '<td style="text-align:left;">'+result[i]['CPQU__CSV_Name__c']+'</td>'+
+                                '<td style="text-align:left;">'+result[i]['numberOfRows']+' Records</td>'+
+                                '<td style="text-align:left;">'+getDate(result[i]['CPQU__CSV_Export_Date__c']/1000)+'</td></tr>';
+                        }
+                        html += '</table>';
+                        document.getElementById('exportFilesList').innerHTML = html;
+                    } else {
+                        var html = '<table width="100%"><tr style="background-color:#cccccc;"><th><input type="checkbox" id="AllExportDocumentsCheckbox" onclick="toggleExportDocumentClicked();" /></th><th width="0%">Action</th><th width="30%">Export Name</th><th>Size</th><th>Date Created</th></tr>';
+                        html += '<tr><td colspan="5" style="text-align:center;">No Results Found</td></tr>';
+                        html += '</table>';
+                        document.getElementById('exportFilesList').innerHTML = html;
+                    }
+                } else if (event.type === 'exception') {
+                    document.getElementById("exportFilesList").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("exportFilesList").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+        return false;
+    }
+    
+    function deleteExportDocuments() {
+        if (confirm('This action can not be undone!  Are you sure you want to DELETE this data?')) {
+            var exportIds = Array();
+            var x = document.querySelectorAll(".exportDocumentCheckbox:checked");
+            if (x.length > 0) {
+                document.getElementById('downloadexportmessage').innerHTML = 'Deleting CPQ Configuration Data Export Records...';
+                
+                for (i = 0; i < x.length; i++) {
+                    exportIds[i] = x[i].id;
+                }
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.CPQUtils.DeleteExportDocuments}',
+                    exportIds,
+                    function(result, event) {
+                        if (event.status) {
+                            if (result != null) {
+                                if (result.length > 0) {
+                                    getExportDocuments();
+                                    document.getElementById('downloadexportmessage').innerHTML = 'CPQ Configuration Data Export Record Delete is Complete.';
+                                }
+                            } else {
+                                document.getElementById('downloadexportmessage').innerHTML = '.';
+                            }
+                        } else if (event.type === 'exception') {
+                            document.getElementById("downloadexportmessage").innerHTML = 
+                                event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                        } else {
+                            document.getElementById("downloadexportmessage").innerHTML = event.message;
+                        }
+                    }, 
+                    {escape: true}
+                );
+            } else {
+                alert("You must select at least one document to delete.");
+            }
+        }
+        return false;
+    }
+    
+    // ******************************************************************************
+    //                             IMPORT METHODS
+    // ******************************************************************************
+    function getIncomingDataSets() {
+        var html = '<table width="100%"><tr style="background-color:#cccccc;"><th><input type="checkbox" id="AllIncomingDataSetsCheckbox" onclick="toggleIncomingDataSetClicked();" /></th><th width="0%">Action</th><th width="30%">Data Set Name</th><th>Size</th><th>Date Created</th></tr>';
+        html += '<tr><td colspan="5" style="text-align:center;">Loading...</td></tr>';
+        html += '</table>';
+        document.getElementById('incomingDataSetsList').innerHTML = html;
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.CPQUtils.GetImportConfigurationData}',
+            function(result, event) {
+                if (event.status) {
+                    if (result != null && result.length > 0) {
+                        var html = '<table width="100%"><tr style="background-color:#cccccc;"><th><input type="checkbox" id="AllIncomingDataSetsCheckbox" onclick="toggleIncomingDataSetClicked();" /></th><th width="0%">Action</th><th width="30%">Data Set Name</th><th>Size</th><th>Date Created</th></tr>';
+                        for (var i = 0; i < result.length; i++) {
+                            html += '<tr><td><input type="checkbox" class="incomingDataSetCheckbox" id="'+result[i]['CPQU__CSV_Export_ID__c']+'" onclick="toggleAllIncomingDataSetsCheckbox();" /></td>'+
+                                '<td style="text-align:left;"><input type="button" value="Deploy" onclick="return deployIncomingDataSet(\''+result[i]['CPQU__CSV_Export_ID__c']+'\', \'deploy\');" /></td>'+
+                                '<td style="text-align:left;">'+result[i]['CPQU__CSV_Name__c']+'</td>'+
+                                '<td style="text-align:left;">'+result[i]['numberOfRows']+' Records</td>'+
+                                '<td style="text-align:left;">'+getDate(result[i]['CPQU__CSV_Import_Date__c']/1000)+'</td></tr>';
+                        }
+                        html += '</table>';
+                        document.getElementById('incomingDataSetsList').innerHTML = html;
+                    } else {
+                        var html = '<table width="100%"><tr style="background-color:#cccccc;"><th><input type="checkbox" id="AllIncomingDataSetsCheckbox" onclick="toggleIncomingDataSetClicked();" /></th><th width="0%">Action</th><th width="30%">Data Set Name</th><th>Size</th><th>Date Created</th></tr>';
+                        html += '<tr><td colspan="5" style="text-align:center;">No Results Found</td></tr>';
+                        html += '</table>';
+                        document.getElementById('incomingDataSetsList').innerHTML = html;
+                    }
+                } else if (event.type === 'exception') {
+                    document.getElementById("incomingDataSetsList").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("incomingDataSetsList").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+        return false;
+    }
+    
+    var importIds = Array();
+    function deleteIncomingDataSets() {
+        if (confirm('This action can not be undone!  Are you sure you want to DELETE this data?')) {
+            importIds = Array();
+            var x = document.querySelectorAll(".incomingDataSetCheckbox:checked");
+            if (x.length > 0) {
+                document.getElementById('downloadimportmessage').innerHTML = 'Deleting CPQ Configuration Data Import Records...';
+                
+                for (i = 0; i < x.length; i++) {
+                    importIds[i] = x[i].id;
+                }
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.CPQUtils.DeleteIncomingDataSets}',
+                    importIds,
+                    function(result, event) {
+                        if (event.status) {
+                            if (result != null) {
+                                if (result.length > 0) {
+                                    getIncomingDataSets();
+                                    document.getElementById('downloadimportmessage').innerHTML = 'CPQ Configuration Data Import Record Delete is Complete.';
+                                }
+                            } else {
+                                document.getElementById('downloadimportmessage').innerHTML = '.';
+                            }
+                        } else if (event.type === 'exception') {
+                            document.getElementById("downloadimportmessage").innerHTML = 
+                                event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                        } else {
+                            document.getElementById("downloadimportmessage").innerHTML = event.message;
+                        }
+                    }, 
+                    {escape: true}
+                );
+            } else {
+                alert("You must select at least one data set to delete.");
+            }
+        }
+        return false;
+    }
+    
+    // ******************************************************************************
+    //                             DEPLOYMENT METHODS
+    // ******************************************************************************
+    function getDeployedDataSets() {
+        var columns = '<table width="100%"><tr style="background-color:#cccccc;"><th><input type="checkbox" id="AllDeployedDataSetsCheckbox" onclick="toggleDeployedDataSetClicked();" /></th>'+
+            //'<th width="0%">Action</th>'+
+            '<th width="30%">Data Set Name</th><th>Size</th><th>Date Created</th></tr>';
+        document.getElementById('deployedDataSetsList').innerHTML = columns+ '<tr><td colspan="5" style="text-align:center;">Loading...</td></tr></table>';
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.CPQUtils.GetDeployedConfigurationData}',
+            function(result, event) {
+                if (event.status) {
+                    if (result != null && result.length > 0) {
+                        var html = columns;
+                        for (var i = 0; i < result.length; i++) {
+                            html += '<tr><td><input type="checkbox" class="deployedDataSetCheckbox" id="'+result[i]['CPQU__Deploy_ID__c']+'" onclick="toggleAllDeployedDataSetsCheckbox();" /></td>'+
+                                //'<td style="text-align:left;"><input type="button" value="Re-Deploy" onclick="return deployIncomingDataSet(\''+result[i]['CPQU__CSV_Export_ID__c']+'\', \'redeploy\');" /></td>'+
+                                '<td style="text-align:left;">'+result[i]['CPQU__CSV_Name__c']+'</td>'+
+                                '<td style="text-align:left;">'+result[i]['numberOfRows']+' Records</td>'+
+                                '<td style="text-align:left;">'+getDate(result[i]['CPQU__CSV_Import_Date__c']/1000)+'</td></tr>';
+                        }
+                        html += '</table>';
+                        document.getElementById('deployedDataSetsList').innerHTML = html;
+                    } else {
+                        var html = columns;
+                        html += '<tr><td colspan="5" style="text-align:center;">No Results Found</td></tr>';
+                        html += '</table>';
+                        document.getElementById('deployedDataSetsList').innerHTML = html;
+                    }
+                } else if (event.type === 'exception') {
+                    document.getElementById("deployedDataSetsList").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("deployedDataSetsList").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+        return false;
+    }
+    
+    function deleteDeployedDataSets() {
+        if (confirm('This action can not be undone!  Are you sure you want to DELETE this data?')) {
+            var importIds = Array();
+            var x = document.querySelectorAll(".deployedDataSetCheckbox:checked");
+            if (x.length > 0) {
+                document.getElementById('downloaddeployedmessage').innerHTML = 'Deleting CPQ Configuration Data Records...';
+                
+                for (i = 0; i < x.length; i++) {
+                    importIds[i] = x[i].id;
+                }
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.CPQUtils.DeleteDeployedDataSets}',
+                    importIds,
+                    function(result, event) {
+                        if (event.status) {
+                            if (result != null) {
+                                if (result.length > 0) {
+                                    getDeployedDataSets();
+                                    document.getElementById('downloaddeployedmessage').innerHTML = 'CPQ Configuration Data Delete is Complete.';
+                                }
+                            } else {
+                                document.getElementById('downloaddeployedmessage').innerHTML = '.';
+                            }
+                        } else if (event.type === 'exception') {
+                            document.getElementById("downloaddeployedmessage").innerHTML = 
+                                event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                        } else {
+                            document.getElementById("downloaddeployedmessage").innerHTML = event.message;
+                        }
+                    }, 
+                    {escape: true}
+                );
+            } else {
+                alert("You must select at least one data set to delete.");
+            }
+        }
+        return false;
+    }
+    
+    function deployIncomingDataSet(exportID, deployType) {
+        if (confirm('This action can not be undone!  Are you sure you want to DEPLOY this data?')) {
+            document.getElementById('downloadimportmessage').innerHTML = 'Deploying CPQ Configuration Data...';
+            setCookie('deploying', exportID);
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPQUtils.DeployIncomingDataSet}',
+                exportID, deployType, 
+                function(result, event) {
+                    if (event.status) {
+                        if (result != null) {
+                            if (result.length > 0) {
+                                getBatchStatus(result, 'deployIncomingDataSet', exportID);
+                                jobInterval = setInterval(function() { getBatchStatus(result, 'deployIncomingDataSet', exportID); }, 1000);
+                            }
+                        } else {
+                            document.getElementById('downloadimportmessage').innerHTML = 'Deploying CPQ Configuration Data has failed.';
+                            setCookie('deploying', '');
+                        }
+                    } else if (event.type === 'exception') {
+                        document.getElementById("downloadimportmessage").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                        setCookie('deploying', '');
+                    } else {
+                        document.getElementById("downloadimportmessage").innerHTML = event.message;
+                        setCookie('deploying', '');
+                    }
+                }, 
+                {escape: true}
+            );
+        }
+        return false;
+    }
+    
+    var currentBatchId = null;
+    function GetDeploymentStatus(exportID) {
+        if (exportID) {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPQUtils.GetDeploymentStatus}',
+                exportID, 
+                function(result, event) {
+                    if (event.status) {
+                        if (result != null && result.length > 0) {
+                            var importedCount = 0;
+                            var deployingCount = 0;
+                            var deployedCount = 0;
+                            for (var i = 0; i < result.length; i++) {
+                                if (result[i]['CPQU__Status__c'] == 'Imported') {
+                                    importedCount = result[i]['statusCount'];
+                                } else if (result[i]['CPQU__Status__c'] == 'Deploying') {
+                                    deployingCount = result[i]['statusCount'];
+                                } else if (result[i]['CPQU__Status__c'] == 'Deployed') {
+                                    deployedCount = result[i]['statusCount'];
+                                }
+                            }
+                            
+                            if (deployedCount > 0) {
+                                document.getElementById('downloadimportmessage').innerHTML = 'Success!  Deploying CPQ Configuration Data Complete.';
+                                getIncomingDataSets();
+                                getDeployedDataSets();
+                                clearInterval(jobInterval);
+                                setCookie('deploying', '');
+                            } else {
+                                document.getElementById('downloadimportmessage').innerHTML = 'Deploying CPQ Configuration Data... Pending: '+importedCount+', Deployed: '+deployingCount+', Complete: '+deployedCount;
+                            }
+                        } else {
+                            document.getElementById('downloadimportmessage').innerHTML = 'Deploying CPQ Configuration Data... error: result is null or 0 size.';
+                        }
+                    } else if (event.type === 'exception') {
+                        document.getElementById("downloadimportmessage").innerHTML = event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                        clearInterval(jobInterval);
+                    } else {
+                        document.getElementById("downloadimportmessage").innerHTML = event.message;
+                        clearInterval(jobInterval);
+                    }
+                }, 
+                {escape: true}
+            );
+        }
+    }
+    
+    // ----------------------------------------------------------------
+    //                    CONFIG DATA LIBRARY METHODS
+    // ----------------------------------------------------------------
+    function installCPQUConfigData(documentId, logelement) {
+        if (confirm('This action can not be undone!  Are you sure you want to INSTALL this data?')) {
+            document.getElementById(logelement).innerHTML = 'Fetching CPQ Configuration Data...';
+
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPQUtils.getCPQUConfigData}',
+                documentId,
+                function(result, event) {
+                    if (event.status) {
+                        if (result != null) {
+                            if (result.length > 0) {
+                                document.getElementById(logelement).innerHTML = 'Installing CPQ Configuration Data...';
+                                
+                                uploadConfigurationData(decodeHtml(result), logelement); //.replace(/(&quot\;)/g,"\""));
+                            }
+                        } else {
+                            document.getElementById(logelement).innerHTML = 'No CPQ Coniguration Data Found.';
+                        }
+                    } else if (event.type === 'exception') {
+                        document.getElementById(logelement).innerHTML = 
+                            event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                    } else {
+                        document.getElementById(logelement).innerHTML = event.message;
+                    }
+                }, 
+                {escape: true}
+            );
+        }
+        return false;
+    }
+    
+    function decodeHtml(encodedStr) {
+        var doc = new DOMParser().parseFromString(encodedStr, "text/html");
+        return doc.documentElement.textContent.replace(/\\"/g, '"');
+    }
+
+    function getQuoteTemplates() {
+        var html = '<table width="100%"><tr style="background-color:#cccccc;"><th>Actions</th><th width="50%">Title</th><th>Size</th><th>Date Created</th></tr>';
+        html += '<tr><td colspan="5" style="text-align:center;">Loading...</td></tr>';
+        html += '</table>';
+        document.getElementById('quoteTemplatesList').innerHTML = html;
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.CPQUtils.GetQuoteTemplates}',
+            function(result, event) {
+                if (event.status) {
+                    if (result != null && result.length > 0) {
+                        var html = '<table width="100%"><tr style="background-color:#cccccc;"><th>Actions</th><th width="50%">Title</th><th>Size</th><th>Date Created</th></tr>';
+                        for (var i = 0; i < result.length; i++) {
+                            html += '<tr>'+
+                                '<td style="text-align:left;"><input type="button" value="Install" class="installButton" onclick="installCPQUConfigData(\''+result[i]['Name']+'\', \'quotetemplatemessages\'); return false;" /></td>'+
+                                '<td style="text-align:left;">'+result[i]['Name']+'</td>'+
+                                '<td style="text-align:left;">'+(result[i]['BodyLength']/1000)+' KB</td>'+
+                                '<td style="text-align:left;">'+getDate(result[i]['CreatedDate']/1000)+'</td>'+
+                                '</tr>';
+                        }
+                        html += '</table>';
+                        document.getElementById('quoteTemplatesList').innerHTML = html;
+                    } else {
+                        var html = '<table width="100%"><tr style="background-color:#cccccc;"><th><input type="checkbox" id="AllQuoteTemplatesCheckbox" onclick="toggleQuoteTemplateClicked();" /></th><th width="50%">Title</th><th>Size</th><th>Date Created</th><th>Actions</th></tr>';
+                        html += '<tr><td colspan="5" style="text-align:center;">No Results Found</td></tr>';
+                        html += '</table>';
+                        document.getElementById('quoteTemplatesList').innerHTML = html;
+                    }
+                } else if (event.type === 'exception') {
+                    document.getElementById("quoteTemplatesList").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("quoteTemplatesList").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+        return false;
+    }
+    
+    function getPriceRules() {
+        var html = '<table width="100%"><tr style="background-color:#cccccc;"><th>Actions</th><th width="50%">Title</th><th>Size</th><th>Date Created</th></tr>';
+        html += '<tr><td colspan="5" style="text-align:center;">Loading...</td></tr>';
+        html += '</table>';
+        document.getElementById('priceRulesList').innerHTML = html;
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.CPQUtils.GetPriceRules}',
+            function(result, event) {
+                if (event.status) {
+                    if (result != null && result.length > 0) {
+                        var html = '<table width="100%"><tr style="background-color:#cccccc;"><th>Actions</th><th width="50%">Title</th><th>Size</th><th>Date Created</th></tr>';
+                        for (var i = 0; i < result.length; i++) {
+                            html += '<tr>'+
+                                '<td style="text-align:left;"><input type="button" value="Install" class="installButton" onclick="return installCPQUConfigData(\''+result[i]['Name']+'\', \'pricerulemessages\'); return false;" /></td>'+
+                                '<td style="text-align:left;">'+result[i]['Name']+'</td>'+
+                                '<td style="text-align:left;">'+(result[i]['BodyLength']/1000)+' KB</td>'+
+                                '<td style="text-align:left;">'+getDate(result[i]['CreatedDate']/1000)+'</td>'+
+                                '</tr>';
+                        }
+                        html += '</table>';
+                        document.getElementById('priceRulesList').innerHTML = html;
+                    } else {
+                        var html = '<table width="100%"><tr style="background-color:#cccccc;"><th>Actions</th><th width="50%">Title</th><th>Size</th><th>Date Created</th></tr>';
+                        html += '<tr><td colspan="5" style="text-align:center;">No Results Found</td></tr>';
+                        html += '</table>';
+                        document.getElementById('priceRulesList').innerHTML = html;
+                    }
+                } else if (event.type === 'exception') {
+                    document.getElementById("priceRulesList").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("priceRulesList").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+        return false;
+    }
+
+    function getDate(unix_timestamp) {
+        // Create a new JavaScript Date object based on the timestamp
+        // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+        var date = new Date(unix_timestamp*1000);
+        // Hours part from the timestamp
+        var hours = date.getHours();
+        var ampm = ' AM';
+        if (hours > 11)
+            ampm = ' PM';
+        if (hours > 12)
+            hours = hours - 12;
+        // Minutes part from the timestamp
+        var minutes = "0" + date.getMinutes();
+        // Seconds part from the timestamp
+        var seconds = "0" + date.getSeconds();
+        // Date part from the timestamp
+        var dateString = (date.getMonth()+1) + '/' + date.getDate() + '/' + date.getFullYear();
+        
+        // Will display time in 10:30:23 format
+        var formattedTime = dateString + ' ' + hours + ':' + minutes.substr(-2)+ampm;
+        
+        return formattedTime;
+    }
+    function changeElementsInnerHTML(elements, newHTML) {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].innerHTML = newHTML;
+        }
+    }
+    function changeElementsDisabled(elements, newDisabled) {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].disabled = newDisabled;
+        }
+    }
+    function clearDefaultProductCPQValues() {
+        document.getElementById('utilitiesmessages').innerHTML = 'Clearing Default Product CPQ Values...';
+        
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.CPQUtils.clearDefaultProductCPQValues}',
+            function(result, event) {
+                if (event.status) {
+                    if (result != null && result.indexOf('Exception:') == 0) {
+                        document.getElementById('utilitiesmessages').innerHTML = 'Clearing Default Product CPQ Values Failed!';
+                    } else {
+                        document.getElementById('utilitiesmessages').innerHTML = 'Success!  Cleared Default Product CPQ Values!';
+                    }
+                } else if (event.type === 'exception') {
+                    document.getElementById("utilitiesmessages").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("utilitiesmessages").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+        return false;
+    }
+    function clearOrphanedCPQRecords() {
+        document.getElementById('utilitiesmessages').innerHTML = 'Clearing Orphaned CPQ Records...';
+        
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.CPQUtils.DeleteOrphanedCPQConfigurationData}',
+            function(result, event) {
+                if (event.status) {
+                    if (result != null && result.indexOf('Exception:') == 0) {
+                        document.getElementById('utilitiesmessages').innerHTML = 'Clearing Orphaned CPQ Records Failed!';
+                    } else {
+                        document.getElementById('utilitiesmessages').innerHTML = 'Success!  Cleared Orphaned CPQ Records!';
+                    }
+                } else if (event.type === 'exception') {
+                    document.getElementById("utilitiesmessages").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("utilitiesmessages").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+        return false;
+    }
+    function configureAllSubscriptionProductsForMDQ() {
+        document.getElementById('utilitiesmessages').innerHTML = 'Configuring all Subscription Products for MDQ...';
+        
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.CPQUtils.configureAllSubscriptionProductsForMDQ}',
+            function(result, event) {
+                if (event.status) {
+                    if (result != null && result.indexOf('Exception:') == 0) {
+                        document.getElementById('utilitiesmessages').innerHTML = 'Configuring all Subscription Products for MDQ Failed!';
+                    } else {
+                        document.getElementById('utilitiesmessages').innerHTML = 'Success!  Configured all Subscription Products for MDQ!';
+                    }
+                } else if (event.type === 'exception') {
+                    document.getElementById("utilitiesmessages").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("utilitiesmessages").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+        return false;
+    }
+    
+    function getPercentDoneStatus(total, count, whichOne, status) {
+        var returnValue = '';
+        if (total != null) {
+            var percentDone = ((total != 0) ? Math.round(parseInt(count)/parseInt(total)*100) : 0);
+            var barColor = percentDone < 30 ? 'green' : percentDone < 50 ? 'green' : percentDone < 80 ? 'green' : 'green';
+            returnValue = '<div id="00N1N00000OxiPs_ileinner">'+whichOne+' - ' +
+                '<img src="/resource/slds_colors/'+barColor+'.png" alt="neutral-3" style="height:10px; width:'+(percentDone*2)+'px;" border="0">'+
+                '<img src="/resource/slds_colors/neutral-2.png" alt="neutral-1" style="height:10px; width:'+((100-percentDone)*2)+'px;" border="0"> '+
+                '('+count+'/'+total+') '+percentDone+'% - '+
+                status+dots+
+                '</div>';
+        }
+        return returnValue;
+    }
+    
+    // ******************************************************************************
+    //                             SFDC COMPONENT METHODS
+    // ******************************************************************************
+    function ModifySFComponents(whichOne) {
+        document.getElementById('utilitiesmessages').innerHTML = 'Managing Salesforce Components ('+whichOne+')...';
+        
+        var command = '';
+        if (whichOne == 'CreateApproval') { command = '{!$RemoteAction.CPQUtils.CreateApprovalStructure}'; }
+        else if (whichOne == 'DeleteApproval') { command = '{!$RemoteAction.CPQUtils.DeleteApprovalStructure}'; }
+        else if (whichOne == 'CreateFinance') { command = '{!$RemoteAction.CPQUtils.CreateFinanceFields}'; }
+        else if (whichOne == 'DeleteFinance') { command = '{!$RemoteAction.CPQUtils.DeleteFinanceFields}'; }
+        else if (whichOne == 'CreateLeadQuoting') { command = '{!$RemoteAction.CPQUtils.CreateLeadQuotingFields}'; }
+        else if (whichOne == 'DeleteLeadQuoting') { command = '{!$RemoteAction.CPQUtils.DeleteLeadQuotingFields}'; }
+        else if (whichOne == 'CreateQuoteLineExtraFields') { command = '{!$RemoteAction.CPQUtils.CreateQuoteLineExtraFields}'; }
+        else if (whichOne == 'DeleteQuoteLineExtraFields') { command = '{!$RemoteAction.CPQUtils.DeleteQuoteLineExtraFields}'; }
+        else if (whichOne == 'CreateTieredPricingStructure') { command = '{!$RemoteAction.CPQUtils.CreateTieredPricingStructure}'; }
+        else if (whichOne == 'DeleteTieredPricingStructure') { command = '{!$RemoteAction.CPQUtils.DeleteTieredPricingStructure}'; }
+        else if (whichOne == 'CreateMultiCurrencyStructure') { command = '{!$RemoteAction.CPQUtils.CreateMultiCurrencyStructure}'; }
+        else if (whichOne == 'DeleteMultiCurrencyStructure') { command = '{!$RemoteAction.CPQUtils.DeleteMultiCurrencyStructure}'; }
+        
+        Visualforce.remoting.Manager.invokeAction(
+            command,
+            function(result, event) {
+                if (event.status) {
+                    if (result != null && result.indexOf('errorCode') != -1) {
+                        if (result.indexOf('DUPLICATE_DEVELOPER_NAME') != -1) {
+                            document.getElementById('utilitiesmessages').innerHTML = 'Creating Salesforce Components Failed! Fields already exist!';
+                        } else {
+                            document.getElementById('utilitiesmessages').innerHTML = 'Creating Salesforce Components Failed!';
+                        }
+                    } else {
+                        if (result.length > 0) {
+                            if (whichOne.startsWith('Delete')) {
+                                getDeployStatus(result, 'ModifySFComponents', null, whichOne);
+                                jobInterval = setInterval(function() { getDeployStatus(result, 'ModifySFComponents', whichOne); }, 1000);
+                            } else {
+                                getBatchStatus(result, 'ModifySFComponents', null, whichOne);
+                                jobInterval = setInterval(function() { getBatchStatus(result, 'ModifySFComponents', null, whichOne); }, 1000);
+                            }
+                        }
+                    }
+                } else if (event.type === 'exception') {
+                    document.getElementById("utilitiesmessages").innerHTML = event.message + "<br/>" + event.where;
+                } else {
+                    document.getElementById("utilitiesmessages").innerHTML = event.message;
+                }
+            }, 
+            {escape: false}
+        );
+        return false;
+    }
+    
+    function getDeployStatus(deployId, batchType, whichOne) {
+        if (deployId) {
+            if (dots == '.') { dots = '..'; } else if (dots == '..') { dots = '...'; } else { dots = '.'; }
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CPQUtils.GetDeployStatus}',
+                deployId, 
+                function(result, event) {
+                    if (event.status) {
+                        if (result != null && ((result.Status != null && result.Status.indexOf('Exception:') != -1) || result.ExtendedStatus != null && result.ExtendedStatus.indexOf('error') != -1)) {
+                            document.getElementById(batchType+'messages').innerHTML = 'Job ' + result.Status + '!: ' + result.ExtendedStatus;
+                            clearInterval(jobInterval);
+                        } else {
+                            document.getElementById('utilitiesmessages').innerHTML = getPercentDoneStatus(result.numberComponentsTotal, result.numberComponentsDeployed, 'Managing Salesforce Components ('+whichOne+')', result.status);
+                            if (result.status == 'Succeeded' || result.status == 'SucceededPartial') {
+                                clearInterval(jobInterval);
+                            }
+                        }
+                    } else if (event.type === 'exception') {
+                        if (batchType == 'ModifySFComponents') {
+                            document.getElementById("utilitiesmessages").innerHTML = event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                        } else {
+                            document.getElementById(batchType+"messages").innerHTML = event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                        }
+                        clearInterval(jobInterval);
+                    } else {
+                        document.getElementById(batchType+"messages").innerHTML = event.message;
+                        clearInterval(jobInterval);
+                    }
+                }, 
+                {escape: true}
+            );
+        }
+    }
+    
+    function loadTab(tab) {
+        if (tab != null) {
+            window.location = 'https://' + window.location.hostname + window.location.pathname + window.location.search + '#' + tab;
+            RichFaces.switchTab('CPQUtils:block:tabform:dataTabPanel','CPQUtils:block:tabform:'+tab,tab);
+        } else {
+            var tab = window.location.hash.replace('#', '');
+            if (tab != null && tab != '') {
+                loadTab(tab);
+            } else {
+                loadTab('export');
+            }
+        }
+    }
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+    </script>
+    
+    <apex:pageBlock id="block">
+        <div id="globalHeaderBar"></div>
+        <div id="tabs">
+            <apex:form id="tabform">
+                <apex:tabPanel switchType="client" value="{!activeTab}" id="dataTabPanel" styleClass="theTabPanel" tabClass="theTabPanel" contentClass="tabContent" activeTabClass="activeTab" inactiveTabClass="inactiveTab" style="width:100%;" >
+                    <apex:tab label="Outgoing Data Sets" name="export" id="export" ontabenter="loadTab('export');">
+                        <table style="text-align:center; width:100%;">
+                            <tr>
+                                <td style="text-align:left; width:50%;">
+                                    <apex:CommandButton value="Export CPQ Configuration Data" onclick="exportCPQConfigurationDataNew(); return false;"  onComplete="return null;"/>&nbsp;&nbsp;<span id="exportmessages" />
+                                    <table style="width:100%;">
+                                        <tr>
+                                            <th colspan="2" style="text-align:left; background-color:#cccccc;">
+                                                <input type="checkbox" id="AllCheckbox" onchange="toggleClicked('');" /> All
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                <input type="checkbox" class="objectCheckbox" id="ProductsCheckbox" value="{!ProductsCheckbox}" onchange="toggleProductClicked(''); toggleAllCheckbox('');" /> Products  <br />
+                                                <apex:repeat var="pb" value="{!pbs}">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="pricebookCheckbox" id="{!pb.id}_Pricebook_Checkbox" onchange="toggleAllCheckbox(''); toggleProductCheckbox('');" /> {!pb.Name} <br />
+                                                </apex:repeat>
+                                                <input type="checkbox" class="objectCheckbox" id="SummaryVariablesCheckbox" value="{!SVCB}" onchange="toggleAllCheckbox('');" /> Summary Variables <br />
+                                                <input type="checkbox" class="objectCheckbox" id="DiscountSchedulesCheckbox" value="{!DiscountSchedulesCheckbox}" onchange="toggleAllCheckbox('');" /> Discount Schedules <br />
+                                                <input type="checkbox" class="objectCheckbox" id="PriceRulesCheckbox" value="{!PriceRulesCheckbox}" onchange="toggleAllCheckbox('');" /> Price Rules <br />
+                                                <input type="checkbox" class="objectCheckbox" id="ProductRulesCheckbox" value="{!ProductRulesCheckbox}" onchange="toggleAllCheckbox('');" /> Product Rules <br />
+                                                <input type="checkbox" class="objectCheckbox" id="QuoteTermsCheckbox" value="{!QuoteTermsCheckbox}" onchange="toggleAllCheckbox('');" /> Quote Terms <br />
+                                                <input type="checkbox" class="objectCheckbox" id="QuoteTemplatesCheckbox" value="{!QuoteTemplatesCheckbox}" onchange="toggleAllCheckbox('');" /> Quote Templates <br />
+                                                <input type="checkbox" class="objectCheckbox" id="GuidedSellingCheckbox" value="{!GuidedSellingCheckbox}" onchange="toggleAllCheckbox('');" /> Guided Selling <br />
+                                                <input type="checkbox" class="objectCheckbox" id="AdvancedApprovalsCheckbox" value="{!AdvancedApprovalsCheckbox}" onchange="toggleAllCheckbox('');" /> Advanced Approvals <br />
+                                                <input type="checkbox" class="objectCheckbox" id="RelatedListsCheckbox" value="{!RelatedListsCheckbox}" onchange="toggleAllCheckbox('');" /> Related Lists <br />
+                                            </td>
+                                            <td style="text-align:left;">
+                                                <apex:repeat var="customObjectName" value="{!customObjectNames}">
+                                                    <input type="checkbox" class="customObjectCheckbox objectCheckbox" id="{!customObjectName}_Checkbox" onchange="toggleAllCheckbox('');" /> {!customObjectName} <br />
+                                                </apex:repeat>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left;">
+                                    <apex:pageBlockSection title="Outgoing Data Sets" columns="1">
+                                        <button onclick="return getExportDocuments();">Refresh</button> <button onclick="return deleteExportDocuments();">Delete</button>&nbsp;&nbsp;<span id="downloadexportmessage"></span><br />
+                                        <span id='exportFilesList'><table style="width:100%;"><tr style="background-color:#cccccc;"><th><input type="checkbox" id="AllExportDocumentsCheckbox" onclick="toggleExportDocumentClicked();" /></th><th style="width:50%;">Title</th><th>File Type</th><th>Size</th><th>Date Created</th></tr><tr><td colspan="5" style="text-align:center;">Loading...</td></tr></table></span>
+                                    </apex:pageBlockSection>
+                                </td>
+                            </tr>
+                        </table>
+                    </apex:tab>
+                    <apex:tab label="Incoming Data Sets" name="import" id="import" ontabenter="loadTab('import');">
+                        <table style="text-align:center; width:100%;">
+                            <tr>
+                                <td style="text-align:left;" colspan="2">
+                                    <button onclick="uploadConfigurationData(); return false;">Import CPQ Configuration Data</button> <input type="file" id="file" accept=".csv" />&nbsp;&nbsp;<span id="importmessages" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left;" width="50%">
+                                    <apex:pageBlockSection title="Incoming Data Sets" columns="1">
+                                        <button onclick="return getIncomingDataSets();">Refresh</button> <button onclick="return deleteIncomingDataSets();">Delete</button>&nbsp;&nbsp;<span id="downloadimportmessage"></span><br />
+                                        <span id='incomingDataSetsList'><table style="width:100%;"><tr style="background-color:#cccccc;"><th><input type="checkbox" id="AllIncomingDataSetsCheckbox" onclick="toggleIncomingDataSetClicked();" /></th><th style="width:50%;">Title</th><th>File Type</th><th>Size</th><th>Date Created</th></tr><tr><td colspan="5" style="text-align:center;">Loading...</td></tr></table></span>
+                                    </apex:pageBlockSection>
+                                </td>
+                                <td style="text-align:left;">
+                                    <apex:pageBlockSection title="Deployed Data Sets" columns="1">
+                                        <button onclick="return getDeployedDataSets();">Refresh</button> <button onclick="return deleteDeployedDataSets();">Delete</button>&nbsp;&nbsp;<span id="downloaddeployedmessage"></span><br />
+                                        <span id='deployedDataSetsList'><table style="width:100%;"><tr style="background-color:#cccccc;"><th><input type="checkbox" id="AllDeployedDataSetsCheckbox" onclick="toggleDeployedDataSetClicked();" /></th><th style="width:50%;">Title</th><th>File Type</th><th>Size</th><th>Date Created</th></tr><tr><td colspan="5" style="text-align:center;">Loading...</td></tr></table></span>
+                                    </apex:pageBlockSection>
+                                </td>
+                            </tr>
+                        </table>
+                    </apex:tab>
+                    <apex:tab label="Delete" name="delete" id="delete" ontabenter="loadTab('delete');">
+                        <table style="text-align:center; width:100%;">
+                            <tr>
+                                <td style="text-align:left; width:50%;">
+                                    <apex:CommandButton value="Delete CPQ Configuration Data" onclick="deleteCPQConfigurationData(); return false;"  onComplete="return null;"/> <span id="deletemessages" />
+                                    <table style="width:100%;">
+                                        <tr>
+                                            <th colspan="2" style="text-align:left; background-color:#cccccc;">
+                                                <input type="checkbox" id="deleteAllCheckbox" onchange="toggleClicked('delete');" /> All
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                <input type="checkbox" class="objectCheckbox" id="deleteProductsCheckbox" value="{!ProductsCheckbox}" onchange="toggleProductClicked('delete'); toggleAllCheckbox('delete');" /> Products  <br />
+                                                <apex:repeat var="pb" value="{!pbs}">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="pricebookCheckbox" id="delete{!pb.id}_Pricebook_Checkbox" onchange="toggleAllCheckbox('delete'); toggleProductCheckbox('delete');" /> {!pb.Name} <br />
+                                                </apex:repeat>
+                                                <input type="checkbox" class="objectCheckbox" id="deleteSummaryVariablesCheckbox" value="{!SVCB}" onchange="toggleAllCheckbox('delete');" /> Summary Variables <br />
+                                                <input type="checkbox" class="objectCheckbox" id="deleteDiscountSchedulesCheckbox" value="{!DiscountSchedulesCheckbox}" onchange="toggleAllCheckbox('delete');" /> Discount Schedules <br />
+                                                <input type="checkbox" class="objectCheckbox" id="deletePriceRulesCheckbox" value="{!PriceRulesCheckbox}" onchange="toggleAllCheckbox('delete');" /> Price Rules <br />
+                                                <input type="checkbox" class="objectCheckbox" id="deleteProductRulesCheckbox" value="{!ProductRulesCheckbox}" onchange="toggleAllCheckbox('delete');" /> Product Rules <br />
+                                                <input type="checkbox" class="objectCheckbox" id="deleteQuoteTermsCheckbox" value="{!QuoteTermsCheckbox}" onchange="toggleAllCheckbox('delete');" /> Quote Terms <br />
+                                                <input type="checkbox" class="objectCheckbox" id="deleteQuoteTemplatesCheckbox" value="{!QuoteTemplatesCheckbox}" onchange="toggleAllCheckbox('delete');" /> Quote Templates <br />
+                                                <input type="checkbox" class="objectCheckbox" id="deleteGuidedSellingCheckbox" value="{!GuidedSellingCheckbox}" onchange="toggleAllCheckbox('delete');" /> Guided Selling <br />
+                                                <input type="checkbox" class="objectCheckbox" id="deleteAdvancedApprovalsCheckbox" value="{!AdvancedApprovalsCheckbox}" onchange="toggleAllCheckbox('delete');" /> Advanced Approvals <br />
+                                                <input type="checkbox" class="objectCheckbox" id="deleteRelatedListsCheckbox" value="{!RelatedListsCheckbox}" onchange="toggleAllCheckbox('delete');" /> Related Lists <br />
+                                            </td>
+                                            <td style="text-align:left;">
+                                                <apex:repeat var="deleteCustomObjectName" value="{!customObjectNames}">
+                                                    <input type="checkbox" class="customObjectCheckbox objectCheckbox" id="delete{!deleteCustomObjectName}_Checkbox" onchange="toggleAllCheckbox('delete');" /> {!deleteCustomObjectName} <br />
+                                                </apex:repeat>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </apex:tab>
+                    <apex:tab label="Quote Template Library" name="quotetemplates" id="quotetemplates" ontabenter="loadTab('quotetemplates');">
+                        <table style="text-align:center; width:100%;">
+                            <tr>
+                                <td style="text-align:left;">
+                                    <apex:pageBlockSection title="Quote Templates" columns="1">
+                                        <button onclick="return getQuoteTemplates();">Refresh</button> <span id="quotetemplatemessages" /><br />
+                                        <span id='quoteTemplatesList'><table style="width:100%;"><tr style="background-color:#cccccc;"><th style="width:50%;">Name</th><th>Size</th><th>Date Created</th><th>Actions</th></tr><tr><td colspan="5" style="text-align:center;">Loading...</td></tr></table></span>
+                                    </apex:pageBlockSection>
+                                </td>
+                            </tr>
+                        </table>
+                    </apex:tab>
+                    <apex:tab label="Price Rule Library" name="pricerules" id="pricerules" ontabenter="loadTab('pricerules');">
+                        <table style="text-align:center; width:100%;">
+                            <tr>
+                                <td style="text-align:left;">
+                                    <apex:pageBlockSection title="Price Rules" columns="1">
+                                        <button onclick="return getPriceRules();">Refresh</button> <span id="pricerulemessages" /><br />
+                                        <span id='priceRulesList'><table style="width:100%;"><tr style="background-color:#cccccc;"><th style="width:50%;">Name</th><th>Size</th><th>Date Created</th><th>Actions</th></tr><tr><td colspan="5" style="text-align:center;">Loading...</td></tr></table></span>
+                                    </apex:pageBlockSection>
+                                </td>
+                            </tr>
+                        </table>
+                    </apex:tab>
+                    <apex:tab label="Settings" name="settings" id="settings" ontabenter="loadTab('settings');">
+                        <apex:pageBlock title="CPQ Utils Settings">
+                            <apex:pageBlockButtons >
+                                <apex:commandButton action="{!saveRecord}" value="Save" />
+                            </apex:pageBlockButtons>
+                            <apex:pageBlockSection title="Automation">
+                                <apex:inputField value="{!settings.CPQU__Auto_Generate_Contract__c}"/>
+                                <apex:selectList label="Auto Generate Contract - Opp Stage" value="{!autoGenerateContractOppStage}" multiselect="true" size="5">
+                                    <apex:selectOptions value="{!oppStages}"/>
+                                </apex:selectList>
+                                <apex:inputField value="{!settings.CPQU__Auto_Generate_Order__c}"/>
+                                <apex:selectList label="Auto Generate Order - Opp Stage" value="{!autoGenerateOrderOppStage}" multiselect="true" size="5">
+                                    <apex:selectOptions value="{!oppStages}"/>
+                                </apex:selectList>
+                                <apex:inputField value="{!settings.CPQU__Auto_Activate_Contract__c}"/>
+                                <apex:inputField value="{!settings.CPQU__Auto_Generate_Renewal_Opportunity_Quote__c}"/>
+                                <apex:inputField value="{!settings.CPQU__Show_Watermark_on_Draft_Quotes__c}"/>
+                                <apex:inputField value="{!settings.CPQU__Generate_Renewal_Quote_Days_Before_End__c}"/>
+                                 
+                                <apex:inputHidden value="{!settings.Name}"/>
+                            </apex:pageBlockSection>
+                        </apex:pageBlock>
+                    </apex:tab>
+                    <apex:tab label="Utilities" name="utilities" id="utilities" ontabenter="loadTab('utilities');">
+                        <span id="utilitiesmessages" />
+                        <apex:pageBlock title="CPQ Utils - Quick Utilities">
+                            <apex:pageBlockSection title="Product Utilities" columns="1">
+                                <apex:panelGrid columns="2" width="100%">
+                                    <!--<apex:outputText >Product Hierarchy Workbook</apex:outputText>
+                                    <apex:outputText ><a href="{!productHierarchyWorkbookLink}">x{!productHierarchyWorkbookLink}x</a></apex:outputText>-->
+                                    <!--<apex:outputText >Tips & Tricks</apex:outputText>
+                                    <apex:outputText ><a href="{!tipsTricksLink}">x{!tipsTricksLink}x</a></apex:outputText>-->
+                                    <apex:outputText >Salesforce CPQ sets various fields to default values that are not useful when creating new Products.  This button clears out those defaults where necessary.  Fields affected: <ul>
+                                        <li>Quantity Scale - Button Action: Sets this to 0.</li>
+                                        <li>Block Pricing Field - Button Action: Sets this to NULL if Pricing Type does not equal "Block".</li>
+                                        <li>Subscription Type - Button Action: Sets this to NULL if Subscription Pricing is NULL.</li>
+                                        <li>Option Selection Method - Button Action: Sets this to NULL if Configuration Type is NULL.</li>
+                                        <li>Percent of Total Base - Button Action: Sets this to NULL if Percent of Total is NULL.</li>
+                                        </ul></apex:outputText>
+                                    <apex:CommandButton value="Clear Default Product CPQ Values" onclick="clearDefaultProductCPQValues(); return false;" onComplete="return null;" />
+                                    
+                                    <apex:outputText >There are times when orphaned CPQ configuration records exist.  This button clears out those orphaned records.  Objects affected: <ul>
+                                        <li>Product Option</li>
+                                        <li>Product Feature</li>
+                                        <li>Product Block Price</li>
+                                        <li>Product Cost</li>
+                                        <li>Product Price Dimension</li>
+                                        <li>Price/Product Rule Lookup Query</li>
+                                        </ul></apex:outputText>
+                                    <apex:CommandButton value="Clear Orphaned CPQ Records" onclick="clearOrphanedCPQRecords(); return false;" onComplete="return null;" />
+
+                                    <apex:outputText >CPQ Utils includes a button on the Product object that configures a given Product as an MDQ (Multi-dimensional Quoting) Subscription Product.  Clicking the button to the right will configure all Subscription Products for MDQ.</apex:outputText>
+                                    <apex:CommandButton value="Configure all Subscription Products for MDQ" onclick="configureAllSubscriptionProductsForMDQ(); return false;" onComplete="return null;" />
+                                    <apex:outputText >These buttons manage the Salesforce components required to have an Approval Process.</apex:outputText>
+                                    <apex:outputPanel >
+                                        <table width="100%">
+                                            <tr>
+                                                <td>
+                                                    <apex:CommandButton value="Create Approval Structure" onclick="ModifySFComponents('CreateApproval'); return false;" onComplete="return null;" />
+                                                </td>
+                                                <td>
+                                                    <apex:CommandButton value="Delete Approval Structure" onclick="ModifySFComponents('DeleteApproval'); return false;" onComplete="return null;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </apex:outputPanel>
+                                    <apex:outputText >These buttons manage the Finance Salesforce fields.  Fields included are: ARR, MRR, NRR, ACV, TCV on Quote, Quote Line, Opportunity, and Opportunity Product.</apex:outputText>
+                                    <apex:outputPanel >
+                                        <table width="100%">
+                                            <tr>
+                                                <td>
+                                                    <apex:CommandButton value="Create Finance Fields" onclick="ModifySFComponents('CreateFinance'); return false;" onComplete="return null;" />
+                                                </td>
+                                                <td>
+                                                    <apex:CommandButton value="Delete Finance Fields" onclick="ModifySFComponents('DeleteFinance'); return false;" onComplete="return null;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </apex:outputPanel>
+                                    <apex:outputText >These buttons manage the Lead Quoting fields.  Fields included are: Lead lookup field on Quote.</apex:outputText>
+                                    <apex:outputPanel >
+                                        <table width="100%">
+                                            <tr>
+                                                <td>
+                                                    <apex:CommandButton value="Create Lead Quoting Fields" onclick="ModifySFComponents('CreateLeadQuoting'); return false;" onComplete="return null;" />
+                                                </td>
+                                                <td>
+                                                    <apex:CommandButton value="Delete Lead Quoting Fields" onclick="ModifySFComponents('DeleteLeadQuoting'); return false;" onComplete="return null;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </apex:outputPanel>
+                                    <apex:outputText >These buttons manage some extra fields on the Quote Line.  Fields included are: Effective Subscription Term</apex:outputText>
+                                    <apex:outputPanel >
+                                        <table width="100%">
+                                            <tr>
+                                                <td>
+                                                    <apex:CommandButton value="Create Quote Line Extra Fields" onclick="ModifySFComponents('CreateQuoteLineExtraFields'); return false;" onComplete="return null;" />
+                                                </td>
+                                                <td>
+                                                    <apex:CommandButton value="Delete Quote Line Extra Fields" onclick="ModifySFComponents('DeleteQuoteLineExtraFields'); return false;" onComplete="return null;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </apex:outputPanel>
+                                    <apex:outputText >These buttons manage tiered pricing structure.  Objects: Product Prices, Fields: Product, Product Code, Minimum Quantity, Maximum Quantity, Effective Date, Expiration Date, Price</apex:outputText>
+                                    <apex:outputPanel >
+                                        <table width="100%">
+                                            <tr>
+                                                <td>
+                                                    <apex:CommandButton value="Create Tiered Pricing Structure" onclick="ModifySFComponents('CreateTieredPricingStructure'); return false;" onComplete="return null;" />
+                                                </td>
+                                                <td>
+                                                    <apex:CommandButton value="Delete Tiered Pricing Structure" onclick="ModifySFComponents('DeleteTieredPricingStructure'); return false;" onComplete="return null;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </apex:outputPanel>
+                                    <apex:outputText >These buttons manage the multi-currency structure.  Objects: Conversion Rates, Fields: CurrencyISOCode, Rate</apex:outputText>
+                                    <apex:outputPanel >
+                                        <table width="100%">
+                                            <tr>
+                                                <td>
+                                                    <apex:CommandButton value="Create Multi-Currency Structure" onclick="ModifySFComponents('CreateMultiCurrencyStructure'); return false;" onComplete="return null;" />
+                                                </td>
+                                                <td>
+                                                    <apex:CommandButton value="Delete Multi-Currency Structure" onclick="ModifySFComponents('DeleteMultiCurrencyStructure'); return false;" onComplete="return null;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </apex:outputPanel>
+                                </apex:panelGrid>
+                            </apex:pageBlockSection>
+                        </apex:pageBlock>
+                    </apex:tab>
+                    <apex:tab label="About" name="about" id="about" ontabenter="loadTab('about');">
+                        <style>
+                            ol {
+                            font: italic 1em Georgia, Times, serif;
+                            color: #999999;
+                            }
+                            ol p {
+                            font: normal 1em Arial, Helvetica, sans-serif;
+                            color: #000000;
+                            }
+                        </style>
+                        CPQ Version: {!cpqVersion}<br />
+                        CPQ Utils Version: {!cpquVersion}<br />
+                        CPQ Utils is a companion app to Salesforce CPQ.  Functionality Includes:
+                        <ol>
+                            <li><p>Easily migrate your configuration to production.</p>
+                                <ul>
+                                    <li><p>This feature alone will save you HOURS of migration work commonly done with Excel (VLOOKUP) and Data Loader.</p></li>
+                                    <li><p>Limitation: This currenly only supports INSERT.  It will not update current configuration.  Update feature coming soon.</p></li>
+                                </ul>
+                            </li>
+                            <li><p>Easily install a sample Quote Template.</p></li>
+                            <li><p>Includes a Product Prices object for use in lookup table Price Rules with built in criteria such as</p>
+                                <ul>
+                                    <li><p>Product Code,</p></li>
+                                    <li><p>Min/Max Quantity, and</p></li>
+                                    <li><p>Effective/Expiration Dates.</p></li>
+                                    <li><p>Easily add your own criteria fields!</p></li>
+                                </ul>
+                            </li>
+                            <li><p>Easily set up an Approval Process with built in Approval Level and Approval icon indicator fields on Quote and Quote Line.</p>
+                                <ul>
+                                    <li><p>Also includes workflow Field Update and Email Notification actions for use in Approval Rules.</p></li>
+                                    <li><p>Also includes Email Templates for all stages of approval.</p></li>
+                                </ul>
+                            </li>
+                            <li><p>Easily install sample Price Rules such as</p>
+                                <ul>
+                                    <li><p>Lookup Table Price Injection and</p></li>
+                                    <li><p>Approval Level Injection.</p></li>
+                                </ul>
+                            </li>
+                            <li><p>Configure settings to popular CPQ features such as</p>
+                                <ul>
+                                    <li><p>Contract Auto Generation based on configurable Opportunity Stages.</p></li>
+                                    <li><p>Contract Auto Activation.</p></li>
+                                    <li><p>Renewal Auto Generation.</p></li>
+                                    <li><p>Auto show Draft Watermark based on Quote Status.</p></li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <br />
+                        <br />
+                        <p style="text-align:center;">
+                            Copyright © Sovereign CRM 2018-Present
+                        </p>
+                    </apex:tab>
+                </apex:tabPanel>
+            </apex:form>
+        </div>
+        <apex:pageMessages ></apex:pageMessages>
+    </apex:pageBlock>
+    <script>
+        getExportDocuments();
+        getQuoteTemplates();
+        getPriceRules();
+        getIncomingDataSets();
+        getDeployedDataSets();
+        $message     = jQuery("#downloadexportmessage");
+        $importmessage     = jQuery("#importmessages");
+        loadTab(null);
+        
+        setFocusOnLoad = function(){};
+        startSessionTimer = function(){};
+        ActivityReminder = undefined;
+        if (getCookie('deploying') != '') {
+            var exportID = getCookie('deploying');
+            GetDeploymentStatus(exportID);
+            jobInterval = setInterval(function() { GetDeploymentStatus(exportID); }, 5000);
+        }
+    </script>
+</apex:page>

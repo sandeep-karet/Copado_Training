@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Notify_RFP_Owner_Change</name>
+        <label>RFP__c.Notify_RFP_Owner_Change</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <actionName>RFP__c.Notify_RFP_Owner_Change</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>RFP__c.Notify_RFP_Owner_Change</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <description>Send email alert on Response status changed to submitted on RFP record.</description>
+        <name>RFP_c_RFPRequest_Notification_Submitted</name>
+        <label>RFP__c.RFPRequest Notification Submitted</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <actionName>RFP__c.RFPRequest_Notification_Submitted</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>RFP__c.RFPRequest_Notification_Submitted</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_For_Bypass</name>
+        <label>Check For Bypass</label>
+        <locationX>578</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_Bypass</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Dev_Settings__c.Disable_Triggers__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_for_RFP_Status</targetReference>
+            </connector>
+            <label>No Bypass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>ISCHANGED({!$Record.OwnerId}) &amp;&amp; {!$Record.Owner:Queue.DeveloperName} &lt;&gt; &quot;RFP_Requests_Queue&quot;</description>
+        <name>Check_for_RFP_Status</name>
+        <label>Check for Owner change and Response Status</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Edit_RFP_Status_Change_when_not_assigned_to_the_Queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner:Group.DeveloperName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>QueueName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Response_Status_to_InProgress</targetReference>
+            </connector>
+            <label>Edit RFP Status Change when not assigned to the Queue</label>
+        </rules>
+        <rules>
+            <name>Edit_RFP_Status_changed_to_Submitted</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Response_Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Response_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Submitted</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RFP_c_RFPRequest_Notification_Submitted</targetReference>
+            </connector>
+            <label>Edit RFP Status changed to Submitted</label>
+        </rules>
+    </decisions>
+    <description>Migrated from the: Edit RFP Status Change when not assigned to the Queue workflow rule
+Workflow rule description: Change the Response Status to In Progress and send a Notification email&quot;
+Also merged the workflow Rule &apos;Edit RFP Status changed to Submitted&apos;</description>
+    <environments>Default</environments>
+    <interviewLabel>Edit RFP Status Change when not assigned to the Queue {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Edit RFP Status change when not assigned to Queue and status change to submitted</label>
+    <migratedFromWorkflowRuleName>Edit RFP Status Change when not assigned to the Queue</migratedFromWorkflowRuleName>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Update Response Status to &apos;InProgress&apos;</description>
+        <name>Update_Response_Status_to_InProgress</name>
+        <label>Update Response Status to InProgress</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Notify_RFP_Owner_Change</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Response_Status__c</field>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_For_Bypass</targetReference>
+        </connector>
+        <object>RFP__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Queue Name</description>
+        <name>QueueName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>RFP_Requests_Queue</stringValue>
+        </value>
+    </variables>
+</Flow>

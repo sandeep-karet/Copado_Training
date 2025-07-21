@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_59510684</developerName>
+        <masterLabel>Broker Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Account.Opportunities$Owner</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Mitch McKelvey</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Simeon Goder</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pete Coen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mya Griffith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cathy Sapp</sourceValue>
+            </sourceValues>
+            <value>Sapp Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Travis Blanchard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kelsey LeGrande</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Andrea Sadler</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nicholas Gates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alex Cope</sourceValue>
+            </sourceValues>
+            <value>Sadler Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Kyle Sadler</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jack Diamond</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>David Toves</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lauren Ozanich</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matt Scott</sourceValue>
+            </sourceValues>
+            <value>Diamond Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Tony Elder</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Corey Cushing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Keaton Anderson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>David Cuberos</sourceValue>
+            </sourceValues>
+            <value>Elder Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Tyler Blanchard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kalyn Kennedy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lauren Kenney</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dominic Luna</sourceValue>
+            </sourceValues>
+            <value>Renewals Team</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Account.Opportunities$Est_First_Year_Revenue__c</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_59510684</groupingColumn>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Account.Opportunities$Owner</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Contracted_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Opportunities$OneTime_Net_Total_With_PG__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Opportunities$Est_First_Year_Revenue__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows closed won opportunities with Contracted Date from 1/11/2022 - 1/10/2023</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Opportunities$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$Opportunity_Owner_Role__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Broker - Client Success,Broker - Net New,Broker - Renewals,Employer - Downmarket Rep1,Employer - Downmarket Rep2,Employer - Downmarket Rep3,Employer - Downmarket Rep4,Employer - Downmarket Rep5,Employer - Downmarket Rep6,Employer - Downmarket VP1,Employer - Downmarket VP2,Employer - Downmarket VP3,Employer - Downmarket VP4,Employer - Downmarket VP5,Employer - Downmarket VP6,Employer - Downmarket Renewal Rep,Employer - Downmarket Renewal VP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$Sub_Channel__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>HSG - TPA/Reseller,HP - US Existing</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <aggregateType>Sum</aggregateType>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_59510684</field>
+        <sortByName>Account.Opportunities$Est_First_Year_Revenue__c</sortByName>
+        <sortOrder>Desc</sortOrder>
+        <sortType>Aggregate</sortType>
+    </groupingsDown>
+    <name>DTE - Broker YTD Bookings by Team</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>EEM_Accounts_with_Opps__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Opportunities$Contracted_Date__c</dateColumn>
+        <endDate>2022-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2022-01-11</startDate>
+    </timeFrameFilter>
+</Report>

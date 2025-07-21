@@ -1,0 +1,10 @@
+<apex:page standardController="tinderbox__content__c" extensions="tinderbox.contentExtension">
+
+    <apex:outputText value="{!tinderbox__content__c.tinderbox__TBAccount__c}" rendered="false"/>    
+    <apex:outputText value="{!tinderbox__content__c.tinderbox__tinderboxid__c}" rendered="false"/>
+
+	<c:ApplicationView path="contents/{!TinderboxId}/edit"
+                       TBAccountEndPoint="{!TBAccountEndPoint}"
+                       height="700px"></c:ApplicationView>
+  
+</apex:page>

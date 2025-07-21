@@ -1,0 +1,2640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>LVGO__Relationship_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>LVGO__Relationship_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>LVGO__Master_Client_Account__c</fields>
+        <fields>LVGO__Master_Account__c</fields>
+        <fields>LVGO__Master_Opportunity__c</fields>
+        <fields>LVGO__Master_Contract__c</fields>
+        <fields>LVGO__RelationshipType__c</fields>
+        <fields>LVGO__Active__c</fields>
+        <label>Relationship Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This junction object links Client with Partner Accounts, Partner Accounts with Client Opportunities, Client Accounts with Competitor Accounts, and Competitor Accounts with Client Opportunities.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>LVGO__Account_Data_Partnership__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Account Data Partnership</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Account Data Partnership</relationshipLabel>
+        <relationshipName>Account_Data_Partnerships</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Active__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>IF(
+ AND( 
+  TODAY() &gt;= LVGO__Start_Date__c, 
+  OR(
+   TODAY() &lt;= LVGO__End_Date__c, 
+   ISBLANK(LVGO__End_Date__c)
+  ),
+  OR(
+   !ISBLANK( LVGO__Partner_Oppty_Partnership__c ),   
+   !ISBLANK( LVGO__Partner_Partnership__c ),
+   !ISBLANK( LVGO__Partner_Contract_Partnership__c ),
+   !ISBLANK( LVGO__Account_Data_Partnership__c )
+  )
+ ),
+ TRUE,
+ FALSE
+)</formula>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Box_Folder_Link__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Link of the Box folder where the file is located</description>
+        <inlineHelpText>Link of the Box folder where the file is located</inlineHelpText>
+        <label>Box Folder Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Client_Competition__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to Client Account for linking to a Competitor Account.</description>
+        <inlineHelpText>Lookup to Client Account for linking to a Competitor Account.</inlineHelpText>
+        <label>Client Account (C)</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Client-Level Competition</relationshipLabel>
+        <relationshipName>Relationships1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Client_Partnership__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to a Client Account for linking to a Partner Account.</description>
+        <inlineHelpText>Lookup to a Client Account for linking to a Partner Account.</inlineHelpText>
+        <label>Client Account (P)</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Client-Level Partnerships</relationshipLabel>
+        <relationshipName>Relationships</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__CohortOpportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Links a Client Lite Account that is a part of a Cohort with a Partner&apos;s Cohort Opportunity</description>
+        <inlineHelpText>Links a Client Lite Account that is a part of a Cohort with a Partner&apos;s Cohort Opportunity</inlineHelpText>
+        <label>Cohort Opportunity</label>
+        <referenceTo>LVGO__Opportunity__c</referenceTo>
+        <relationshipLabel>Cohort Clients</relationshipLabel>
+        <relationshipName>CohortClients</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Competing_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Defines the product with which the Competitor Account is competing</description>
+        <inlineHelpText>Defines the product with which the Competitor Account is competing</inlineHelpText>
+        <label>Competing Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Competing Products</relationshipLabel>
+        <relationshipName>Relationships</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Competitor_Competition__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to Competitor Account for linking to a Client Account.</description>
+        <inlineHelpText>Lookup to Competitor Account for linking to a Client Account.</inlineHelpText>
+        <label>Competitor Account (A)</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Client-Level Competition (Competitor)</relationshipLabel>
+        <relationshipName>Relationships2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Competitor_Oppty_Competition__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to Competitor Account for linking to an Opportunity.</description>
+        <inlineHelpText>Lookup to Competitor Account for linking to an Opportunity.</inlineHelpText>
+        <label>Competitor Account (O)</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Opportunity-Level Competition (Competitor)</relationshipLabel>
+        <relationshipName>Relationships3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Contract_Partnership__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The related Contract in a relationship between a deal and Partner.</description>
+        <inlineHelpText>The related Contract in a relationship between a deal and Partner.</inlineHelpText>
+        <label>Contract (P)</label>
+        <referenceTo>LVGO__Contract__c</referenceTo>
+        <relationshipLabel>Contract-Level Partnerships (Contract)</relationshipLabel>
+        <relationshipName>ContractRelationships</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Data_Grade__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Data Operations assigned grading based on quality of data received</description>
+        <inlineHelpText>Data Operations assigned grading based on quality of data received</inlineHelpText>
+        <label>Data Grade</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A+</fullName>
+                    <default>false</default>
+                    <label>A+</label>
+                </value>
+                <value>
+                    <fullName>A-</fullName>
+                    <default>false</default>
+                    <label>A-</label>
+                </value>
+                <value>
+                    <fullName>B+</fullName>
+                    <default>false</default>
+                    <label>B+</label>
+                </value>
+                <value>
+                    <fullName>B-</fullName>
+                    <default>false</default>
+                    <label>B-</label>
+                </value>
+                <value>
+                    <fullName>C+</fullName>
+                    <default>false</default>
+                    <label>C+</label>
+                </value>
+                <value>
+                    <fullName>C-</fullName>
+                    <default>false</default>
+                    <label>C-</label>
+                </value>
+                <value>
+                    <fullName>D</fullName>
+                    <default>false</default>
+                    <label>D</label>
+                </value>
+                <value>
+                    <fullName>F</fullName>
+                    <default>false</default>
+                    <label>F</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__Data_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type of medical or insurance information we’re receiving through this file</description>
+        <inlineHelpText>Type of medical or insurance information we’re receiving through this file</inlineHelpText>
+        <label>Data Types Included</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Contact Info</fullName>
+                    <default>false</default>
+                    <label>Contact Info</label>
+                </value>
+                <value>
+                    <fullName>Medical Claims</fullName>
+                    <default>false</default>
+                    <label>Medical Claims</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy Claims</fullName>
+                    <default>false</default>
+                    <label>Pharmacy Claims</label>
+                </value>
+                <value>
+                    <fullName>Eligibility</fullName>
+                    <default>false</default>
+                    <label>Eligibility</label>
+                </value>
+                <value>
+                    <fullName>Predefined List</fullName>
+                    <default>false</default>
+                    <label>Predefined List</label>
+                </value>
+                <value>
+                    <fullName>Tags</fullName>
+                    <default>false</default>
+                    <label>Tags</label>
+                </value>
+                <value>
+                    <fullName>Condition List</fullName>
+                    <default>false</default>
+                    <label>Condition List</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__Delivery_Frequency__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Frequency in which we are receiving the files</description>
+        <inlineHelpText>Frequency in which we are receiving the files</inlineHelpText>
+        <label>Delivery Frequency</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                    <label>Daily</label>
+                </value>
+                <value>
+                    <fullName>Weekly</fullName>
+                    <default>false</default>
+                    <label>Weekly</label>
+                </value>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Irregular</fullName>
+                    <default>false</default>
+                    <label>Irregular</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Biweekly</fullName>
+                    <default>false</default>
+                    <label>Biweekly</label>
+                </value>
+                <value>
+                    <fullName>Bimonthly</fullName>
+                    <default>false</default>
+                    <label>Bimonthly</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__Drivertized__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if this feed is drivertized</description>
+        <inlineHelpText>Indicates if this feed is drivertized</inlineHelpText>
+        <label>Drivertized</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Eligibility_Source__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if this file is the main source of eligibility</description>
+        <inlineHelpText>Indicates if this file is the main source of eligibility</inlineHelpText>
+        <label>Eligibility Source</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__File_Delivery_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email address or link associated with the file delivery</description>
+        <inlineHelpText>Email address or link associated with the file delivery</inlineHelpText>
+        <label>File Delivery Address</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__File_Delivery_Method__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Method used to send the file to our systems</description>
+        <inlineHelpText>Method used to send the file to our systems</inlineHelpText>
+        <label>File Delivery Method</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SFTP - Livongo Hosted</fullName>
+                    <default>false</default>
+                    <label>SFTP - Livongo Hosted</label>
+                </value>
+                <value>
+                    <fullName>SFTP - Client Hosted</fullName>
+                    <default>false</default>
+                    <label>SFTP - Client Hosted</label>
+                </value>
+                <value>
+                    <fullName>Secure Mail</fullName>
+                    <default>false</default>
+                    <label>Secure Mail</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__File_Format__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Format in which we are receiving this file</description>
+        <inlineHelpText>Format in which we are receiving this file</inlineHelpText>
+        <label>File Format</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Delimited</fullName>
+                    <default>false</default>
+                    <label>Delimited</label>
+                </value>
+                <value>
+                    <fullName>Excel</fullName>
+                    <default>false</default>
+                    <label>Excel</label>
+                </value>
+                <value>
+                    <fullName>Fixed Width</fullName>
+                    <default>false</default>
+                    <label>Fixed Width</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__File_Naming_Convention__c</fullName>
+        <deprecated>false</deprecated>
+        <description>File name prefix being used when sending the file</description>
+        <inlineHelpText>File name prefix being used when sending the file</inlineHelpText>
+        <label>File Naming Convention</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Historical_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if we receive historical data for this feed</description>
+        <inlineHelpText>Indicates if we receive historical data for this feed</inlineHelpText>
+        <label>Historical Received</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Legacy_Salesforce_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Holds salesforce id&apos;s that can be referenced for existing data during migration</description>
+        <externalId>true</externalId>
+        <label>Legacy Salesforce Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Master_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to either a Partner or Competitor Account for linking to a Client Account.</description>
+        <inlineHelpText>Lookup to either a Partner or Competitor Account for linking to a Client Account.</inlineHelpText>
+        <label>Master Vendor Account</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Master Vendor Accounts</relationshipLabel>
+        <relationshipName>PartnerAccounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Master_Client_Account_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Master_Client_Account__r.Name</formula>
+        <label>Master Client Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Master_Client_Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Defines the master account for the Relates To record</description>
+        <label>Master Client Account</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Master Client Accounts</relationshipLabel>
+        <relationshipName>MasterAccount</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Master_Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Defines the master contract for the Relates To record</description>
+        <inlineHelpText>Defines the master contract for the Relates To record</inlineHelpText>
+        <label>Master Contract</label>
+        <referenceTo>LVGO__Contract__c</referenceTo>
+        <relationshipLabel>Master Contracts</relationshipLabel>
+        <relationshipName>Relationships</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Master_Opportunity__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Defines the master opportunity for the Relates To record</description>
+        <label>Master Opportunity</label>
+        <referenceTo>LVGO__Opportunity__c</referenceTo>
+        <relationshipLabel>Master Opportunities</relationshipLabel>
+        <relationshipName>Relates_To</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Multi_tenant__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if this is part of a multitenant file</description>
+        <inlineHelpText>Indicates if this is part of a multitenant file</inlineHelpText>
+        <label>Multi-tenant</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Opportunity_CO__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>For Cohorts Only!  Lookup to Opportunity for linking to a Client Lite that is a part of a Cohort related to this Opportunity.</description>
+        <inlineHelpText>For Cohorts Only!  Lookup to Opportunity for linking to a Client Lite that is a part of a Cohort related to this Opportunity.</inlineHelpText>
+        <label>Opportunity (Cohort)</label>
+        <referenceTo>LVGO__Opportunity__c</referenceTo>
+        <relationshipLabel>Opportunity to Cohorts</relationshipLabel>
+        <relationshipName>Relationships</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Opportunity_Competition__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to Opportunity for linking to a Competitor Account.</description>
+        <inlineHelpText>Lookup to Opportunity for linking to a Competitor Account.</inlineHelpText>
+        <label>Opportunity (C)</label>
+        <referenceTo>LVGO__Opportunity__c</referenceTo>
+        <relationshipLabel>Opportunity-Level Competition (Opportunity)</relationshipLabel>
+        <relationshipName>Relationships1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Opportunity_Partnership__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Opportunity in a relationship between an Opportunity and Partner Account.</description>
+        <inlineHelpText>The Opportunity in a relationship between an Opportunity and Partner Account.</inlineHelpText>
+        <label>Opportunity (P)</label>
+        <referenceTo>LVGO__Opportunity__c</referenceTo>
+        <relationshipLabel>Opportunity-Level Partnerships (Opportunity)</relationshipLabel>
+        <relationshipName>PartnerAccounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Partner_Account_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Master_Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Partner Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Partner_Contract_Partnership__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to a Partner Account for linking a Partner Account to a Contract.</description>
+        <inlineHelpText>Lookup to a Partner Account for linking a Partner Account to a Contract.</inlineHelpText>
+        <label>Partner Account (C)</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Contract-Level Partnership (Partner)</relationshipLabel>
+        <relationshipName>Relationships4</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Partner_Oppty_Partnership__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to a Partner Account for linking a Partner Account to an Opportunity.</description>
+        <inlineHelpText>Lookup to a Partner Account for linking a Partner Account to an Opportunity.</inlineHelpText>
+        <label>Partner Account (O)</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Opportunity-Level Partnership (Partner)</relationshipLabel>
+        <relationshipName>PARTNERTOOPPORTUNITY</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Partner_Partnership_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Partner_Partnership__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Partner Account (A) Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Partner_Partnership__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Partner or Employer Account in a relationship between a Client and Partner or Employer Account.</description>
+        <inlineHelpText>The Partner or Employer Account in a relationship between a Client and Partner or Employer Account.</inlineHelpText>
+        <label>Partner Account (A)</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Client-Level Partnerships (Partner)</relationshipLabel>
+        <relationshipName>RelatedAccounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__ROI_Ready__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if this feed is in line with ROI standards</description>
+        <inlineHelpText>Indicates if this feed is in line with ROI standards</inlineHelpText>
+        <label>ROI Ready</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__RelationshipType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the type of relationship between two entities.</description>
+        <inlineHelpText>Defines the type of relationship between two entities.</inlineHelpText>
+        <label>Relationship Type</label>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Activity Tracking Devices</fullName>
+                    <default>false</default>
+                    <label>Activity Tracking Devices</label>
+                </value>
+                <value>
+                    <fullName>Associated Health Plan</fullName>
+                    <default>false</default>
+                    <label>Associated Health Plan</label>
+                </value>
+                <value>
+                    <fullName>Asthma</fullName>
+                    <default>false</default>
+                    <label>Asthma</label>
+                </value>
+                <value>
+                    <fullName>Behavioral Health</fullName>
+                    <default>false</default>
+                    <label>Behavioral Health</label>
+                </value>
+                <value>
+                    <fullName>Benefits Consultant</fullName>
+                    <default>false</default>
+                    <label>Benefits Consultant</label>
+                </value>
+                <value>
+                    <fullName>Billing Partner</fullName>
+                    <default>false</default>
+                    <label>Billing Partner</label>
+                </value>
+                <value>
+                    <fullName>Biometrics Screening/Health  Risk Assessment</fullName>
+                    <default>false</default>
+                    <label>Biometrics Screening/Health  Risk Assessment</label>
+                </value>
+                <value>
+                    <fullName>Cardiovascular Health</fullName>
+                    <default>false</default>
+                    <label>Cardiovascular Health</label>
+                </value>
+                <value>
+                    <fullName>Care Coordinator</fullName>
+                    <default>false</default>
+                    <label>Care Coordinator</label>
+                </value>
+                <value>
+                    <fullName>Children&apos;s Health and Obesity</fullName>
+                    <default>false</default>
+                    <label>Children&apos;s Health and Obesity</label>
+                </value>
+                <value>
+                    <fullName>Cohort</fullName>
+                    <default>false</default>
+                    <label>Cohort</label>
+                </value>
+                <value>
+                    <fullName>Competitor</fullName>
+                    <default>false</default>
+                    <label>Competitor</label>
+                </value>
+                <value>
+                    <fullName>Concierge/Coaching Advocacy</fullName>
+                    <default>false</default>
+                    <label>Concierge/Coaching Advocacy</label>
+                </value>
+                <value>
+                    <fullName>Contract Path</fullName>
+                    <default>false</default>
+                    <label>Contract Path</label>
+                </value>
+                <value>
+                    <fullName>Contract Terms</fullName>
+                    <default>false</default>
+                    <label>Contract Terms</label>
+                </value>
+                <value>
+                    <fullName>Cost Transparency</fullName>
+                    <default>false</default>
+                    <label>Cost Transparency</label>
+                </value>
+                <value>
+                    <fullName>Data – Condition List</fullName>
+                    <default>false</default>
+                    <label>Data – Condition List</label>
+                </value>
+                <value>
+                    <fullName>Data - Eligibility File</fullName>
+                    <default>false</default>
+                    <label>Data - Eligibility File</label>
+                </value>
+                <value>
+                    <fullName>Data - Email</fullName>
+                    <default>false</default>
+                    <label>Data - Email</label>
+                </value>
+                <value>
+                    <fullName>Data - Medical Claims</fullName>
+                    <default>false</default>
+                    <label>Data - Medical Claims</label>
+                </value>
+                <value>
+                    <fullName>Data - N/A – No Livongo Marketing</fullName>
+                    <default>false</default>
+                    <label>Data - N/A – No Livongo Marketing</label>
+                </value>
+                <value>
+                    <fullName>Data - Other</fullName>
+                    <default>false</default>
+                    <label>Data - Other</label>
+                </value>
+                <value>
+                    <fullName>Data - Pharmacy Claims</fullName>
+                    <default>false</default>
+                    <label>Data - Pharmacy Claims</label>
+                </value>
+                <value>
+                    <fullName>Data - Predefined List from Biometric</fullName>
+                    <default>false</default>
+                    <label>Data - Predefined List from Biometric</label>
+                </value>
+                <value>
+                    <fullName>Data - Predefined List from EMR</fullName>
+                    <default>false</default>
+                    <label>Data - Predefined List from EMR</label>
+                </value>
+                <value>
+                    <fullName>Data - Predefined List from HRA</fullName>
+                    <default>false</default>
+                    <label>Data - Predefined List from HRA</label>
+                </value>
+                <value>
+                    <fullName>Data - Predefined List from Medical Claims</fullName>
+                    <default>false</default>
+                    <label>Data - Predefined List from Medical Claims</label>
+                </value>
+                <value>
+                    <fullName>Data - Predefined List from Pharmacy Claims</fullName>
+                    <default>false</default>
+                    <label>Data - Predefined List from Pharmacy Claims</label>
+                </value>
+                <value>
+                    <fullName>Data Warehouse</fullName>
+                    <default>false</default>
+                    <label>Data Warehouse</label>
+                </value>
+                <value>
+                    <fullName>Dental Services Provider</fullName>
+                    <default>false</default>
+                    <label>Dental Services Provider</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Prevention</fullName>
+                    <default>false</default>
+                    <label>Diabetes Prevention</label>
+                </value>
+                <value>
+                    <fullName>Disease Management</fullName>
+                    <default>false</default>
+                    <label>Disease Management</label>
+                </value>
+                <value>
+                    <fullName>Drug Cost Management Services (if different than PBM)</fullName>
+                    <default>false</default>
+                    <label>Drug Cost Management Services (if different than PBM)</label>
+                </value>
+                <value>
+                    <fullName>EAP</fullName>
+                    <default>false</default>
+                    <label>EAP</label>
+                </value>
+                <value>
+                    <fullName>Eligibility Partner</fullName>
+                    <default>false</default>
+                    <label>Eligibility Partner</label>
+                </value>
+                <value>
+                    <fullName>EMR (Electronic Medical Records)</fullName>
+                    <default>false</default>
+                    <label>EMR (Electronic Medical Records)</label>
+                </value>
+                <value>
+                    <fullName>Financial Wellness</fullName>
+                    <default>false</default>
+                    <label>Financial Wellness</label>
+                </value>
+                <value>
+                    <fullName>Health Engagement Platform</fullName>
+                    <default>false</default>
+                    <label>Health Engagement Platform</label>
+                </value>
+                <value>
+                    <fullName>Health Plan (Payer)</fullName>
+                    <default>false</default>
+                    <label>Health Plan (Payer)</label>
+                </value>
+                <value>
+                    <fullName>Hypertension</fullName>
+                    <default>false</default>
+                    <label>Hypertension</label>
+                </value>
+                <value>
+                    <fullName>Incentives Administrating Party</fullName>
+                    <default>false</default>
+                    <label>Incentives Administrating Party</label>
+                </value>
+                <value>
+                    <fullName>Influencer</fullName>
+                    <default>false</default>
+                    <label>Influencer</label>
+                </value>
+                <value>
+                    <fullName>Lead Source</fullName>
+                    <default>false</default>
+                    <label>Lead Source</label>
+                </value>
+                <value>
+                    <fullName>Maternity</fullName>
+                    <default>false</default>
+                    <label>Maternity</label>
+                </value>
+                <value>
+                    <fullName>Medical Second Opinion</fullName>
+                    <default>false</default>
+                    <label>Medical Second Opinion</label>
+                </value>
+                <value>
+                    <fullName>Muskuloskeletal</fullName>
+                    <default>false</default>
+                    <label>Muskuloskeletal</label>
+                </value>
+                <value>
+                    <fullName>Nutrition</fullName>
+                    <default>false</default>
+                    <label>Nutrition</label>
+                </value>
+                <value>
+                    <fullName>Onboarding Model</fullName>
+                    <default>false</default>
+                    <label>Onboarding Model</label>
+                </value>
+                <value>
+                    <fullName>Onsite Clinic</fullName>
+                    <default>false</default>
+                    <label>Onsite Clinic</label>
+                </value>
+                <value>
+                    <fullName>Open Enrollment Platform</fullName>
+                    <default>false</default>
+                    <label>Open Enrollment Platform</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy Benefit Manager</fullName>
+                    <default>false</default>
+                    <label>Pharmacy Benefit Manager</label>
+                </value>
+                <value>
+                    <fullName>Second Opinion</fullName>
+                    <default>false</default>
+                    <label>Second Opinion</label>
+                </value>
+                <value>
+                    <fullName>Sleep Improvement</fullName>
+                    <default>false</default>
+                    <label>Sleep Improvement</label>
+                </value>
+                <value>
+                    <fullName>Smoking Cessation</fullName>
+                    <default>false</default>
+                    <label>Smoking Cessation</label>
+                </value>
+                <value>
+                    <fullName>Surgery Care Coordinator</fullName>
+                    <default>false</default>
+                    <label>Surgery Care Coordinator</label>
+                </value>
+                <value>
+                    <fullName>Telemedicine</fullName>
+                    <default>false</default>
+                    <label>Telemedicine</label>
+                </value>
+                <value>
+                    <fullName>Third Party Administrator</fullName>
+                    <default>false</default>
+                    <label>Third Party Administrator</label>
+                </value>
+                <value>
+                    <fullName>Transparency Platform</fullName>
+                    <default>false</default>
+                    <label>Transparency Platform</label>
+                </value>
+                <value>
+                    <fullName>Vision Provider</fullName>
+                    <default>false</default>
+                    <label>Vision Provider</label>
+                </value>
+                <value>
+                    <fullName>Weight Management</fullName>
+                    <default>false</default>
+                    <label>Weight Management</label>
+                </value>
+                <value>
+                    <fullName>Wellness Platform</fullName>
+                    <default>false</default>
+                    <label>Wellness Platform</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__Relationship_Notes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>add notes to account partner</description>
+        <label>Relationship Notes</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Relationship_Sort__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Allows for sorting &quot;key&quot; relationships to the top of related lists</description>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(LVGO__RelationshipType__c, &quot;Contract Path&quot;), 1, 
+IF( ISPICKVAL(LVGO__RelationshipType__c, &quot;Billing Partner&quot;), 3, 
+IF( ISPICKVAL(LVGO__RelationshipType__c, &quot;Eligibility Partner&quot;), 2, 
+4)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Relationship Sort</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__ReportRecipient__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Party to which reports may be sent.</description>
+        <inlineHelpText>Party to which reports may be sent.</inlineHelpText>
+        <label>Report Recipient</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Start_Date__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Competitor Pursuing Client</fullName>
+                    <default>false</default>
+                    <label>Competitor Pursuing Client</label>
+                </value>
+                <value>
+                    <fullName>Competitor Currently Engaged w/ Client</fullName>
+                    <default>false</default>
+                    <label>Competitor Currently Engaged w/ Client</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__Used_for_Marketing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if this file is being used for marketing</description>
+        <inlineHelpText>Indicates if this file is being used for marketing</inlineHelpText>
+        <label>Used for Marketing</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>LV Relationship</label>
+    <listViews>
+        <fullName>LVGO__Account_Partnerships</fullName>
+        <columns>NAME</columns>
+        <columns>LVGO__RelationshipType__c</columns>
+        <columns>LVGO__Master_Client_Account__c</columns>
+        <columns>LVGO__Master_Account__c</columns>
+        <columns>LVGO__Active__c</columns>
+        <columns>LVGO__Start_Date__c</columns>
+        <columns>LVGO__End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>LVGO__Relationship__c.LVGO__Account_Partnership</value>
+        </filters>
+        <filters>
+            <field>LVGO__End_Date__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>2 - Account Partnerships</label>
+    </listViews>
+    <listViews>
+        <fullName>LVGO__All</fullName>
+        <columns>LVGO__RelationshipType__c</columns>
+        <columns>LVGO__Status__c</columns>
+        <columns>LVGO__Master_Client_Account__c</columns>
+        <columns>LVGO__Master_Account__c</columns>
+        <columns>LVGO__Master_Opportunity__c</columns>
+        <columns>LVGO__Master_Contract__c</columns>
+        <columns>LVGO__Active__c</columns>
+        <columns>LVGO__Start_Date__c</columns>
+        <columns>LVGO__End_Date__c</columns>
+        <columns>LVGO__Contract_Partnership__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>1 - All Relationships</label>
+    </listViews>
+    <listViews>
+        <fullName>LVGO__Contract_Partnerships</fullName>
+        <columns>NAME</columns>
+        <columns>LVGO__RelationshipType__c</columns>
+        <columns>LVGO__Master_Client_Account__c</columns>
+        <columns>LVGO__Master_Account__c</columns>
+        <columns>LVGO__Master_Contract__c</columns>
+        <columns>LVGO__Active__c</columns>
+        <columns>LVGO__Start_Date__c</columns>
+        <columns>LVGO__End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>LVGO__Relationship__c.LVGO__Contract_Partnership</value>
+        </filters>
+        <filters>
+            <field>LVGO__End_Date__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>3 - Contract Partnerships</label>
+    </listViews>
+    <listViews>
+        <fullName>LVGO__Contracts_Eligibility_Partner</fullName>
+        <columns>NAME</columns>
+        <columns>LVGO__Client_Competition__c</columns>
+        <columns>LVGO__RelationshipType__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LVGO__RelationshipType__c</field>
+            <operation>equals</operation>
+            <value>Eligibility Partner</value>
+        </filters>
+        <filters>
+            <field>LVGO__Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Contracts &gt; Eligibility Partner</label>
+    </listViews>
+    <listViews>
+        <fullName>LVGO__My_Relationships2</fullName>
+        <columns>NAME</columns>
+        <columns>LVGO__Client_Competition__c</columns>
+        <columns>LVGO__Client_Partnership__c</columns>
+        <columns>LVGO__Master_Client_Account__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LVGO__Master_Client_Account__c</field>
+            <operation>contains</operation>
+            <value>Steven</value>
+        </filters>
+        <label>My Relationships</label>
+    </listViews>
+    <listViews>
+        <fullName>LVGO__Opportunity_Partnerships</fullName>
+        <columns>NAME</columns>
+        <columns>LVGO__RelationshipType__c</columns>
+        <columns>LVGO__Master_Client_Account__c</columns>
+        <columns>LVGO__Master_Account__c</columns>
+        <columns>LVGO__Master_Opportunity__c</columns>
+        <columns>LVGO__Active__c</columns>
+        <columns>LVGO__Start_Date__c</columns>
+        <columns>LVGO__End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>LVGO__Relationship__c.LVGO__Opportunity_Partnership</value>
+        </filters>
+        <filters>
+            <field>LVGO__End_Date__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>4 - Opportunity Partnerships</label>
+    </listViews>
+    <nameField>
+        <displayFormat>R-{0000000}</displayFormat>
+        <label>Relationship Id</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>LV Relationships</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>LVGO__Account_Competition</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>LVGO__Relationship_Compact_Layout</compactLayoutAssignment>
+        <description>Competitor at the Client Account level</description>
+        <label>Account Competition</label>
+        <picklistValues>
+            <picklist>LVGO__Data_Grade__c</picklist>
+            <values>
+                <fullName>A%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Data_Type__c</picklist>
+            <values>
+                <fullName>Contact Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Predefined List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tags</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Delivery_Frequency__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Irregular</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__File_Delivery_Method__c</picklist>
+            <values>
+                <fullName>SFTP - Client Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFTP - Livongo Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secure Mail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__File_Format__c</picklist>
+            <values>
+                <fullName>Delimited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Width</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__RelationshipType__c</picklist>
+            <values>
+                <fullName>Competitor</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Vision Provider</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Status__c</picklist>
+            <values>
+                <fullName>Competitor Currently Engaged w%2F Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitor Pursuing Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>LVGO__Account_Data_Partnership</fullName>
+        <active>true</active>
+        <description>Account Data Partnership</description>
+        <label>Account Data Partnership (Data Operations Only)</label>
+        <picklistValues>
+            <picklist>LVGO__Data_Grade__c</picklist>
+            <values>
+                <fullName>A%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Data_Type__c</picklist>
+            <values>
+                <fullName>Condition List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Predefined List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tags</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Delivery_Frequency__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Irregular</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__File_Delivery_Method__c</picklist>
+            <values>
+                <fullName>SFTP - Client Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFTP - Livongo Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secure Mail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__File_Format__c</picklist>
+            <values>
+                <fullName>Delimited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Width</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__RelationshipType__c</picklist>
+            <values>
+                <fullName>Data %E2%80%93 Condition List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Eligibility File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Medical Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - N%2FA %E2%80%93 No Livongo Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Pharmacy Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Predefined List from Biometric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Predefined List from EMR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Predefined List from HRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Predefined List from Medical Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Predefined List from Pharmacy Claims</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Status__c</picklist>
+            <values>
+                <fullName>Competitor Currently Engaged w%2F Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitor Pursuing Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>LVGO__Account_Partnership</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>LVGO__Relationship_Compact_Layout</compactLayoutAssignment>
+        <description>Partner at the Client Account level (Health Plan/Payer, Benefits Consultant, PBM, Wellness Coordinator, or Cohort)</description>
+        <label>Account Partnership</label>
+        <picklistValues>
+            <picklist>LVGO__Data_Grade__c</picklist>
+            <values>
+                <fullName>A%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Data_Type__c</picklist>
+            <values>
+                <fullName>Contact Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Predefined List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tags</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Delivery_Frequency__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Irregular</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__File_Delivery_Method__c</picklist>
+            <values>
+                <fullName>SFTP - Client Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFTP - Livongo Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secure Mail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__File_Format__c</picklist>
+            <values>
+                <fullName>Delimited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Width</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__RelationshipType__c</picklist>
+            <values>
+                <fullName>Activity Tracking Devices</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associated Health Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asthma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behavioral Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benefits Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biometrics Screening%2FHealth  Risk Assessment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cardiovascular Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children%27s Health and Obesity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cohort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concierge%2FCoaching Advocacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Transparency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Warehouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dental Services Provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Diabetes Prevention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disease Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drug Cost Management Services %28if different than PBM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMR %28Electronic Medical Records%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Wellness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Engagement Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Plan %28Payer%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hypertension</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maternity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Second Opinion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Muskuloskeletal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nutrition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsite Clinic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Enrollment Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy Benefit Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Opinion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sleep Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Smoking Cessation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgery Care Coordinator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telemedicine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third Party Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transparency Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vision Provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weight Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wellness Platform</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Status__c</picklist>
+            <values>
+                <fullName>Competitor Currently Engaged w%2F Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitor Pursuing Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>LVGO__Contract_Partnership</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>LVGO__Relationship_Compact_Layout</compactLayoutAssignment>
+        <description>Partner at the Contract level (Admin Party, Billing Partner, Care Coordinator, Contract Path, Contract Terms, or Data)</description>
+        <label>Contract Partnership</label>
+        <picklistValues>
+            <picklist>LVGO__Data_Grade__c</picklist>
+            <values>
+                <fullName>A%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Data_Type__c</picklist>
+            <values>
+                <fullName>Condition List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Predefined List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tags</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Delivery_Frequency__c</picklist>
+            <values>
+                <fullName>Bimonthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biweekly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Irregular</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__File_Delivery_Method__c</picklist>
+            <values>
+                <fullName>SFTP - Client Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFTP - Livongo Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secure Mail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__File_Format__c</picklist>
+            <values>
+                <fullName>Delimited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Width</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__RelationshipType__c</picklist>
+            <values>
+                <fullName>Billing Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Care Coordinator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Path</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract Terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data %E2%80%93 Condition List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Eligibility File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Medical Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - N%2FA %E2%80%93 No Livongo Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Pharmacy Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Predefined List from Biometric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Predefined List from EMR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Predefined List from HRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Predefined List from Medical Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data - Predefined List from Pharmacy Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incentives Administrating Party</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding Model</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Status__c</picklist>
+            <values>
+                <fullName>Competitor Currently Engaged w%2F Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitor Pursuing Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>LVGO__Opportunity_Competition</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>LVGO__Relationship_Compact_Layout</compactLayoutAssignment>
+        <description>Competitor at the Opportunity level</description>
+        <label>Opportunity Competition</label>
+        <picklistValues>
+            <picklist>LVGO__Data_Grade__c</picklist>
+            <values>
+                <fullName>A%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Data_Type__c</picklist>
+            <values>
+                <fullName>Contact Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Predefined List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tags</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Delivery_Frequency__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Irregular</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__File_Delivery_Method__c</picklist>
+            <values>
+                <fullName>SFTP - Client Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFTP - Livongo Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secure Mail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__File_Format__c</picklist>
+            <values>
+                <fullName>Delimited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Width</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__RelationshipType__c</picklist>
+            <values>
+                <fullName>Competitor</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Status__c</picklist>
+            <values>
+                <fullName>Competitor Currently Engaged w%2F Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitor Pursuing Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>LVGO__Opportunity_Partnership</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>LVGO__Relationship_Compact_Layout</compactLayoutAssignment>
+        <description>Partner at the Opportunity level (Lead Source or Influencer)</description>
+        <label>Opportunity Partnership</label>
+        <picklistValues>
+            <picklist>LVGO__Data_Grade__c</picklist>
+            <values>
+                <fullName>A%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Data_Type__c</picklist>
+            <values>
+                <fullName>Contact Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy Claims</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Predefined List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tags</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Delivery_Frequency__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Irregular</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__File_Delivery_Method__c</picklist>
+            <values>
+                <fullName>SFTP - Client Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFTP - Livongo Hosted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secure Mail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__File_Format__c</picklist>
+            <values>
+                <fullName>Delimited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Width</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__RelationshipType__c</picklist>
+            <values>
+                <fullName>EMR %28Electronic Medical Records%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Influencer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Source</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transparency Platform</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LVGO__Status__c</picklist>
+            <values>
+                <fullName>Competitor Currently Engaged w%2F Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitor Pursuing Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>LVGO__Billing_CVS_Caremark</fullName>
+        <active>true</active>
+        <description>We noticed that you selected CVS Health or Caremark as the Billing Partner.  Please select Caremark TC or Caremark PSM instead.</description>
+        <errorConditionFormula>$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c &amp;&amp;
+( LVGO__Partner_Contract_Partnership__r.LVGO__Account_ID_Long__c =  $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__CVS_Health.LVGO__Account_Long_ID__c 
+	|| LVGO__Partner_Contract_Partnership__r.LVGO__Account_ID_Long__c =  $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__Caremark.LVGO__Account_Long_ID__c )
+	&amp;&amp;  ISPICKVAL( LVGO__RelationshipType__c , &quot;Billing Partner&quot;)</errorConditionFormula>
+        <errorMessage>We noticed that you selected CVS Health or Caremark as the Billing Partner.  Please select Caremark TC or Caremark PSM instead.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LVGO__Contract_CVS_Caremark</fullName>
+        <active>true</active>
+        <description>We noticed that you selected CVS Health or Caremark as the Contract Path.  Please select Caremark TC or Caremark PSM instead.</description>
+        <errorConditionFormula>$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c &amp;&amp;
+( LVGO__Partner_Contract_Partnership__r.LVGO__Account_ID_Long__c = $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__CVS_Health.LVGO__Account_Long_ID__c
+|| LVGO__Partner_Contract_Partnership__r.LVGO__Account_ID_Long__c = $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__Caremark.LVGO__Account_Long_ID__c )
+&amp;&amp; ISPICKVAL( LVGO__RelationshipType__c , &quot;Contract Path&quot;)</errorConditionFormula>
+        <errorMessage>We noticed that you selected CVS Health or Caremark as the Contract Path.  Please select Caremark TC or Caremark PSM instead.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LVGO__Influencer_CVS_Caremark</fullName>
+        <active>true</active>
+        <description>We noticed that you selected Caremark TC, Caremark PSM or CVS Health as the Lead Source.  Please select Caremark instead.</description>
+        <errorConditionFormula>$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c &amp;&amp;
+( LVGO__Partner_Contract_Partnership__r.LVGO__Account_ID_Long__c = $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__CVS_Health.LVGO__Account_Long_ID__c
+|| LVGO__Partner_Contract_Partnership__r.LVGO__Account_ID_Long__c = $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__Caremark_TC.LVGO__Account_Long_ID__c
+|| LVGO__Partner_Contract_Partnership__r.LVGO__Account_ID_Long__c = $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__Caremark_PSM.LVGO__Account_Long_ID__c )
+&amp;&amp; ISPICKVAL( LVGO__RelationshipType__c , &quot;	Influencer&quot;)</errorConditionFormula>
+        <errorMessage>We noticed that you selected Caremark TC, Caremark PSM or CVS Health as the Lead Source.  Please select Caremark instead.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LVGO__Lead_CVS_Caremark</fullName>
+        <active>true</active>
+        <description>We noticed that you selected Caremark TC, Caremark PSM or CVS Health as the Lead Source.  Please select Caremark instead.</description>
+        <errorConditionFormula>$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c  &amp;&amp;
+( LVGO__Partner_Contract_Partnership__r.LVGO__Account_ID_Long__c = $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__CVS_Health.LVGO__Account_Long_ID__c
+  || LVGO__Partner_Contract_Partnership__r.LVGO__Account_ID_Long__c = $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__Caremark_TC.LVGO__Account_Long_ID__c
+|| LVGO__Partner_Contract_Partnership__r.LVGO__Account_ID_Long__c =  $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__Caremark_PSM.LVGO__Account_Long_ID__c )
+&amp;&amp; ISPICKVAL( LVGO__RelationshipType__c , &quot;Lead Source&quot;)</errorConditionFormula>
+        <errorMessage>We noticed that you selected Caremark TC, Caremark PSM or CVS Health as the Lead Source.  Please select Caremark instead.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LVGO__PBM_CVS_Health</fullName>
+        <active>true</active>
+        <description>We noticed that you selected CVS Health as the PBM. CVS Health represents CVS “the client”. Please select Caremark instead</description>
+        <errorConditionFormula>$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c &amp;&amp;
+LVGO__Partner_Partnership__r.LVGO__Account_ID_Long__c  =  $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__CVS_Health.LVGO__Account_Long_ID__c 
+	&amp;&amp; ISPICKVAL( LVGO__RelationshipType__c , &quot;Pharmacy Benefit Manager&quot;)</errorConditionFormula>
+        <errorMessage>We noticed that you selected CVS Health as the PBM. CVS Health represents CVS “the client”. Please select Caremark instead</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LVGO__PBM_Caremark_TC_PSM</fullName>
+        <active>true</active>
+        <description>We noticed that you selected Caremark TC or Caremark PSM as the PBM. They represent the Billing Partner and Contract Path only. Please select Caremark instead.</description>
+        <errorConditionFormula>$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c &amp;&amp;
+(LVGO__Partner_Partnership__r.LVGO__Account_ID_Long__c = $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__Caremark_TC.LVGO__Account_Long_ID__c 
+	||  LVGO__Partner_Partnership__r.LVGO__Account_ID_Long__c = $CustomMetadata.LVGO__Account_Long_ID__mdt.LVGO__Caremark_PSM.LVGO__Account_Long_ID__c )
+	&amp;&amp; ISPICKVAL( LVGO__RelationshipType__c , &quot;Pharmacy Benefit Manager&quot;)</errorConditionFormula>
+        <errorMessage>We noticed that you selected Caremark TC or Caremark PSM as the PBM. They represent the Billing Partner and Contract Path only. Please select Caremark instead.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LVGO__Prohibit_Opportunity_for_Non_Cohort</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c ,NOT(ISPICKVAL(LVGO__RelationshipType__c, &apos;Cohort&apos;)), NOT(ISBLANK( LVGO__CohortOpportunity__c )))</errorConditionFormula>
+        <errorMessage>You may only populate the Opportunity for Cohort relationship types.  Please go to the Opportunity record to capture Opportunity-specific Partner Roles.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LVGO__Require_Opportunity_if_record_is_Cohort</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(LVGO__RelationshipType__c, &apos;Cohort&apos;), ISBLANK(LVGO__CohortOpportunity__c ),
+$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c )</errorConditionFormula>
+        <errorMessage>Please input the related Opportunity for this Cohort Client.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel># Opportunities</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Opportunity.OneTime_Net_Total_With_PG__c.CONVERT:AVG</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average Amount</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Opportunity.OneTime_Net_Total_With_PG__c.CONVERT:SUM</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Amount</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF (Opportunity.Altify_Reporting_Amount__c.CONVERT:SUM = 0, 0, CDF1:SUM / Opportunity.Altify_Reporting_Amount__c.CONVERT:SUM)</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA4</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Won Amount from Planned Opps</masterLabel>
+        <scale>1</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_47550171</developerName>
+        <masterLabel>Plan Status</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Opportunity$Altify_Plan_Status__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>No Plan</sourceValue>
+            </sourceValues>
+            <value>0. No Plan</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Red</sourceValue>
+            </sourceValues>
+            <value>1. Red</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Amber</sourceValue>
+            </sourceValues>
+            <value>2. Amber</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Green</sourceValue>
+            </sourceValues>
+            <value>3. Green</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$OneTime_Net_Total_With_PG__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Decision_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$StageName</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>CDF1</field>
+    </columns>
+    <currency>USD</currency>
+    <customDetailFormulas>
+        <calculatedFormula>IF (Opportunity.Altify_Plan_Status__c != &apos;No Plan&apos;, Opportunity.OneTime_Net_Total_With_PG__c.CONVERT, 0)</calculatedFormula>
+        <dataType>Double</dataType>
+        <developerName>CDF1</developerName>
+        <label>Opportunity Plan Amount</label>
+        <scale>2</scale>
+    </customDetailFormulas>
+    <description>Shows details for won opportunities, grouped by Owner and Opportunity Plan Status</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$IsClosed</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$IsWon</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Owner</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_47550171</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>Won Deals plus Altify Opportunity Status</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>AltfRep_Opportunities_plus_Altify_Status__c</reportType>
+    <roleHierarchyFilter>Commercial_Ops</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <sortColumn>CDF1</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

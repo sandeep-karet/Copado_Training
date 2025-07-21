@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>LV Client Tag Assignment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>LV Client Tag Assignments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Client Account --></label>
+        <name>LVGO__ClientAccount__c</name>
+        <relationshipLabel><!-- Client Tags (from Contract) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Client Tag --></label>
+        <name>LVGO__ClientTag__c</name>
+        <relationshipLabel><!-- Client Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Contract record that is related to the Client Tag --></help>
+        <label><!-- Contract --></label>
+        <name>LVGO__Contract__c</name>
+        <relationshipLabel><!-- Client Tags --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Legacy Salesforce Id --></label>
+        <name>LVGO__Legacy_Salesforce_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

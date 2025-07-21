@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LVGO__Contract__c$LVGO__CO_Name_Number__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Contract_ID_Long__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$Name</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Account__c.Id</field>
+    </columns>
+    <currency>USD</currency>
+    <description>User this report to look up the Program Overview ID to reload CMC Associations - CRMINT-42554</description>
+    <format>Tabular</format>
+    <name>Program ID Long</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Program_Overviews_w_Client_Overview_Accnt_data_LV3__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LVGO__Contract__c$LVGO__ActivatedDate__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

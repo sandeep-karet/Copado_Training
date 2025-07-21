@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Related List Field</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Related List Fields</value>
+    </caseValues>
+    <fields>
+        <help><!-- Indicates whether this related list field is active or not. --></help>
+        <label><!-- Active --></label>
+        <name>CPQU__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Can only be entered if the Conditions Met is Custom. Enter a combination of the Condition Index #s, AND, OR, and parenthesis (e.g. (123 AND 124) AND 125). --></help>
+        <label><!-- Advanced Condition --></label>
+        <name>CPQU__Advanced_Condition__c</name>
+    </fields>
+    <fields>
+        <help><!-- Choose the behavior for your conditions: All is AND, Any is OR, Custom is a combination of AND/OR. --></help>
+        <label><!-- Conditions Met --></label>
+        <name>CPQU__Conditions_Met__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Any</masterLabel>
+            <translation><!-- Any --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom</masterLabel>
+            <translation><!-- Custom --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Check this box if you would like this column hidden in the list.  A common use of this field is when you want to sort by a field that you do not want to display as a column. --></help>
+        <label><!-- Hidden --></label>
+        <name>CPQU__Hidden__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specify the order of display for this related list field. The fields are displayed in the order in which their Index values are numbered. --></help>
+        <label><!-- Index --></label>
+        <name>CPQU__Index__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order By Index --></label>
+        <name>CPQU__Order_By_Index__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order By Type --></label>
+        <name>CPQU__Order_By_Type__c</name>
+        <picklistValues>
+            <masterLabel>Ascending</masterLabel>
+            <translation><!-- Ascending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Descending</masterLabel>
+            <translation><!-- Descending --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Order By --></label>
+        <name>CPQU__Order_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related List --></label>
+        <name>CPQU__Related_List__c</name>
+        <relationshipLabel><!-- Columns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Target Field --></label>
+        <name>CPQU__Target_Field__c</name>
+        <picklistValues>
+            <masterLabel>Id</masterLabel>
+            <translation><!-- Id --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Name</masterLabel>
+            <translation><!-- Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBQQ__CustomerTotal__c</masterLabel>
+            <translation><!-- SBQQ__CustomerTotal__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBQQ__Group__c</masterLabel>
+            <translation><!-- SBQQ__Group__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBQQ__ListPrice__c</masterLabel>
+            <translation><!-- SBQQ__ListPrice__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBQQ__NetTotal__c</masterLabel>
+            <translation><!-- SBQQ__NetTotal__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBQQ__Number__c</masterLabel>
+            <translation><!-- SBQQ__Number__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBQQ__ProductName__c</masterLabel>
+            <translation><!-- SBQQ__ProductName__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBQQ__Product__c</masterLabel>
+            <translation><!-- SBQQ__Product__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBQQ__Quantity__c</masterLabel>
+            <translation><!-- SBQQ__Quantity__c --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Target Object --></label>
+        <name>CPQU__Target_Object2__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Advanced Condition is required if Conditions Met is &quot;Custom&quot;. --></errorMessage>
+        <name>CPQU__IfCondMetIsCustom_AdvCondRequired</name>
+    </validationRules>
+</CustomObjectTranslation>

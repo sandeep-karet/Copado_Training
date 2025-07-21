@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Agreement Action Mapping</description>
+    <fields>
+        <fullName>Additional_Exclusion__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter Additional Exclusion criteria to used for Action visibility.</inlineHelpText>
+        <label>Additional Exclusion</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Additional_Inclusion__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter Additional Inclusion criteria to used for Action visibility</inlineHelpText>
+        <label>Additional Inclusion</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agreement_Action__c</fullName>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter Agreement Action here for which you want to control visibility by Process/Business flow.</inlineHelpText>
+        <label>Agreement Action</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Generate</fullName>
+                    <default>true</default>
+                    <label>Generate</label>
+                </value>
+                <value>
+                    <fullName>Regenerate</fullName>
+                    <default>false</default>
+                    <label>Regenerate</label>
+                </value>
+                <value>
+                    <fullName>Import Offline Document</fullName>
+                    <default>false</default>
+                    <label>Import Offline Document</label>
+                </value>
+                <value>
+                    <fullName>Cancel</fullName>
+                    <default>false</default>
+                    <label>Cancel</label>
+                </value>
+                <value>
+                    <fullName>Preview</fullName>
+                    <default>false</default>
+                    <label>Preview</label>
+                </value>
+                <value>
+                    <fullName>Generate Supporting Document</fullName>
+                    <default>false</default>
+                    <label>Generate Supporting Document</label>
+                </value>
+                <value>
+                    <fullName>Activate</fullName>
+                    <default>false</default>
+                    <label>Activate</label>
+                </value>
+                <value>
+                    <fullName>Submit Request</fullName>
+                    <default>false</default>
+                    <label>Submit Request</label>
+                </value>
+                <value>
+                    <fullName>Send For eSignature</fullName>
+                    <default>false</default>
+                    <label>Send For eSignature</label>
+                </value>
+                <value>
+                    <fullName>Send For Wet Signatures</fullName>
+                    <default>false</default>
+                    <label>Send For Wet Signatures</label>
+                </value>
+                <value>
+                    <fullName>Preview &amp; Submit Approvals</fullName>
+                    <default>false</default>
+                    <label>Preview &amp; Submit Approvals</label>
+                </value>
+                <value>
+                    <fullName>My Approvals</fullName>
+                    <default>false</default>
+                    <label>My Approvals</label>
+                </value>
+                <value>
+                    <fullName>Send For Review</fullName>
+                    <default>false</default>
+                    <label>Send For Review</label>
+                </value>
+                <value>
+                    <fullName>Check eSignature Status</fullName>
+                    <default>false</default>
+                    <label>Check eSignature Status</label>
+                </value>
+                <value>
+                    <fullName>Recall E-Signature Request</fullName>
+                    <default>false</default>
+                    <label>Recall E-Signature Request</label>
+                </value>
+                <value>
+                    <fullName>Recall eSignature</fullName>
+                    <default>false</default>
+                    <label>Recall eSignature</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agreement_Process_Flow_Short_Name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter short name for the process flow for which you want to control visibility. You can add multiple process flows separated by comma.</inlineHelpText>
+        <label>Agreement Process Flow Short Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agreement_Status_Category__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter Agreement Status Category one or more separated by comma for which you want to control visibility.</inlineHelpText>
+        <label>Agreement Status Category</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agreement_Status__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter Agreement Status one or more separated by comma for which you want to control visibility.</inlineHelpText>
+        <label>Agreement Status</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter Agreement Approval  status one or more separated by comma for which you want to control visibility for Approval related actions.</inlineHelpText>
+        <label>Approval Status</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DocuSignLink__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>DocuSignLink</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EchosignLink__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>EchosignLink</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inclusion_Or_Exclusion__c</fullName>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>This is more for information to admin, indicating how the condition has been used for controlling action visibility based on the values provided in other fields.</inlineHelpText>
+        <label>Inclusion Or Exclusion</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Include</fullName>
+                    <default>true</default>
+                    <label>Include</label>
+                </value>
+                <value>
+                    <fullName>Exclude</fullName>
+                    <default>false</default>
+                    <label>Exclude</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lightning_Link__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter link for Salesforce Lightning UI.</inlineHelpText>
+        <label>Lightning Link</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Link__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter link for Salesforce classic UI.</inlineHelpText>
+        <label>Link</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>eSignatureApp__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>eSignatureApp</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Agreement Action Mapping</label>
+    <listViews>
+        <fullName>All_Columns</fullName>
+        <columns>Agreement_Action__c</columns>
+        <columns>Agreement_Process_Flow_Short_Name__c</columns>
+        <columns>Agreement_Status_Category__c</columns>
+        <columns>Agreement_Status__c</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>Inclusion_Or_Exclusion__c</columns>
+        <columns>Lightning_Link__c</columns>
+        <columns>Link__c</columns>
+        <columns>Additional_Exclusion__c</columns>
+        <columns>Additional_Inclusion__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Columns</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>Agreement Action Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

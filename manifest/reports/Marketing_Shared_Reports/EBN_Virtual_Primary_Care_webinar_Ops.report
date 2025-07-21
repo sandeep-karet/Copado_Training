@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_72578768</developerName>
+        <masterLabel>Channels</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>ROLLUP_DESCRIPTION</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Client_Management_Core_HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client_Management_Key_HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Management - Aetna</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales_HP_Enterprise</sourceValue>
+            </sourceValues>
+            <value>Health Plan</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Client Management - Canada</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales - Canada</sourceValue>
+            </sourceValues>
+            <value>Canada</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Client Management - HHS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales - HHS</sourceValue>
+            </sourceValues>
+            <value>HHS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Client Management - Direct</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales - DTE</sourceValue>
+            </sourceValues>
+            <value>DTE</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales - Broker</sourceValue>
+            </sourceValues>
+            <value>Broker</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Client Management - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <value>TPA/Reseller</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Total_Contract_Value__c.CONVERT</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Lead__c</field>
+    </columns>
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>202009-NAR-EM-WBR-EBN-Virtual-Primary-Care</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_72578768</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <field>CLOSE_MONTH</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STAGE_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>EBN Virtual Primary Care webinar Ops</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityCampaign</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CAMPAIGN_STARTDATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

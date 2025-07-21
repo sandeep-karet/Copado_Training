@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Mbr_Group__c.Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Member_Group_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Mbr_Group__c.OneApp_Access__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Enable_Chronic_Care_Referrals__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Sebastian report</description>
+    <format>Tabular</format>
+    <name>Accounts with Member Groups - Bridge</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$Mbr_Group__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Mbr_Group__c.Member_Group_Id_18__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

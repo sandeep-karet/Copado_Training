@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LVGO__Blank_Letterhead</letterhead>
+    <name>Notify Legal with Required Fields Required</name>
+    <style>freeForm</style>
+    <subject>Action Required! Required Fields Missing on Contract</subject>
+    <textOnly>The following Program Overview was not able to be activated because it is lacking one or more Lapse Criteria fields or PTMM or Damaged Device Price fields.
+
+{!LVGO__Contract__c.Link}
+
+Contract Number: {!LVGO__Contract__c.LVGO__ContractNumber__c}
+Contract Name: {!LVGO__Contract__c.Name}
+Program Start Date: {!LVGO__Contract__c.LVGO__Program_Start_Date__c}
+Is there Lapse Criteria: {!LVGO__Contract__c.LVGO__Is_there_Lapse_Criteria__c}
+Lapse Criteria: {!LVGO__Contract__c.LVGO__Lapse_Criteria__c}
+Lapsed User Detail: {!LVGO__Contract__c.LVGO__Lapsed_User_Detail__c}
+Consecutive Inactive Months to Lapsed: {!LVGO__Contract__c.LVGO__Consecutive_Inactive_Months_to_Lapsed__c}
+Lapsed Criteria Source: {!LVGO__Contract__c.LVGO__Lapsed_Criteria_Source__c}
+Is there a PTMM: {!LVGO__Contract__c.LVGO__Is_there_a_PTMM__c}
+Participant Term Minimum Months: {!LVGO__Contract__c.LVGO__Participant_Term_Minimum_Months__c}
+Lost/Damaged Device Price: {!LVGO__Contract__c.LVGO__Replacement_Fee__c}
+
+Please update this Contract in SpringCM with the required Lapse Criteria fields and re-sync with Salesforce.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

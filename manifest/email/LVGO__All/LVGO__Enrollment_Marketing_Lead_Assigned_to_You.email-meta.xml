@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LVGO__Livongo_Letterhead</letterhead>
+    <name>Enrollment Marketing Lead Assigned to You</name>
+    <style>freeForm</style>
+    <subject>You’ve been assigned to {!LVGO__Account__c.Name}</subject>
+    <textOnly>Account Name: {!LVGO__Account__c.Name}
+Salesforce Link: {!LVGO__Account__c.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditOpportunitySplits</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditOpportunitySplits</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditOpportunitySplits</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveAndClose</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveAndClose</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveAndClose</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>OpportunityId</fullName>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>SplitAmount</fullName>
+    </fields>
+    <fields>
+        <fullName>SplitNote</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SplitOwnerId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SplitPercentage</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SplitTypeId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Prevent_Opportunity_Split_Creation</fullName>
+        <active>true</active>
+        <description>Rule to prevent users to not have the ability to create new Opportunity Splits other than System Administrator.</description>
+        <errorConditionFormula>AND(
+ISNEW(),
+$Profile.Name != &quot;System Administrator&quot;
+)</errorConditionFormula>
+        <errorMessage>Your assigned Profile does not allow for creating new Opportunity Splits.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Opportunity_Split_Update</fullName>
+        <active>true</active>
+        <description>Rule to prevent users to not have the ability to update Agreements other than System Administrator.</description>
+        <errorConditionFormula>AND(
+NOT(ISNEW()),
+$Profile.Name != &quot;System Administrator&quot;
+)</errorConditionFormula>
+        <errorMessage>Your assigned Profile does not allow for updating Opportunity Splits.</errorMessage>
+    </validationRules>
+</CustomObject>

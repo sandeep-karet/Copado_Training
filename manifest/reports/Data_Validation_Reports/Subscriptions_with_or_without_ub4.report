@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SBQQ__Subscription__c$Name</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Subscription__c$SBQQ__ProductName__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SBQQ__Subscription__c$Membership_Fee__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SBQQ__Subscription__c$Current_Membership_Fee__c</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Subscription__c$Price_Change_Reason__c</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Subscription__c.SBQQ__ChildAssets__r$Id</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Subscription__c.SBQQ__ChildAssets__r$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SBQQ__Subscription__c.SBQQ__ChildAssets__r$Consult_Fees__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows subscriptions with or without assets required by subscriptions</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SBQQ__Subscription__c$Id</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Subscriptions with or without Assets</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Assets_with_Asset_History__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>SBQQ__Subscription__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

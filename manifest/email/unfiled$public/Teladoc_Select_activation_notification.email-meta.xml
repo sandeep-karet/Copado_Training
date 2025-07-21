@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template to use on sending out email notifications when Teladoc Select field is activated on Group</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Sales_With_Logo_in_Footer</letterhead>
+    <name>Teladoc Select activation notification</name>
+    <style>freeForm</style>
+    <subject>Teladoc Select feature activated for Group!</subject>
+    <textOnly>Hi,
+
+This is to notify you that {!Group__c.LastModifiedBy} has activated the Teladoc Select feature for the following Group
+
+Group: {!Group__c.Name}
+Group #: {!Group__c.Group_Number__c}
+
+Account: {!Group__c.Account__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

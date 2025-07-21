@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Managing blood pressure</label>
+    <protected>false</protected>
+    <values>
+        <field>LVGO__Initial_Message_Content__c</field>
+        <value xsi:type="xsd:string">High blood pressure can lead to other health issues for people with diabetes. Get our tips on staying in the healthy blood pressure zone.</value>
+    </values>
+    <values>
+        <field>LVGO__Initial_Message__c</field>
+        <value xsi:type="xsd:string">Managing blood pressure</value>
+    </values>
+</CustomMetadata>

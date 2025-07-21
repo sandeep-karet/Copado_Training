@@ -1,0 +1,15 @@
+<apex:page showHeader="false" sidebar="false">
+    <apex:includeLightning />    
+    <apex:includeScript value="/lightning/lightning.out.js" />
+    <div id="LightningComponentid" />    
+    <script>
+    $Lightning.use("c:SubOptionsLngOut", function() {
+        $Lightning.createComponent("c:subOptions",
+          { 
+          },
+          "LightningComponentid",
+          function(cmp) {
+          });
+    });
+    </script>
+</apex:page>

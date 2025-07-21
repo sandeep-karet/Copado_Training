@@ -1,0 +1,22 @@
+<apex:page id="NASFGroupSelection" controller="Mg2_NasfLngOutController" lightningStylesheets="true">
+    <apex:pageMessages id="msg" escape="false" />   
+    <apex:form rendered="{! accountId != null }">
+        
+        <apex:includeLightning />
+        <div id="main-container"/>
+        <script>
+        function loadComponents(){
+            $Lightning.use("c:Mg2_AccountSetUpApp", function() {
+                $Lightning.createComponent("c:mg2_NASFLngOutLwc", 
+                                           {     
+                                               "recordId" : "{! accountId }"
+                                           },
+                                           "main-container",
+                                           function(cmp) {
+                                           });
+            });
+        }     
+        loadComponents();
+        </script>
+    </apex:form>
+</apex:page>

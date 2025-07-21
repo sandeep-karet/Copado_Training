@@ -1,0 +1,17 @@
+<!-- Used as a publisher action to display a TinderBox Proposal PDF -->
+<apex:page standardController="tinderbox__Proposal__c" extensions="tinderbox.proposalExtension" docType="html-5.0" showHeader="false">
+    <style type="text/css">
+        html, body { height: 100%; }
+    </style>
+    <!-- This is somehow initializing state for the ApplicationView -->
+    <apex:form >
+        <apex:inputhidden value="{!tinderbox__Proposal__c.tinderbox__TBAccount__c}" />
+    </apex:form>
+    <apex:outputText value="{!tinderbox__Proposal__c.tinderbox__tinderboxid__c}" rendered="false"/>
+    <!-- End -->
+
+    <c:ApplicationView path="/preview/{!TinderboxId}.pdf"
+       TBAccountEndPoint="{!TBAccountEndPoint}"
+       height="95%"></c:ApplicationView>
+
+</apex:page>

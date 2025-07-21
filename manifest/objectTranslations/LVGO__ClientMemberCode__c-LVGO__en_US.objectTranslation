@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>LV Client Member Code</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>LV Client Member Codes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>LVGO__Account_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defines the relationship between a Client Account and a Client Member Code --></help>
+        <label><!-- Client Account --></label>
+        <name>LVGO__Account__c</name>
+        <relationshipLabel><!-- Client Member Codes --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Defines the Client Member Code value (e.g. &quot;VALLEYPROTEINS&quot;).
+The Client Member Code must contain only UPPERCASE letters, numbers, and/or a dash. It should not contain any other special characters --></help>
+        <label><!-- Code --></label>
+        <name>LVGO__ClientMemberCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defines the relationship between a Client Account and a Client Member Code --></help>
+        <label><!-- Client Account --></label>
+        <name>LVGO__Client_Account__c</name>
+        <relationshipLabel><!-- Client Member Codes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Client Member Code ID_Long --></label>
+        <name>LVGO__Client_Member_Code_ID_Long__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defines the relationship between a Client Account and a Client Overview contract. --></help>
+        <label><!-- Contract --></label>
+        <name>LVGO__Contract__c</name>
+        <relationshipLabel><!-- Client Member Codes --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Defines the relationship between a Client Account and a Client Overview contract. --></help>
+        <label><!-- Contract --></label>
+        <name>LVGO__Contractcustom__c</name>
+        <relationshipLabel><!-- Client Member Codes --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to designate which Reg Code should be used for downmarket set up based on Programs --></help>
+        <label><!-- Downmarket Reg Code Program Associations --></label>
+        <name>LVGO__Downmarket_Reg_Code_Program_Associations__c</name>
+        <picklistValues>
+            <masterLabel>BH</masterLabel>
+            <translation><!-- BH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DM</masterLabel>
+            <translation><!-- DM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DM + BH</masterLabel>
+            <translation><!-- DM + BH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DM + DPP</masterLabel>
+            <translation><!-- DM + DPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DM + DPP + HTN</masterLabel>
+            <translation><!-- DM + DPP + HTN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DM + DPP + HTN + WM + BH</masterLabel>
+            <translation><!-- DM + DPP + HTN + WM + BH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DM + HTN</masterLabel>
+            <translation><!-- DM + HTN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPP</masterLabel>
+            <translation><!-- DPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HTN</masterLabel>
+            <translation><!-- HTN --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Enable Core Admin Import? --></label>
+        <name>LVGO__Enable_Core_Admin_Import__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Salesforce Id --></label>
+        <name>LVGO__Legacy_Salesforce_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- OneApp Access --></label>
+        <name>LVGO__OneApp_Access__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date a client is starting on the OneApp experience. If existing client is migrating, then ensure this is completed at least 2 weeks before client launches on OneApp. Marketing needs at least 1 week for changes to take effect. --></help>
+        <label><!-- OneApp Start Date --></label>
+        <name>LVGO__OneApp_Migration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SPA CMC Prefix --></label>
+        <name>LVGO__SPA_CMC_Prefix__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether a Client Member Code is used by the member to Register --></help>
+        <label><!-- Used for Registration --></label>
+        <name>LVGO__UsedforRegistration__c</name>
+    </fields>
+    <fields>
+        <label><!-- myStrength 1.0 Access Code(s) --></label>
+        <name>LVGO__myStrength_1_0_Access_Code_s__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Client Member Code --></label>
+        <name>LVGO__ClientMemberCode</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Registration Only --></label>
+        <name>LVGO__RegistrationOnly</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- If OneApp Access is checked you must enter a OneApp Start Date value. If you enter a OneApp Start Date value then you need to enable OneApp Access flag. --></errorMessage>
+        <name>LVGO__Check_oneApp_Access_n_oneApp_start_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Client Member Code must contain only UPPERCASE letters, numbers, and/or a dash --></errorMessage>
+        <name>LVGO__Limit_Characters</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Mkt Site User</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Mkt Site Users</value>
+    </caseValues>
+    <fields>
+        <help><!-- MSU Contact to have marketing hub access for this member group --></help>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Mkt Site Users --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- SF record name of member group --></help>
+        <label><!-- Member Group --></label>
+        <name>Mbr_Group__c</name>
+        <relationshipLabel><!-- Mkt Site Users --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Contact already has access to this group based on their account. --></errorMessage>
+        <name>Already_Has_Access</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Contact is not an active marketing site user --></errorMessage>
+        <name>Contact_not_Marketing_Site_User</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Member group must be Active or Pending. --></errorMessage>
+        <name>Invalid_Group</name>
+    </validationRules>
+</CustomObjectTranslation>

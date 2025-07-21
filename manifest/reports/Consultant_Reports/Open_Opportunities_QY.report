@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_62965764</developerName>
+        <masterLabel>Consultant Bucket</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Broker_Opp_Rel__c$Servicing_Account__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Aon Hewitt LLC - HQ</sourceValue>
+            </sourceValues>
+            <value>Aon</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Mercer - New York, NY (HQ)</sourceValue>
+            </sourceValues>
+            <value>Mercer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Towers Watson - HQ</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis &amp; Associates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Group - Chicago, IL (HQ)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Group-Austin-TX</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Towers Watson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Towers Watson - Alabama</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Towers Watson - Nashville</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>WillisTowersWatson</sourceValue>
+            </sourceValues>
+            <value>WTW</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Lockton Benefit Group</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lockton Companies - Kansas City (HQ)</sourceValue>
+            </sourceValues>
+            <value>Lockton</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_62965764</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Broker_Opp_Rel__c$Broker_Account_Name__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.Name</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.CloseDate</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.Ann_Rec_Rev__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.Initial_of_Lives__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Servicing_Account__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Location_of_Record__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Broker_Contact__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.Owner</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Id</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.Opportunity_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Broker_Rel__c.Id</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Broker_Opp_Rel__c$Opp_Broker__c.StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Closed Won,Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Broker_Opp_Rel__c$Servicing_Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Aon,Mercer,Lockton,Willis,Towers Watson,Willis Towers Watson,Towers Watson HQ,WTW</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Broker_Opp_Rel__c$Opportunity_Stage__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_62965764</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Open Opportunities QY</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Broker_Opportunity_Relations__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Broker_Opp_Rel__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

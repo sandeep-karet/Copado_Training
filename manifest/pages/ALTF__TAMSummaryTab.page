@@ -1,0 +1,1043 @@
+<apex:page standardController="ALTF__Account_Plan__c"
+    extensions="ALTF.MaxNotificationController,ALTF.AMBase_Navigation_Extension"
+>
+    <apex:stylesheet value="{!URLFOR($Resource.ALTF__amFonts, 'style.css')}"/>
+    <apex:includeLightning />
+
+    <apex:includeScript value="{!URLFOR($Resource.ALTF__prefix)}"/>
+
+    <c:salesforce_design_system_helper />
+    <c:PPTAPI />
+    <apex:slds />
+    
+    <apex:variable var="hasRetURL" value="{!IF(OR(ISNULL($CurrentPage.parameters.retURL), ISBLANK($CurrentPage.parameters.retURL)),false,true)}"/>
+    <apex:variable var="overviewSelected" value="{!IF(CONTAINS(selectedPage,'acc_mgmt_plan_summary_app'),true,false)}"/>
+    <apex:variable var="detailsSelected" value="{!IF(CONTAINS(selectedPage,'acc_mgmt_plan_details_new_app'),true,false)}"/>
+    <apex:variable var="oppMapSelected" value="{!IF(CONTAINS(selectedPage,'am_opp_map_app'),true,false)}"/>
+    <apex:variable var="objectivesSelected" value="{!IF(CONTAINS(selectedPage,'acc_mgmt_objectives_app'),true,false)}"/>
+    <apex:variable var="tandiSelected" value="{!IF(CONTAINS(selectedPage,'acc_mgmt_tandi_mgmt_app'),true,false)}"/>
+
+    <apex:variable var="tabOneSelected" value="{!IF(CONTAINS(selectedPage,'tabIndex=1'),true,false)}"/>
+    <apex:variable var="tabTwoSelected" value="{!IF(CONTAINS(selectedPage,'tabIndex=2'),true,false)}"/>
+    <apex:variable var="tabThreeSelected" value="{!IF(CONTAINS(selectedPage,'tabIndex=3'),true,false)}"/>
+    <apex:variable var="showInaccessibleAccounts" value="{!IF(hasInaccessibleAccounts, true, false)}"/>
+    
+    <c:ObjectiveCreateModal accountPlanId="{!accountPlan.Id}"
+        jQueryUIDateFormat="{!jQueryUIDateFormat}" 
+        dontLoadVendor="{!NOT(shouldloadVendor)}"/>
+    <apex:include pageName="ALTF__acc_mgmt_objectives_app_remote_objects"/>
+    <apex:outputPanel styleClass="inaccessible-accounts_warning" rendered="{!showInaccessibleAccounts}">
+        <div class="slds-scope">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_warning" role="status">
+                    <span class="slds-icon_container slds-icon-utility-warning slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
+                        <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                        </svg>
+                    </span>
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small ">{!$Label.ALTF__PLACEHOLDER_17} <a href="#" class="show_extra">{!$Label.ALTF__PLACEHOLDER_19}</a>.</h2>
+                        <div class="inaccessible-accounts_list">
+                            <h2 class="slds-text-heading_small slds-var-p-top_small">{!$Label.ALTF__PLACEHOLDER_18}</h2>
+                            <div class="slds-box slds-scrollable inaccessibleAccountsScroller">
+                                <ul>
+                                    <apex:repeat value="{!inaccessibleAccounts}" var="acc" id="inaccessibleAccountList">
+                                        <li>{!acc.Id}</li>
+                                    </apex:repeat>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-notify__close">
+                        <button class="slds-button slds-button_icon slds-button_icon-inverse hide_warning" title="{!$Label.ALTF__COMMON_CLOSE}">
+                            <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                            </svg>
+                            <span class="slds-assistive-text">{!$Label.altf__common_close}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </apex:outputPanel>
+    <apex:outputPanel layout="block" 
+        styleClass="amPanel smartOMPanel altify" 
+        rendered="{!NOT(isPhone) && isLicensedForAccountManager && NOT( $CurrentPage.parameters.hide_summary  == 'true')}">
+        <div class="accountPlanLinkContainer">
+            <span class="altify_logo"></span>
+            <div class="accountPlanListLinkContainer">
+                    {!$Label.ALTF__ACCOUNT_MANAGER}
+            </div>
+        </div>
+        <div class="accountPlanSummaryText_container">
+            <apex:outputPanel styleClass="slds altify-navigation-readOnly-container" rendered="{!NOT(editable)}">
+                <apex:outputText value="{!$Label.altf__om_read_only_access}" styleClass="readOnlyText slds-badge altify-navigation-readOnly"/>
+            </apex:outputPanel>
+            <apex:outputPanel styleClass="slds altify-navigation-readOnly-container testclass" rendered="{!inactive}">
+                <apex:outputText value="{!$Label.altf__am_inactive_plan}" styleClass="readOnlyText slds-badge altify-navigation-readOnly"/>
+            </apex:outputPanel>
+            <div 
+                class="plan-name slds-truncate" 
+                title="{!accountPlan.Name} ({!PlanTypeLabel})"> {!accountPlan.Name} ({!PlanTypeLabel}) : </div>
+            <div class="revenue-target"> {!$Label.ALTF__resource_plantarget} {!formattedRevenueTarget}</div>
+        </div>
+        <div class="altify tabsRHS">
+            <div 
+                class="smartOMMax__container" 
+                style="{! IF(!isMAXEnabled, 'display:none;', '' )}">
+                <c:MAXNotificationIcon opportunity_id="{! accountPlan.id }" notWebpack="false"/>
+            </div>
+
+            <div
+                class="slds create_dropdown slds-dropdown-trigger--click"
+                onClick="javascript: toggleCreateMenu();">
+                <button class="create_dropdown_button altify_create_dropdown_button slds-button">
+                    <span class="slds-icon_container">
+                        <span class="slds-button__icon sldsico-action-new"/>
+                    </span>
+                </button>
+                <div
+                    class="slds-dropdown slds-dropdown--right create_dropdown_ul"
+                    style="display: none;">
+                  <ul 
+                    class="dropdown__list altify_dropdown__list" 
+                    role="menu">
+                        <apex:outputText rendered="{!canCreateObjectives}">
+                            <li
+                                id="AddObjectiveLi"
+                                class="slds-dropdown__item"
+                                style="display:none">
+                                <a
+                                    class="slds-truncate"
+                                    style="display: block;"
+                                    href="javascript:void(0);"
+                                    id="AddObjectiveButton"
+                                    onClick="javascript: showObjectiveCreateEditDialog(null);">{!$Label.FAB_CREATE_OBJECTIVE}</a>
+                            </li>
+                        </apex:outputText>
+                    <apex:outputText rendered="{!canCreateTasks}">
+                        <li
+                            id="AddActionLi"
+                            class="slds-dropdown__item"
+                            style="display:block">
+                            <a
+                                class="slds-truncate"
+                                style="display: block;"
+                                href="javascript:void(0);"
+                                id="AddActionButton"
+                                onClick="javascript: showActionCreateEditDialog(null);">{!$Label.FAB_CREATE_ACTION}</a>
+                        </li>
+                    </apex:outputText>
+                  </ul>
+                </div>
+            </div>
+            <div class="slds-m-left_small settings_button_container slds-show_large">
+                <button
+                    ttgid="AccountPlanOPTIONSSETTINGS"
+                    id="AccountPlanIconButtonSettings"
+                    class="slds-button slds-button--neutral"
+                    onclick="handleNavigateAccountPlanCreate(event.tabs)"
+                    >
+                    <span class="sldsico-utility-settings"/>
+                    <span>{!$Label.COMMON_SETTINGS}</span>
+                </button>
+            </div>
+            <div class="slds-m-left_small settings_button_container slds-hide_large">
+                <button
+                    ttgid="     "
+                    id="AccountPlanIconButtonSettings"
+                    class="slds-button slds-button_icon slds-button_icon-border"
+                    onclick="
+                        javascript: jQuery(this).toggleClass(':active');
+                        ttg.urlServiceInstance.goToURL(
+                            '{! JSENCODE(domainUrl + '/' + accountPlanCreatePageUrl) }' +
+                            '?id=' + '{!JSENCODE(accountPlan.Id)}' + 
+                            '&retURL=' + encodeURIComponent(window.location.href) + '#/' + '{!JSENCODE(accountPlan.Id)}' + (event.tabs ? '/' + event.tabs : '')
+                        )
+                    ">
+                    <span class="slds-button__icon sldsico-utility-settings"/>
+                </button>
+            </div>
+            <div class="helpAndPPTContainer slds-m-horizontal--small">
+                <apex:outputPanel layout="block" 
+                    styleClass="TAMAdminLink" 
+                    rendered="{!isLicensedForAccountManager}">
+                    <span 
+                        id="TAMADMINLINK" 
+                        class="slds-icon_container">
+                        <div 
+                            class="slds-button-group am-button-group" 
+                            role="group">
+                            <div class="slds-dropdown-trigger slds-dropdown-trigger--click customDownloadsTrigger">
+                                <button
+                                    class="slds-button_first slds-button slds-button--icon-border"
+                                    onclick="javascript: toggleDownloadMenu();"
+                                    id="AccountPlanIconButtonDownloads"
+                                >
+                                    <div class="altify-font altify-icon-container altify-double-icon-container altify-download-icon-container">
+                                      <div class="sldsico-utility-download"></div>
+                                    </div>
+                                </button>
+                                <div class="slds-dropdown slds-dropdown--right downloadDropdown">
+                                    <ul class="dropdown__list altify_dropdown__list" 
+                                        role="menu">
+                                         <li
+                                            id="AMPPTLink"
+                                            class="slds-dropdown__item"
+                                            style="display:none;"
+                                        >
+                                            <a
+                                                href="javascript:void(0);"
+                                                id="PPTEXPORT2"
+                                                onclick="javascript: handlePPTXNew();">{!$Label.COMMON_PPT_EXPORT}</a>
+                                        </li>
+                                        <li
+                                            id="AMEXECBRIEFINGTLink"
+                                            class="slds-dropdown__item"
+                                        >
+                                            <a
+                                                href="javascript:void(0);"
+                                                id="PPTEXPORT2"
+                                                onclick="javascript: handleExecBriefing();">{!$Label.CREATE_EXECUTIVE_BRIEFING}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="slds-dropdown-trigger slds-dropdown-trigger--click customReportsTrigger">
+                                <button
+                                    class="slds-button slds-button--icon-border"
+                                    onclick="javascript: reports.toggleDropdown();"
+                                    id="AccountPlanIconButtonReports"
+                                    style="display:none"
+                                    disabled="disabled"
+                                >
+                                    <div class="altify-font altify-icon-container altify-report-icon-container">
+                                      <div class="sldsico-standard-report"></div>
+                                    </div>
+                                </button>
+                                <div class="slds-dropdown slds-dropdown--right reportsDropdown">
+                                </div>
+                            </div>
+                            <apex:outputPanel rendered="{!NOT(disableChatter)}" layout="block">
+                                <div class="
+                                    slds-dropdown-trigger
+                                    slds-dropdown-trigger--click
+                                    altify-chatter-button-container"
+                                >
+                                    <button
+                                        disabled="disabled"
+                                        class="slds-button slds-button--icon-border altify-chatter-button"
+                                        onclick="javascript: ttg_chatter.togglePanel();"
+                                        id="AccountPlanIconButtonChatterFeed"
+                                    >
+                                        <div class="altify-font altify-icon-container altify-double-icon-container altify-report-icon-container">
+                                          <div class="sldsico-utility-feed"></div>
+                                        </div>
+                                    </button>
+                                    <apex:include pageName="ALTF__ChatterPostAM"/>
+                                </div>
+                            </apex:outputPanel>
+                            <div class="slds-button_last">
+                                <c:help_dropdown_button />
+                            </div>
+                        </div>
+                    </span>
+                </apex:outputPanel>
+            </div>
+        </div>
+    </apex:outputPanel>
+    <apex:outputPanel layout="block" styleClass="altify" rendered="{!NOT(isPhone) && isLicensedForAccountManager && NOT( $CurrentPage.parameters.hide_summary  == 'true')}">
+        <div class="altify-navigation">
+            <ul>
+            <apex:repeat value="{!navTabs}" var="navTab" id="navTabs">
+                 <c:outputLink styleClass="{!IF(navTab.selected,'active','')}"
+                        target="{!IF(isWin8Touch, '_self', '_top')}"
+                        value="{! navTab.url}" 
+                        rendered="{! navTab.rendered}"
+                    >
+                        <li title="{! navTab.label}" ttgid="{!navTab.ttgId}">
+                            <span class="menu-icon {!navTab.iconClass}"></span>
+                            <span class="linkText slds-truncate">{! navTab.label}</span>
+                        </li>
+                    </c:outputLink>
+            </apex:repeat>
+            </ul>
+        </div>
+    </apex:outputPanel>
+
+    <style>
+        .amPanel{
+            display: flex;
+            border-bottom: 1px solid #d8dde6;
+            padding-bottom: 5px;
+        }
+
+        html.launchpad_lightning_class body.sfdcBody{
+            padding: 10px 20px 0 20px;
+            background-color: white;
+            width: 98%;
+        }
+
+        html.launchpad_lightning_class body{
+            padding: 10px 20px 0 20px;
+            background-color: white;
+            width: 98%;
+        }
+
+        /**
+        * Nelson Ramalho : Styles for breadcrumblinks
+        */
+        div.accountPlanListLinkContainer {
+            display: inline-block;
+            margin-right: 10px;
+            color : #00396b;
+            font-size: 18px;
+            line-height: 22px;
+            color: #54698d;
+            font-weight: 100;
+        }
+
+        .reports-dropdown__header{
+            white-space: nowrap;
+        }
+
+        .accountPlanLinkContainer .altify_logo {
+            background: url('{!URLFOR($Resource.ALTF__Common, 'images/altify_logo@2x.png')}') no-repeat;
+            background-size: 100%;
+            width: 17px;
+            height: 21px;
+            margin-right: 10px;
+        }
+
+        /**
+        * DMDEV-9198 - AM Tabs - Vertical Navigate UI Update
+        **/
+
+        .altify .smartOMTabContainerBottom{
+            margin-bottom: 0px;
+        }
+
+        .altify-nav-tab{
+            font-weight: 100;
+        }
+
+        .accountPlanLinkContainer{
+            display: flex;
+            align-items: center;
+            flex: 0 0 auto;
+        }
+
+        .altify-navigation{
+            border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .altify-navigation ul{
+            display: flex;
+            justify-content: space-between;
+            max-width: calc(10.5% * {!NumTabs}); 
+        }
+
+        .altify-navigation ul a{
+            text-decoration: none !important;
+            text-align: left;
+            padding-top: 0;
+            flex: 0 1 0;
+            padding-right: 20px;
+            max-width: calc(100% / {!NumTabs});
+        }
+
+        .altify-navigation ul a li{
+            display: inline-flex;
+            align-items: center;
+            flex-direction: row;
+            line-height: 40px;
+            color: #8F8F8F;
+            min-width:80px;
+            max-width: 100%;
+        }
+
+        .altify-navigation ul a.active li{
+            color: #0070D2;
+            border-bottom: 3px solid #0070D2;
+        }
+
+        .altify-navigation .linkText{
+            display:inline;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .altify-navigation ul li .menu-icon{
+            font-size: 1rem;
+        }
+
+        .altify-seperator{
+            display: inline-block;
+            height: 30px;
+            margin-right: 0px;
+            margin-left: 10px;
+            margin-top: -4px;
+        }
+
+        .altify li.slds-dropdown__item,
+        .altify li.slds-dropdown__header{
+            margin-left: 0;
+        }
+
+        
+        .slds #altify-active-page{
+            padding-bottom: 5px;
+            max-width: 261px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-weight: 100;
+            line-height: 25px;
+        }
+
+        .slds .altify-nav-tab-dropdown-icon{
+            height: 24px;
+            width: 19px;
+            position: absolute;
+            right: -5px;
+            top: 5px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 100;
+        }
+
+        @media only screen
+        and (min-device-width : 768px)
+        and (max-device-width : 1024px)  {
+            
+            .tabsLHS{
+                width: 60%;
+            }
+
+            .tabsRHS{
+                width: 39%;
+                float: right;
+            }
+
+            .helpAndPPTContainer{
+                float: right;
+                height: 35px;
+            }
+
+            .slds #altify-active-page {
+                line-height: 19px;
+            }
+        }
+
+        .create_dropdown{
+            position: relative;
+        }
+
+        .create_dropdown .show_dropdown{
+            display:block !important;
+        }
+
+        .settings_button_container{
+            position: relative;
+            margin-left: 0.75em;
+        }
+
+        .slds .disabled_button{
+            background-color: #fff !important;
+            cursor: default !important;
+            color: #d8dde6 !important;
+            pointer-events: none !important;
+        }
+
+        #altify-active-page span.sldsico-utility-down{
+            position: absolute;
+            top: 2px;
+            right: -5px;
+        }
+        .tabsLHS{
+            margin-bottom: 0.5rem !important;
+        }
+
+        .tabLHS .accountPlanLinkContainer{
+            display: flex;
+            align-items: center;
+        }
+
+        .accountPlanSummaryText_container{
+            display: flex;
+            align-items: center;
+            line-height:18px;
+            flex:1 1 auto;
+            min-width: 0;
+            color: #54698d;
+            font-size: 12px;
+
+        }
+
+            .accountPlanSummaryText_container .altify-navigation-readOnly-container{
+                margin: 4px 6px 0px 0px;
+            }
+
+                .accountPlanSummaryText_container  .altify-navigation-readOnly{
+                    color: #d4504c;
+                    background-color: #f3dbdb;
+                    text-transform: inherit;
+                }
+
+            
+            .accountPlanSummaryText_container .revenue-target{
+                flex-shrink: 0;
+                padding-left: 4px;
+            }
+
+
+        /**
+        * DMDEV-8127 - Users access Community Pages/Feedback pages
+        */
+        div.helpDropdown{
+            text-align: left;
+        }
+
+        li.altify_dropdown__inline_item {
+            padding: 0px 12px;
+            color: #16325c;
+            cursor: pointer;
+        }
+
+        /**
+        * =============================================================================================
+        * From: angular_apps/app/styles/ppt_export_dialog.css
+        * =============================================================================================
+        */
+        .ttg_section_picker_dialog ul {
+            margin:0.5em 0 0 0;
+            padding: 0;
+        }
+        .ttg_section_picker_dialog ul li,
+        .ttg_section_picker_dialog .instructions,
+        .ttg_section_picker_dialog .system_msg,
+        .ttg_section_picker_dialog .wrapper_labelinput {
+            float: none;
+            clear: both;
+            display: block;
+            margin:0;
+            padding:0;
+        }
+        .ttg_section_picker_dialog ul li {
+            list-style-type: none;
+            margin:0 0 0.5em;
+        }
+        .ttg_section_picker_dialog ul {
+            margin:0.5em 0 0 0;
+            padding: 0;
+        }
+        .ttg_section_picker_dialog .wrapper_label,
+        .ttg_section_picker_dialog .wrapper_input {
+            float: left;
+            display: block;
+            margin:0;
+            padding:0;
+        }
+        .ttg_section_picker_dialog .wrapper_label {
+            margin:0 0 0 1em;
+        }
+        .ttg_section_picker_dialog .system_msg {
+            margin: 0 0 1.5em 0;
+        }
+
+        div.add_objective{
+            position: relative;
+            float: right;
+            margin: 7px 10px 0px 10px;
+        }
+
+        .altify .TAMAdminLink .chatterContainer  {
+            max-height: 500px;
+            max-width: 550px;
+            min-width: 550px;
+            overflow: auto;
+            padding: 0px 0px 0px 7px;
+            border: 1px solid #999999;
+            box-sizing: content-box;
+        }
+
+        .altify .TAMAdminLink .chatterContainer .publishercontainer .bottomBar {
+            box-sizing: content-box;
+        }
+
+        .altify .TAMAdminLink .chatterContainer a {
+            display: inline;
+        }
+
+        .altify .TAMAdminLink .chatterContainer .feedcontainer .zen-select .feeditemActionMenuButton,
+        .altify .TAMAdminLink .chatterContainer .feedcontainer .zen-select .commentActionMenuButton {
+            display: block;
+        }
+
+        .altify .TAMAdminLink .chatterContainer .cxallfeedactions .feeditemActionMenu .zen-options a,
+        .altify .TAMAdminLink .chatterContainer .feedcommentactions .commentActionMenu .zen-options a {
+            display: block;
+        }
+
+        .altify .TAMAdminLink .chatterContainer .zen .comboMenu a.zen-trigger {
+            padding: 6px 12px;
+        }
+
+        .altify-chatter-button,
+        .altify-help-button {
+            border-radius: 0 !important;
+            border-left: 0 !important;
+            border-right: 0px !important;
+        }
+
+        .altify .am-button-group button{
+            width: 32px;
+            height: 32px;
+        }
+
+        .slds-button-group button[disabled] .altify-font {
+            color: #d8dde6;
+        }
+
+        .helpAndPPTContainer .TAMAdminLink .am-button-group .customReportsTrigger button{
+            border-radius: 0 0 0 0;
+        }
+
+        .sldsico-standard-report{
+            font-size: 16px;
+        }
+
+        .slds .altify_create_dropdown_button {
+            font-weight: 500;
+            font-size: 12px;
+            width: 34px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            height: 34px;
+            padding-right: 10px;
+            padding-left: 10px;
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #0070d2;
+            border: 1px solid #0070d2;
+            color: white;
+        }
+
+        .slds .altify_create_dropdown_button:hover,
+        .slds .altify_create_dropdown_button:focus,
+        .slds .altify_create_dropdown_button:active {
+            color: #fff;
+        }
+
+        .slds .altify_dropdown__list {
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        .slds .reports-dropdown__header {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .tabsRHS {
+            display:flex;
+            flex: 0 0 auto;
+        }
+
+        #TAMADMINLINK button#AccountPlanIconButtonSettings {
+            border-left: 0;
+        }
+
+        div.smartOMMax__container {
+            position: relative !important;
+            width: 30px !important;
+            height: 30px !important;
+            top: 0px !important;
+            right: 0px !important; 
+            margin: 0 5px;
+        }
+
+        .altify button#AccountPlanIconButtonDownloads {
+            border-right: 1px solid rgb(221, 219, 218);
+        }
+
+        .inaccessibleAccountsScroller {
+            height: 5rem;
+            background-color: white;
+            width: 100%;
+        }
+
+        .inaccessible-accounts_warning {
+            display: none;
+        }
+
+        .inaccessible-accounts_warning.show {
+            display: block;
+            top: 1rem;
+            z-index: 50;
+            left: 0;
+            right: 0;
+        }
+
+        .inaccessible-accounts_warning .slds-notify__close {
+            top: 1.75rem !important;
+            transform: translateY(-50%) !important;
+        }
+        .inaccessible-accounts_warning .inaccessible-accounts_list {
+            display: none;
+        }
+
+        .inaccessible-accounts_warning .inaccessible-accounts_list.show {
+            display: block;
+        }
+
+        .slds-scope .inaccessible-accounts_warning .slds-notify_container {
+            z-index: 0;
+        }
+
+    </style>
+
+    <script>
+
+        /*
+         * Copyright © {! JSENCODE($Setup.ALTF__Core_Settings__c.ALTF__Company_Name__c)}. All rights reserved.
+         *
+         */
+        var ttg = ttg || {};
+        ttg.apiLayer = ttg.apiLayer || {};
+
+        var spinnerImg = jQuery("<img id=\"tas_ajax_spinner\" class=\"spinner\" src=\"{!JSENCODE(URLFOR($Resource.ALTF__Common, '/images/loader.gif'))}\">");
+
+        
+        function toggleCreateMenu() {
+            var createDropdown = jQuery('.create_dropdown_ul');
+            createDropdown.toggleClass('show_dropdown');
+        }
+
+        function toggleDownloadMenu(){
+            console.log('toggleDownloadMenu called');
+            var downloadDropdown = jQuery('.customDownloadsTrigger');
+            downloadDropdown.toggleClass('slds-is-open')
+        }
+
+        jQuery(document).mouseup(function (e)
+        {
+            var createDropdownButton = jQuery('.create_dropdown_button');
+            var createDropdown = jQuery('.create_dropdown_ul');
+
+            if ( !createDropdownButton.is(e.target) && createDropdownButton.has(e.target).length === 0 )
+            {
+                createDropdown.removeClass('show_dropdown');
+            }
+
+            var downloadDropdownButton = jQuery('#AccountPlanIconButtonDownloads');
+            var downloadDropDown = jQuery('.customDownloadsTrigger');
+
+            if ( !downloadDropdownButton.is(e.target) && downloadDropdownButton.has(e.target).length === 0 )
+            {
+                downloadDropDown.removeClass('slds-is-open');
+            }            
+        });
+
+        function openInNewTab(url) {
+            window.open(url, '_blank');
+        }
+
+        if(typeof help != 'undefined'){
+            help.goToLearning = function(){
+                var url;
+                if ({!IF(overviewSelected, true, false)}) {
+                    url = 'https://help.uplandsoftware.com/altify/eLearningFall20/v9.6/AM/course.htm';
+                } else if ({!IF(detailsSelected, true, false)}) {
+                    url = 'https://help.uplandsoftware.com/altify/eLearningFall20/v9.6/AM/course.htm';
+                }else if ({!IF(oppMapSelected, true, false)}) {
+                    url = 'https://help.uplandsoftware.com/altify/eLearningFall20/v9.6/AM/Whitespace/whitespace-intro.htm';
+                }else if ({!IF(objectivesSelected,true,false)}) {
+                    url = 'https://help.uplandsoftware.com/altify/eLearningFall20/v9.6/AM/course.htm';
+                }else if({!IF(tandiSelected,true,false)}) {
+                    url = 'https://help.uplandsoftware.com/altify/eLearningFall20/v9.6/AM/Collaborate/collab-intro.htm';
+                }
+                openInNewTab(url);
+            }
+
+            help.showHelp = function() {
+                var url;
+                if ({!IF(overviewSelected,true,false)}) {
+                    url = '{!JSENCODE(helpURLBase)}' + '/Default.htm#cshid=AM_Plan_Overview';
+                } else if ({!IF(detailsSelected,true,false)}) {
+                    url = '{!JSENCODE(helpURLBase)}' + '/Default.htm#cshid=AM_Plan_Dets';
+                }else if ({!IF(oppMapSelected,true,false)}) {
+                    url = '{!JSENCODE(helpURLBase)}' + '/Default.htm#cshid=AM_Opp_Map';
+                }else if ({!IF(objectivesSelected,true,false)}) {
+                    url = '{!JSENCODE(helpURLBase)}' + '/Default.htm#cshid=AM_Objectives';
+                }else if({!IF(tandiSelected,true,false)}) {
+                    url = '{!JSENCODE(helpURLBase)}' + '/Default.htm#cshid=T-I';
+                }else {
+                    alert('Sorry, help not available')
+                }
+                var testwindow = window.open(url, "Altify", "resizable=1,location=1,status=1,scrollbars=1,width=600,height=600");
+            }
+        }
+
+        ttg.am = ttg.am || { };
+        
+        ttg.am.showSettingsHelp = function() {
+            window.open('{!JSENCODE(helpURLBase)}' + "/Default.htm#AM/Plan_Creation/Plan_Creation.htm", "TAS", "resizable=1,location=1,status=1,scrollbars=1,width=1000,height=600");
+        }
+
+        var _REPORTS = function(spec) {
+            var that = { };
+            var dropdownDisplayed = false;
+            var sf1 = {!$User.UIThemeDisplayed == 'Theme4t' || $User.UIThemeDisplayed == 'Theme4d' || $User.UIThemeDisplayed == 'Theme4u'};
+
+           function collapseDropdown() {
+                if (dropdownDisplayed) {
+                    dropdownDisplayed = !dropdownDisplayed;
+                    displayDropdown(dropdownDisplayed);
+                }
+            }
+
+            function displayDropdown(display) {
+                jQuery('.customReportsTrigger').toggleClass('slds-is-open');
+            }
+
+            function toggleDropdown() {
+                dropdownDisplayed = !dropdownDisplayed;
+                displayDropdown(dropdownDisplayed);
+
+            }
+
+            function createReportsList() {
+                var reportsList   = [
+                    {}
+                    <apex:repeat value="{! aMReportsList }"
+                        var="reportItem"
+                        id="contactRules">,
+                        {
+                            name: '{! JSENCODE(reportItem.displayas) }',
+                            url: '{! JSENCODE(reportItem.url) }'
+                        }
+                    </apex:repeat>
+                ];
+
+                reportsList.shift();
+
+                if (reportsList && reportsList.length > 0) {
+
+                    reportsList.sort(function(a, b) {
+                        return a.name.toUpperCase() < b.name.toUpperCase() ? -1 : +1;
+                    });
+
+                    var customReportsTitle = jQuery('<li class="slds-dropdown__header reports-dropdown__header" role="separator">')
+                        .append(
+                            jQuery('<span class="slds-text-title--caps slds-text-heading--label">'+'{!JSENCODE($Label.altf__am_related_salesforce_reports)}'+'</span>')
+                        );
+                    var customReportsUnorderedList = jQuery('<ul class="slds-dropdown__list dropdown__list dropdown-menu"/>').append(customReportsTitle);
+
+                    jQuery.each(reportsList, function(id, reportItem) {
+                        var trimmedId = '{! JSENCODE(accountPlan.Id) }';
+                        if(trimmedId.length > 15) {
+                            trimmedId = trimmedId.substring(0, 15);
+                        }
+                        var tabindex = id == 0 ? 0 : -1;
+
+                        var link = null;
+                        if(reportItem.name !== 'Dummy') {
+                            // Jira: ALT-8267
+                            // Was over-engineered or legacy.  "url" is always an Id
+                            var targetUrl;
+                            if (sf1) {
+                                // Lightning
+                                targetUrl = '/lightning/r/Report/' + reportItem.url + '/view?fv0=' + trimmedId;
+                            }
+                            else {
+                                // Classic
+                                targetUrl = '/' + reportItem.url + '?pv0=' + trimmedId;
+                            }
+
+                            link = jQuery('<a />', { href: targetUrl, target: '_blank', role: "menuitem", tabindex: tabindex })
+                                .append(
+                                    jQuery('<span class="slds-truncate"/>').text(reportItem.name)
+                                );
+                        }
+                        else {
+                            link = jQuery('<a href="javascript:void(0);" role="menuitem">', {tabindex: tabindex})
+                                        .append(
+                                            jQuery('<span class="slds-truncate">{!JSENCODE($Label.altf__ps_no_access)}</span>')
+                                        );
+                        }
+                        customReportsUnorderedList.append(jQuery('<li class="slds-dropdown__item" role="presentation"/>').append(link));
+                    });
+
+                    jQuery('div.reportsDropdown').append(customReportsUnorderedList);
+
+                    jQuery(document).click(function(e) {
+                        var elementClicked = jQuery(e.target);
+                        var reportsDropdown = jQuery('div.reportsDropdown');
+                        var reportsButton = jQuery('#AccountPlanIconButtonReports');
+                        if (
+                            (!reportsDropdown.is(elementClicked) &&
+                             reportsDropdown.has(elementClicked).length === 0) &&
+                            (!reportsButton.is(elementClicked) &&
+                            reportsButton.has(elementClicked).length === 0)
+                         ) {
+                            collapseDropdown();
+                        }
+                    });
+                    jQuery('#AccountPlanIconButtonReports').removeAttr('disabled');
+                    jQuery('#AccountPlanIconButtonReports').css('display', '');
+                }
+
+            }
+
+            that.collapseDropdown = collapseDropdown;
+            that.toggleDropdown = toggleDropdown;
+            that.createReportsList = createReportsList;
+
+            return that;
+        }
+        var inaccessibleAccounts = (function() {
+            var keyId = 'APWARNING_{!JSENCODE(accountPlan.Id)}'
+            var accounts = {!jsonnedInaccessibleAccounts};
+
+            function setWarning() {
+                jQuery('.inaccessible-accounts_warning .hide_warning').click(hide);
+                jQuery('.inaccessible-accounts_warning .show_extra').click(showExtra);
+
+                var shouldShowWarning = (accounts.length > 0) && getCookie();
+
+                if (accounts.length > 0) {
+                    if (getCookie()) {
+                        jQuery('.inaccessible-accounts_warning').addClass('show');
+                    }
+                }
+                else {
+                    removeCookie();
+                }
+            }
+
+            function hide() {
+                setCookie(true);
+                jQuery('.inaccessible-accounts_warning').removeClass('show');
+            }
+
+            function showExtra() {
+                jQuery('.inaccessible-accounts_warning .inaccessible-accounts_list').addClass('show');
+                jQuery('.inaccessible-accounts_warning .show_extra').css('visibility', 'hidden');
+
+            }
+
+            function getCookie() {
+                var data = sessionStorage.getItem(keyId) || 'show';
+                return data == 'show';
+            }
+
+            function setCookie(value) {
+                sessionStorage.setItem(keyId, value ? 'hide' : 'show');
+            }
+
+            function removeCookie() {
+                sessionStorage.removeItem(keyId);
+            }
+
+            return {
+                setWarning: setWarning
+            }
+
+        })();
+
+        var reports = _REPORTS({});
+
+        jQuery(document).ready(function() {
+
+            if(jQuery('div.smartOMTab').length == 7) {
+                jQuery("div.smartOMTab:eq(0)").addClass("planDetails");
+                jQuery("div.smartOMTab:eq(2)").addClass("longTitleTab");
+                jQuery("div.smartOMTab:eq(3)").addClass("planDetails");
+            }
+
+            //
+            // we show the link
+            //  if you have the PPTX extension installed
+            //
+            //
+            if ({!IF(showPPTLink,true,false)}) {
+                if ({!IF(isLicensedForPPT,true,false)}) {
+                    jQuery('#AMPPTLink').show();
+                }
+            }
+
+            if ({! (!IF(isObjectivesDisabledOnPlanType,true,false)) }) {
+                jQuery('#AddObjectiveLi').show();
+            }
+            //Show actions option at all times
+            jQuery('#AddActionLi').show();
+            if ({!NOT(editable)} ) {
+                jQuery('#AddObjectiveButton').addClass('disabled_button');
+            }
+
+            reports.createReportsList();
+
+            var feed = JSON.parse('{!JSENCODE(chatterPostDetails)}');
+
+            var shouldEnableFeed = feed.hasChatterGroup && feed.hasAccessToChatterGroup;
+
+            if(shouldEnableFeed) {
+                jQuery('button.altify-chatter-button').removeAttr('disabled');
+            }
+
+            inaccessibleAccounts.setWarning();
+        });
+
+        function handlePPTXNew() {
+            var accountPlanId = '{!JSENCODE(accountPlan.Id)}';
+            var url = '/apex/PPTAMDownload?Id=' + accountPlanId;
+            window.open(url, '_blank');
+        }
+
+
+        function handleExecBriefing() {
+
+             ttg.urlServiceInstance.goToURL(
+                    '{!  URLFOR(execBriefingPageUrl) }' + 
+                    (ttg.urlServiceInstance.isLightningExperience() ? '&': '?') + 
+                    'returnUrl=' + encodeURIComponent(window.location.href) + 
+                    '&id={!JSENCODE(accountPlan.Id)}' +
+                    '#/am/{!JSENCODE(accountPlan.Id)}'
+                );
+        }
+
+         function handleNavigateAccountPlanCreate(tabs) {
+
+            jQuery(this).toggleClass(':active');
+            ttg.urlServiceInstance.goToURL(
+                '{! URLFOR(accountPlanCreatePageUrl) }' + 
+                (
+                    ttg.urlServiceInstance.isLightningExperience() ? 
+                    '&id=' + 
+                    '{!JSENCODE(accountPlan.Id)}' : 
+                    '?id=' + 
+                    '{!JSENCODE(accountPlan.Id)}' 
+                ) + 
+                '&retURL=' + 
+                encodeURIComponent(window.location.href) + 
+                '#/' + 
+                '{!JSENCODE(accountPlan.Id)}' +
+                (tabs ? '/' + tabs : '')
+            );
+        }
+
+        /* Navigation */
+        jQuery('a.smartOMLink').click(function() {
+            jQuery('.overlay').toggle();
+        });
+
+        var isTouchScreen = ttg.isTouchScreen();
+        var isWindows8Tab = ttg.isWindows8Tab();
+        
+
+
+    </script>
+
+</apex:page>

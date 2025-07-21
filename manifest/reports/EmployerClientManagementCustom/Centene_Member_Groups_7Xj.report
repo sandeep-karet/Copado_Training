@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Mbr_Group__c$Name</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Name__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Id</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Status__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Member_Group_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$MK_consultarea__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Client_Form_Number__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows member groups on Centene Corporation client account</description>
+    <filter>
+        <criteriaItems>
+            <column>Mbr_Group__c$Client_Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>centene corporation</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Centene Member Groups</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Member_Groups__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Mbr_Group__c$Name__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Mbr_Group__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

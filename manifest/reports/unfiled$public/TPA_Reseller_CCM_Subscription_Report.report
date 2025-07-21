@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Subscription__c.SBQQ__ProductName__c</field>
+    </columns>
+    <columns>
+        <field>FK_ACC_ID</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.GUID__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.Active_Group_Count__c</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Subscription__c.SBQQ__ContractNumber__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.Account_Type__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Accounts that have a CCM subscription</description>
+    <filter>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <column>SBQQ__Subscription__c.SBQQ__ProductName__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Diabetes,Hypertension,Weight Management,DM Solution,DPP Solution,CV Solution</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$Account.Account_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Reseller,TPA</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>TPA_Reseller CCM Subscription Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$SBQQ__Subscription__c@SBQQ__Subscription__c.SBQQ__Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>SBQQ__Subscription__c.SBQQ__EndDate__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

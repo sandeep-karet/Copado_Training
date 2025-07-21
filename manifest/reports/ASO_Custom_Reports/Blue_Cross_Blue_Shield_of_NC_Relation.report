@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Acct_Rel__c$Name</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct_Name__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Relationship_Type__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Line_of_Business__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Type</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Account_Id_18__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>All Commercial accounts where BCBS NC is tagged as a servicing account</description>
+    <filter>
+        <criteriaItems>
+            <column>Acct_Rel__c$Svc_Acct_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Blue Cross Blue Shield of North Carolina</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Blue Cross Blue Shield of NC Relation</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_Relationships__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Acct_Rel__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

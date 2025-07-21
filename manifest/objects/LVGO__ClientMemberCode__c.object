@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>LVGO__Client_Member_Codes_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>LVGO__Client_Member_Codes_Compact_Layout</fullName>
+        <fields>LVGO__ClientMemberCode__c</fields>
+        <fields>LVGO__Account__c</fields>
+        <label>Client Member Codes Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Client Member Codes may be used to facilitate registration or to classify clients into groups for reporting and billing (or a combination of these options).  Legacy Registration Codes and Tags are captured as Client Member Codes in Salesforce.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>LVGO__Account_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__Account__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Defines the relationship between a Client Account and a Client Member Code</description>
+        <inlineHelpText>Defines the relationship between a Client Account and a Client Member Code</inlineHelpText>
+        <label>Client Account</label>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Client Member Codes</relationshipLabel>
+        <relationshipName>Client_Member_Groups</relationshipName>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__ClientMemberCode__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Defines the Client Member Code value (e.g. &quot;VALLEYPROTEINS&quot;)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the Client Member Code value (e.g. &quot;VALLEYPROTEINS&quot;).
+The Client Member Code must contain only UPPERCASE letters, numbers, and/or a dash. It should not contain any other special characters</inlineHelpText>
+        <label>Code</label>
+        <length>32</length>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Client_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Defines the relationship between a Client Account and a Client Member Code</description>
+        <inlineHelpText>Defines the relationship between a Client Account and a Client Member Code</inlineHelpText>
+        <label>Client Account</label>
+        <lookupFilter>
+            <active>false</active>
+            <errorMessage>You must choose an Account with record type Client Account or Downmarket Client</errorMessage>
+            <filterItems>
+                <field>LVGO__Account__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Client Account, Downmarket Client, Partner Account</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>LVGO__Account__c</referenceTo>
+        <relationshipLabel>Client Member Codes</relationshipLabel>
+        <relationshipName>Client_Member_Codes</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Client_Member_Code_ID_Long__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Id
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,1,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,2,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,3,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,4,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,5,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,6,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,7,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,8,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,9,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,10,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,11,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,12,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,13,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,14,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,15,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)</formula>
+        <label>Client Member Code ID_Long</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Defines the relationship between a Client Account and a Client Overview contract.</description>
+        <inlineHelpText>Defines the relationship between a Client Account and a Client Overview contract.</inlineHelpText>
+        <label>Contract</label>
+        <referenceTo>LVGO__Contract__c</referenceTo>
+        <relationshipLabel>Client Member Codes</relationshipLabel>
+        <relationshipName>Client_Member_Groups</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Contractcustom__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Defines the relationship between a Client Account and a Client Overview contract.</description>
+        <inlineHelpText>Defines the relationship between a Client Account and a Client Overview contract.</inlineHelpText>
+        <label>Contract</label>
+        <lookupFilter>
+            <active>false</active>
+            <errorMessage>You must choose a Client Overview contract.</errorMessage>
+            <filterItems>
+                <field>LVGO__Contract__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Client Overview</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>LVGO__Contract__c</referenceTo>
+        <relationshipLabel>Client Member Codes</relationshipLabel>
+        <relationshipName>Client_Member_Codes</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Downmarket_Reg_Code_Program_Associations__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used to designate which Reg Code should be used for downmarket set up based on Programs</description>
+        <inlineHelpText>Used to designate which Reg Code should be used for downmarket set up based on Programs</inlineHelpText>
+        <label>Downmarket Reg Code Program Associations</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>BH</fullName>
+                    <default>false</default>
+                    <label>BH</label>
+                </value>
+                <value>
+                    <fullName>DM</fullName>
+                    <default>false</default>
+                    <label>DM</label>
+                </value>
+                <value>
+                    <fullName>DM + BH</fullName>
+                    <default>false</default>
+                    <label>DM + BH</label>
+                </value>
+                <value>
+                    <fullName>DM + DPP</fullName>
+                    <default>false</default>
+                    <label>DM + DPP</label>
+                </value>
+                <value>
+                    <fullName>DM + DPP + HTN</fullName>
+                    <default>false</default>
+                    <label>DM + DPP + HTN</label>
+                </value>
+                <value>
+                    <fullName>DM + DPP + HTN + WM + BH</fullName>
+                    <default>false</default>
+                    <label>DM + DPP + HTN + WM + BH</label>
+                </value>
+                <value>
+                    <fullName>DM + HTN</fullName>
+                    <default>false</default>
+                    <label>DM + HTN</label>
+                </value>
+                <value>
+                    <fullName>DPP</fullName>
+                    <default>false</default>
+                    <label>DPP</label>
+                </value>
+                <value>
+                    <fullName>HTN</fullName>
+                    <default>false</default>
+                    <label>HTN</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__Enable_Core_Admin_Import__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Enable Core Admin Import?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Legacy_Salesforce_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Holds salesforce id&apos;s that can be referenced for existing data during migration</description>
+        <externalId>true</externalId>
+        <label>Legacy Salesforce Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__OneApp_Access__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>OneApp Access</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__OneApp_Migration_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>This is the date a client is starting on the OneApp experience. If existing client is migrating, then ensure this is completed at least 2 weeks before client launches on OneApp. Marketing needs at least 1 week for changes to take effect.</inlineHelpText>
+        <label>OneApp Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__SPA_CMC_Prefix__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SPA CMC Prefix</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__UsedforRegistration__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicate whether a Client Member Code is currently used for Registration purposes.</description>
+        <inlineHelpText>Indicates whether a Client Member Code is used by the member to Register</inlineHelpText>
+        <label>Used for Registration</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__myStrength_1_0_Access_Code_s__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>myStrength 1.0 Access Code(s)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>LV Client Member Code</label>
+    <listViews>
+        <fullName>LVGO__All</fullName>
+        <columns>NAME</columns>
+        <columns>LVGO__Account__c</columns>
+        <columns>LVGO__ClientMemberCode__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CMC-{000000}</displayFormat>
+        <label>CM Code Assignment Id</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>LV Client Member Codes</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>LVGO__ClientMemberCode</fullName>
+        <active>true</active>
+        <label>Client Member Code</label>
+        <picklistValues>
+            <picklist>LVGO__Downmarket_Reg_Code_Program_Associations__c</picklist>
+            <values>
+                <fullName>BH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM %2B BH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM %2B DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM %2B DPP %2B HTN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM %2B HTN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HTN</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>LVGO__RegistrationOnly</fullName>
+        <active>true</active>
+        <label>Registration Only</label>
+        <picklistValues>
+            <picklist>LVGO__Downmarket_Reg_Code_Program_Associations__c</picklist>
+            <values>
+                <fullName>BH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM %2B BH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM %2B DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM %2B DPP %2B HTN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM %2B DPP %2B HTN %2B WM %2B BH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM %2B HTN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HTN</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchResultsAdditionalFields>LVGO__ClientMemberCode__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LVGO__UsedforRegistration__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LVGO__Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LVGO__Contract__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>LVGO__Check_oneApp_Access_n_oneApp_start_Date</fullName>
+        <active>true</active>
+        <description>This is created as part of SCDEV-5393. It is to check oneApp Access and oneApp Start date both the fields has a values in it.</description>
+        <errorConditionFormula>AND ($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c,
+OR
+(
+  AND(  
+    LVGO__OneApp_Access__c= TRUE, 
+    ISBLANK(LVGO__OneApp_Migration_Date__c)),
+
+  AND( 
+    LVGO__OneApp_Access__c = FALSE, 
+    NOT(ISBLANK(LVGO__OneApp_Migration_Date__c))
+    ) 
+  )
+)</errorConditionFormula>
+        <errorMessage>If OneApp Access is checked you must enter a OneApp Start Date value. If you enter a OneApp Start Date value then you need to enable OneApp Access flag.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LVGO__Limit_Characters</fullName>
+        <active>true</active>
+        <description>Only allow uppercase letters, numbers, and a dash</description>
+        <errorConditionFormula>AND(NOT(REGEX(  LVGO__ClientMemberCode__c ,&quot;^[0-9 A-Z -]*&quot;)),$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c)</errorConditionFormula>
+        <errorDisplayField>LVGO__ClientMemberCode__c</errorDisplayField>
+        <errorMessage>The Client Member Code must contain only UPPERCASE letters, numbers, and/or a dash</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

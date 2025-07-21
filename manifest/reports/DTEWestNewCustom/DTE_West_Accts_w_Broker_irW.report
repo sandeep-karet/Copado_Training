@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor_Name__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Owner</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Opportunity_Count__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Relationship_Type__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Contract_Type__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$End_Date__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Broker_Contact__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Broker_Loc_Name__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows DTE West Accounts with Broker or relationships</description>
+    <filter>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <column>Acct_Rel__c$Relationship_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Benefit Partner or Vendor,Broker</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Acct_Rel__c$Benefit_Sponsor__c.Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Brenna Mack,Mike Davis,Scott Hoyer,Chris Cole</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>DTE - West Accts w Broker</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_Relationships__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Acct_Rel__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

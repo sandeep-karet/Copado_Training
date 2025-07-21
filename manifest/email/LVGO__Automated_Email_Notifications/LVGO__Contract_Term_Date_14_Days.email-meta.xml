@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LVGO__Livongo_Letterhead</letterhead>
+    <name>Contract Term Date &lt; 14 Days</name>
+    <style>freeForm</style>
+    <subject>{!LVGO__Contract__c.Name} will expire in 14 Days</subject>
+    <textOnly>Hello {!LVGO__Contract__c.LVGO__CSM__c} ,
+
+Your Contract {!LVGO__Contract__c.Name} is set to expire in two weeks. Please contact Legal to adjust accordingly before the expiration date.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,40 @@
+<apex:page id="IntakeFormPreview" controller="IntakeFormPreviewController">
+
+
+    <apex:pageMessages id="msg" />
+    <apex:form >
+        <apex:actionRegion >
+            <apex:pageBlock rendered="{! validOpp }">
+                <apex:pageBlockButtons location="top">
+                    <apex:commandButton action="{! sendIntakeForm }" value="Send" reRender="msg"/>
+                    <apex:commandlink action="{!showPDF}" target="_blank" title="View PDF for Preview/Download/Print in new tab" style="text-decoration:none;">
+                        <apex:commandButton value="View PDF" reRender="msg"/>
+                    </apex:commandlink>
+                    <apex:commandButton action="{!cancelIntakeForm}" value="Cancel"/>
+                </apex:pageBlockButtons>{! !validOpp }
+            </apex:pageBlock>
+        </apex:actionRegion>
+    </apex:form>
+
+    <apex:pageBlock rendered="{! !validOpp }">
+    <apex:pageBlockSection title="Related records" columns="1">
+        <apex:pageBlockSectionItem >
+            Opportunity:
+            <apex:outputLink value="/{! selOpp.Id }" >{! selOpp.Name }</apex:outputLink>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            Account:
+            <apex:outputLink value="/{! selAcc.Id }" >{! selAcc.Name }</apex:outputLink>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            Primary Contact:
+            <apex:outputLink value="/{! selAcc.Primary_Billing_Contact__c }">{! selacc.Primary_Billing_Contact__r.Name}</apex:outputLink>
+        </apex:pageBlockSectionItem>
+
+
+    </apex:pageBlockSection>
+    </apex:pageBlock>
+    <div style="margin-left:5%;margin-right:5%;margin-top:10px;">
+        <apex:include pageName="IntakeFormView" rendered="{! validOpp }"/>
+    </div>
+</apex:page>

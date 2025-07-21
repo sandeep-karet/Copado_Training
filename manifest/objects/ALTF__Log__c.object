@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>ALTF__AccountStrId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Account ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Account_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Account Plan</label>
+        <referenceTo>ALTF__Account_Plan__c</referenceTo>
+        <relationshipLabel>Altify Logs</relationshipLabel>
+        <relationshipName>Altify_Logs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Altify Logs</relationshipLabel>
+        <relationshipName>Altify_Logs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__AltifyId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>An external ID used for Altify</description>
+        <externalId>true</externalId>
+        <label>AltifyId</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Altify Logs</relationshipLabel>
+        <relationshipName>Altify_Logs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Is_Mobile__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Is Mobile</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Is_Opp_Owner__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>ALTF__User__c = ALTF__Opportunity__r.OwnerId</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Opp Owner</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Log_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Log Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>View</fullName>
+                    <default>false</default>
+                    <label>View</label>
+                </value>
+                <value>
+                    <fullName>Update</fullName>
+                    <default>false</default>
+                    <label>Update</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__OpportunityStrId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Opportunity ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Altify Logs</relationshipLabel>
+        <relationshipName>Altify_Logs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Page__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Page</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Process</fullName>
+                    <default>false</default>
+                    <label>Process</label>
+                </value>
+                <value>
+                    <fullName>Assessment</fullName>
+                    <default>false</default>
+                    <label>Assessment</label>
+                </value>
+                <value>
+                    <fullName>Relationships</fullName>
+                    <default>false</default>
+                    <label>Relationships</label>
+                </value>
+                <value>
+                    <fullName>Criteria</fullName>
+                    <default>false</default>
+                    <label>Criteria</label>
+                </value>
+                <value>
+                    <fullName>Insight Map</fullName>
+                    <default>false</default>
+                    <label>Insight Map</label>
+                </value>
+                <value>
+                    <fullName>Strategy</fullName>
+                    <default>false</default>
+                    <label>Strategy</label>
+                </value>
+                <value>
+                    <fullName>Actions</fullName>
+                    <default>false</default>
+                    <label>Actions</label>
+                </value>
+                <value>
+                    <fullName>Test &amp; Improve</fullName>
+                    <default>false</default>
+                    <label>Test &amp; Improve</label>
+                </value>
+                <value>
+                    <fullName>Plan Overview</fullName>
+                    <default>false</default>
+                    <label>Plan Overview</label>
+                </value>
+                <value>
+                    <fullName>Plan Details</fullName>
+                    <default>false</default>
+                    <label>Plan Details</label>
+                </value>
+                <value>
+                    <fullName>Segmentation</fullName>
+                    <default>false</default>
+                    <label>Segmentation</label>
+                </value>
+                <value>
+                    <fullName>Opportunity Map</fullName>
+                    <default>false</default>
+                    <label>Opportunity Map</label>
+                </value>
+                <value>
+                    <fullName>Value Map</fullName>
+                    <default>false</default>
+                    <label>Value Map</label>
+                </value>
+                <value>
+                    <fullName>Objectives</fullName>
+                    <default>false</default>
+                    <label>Objectives</label>
+                </value>
+                <value>
+                    <fullName>Scorecard</fullName>
+                    <default>false</default>
+                    <label>Scorecard</label>
+                </value>
+                <value>
+                    <fullName>Completeness</fullName>
+                    <default>false</default>
+                    <label>Completeness</label>
+                </value>
+                <value>
+                    <fullName>Quicklink</fullName>
+                    <default>false</default>
+                    <label>Quicklink</label>
+                </value>
+                <value>
+                    <fullName>Milestones</fullName>
+                    <default>false</default>
+                    <label>Milestones</label>
+                </value>
+                <value>
+                    <fullName>Smart Browser</fullName>
+                    <default>false</default>
+                    <label>Smart Browser</label>
+                </value>
+                <value>
+                    <fullName>Team View</fullName>
+                    <default>false</default>
+                    <label>Team View</label>
+                </value>
+                <value>
+                    <fullName>DVLS Quicklink</fullName>
+                    <default>false</default>
+                    <label>DVLS Quicklink</label>
+                </value>
+                <value>
+                    <fullName>Market View</fullName>
+                    <default>false</default>
+                    <label>Market View</label>
+                </value>
+                <value>
+                    <fullName>Plan Settings</fullName>
+                    <default>false</default>
+                    <label>Plan Settings</label>
+                </value>
+                <value>
+                    <fullName>AM Test &amp; Improve</fullName>
+                    <default>false</default>
+                    <label>AM Test &amp; Improve</label>
+                </value>
+                <value>
+                    <fullName>Altify Account</fullName>
+                    <default>false</default>
+                    <label>Altify Account</label>
+                </value>
+                <value>
+                    <fullName>Overview</fullName>
+                    <default>false</default>
+                    <label>Overview</label>
+                </value>
+                <value>
+                    <fullName>Call Plans</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Call Plans</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ALTF__Quicklink__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Quicklink</label>
+        <referenceTo>ALTF__Quicklink__c</referenceTo>
+        <relationshipLabel>Altify Logs</relationshipLabel>
+        <relationshipName>Altify_Logs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__SessionId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Track the session id for the log</description>
+        <externalId>false</externalId>
+        <label>SessionId</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Stage__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__UserStrId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>User ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Altify_Logs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_ID_for_Reports__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (ISNULL(ALTF__AccountStrId__c), ALTF__Account__c, ALTF__AccountStrId__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account ID for Reports</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Log_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Log Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_ID_for_Reports__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (ISNULL(ALTF__OpportunityStrId__c), ALTF__Opportunity__c, ALTF__OpportunityStrId__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity ID for Reports</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_ID_for_Reports__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (ISNULL(ALTF__UserStrId__c), ALTF__User__c, ALTF__UserStrId__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User ID for Reports</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Altify Log</label>
+    <nameField>
+        <label>AltifyLog Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Altify Logs</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

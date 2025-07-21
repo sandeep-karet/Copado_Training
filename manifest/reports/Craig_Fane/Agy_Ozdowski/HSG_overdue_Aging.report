@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF(
+  Opportunity.OneTime_Net_Total_With_PG__c:SUM &lt; 250000 &amp;&amp; AGE:SUM &gt; 96,
+  2,
+  IF(
+    Opportunity.OneTime_Net_Total_With_PG__c:SUM &gt;= 250000 &amp;&amp; Opportunity.OneTime_Net_Total_With_PG__c:SUM &lt;= 2000000 &amp;&amp; AGE:SUM &gt; 213,
+    2,
+    IF(
+      Opportunity.OneTime_Net_Total_With_PG__c:SUM &gt; 2000000 &amp;&amp; AGE:SUM &gt; 206,
+      2,
+      1
+    )
+  )
+)</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Overdue Aging</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_69966156</developerName>
+        <masterLabel>Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Opportunity.Sub_Channel__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Employer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - Downmarket</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - East Client Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - Labor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - Net New</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - UHC Employees</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - West Client Sales</sourceValue>
+            </sourceValues>
+            <value>Employer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>HSG</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Aetna</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - ASO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Blues</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Federal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - National</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Strategic Partnerships</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - United</sourceValue>
+            </sourceValues>
+            <value>HSG</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account.GUID__c</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Sub_Type__c</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Sub_Channel__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Contract_Path__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OneTime_Net_Total_With_PG__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Contracted_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Est_Fiscal_Period__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AGE</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Built for Agy</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND NOT (4 AND 5) AND 6 AND NOT (7 AND 8) AND 9 AND 10 AND 11 AND 12</booleanFilter>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,New Business,Upsell to Customer,&quot;Add-on Membership, Existing Customer&quot;,Hunting License,Price Increase</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Sub_Channel__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Canada,DTE - Client Management,Employer - Downmarket,HHS,HSG - TPA/Reseller</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OPPORTUNITY_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>(For Reporting Purposes Only)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Business,Upsell to Customer,&quot;Add-on Membership, Existing Customer&quot;,Price Increase</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Sub_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ASO Opt-Out</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>testingzzz</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>TYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Hunting License</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Sub_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>ASO Opt-Out</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Prospect,Discovery,Proposal,Review/Negotiation,Contracting,Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OneTime_Net_Total_With_PG__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>USD 0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AGE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_69966156</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>HSG</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_69966156</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STAGE_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Opportunity_Id_18__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>HSG overdue Aging</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.Decision_Date__c</dateColumn>
+        <interval>INTERVAL_PREVCURFY</interval>
+    </timeFrameFilter>
+</Report>

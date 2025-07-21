@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_36024732</developerName>
+        <masterLabel>Channels</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>ACCOUNT_ROLLUP_DESCRIPTION</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales - Broker</sourceValue>
+            </sourceValues>
+            <value>Broker/Small Employer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Management - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <value>TPA/Reseller</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Client Management - Direct</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales - DTE</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Services</sourceValue>
+            </sourceValues>
+            <value>DTE</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales - Canada</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Management - Canada</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales - VP</sourceValue>
+            </sourceValues>
+            <value>Canada</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales - HHS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Management - HHS</sourceValue>
+            </sourceValues>
+            <value>HHS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Client_Management_Core_HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client_Management_Key_HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Management - Aetna</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales_HP_Enterprise</sourceValue>
+            </sourceValues>
+            <value>Health Plan</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_36024732</groupingColumn>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>false</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Contact.ID_18__c</field>
+    </columns>
+    <columns>
+        <field>CONTACT_OWNER</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Type__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_OWNER_ROLE</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_ROLLUP_DESCRIPTION</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>interaction,information,marketing</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LAST_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>change</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_36024732</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>20 CONTACT TRACKING</name>
+    <params>
+        <name>closed</name>
+        <value>open</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>te</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactActivity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>FIRST_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

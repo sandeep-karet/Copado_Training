@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_93453620</developerName>
+        <masterLabel>Consultant Bucket</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Acct_Rel__c$Svc_Acct__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>AON Hewitt</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Aon Benefit Solutions</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Aon Benefit Solutions Non-RTO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Aon Hewitt LLC - HQ</sourceValue>
+            </sourceValues>
+            <value>Aon</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Towers Watson - HQ</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Towers Watson - Parent</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Group - Chicago, IL (HQ)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Towers Watson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Towers Watson - Aetna ASO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Towers Watson - Alabama</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>WillisTowersWatson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis of Arizona</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Towers Watson NYC</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Towers Watson Canada</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Towers Watson - Nashville</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Group-Austin-TX</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis Group - Farmington Hills, MI</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Willis &amp; Associates</sourceValue>
+            </sourceValues>
+            <value>WTW</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Mercer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mercer - New York, NY (HQ)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mercer Inc.</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mercer (Reitman&apos;s?)</sourceValue>
+            </sourceValues>
+            <value>Mercer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Lockton - Dallas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lockton Companies, Inc.</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lockton Companies - Kansas City (HQ)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lockton Naples</sourceValue>
+            </sourceValues>
+            <value>Lockton</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Acct_Rel__c$Relationship_Type__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Name</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c.GUID__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c.Name</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Broker_Location__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Contract_Type__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.GUID__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Opportunity_Count__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Owner</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Owner</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Account Relationships with Type = Broker and Service Acct = Aon, Mercer, WTW, or Lockton (variations bucketed), with # Open Opps &gt; 0</description>
+    <filter>
+        <criteriaItems>
+            <column>Acct_Rel__c$Relationship_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Broker</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Acct_Rel__c$Svc_Acct__c.Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Aon,Mercer,Lockton,Willis,Towers Watson,Willis Towers Watson,Towers Watson HQ,WTW</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Acct_Rel__c$Benefit_Sponsor__c.Opportunity_Count__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>,0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_93453620</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Consultant Account Realtionships</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_Relationships__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Acct_Rel__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

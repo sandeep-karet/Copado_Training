@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.AccountContactRelations$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.AccountContactRelations$IsDirect</field>
+    </columns>
+    <columns>
+        <field>Account.AccountContactRelations$Account</field>
+    </columns>
+    <columns>
+        <field>Account.AccountContactRelations*Contact$ID_18__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.AccountContactRelations$IsActive</field>
+    </columns>
+    <currency>USD</currency>
+    <description>This shows Contacts + Related Contacts on Accounts</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Account_Id_18__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>All Related Contacts Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Related_Contacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

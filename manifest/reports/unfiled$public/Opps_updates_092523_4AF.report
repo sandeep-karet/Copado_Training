@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Opportunity_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Direct_Contract__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Contracting_Lens__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>Opportunity$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Contract_Path__c.Name</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$LastModifiedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Cindy Everett</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Opps updates 092523</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_Custom__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$LastModifiedDate</dateColumn>
+        <endDate>2023-09-25</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2023-09-25</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,8 @@
+<apex:page standardController="tinderbox__Document__c" extensions="tinderbox.documentExtension">
+   <!-- docType defaults to document, can be presentation or contract -->
+   <c:ApplicationView path="salesforce/new_{!docType}"
+                       queryString="sobject_id={!ParentID}&sobject_type={!SObjectType}"
+                       TBAccountEndPoint="{!TBAccountEndPoint}"
+                       height="800px"></c:ApplicationView>
+
+</apex:page>

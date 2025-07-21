@@ -1,0 +1,1880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>LVGO__CampaignId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Campaign</label>
+        <referenceTo>LVGO__Campaign__c</referenceTo>
+        <relationshipLabel>Campaign Members</relationshipLabel>
+        <relationshipName>Campaign_Members</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__City__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__CompanyOrAccount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Company (Account)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Company_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LVGO__CompanyOrAccount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Company Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__ContactId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Contact</label>
+        <referenceTo>LVGO__Contact__c</referenceTo>
+        <relationshipLabel>Campaign Members</relationshipLabel>
+        <relationshipName>Campaign_Members</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Contact_Email_Opt_Out__c</fullName>
+        <deprecated>false</deprecated>
+        <formula>LVGO__ContactId__r.LVGO__HasOptedOutOfEmail__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Email Opt Out</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Country__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__CreatedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Created Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Description</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LVGO__DoNotCall__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Do Not Call</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Email__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Fax__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Fax</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__FirstName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__FirstRespondedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <label>First Responded Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__HasOptedOutOfEmail__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Email Opt Out</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__HasOptedOutOfFax__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Fax Opt Out</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__HasResponded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Responded</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__LastModifiedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Last Modified Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__LastName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__LeadSource__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Lead Source</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>Partner</fullName>
+                    <default>false</default>
+                    <label>Partner</label>
+                </value>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Undefined</fullName>
+                    <default>false</default>
+                    <label>Undefined</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Lead</label>
+        <referenceTo>LVGO__Lead__c</referenceTo>
+        <relationshipLabel>Campaign Members</relationshipLabel>
+        <relationshipName>Campaign_Members</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Legacy_Salesforce_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Holds salesforce id&apos;s that can be referenced for existing data during migration</description>
+        <externalId>true</externalId>
+        <label>Legacy Salesforce Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Migration_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Migration ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__MobilePhone__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Mobile</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>LVGO__PostalCode__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Zip/Postal Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Salutation__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Salutation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Mr.</fullName>
+                    <default>false</default>
+                    <label>Mr.</label>
+                </value>
+                <value>
+                    <fullName>Ms.</fullName>
+                    <default>false</default>
+                    <label>Ms.</label>
+                </value>
+                <value>
+                    <fullName>Mrs.</fullName>
+                    <default>false</default>
+                    <label>Mrs.</label>
+                </value>
+                <value>
+                    <fullName>Dr.</fullName>
+                    <default>false</default>
+                    <label>Dr.</label>
+                </value>
+                <value>
+                    <fullName>Prof.</fullName>
+                    <default>false</default>
+                    <label>Prof.</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__State__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>State/Province</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Attended Conference</fullName>
+                    <default>false</default>
+                    <label>Attended Conference</label>
+                </value>
+                <value>
+                    <fullName>Invited to Ignyte</fullName>
+                    <default>false</default>
+                    <label>Invited to Ignyte</label>
+                </value>
+                <value>
+                    <fullName>RSVP Yes to Ignyte</fullName>
+                    <default>false</default>
+                    <label>RSVP Yes to Ignyte</label>
+                </value>
+                <value>
+                    <fullName>Attended Ignyte</fullName>
+                    <default>false</default>
+                    <label>Attended Ignyte</label>
+                </value>
+                <value>
+                    <fullName>Followed up</fullName>
+                    <default>false</default>
+                    <label>Followed up</label>
+                </value>
+                <value>
+                    <fullName>Engaged with Stephanie</fullName>
+                    <default>false</default>
+                    <label>Engaged with Stephanie</label>
+                </value>
+                <value>
+                    <fullName>Met</fullName>
+                    <default>false</default>
+                    <label>Met</label>
+                </value>
+                <value>
+                    <fullName>Requested Follow Up</fullName>
+                    <default>false</default>
+                    <label>Requested Follow Up</label>
+                </value>
+                <value>
+                    <fullName>Opt out</fullName>
+                    <default>false</default>
+                    <label>Opt out</label>
+                </value>
+                <value>
+                    <fullName>Identified</fullName>
+                    <default>false</default>
+                    <label>Identified</label>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                    <label>Failed</label>
+                </value>
+                <value>
+                    <fullName>Sent - Jim P</fullName>
+                    <default>false</default>
+                    <label>Sent - Jim P</label>
+                </value>
+                <value>
+                    <fullName>Send</fullName>
+                    <default>false</default>
+                    <label>Send</label>
+                </value>
+                <value>
+                    <fullName>Mail Failure</fullName>
+                    <default>false</default>
+                    <label>Mail Failure</label>
+                </value>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                    <label>Sent</label>
+                </value>
+                <value>
+                    <fullName>Responded</fullName>
+                    <default>false</default>
+                    <label>Responded</label>
+                </value>
+                <value>
+                    <fullName>Follow up</fullName>
+                    <default>false</default>
+                    <label>Follow up</label>
+                </value>
+                <value>
+                    <fullName>Sent Invite</fullName>
+                    <default>false</default>
+                    <label>Sent Invite</label>
+                </value>
+                <value>
+                    <fullName>Analysis Request</fullName>
+                    <default>false</default>
+                    <label>Analysis Request</label>
+                </value>
+                <value>
+                    <fullName>Follow up call</fullName>
+                    <default>false</default>
+                    <label>Follow up call</label>
+                </value>
+                <value>
+                    <fullName>F/U Call 1</fullName>
+                    <default>false</default>
+                    <label>F/U Call 1</label>
+                </value>
+                <value>
+                    <fullName>F/U Call 2</fullName>
+                    <default>false</default>
+                    <label>F/U Call 2</label>
+                </value>
+                <value>
+                    <fullName>F/U Call 3</fullName>
+                    <default>false</default>
+                    <label>F/U Call 3</label>
+                </value>
+                <value>
+                    <fullName>Sent - Glen</fullName>
+                    <default>false</default>
+                    <label>Sent - Glen</label>
+                </value>
+                <value>
+                    <fullName>Sent - Michael</fullName>
+                    <default>false</default>
+                    <label>Sent - Michael</label>
+                </value>
+                <value>
+                    <fullName>Sent - Jason M</fullName>
+                    <default>false</default>
+                    <label>Sent - Jason M</label>
+                </value>
+                <value>
+                    <fullName>Sent - Lee</fullName>
+                    <default>false</default>
+                    <label>Sent - Lee</label>
+                </value>
+                <value>
+                    <fullName>Sent - Steve S</fullName>
+                    <default>false</default>
+                    <label>Sent - Steve S</label>
+                </value>
+                <value>
+                    <fullName>Inquired</fullName>
+                    <default>false</default>
+                    <label>Inquired</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Added To Campaign</fullName>
+                    <default>false</default>
+                    <label>Added To Campaign</label>
+                </value>
+                <value>
+                    <fullName>Sent Into WP Email</fullName>
+                    <default>false</default>
+                    <label>Sent Into WP Email</label>
+                </value>
+                <value>
+                    <fullName>Sent Personalized FU email</fullName>
+                    <default>false</default>
+                    <label>Sent Personalized FU email</label>
+                </value>
+                <value>
+                    <fullName>Target - Vitality</fullName>
+                    <default>false</default>
+                    <label>Target - Vitality</label>
+                </value>
+                <value>
+                    <fullName>Target - Welltok</fullName>
+                    <default>false</default>
+                    <label>Target - Welltok</label>
+                </value>
+                <value>
+                    <fullName>Send Invite</fullName>
+                    <default>false</default>
+                    <label>Send Invite</label>
+                </value>
+                <value>
+                    <fullName>VIP</fullName>
+                    <default>false</default>
+                    <label>VIP</label>
+                </value>
+                <value>
+                    <fullName>Opened</fullName>
+                    <default>false</default>
+                    <label>Opened</label>
+                </value>
+                <value>
+                    <fullName>Unsubscribed</fullName>
+                    <default>false</default>
+                    <label>Unsubscribed</label>
+                </value>
+                <value>
+                    <fullName>Declined</fullName>
+                    <default>false</default>
+                    <label>Declined</label>
+                </value>
+                <value>
+                    <fullName>No Show</fullName>
+                    <default>false</default>
+                    <label>No Show</label>
+                </value>
+                <value>
+                    <fullName>Attended</fullName>
+                    <default>false</default>
+                    <label>Attended</label>
+                </value>
+                <value>
+                    <fullName>Invited</fullName>
+                    <default>false</default>
+                    <label>Invited</label>
+                </value>
+                <value>
+                    <fullName>Delivered</fullName>
+                    <default>false</default>
+                    <label>Delivered</label>
+                </value>
+                <value>
+                    <fullName>Scheduled Meeting</fullName>
+                    <default>false</default>
+                    <label>Scheduled Meeting</label>
+                </value>
+                <value>
+                    <fullName>Clicked</fullName>
+                    <default>false</default>
+                    <label>Clicked</label>
+                </value>
+                <value>
+                    <fullName>Invite</fullName>
+                    <default>false</default>
+                    <label>Invite</label>
+                </value>
+                <value>
+                    <fullName>No Showed</fullName>
+                    <default>false</default>
+                    <label>No Showed</label>
+                </value>
+                <value>
+                    <fullName>RSVPed - YES</fullName>
+                    <default>false</default>
+                    <label>RSVPed - YES</label>
+                </value>
+                <value>
+                    <fullName>RSVPed - NO</fullName>
+                    <default>false</default>
+                    <label>RSVPed - NO</label>
+                </value>
+                <value>
+                    <fullName>Attending</fullName>
+                    <default>false</default>
+                    <label>Attending</label>
+                </value>
+                <value>
+                    <fullName>Meeting Requested</fullName>
+                    <default>false</default>
+                    <label>Meeting Requested</label>
+                </value>
+                <value>
+                    <fullName>In-Person Meeting</fullName>
+                    <default>false</default>
+                    <label>In-Person Meeting</label>
+                </value>
+                <value>
+                    <fullName>Meeting request</fullName>
+                    <default>false</default>
+                    <label>Meeting request</label>
+                </value>
+                <value>
+                    <fullName>F/U sent</fullName>
+                    <default>false</default>
+                    <label>F/U sent</label>
+                </value>
+                <value>
+                    <fullName>Response</fullName>
+                    <default>false</default>
+                    <label>Response</label>
+                </value>
+                <value>
+                    <fullName>Printed card with gift</fullName>
+                    <default>false</default>
+                    <label>Printed card with gift</label>
+                </value>
+                <value>
+                    <fullName>Printed card</fullName>
+                    <default>false</default>
+                    <label>Printed card</label>
+                </value>
+                <value>
+                    <fullName>Electronic card with gift</fullName>
+                    <default>false</default>
+                    <label>Electronic card with gift</label>
+                </value>
+                <value>
+                    <fullName>Electronic card</fullName>
+                    <default>false</default>
+                    <label>Electronic card</label>
+                </value>
+                <value>
+                    <fullName>All Printed card mailed</fullName>
+                    <default>false</default>
+                    <label>All Printed card mailed</label>
+                </value>
+                <value>
+                    <fullName>All Electronic card emailed</fullName>
+                    <default>false</default>
+                    <label>All Electronic card emailed</label>
+                </value>
+                <value>
+                    <fullName>Thank you response received</fullName>
+                    <default>false</default>
+                    <label>Thank you response received</label>
+                </value>
+                <value>
+                    <fullName>Post event F/U</fullName>
+                    <default>false</default>
+                    <label>Post event F/U</label>
+                </value>
+                <value>
+                    <fullName>Gift redemption email sent</fullName>
+                    <default>false</default>
+                    <label>Gift redemption email sent</label>
+                </value>
+                <value>
+                    <fullName>Hard Bounced</fullName>
+                    <default>false</default>
+                    <label>Hard Bounced</label>
+                </value>
+                <value>
+                    <fullName>Complained</fullName>
+                    <default>false</default>
+                    <label>Complained</label>
+                </value>
+                <value>
+                    <fullName>Sent Kit</fullName>
+                    <default>false</default>
+                    <label>Sent Kit</label>
+                </value>
+                <value>
+                    <fullName>Contact Responded</fullName>
+                    <default>false</default>
+                    <label>Contact Responded</label>
+                </value>
+                <value>
+                    <fullName>ESI_Electronic card with gift</fullName>
+                    <default>false</default>
+                    <label>ESI_Electronic card with gift</label>
+                </value>
+                <value>
+                    <fullName>Target - HSS</fullName>
+                    <default>false</default>
+                    <label>Target - HSS</label>
+                </value>
+                <value>
+                    <fullName>Target - Employer</fullName>
+                    <default>false</default>
+                    <label>Target - Employer</label>
+                </value>
+                <value>
+                    <fullName>Target - BenCon</fullName>
+                    <default>false</default>
+                    <label>Target - BenCon</label>
+                </value>
+                <value>
+                    <fullName>Target - PBM</fullName>
+                    <default>false</default>
+                    <label>Target - PBM</label>
+                </value>
+                <value>
+                    <fullName>Target - Health Systems</fullName>
+                    <default>false</default>
+                    <label>Target - Health Systems</label>
+                </value>
+                <value>
+                    <fullName>Target - Gov&apos;t/Labor</fullName>
+                    <default>false</default>
+                    <label>Target - Gov&apos;t/Labor</label>
+                </value>
+                <value>
+                    <fullName>Meeting Setup</fullName>
+                    <default>false</default>
+                    <label>Meeting Setup</label>
+                </value>
+                <value>
+                    <fullName>Recieved</fullName>
+                    <default>false</default>
+                    <label>Recieved</label>
+                </value>
+                <value>
+                    <fullName>Responded - No Meeting</fullName>
+                    <default>false</default>
+                    <label>Responded - No Meeting</label>
+                </value>
+                <value>
+                    <fullName>Bounced</fullName>
+                    <default>false</default>
+                    <label>Bounced</label>
+                </value>
+                <value>
+                    <fullName>Follow-up: Email</fullName>
+                    <default>false</default>
+                    <label>Follow-up: Email</label>
+                </value>
+                <value>
+                    <fullName>Follow-up: Phone Call</fullName>
+                    <default>false</default>
+                    <label>Follow-up: Phone Call</label>
+                </value>
+                <value>
+                    <fullName>Responded - Not Interested</fullName>
+                    <default>false</default>
+                    <label>Responded - Not Interested</label>
+                </value>
+                <value>
+                    <fullName>Meeting Scheduled</fullName>
+                    <default>false</default>
+                    <label>Meeting Scheduled</label>
+                </value>
+                <value>
+                    <fullName>Meeting Complete</fullName>
+                    <default>false</default>
+                    <label>Meeting Complete</label>
+                </value>
+                <value>
+                    <fullName>Invite - HSS</fullName>
+                    <default>false</default>
+                    <label>Invite - HSS</label>
+                </value>
+                <value>
+                    <fullName>Target - PBM (ESI)</fullName>
+                    <default>false</default>
+                    <label>Target - PBM (ESI)</label>
+                </value>
+                <value>
+                    <fullName>Unsubscribe</fullName>
+                    <default>false</default>
+                    <label>Unsubscribe</label>
+                </value>
+                <value>
+                    <fullName>Hard Bounce</fullName>
+                    <default>false</default>
+                    <label>Hard Bounce</label>
+                </value>
+                <value>
+                    <fullName>Invite - Commercial</fullName>
+                    <default>false</default>
+                    <label>Invite - Commercial</label>
+                </value>
+                <value>
+                    <fullName>Invite - Client Success</fullName>
+                    <default>false</default>
+                    <label>Invite - Client Success</label>
+                </value>
+                <value>
+                    <fullName>Alliant</fullName>
+                    <default>false</default>
+                    <label>Alliant</label>
+                </value>
+                <value>
+                    <fullName>Taregt</fullName>
+                    <default>false</default>
+                    <label>Taregt</label>
+                </value>
+                <value>
+                    <fullName>Lockton</fullName>
+                    <default>false</default>
+                    <label>Lockton</label>
+                </value>
+                <value>
+                    <fullName>WTW</fullName>
+                    <default>false</default>
+                    <label>WTW</label>
+                </value>
+                <value>
+                    <fullName>Mercer</fullName>
+                    <default>false</default>
+                    <label>Mercer</label>
+                </value>
+                <value>
+                    <fullName>Target - Other (ACAP/Homes Murphy, USI)</fullName>
+                    <default>false</default>
+                    <label>Target - Other (ACAP/Homes Murphy, USI)</label>
+                </value>
+                <value>
+                    <fullName>Target - Segal</fullName>
+                    <default>false</default>
+                    <label>Target - Segal</label>
+                </value>
+                <value>
+                    <fullName>Target - St. Louis</fullName>
+                    <default>false</default>
+                    <label>Target - St. Louis</label>
+                </value>
+                <value>
+                    <fullName>Target - Chicago</fullName>
+                    <default>false</default>
+                    <label>Target - Chicago</label>
+                </value>
+                <value>
+                    <fullName>Target - Platforms</fullName>
+                    <default>false</default>
+                    <label>Target - Platforms</label>
+                </value>
+                <value>
+                    <fullName>Registered for Webinar</fullName>
+                    <default>false</default>
+                    <label>Registered for Webinar</label>
+                </value>
+                <value>
+                    <fullName>Hard Bounced - Email Invite 1</fullName>
+                    <default>false</default>
+                    <label>Hard Bounced - Email Invite 1</label>
+                </value>
+                <value>
+                    <fullName>Unsubscribed - Email Invite 1</fullName>
+                    <default>false</default>
+                    <label>Unsubscribed - Email Invite 1</label>
+                </value>
+                <value>
+                    <fullName>Sent - Email Invite 1</fullName>
+                    <default>false</default>
+                    <label>Sent - Email Invite 1</label>
+                </value>
+                <value>
+                    <fullName>Sent - Email Invite 2</fullName>
+                    <default>false</default>
+                    <label>Sent - Email Invite 2</label>
+                </value>
+                <value>
+                    <fullName>Sent - Email Invite 3</fullName>
+                    <default>false</default>
+                    <label>Sent - Email Invite 3</label>
+                </value>
+                <value>
+                    <fullName>Opened - Email Invite 1</fullName>
+                    <default>false</default>
+                    <label>Opened - Email Invite 1</label>
+                </value>
+                <value>
+                    <fullName>Target - Sent</fullName>
+                    <default>false</default>
+                    <label>Target - Sent</label>
+                </value>
+                <value>
+                    <fullName>Responded - Chicago</fullName>
+                    <default>false</default>
+                    <label>Responded - Chicago</label>
+                </value>
+                <value>
+                    <fullName>Registered - St. Louis</fullName>
+                    <default>false</default>
+                    <label>Registered - St. Louis</label>
+                </value>
+                <value>
+                    <fullName>Opened - West Region</fullName>
+                    <default>false</default>
+                    <label>Opened - West Region</label>
+                </value>
+                <value>
+                    <fullName>Clicked - Light Industrial</fullName>
+                    <default>false</default>
+                    <label>Clicked - Light Industrial</label>
+                </value>
+                <value>
+                    <fullName>Sent - Light Industrial</fullName>
+                    <default>false</default>
+                    <label>Sent - Light Industrial</label>
+                </value>
+                <value>
+                    <fullName>Clicked - West Region</fullName>
+                    <default>false</default>
+                    <label>Clicked - West Region</label>
+                </value>
+                <value>
+                    <fullName>Target - West Region</fullName>
+                    <default>false</default>
+                    <label>Target - West Region</label>
+                </value>
+                <value>
+                    <fullName>Attended - West Region</fullName>
+                    <default>false</default>
+                    <label>Attended - West Region</label>
+                </value>
+                <value>
+                    <fullName>Sent - West Region</fullName>
+                    <default>false</default>
+                    <label>Sent - West Region</label>
+                </value>
+                <value>
+                    <fullName>Target - Q3</fullName>
+                    <default>false</default>
+                    <label>Target - Q3</label>
+                </value>
+                <value>
+                    <fullName>Target - New</fullName>
+                    <default>false</default>
+                    <label>Target - New</label>
+                </value>
+                <value>
+                    <fullName>Needs Approval</fullName>
+                    <default>false</default>
+                    <label>Needs Approval</label>
+                </value>
+                <value>
+                    <fullName>Connected</fullName>
+                    <default>false</default>
+                    <label>Connected</label>
+                </value>
+                <value>
+                    <fullName>Contracted</fullName>
+                    <default>false</default>
+                    <label>Contracted</label>
+                </value>
+                <value>
+                    <fullName>Active Opportunity</fullName>
+                    <default>false</default>
+                    <label>Active Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Client</fullName>
+                    <default>false</default>
+                    <label>Client</label>
+                </value>
+                <value>
+                    <fullName>Closed Opportunity</fullName>
+                    <default>false</default>
+                    <label>Closed Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Won Opportunity</fullName>
+                    <default>false</default>
+                    <label>Won Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Opened - Light Industrial</fullName>
+                    <default>false</default>
+                    <label>Opened - Light Industrial</label>
+                </value>
+                <value>
+                    <fullName>Attended Event/Session/Download WP</fullName>
+                    <default>false</default>
+                    <label>Attended Event/Session/Download WP</label>
+                </value>
+                <value>
+                    <fullName>Attended Event/Attended TDH Session</fullName>
+                    <default>false</default>
+                    <label>Attended Event/Attended TDH Session</label>
+                </value>
+                <value>
+                    <fullName>Attended Event/Download WP</fullName>
+                    <default>false</default>
+                    <label>Attended Event/Download WP</label>
+                </value>
+                <value>
+                    <fullName>Entered Swag Bag Giveaway</fullName>
+                    <default>false</default>
+                    <label>Entered Swag Bag Giveaway</label>
+                </value>
+                <value>
+                    <fullName>Response Received</fullName>
+                    <default>false</default>
+                    <label>Response Received</label>
+                </value>
+                <value>
+                    <fullName>To Send</fullName>
+                    <default>false</default>
+                    <label>To Send</label>
+                </value>
+                <value>
+                    <fullName>Targeted (CVS)</fullName>
+                    <default>false</default>
+                    <label>Targeted (CVS)</label>
+                </value>
+                <value>
+                    <fullName>Sent - Session 2 (Wed 8/26)</fullName>
+                    <default>false</default>
+                    <label>Sent - Session 2 (Wed 8/26)</label>
+                </value>
+                <value>
+                    <fullName>Accepted - Tues</fullName>
+                    <default>false</default>
+                    <label>Accepted - Tues</label>
+                </value>
+                <value>
+                    <fullName>Accepted - Wed</fullName>
+                    <default>false</default>
+                    <label>Accepted - Wed</label>
+                </value>
+                <value>
+                    <fullName>Attended Solutions Showcase</fullName>
+                    <default>false</default>
+                    <label>Attended Solutions Showcase</label>
+                </value>
+                <value>
+                    <fullName>Follow Up Completed</fullName>
+                    <default>false</default>
+                    <label>Follow Up Completed</label>
+                </value>
+                <value>
+                    <fullName>Downloaded whitepaper</fullName>
+                    <default>false</default>
+                    <label>Downloaded whitepaper</label>
+                </value>
+                <value>
+                    <fullName>Declined Invite</fullName>
+                    <default>false</default>
+                    <label>Declined Invite</label>
+                </value>
+                <value>
+                    <fullName>Sent Invite 1 &amp; 2</fullName>
+                    <default>false</default>
+                    <label>Sent Invite 1 &amp; 2</label>
+                </value>
+                <value>
+                    <fullName>Sent Invite 1</fullName>
+                    <default>false</default>
+                    <label>Sent Invite 1</label>
+                </value>
+                <value>
+                    <fullName>Sent - West Region Invite 1</fullName>
+                    <default>false</default>
+                    <label>Sent - West Region Invite 1</label>
+                </value>
+                <value>
+                    <fullName>Sent - West Region Invite 2</fullName>
+                    <default>false</default>
+                    <label>Sent - West Region Invite 2</label>
+                </value>
+                <value>
+                    <fullName>Registered - West Region Invite 2</fullName>
+                    <default>false</default>
+                    <label>Registered - West Region Invite 2</label>
+                </value>
+                <value>
+                    <fullName>Registered - West Region Invite 3</fullName>
+                    <default>false</default>
+                    <label>Registered - West Region Invite 3</label>
+                </value>
+                <value>
+                    <fullName>Sent - West Region Invite 3</fullName>
+                    <default>false</default>
+                    <label>Sent - West Region Invite 3</label>
+                </value>
+                <value>
+                    <fullName>Existing Contact</fullName>
+                    <default>false</default>
+                    <label>Existing Contact</label>
+                </value>
+                <value>
+                    <fullName>Unsubscribed - Light Industrial</fullName>
+                    <default>false</default>
+                    <label>Unsubscribed - Light Industrial</label>
+                </value>
+                <value>
+                    <fullName>Registered - LI</fullName>
+                    <default>false</default>
+                    <label>Registered - LI</label>
+                </value>
+                <value>
+                    <fullName>Sent via SFDC</fullName>
+                    <default>false</default>
+                    <label>Sent via SFDC</label>
+                </value>
+                <value>
+                    <fullName>Needs to be Vetted</fullName>
+                    <default>false</default>
+                    <label>Needs to be Vetted</label>
+                </value>
+                <value>
+                    <fullName>Real Lead</fullName>
+                    <default>false</default>
+                    <label>Real Lead</label>
+                </value>
+                <value>
+                    <fullName>Client Newsletter Contact</fullName>
+                    <default>false</default>
+                    <label>Client Newsletter Contact</label>
+                </value>
+                <value>
+                    <fullName>Opportunity Created</fullName>
+                    <default>false</default>
+                    <label>Opportunity Created</label>
+                </value>
+                <value>
+                    <fullName>Meeting Ran</fullName>
+                    <default>false</default>
+                    <label>Meeting Ran</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Labor - Target</fullName>
+                    <default>false</default>
+                    <label>Labor - Target</label>
+                </value>
+                <value>
+                    <fullName>Client - Target</fullName>
+                    <default>false</default>
+                    <label>Client - Target</label>
+                </value>
+                <value>
+                    <fullName>Employer - Target</fullName>
+                    <default>false</default>
+                    <label>Employer - Target</label>
+                </value>
+                <value>
+                    <fullName>BenCon - Target</fullName>
+                    <default>false</default>
+                    <label>BenCon - Target</label>
+                </value>
+                <value>
+                    <fullName>Gov - Target</fullName>
+                    <default>false</default>
+                    <label>Gov - Target</label>
+                </value>
+                <value>
+                    <fullName>Labor - Sent</fullName>
+                    <default>false</default>
+                    <label>Labor - Sent</label>
+                </value>
+                <value>
+                    <fullName>Asked Question</fullName>
+                    <default>false</default>
+                    <label>Asked Question</label>
+                </value>
+                <value>
+                    <fullName>Unsubscribed_Recording Email</fullName>
+                    <default>false</default>
+                    <label>Unsubscribed_Recording Email</label>
+                </value>
+                <value>
+                    <fullName>Clicked Recording Email</fullName>
+                    <default>false</default>
+                    <label>Clicked Recording Email</label>
+                </value>
+                <value>
+                    <fullName>Product Awareness - Meeting Completed</fullName>
+                    <default>false</default>
+                    <label>Product Awareness - Meeting Completed</label>
+                </value>
+                <value>
+                    <fullName>Sales 1:1 Email Follow Up</fullName>
+                    <default>false</default>
+                    <label>Sales 1:1 Email Follow Up</label>
+                </value>
+                <value>
+                    <fullName>Sales 1:1 Call Follow Up</fullName>
+                    <default>false</default>
+                    <label>Sales 1:1 Call Follow Up</label>
+                </value>
+                <value>
+                    <fullName>EXCLUDE FROM CAMPAIGN</fullName>
+                    <default>false</default>
+                    <label>EXCLUDE FROM CAMPAIGN</label>
+                </value>
+                <value>
+                    <fullName>Redeemed Book</fullName>
+                    <default>false</default>
+                    <label>Redeemed Book</label>
+                </value>
+                <value>
+                    <fullName>Target- BenCon</fullName>
+                    <default>false</default>
+                    <label>Target- BenCon</label>
+                </value>
+                <value>
+                    <fullName>Product Awareness - Email Sent</fullName>
+                    <default>false</default>
+                    <label>Product Awareness - Email Sent</label>
+                </value>
+                <value>
+                    <fullName>Product Awareness - Call placed</fullName>
+                    <default>false</default>
+                    <label>Product Awareness - Call placed</label>
+                </value>
+                <value>
+                    <fullName>Product Awareness - Meeting Scheduled</fullName>
+                    <default>false</default>
+                    <label>Product Awareness - Meeting Scheduled</label>
+                </value>
+                <value>
+                    <fullName>ComPar - Meeting Scheduled</fullName>
+                    <default>false</default>
+                    <label>ComPar - Meeting Scheduled</label>
+                </value>
+                <value>
+                    <fullName>ComPar - Call Placed</fullName>
+                    <default>false</default>
+                    <label>ComPar - Call Placed</label>
+                </value>
+                <value>
+                    <fullName>ComPar - Email Sent</fullName>
+                    <default>false</default>
+                    <label>ComPar - Email Sent</label>
+                </value>
+                <value>
+                    <fullName>ComPar - Meeting Complete</fullName>
+                    <default>false</default>
+                    <label>ComPar - Meeting Complete</label>
+                </value>
+                <value>
+                    <fullName>Meeting Set</fullName>
+                    <default>false</default>
+                    <label>Meeting Set</label>
+                </value>
+                <value>
+                    <fullName>Not Interested</fullName>
+                    <default>false</default>
+                    <label>Not Interested</label>
+                </value>
+                <value>
+                    <fullName>TP 1 (Email) - Responded</fullName>
+                    <default>false</default>
+                    <label>TP 1 (Email) - Responded</label>
+                </value>
+                <value>
+                    <fullName>TP 2 (Call) - Contact</fullName>
+                    <default>false</default>
+                    <label>TP 2 (Call) - Contact</label>
+                </value>
+                <value>
+                    <fullName>TP 1 (Email) - Sent</fullName>
+                    <default>false</default>
+                    <label>TP 1 (Email) - Sent</label>
+                </value>
+                <value>
+                    <fullName>TP 1 (Email) - Meeting Set</fullName>
+                    <default>false</default>
+                    <label>TP 1 (Email) - Meeting Set</label>
+                </value>
+                <value>
+                    <fullName>TP 2 (Call) - Contact Achieved</fullName>
+                    <default>false</default>
+                    <label>TP 2 (Call) - Contact Achieved</label>
+                </value>
+                <value>
+                    <fullName>TP 2 (Call) - Contact Attempted</fullName>
+                    <default>false</default>
+                    <label>TP 2 (Call) - Contact Attempted</label>
+                </value>
+                <value>
+                    <fullName>Included</fullName>
+                    <default>false</default>
+                    <label>Included</label>
+                </value>
+                <value>
+                    <fullName>Targeted</fullName>
+                    <default>false</default>
+                    <label>Targeted</label>
+                </value>
+                <value>
+                    <fullName>Visited Booth</fullName>
+                    <default>false</default>
+                    <label>Visited Booth</label>
+                </value>
+                <value>
+                    <fullName>Cancelled Meeting</fullName>
+                    <default>false</default>
+                    <label>Cancelled Meeting</label>
+                </value>
+                <value>
+                    <fullName>Meeting Cancelled</fullName>
+                    <default>false</default>
+                    <label>Meeting Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Opened, Didn&apos;t Register</fullName>
+                    <default>false</default>
+                    <label>Opened, Didn&apos;t Register</label>
+                </value>
+                <value>
+                    <fullName>Clicked, Didn&apos;t Register</fullName>
+                    <default>false</default>
+                    <label>Clicked, Didn&apos;t Register</label>
+                </value>
+                <value>
+                    <fullName>Did Not Open Recording Email</fullName>
+                    <default>false</default>
+                    <label>Did Not Open Recording Email</label>
+                </value>
+                <value>
+                    <fullName>Nominate</fullName>
+                    <default>false</default>
+                    <label>Nominate</label>
+                </value>
+                <value>
+                    <fullName>Opened email 2</fullName>
+                    <default>false</default>
+                    <label>Opened email 2</label>
+                </value>
+                <value>
+                    <fullName>Opened Recording Email</fullName>
+                    <default>false</default>
+                    <label>Opened Recording Email</label>
+                </value>
+                <value>
+                    <fullName>Net New</fullName>
+                    <default>false</default>
+                    <label>Net New</label>
+                </value>
+                <value>
+                    <fullName>Target - Attended</fullName>
+                    <default>false</default>
+                    <label>Target - Attended</label>
+                </value>
+                <value>
+                    <fullName>Invited Jenny</fullName>
+                    <default>false</default>
+                    <label>Invited Jenny</label>
+                </value>
+                <value>
+                    <fullName>Appointment Set</fullName>
+                    <default>false</default>
+                    <label>Appointment Set</label>
+                </value>
+                <value>
+                    <fullName>Non-marketable</fullName>
+                    <default>false</default>
+                    <label>Non-marketable</label>
+                </value>
+                <value>
+                    <fullName>Ordered</fullName>
+                    <default>false</default>
+                    <label>Ordered</label>
+                </value>
+                <value>
+                    <fullName>Follow Up Email</fullName>
+                    <default>false</default>
+                    <label>Follow Up Email</label>
+                </value>
+                <value>
+                    <fullName>Responded - Appointment Set</fullName>
+                    <default>false</default>
+                    <label>Responded - Appointment Set</label>
+                </value>
+                <value>
+                    <fullName>No Response</fullName>
+                    <default>false</default>
+                    <label>No Response</label>
+                </value>
+                <value>
+                    <fullName>Responded, Not Interested</fullName>
+                    <default>false</default>
+                    <label>Responded, Not Interested</label>
+                </value>
+                <value>
+                    <fullName>RSVP&apos;d, Attending</fullName>
+                    <default>false</default>
+                    <label>RSVP&apos;d, Attending</label>
+                </value>
+                <value>
+                    <fullName>Outreach Initiated</fullName>
+                    <default>false</default>
+                    <label>Outreach Initiated</label>
+                </value>
+                <value>
+                    <fullName>Do Not Touch</fullName>
+                    <default>false</default>
+                    <label>Do Not Touch</label>
+                </value>
+                <value>
+                    <fullName>Initiating Outreach</fullName>
+                    <default>false</default>
+                    <label>Initiating Outreach</label>
+                </value>
+                <value>
+                    <fullName>Responded, waiting to set meeting</fullName>
+                    <default>false</default>
+                    <label>Responded, waiting to set meeting</label>
+                </value>
+                <value>
+                    <fullName>Interested</fullName>
+                    <default>false</default>
+                    <label>Interested</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+                <value>
+                    <fullName>Attended ECF</fullName>
+                    <default>false</default>
+                    <label>Attended ECF</label>
+                </value>
+                <value>
+                    <fullName>Attended, not on registered list</fullName>
+                    <default>false</default>
+                    <label>Attended, not on registered list</label>
+                </value>
+                <value>
+                    <fullName>Send Swag</fullName>
+                    <default>false</default>
+                    <label>Send Swag</label>
+                </value>
+                <value>
+                    <fullName>Responded - Schedule for Later</fullName>
+                    <default>false</default>
+                    <label>Responded - Schedule for Later</label>
+                </value>
+                <value>
+                    <fullName>Sent Snack Box</fullName>
+                    <default>false</default>
+                    <label>Sent Snack Box</label>
+                </value>
+                <value>
+                    <fullName>Set Demo</fullName>
+                    <default>false</default>
+                    <label>Set Demo</label>
+                </value>
+                <value>
+                    <fullName>Redeemed Snack Box</fullName>
+                    <default>false</default>
+                    <label>Redeemed Snack Box</label>
+                </value>
+                <value>
+                    <fullName>Paul Sent Follow up email</fullName>
+                    <default>false</default>
+                    <label>Paul Sent Follow up email</label>
+                </value>
+                <value>
+                    <fullName>With Partner</fullName>
+                    <default>false</default>
+                    <label>With Partner</label>
+                </value>
+                <value>
+                    <fullName>w/o Partner</fullName>
+                    <default>false</default>
+                    <label>w/o Partner</label>
+                </value>
+                <value>
+                    <fullName>CVS Client</fullName>
+                    <default>false</default>
+                    <label>CVS Client</label>
+                </value>
+                <value>
+                    <fullName>Email 1</fullName>
+                    <default>false</default>
+                    <label>Email 1</label>
+                </value>
+                <value>
+                    <fullName>book delivered</fullName>
+                    <default>false</default>
+                    <label>book delivered</label>
+                </value>
+                <value>
+                    <fullName>Canceled</fullName>
+                    <default>false</default>
+                    <label>Canceled</label>
+                </value>
+                <value>
+                    <fullName>Download</fullName>
+                    <default>false</default>
+                    <label>Download</label>
+                </value>
+                <value>
+                    <fullName>Sent Offer_Outlook</fullName>
+                    <default>false</default>
+                    <label>Sent Offer_Outlook</label>
+                </value>
+                <value>
+                    <fullName>Sent Offer_SFDC</fullName>
+                    <default>false</default>
+                    <label>Sent Offer_SFDC</label>
+                </value>
+                <value>
+                    <fullName>Set up Demo Account</fullName>
+                    <default>false</default>
+                    <label>Set up Demo Account</label>
+                </value>
+                <value>
+                    <fullName>Redeemed</fullName>
+                    <default>false</default>
+                    <label>Redeemed</label>
+                </value>
+                <value>
+                    <fullName>Not Real Lead</fullName>
+                    <default>false</default>
+                    <label>Not Real Lead</label>
+                </value>
+                <value>
+                    <fullName>Target - Andy</fullName>
+                    <default>false</default>
+                    <label>Target - Andy</label>
+                </value>
+                <value>
+                    <fullName>Target - Bob</fullName>
+                    <default>false</default>
+                    <label>Target - Bob</label>
+                </value>
+                <value>
+                    <fullName>Target - Shawn</fullName>
+                    <default>false</default>
+                    <label>Target - Shawn</label>
+                </value>
+                <value>
+                    <fullName>Registered - West</fullName>
+                    <default>false</default>
+                    <label>Registered - West</label>
+                </value>
+                <value>
+                    <fullName>Registered - Light Industrial</fullName>
+                    <default>false</default>
+                    <label>Registered - Light Industrial</label>
+                </value>
+                <value>
+                    <fullName>Attended - Light Industrial</fullName>
+                    <default>false</default>
+                    <label>Attended - Light Industrial</label>
+                </value>
+                <value>
+                    <fullName>Target - Light Industrial</fullName>
+                    <default>false</default>
+                    <label>Target - Light Industrial</label>
+                </value>
+                <value>
+                    <fullName>Target - West</fullName>
+                    <default>false</default>
+                    <label>Target - West</label>
+                </value>
+                <value>
+                    <fullName>Atteneded - West</fullName>
+                    <default>false</default>
+                    <label>Atteneded - West</label>
+                </value>
+                <value>
+                    <fullName>No Outreach</fullName>
+                    <default>false</default>
+                    <label>No Outreach</label>
+                </value>
+                <value>
+                    <fullName>Aon - Keep</fullName>
+                    <default>false</default>
+                    <label>Aon - Keep</label>
+                </value>
+                <value>
+                    <fullName>Attempting Contact</fullName>
+                    <default>false</default>
+                    <label>Attempting Contact</label>
+                </value>
+                <value>
+                    <fullName>Open - Needs to be Vetted</fullName>
+                    <default>false</default>
+                    <label>Open - Needs to be Vetted</label>
+                </value>
+                <value>
+                    <fullName>Remove</fullName>
+                    <default>false</default>
+                    <label>Remove</label>
+                </value>
+                <value>
+                    <fullName>Disqualified</fullName>
+                    <default>false</default>
+                    <label>Disqualified</label>
+                </value>
+                <value>
+                    <fullName>Opp Created</fullName>
+                    <default>false</default>
+                    <label>Opp Created</label>
+                </value>
+                <value>
+                    <fullName>Visited Virtual Booth</fullName>
+                    <default>false</default>
+                    <label>Visited Virtual Booth</label>
+                </value>
+                <value>
+                    <fullName>Contracting</fullName>
+                    <default>false</default>
+                    <label>Contracting</label>
+                </value>
+                <value>
+                    <fullName>VOC</fullName>
+                    <default>false</default>
+                    <label>VOC</label>
+                </value>
+                <value>
+                    <fullName>Registered Only</fullName>
+                    <default>false</default>
+                    <label>Registered Only</label>
+                </value>
+                <value>
+                    <fullName>Sent Invite 2</fullName>
+                    <default>false</default>
+                    <label>Sent Invite 2</label>
+                </value>
+                <value>
+                    <fullName>Sent Post-Event Thank You Email</fullName>
+                    <default>false</default>
+                    <label>Sent Post-Event Thank You Email</label>
+                </value>
+                <value>
+                    <fullName>Heidi to Send</fullName>
+                    <default>false</default>
+                    <label>Heidi to Send</label>
+                </value>
+                <value>
+                    <fullName>Registered</fullName>
+                    <default>false</default>
+                    <label>Registered</label>
+                </value>
+                <value>
+                    <fullName>Target</fullName>
+                    <default>false</default>
+                    <label>Target</label>
+                </value>
+                <value>
+                    <fullName>Accept</fullName>
+                    <default>false</default>
+                    <label>Accept</label>
+                </value>
+                <value>
+                    <fullName>Decline</fullName>
+                    <default>false</default>
+                    <label>Decline</label>
+                </value>
+                <value>
+                    <fullName>Booth Visitor</fullName>
+                    <default>false</default>
+                    <label>Booth Visitor</label>
+                </value>
+                <value>
+                    <fullName>Engaged</fullName>
+                    <default>false</default>
+                    <label>Engaged</label>
+                </value>
+                <value>
+                    <fullName>Meeting</fullName>
+                    <default>false</default>
+                    <label>Meeting</label>
+                </value>
+                <value>
+                    <fullName>No Interaction</fullName>
+                    <default>false</default>
+                    <label>No Interaction</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LVGO__Street__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LVGO__Title__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>LV Campaign Member</label>
+    <listViews>
+        <fullName>LVGO__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Campaign Member Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>LV Campaign Members</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

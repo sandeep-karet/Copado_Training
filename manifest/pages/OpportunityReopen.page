@@ -1,0 +1,91 @@
+<apex:page standardController="Opportunity" extensions="OpportunityReopencontroller" tabStyle="Opportunity" >
+
+    <apex:form >
+    <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock title="" rendered="{! !IsError }">
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton style="float:centre" action="{!saveOpp}" value="Confirm & Save"/>
+                <apex:commandButton style="float:centre" action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="2" title="Opportunity Details" collapsible="false">
+                <apex:inputField value="{!opp.Name}"/>
+                <apex:inputField value="{!opp.AccountId}"/>
+                <apex:inputField value="{!opp.stagename}"/>
+                <apex:inputField value="{!opp.Probability}"/>
+                <apex:inputField value="{!opp.SBQQ__Contracted__c}"/>
+                <!--<apex:inputField value="{!opp.recordtypeId}"/> -->
+                 <apex:selectList value="{!selectedRT}" size="1" multiselect="false" label="Record Type" title="Record Type" id="recordTypes" required="true"> 
+                    
+                    <apex:selectOptions value="{!RecordTypeList}" /> 
+                </apex:selectList>
+
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Contract List" columns="1" collapsible="true">
+
+            <apex:outputPanel rendered="{!contractList.size>0}">
+            <apex:pageBlockTable value="{!contractList}" var="cnt">
+                    <apex:column value="{!cnt.ContractNumber}"/>
+                    <apex:column Value="{!cnt.SBQQ__Opportunity__c}"/>
+                    <apex:column Value="{!cnt.StartDate}"/>
+                    <apex:column Value="{!cnt.EndDate}"/>
+                    <apex:column Value="{!cnt.Status}"/>
+                </apex:pageBlockTable>
+        </apex:outputPanel>
+
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Subscription List" columns="1" collapsible="true">
+        
+         <apex:outputPanel rendered="{!subscriptionList.size>0}">
+            <apex:pageBlockTable value="{!subscriptionList }" var="sub">
+                    <apex:column value="{!sub.Name}"/>
+                    <apex:column value="{!sub.SBQQ__QuoteLine__c}"/>
+                    <apex:column value="{!sub.SBQQ__ProductName__c}"/>
+                    <apex:column value="{!sub.Consult_Type__c}"/>
+                    <apex:column value="{!sub.Fee_Type__c}"/>
+                    <apex:column value="{!sub.Membership_Fee__c}"/>
+                    <apex:column value="{!sub.Current_Membership_Fee__c}"/>
+                    <apex:column value="{!sub.SBQQ__Quantity__c}"/>
+                    <apex:column value="{!sub.SBQQ__StartDate__c}"/>
+                </apex:pageBlockTable>
+        </apex:outputPanel>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="PSF List" columns="1" collapsible="true">
+        
+        <apex:outputPanel rendered="{!psfList.size>0}">
+            <apex:pageBlockTable value="{!psfList}" var="psf">
+                    <apex:column value="{!psf.Name}"/>
+                    <apex:column value="{!psf.Product__c}"/>
+                    <apex:column value="{!psf.Member_Group__c}"/>
+                    <apex:column value="{!psf.Member_Group_Name__c}"/>
+                    <apex:column value="{!psf.Subscription__c}"/>
+                    <apex:column value="{!psf.Product_Start_Date__c}"/>
+                    <apex:column value="{!psf.CreatedDate}"/>
+                </apex:pageBlockTable>
+        </apex:outputPanel>
+
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Asset List" columns="1" collapsible="true">
+        
+        <apex:outputPanel rendered="{!assetList.size>0}">
+            <apex:pageBlockTable value="{!assetList}" var="asset">
+                    <apex:column value="{!asset.Name}"/>
+                    <apex:column value="{!asset.Product2.Name}"/>
+                    <apex:column value="{!asset.SBQQ__RequiredBySubscription__c}"/>
+                    <apex:column value="{!asset.Fee_Type__c}"/>
+                    <apex:column value="{!asset.Consult_Fees__c}"/>
+                </apex:pageBlockTable>
+        </apex:outputPanel>
+
+            </apex:pageBlockSection>
+        
+        </apex:pageBlock>
+        
+
+    </apex:form>
+
+</apex:page>

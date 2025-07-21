@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_22638540</developerName>
+        <masterLabel>Channels</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>ROLLUP_DESCRIPTION</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Client_Management_Key_HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client_Management_Core_HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Management - Aetna</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client_Management_UHG</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales_HP_Enterprise</sourceValue>
+            </sourceValues>
+            <value>Health Plan</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Client Management - Canada</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales - Canada</sourceValue>
+            </sourceValues>
+            <value>Canada</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Management - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <value>TPA/Reseller</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Client Management - HHS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales - HHS</sourceValue>
+            </sourceValues>
+            <value>HHS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales - DTE</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Management - Direct</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Services</sourceValue>
+            </sourceValues>
+            <value>DTE</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales - Broker</sourceValue>
+            </sourceValues>
+            <value>Broker</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CONTACT</field>
+    </columns>
+    <columns>
+        <field>CREATED_BY</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>TASK_SUBTYPE</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT</field>
+    </columns>
+    <columns>
+        <field>ASSIGNED</field>
+    </columns>
+    <columns>
+        <field>PRIORITY</field>
+    </columns>
+    <columns>
+        <field>TASK</field>
+    </columns>
+    <columns>
+        <field>ROLLUP_DESCRIPTION</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>CREATED_BY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>marketo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Interaction</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CONTACT</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_22638540</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>TPA/Reseller</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_22638540</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>TPA/Reseller Contact Interactions</name>
+    <params>
+        <name>closed</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>te</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Activity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>SUBJECT</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

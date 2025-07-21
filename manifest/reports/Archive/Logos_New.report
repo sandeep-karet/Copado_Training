@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>DOC_DESC</field>
+    </columns>
+    <columns>
+        <field>DOC_CREATED</field>
+    </columns>
+    <columns>
+        <field>DOC_LASTUPDATE</field>
+    </columns>
+    <columns>
+        <field>DOC_AUTHOR</field>
+    </columns>
+    <currency>USD</currency>
+    <description>This report displays all the logos that have been modified yesterday. This reports is being used in Operations Activity dashboard.</description>
+    <filter>
+        <criteriaItems>
+            <column>DOC_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>LG,LQ,MK</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>DOC_AUTHOR</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Admin Config</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>DOC_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Logos New</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>DocumentList</reportType>
+    <scope>all</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>DOC_LASTUPDATE</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

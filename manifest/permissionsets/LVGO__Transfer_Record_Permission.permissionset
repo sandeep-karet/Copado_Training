@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>LVGO__Bypass_Transfer_Account_Owner_Validation_Rule</name>
+    </customPermissions>
+    <description>this permission set is for users who wants have ability to transfer account and opportunity ownership</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Transfer Record Permission</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>TransferAnyEntity</name>
+    </userPermissions>
+</PermissionSet>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Broker_Opp_Rel__c$Name</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.Name</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Broker_Rel__c.Svc_Acct_Name__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Broker_Contact__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Contact_Location__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Broker_Flat_Rate__c</field>
+    </columns>
+    <columns>
+        <field>Broker_Opp_Rel__c$Broker_Percentage__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>For Broker Team to review Broker Opp Relations on the Opportunity. NOTE: a Broker Relationship must exist on ACCOUNT before you can create the Opp Relation) To filter your Opps check box by name, scroll down and click &quot;Drill Down&quot; button.on bottom of page</description>
+    <filter>
+        <criteriaItems>
+            <column>Broker_Opp_Rel__c$Opp_Broker__c.Opportunity_Owner_Role__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Broker</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Broker_Opp_Rel__c$Opp_Broker__c.Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>My Broker Opp Relations - by Opp Owner</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Broker_Opportunity_Relations__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Broker_Opp_Rel__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

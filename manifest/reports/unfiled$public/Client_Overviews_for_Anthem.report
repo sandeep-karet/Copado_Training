@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LVGO__Contract__c$Name</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$Id</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Client_Overview_Status__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Client_Must_Approve_Assets__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Billing_Method__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Client_Logo_Link__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__BillingPartner__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>LVGO__Contract__c$LVGO__BillingPartner__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Elevance Health</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LVGO__Contract__c$LVGO__Client_Overview_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Active</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Client Overviews for Anthem</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Client_Overviews_w_or_w_o_Program_Overviews_LV__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LVGO__Contract__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

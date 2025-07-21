@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_97562603</developerName>
+        <masterLabel>Channel</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Opportunity$Sub_Channel__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Employer - West Client Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - UHC Employees</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - Net New</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - Labor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - East Client Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer - Downmarket</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Employer</sourceValue>
+            </sourceValues>
+            <value>Employer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>HSG</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Aetna</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - ASO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Blues</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Federal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - National</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - Strategic Partnerships</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>HSG - United</sourceValue>
+            </sourceValues>
+            <value>HSG</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Opportunity$Account_Name__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Account_GUID__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$Product_Portfolio__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$Product_Family__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$Product__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$SBQQ__QuoteLine__c.SBQQ__RequiredBy__c.SBQQ__ProductName__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$SBQQ__QuoteLine__c.SBQQ__RequiredBy__c.SBQQ__RequiredBy__c.SBQQ__ProductName__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OpportunityLineItems$Membership_Fee__c.CONVERT</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OpportunityLineItems$OneTime_Net_Total_With_PG__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OpportunityLineItems$SBQQ__QuoteLine__c.Participant_Quantity__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.OpportunityLineItems$SBQQ__QuoteLine__c.Participation_Percentage__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$Bundle_Type__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Unique</aggregateTypes>
+        <field>Opportunity$Opportunity_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$SBQQ__AmendedContract__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Contracted_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Account.Total_US_Employees_Benefits_Enrolled__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Est_Fiscal_Period__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_97562603</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND NOT (5 AND 6) AND 7 AND NOT (8 AND 9) AND 10</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Sub_Channel__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>,Canada,DTE - Client Management,HHS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>(For Reporting Purposes Only)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>&quot;Add-on Membership, Existing Customer&quot;,Hunting License,New Business,Price Increase,Upsell to Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>&quot;Add-on Membership, Existing Customer&quot;,New Business,Price Increase,Upsell to Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Sub_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ASO Opt-Out</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Account_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>testingzzz</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Hunting License</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Sub_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>ASO Opt-Out</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.OpportunityLineItems$Product_Portfolio__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Chronic Care</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Chronic Care CFY Closed Won Bookings</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Products_CPQ__c</reportType>
+    <roleHierarchyFilter>System_Administrator</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$Contracted_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

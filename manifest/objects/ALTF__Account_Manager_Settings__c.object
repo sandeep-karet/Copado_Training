@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>These settings control certain aspects of Account Manager behavior.</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ALTF__AM_Account_Custom_Naming__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API name of the Account field that will be used to name Accounts in Account Manager.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API name of the Account field that will be used to name Accounts in Account Manager.</inlineHelpText>
+        <label>AM Account Custom Naming</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Account_CRUD_Search_View__c</fullName>
+        <defaultValue>&quot;ALTF__Altify_Accounts_CRUD_Search&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field specifies the API name of the account list view that determines the available advanced search options and search result columns when you&apos;re adding accounts to an account plan.</inlineHelpText>
+        <label>Account CRUD Search View</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Account_Parent_Field__c</fullName>
+        <defaultValue>&quot;ParentId&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field specifies the API name of the parent look up field on the Account object.</inlineHelpText>
+        <label>Account Parent Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Account_Plan_Public_Read__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Specifies if the Organization-Wide Sharing setting for the Account Plan object has been set to Public Read Only</description>
+        <inlineHelpText>Specifies if the Organization-Wide Sharing setting for the Account Plan object has been set to Public Read Only</inlineHelpText>
+        <label>Account Plan Public Read Only</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Auto_Post_Chat_Recurrence__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Auto Chat Plan Performance</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Buying_Structure_CRUD_Search_View__c</fullName>
+        <defaultValue>&quot;ALTF__Altify_Accounts_CRUD_Search&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field specifies the API name of the account list view that determines the available advanced search options and search result columns when you&apos;re configuring the buying structure.</inlineHelpText>
+        <label>Buying CRUD Search View</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Completeness_Batch_Size__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Completeness Batch Size</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Account_Plan_Task_Updates__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Disable the logging of Account Plan Task updates.</inlineHelpText>
+        <label>Disable Account Plan Task Updates</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Competitor_Creation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Disable competitor creation</description>
+        <inlineHelpText>Disable competitor creation</inlineHelpText>
+        <label>Disable competitor creation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Navigation_Tooltips__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Select this checkbox to remove tooltips from Account Manager navigation tabs.</description>
+        <inlineHelpText>Select this checkbox to remove tooltips from Account Manager navigation tabs.</inlineHelpText>
+        <label>Disable Navigation Tooltips</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Qualify_Link__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Setting this to true will disable the qualify link on the potential tab of the Opportunity Map intersection dialog in AM.</description>
+        <inlineHelpText>Setting this to true will disable the qualify link on the potential tab of the Opportunity Map intersection dialog in AM.</inlineHelpText>
+        <label>Disable Qualify Link</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Enable_Flat_Hierarchy__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>When this checkbox is selected then accounts will not be bubbled up to their parents.</inlineHelpText>
+        <label>Flat Account Hierarchy</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Enable_Third_Party_Segmentation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When this checkbox is selected, the Segmentation indicator on the Opportunity Map takes its value from an Account custom field, so that a third-party source can be used for the Segmentation value. (See the Third-Party Segmentation Field custom setting.)Segmentation Field custom setting.)</description>
+        <inlineHelpText>When this checkbox is selected, the Segmentation indicator on the Opportunity Map takes its value from an Account custom field, so that a third-party source can be used for the Segmentation value. (See the Third-Party Segmentation Field custom setting.)</inlineHelpText>
+        <label>Enable Third-Party Segmentation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Enable_User_Currency__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>When this checkbox is selected, opportunities are shown in the user&apos;s currency on the account plan.</inlineHelpText>
+        <label>Display Opps in user&apos;s currency</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Hide_Default_Objectives__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Hide Default Objectives With No Actions</description>
+        <inlineHelpText>Hide all the default [Unassigned Actions] objectives from Objectives page which do not have any related actions</inlineHelpText>
+        <label>Hide default objectives with no actions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Opp_Amount_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Use this field to specify a custom currency field for opportunities instead of the standard currency amount.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to specify a custom currency field for opportunities instead of the standard currency amount.</inlineHelpText>
+        <label>Opp Amount Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Opp_Product_Amount_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If you are using ProductLine Splits and have an Opp Amount Field configured, set this to the API Name of a custom amount field on the Opportunity Product. Refer to admin guide.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If you are using ProductLine Splits and have an Opp Amount Field configured, set this to the API Name of a custom amount field on the Opportunity Product. Refer to admin guide.</inlineHelpText>
+        <label>Opp Product Amount Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Opportunity_CRUD_Search_View__c</fullName>
+        <defaultValue>&quot;ALTF__Altify_Opportunities_CRUD_Search&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Set the default view name for the CRUD search dialog to use when searching for opportunities. Normally, this is  ‘ALTF__Altify_Opportunities_CRUD_Search&apos;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field specifies the API name of the opportunity list view that determines the available advanced search options and search result columns when you&apos;re adding opportunities to the opportunity map.</inlineHelpText>
+        <label>Opportunity CRUD Search View</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Plan_Review_Presenter_Process_Image_Url__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field holds a url for an image that defines the Presenters Plan Review process.</description>
+        <inlineHelpText>This field holds a url for an image that defines the Presenters Plan Review process.</inlineHelpText>
+        <label>Plan Review Presenter Process Image Url</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Plan_Review_Process_Image_Url__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This setting holds a url to an image which defines the T&amp;I process
+
+This image is shown on the welcome page of the T&amp;I</description>
+        <inlineHelpText>This setting holds a url to an image which defines the T&amp;I process
+
+This image is shown on the welcome page of the T&amp;I</inlineHelpText>
+        <label>Plan Review Process Image Url</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Plan_Review_Reviewer_Process_Image_Url__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field holds a url for an image that defines the Reviewers Plan Review process.</description>
+        <inlineHelpText>This field holds a url for an image that defines the Reviewers Plan Review process.</inlineHelpText>
+        <label>Plan Review Reviewer Process Image Url</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Show_Overview__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This setting is deprecated and is no longer used.</description>
+        <inlineHelpText>This setting is deprecated and is no longer used.</inlineHelpText>
+        <label>Show Overview (Deprecated)</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Show_Test_and_Improve__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This setting is deprecated and is no longer used.</description>
+        <inlineHelpText>This setting is deprecated and is no longer used.</inlineHelpText>
+        <label>Show Test and Improve (Deprecated)</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Show_Unit_Custom_List__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Uncheck this box and the custom row list will not be shown.</description>
+        <inlineHelpText>This field controls whether or not the Plan Row List Dropdown is shown on the Opp Map page.</inlineHelpText>
+        <label>Show Row Custom List (DEPRECATED)</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp10__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp10</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp1</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp2</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp3__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp3</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp4__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp4</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp5__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp5</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp6__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp6</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp7__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp7</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp8__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp8</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp9__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp9</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr10__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr10</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>Completeness - Revenue Objective Types</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>Completeness - Business Dev Objtve Types</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>Completeness - Relationship Objtve Types</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr4__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr4</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr5__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr5</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr6__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr6</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr7__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr7</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr8__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr8</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr9__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr9</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Third_Party_Segmentation_Custom_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The API name of an Account custom field that can be used to specify an account’s Segmentation value from a third-party source. (See the Enable Third-Party Segmentation custom setting.) The field can be a String, Number, Picklist, or Formula.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of an Account custom field that can be used to specify an account’s Segmentation value from a third-party source. (See the Enable Third-Party Segmentation custom setting.) The field can be a String, Number, Picklist, or Formula.</inlineHelpText>
+        <label>Third-Party Segmentation Field</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Use_ProductLine_Splits__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field controls whether the Opportunities are split in AM according to Product Lines.</description>
+        <inlineHelpText>This field controls whether the Opportunities are split in AM according to Product Lines.</inlineHelpText>
+        <label>Use ProductLine Splits</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Use_Quantity_In_Market_Landscape__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When this setting is enabled, the Wallet and Competitors views in Opportunity Map express market share in terms of unit quantities rather than monetary values.</description>
+        <inlineHelpText>When this setting is enabled, the Wallet and Competitors views in Opportunity Map express market share in terms of unit quantities rather than monetary values.</inlineHelpText>
+        <label>Use Quantity In Market Landscape</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Use_Simple_Completion_Calculations__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Use Simple Completion Calculations</inlineHelpText>
+        <label>Use Simple Completion Calculations</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Use_Solution_Family__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enable this setting to allow grouping of Solutions into Solution Families on your Opportunity Map. Refer to the admin guide for setting up Solution Families.</description>
+        <inlineHelpText>Enable this setting to allow grouping of Solutions into Solution Families on your Opportunity Map. Refer to the admin guide for setting up Solution Families.</inlineHelpText>
+        <label>Use Solution Family</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Write_Back_Opp_Amount_Field__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Should the opportunity amount be written back to the custom field</description>
+        <inlineHelpText>If you have set a value in the &apos;Opp Amount Field&apos; this field should be ticked. This will mean that when you qualify a potential opportunity its amount value will be saved to the custom Opp Amount Field you have set.</inlineHelpText>
+        <label>Write Back Opp Amount Field</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Altify Account Manager Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

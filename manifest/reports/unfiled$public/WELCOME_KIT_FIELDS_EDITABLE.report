@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Mbr_Group__c$Member_Group_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Name</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Client_Account__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Status__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Card_Name__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Name__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Mbr_Group__c$Client_Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Blue cross blue shield of NC</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>WELCOME KIT FIELDS EDITABLE</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Member_Group_w_wo_PSF__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Mbr_Group__c$Active_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

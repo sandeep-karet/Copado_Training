@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Account__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Contract_Termination_Date__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$Name</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__CSM__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <column>LVGO__Contract__c$LVGO__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Active,Draft,Expired,Terminated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LVGO__Contract__c$LVGO__BillingPartner__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Accolade,Aetna,Allways Health Partners,AmeriBen,Anthem,Inc.,AR BCBS,Arkansas Blue Cross Blue Shield,ASR Health Benefits,BAS,BCBS IL,BCBS Illinois,BCBS Kansas City,BCBS Massachusetts,BCBS Michigan,BCBS North Carolina,BCBS Rhode Island,BCBS Tennessee,BCBS TX,BCBSA FEP,Blue Cross and Blue Shield of Kansas City,Blue Cross Blue Shield of Arizona (BCBSAZ),Blue Cross Blue Shield of Illinois,Blue Cross Blue Shield of Massachusetts,Blue Cross Blue Shield of Michigan,Blue Cross Blue Shield of Michigan(delete),Blue Cross Blue Shield of NC,Blue Cross Blue Shield of North Carolina,Blue Cross Blue Shield of Oklahoma,Blue Cross Blue Shield of Rhode Island,Blue Cross Blue Shield of Texas,Blue Cross of Idaho,Cambia Health,Cambia Health keep,Cardinal Innovations Healthcare,Caremark,Caremark PSM,Caremark TC,Castlight,Centene Corporation,Cerner,Cigna,Cigna Corporation,Cobalt Benefits Group,Community Health Choice,Concordia Plan Services,Deseret Mutual,Elevance Health,Express Scripts,Express Scripts - Evernorth,Express Scripts - Evernorth(keep),Fallon Health,Florida Blue,Florida Blue -Blue Cross Blue Shield of Florida,Fresenius Medical Care NA,Hawaii Medical Service Association,HCSC,HCSC MASTER</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LVGO__Contract__c$LVGO__BillingPartner__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Health Alliance Plan,Health Alliance Plan (HAP),Health Benefits,Health First Health Plans,Health First Health Plans FL,HealthFirst NY,Healthfirst,Inc.,Healthnow Administrative Services,HealthNow New York,HealthSCOPE Benefits,HealthStat,Healthy Business Group,Highmark BCBS,Highmark,Horizon BCBS,Horizon BCBSNJ,Humana,Independence Administrators,Independence Blue Cross,Independence Blue Cross (IBC),Interactive Health,Livongo,Local 99 Health and Welfare Fund,Luminare Health,Mass General Brigham Health Plan,Mercer - Corporate,Mercer - Dallas,Mercer - HTC,Mercer - New York,Mercer - Norwalk,Meritain - Direct,Meritain Health,Moda Health (formerly ODS),Moda Health Plan,NeuGen,LLC (WEA Trust),Optima Health,OptumRx,Oscar Health,Premera Blue Cross,Premera Blue Cross Master,Priority Health,Quantum Health (Partner),Regence BlueCross BlueShield of Oregon,Sentara Health Plans,SimplePay,SimplePay Health,Strategic Risk Solutions Inc,Teladoc,Teladoc Health,Trustmark,Trustmark Health Benefits,Umr,United Healthcare (UHC),UnitedHealth Group,UnitedHealthcare,UnitedHealthcare Commercial,Vantage Health Plan,Virgin Pulse,WEA Trust,Wellmark Blue Cross Blue Shield of Iowa,WellSpark Health,Welltok</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>LVGO__Contract__c$LVGO__Status__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>LVGO__Contract__c$LVGO__BillingPartner__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CO w Billing Partner Status Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Client_overviews_LV__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LVGO__Contract__c$LVGO__Contract_Termination_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

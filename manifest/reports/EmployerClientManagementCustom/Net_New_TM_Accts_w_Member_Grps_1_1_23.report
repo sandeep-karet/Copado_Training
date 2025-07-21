@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Name__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Active_Date__c</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Manager__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows specific accounts with its member groups based on the Account Name filter.</description>
+    <filter>
+        <criteriaItems>
+            <column>Mbr_Group__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ACTIVE,PENDING</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>Advanced Therapy Solutions,Amarillo Custom Fixtures,Applied Innovation,Auctane,Blue Jays Way LLC,Bollier Insurance Agency,BPS Cores Inc,Casavina dba Mission De La Casa,Cedar Springs Presbyterian,Community Resource Project,CSM Companies LLC,CyraCom International,Dearborn County Government,Elvis and The Flying V,Fitzgerald Salvage &amp; Recycling,Goodwill of SOLAC,H2O Conditioning of the RGV dba Culligan Water,Home Clean Heroes of Metro Atlanta,Home Clean Heroes of South Charlotte,JDK Management,Je An,McKibbon Hospitality,Mount Pleasant Housing Commission,On My Own Independent Living Services,Owl Practice Suite,Pack Up + Go,Palo Pinto General Hospital,Precision Fluid Controls,Precision Tax Relief,PROG Holdings Inc,PureCycle Technologies,TDH,The Blum Firm,Timothy Grandstaff,Vaquero Ventures Management,WTI Holdings LLC dba Waterfield Technologies</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Net New TM Accts w Member Grps 1/1/23</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$Mbr_Group__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Mbr_Group__c.Active_Date__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,1254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Account_Relationship_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Models the possible contracts between any two accounts regardless of hierarchy</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Benefit_Sponsor_Name__c</fullName>
+        <description>Since formula fields are not allowed in Lookup search, created a text field which is updated by a workflow rule. It should be only accessible to system admin and readonly.</description>
+        <externalId>false</externalId>
+        <label>Benefit Sponsor Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Benefit_Sponsor__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Account receiving services</description>
+        <inlineHelpText>Lookup the Benefit Sponsor Account (Account receiving services) of the Relationship</inlineHelpText>
+        <label>Benefit Sponsor Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Servicing Accounts</relationshipLabel>
+        <relationshipName>servicingaccounts</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Broker_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Who helped with the deal</description>
+        <inlineHelpText>Lookup the Contact Name of Broker</inlineHelpText>
+        <label>Broker Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Contact - Value does not exist or does not match filter criteria.</errorMessage>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.Svc_Acct__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Account Relationships</relationshipLabel>
+        <relationshipName>Account_Relationships</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Broker_Flat_Rate__c</fullName>
+        <description>Flat Rate Commission for Broker</description>
+        <inlineHelpText>Enter the Flat Rate Commission for Broker</inlineHelpText>
+        <label>Broker Flat-Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Broker_Loc_Name__c</fullName>
+        <description>Broker&apos;s Location/Local Office Name</description>
+        <externalId>false</externalId>
+        <formula>Broker_Location__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Enter the Broker&apos;s Location/Local Office Name</inlineHelpText>
+        <label>Broker Loc. Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Broker_Location__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Physical location of a organization&apos;s site</description>
+        <inlineHelpText>Lookup the Broker&apos;s Location</inlineHelpText>
+        <label>Broker Location ID</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Location - Value does not exist or does not match filter criteria.</errorMessage>
+            <filterItems>
+                <field>Location__c.Location_HQ__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Svc_Acct__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Location__c</referenceTo>
+        <relationshipLabel>Account Relationships</relationshipLabel>
+        <relationshipName>Account_Relationships</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Broker_Percentage__c</fullName>
+        <description>Percentage Commission Amount for Broker</description>
+        <inlineHelpText>Enter the Percentage Commission Amount for Broker</inlineHelpText>
+        <label>Broker Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Chronic_Care_Broker_Flat_Rate__c</fullName>
+        <label>Chronic Care Broker Flat Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Chronic_Care_Broker_Percentage__c</fullName>
+        <label>Chronic Care Broker Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Composite_Key__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Svc Id + Sponsor Id + Relationship Type + Start Date will create a key to help prevent duplicates.</description>
+        <externalId>false</externalId>
+        <label>Composite Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_Type__c</fullName>
+        <description>Required on Contractee/Broker</description>
+        <inlineHelpText>Required on Contractee/Broker</inlineHelpText>
+        <label>Servicing Contract Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Relationship_Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>Contract_Type</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Direct</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Health Systems</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Insurance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Platform</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Reseller</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contractee_Relationships__c</fullName>
+        <description>This field is used for Reporting purposes only on the Contracts team dashboard</description>
+        <formula>IF( (Benefit_Sponsor__r.Number_of_Won_Opportunities__c &gt; 0 &amp;&amp;  TEXT(Relationship_Type__c) = &apos;Contractee&apos;), TRUE,FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contractee Relationships</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <formula>Benefit_Sponsor__r.BillingCountry</formula>
+        <label>Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>Date contract ends</description>
+        <inlineHelpText>Enter the Date Relationship Terminated</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Flat_Source_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Holds the id for the de-normalized account matching this relationship from the original BD instance.  This accounts for flattening the multiple accounts into one account + many relationships</description>
+        <externalId>false</externalId>
+        <label>Flat Source Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Reference to the Former Account which got merged into the Legacy Id to the Master Account</description>
+        <label>Legacy Id</label>
+        <referenceTo>Legacy_Id__c</referenceTo>
+        <relationshipLabel>Former Relationships</relationshipLabel>
+        <relationshipName>Former_Relationships</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Line_of_Business__c</fullName>
+        <description>Select the Line of Business</description>
+        <inlineHelpText>Select the Line of Business</inlineHelpText>
+        <label>Line of Business</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Relationship_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+                <value>
+                    <fullName>Commercial_Fully_Insured_FI</fullName>
+                    <default>false</default>
+                    <label>Commercial Fully Insured (FI)</label>
+                </value>
+                <value>
+                    <fullName>Commercial_Administrative_Services_Only_ASO</fullName>
+                    <default>false</default>
+                    <label>Commercial Administrative Services Only (ASO)</label>
+                </value>
+                <value>
+                    <fullName>Marketplace_Exchange</fullName>
+                    <default>false</default>
+                    <label>Marketplace Exchange</label>
+                </value>
+                <value>
+                    <fullName>Medicare-Medicaid Plan (MMP)</fullName>
+                    <default>false</default>
+                    <label>Medicare-Medicaid Plan (MMP)</label>
+                </value>
+                <value>
+                    <fullName>Dual Eligible Special Needs Plans (DSNP)</fullName>
+                    <default>false</default>
+                    <label>Dual Eligible Special Needs Plans (DSNP)</label>
+                </value>
+                <value>
+                    <fullName>Medicaid_Managed_Care</fullName>
+                    <default>false</default>
+                    <label>Medicaid Managed Care</label>
+                </value>
+                <value>
+                    <fullName>Medicaid Fee for Service (FFS)</fullName>
+                    <default>false</default>
+                    <label>Medicaid Fee for Service (FFS)</label>
+                </value>
+                <value>
+                    <fullName>Children’s Health Insurance Program (CHIP)</fullName>
+                    <default>false</default>
+                    <label>Children’s Health Insurance Program (CHIP)</label>
+                </value>
+                <value>
+                    <fullName>Temporary Assistance for Needy Families (TANF)</fullName>
+                    <default>false</default>
+                    <label>Temporary Assistance for Needy Families (TANF)</label>
+                </value>
+                <value>
+                    <fullName>Medicare Supplement</fullName>
+                    <default>false</default>
+                    <label>Medicare Supplement</label>
+                </value>
+                <value>
+                    <fullName>Medicare Fee for Service (FFS)</fullName>
+                    <default>false</default>
+                    <label>Medicare Fee for Service (FFS)</label>
+                </value>
+                <value>
+                    <fullName>Medicare Advantage with Part D (MAPD)</fullName>
+                    <default>false</default>
+                    <label>Medicare Advantage with Part D (MAPD)</label>
+                </value>
+                <value>
+                    <fullName>Medicare_Advantage_MA</fullName>
+                    <default>false</default>
+                    <label>Medicare Advantage (MA)</label>
+                </value>
+                <value>
+                    <fullName>Critical Illness</fullName>
+                    <default>false</default>
+                    <label>Critical Illness</label>
+                </value>
+                <value>
+                    <fullName>Extended Health Care</fullName>
+                    <default>false</default>
+                    <label>Extended Health Care</label>
+                </value>
+                <value>
+                    <fullName>Chambers of Commerce</fullName>
+                    <default>false</default>
+                    <label>Chambers of Commerce</label>
+                </value>
+                <value>
+                    <fullName>Maximum Benefit</fullName>
+                    <default>false</default>
+                    <label>Maximum Benefit</label>
+                </value>
+                <value>
+                    <fullName>CINUP</fullName>
+                    <default>false</default>
+                    <label>CINUP</label>
+                </value>
+                <value>
+                    <fullName>Health Plan Commercial Solutions</fullName>
+                    <default>false</default>
+                    <label>Health Plan Commercial Solutions</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Benefit Partner or Vendor</controllingFieldValue>
+                <controllingFieldValue>Broker</controllingFieldValue>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <controllingFieldValue>Eligibility Provider Only</controllingFieldValue>
+                <controllingFieldValue>Payer and Eligibility Provider</controllingFieldValue>
+                <controllingFieldValue>Payer Only</controllingFieldValue>
+                <controllingFieldValue>Referral Partner</controllingFieldValue>
+                <valueName>N/A</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Commercial_Fully_Insured_FI</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Commercial_Administrative_Services_Only_ASO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Marketplace_Exchange</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Medicare-Medicaid Plan (MMP)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Dual Eligible Special Needs Plans (DSNP)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Medicaid_Managed_Care</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Medicaid Fee for Service (FFS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Children’s Health Insurance Program (CHIP)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Temporary Assistance for Needy Families (TANF)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Medicare Supplement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Medicare Fee for Service (FFS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Medicare Advantage with Part D (MAPD)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Medicare_Advantage_MA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Critical Illness</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Extended Health Care</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Chambers of Commerce</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Maximum Benefit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>CINUP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contractee</controllingFieldValue>
+                <valueName>Health Plan Commercial Solutions</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Relationship_Type__c</fullName>
+        <description>Select the type of Relationship for the Servicing Account.</description>
+        <inlineHelpText>Select the type of Relationship for the Servicing Account.</inlineHelpText>
+        <label>Servicing Account Role</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Account_Relationship_Type</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Date contract starts</description>
+        <inlineHelpText>Enter the Date Relationship Started</inlineHelpText>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Svc_Acct_Name__c</fullName>
+        <description>Since formula fields are not allowed in Lookup search, created a text field which is updated by a workflow rule. It should be only accessible to system admin and readonly.</description>
+        <externalId>false</externalId>
+        <label>Service Account Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Svc_Acct__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Account providing the service</description>
+        <inlineHelpText>Lookup the Servicing Account of the Relationship</inlineHelpText>
+        <label>Servicing Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Benefit Sponsor Accounts</relationshipLabel>
+        <relationshipName>benefitsponsors</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TD_Acct__c</fullName>
+        <formula>Svc_Acct__c =  Benefit_Sponsor__c</formula>
+        <label>TD Acct</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>relationship_type_detail__c</fullName>
+        <description>Build for LVGO migration to support maintenance of relationship-specific data that was not captured in TD.</description>
+        <inlineHelpText>Select the specific nature of the relationship.</inlineHelpText>
+        <label>Relationship Type - Detail</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Activity Tracking Devices</fullName>
+                    <default>false</default>
+                    <label>Activity Tracking Devices</label>
+                </value>
+                <value>
+                    <fullName>Associated Health Plan</fullName>
+                    <default>false</default>
+                    <label>Associated Health Plan</label>
+                </value>
+                <value>
+                    <fullName>Asthma</fullName>
+                    <default>false</default>
+                    <label>Asthma</label>
+                </value>
+                <value>
+                    <fullName>Behavioral Health</fullName>
+                    <default>false</default>
+                    <label>Behavioral Health</label>
+                </value>
+                <value>
+                    <fullName>Benefits Consultant</fullName>
+                    <default>false</default>
+                    <label>Benefits Consultant</label>
+                </value>
+                <value>
+                    <fullName>Biometrics Screening/Health  Risk Assessment</fullName>
+                    <default>false</default>
+                    <label>Biometrics Screening/Health  Risk Assessment</label>
+                </value>
+                <value>
+                    <fullName>Cardiovascular Health</fullName>
+                    <default>false</default>
+                    <label>Cardiovascular Health</label>
+                </value>
+                <value>
+                    <fullName>Children&apos;s Health and Obesity</fullName>
+                    <default>false</default>
+                    <label>Children&apos;s Health and Obesity</label>
+                </value>
+                <value>
+                    <fullName>Cohort</fullName>
+                    <default>false</default>
+                    <label>Cohort</label>
+                </value>
+                <value>
+                    <fullName>Concierge/Coaching Advocacy</fullName>
+                    <default>false</default>
+                    <label>Concierge/Coaching Advocacy</label>
+                </value>
+                <value>
+                    <fullName>Cost Transparency</fullName>
+                    <default>false</default>
+                    <label>Cost Transparency</label>
+                </value>
+                <value>
+                    <fullName>Data Warehouse</fullName>
+                    <default>false</default>
+                    <label>Data Warehouse</label>
+                </value>
+                <value>
+                    <fullName>Dental Services Provider</fullName>
+                    <default>false</default>
+                    <label>Dental Services Provider</label>
+                </value>
+                <value>
+                    <fullName>Diabetes Prevention</fullName>
+                    <default>false</default>
+                    <label>Diabetes Prevention</label>
+                </value>
+                <value>
+                    <fullName>Disease Management</fullName>
+                    <default>false</default>
+                    <label>Disease Management</label>
+                </value>
+                <value>
+                    <fullName>EAP</fullName>
+                    <default>false</default>
+                    <label>EAP</label>
+                </value>
+                <value>
+                    <fullName>Eligibility Partner</fullName>
+                    <default>false</default>
+                    <label>Eligibility Partner</label>
+                </value>
+                <value>
+                    <fullName>EMR (Electronic Medical Records)</fullName>
+                    <default>false</default>
+                    <label>EMR (Electronic Medical Records)</label>
+                </value>
+                <value>
+                    <fullName>Financial Wellness</fullName>
+                    <default>false</default>
+                    <label>Financial Wellness</label>
+                </value>
+                <value>
+                    <fullName>Health Engagement Platform</fullName>
+                    <default>false</default>
+                    <label>Health Engagement Platform</label>
+                </value>
+                <value>
+                    <fullName>Health Plan (Payer)</fullName>
+                    <default>false</default>
+                    <label>Health Plan (Payer)</label>
+                </value>
+                <value>
+                    <fullName>Hypertension</fullName>
+                    <default>false</default>
+                    <label>Hypertension</label>
+                </value>
+                <value>
+                    <fullName>Lead Source</fullName>
+                    <default>false</default>
+                    <label>Lead Source</label>
+                </value>
+                <value>
+                    <fullName>Maternity</fullName>
+                    <default>false</default>
+                    <label>Maternity</label>
+                </value>
+                <value>
+                    <fullName>Medical Second Opinion</fullName>
+                    <default>false</default>
+                    <label>Medical Second Opinion</label>
+                </value>
+                <value>
+                    <fullName>Muskuloskeletal</fullName>
+                    <default>false</default>
+                    <label>Muskuloskeletal</label>
+                </value>
+                <value>
+                    <fullName>Nutrition</fullName>
+                    <default>false</default>
+                    <label>Nutrition</label>
+                </value>
+                <value>
+                    <fullName>Onsite Clinic</fullName>
+                    <default>false</default>
+                    <label>Onsite Clinic</label>
+                </value>
+                <value>
+                    <fullName>Open Enrollment Platform</fullName>
+                    <default>false</default>
+                    <label>Open Enrollment Platform</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy Benefit Manager</fullName>
+                    <default>false</default>
+                    <label>Pharmacy Benefit Manager</label>
+                </value>
+                <value>
+                    <fullName>Second Opinion</fullName>
+                    <default>false</default>
+                    <label>Second Opinion</label>
+                </value>
+                <value>
+                    <fullName>Sleep Improvement</fullName>
+                    <default>false</default>
+                    <label>Sleep Improvement</label>
+                </value>
+                <value>
+                    <fullName>Smoking Cessation</fullName>
+                    <default>false</default>
+                    <label>Smoking Cessation</label>
+                </value>
+                <value>
+                    <fullName>Surgery Care Coordinator</fullName>
+                    <default>false</default>
+                    <label>Surgery Care Coordinator</label>
+                </value>
+                <value>
+                    <fullName>Telemedicine</fullName>
+                    <default>false</default>
+                    <label>Telemedicine</label>
+                </value>
+                <value>
+                    <fullName>Third Party Administrator</fullName>
+                    <default>false</default>
+                    <label>Third Party Administrator</label>
+                </value>
+                <value>
+                    <fullName>Transparency Platform</fullName>
+                    <default>false</default>
+                    <label>Transparency Platform</label>
+                </value>
+                <value>
+                    <fullName>Vision Provider</fullName>
+                    <default>false</default>
+                    <label>Vision Provider</label>
+                </value>
+                <value>
+                    <fullName>Weight Management</fullName>
+                    <default>false</default>
+                    <label>Weight Management</label>
+                </value>
+                <value>
+                    <fullName>Wellness Platform</fullName>
+                    <default>false</default>
+                    <label>Wellness Platform</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Account Relationship</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Svc_Acct__c</columns>
+        <columns>Benefit_Sponsor__c</columns>
+        <columns>Line_of_Business__c</columns>
+        <columns>Relationship_Type__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>REL-{00000000}</displayFormat>
+        <label>Account Relationship Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account Relationships</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Standard</fullName>
+        <active>true</active>
+        <label>Standard</label>
+        <picklistValues>
+            <picklist>Contract_Type__c</picklist>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Line_of_Business__c</picklist>
+            <values>
+                <fullName>CINUP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chambers of Commerce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children%E2%80%99s Health Insurance Program %28CHIP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial_Administrative_Services_Only_ASO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial_Fully_Insured_FI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Critical Illness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dual Eligible Special Needs Plans %28DSNP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extended Health Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Plan Commercial Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketplace_Exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maximum Benefit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicaid Fee for Service %28FFS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicaid_Managed_Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage with Part D %28MAPD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Fee for Service %28FFS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare-Medicaid Plan %28MMP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare_Advantage_MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Temporary Assistance for Needy Families %28TANF%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship_Type__c</picklist>
+            <values>
+                <fullName>Benefit Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benefit Partner or Vendor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contractee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility Provider Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer and Eligibility Provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>relationship_type_detail__c</picklist>
+            <values>
+                <fullName>Activity Tracking Devices</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associated Health Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asthma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Behavioral Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benefits Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biometrics Screening%2FHealth  Risk Assessment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cardiovascular Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children%27s Health and Obesity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cohort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concierge%2FCoaching Advocacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost Transparency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Warehouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dental Services Provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Diabetes Prevention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disease Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMR %28Electronic Medical Records%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Wellness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Engagement Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Plan %28Payer%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hypertension</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Source</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maternity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Second Opinion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Muskuloskeletal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nutrition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsite Clinic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Enrollment Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy Benefit Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second Opinion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sleep Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Smoking Cessation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgery Care Coordinator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telemedicine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third Party Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transparency Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vision Provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weight Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wellness Platform</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Benefit_Sponsor__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Svc_Acct__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Relationship_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Line_of_Business__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>Svc_Acct__c</lookupFilterFields>
+        <searchFilterFields>Svc_Acct__c</searchFilterFields>
+        <searchFilterFields>Benefit_Sponsor__c</searchFilterFields>
+        <searchFilterFields>Benefit_Sponsor_Name__c</searchFilterFields>
+        <searchFilterFields>Svc_Acct_Name__c</searchFilterFields>
+        <searchResultsAdditionalFields>Svc_Acct__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Benefit_Sponsor__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Line_of_Business__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Broker_Fee_Pct_CANNOT_be_blank</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( (ISPICKVAL( Relationship_Type__c , &apos;BROKER&apos;)),
+AND( isblank( Broker_Flat_Rate__c ), isblank( Broker_Percentage__c ))
+)</errorConditionFormula>
+        <errorMessage>Broker flat fee commission OR Broker commission percentage must be filled in for  BROKERS</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Broker_related_field_must_be_broker</fullName>
+        <active>false</active>
+        <description>Relationship type must be broker in order to update broker related fields</description>
+        <errorConditionFormula>AND(
+NOT(ISPICKVAL(Relationship_Type__c,&quot;Broker&quot;)),
+OR(NOT(ISBLANK(Broker_Contact__c )),
+NOT(ISBLANK(Broker_Flat_Rate__c )),
+NOT(ISBLANK(Broker_Percentage__c )),
+NOT(ISBLANK(Broker_Location__c ))))</errorConditionFormula>
+        <errorMessage>Relationship Type must be Broker in order to input Broker Information fields</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Either_Fee_or_Percentage</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( OR(ISPICKVAL( Relationship_Type__c , &apos;BROKER&apos;),ISPICKVAL( Relationship_Type__c , &apos;Consultant&apos;),ISPICKVAL( Relationship_Type__c , &apos;Referral Partner&apos;))  ,
+
+AND( !isblank( Broker_Flat_Rate__c ), !isblank( Broker_Percentage__c ))
+
+)</errorConditionFormula>
+        <errorMessage>Only one of the broker commission rate fields need to be filled in, not both</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

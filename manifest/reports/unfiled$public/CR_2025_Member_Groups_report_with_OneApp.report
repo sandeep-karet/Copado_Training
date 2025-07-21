@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Mbr_Group__c$Client_Account__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Active_Date__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Status__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$OneAppAccess__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Mbr_Group__c$Health_Assistant__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Product__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Member_Group_Id_18__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>This report can be used to validate and update any Member Group where the OneApp Access flag if yes then the Health Assistant is checked</description>
+    <filter>
+        <criteriaItems>
+            <column>Mbr_Group__c$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ACTIVE,PENDING</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Mbr_Group__c$Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CR 2025 Member Groups report with OneApp</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Member_Groups_with_Plan_Specific_Fees__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Mbr_Group__c$Active_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

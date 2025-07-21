@@ -1,0 +1,110 @@
+<apex:page standardController="Opportunity" extensions="OpportunityQuotesRelatedListController" showHeader="false" sidebar="false" applyHTMLTag="false">
+    <apex:form >
+        <apex:messages />
+        
+        <apex:pageBlock id="pbMain" mode="detail " tabStyle="SBQQ__Quote__c" title="Quotes">
+            
+            <apex:pageBlockButtons location="top">
+                <apex:actionStatus id="loading">
+                    <apex:facet name="start">
+                        <apex:outputPanel layout="inline">
+                            <img height="16" width="16" src="/img/loading.gif" />
+                        </apex:outputPanel>
+                    </apex:facet>
+                    <apex:facet name="stop" />
+                </apex:actionstatus>
+            </apex:pageBlockButtons>
+            
+            <apex:outputPanel id="pbsQuotes" layout="block" style="width:100%">
+                
+                <table id="oppQuotesTable" class="list" cellspacing="0" cellpadding="0" border="0" style="width:100%">
+                    <thead>
+                        <tr class="headerRow">
+                            <apex:repeat value="{!$ObjectType.SBQQ__Quote__c.FieldSets.Fields_for_RelatedList}" var="f">
+                                <th style="width:{!100/$ObjectType.SBQQ__QuoteLine__c.FieldSets.QuoteLine_Fields_for_RelatedList.size}%">
+                                    <apex:commandLink action="{!doSortRows}" value="{!f.Label}" rerender="pbsQuotes" immediate="true">
+                                        <apex:param name="OrderBy" assignTo="{!orderBy}" value="{!f}"/>
+                                        <apex:image styleClass="{!IF(sortOrder='ASC', 'sortAsc', 'sortDesc')}" value="/img/s.gif" rendered="{!orderBy == f}"/>
+                                    </apex:commandLink>
+                                </th>
+                            </apex:repeat>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!oQuoteRows}" var="row">
+                            <tr class="dataRow" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onmouseover="if (window.hiOn){hiOn(this);}">
+                                <apex:repeat value="{!$ObjectType.SBQQ__Quote__c.FieldSets.Fields_for_RelatedList}" var="f">
+                                    <td style="width:{!100/$ObjectType.SBQQ__QuoteLine__c.FieldSets.QuoteLine_Fields_for_RelatedList.size}%" class="dataCell">
+                                        <apex:outputField value="{!row.record[f]}" rendered="true"/>
+                                    </td>
+                                </apex:repeat>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+                
+                <!-- PAGINATOR -->
+                <apex:actionRegion >
+                    <apex:outputPanel styleClass="paginator" layout="block">
+                        <apex:outputPanel styleClass="prevNextLinks" id="bubblePageControls" rendered="{!IF(ISBLANK(currentPage), false, true)}">
+                            
+                            <apex:outputPanel styleClass="prevNext" rendered="{!NOT(currentPage==1)}">
+                                <apex:commandLink action="{!goToFirst}"  reRender="pbsQuotes" status="statusChangePage">
+                                    <img class="first" src="/s.gif" />
+                                </apex:commandLink> &nbsp;&nbsp;
+                            </apex:outputPanel>
+                            <apex:outputPanel styleClass="prevNext" rendered="{!currentPage==1}">
+                                <img class="firstoff" src="/s.gif" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel styleClass="prevNext" rendered="{!NOT(currentPage==1)}">
+                                <apex:commandLink action="{!prevPage}" reRender="pbsQuotes" status="statusChangePage">
+                                    <img class="prev" src="/s.gif" />
+                                    Previous
+                                </apex:commandLink> &nbsp;&nbsp;
+                            </apex:outputPanel>
+                            <apex:outputPanel styleClass="prevNext" rendered="{!currentPage==1}">
+                                <img class="prevoff" src="/s.gif" />
+                                Previous
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel styleClass="prevNext" rendered="{!NOT(currentPage == totalPages)}">
+                                <apex:commandLink action="{!nextPage}" reRender="pbsQuotes" status="statusChangePage">
+                                    Next
+                                    <img class="next" src="/s.gif" />
+                                </apex:commandLink> &nbsp;&nbsp;
+                            </apex:outputPanel>
+                            <apex:outputPanel styleClass="prevNext" rendered="{!currentPage == totalPages}">
+                                Next
+                                <img class="nextoff" src="/s.gif" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel styleClass="prevNext" rendered="{!NOT(currentPage == totalPages)}">
+                                <apex:commandLink action="{!goToLast}" reRender="pbsQuotes" status="statusChangePage">
+                                    <img class="last" src="/s.gif" />
+                                </apex:commandLink> &nbsp;&nbsp;
+                            </apex:outputPanel>
+                            <apex:outputPanel styleClass="prevNext" rendered="{!currentPage == totalPages}">
+                                <img class="lastoff" src="/s.gif" />
+                            </apex:outputPanel>
+                            
+                            &nbsp;&nbsp; Page: {!currentPage} of {!totalPages} &nbsp;&nbsp;
+                            <apex:actionStatus id="statusChangePage">
+                                <apex:facet name="start">
+                                    <apex:outputPanel layout="inline">
+                                        <img height="16" width="16" src="/img/loading.gif" />
+                                    </apex:outputPanel>
+                                </apex:facet>
+                                <apex:facet name="stop" />
+                            </apex:actionstatus>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:actionRegion>
+                
+            </apex:outputPanel>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

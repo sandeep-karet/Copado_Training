@@ -1,0 +1,7 @@
+<apex:page standardController="Opportunity" docType="html-5.0">
+
+    <c:ApplicationView path="salesforce/new_proposal"
+                        queryString="ext_opportunity={!Opportunity.Id}&sobject_type=Opportunity"
+                        height="800px"></c:ApplicationView>
+
+</apex:page>

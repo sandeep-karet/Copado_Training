@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LVGO__Livongo_Letterhead</letterhead>
+    <name>Client Must Approved Assets has changed</name>
+    <style>freeForm</style>
+    <subject>Client Must Approve Assets has changed on {!LVGO__Contract__c.Name}</subject>
+    <textOnly>Hello {!LVGO__Contract__c.LVGO__CSM__c} ,
+
+Client Must Approve Assets has been updated by {!LVGO__Contract__c.LastModifiedBy} at {!LVGO__Contract__c.LastModifiedDate}. The new value is: {!LVGO__Contract__c.LVGO__Client_Must_Approve_Assets__c}
+
+If you feel these changes are incorrect please contact the Salesforce user who made the change. This is an automated message, please do not reply.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

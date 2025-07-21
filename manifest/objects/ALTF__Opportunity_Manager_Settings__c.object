@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>These settings control certain aspects of Opportunity Manager behavior.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ALTF__Competitor_Class_List_Provider__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field allows an administrator to specify a class which will be used to retrieve a list of competitors associated with an opportunity should the customer be using a source other than the standard competitor picklist.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field allows an administrator to specify a class which will be used to retrieve a list of competitors associated with an opportunity should the customer be using a source other than the standard competitor picklist.</inlineHelpText>
+        <label>Competitor Class List Provider</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Completeness_Batch_Size__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Completeness Batch Size</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Custom_Tab_One_Icon_Class__c</fullName>
+        <defaultValue>&quot;sldsico-utility-ribbon&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This is the Salesforce lightning icon that will be shown for this Custom Tab</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Salesforce lightning icon that will be shown for this Custom Tab</inlineHelpText>
+        <label>Tab One Icon Class</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Custom_Tab_One_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is the Label which will appear in your Custom Tab</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Label which will appear in your Custom Tab</inlineHelpText>
+        <label>Tab One Label</label>
+        <length>35</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Custom_Tab_One_Src__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Visualforce page which your Custom Tab will show</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Visualforce page which your Custom Tab will show</inlineHelpText>
+        <label>Tab One Src</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Custom_Tab_Three_Icon_Class__c</fullName>
+        <defaultValue>&quot;sldsico-utility-thunder&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This is the Salesforce lightning icon that will be shown for this Custom Tab</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Salesforce lightning icon that will be shown for this Custom Tab</inlineHelpText>
+        <label>Tab Three Icon Class</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Custom_Tab_Three_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is the Label which will appear in your Custom Tab</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Label which will appear in your Custom Tab</inlineHelpText>
+        <label>Tab Three Label</label>
+        <length>35</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Custom_Tab_Three_Src__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Visualforce page which your Custom Tab will show</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Visualforce page which your Custom Tab will show</inlineHelpText>
+        <label>Tab Three Src</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Custom_Tab_Two_Icon_Class__c</fullName>
+        <defaultValue>&quot;sldsico-utility-setup_assistant_guide&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This is the Salesforce lightning icon that will be shown for this Custom Tab</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Salesforce lightning icon that will be shown for this Custom Tab</inlineHelpText>
+        <label>Tab Two Icon Class</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Custom_Tab_Two_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is the Label which will appear in your Custom Tab</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Label which will appear in your Custom Tab</inlineHelpText>
+        <label>Tab Two Label</label>
+        <length>35</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Custom_Tab_Two_Src__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Visualforce page which your Custom Tab will show</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Visualforce page which your Custom Tab will show</inlineHelpText>
+        <label>Tab Two Src</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Add_Action_button__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When this checkbox is selected, the Add Action button is not shown on Process qualifiers or Assessment questions.</description>
+        <inlineHelpText>When this checkbox is selected, the Add Action button is not shown on Process qualifiers or Assessment questions.</inlineHelpText>
+        <label>Disable In-line &apos;Add Action&apos; button</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Add_Competitor_Button__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When this checkbox is selected, the Add Competitor option is not shown on the Assessment tab.</description>
+        <inlineHelpText>When this checkbox is selected, the Add Competitor option is not shown on the Assessment tab.</inlineHelpText>
+        <label>Disable Add Competitor</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Competitor_Creation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, prevent users from creating a new competitor</description>
+        <inlineHelpText>If checked, prevents users from creating a new competitor. When adding a competitor to an opportunity (in the Competitive Strategy page) users will only be able to select from a pre-existing set of competitors.</inlineHelpText>
+        <label>Disable Competitor Creation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_ContactRole_Sync_Altify_SF__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>If checked, the Contact Roles section on a Salesforce Opportunity record is not automatically updated when a contact is added or deleted on the Relationship Map.</inlineHelpText>
+        <label>Disable Rel Map &gt;&gt; Contact Roles Sync</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_ContactRole_Sync_SF_Altify__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>If checked, the Relationship Map is not automatically updated when a Contact Role is added or deleted on the Salesforce Opportunity record.</inlineHelpText>
+        <label>Disable Contact Roles &gt;&gt; Rel Map Sync</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Decision_Criteria__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, hides decision criteria functionality.</description>
+        <inlineHelpText>If checked, hides decision criteria functionality.</inlineHelpText>
+        <label>Disable Decision Criteria</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Disable_Sync_Opportunity_Contacts__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Select this checkbox to disable the synchronization of relationship map contacts with Opportunity contact roles when a Altify Opportunity is inserted or updated.</description>
+        <inlineHelpText>Disables the synchronization of relationship map contacts with Opportunity contact roles when a Altify Opportunity is inserted or updated.</inlineHelpText>
+        <label>Disable Opp Contact Sync (Deprecated)</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Hide_PRIME_Type_Column__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If this is checked in a customer account the Actions tab should not show the &apos;PRIME Action Type&apos; column and obviously this is not shown when the user is creating an action (given the action create is done inline). So the PRIME type is not mandatory with this setting checked</description>
+        <inlineHelpText>If this is checked in a customer account the Actions tab should not show the &apos;PRIME Action Type&apos; column and obviously this is not shown when the user is creating an action (given the action create is done inline)</inlineHelpText>
+        <label>Hide PRIME Type Column</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__List_All_Actions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If this is checked in a customer account the Actions tab in OM should list all actions associated with the opportunity - not just PRIME actions. Show blank value for actions which don&apos;t have a PRIME type</description>
+        <inlineHelpText>If this is checked in a customer account the Actions tab in OM should list all actions associated with the opportunity - not just PRIME actions. Show blank value for actions which don&apos;t have a PRIME type</inlineHelpText>
+        <label>List All Actions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Opportunity_Plan_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The API name of the Opportunity custom field that defines Opportunity Plan Types. You can use these types to control which tabs and assessment questions are available to the user.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of the Opportunity custom field that defines Opportunity Plan Types. You can use these types to control which tabs and assessment questions are available to the user.</inlineHelpText>
+        <label>Opportunity Plan Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Opportunity_Update_Error_Url__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field can be used to specify the URL of a custom error page that helps the user to solve opportunity update validation problems.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The URL of a custom error page that helps the user to solve opportunity update validation problems.</inlineHelpText>
+        <label>Opportunity Update Error URL</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Show_Assessment__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field controls whether or not the Assessment screen is shown</description>
+        <inlineHelpText>This field controls whether or not the Assessment screen is shown</inlineHelpText>
+        <label>Show Assessment</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Show_Prime_Actions__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field controls whether the Altify Prime Actions screen is shown</description>
+        <inlineHelpText>This field controls whether the Altify Prime Actions screen is shown</inlineHelpText>
+        <label>Show PRIME Actions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Show_Test_and_Improve__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field controls whether the Altify Test &amp; Improve screen is shown</description>
+        <inlineHelpText>This field controls whether the Altify Test &amp; Improve screen is shown</inlineHelpText>
+        <label>Show Test and Improve</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Tab_Name_List__c</fullName>
+        <defaultValue>&quot;Overview,Process,Assessment,RelMap,Insight,Actions,TestImprove&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enter the names of the Altify Tabs in the required order as a comma separated list. The tabs are as follows: Overview, Process, RelMap, Insight, Actions, TestImprove, CustomTab1, CustomTab2, CustomTab3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the names of the Altify Tabs in the required order as a comma separated list. The tabs are as follows: Overview, Process, RelMap, Insight, Actions, TestImprove, CustomTab1, CustomTab2, CustomTab3</inlineHelpText>
+        <label>Tab Name List</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp10__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp10</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp1</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp2</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp3__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp3</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp4__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp4</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp5__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp5</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp6__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp6</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp7__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp7</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp8__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp8</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Temp9__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario.</description>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario.</inlineHelpText>
+        <label>Temp9</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr10__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr10</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr1</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr3</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr4__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr4</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr5__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr5</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr6__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr6</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr7__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr7</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr8__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr8</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__TempStr9__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Temporary custom config setting that may be used in a patch scenario</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary custom config setting that may be used in a patch scenario</inlineHelpText>
+        <label>TempStr9</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALTF__Test_And_Improve_Presentr_Process_ImgUrl__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field holds a url for an image that defines the Presenters Deal Review process.</description>
+        <inlineHelpText>This field holds a url for an image that defines the Presenters Deal Review process.</inlineHelpText>
+        <label>Deal Review Presenter Process Image Url</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Test_And_Improve_Process_Image_Url__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This setting holds a url to an image which defines the T&amp;I process
+
+This image is shown on the welcome page of the T&amp;I</description>
+        <inlineHelpText>This setting holds a url to an image which defines the T&amp;I process
+
+This image is shown on the welcome page of the T&amp;I</inlineHelpText>
+        <label>Deal Review Process Image Url</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Test_And_Improve_Reviewer_Process_ImgUrl__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field holds a url for an image that defines the Reviewers Deal Review process.</description>
+        <inlineHelpText>This field holds a url for an image that defines the Reviewers Deal Review process.</inlineHelpText>
+        <label>Deal Review Reviewer Process Image Url</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ALTF__Use_Simple_Completion_Calculations__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Use Simple Completion Calculations</inlineHelpText>
+        <label>Use Simple Completion Calculations</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Altify Opportunity Manager Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

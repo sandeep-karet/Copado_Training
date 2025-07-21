@@ -1,0 +1,85 @@
+<template>
+  <lightning-card>
+    <div class="slds-p-around_small" style="border: 1px dotted #a8a9ac;">
+      <div if:false={isLoaded} class="outer-div">
+        <lightning-spinner variant="brand" alternative-text="Loading...">
+        </lightning-spinner>
+      </div>
+      <div class="slds-p-vertical_small">
+        <div class="custom-box slds-box_xxx-small slds-p-bottom_small slds-text-align_center">
+          <br />
+          <div class="acc-container">
+            <lightning-record-view-form record-id={recordId} object-api-name="Opportunity" class="textInput">
+              <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                  <lightning-output-field field-name="Contract_Path__c"></lightning-output-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                  <lightning-output-field field-name="Line_of_Business_CP__c"></lightning-output-field>
+                </div>
+              </div>
+            </lightning-record-view-form>
+          </div>
+        </div>
+      </div>
+      <template if:true={boolUpdateVisible}>
+        <lightning-button variant="brand" label={clickedButtonLabel} title="Update Contract Path"
+          onclick={handleClick} class="slds-align_absolute-center"></lightning-button>
+      </template>
+      <template if:true={boolVisible}>
+        <template if:true={directContract.data}>
+          <lightning-combobox data-id="directCon" name="DirectContract" label="Direct TDH Contract" value={selectedType1}
+            field-level-help="Is this a direct contract with Teladoc Health?" options={directContract.data.values}
+            onchange={handleDirectcontractChange} required>
+          </lightning-combobox>
+        </template>
+        <br />
+        <template if:true={showAccount}>
+          <lightning-record-edit-form object-api-name="Opportunity">
+            <label for="fieldid">Contract Path</label>
+            <lightning-input-field id="fieldid" data-id="accountName" field-name="Contract_Path__c"
+              variant="label-hidden" onchange={handleAccountChange} required> </lightning-input-field>
+          </lightning-record-edit-form>
+        </template>
+        <br />
+        <template if:true={DirectEmpServicesOptions}>
+          <lightning-combobox data-id="directEmp" name="DirectEmployerService" label="Direct Employer Business"
+            value={selectedType2}
+            field-level-help="are you selling direct to an Employer business?"
+            options={DirectEmpServicesOptions} onchange={handleDirectEmployerServiceChange} required>
+          </lightning-combobox>
+        </template>
+        <br />
+        <template if:true={showLens}>
+          <template if:true={contractLensOptions}>
+            <lightning-combobox data-id="ConLens" name="ContractingLens" label="Contracting Lens"
+              value={selectedType3}
+              field-level-help="EITHER: 1) The type of business the CONTRACTEE is acting as for this direct contract with Teladoc Health. OR: 2) the type of business the CONTRACTOR is acting as for this non-direct contract."
+              options={contractLensOptions} onchange={contractLensChange} required>
+            </lightning-combobox>
+          </template>
+        </template>
+        <br />
+        <template if:true={showLOB}>
+          <template if:true={lobOptions}>
+            <lightning-combobox data-id="lob" name="lineOfBusiness" label="Line Of Business" value={selectedType4}
+              field-level-help="Population Type"
+              options={lobOptions} onchange={lineOfBusinessChange} required>
+            </lightning-combobox>
+          </template>
+        </template>
+        <br />
+        <div class="slds-align_absolute-center">
+          <div>
+            <lightning-button data-id="Submit" variant="brand" label="Save" disabled={isButtonDisabled}
+              onclick={saveContractPath} class="slds-var-m-left_medium"></lightning-button>
+          </div>
+          <div>
+            <lightning-button variant="brand" label={clickedButtonLabel} title="Update Contract Path"
+              onclick={handleClick} class="slds-var-m-left_medium"></lightning-button>
+          </div>
+        </div>
+      </template>
+    </div>
+  </lightning-card>
+</template>

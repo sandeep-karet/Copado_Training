@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Altify Assessment Question</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Altify Assessment Questions</value>
+    </caseValues>
+    <fields>
+        <help><!-- Is this criterion currently included in assessments --></help>
+        <label><!-- Active --></label>
+        <name>ALTF__Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- AltifyId --></label>
+        <name>ALTF__AltifyId__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the text of the criterion, i.e. &quot;Is there a compelling event
+      ?&quot; --></help>
+        <label><!-- Criterion Text --></label>
+        <name>ALTF__Criterion_Text__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tip/Hint text displayed to the user on clicking the &apos;i&apos; icon beside the assessment criterion. The same text is also displayed on the right of the &quot;add comments&quot; pop-up screen. --></help>
+        <label><!-- Help --></label>
+        <name>ALTF__Help__c</name>
+    </fields>
+    <fields>
+        <label><!-- Question Text --></label>
+        <name>ALTF__Long_Question__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field should be deprecated, as it is not used by the Altify application. --></help>
+        <label><!-- Mandatory --></label>
+        <name>ALTF__Mandatory__c</name>
+    </fields>
+    <fields>
+        <help><!-- Text displayed for a &quot;-&quot; response to the criterion --></help>
+        <label><!-- No Label --></label>
+        <name>ALTF__No_Label__c</name>
+    </fields>
+    <fields>
+        <help><!-- Score given to a &quot;-&quot; response to the criterion. The more damaging a negative response to a criterion is to the current position on the opportunity, the more negative the score entered here should be. --></help>
+        <label><!-- No Score --></label>
+        <name>ALTF__No_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- This controls the order in which the criterion appears within its Question --></help>
+        <label><!-- Order Number --></label>
+        <name>ALTF__Order_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- The section heading under which the criterion will be displayed. 
+
+Defined as a picklist, you can edit the section headings (change the names of the existing and/or add new) under App Setup &gt; Create &gt; Objects &gt; Assessment Criterion &gt; Section Headi --></help>
+        <label><!-- Section Heading --></label>
+        <name>ALTF__Question__c</name>
+        <picklistValues>
+            <masterLabel>Can we compete?</masterLabel>
+            <translation><!-- Can we compete? --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Can we win?</masterLabel>
+            <translation><!-- Can we win? --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Is it worth winning?</masterLabel>
+            <translation><!-- Is it worth winning? --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Is there an opportunity?</masterLabel>
+            <translation><!-- Is there an opportunity? --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Assessment Criterion marked as &apos;Comments Recommended&apos; will be checked for comments when calculating the Assessment Completeness level. Details for how the Assessment Completeness is marked can be found in the online help. --></help>
+        <label><!-- Comments Recommended --></label>
+        <name>ALTF__Recommended__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does this criterion appear in assessment summaries --></help>
+        <label><!-- Summary --></label>
+        <name>ALTF__Summary__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is it sensible for this criterion to have competitor answers, as well as answers for your organization? This is checked by default. --></help>
+        <label><!-- Support Competitor Answer --></label>
+        <name>ALTF__Support_Competitor_Answer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Score given to a &quot;?&quot; response to the criterion. Typically set to &quot;0&quot;, as the position is neither positive nor negative. However, you can set a plus or minus score if you determine that a &quot;?&quot; position on this criterion is better or worse than no resp --></help>
+        <label><!-- Unknown Score --></label>
+        <name>ALTF__Unknown_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Text displayed for a &quot;+&quot; response to a criterion. --></help>
+        <label><!-- Yes Label --></label>
+        <name>ALTF__Yes_Label__c</name>
+    </fields>
+    <fields>
+        <help><!-- Score given to a &quot;+&quot; response to the criterion. The more positive a &quot;+&quot; response to this criterion is to the current position on the opportunity, the more positive the score entered here should be. --></help>
+        <label><!-- Yes Score --></label>
+        <name>ALTF__Yes_Score__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

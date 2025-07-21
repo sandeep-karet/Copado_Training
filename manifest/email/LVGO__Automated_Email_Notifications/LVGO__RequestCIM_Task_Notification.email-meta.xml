@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification goes to CIM team when Request CIM Resource task is created on Closed Opportunity</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LVGO__Blank_Letterhead</letterhead>
+    <name>RequestCIM Task Notification</name>
+    <style>freeForm</style>
+    <subject>Resource Request: CIM Needed on this Opportunity</subject>
+    <textOnly>New Task
+
+
+To CIM Team,
+
+{!LVGO__Opportunity__c.LastModifiedBy} has assigned you the following new task:
+
+Subject: Resource Request: CIM Needed on this Opportunity
+Opportunity:  {!LVGO__Opportunity__c.Name}
+Priority: Normal
+
+For more details, click the following Opportunity link:
+{!LVGO__Opportunity__c.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

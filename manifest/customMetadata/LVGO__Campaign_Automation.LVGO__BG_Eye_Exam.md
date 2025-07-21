@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>BG-Eye Exam</label>
+    <protected>false</protected>
+    <values>
+        <field>LVGO__Initial_Message_Content__c</field>
+        <value xsi:type="xsd:string">Have you had your eyes checked in the past year? Doctors recommend it yearly for people with diabetes. Find out more about your eye health-related benefits.</value>
+    </values>
+    <values>
+        <field>LVGO__Initial_Message__c</field>
+        <value xsi:type="xsd:string">BG-Eye Exam</value>
+    </values>
+</CustomMetadata>

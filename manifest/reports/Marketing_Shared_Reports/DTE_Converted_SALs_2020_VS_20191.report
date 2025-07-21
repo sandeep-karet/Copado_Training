@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>(RowCount-PREVGROUPVAL(RowCount, LAST_TRANSFER))/(PREVGROUPVAL(RowCount, LAST_TRANSFER))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>LAST_TRANSFER</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Change YOY</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(RowCount-PREVGROUPVAL(RowCount, LAST_TRANSFER))/(PREVGROUPVAL(RowCount, LAST_TRANSFER))</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>BucketField_24908690</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Change YOY Channel</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_24908690</developerName>
+        <masterLabel>Channels</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Lead.Lead_Owner_Role_Profile__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Client Manager - Client Management - Direct</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Operations - Client Services</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Direct</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Client Management - Direct</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - DTE</sourceValue>
+            </sourceValues>
+            <value>DTE</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Client Operations - Sales - Broker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager - Sales - Broker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - Broker</sourceValue>
+            </sourceValues>
+            <value>Broker/Sml Emp</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <value>TPA/Reseller</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - HP Enterprise</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Client Management - Key HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Client Management - Aetna</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Client Management - Core HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Key HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Core HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Aetna</sourceValue>
+            </sourceValues>
+            <value>Health Plan</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Provider - Client Management - HHS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Provider - Sales - HHS</sourceValue>
+            </sourceValues>
+            <value>HHS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Canada</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager - Sales - Canada</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - Canada</sourceValue>
+            </sourceValues>
+            <value>Canada</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Lead.Lead_Owner_Role_Profile__c</field>
+    </columns>
+    <columns>
+        <field>LEAD_ID</field>
+    </columns>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>RATING</field>
+    </columns>
+    <columns>
+        <field>STREET</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>Lead.How_did_you_hear_about_us__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND (3 OR 4) AND 5 AND (6 OR 7)</booleanFilter>
+        <criteriaItems>
+            <column>LEAD_SOURCE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Marketing,ZoomInfo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CONVERTED</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_24908690</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>DTE</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Jon Fisher</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>SAL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LAST_TRANSFER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>12/31/2019</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LAST_TRANSFER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>1/1/2020</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Year</dateGranularity>
+        <field>LAST_TRANSFER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_24908690</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>DTE Converted SALs 2020 VS 2019</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LAST_TRANSFER</dateColumn>
+        <interval>INTERVAL_PREVCURFY</interval>
+    </timeFrameFilter>
+</Report>

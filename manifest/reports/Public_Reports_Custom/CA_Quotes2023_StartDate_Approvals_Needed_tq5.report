@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SBQQ__Quote__c.CPQ_Pricebook__c</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Quote__c.Account_Name__c</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Quote__c.SBQQ__AdditionalDiscountAmount__c</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Quote__c.Net_Annual_Amount_Calc__c</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Quote__c.Revenue_for_One_time__c</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Quote__c.Approvals__c</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Quote__c.SBQQ__Notes__c</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Quote__c.Approval_N__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Quotes that need to be reviewed for approval</description>
+    <filter>
+        <criteriaItems>
+            <column>SBQQ__Quote__c.Approval_N__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>requires approval</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SBQQ__Quote__c.Business_Region__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Canada</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>CA Quotes2023 StartDate Approvals Needed</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$SBQQ__Quote__c$SBQQ__QuoteLine__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>SBQQ__Quote__c.SBQQ__StartDate__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

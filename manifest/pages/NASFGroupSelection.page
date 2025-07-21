@@ -1,0 +1,61 @@
+<apex:page id="NASFGroupSelection" controller="NASFGroupSelectController" lightningStylesheets="true" action="{! clearStatus }">
+    <apex:pageMessages id="msg" escape="false" />
+
+    <apex:outputPanel rendered="{! !showGroupSelect }">
+        <br /><br />
+
+        <h1 style="color:red">Required fields for New Account Setup Form are missing.  <a href = '/{! accountId }'>View account</a></h1>
+
+    </apex:outputPanel>
+
+    <apex:form rendered="{! accountId != null }">
+        <apex:pageBlock title="Group Selection" mode="edit" rendered="{! showGroupSelect }">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!generatePreview}" value="View Setup Form" />
+                <!--<apex:commandButton action="{!sendAcctForm}" value="Send to Me" reRender="msg" />-->
+                <!--<apex:commandlink action="{!passToConfig}" target="_blank" title="Pass to config and open case in new tab" style="text-decoration:none;" >-->
+                    <!--<apex:commandButton value="Pass to Configuration" />-->
+                <!--</apex:commandlink>-->
+                <apex:commandButton action="{!cancelAcctForm}" value="Cancel" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2" showHeader="true" title="Filters">
+                <apex:pageBlockSectionItem >
+                    Name Filter:
+                    <apex:inputText value="{!searchString}">
+                        <apex:actionSupport event="onkeyup" action="{!Search}" reRender="groupsTable,show100"/>
+                    </apex:inputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    Status Filter:
+                    <apex:inputField value="{! filterGroup.Status__c }">
+                        <apex:actionSupport event="onchange" action="{!Search}" reRender="groupsTable,show100"/>
+                    </apex:inputField>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" showHeader="true" title="Member Groups">
+                <apex:outputPanel id="show100">
+                    <apex:pageBlockSectionItem rendered="{! has100 }">
+                        <em>First 100 groups displayed.</em>
+                    </apex:pageBlockSectionItem>
+                </apex:outputPanel>
+            <apex:pageBlockTable value="{!allGroups}" var="g" id="groupsTable">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox value="{!allChecked}">
+                            <apex:actionSupport event="onclick" action="{!CheckAll}" rerender="groupsTable"/>
+                        </apex:inputCheckbox>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!g.selected}"/>
+                </apex:column>
+                <apex:column value="{!g.grp.Name__c}" headerValue="Group Name"/>
+                <apex:column value="{!g.grp.Group_Number__c}" headerValue="Legacy Id"/>
+                <apex:column value="{!g.grp.Status__c}"/>
+                <apex:column value="{!g.grp.LastModifiedBy.Name}" headerValue="Last Modified By"/>
+                <apex:column value="{!g.grp.LastModifiedDate}"/>
+                <apex:column value="{!g.grp.CreatedDate}"/>
+            </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

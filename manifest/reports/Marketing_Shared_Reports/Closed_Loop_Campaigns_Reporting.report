@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_73416156</developerName>
+        <masterLabel>Channels</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Lead.Lead_Owner_Role_Profile__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - Broker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager - Sales - Broker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Sales - Broker</sourceValue>
+            </sourceValues>
+            <value>Broker</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Provider - Sales - HHS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Provider - Client Management - HHS</sourceValue>
+            </sourceValues>
+            <value>HHS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <value>TPA/Reseller</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - DTE</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Client Management - Direct</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Operations - Client Services</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Direct</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Manager - Client Management - Direct</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Manager - Commercial Ops</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Operations - Account Configuration</sourceValue>
+            </sourceValues>
+            <value>DTE</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Aetna</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Core HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Key HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - UHG</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Client Management - Aetna</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Client Management - Core HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Client Management - Key HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - HP Enterprise</sourceValue>
+            </sourceValues>
+            <value>Health Plan</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - Canada</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager - Sales - Canada</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Canada</sourceValue>
+            </sourceValues>
+            <value>Canada</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Marketing Operations - Marketing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager - Marketing</sourceValue>
+            </sourceValues>
+            <value>Marketing Ops</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Lead.Transferred_To__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Lead_Owner_Role_Profile__c</field>
+    </columns>
+    <columns>
+        <field>LEAD_OWNER</field>
+    </columns>
+    <columns>
+        <field>Lead.Reason_Disqualified__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>CONVERTED</field>
+    </columns>
+    <columns>
+        <field>COMPANY_ACCT</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>EMPLOYEES</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>MEMBER_STATUS</field>
+    </columns>
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <columns>
+        <field>Lead.AQL_Date__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>202110-US-TDH-EM-EVT-IFEBP-2021-Annual-Conference</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STATUS</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Closed Loop Campaigns Reporting</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignLeadLifetime</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+</Report>

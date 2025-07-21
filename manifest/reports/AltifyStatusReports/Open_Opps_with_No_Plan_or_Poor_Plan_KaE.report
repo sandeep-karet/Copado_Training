@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel># Opportunities</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Opportunity.OneTime_Net_Total_With_PG__c.CONVERT:AVG</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average Amount</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Opportunity.Altify_Reporting_Amount__c.CONVERT:SUM</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Amount</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_47550171</developerName>
+        <masterLabel>Plan Status</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Opportunity$Altify_Plan_Status__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>No Plan</sourceValue>
+            </sourceValues>
+            <value>1. No Plan</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Red</sourceValue>
+            </sourceValues>
+            <value>2. Poor Plan</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Amber</sourceValue>
+            </sourceValues>
+            <value>3. Satisfactory Plan</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Green</sourceValue>
+            </sourceValues>
+            <value>4. Excellent Plan</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$OneTime_Net_Total_With_PG__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Amount</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Decision_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$ALTF__Altify_Opportunity__c.ALTF__Assessment_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$ALTF__Altify_Opportunity__c.ALTF__Relationships_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$ALTF__Altify_Opportunity__c.ALTF__Insights_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$ALTF__Altify_Opportunity__c.ALTF__PRIME_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$ALTF__Altify_Opportunity__c.ALTF__Decision_Criteria_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$ALTF__Altify_Opportunity__c.ALTF__Strategy_Status__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows details for open opportunities with no opportunity plan or where opportunity plan status is red, grouped by Owner, Plan Status and Stage</description>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity$IsClosed</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Altify_Plan_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>No Plan</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Altify_Plan_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Red</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Owner.Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_47550171</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$StageName</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Open Opps with No Opp Plan or Poor Plan</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>AltfRep_Opportunities_plus_Altify_Status__c</reportType>
+    <roleHierarchyFilter>Commercial_Ops</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

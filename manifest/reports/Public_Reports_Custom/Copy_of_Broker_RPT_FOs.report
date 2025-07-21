@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_59510684</developerName>
+        <masterLabel>Broker Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Account.Opportunities$Owner</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Mitch McKelvey</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Simeon Goder</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pete Coen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mya Griffith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cathy Sapp</sourceValue>
+            </sourceValues>
+            <value>Sapp Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Travis Blanchard</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kelsey LeGrande</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Andrea Sadler</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nicholas Gates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alex Cope</sourceValue>
+            </sourceValues>
+            <value>Sadler Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Kyle Sadler</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jack Diamond</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>David Toves</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lauren Ozanich</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matt Scott</sourceValue>
+            </sourceValues>
+            <value>Diamond Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Tony Elder</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Corey Cushing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Keaton Anderson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>David Cuberos</sourceValue>
+            </sourceValues>
+            <value>Elder Team</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account$Account_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$GUID__c</field>
+    </columns>
+    <columns>
+        <field>Account$Account_Type__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Type</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$StageName</field>
+    </columns>
+    <columns>
+        <field>Account$States_of_Operation__c</field>
+    </columns>
+    <columns>
+        <field>Account$Type</field>
+    </columns>
+    <columns>
+        <field>BucketField_59510684</field>
+    </columns>
+    <columns>
+        <field>Account$BillingStreet</field>
+    </columns>
+    <columns>
+        <field>Account$BillingCity</field>
+    </columns>
+    <columns>
+        <field>Account$BillingState</field>
+    </columns>
+    <columns>
+        <field>Account$BillingPostalCode</field>
+    </columns>
+    <columns>
+        <field>Account$BillingCountry</field>
+    </columns>
+    <currency>USD</currency>
+    <description>D365 Validations with SF</description>
+    <filter>
+        <criteriaItems>
+            <column>Account$Account_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Broker</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Broker RPT</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>EEM_Accounts_with_Opps__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account.Opportunities$Contracted_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

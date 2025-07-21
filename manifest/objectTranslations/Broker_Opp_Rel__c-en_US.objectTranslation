@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Broker / Ben Con Opportunity Relation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Broker Opportunity Relations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Benefit Sponsor --></label>
+        <name>Broker_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker Contact --></label>
+        <name>Broker_Contact__c</name>
+        <relationshipLabel><!-- Broker Opportunity Relations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Broker Flat-Rate --></label>
+        <name>Broker_Flat_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker Percentage --></label>
+        <name>Broker_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker Relationship --></label>
+        <lookupFilter>
+            <errorMessage><!-- No Broker Relationship found for the Account --></errorMessage>
+            <informationalMessage><!-- Please Search and Select the Broker Relationship for the Account. --></informationalMessage>
+        </lookupFilter>
+        <name>Broker_Rel__c</name>
+        <relationshipLabel><!-- Broker Opportunity Relations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Chronic Care Broker Flat Rate --></label>
+        <name>Chronic_Care_Broker_Flat_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Chronic Care Broker Percentage --></label>
+        <name>Chronic_Care_Broker_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Composite Key --></label>
+        <name>Composite_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Location --></label>
+        <name>Contact_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location of Record --></label>
+        <name>Location_of_Record__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Account --></label>
+        <name>Opp_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opp_Broker__c</name>
+        <relationshipLabel><!-- Broker Opportunity Relations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Stage --></label>
+        <name>Opportunity_Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Servicing Account --></label>
+        <name>Servicing_Account__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- This will be used for editing only --></description>
+        <label><!-- Edit Broker Relationship --></label>
+        <name>Edit_Broker_Relationship</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This will the default record type used --></description>
+        <label><!-- New Broker Relationship --></label>
+        <name>New_Broker_Relationship</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Broker Contact Selected is not associated with the Broker Relationship of the Opportunity Account --></errorMessage>
+        <name>Validate_Broker_Contact</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Broker Relationship selected is not associated with the Opportunity Account. --></errorMessage>
+        <name>Validate_Broker_Relationship</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Account_Program_Overview__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c.LVGO__Client_Member_Groups__r$LVGO__ClientMemberCode__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Account__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$RecordType</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Client_Overview__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$Name</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__BillingPartner__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Status__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Registration_Name__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Use this report to find account names, member codes and CO/PO information to match with data from finance reports in ROM</description>
+    <filter>
+        <criteriaItems>
+            <column>LVGO__Contract__c$LVGO__Account_Program_Overview__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>HCSC,Blue Cross Blue Shield of Montana,Blue Cross Blue Shield of Illinois,Blue Cross Blue Shield of Texas,Blue Cross Blue Shield of New Mexico,Blue Cross Blue Shield of Oklahoma</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>HCSC PO &amp; CO w/Client Code</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Program_Overviews_w_Client_Overview_Membecode_LV__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>LVGO__Contract__c.LVGO__Client_Member_Groups__r$LVGO__ClientMemberCode__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>LVGO__Contract__c$LVGO__ActivatedDate__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

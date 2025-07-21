@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Altify Account Hierarchy</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Altify Account Hierarchies</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>ALTF__Account__c</name>
+        <relationshipLabel><!-- Altify Hierarchy Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- When you have two or more accounts that actually refers to one then one is primary while others are aliases --></help>
+        <label><!-- Alias --></label>
+        <name>ALTF__Alias__c</name>
+    </fields>
+    <fields>
+        <label><!-- AltifyId --></label>
+        <name>ALTF__AltifyId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include Account --></label>
+        <name>ALTF__Include__c</name>
+        <relationshipLabel><!-- Altify Include Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- IsDirty --></label>
+        <name>ALTF__IsDirty__c</name>
+    </fields>
+    <fields>
+        <help><!-- Each account should have one entry that refers to itself. --></help>
+        <label><!-- IsMaster --></label>
+        <name>ALTF__IsMaster__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

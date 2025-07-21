@@ -1,0 +1,12 @@
+<apex:page controller="tinderbox.ConfigurePackageController">
+    <apex:sectionHeader title="Configure Octiv Account"
+                        description="Enter the full domain of your Octiv Account. Example: https://acme.octiv.com" />
+
+    <apex:form >
+       <apex:pageblock >
+           Octiv URL: &nbsp;
+           <apex:inputText value="{!accountUrl}" size="50" />
+       </apex:pageblock>
+       <apex:commandButton action="{!submit}" value="Save"/>
+    </apex:form>
+</apex:page>

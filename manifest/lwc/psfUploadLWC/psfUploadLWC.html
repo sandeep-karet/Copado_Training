@@ -1,0 +1,27 @@
+<template>
+    <lightning-card icon-name="custom:custom19" title='Upload PSF File'>
+        <div style="margin-left: 3%" class="slds-grid slds-wrap">
+            <div>This tool is only use for INSERTING records, if you wish to update PSF records, please do it via record detail page or dataloader.</div>
+            <lightning-button variant="brand-outline" label="Download Template" onclick={download} class="slds-p-right_x-small slds-p-left_x-small"></lightning-button>
+        </div>
+        <div style="margin-left: 3%">
+            <lightning-file-upload accept={acceptedFormats} 
+                                   label="Attach CSV" 
+                                   multiple="multiple" 
+                                   onuploadfinished={handleUploadFinished} 
+                                   record-id={recordId}></lightning-file-upload>
+        </div>
+
+        <div if:true={data}>
+            <lightning-datatable columns={columns} 
+                                 data={data} 
+                                 hide-checkbox-column="true" 
+                                 key-field="id"
+                                 sorted-by={sortBy}
+                                 sorted-direction={sortDirection}
+                                 onsort={handleSortdata}
+                                 ></lightning-datatable>
+        </div>
+
+    </lightning-card>
+</template>

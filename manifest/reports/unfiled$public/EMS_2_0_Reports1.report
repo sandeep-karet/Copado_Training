@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Mbr_Group__c$Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Name__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Subscription__c.Fee_Type__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Current_Membership_Fee__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Product_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Product_End_Date__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Product__c</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Id</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Id</field>
+    </columns>
+    <columns>
+        <field>Mbr_Group__c$Status__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Mbr_Group__c$Client_Account__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>VEBA - Parent</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Mbr_Group__c.Plan_Specific_Fees_By_Product__r$Product__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>,EMS 2.0 Bundle,BD - Core Bundle (US Employer),Find Best Doctor,Treatment Decision Support,Medical Record eSummary,Virtual Medical Director,Oncology Insight,Critical Case</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>EMS 2.0 Reports</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Member_Groups_with_Plan_Specific_Fees__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Mbr_Group__c$Active_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

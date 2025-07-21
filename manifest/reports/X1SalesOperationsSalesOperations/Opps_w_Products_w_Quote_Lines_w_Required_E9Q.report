@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Id</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$Product__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$SBQQ__QuoteLine__c.Id</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$SBQQ__QuoteLine__c.SBQQ__RequiredBy__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$SBQQ__QuoteLine__c.Required_By_ID__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityLineItems$SBQQ__QuoteLine__c.SBQQ__RequiredBy__c.SBQQ__ProductName__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Opps w Products w Quote Lines w Required By Quote Line</description>
+    <format>Tabular</format>
+    <name>Opps w Products w Quote Lines w Required</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opps_w_Products_w_Quote_Lines_w_Required_By__c</reportType>
+    <roleHierarchyFilter>System_Administrator</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

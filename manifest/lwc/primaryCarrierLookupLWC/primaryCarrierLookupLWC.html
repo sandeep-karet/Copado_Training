@@ -1,0 +1,37 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card>
+      <div class="slds-p-around_medium">
+        <h1 class="slds-text-heading--medium"><b>Available Contract Path Relationship</b></h1>
+        <h3 class="slds-p-top_small">Contract Path: <a href={acctLink}>{acctName}</a></h3>
+
+        <br />
+        <lightning-datatable
+          data-id="datatable"
+          key-field="Id"
+          data={data}
+          onsort={handleSort}
+          sorted-by={sortedField}
+          sorted-direction={sortDirection}
+          columns={col}
+          max-row-selection="1"
+          onrowselection={handleRowSelect}
+          selected-rows={preSelectedRows}
+          min-column-width="150"
+          wrap-text-max-lines="3"
+        >
+        </lightning-datatable>
+        <p class="slds-m-vertical_medium content">
+          Displaying {startingRecord} to {endingRecord} of {totalRecountCount}
+          records. Page {page} of {totalPage}.
+        </p>
+        <div class="slds-m-around_medium slds-align_absolute-center">
+          <c-mg2-sorting-lwc
+            onprevious={previousHandler}
+            onnext={nextHandler}
+          ></c-mg2-sorting-lwc>
+          <lightning-button data-id="Submit" variant="brand" label="Submit" disabled={isButtonDisabled} onclick={SubmitPC}></lightning-button>        
+        </div>
+      </div>
+    </lightning-card>
+  </template>

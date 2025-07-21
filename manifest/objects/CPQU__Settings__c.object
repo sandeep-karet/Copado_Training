@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CPQU__Auto_Activate_Contract__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Automatically marks all Contracts as Activated when they are created.</description>
+        <inlineHelpText>Automatically marks all Contracts as Activated when they are created, setting the Status picklist to Activated on the Contract.</inlineHelpText>
+        <label>Auto Activate Contract</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CPQU__Auto_Generate_Contract_Opp_Stage__c</fullName>
+        <defaultValue>&quot;Closed Won&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Auto Generate Contract - Opp Stage</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPQU__Auto_Generate_Contract__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Automatically generates a Contract record when an Opportunity is marked as Closed Won.</description>
+        <inlineHelpText>Automatically generates a Contract record when an Opportunity is marked as Closed Won, checking the Contracted checkbox on the Opportunity.</inlineHelpText>
+        <label>Auto Generate Contract</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CPQU__Auto_Generate_Order_Opp_Stage__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Auto Generate Order - Opp Stage</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPQU__Auto_Generate_Order__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Automatically generates an Order record when an Opportunity is marked as Closed Won.</description>
+        <inlineHelpText>Automatically generates an Order record when an Opportunity is marked as Closed Won, checking the Ordered checkbox on the Opportunity.</inlineHelpText>
+        <label>Auto Generate Order</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CPQU__Auto_Generate_Renewal_Opportunity_Quote__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Automatically generates renewal Opportunity and Quote when a Contract is marked as Activated.</description>
+        <inlineHelpText>Automatically generates renewal Opportunity and Quote when a Contract is marked as Activated, checking the Renewal Forecast and Renewal Quoted checkboxes on the Opportunity.</inlineHelpText>
+        <label>Auto Generate Renewal Opportunity/Quote</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CPQU__Generate_Renewal_Quote_Days_Before_End__c</fullName>
+        <defaultValue>30</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Specifies how many days before the end of the contract should we auto generate the renewal Quote.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifies how many days before the end of the contract should we auto generate the renewal Quote.</inlineHelpText>
+        <label>Generate Renewal Quote ? Days Before End</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPQU__Show_Watermark_on_Draft_Quotes__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Shows a watermark image across the generated output document if the CPQ Quote is marked as a Draft.</description>
+        <inlineHelpText>Shows a watermark image across the generated output document if the CPQ Quote is marked as a Draft, checking the Watermark Shown checkbox on the CPQ Quote.</inlineHelpText>
+        <label>Show Watermark on Draft Quotes</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

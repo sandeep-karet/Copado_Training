@@ -1,0 +1,626 @@
+<template>
+  <lightning-card class="slds-size--1-of-1">
+    <template if:true={renderNew}>
+      <div
+        class="slds-grid slds-wrap slds-align_absolute-center"
+        style="background-color: #fffacd;"
+      >
+        <div class="slds-p-right_x-large">
+          <lightning-icon
+            icon-name="custom:custom32"
+            variant="warning"
+            size="large"
+          ></lightning-icon>
+        </div>
+        <div>
+          <h1 class="slds-text-heading--medium">
+            <b> New Plan-Specific Fees by Product</b>
+          </h1>
+        </div>
+      </div>
+    </template>
+    <template if:false={renderNew}>
+      <div
+        class="slds-grid slds-wrap slds-align_absolute-center"
+        style="background-color: #fffacd;"
+      >
+        <div class="slds-p-right_x-large">
+          <lightning-icon
+            icon-name="custom:custom32"
+            variant="warning"
+            size="large"
+          ></lightning-icon>
+        </div>
+        <div>
+          <h1 class="slds-text-heading--medium">
+            <b> Edit Record: Plan-Specific Fees by Product </b>
+          </h1>
+        </div>
+      </div>
+    </template>
+
+    <template if:true={renderFee}>
+      <lightning-card class="slds-size--1-of-1">
+        <template if:true={renderBHprice}>
+          <div
+            class="slds-grid slds-wrap slds-align_absolute-center"
+            style="background-color: #fffacd;"
+          >
+            <div class="slds-p-right_x-large">
+              <lightning-icon
+                icon-name="action:announcement"
+                variant="error"
+              ></lightning-icon>
+            </div>
+            <div>
+              <p>
+                Default fee ${feeDetail.bhFistMbr} for BH Consult Fee -
+                Psych/MD-1stvisitonly
+              </p>
+              <p>Default fee ${feeDetail.bhOnMbr} Psych/MD-ONGOING-Total</p>
+              <p>
+                Default fee ${feeDetail.bhNonMbr} for BH Consult Fee -
+                Non-Psychiatrist
+              </p>
+            </div>
+          </div>
+        </template>
+        <template if:false={renderBHprice}>
+          <template if:true={renderNoFee}>
+            <div
+              class="slds-grid slds-wrap slds-align_absolute-center"
+              style="background-color: #fffacd;"
+            >
+              <div class="slds-p-right_x-large">
+                <lightning-icon
+                  icon-name="utility:warning"
+                  alternative-text="Warning!"
+                  variant="warning"
+                  size="large"
+                ></lightning-icon>
+              </div>
+              <div>
+                <p>Default Fee Missing in Assets for {proCode} Consult Fee</p>
+              </div>
+            </div>
+          </template>
+          <template if:false={renderNoFee}>
+            <div
+              class="slds-grid slds-wrap slds-align_absolute-center"
+              style="background-color: #fffacd;"
+            >
+              <div class="slds-p-right_x-large">
+                <lightning-icon
+                  icon-name="action:announcement"
+                  variant="error"
+                ></lightning-icon>
+              </div>
+              <div>
+                <p>Default fee ${feeDetail.cfMbr} for Consult Fee</p>
+              </div>
+            </div>
+          </template>
+        </template>
+      </lightning-card>
+    </template>
+    <lightning-card class="slds-size--1-of-1">
+      <div class="slds-scrollable">
+        <table
+          class="slds-table slds-table--bordered slds-table--cell-buffer slds-p-left_xx-large slds-p-right_xx-large"
+          role="grid"
+        >
+          <thead>
+            <tr class="slds-text-title_caps">
+              <!--header checkbox for select all-->
+              <th style="width: 3.25rem;" class="slds-text-align_right"></th>
+              <th scope="col">
+                <div class="slds-truncate" title="Product">Product</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Subscription">
+                  Subscription
+                </div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Account">Account</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Opportunity">Opportunity</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Status">Status</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Consult Type">
+                  Consult Type
+                </div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Current Membership Fee">
+                  Current Membership Fee
+                </div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Start Date">Start Date</div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="Sort Order">Fee Type</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <template if:true={renderNew}>
+              <template for:each={subList} for:item="sub" for:index="index">
+                <tr key={sub.objSub.Id}>
+                  <th
+                    scope="row"
+                    class="slds-text-align_right"
+                    style="width: 3.25rem;"
+                  >
+                    <div class="slds-truncate">
+                      <template if:true={sub.isUsed}>
+                        <p>In Use</p>
+                      </template>
+                      <template if:false={sub.isUsed}>
+                        <lightning-input
+                          type="checkbox"
+                          onchange={checkBox}
+                          value={sub.objSub.Name}
+                          data-index={index}
+                        ></lightning-input>
+                      </template>
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div
+                      class="slds-truncate"
+                      title={sub.objSub.SBQQ__Product__r.Name}
+                    >
+                      {sub.objSub.SBQQ__Product__r.Name}
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div class="slds-truncate" title={sub.objSub.Name}>
+                      {sub.objSub.Name}
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div
+                      class="slds-truncate"
+                      title={sub.objSub.SBQQ__Account__r.Name}
+                    >
+                      {sub.objSub.SBQQ__Account__r.Name}
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div
+                      class="slds-truncate"
+                      title={sub.objSub.SBQQ__QuoteLine__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.Name}
+                    >
+                      {sub.objSub.SBQQ__QuoteLine__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.Name}
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div class="slds-truncate" title={sub.objSub.Status__c}>
+                      {sub.objSub.Status__c}
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div
+                      class="slds-truncate"
+                      title={sub.objSub.Consult_Type__c}
+                    >
+                      {sub.objSub.Consult_Type__c}
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div
+                      class="slds-truncate"
+                      title={sub.objSub.Current_Membership_Fee__c}
+                    >
+                      {sub.objSub.Current_Membership_Fee__c}
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div
+                      class="slds-truncate"
+                      title={sub.objSub.SBQQ__StartDate__c}
+                    >
+                      {sub.objSub.SBQQ__StartDate__c}
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div class="slds-truncate" title={sub.objSub.Fee_Type__c}>
+                      {sub.objSub.Fee_Type__c}
+                    </div>
+                  </th>
+                </tr>
+              </template>
+            </template>
+            <template if:true={renderExist}>
+              <tr>
+                <th></th>
+                <th scope="row">
+                  <div class="slds-truncate" title={subProductName}>
+                    {subProductName}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={subName}>
+                    {subName}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={acctName}>
+                    {acctName}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={oppName}>
+                    {oppName}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={subStatus}>
+                    {subStatus}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={conType}>
+                    {conType}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={cmFee}>
+                    {cmFee}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={startDate}>
+                    {startDate}
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="slds-truncate" title={feeType}>
+                    {feeType}
+                  </div>
+                </th>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+    </lightning-card>
+    <div class="slds-p-top-large">
+      <lightning-card
+        class="slds-size--1-of-2 slds-align_absolute-center"
+        style="border: 1px dotted #a8a9ac;"
+      >
+        <lightning-record-edit-form
+          data-id="createPSFForm"
+          record-id={psfId}
+          onsubmit={handleSubmit}
+          onsuccess={handleSuccess}
+          class="slds-size--1-of-1"
+          onerror={handleError}
+          object-api-name="Plan_Specific_Fees__c"
+        >
+          <lightning-card
+            class="slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large"
+          >
+            <div
+              class="slds-grid slds-wrap slds-size--1-of-1 slds-p-bottom_x-large"
+            >
+              <h1
+                class="slds-text-heading_medium slds-size--1-of-3 slds-p-horizontal_x-small slds-align_absolute-center"
+              >
+                <b>Plan Specific Fee</b>
+              </h1>
+            </div>
+            <div
+              class="slds-grid slds-wrap slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large slds-p-top_small slds-p-bottom_small"
+              style="background-color: #f0f8ff;"
+            >
+              <h2
+                class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small"
+              >
+                <b>Information</b>
+              </h2>
+            </div>
+            <lightning:card
+              class="slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large"
+            >
+              <div
+                class="slds-grid slds-wrap slds-p-left_xx-large slds-p-right_xx-large"
+              >
+                <div
+                  class="slds-size--1-of-2 slds-p-horizontal_x-small slds-m-bottom--medium"
+                >
+                  <p class="slds-m-bottom--xx-small">Name</p>
+                  {mgName}
+                </div>
+                <div
+                  class="slds-size--1-of-2 slds-p-horizontal_x-small slds-m-bottom--medium"
+                >
+                  <p class="slds-m-bottom--xx-small">Subscription</p>
+                  <a href={subLink}>{subName}</a>
+                </div>
+                <lightning-input-field
+                  data-id="ActualCoPay"
+                  field-name="Actual_Copay_May_Be_Less__c"
+                  variant="label-stacked"
+                  class="slds-size--1-of-2 slds-p-horizontal_x-small slds-form_horizontal"
+                ></lightning-input-field>
+                <lightning-input-field
+                  data-id="startDate"
+                  required
+                  field-name="Product_Start_Date__c"
+                  variant="label-stacked"
+                  class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                ></lightning-input-field>
+                <div class="slds-size--1-of-2 slds-p-horizontal_x-small"></div>
+                <lightning-input-field
+                  data-id="endDate"
+                  field-name="Product_End_Date__c"
+                  variant="label-stacked"
+                  class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                ></lightning-input-field>
+                <lightning-input-field
+                  data-id="mgId"
+                  field-name="Member_Group__c"
+                  variant="label-stacked"
+                  value={groupId}
+                  class="slds-size--1-of-3 slds-p-horizontal_x-small slds-hidden"
+                ></lightning-input-field>
+                <lightning-input-field
+                  data-id="subId"
+                  field-name="Subscription__c"
+                  variant="label-stacked"
+                  value={subId}
+                  class="slds-size--1-of-3 slds-p-horizontal_x-small slds-hidden"
+                ></lightning-input-field>
+                <lightning-input-field
+                  data-id="Currency"
+                  field-name="CurrencyIsoCode"
+                  variant="label-stacked"
+                  value="USD"
+                  class="slds-size--1-of-3 slds-p-horizontal_x-small slds-hidden"
+                ></lightning-input-field>
+              </div>
+            </lightning:card>
+            <template if:true={renderFeeConstruct}>
+              <div
+                class="slds-grid slds-wrap slds-size--1-of-1 slds-m-top--none slds-p-left_xx-large slds-p-right_xx-large slds-p-top_small slds-p-bottom_small"
+                style="background-color: #f0f8ff;"
+              >
+                <h2
+                  class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small"
+                >
+                  <b>{subProductName} Fee Structure</b>
+                </h2>
+              </div>
+              <lightning:card
+                class="slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large"
+              >
+                <div
+                  class="slds-grid slds-wrap slds-p-left_xx-large slds-p-right_xx-large"
+                >
+                  <template if:true={renderElse}>
+                    <lightning-input-field
+                      data-id="elseMbr"
+                      field-name="Consult_Fee_Mbr_Pd__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                    ></lightning-input-field>
+                    <lightning-input-field
+                      data-id="elsePlan"
+                      field-name="Consult_Fee_Plan_Pd__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                      value="0"
+                    ></lightning-input-field>
+                  </template>
+                  <template if:true={renderTC}>
+                    <lightning-input-field
+                      data-id="tcMbr"
+                      field-name="TC_Mbr_Case_Rate_Fee__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                    ></lightning-input-field>
+                    <lightning-input-field
+                      data-id="tcPlan"
+                      field-name="TC_Client_Case_Rate_Fee__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                      value="0"
+                    ></lightning-input-field>
+                  </template>
+                  <template if:true={renderDERM}>
+                    <lightning-input-field
+                      data-id="dermMbr"
+                      field-name="DERMConsult_Fee_Mbr_Pd__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                    ></lightning-input-field>
+                    <lightning-input-field
+                      data-id="dermPlan"
+                      field-name="DERMConsult_Fee_Plan_Pd__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                      value="0"
+                    ></lightning-input-field>
+                  </template>
+                  <template if:true={renderBH}>
+                    <lightning-input-field
+                      data-id="bhFistMbr"
+                      field-name="Consult_Fee_Initial_Diagnostic_Mbr_Pd__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                    ></lightning-input-field>
+                    <lightning-input-field
+                      data-id="bhFistPlan"
+                      field-name="Consult_Fee_Initial_Diagnostic_Plan_Pd__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                      value="0"
+                    ></lightning-input-field>
+                    <lightning-input-field
+                      data-id="bhOnMbr"
+                      field-name="Consult_Fee_Ongoing_MD_Mbr_Pd__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                    ></lightning-input-field>
+                    <lightning-input-field
+                      data-id="bhOnPlan"
+                      field-name="Consult_Fee_Ongoing_MD_Plan_Pd__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                      value="0"
+                    ></lightning-input-field>
+                    <lightning-input-field
+                      data-id="bhNonMbr"
+                      field-name="Consult_Fee_Ongoing_Non_MD_Mbr_Pd__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                    ></lightning-input-field>
+                    <lightning-input-field
+                      data-id="bhNonPlan"
+                      field-name="Consult_Fee_Ongoing_Non_MD_Plan_Pd__c"
+                      variant="label-stacked"
+                      class="slds-size--1-of-2 slds-p-horizontal_x-small"
+                      value="0"
+                    ></lightning-input-field>
+                  </template>
+                </div>
+              </lightning:card>
+            </template>
+            <template if:false={renderFeeConstruct}>
+              <div
+                class="slds-grid slds-wrap slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large slds-p-top_small slds-p-bottom_small"
+                style="background-color: #f0f8ff;"
+              >
+                <h2
+                  class="slds-text-heading--small slds-size--1-of-1 slds-p-horizontal_x-small"
+                >
+                  Select Product
+                </h2>
+              </div>
+              <lightning:card
+                class="slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large"
+              >
+                <div
+                  class="slds-grid slds-wrap slds-p-left_xx-large slds-p-right_xx-large"
+                >
+                  <h1
+                    class="slds-text-heading_large slds-size--1-of-1 slds-text-title_bold"
+                  >
+                    {subProductName}
+                  </h1>
+                  <p>This product does not have member or plan fees.</p>
+                </div>
+              </lightning:card>
+            </template>
+            <div class="slds-p-top_large slds-p-bottom_small slds-float_right">
+              <template if:true={noSub}>
+                <lightning-button
+                  variant="brand-outline"
+                  label="Save"
+                  onclick={handleSubmit}
+                  class="slds-p-right_x-small slds-p-left_x-small"
+                ></lightning-button>
+                <template if:false={renderNew}>
+                  <lightning-button
+                    variant="brand-outline"
+                    label="Delete"
+                    onclick={deleteRecord}
+                    class="slds-p-right_x-small slds-p-left_x-small"
+                  ></lightning-button>
+                </template>
+              </template>
+              <lightning-button
+                variant="brand-outline"
+                label="Close"
+                onclick={close}
+                class="slds-p-right_x-small slds-p-left_x-small"
+              ></lightning-button>
+            </div>
+          </lightning-card>
+        </lightning-record-edit-form>
+      </lightning-card>
+    </div>
+    <lightning-card
+      class="slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large"
+    >
+      <lightning-card
+        class="slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large"
+      >
+        <div
+          class="slds-grid slds-wrap slds-size--1-of-1 slds-p-left_xx-large slds-p-right_xx-large"
+        >
+          <h1
+            class="slds-text-heading_medium slds-size--1-of-1 slds-p-horizontal_x-small"
+          >
+            <b>Plan-Specific-Fees History</b>
+          </h1>
+        </div>
+        <lightning-card class="slds-size--1-of-1">
+          <table
+            class="slds-table slds-table--bordered slds-table--cell-buffer slds-p-left_xx-large slds-p-right_xx-large"
+            role="grid"
+          >
+            <thead>
+              <tr class="slds-text-title_caps">
+                <th scope="col">
+                  <div class="slds-truncate" title="Date">Date</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="User">User</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Action">Action</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="Old Value">Old Value</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate" title="New Value">New Value</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <template for:each={hisList} for:item="his">
+                <tr key={his.Field}>
+                  <th scope="row">
+                    <div class="slds-truncate" title={his.CreatedDate}>
+                      {his.CreatedDate}
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div class="slds-truncate" title={his.CreatedBy.Name}>
+                      {his.CreatedBy.Name}
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div class="slds-truncate" title={his.Field}>
+                      {his.Field}
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div class="slds-truncate" title={his.OldValue}>
+                      {his.OldValue}
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <div class="slds-truncate" title={his.NewValue}>
+                      {his.NewValue}
+                    </div>
+                  </th>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </lightning-card>
+      </lightning-card>
+    </lightning-card>
+  </lightning-card>
+</template>

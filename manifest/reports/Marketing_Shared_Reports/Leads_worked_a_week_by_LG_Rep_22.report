@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>Lead.IsConverted:SUM/RowCount</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>leads converted into contacts</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>MQL to Converted Rate</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_48869740</developerName>
+        <masterLabel>Channel</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Lead$Lead_Owner_Role_Profile__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Client Manager - Client Management - Direct</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - Broker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager - Sales - Broker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - DTE</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Sales - Broker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Direct</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Operations - Client Services</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Client Management - Direct</sourceValue>
+            </sourceValues>
+            <value>Employer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Provider - Sales - HHS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Provider - Client Management - HHS</sourceValue>
+            </sourceValues>
+            <value>HHS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - Canada</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager - Sales - Canada</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Canada</sourceValue>
+            </sourceValues>
+            <value>Canada</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Sales - HP Enterprise</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Client Management - Key HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Client Management - Core HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Operations - Client Management - Aetna</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - UHG</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - TPA/Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Key HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Core HealthPlan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Client Operations - Client Management - Aetna</sourceValue>
+            </sourceValues>
+            <value>HP</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Marketing Operations - Marketing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Marketo Sync - System Administrator</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager - Marketing</sourceValue>
+            </sourceValues>
+            <value>Marketing Ops</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Lead$Owner</field>
+    </columns>
+    <columns>
+        <field>Lead$Account_Type__c</field>
+    </columns>
+    <columns>
+        <field>Lead$Company</field>
+    </columns>
+    <columns>
+        <field>Lead$State</field>
+    </columns>
+    <columns>
+        <field>Lead$Title</field>
+    </columns>
+    <columns>
+        <field>Lead$Name</field>
+    </columns>
+    <columns>
+        <field>Lead.CampaignMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Lead$LeadSource</field>
+    </columns>
+    <columns>
+        <field>Lead$Lead_Source_Detail__c</field>
+    </columns>
+    <columns>
+        <field>Lead$How_did_you_hear_about_us__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Lead$IsConverted</field>
+    </columns>
+    <columns>
+        <field>Lead$Reason_Disqualified__c</field>
+    </columns>
+    <columns>
+        <field>Lead$Transferred_To__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Lead.CampaignMembers$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>2021,2022</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.CampaignMembers$CreatedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Paul Su,Mary Edmonson,Mellody Lewis,Marketo User,Justin Boyette,John Ricks,Val Gardner,William Rosenberry,Jeff Spicer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead.CampaignMembers$Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>List</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$Lead_Gen_Rep__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Lead$AQL_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>1/1/2022 12:00 AM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead$Lead_Gen_Rep__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>Lead$AQL_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead$Status</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Leads worked a week by LG Rep 22</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Leads_with_Campaign_History__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Lead$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

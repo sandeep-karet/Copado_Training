@@ -1,0 +1,15 @@
+<apex:page showHeader="false" sidebar="false">
+    <apex:includeLightning />    
+    <apex:includeScript value="/lightning/lightning.out.js" />
+    <div id="LightningComponentid" />    
+    <script>
+    $Lightning.use("c:umrLngOutLwc", function() {
+        $Lightning.createComponent("c:customFileUploader2",
+          { 
+          },
+          "LightningComponentid",
+          function(cmp) {
+          });
+    });
+    </script>
+</apex:page>

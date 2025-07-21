@@ -1,0 +1,20 @@
+<apex:page standardController="Opportunity">
+    <!-- Support old configurations without https prefix. -->
+    <apex:variable var="accountUrl" value="{!IF(BEGINS($Setup.tinderbox__TinderBox__c.tinderbox__Company_URL__c, 'https://'),
+                                           $Setup.tinderbox__TinderBox__c.tinderbox__Company_URL__c, 
+                                           'https://' + $Setup.tinderbox__TinderBox__c.tinderbox__Company_URL__c)}" />
+    
+    <apex:stylesheet value="{!accountUrl}/assets/sfdc-adapter.css" />
+
+    <div class="vs-page-header">
+        <h1 class="page-header">Add Proposal To {!Opportunity.name}</h1>
+        <div class="done-adding">
+            <apex:outputLink value="{!URLFOR($Action.Opportunity.View, Opportunity.id)}" id="theLink">Done Adding</apex:outputLink>
+        </div>
+    </div>
+
+    <c:ApplicationView path="salesforce/add_proposal"
+                       queryString="sfdc_opportunity={!Opportunity.Id}"
+                       height="700px"></c:ApplicationView>
+
+</apex:page>

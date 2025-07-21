@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>AcctGrpConParse_Exception__c.Exception_Type__c</field>
+    </columns>
+    <columns>
+        <field>AcctGrpConParse_Exception__c.Short_Desc__c</field>
+    </columns>
+    <columns>
+        <field>AcctGrpConParse_Exception__c.Full_Desc__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Flow Exceptions</description>
+    <filter>
+        <criteriaItems>
+            <column>AcctGrpConParsing_Item__c.Source__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>FLOW</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AcctGrpConParsing_Item__c.Item_Key__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Flow Exceptions</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$AcctGrpConParsing_Item__c$AcctGrpConParse_Exception__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CUST_CREATED_DATE</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CHILD_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

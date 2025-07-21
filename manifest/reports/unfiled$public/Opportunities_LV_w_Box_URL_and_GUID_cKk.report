@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LVGO__Opportunity__c$Name</field>
+    </columns>
+    <columns>
+        <field>LVGO__Opportunity__c$LVGO__Box_Contract_URL__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Opportunity__c$LVGO__TD_Opp_Guid__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Opportunity__c$LVGO__Account__c</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Tabular</format>
+    <name>Opportunities LV w/ Box URL and GUID</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_LV__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LVGO__Opportunity__c$LVGO__BAA__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

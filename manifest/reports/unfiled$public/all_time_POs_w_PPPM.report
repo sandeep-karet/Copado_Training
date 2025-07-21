@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LVGO__Contract__c$Name</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Program_Name__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>LVGO__Contract__c$LVGO__PPPM__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Program_Platform_Version__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Contract_Path__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>LVGO__Contract__c$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,LVGO__Contract__c.LVGO__Client_Overview,LVGO__Contract__c.LVGO__Partner_Agreement,LVGO__Contract__c.LVGO__Program_Overview</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>all time POs w PPPM</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ProgramOverviews_with_Account_LV__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LVGO__Contract__c$LVGO__Contract_Effective_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

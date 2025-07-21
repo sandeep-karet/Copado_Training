@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Acct_Rel__c$Id</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Name</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$End_Date__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor_Name__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Account_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Benefit_Sponsor__c.Id</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Svc_Acct__c.Id</field>
+    </columns>
+    <columns>
+        <field>Acct_Rel__c$Relationship_Type__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows account relationships where BCBS TX is the Payer</description>
+    <filter>
+        <booleanFilter>(((1 AND 2) OR (1 AND 3)) AND 4) AND 5</booleanFilter>
+        <criteriaItems>
+            <column>Acct_Rel__c$Relationship_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Payer and Eligibility Provider,Payer Only</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Acct_Rel__c$Svc_Acct__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Blue Cross Blue Shield of Texas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Acct_Rel__c$Svc_Acct__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>BLUE CROSS AND BLUE SHIELD OF TEXAS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Acct_Rel__c$Benefit_Sponsor__c.BillingState</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,TX,Texas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Acct_Rel__c$Benefit_Sponsor__c.Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Relationships w/ BCBS TX as Payer</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_Relationships__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Acct_Rel__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

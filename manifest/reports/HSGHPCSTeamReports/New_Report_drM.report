@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LVGO__Account__c$LVGO__CSM__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Account__c$LVGO__Client_Risk__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Account__c$LVGO__Account_Grouping__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>LVGO__Account__c.LVGO__LVGO_Contracts__r.LVGO__LVGO_Opportunities__r$LVGO__Adjusted_Annual_Renewal_Value_Enrolled__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>LVGO__Account__c.LVGO__LVGO_Contracts__r.LVGO__LVGO_Opportunities__r$LVGO__Livongo_for_Diabetes_PwDs__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>LVGO__Account__c.LVGO__LVGO_Contracts__r.LVGO__LVGO_Opportunities__r$LVGO__Livongo_for_Hypertension_PwHs__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Account__c.LVGO__LVGO_Contracts__r$LVGO__ContractNumber__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Account__c.LVGO__LVGO_Contracts__r$Name</field>
+    </columns>
+    <columns>
+        <field>LVGO__Account__c.LVGO__LVGO_Contracts__r.LVGO__LVGO_Opportunities__r$LVGO__Type__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>ESI clients - shows Account, CSM, Health Score, Adj. Annual Renewal Value, DM Enrolled, HTN Enrolled, Account Grouping</description>
+    <filter>
+        <criteriaItems>
+            <column>LVGO__Account__c.LVGO__LVGO_Contracts__r$LVGO__Contract_Path_Deprecated__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Express Scripts</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LVGO__Account__c.LVGO__LVGO_Contracts__r.LVGO__LVGO_Opportunities__r$LVGO__StageName__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>LVGO__Account__c$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>ESI Book of Business</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Account_Contract_Details_LV__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LVGO__Account__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

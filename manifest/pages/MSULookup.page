@@ -1,0 +1,115 @@
+<apex:page id="MSULookup" controller="MSULookupController" showHeader="false" sideBar="false">
+
+    <style type="text/css">
+        a {
+          outline: none;
+          text-decoration: none;
+          padding: 2px 1px 0;
+        }
+
+        a:link, a:visited, a:active {
+          color: #1468b6;
+        }
+
+        a:hover {
+          color: #015ba7;
+          background: #7FDBFF;
+        }
+    </style>
+
+    <apex:pageMessages />
+    <apex:form id="myForm">
+        <apex:pageBlock title="MSU Calculator">
+            <!-- Search/Selection Area -->
+            <apex:pageBlockSection columns="1" collapsible="false" showHeader="true" rendered="{! showSearch }">
+                <apex:PageBlockSectionItem >
+                    Group:&nbsp;
+                    <apex:outputPanel id="grpSearch">
+                        <apex:outputText rendered="{! showSelectedGroup }" value="{! selGroup.Name }" />
+                        <apex:inputText id="Group" value="{! searchGroupName }" html-autocomplete="off" rendered="{! !showSelectedGroup }">
+                            <!--<apex:actionSupport event="onkeyup" action="{! searchGroups }" reRender="searchResults,pickMsu,msuResult,conSearch"/>-->
+                        </apex:inputText>
+                        <apex:commandButton action="{! filterGroups }" value="Filter" title="Filter results" rendered="{! !showSelectedGroup }" />
+                    </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    Contact:&nbsp;
+                    <apex:outputPanel id="conSearch">
+                        <apex:outputText rendered="{! showSelectedContact }" value="{! selContact.Name }" />
+                        <apex:inputText id="Contact" value="{! searchContactName }" html-autocomplete="off"  rendered="{! !showSelectedContact }">
+                            <!--<apex:actionSupport event="onkeyup" action="{! searchContacts }" reRender="searchResults,pickMsu,msuResult,grpSearch"/>-->
+                        </apex:inputText>
+                        <apex:commandButton action="{! filterContacts }" value="Filter" title="Filter results" rendered="{! !showSelectedContact }"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <!-- Search Results Area -->
+                <apex:PageBlockSectionItem >
+                    <apex:outputPanel id="searchResults">
+                        <!-- Results for selected contact -->
+                        <apex:outputPanel rendered="{! showContactResults }">
+                            <apex:outputText value="Paste an ID or enter at least three characters of a Contact name/Number to search." rendered="{! showCharMin }" />
+                            <apex:outputText value="No results found." rendered="{! showNoResults }" />
+                            <apex:outputPanel rendered="{! showContactResults }">
+                                <h1>Contacts found (max 100):</h1> <br />
+                                <apex:PageBlockTable value="{!contactSearchResults}" var="res"
+                                                     width="100%" align="center" columns="3">
+                                    <apex:column headerValue="Select">
+                                        <apex:actionRegion >
+                                            <apex:commandLink action="{! contactSelected }" value="{!res.Name}">
+
+                                                <apex:param assignTo="{! selContactId }" value="{!res.Id}" name="{!res.Id}" />
+                                                <apex:actionSupport event="onclick" rerender="searchResults,msuResult"
+                                                                    status="status"/>
+                                            </apex:commandLink>
+                                        </apex:actionRegion>
+                                    </apex:column>
+                                    <apex:column headerValue="Contact" value="{! res.Name}" />
+                                    <apex:column headerValue="Account" value="{! res.AccountId}" />
+                                </apex:PageBlockTable>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+
+                        <!-- Results for selected group -->
+                        <apex:outputPanel rendered="{! showGroupResults }">
+                            <h1>Groups found (max 100):</h1> <br />
+                            <apex:PageBlockTable value="{!groupSearchResults}" var="res"
+                                                 width="100%" align="center" columns="3">
+                                <apex:column headerValue="Select">
+                                    <apex:actionRegion >
+                                        <apex:commandLink action="{! groupSelected }" value="{!res.Name}">
+
+                                            <apex:param assignTo="{! selGroupId }" value="{!res.Id}" name="{!res.Id}" />
+                                            <apex:actionSupport event="onclick" rerender="searchResults,msuResult"
+                                                                status="status"/>
+                                        </apex:commandLink>
+                                    </apex:actionRegion>
+                                </apex:column>
+                                <apex:column headerValue="Group Number" value="{! res.Group_Number__c}" />
+                                <apex:column headerValue="Account" value="{! res.Client_Account__r.Name}" />
+                            </apex:PageBlockTable>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+
+                <!-- Search Results Area -->
+                <apex:outputPanel id="msuResult">
+                    <apex:pageBlockSectionItem rendered="{! showMSUs && !showNoResults }" >
+                        <apex:PageBlockTable value="{!calcMSUs}" var="res" width="100%" align="center" columns="9">
+                            <apex:column headerValue="Odd Duck">
+                                <apex:image url="/resource/1531253479000/CheckChecked" height="13px" rendered="{! res.oddDuck}" />
+                            </apex:column>
+                            <apex:column headerValue="Group Name" value="{! res.GroupName}" />
+                            <apex:column headerValue="Group Number" value="{! res.msu.Mbr_Group__r.Group_Number__c }" />
+                            <apex:column headerValue="Group Status" value="{! res.msu.Mbr_Group__r.Status__c }" />
+                            <apex:column headerValue="Contact">{! res.msu.Contact__r.Name }</apex:column>
+                            <apex:column headerValue="Contact Account">{! res.msu.Contact__r.Account.Name}</apex:column>
+                            <apex:column headerValue="Client Account">{! res.msu.Mbr_Group__r.Client_Account__r.Name}</apex:column>
+                        </apex:PageBlockTable>
+                    </apex:pageBlockSectionItem>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

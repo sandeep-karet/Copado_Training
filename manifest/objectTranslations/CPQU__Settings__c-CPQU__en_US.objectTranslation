@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- Automatically marks all Contracts as Activated when they are created, setting the Status picklist to Activated on the Contract. --></help>
+        <label><!-- Auto Activate Contract --></label>
+        <name>CPQU__Auto_Activate_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Generate Contract - Opp Stage --></label>
+        <name>CPQU__Auto_Generate_Contract_Opp_Stage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Automatically generates a Contract record when an Opportunity is marked as Closed Won, checking the Contracted checkbox on the Opportunity. --></help>
+        <label><!-- Auto Generate Contract --></label>
+        <name>CPQU__Auto_Generate_Contract__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Generate Order - Opp Stage --></label>
+        <name>CPQU__Auto_Generate_Order_Opp_Stage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Automatically generates an Order record when an Opportunity is marked as Closed Won, checking the Ordered checkbox on the Opportunity. --></help>
+        <label><!-- Auto Generate Order --></label>
+        <name>CPQU__Auto_Generate_Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- Automatically generates renewal Opportunity and Quote when a Contract is marked as Activated, checking the Renewal Forecast and Renewal Quoted checkboxes on the Opportunity. --></help>
+        <label><!-- Auto Generate Renewal Opportunity/Quote --></label>
+        <name>CPQU__Auto_Generate_Renewal_Opportunity_Quote__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies how many days before the end of the contract should we auto generate the renewal Quote. --></help>
+        <label><!-- Generate Renewal Quote ? Days Before End --></label>
+        <name>CPQU__Generate_Renewal_Quote_Days_Before_End__c</name>
+    </fields>
+    <fields>
+        <help><!-- Shows a watermark image across the generated output document if the CPQ Quote is marked as a Draft, checking the Watermark Shown checkbox on the CPQ Quote. --></help>
+        <label><!-- Show Watermark on Draft Quotes --></label>
+        <name>CPQU__Show_Watermark_on_Draft_Quotes__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,9 @@
+<!--
+  Object Action must extend the standardController for the Object
+  This means we will have a custom visualforce page for each object we integrate with
+-->
+<apex:page standardController="Contact">
+
+    <c:MobileCreateDocument sObjectId="{!Contact.Id}" sObjectType="Contact"></c:MobileCreateDocument>
+
+</apex:page>

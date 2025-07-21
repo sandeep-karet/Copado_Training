@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_65804197</developerName>
+        <masterLabel>Response Status</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>RFP__c.Response_Status__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Cancelled</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>No-Bid Letter</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>No-Bid</sourceValue>
+            </sourceValues>
+            <value>Cancelled/No Bids</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Submitted</sourceValue>
+            </sourceValues>
+            <value>Submitted</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Expected</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>In Progress</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>New</sourceValue>
+            </sourceValues>
+            <value>In Progress/New</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>RFP__c.Request_Date__c</field>
+    </columns>
+    <columns>
+        <field>RFP__c.Type__c</field>
+    </columns>
+    <columns>
+        <field>RFP__c.Services__c</field>
+    </columns>
+    <columns>
+        <field>RFP__c.Opportunity_Owner__c</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>RFP__c.Opportunity_Name__c</field>
+    </columns>
+    <columns>
+        <field>RFP__c.Customer_Type__c</field>
+    </columns>
+    <columns>
+        <field>RFP__c.Level_of_Effort__c</field>
+    </columns>
+    <columns>
+        <field>RFP__c.Win_Probability__c</field>
+    </columns>
+    <columns>
+        <field>RFP__c.Opportunity_Stage__c</field>
+    </columns>
+    <columns>
+        <field>RFP__c.TCV__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>MW- Dash</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+        <criteriaItems>
+            <column>RFP__c.Due_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>1/1/2020</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RFP__c.Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>RFP,RFI</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RFP__c.Sales_Channel__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Hospital and Health Systems</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RFP__c.Services__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Licensed Platform</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>RFP__c.Due_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>RFP__c.Response_Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>HHS RFP - # submitted per month</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$RFP__c@RFP__c.Opportunity__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

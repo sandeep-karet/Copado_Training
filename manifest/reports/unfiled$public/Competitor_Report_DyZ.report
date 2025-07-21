@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityCompetitors$Weaknesses</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityCompetitors$Strengths</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityCompetitors$CompetitorName</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityCompetitors$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityCompetitors$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityCompetitors$Id</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Uses report type Opportunities with or without Competitors</description>
+    <format>Tabular</format>
+    <name>Competitor Report 2</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>opps_w_compet__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$Forecast_Stage_Changed_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

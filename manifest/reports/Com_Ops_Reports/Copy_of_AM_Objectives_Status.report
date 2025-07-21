@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_7217346</developerName>
+        <masterLabel>Objective Status</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>ALTF__Account_Objective__c$ALTF__Status__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Not Started</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>In Progress</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Deferred</sourceValue>
+            </sourceValues>
+            <value>Created</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Achieved</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cancelled</sourceValue>
+            </sourceValues>
+            <value>Closed</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_11770567</developerName>
+        <masterLabel>Status of Objectives</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>ALTF__Account_Objective__c$ALTF__Status__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Not Started</sourceValue>
+            </sourceValues>
+            <value>1. Not Started</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>In Progress</sourceValue>
+            </sourceValues>
+            <value>2. In Progress</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Achieved</sourceValue>
+            </sourceValues>
+            <value>3. Achieved</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Deferred</sourceValue>
+            </sourceValues>
+            <value>4. Deferred</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Cancelled</sourceValue>
+            </sourceValues>
+            <value>5. Cancelled</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>ALTF__Account_Objective__c$ALTF__AltifyId__c</field>
+    </columns>
+    <columns>
+        <field>ALTF__Account_Objective__c$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>ALTF__Account_Objective__c$Name</field>
+    </columns>
+    <columns>
+        <field>ALTF__Account_Objective__c$ALTF__Account__c</field>
+    </columns>
+    <columns>
+        <field>ALTF__Account_Objective__c$ALTF__Objective_Description__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_7217346</field>
+    </columns>
+    <columns>
+        <field>ALTF__Account_Objective__c$ALTF__Status__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>ALTF__Account_Objective__c$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>client survey</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Spark- Client Survey Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Altify_Account_Objectives_ToD__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

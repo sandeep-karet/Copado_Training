@@ -1,0 +1,18 @@
+<apex:page standardController="tinderbox__Proposal__c" extensions="tinderbox.proposalExtension" action="{! IF(len(TinderboxId)>0,null,URLFOR($Action.tinderbox__Proposal__c.Delete, $CurrentPage.Parameters.id,[retURL=URLFOR($Action.Opportunity.view, Opportunity,[retURL=''])],true))}" >
+	<!-- No idea why ProCore added these elements. I don't think they serve a purpose. -->
+    <apex:form >
+    	<apex:inputhidden value="{!tinderbox__Proposal__c.tinderbox__TBAccount__c}" />
+    </apex:form>
+    
+    <apex:outputText value="{!tinderbox__Proposal__c.tinderbox__Opportunity__c}" rendered="false"/>
+    <apex:outputText value="{!tinderbox__Proposal__c.tinderbox__tinderboxid__c}" rendered="false"/>
+    <apex:outputText value="{!tinderbox__Proposal__c.id}" rendered="false"/>
+    <!-- End -->
+
+    <c:ApplicationView path="salesforce/{!TinderboxId}/delete_proposal"
+                       queryString="sfdc_proposal_id={!ProposalId}"
+                       retUrl="{!URLFOR($Action.Opportunity.View, Opportunity,[retURL=''])}"
+                       TBAccountEndPoint="{!TBAccountEndPoint}"
+                       height="600px"></c:ApplicationView>
+    
+</apex:page>

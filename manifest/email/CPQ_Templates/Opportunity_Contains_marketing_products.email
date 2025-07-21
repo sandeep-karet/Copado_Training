@@ -1,0 +1,65 @@
+<messaging:emailTemplate subject="Opportunity contains Marketing products" recipientType="User" relatedToType="Opportunity">
+<messaging:htmlEmailBody >
+        <body style="font-family: 'Trebuchet MS'">
+            <h2 style="color:black;">Opportunity with marketing products</h2>
+            <hr style="border: solid thin #6EC0EE" />
+            <br />
+            <table cellpadding="5" style="border-collapse: collapse" width="100%">
+                <tr>
+                    <td align="left" 
+                        style="border-right-style: solid; border-right-width: thick; border-right-color: #6EC0EE;" 
+                        width="100%">
+                        This email is to notify you that {!relatedTo.Owner.Name} has an Opportunity ({!relatedTo.Name}) with the Account "{!relatedTo.Account_Name__c}" that is in {!relatedTo.StageName} stage, with a revenue effective date of {!relatedTo.Revenue_effective_date_text__c} that includes the following marketing products:
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table cellpadding="5" style="border-collapse: collapse" width="100%">
+                <tr>
+                    <td style="background-color: #6EC0EE; color: #FFFFFF">
+                        <b>Product Name</b>
+                    </td>
+                    <td style="background-color: #6EC0EE; color: #FFFFFF">
+                        <b>Quantity</b>
+                    </td>
+                    <td style="background-color: #6EC0EE; color: #FFFFFF">
+                        <b>List Price</b>
+                    </td>
+                    <td style="background-color: #6EC0EE; color: #FFFFFF">
+                        <b>Total Price</b>
+                    </td>
+                    <td style="background-color: #6EC0EE; color: #FFFFFF">
+                        <b>Product Code</b>
+                    </td>
+                </tr> 
+                <apex:repeat value="{!relatedTo.OpportunityLineItems}" var="lineItem">
+                    <apex:outputPanel rendered="{!(lineItem.Product_Family__c='Marketing')}">
+                    <tr>
+                        <td>
+                            {!lineItem.Product__c}
+                        </td>
+                        <td>
+                            <apex:outputText value="{0,number,0}">
+                                <apex:param value="{!lineItem.Quantity}" />
+                            </apex:outputText>
+                        </td>
+                         <td>
+                            <apex:outputText value="{0, number, Currency}">
+                                <apex:param value="{!lineItem.UnitPrice}" />
+                            </apex:outputText>
+                        </td>
+                        <td>
+                            <apex:outputText value="{0, number, Currency}">
+                                <apex:param value="{!lineItem.TotalPrice}" />
+                            </apex:outputText>
+                        </td>                                                            
+                        <td>
+                            <apex:outputText value="{!lineItem.ProductCode}" escape="false" />
+                        </td>                                                            
+                    </tr>
+                    </apex:outputPanel>
+                </apex:repeat>
+            </table>
+        </body>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

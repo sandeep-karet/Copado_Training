@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LVGO__Contract__c$LVGO__ContractNumber__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Account_Client_Overview__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Last_Date_of_Data_Refresh__c</field>
+    </columns>
+    <columns>
+        <field>LVGO__Contract__c$LVGO__Client_Overview_CSM__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Last date of population refresh</description>
+    <filter>
+        <criteriaItems>
+            <column>LVGO__Contract__c$LVGO__Client_Overview_CSM__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Rich Orvino,Erik Alinder,Evan Connelly,Julie Anderson,Jeff Ashmore,Mike Liebert,Amy Kruse,Dominique Maxey,Olivia Mapplethorpe,Alana Friedman,Karen McRoberts</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LVGO__Contract__c$LVGO__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Activate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LVGO__Contract__c$LVGO__Contract_Path__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Livongo</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Platinum Accounts - Population Refresh</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Client_overviews_LV__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LVGO__Contract__c$LVGO__ActivatedDate__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

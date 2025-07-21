@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.benefitsponsors__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.benefitsponsors__r$Benefit_Sponsor_Name__c</field>
+    </columns>
+    <columns>
+        <field>Account$GUID__c</field>
+    </columns>
+    <columns>
+        <field>Account.benefitsponsors__r$Id</field>
+    </columns>
+    <columns>
+        <field>Account$Account_Id_18__c</field>
+    </columns>
+    <columns>
+        <field>Account.benefitsponsors__r$Flat_Source_Id__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Account$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Blue Cross Blue Shield of Michigan</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>BCBSM + Benefit Sponsors</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Benefit_Sponsor_Accounts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account.benefitsponsors__r$Benefit_Sponsor_Name__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

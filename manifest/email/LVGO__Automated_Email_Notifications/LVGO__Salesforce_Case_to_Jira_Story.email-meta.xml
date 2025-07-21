@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>case info being sent to create Jira stories</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LVGO__Blank_Letterhead</letterhead>
+    <name>Salesforce Case to Jira Story</name>
+    <style>freeForm</style>
+    <subject>{!LVGO__Case__c.LVGO__Case_Team__c}: {!LVGO__Case__c.LVGO__Subject__c}</subject>
+    <textOnly>Request From: {!LVGO__Case__c.LVGO__ContactId__c}
+Request Date: {!LVGO__Case__c.CreatedDate}
+Team: {!LVGO__Case__c.LVGO__Case_Team__c}
+Priority: {!LVGO__Case__c.LVGO__Priority__c}
+
+Request Details
+Request Type: {!LVGO__Case__c.LVGO__Case_Area__c}
+
+I would like to: {!LVGO__Case__c.LVGO__I_would_like_to__c}
+So that: {!LVGO__Case__c.LVGO__So_That__c}
+Acceptance Criteria: {!LVGO__Case__c.LVGO__Acceptance_Criteria__c}
+Technical Requirements: {!LVGO__Case__c.LVGO__Technical_Requirements__c}
+Other Teams Impacted: {!LVGO__Case__c.LVGO__Other_Teams_Impacted__c}
+
+Subject: {!LVGO__Case__c.LVGO__Subject__c}
+Description: {!LVGO__Case__c.LVGO__Description__c}
+
+Case Link: {!LVGO__Case__c.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

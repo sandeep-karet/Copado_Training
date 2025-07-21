@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SBQQ__Subscription__c.Oportunity_Id__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Subscription__c.SBQQ__Product__c</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Subscription__c.SBQQ__RequiredByProduct__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Subscription__c.SBQQ__StartDate__c</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Subscription__c.SBQQ__EndDate__c</field>
+    </columns>
+    <columns>
+        <field>FK_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>SBQQ__Subscription__c.SBQQ__TerminatedDate__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>BL - For Product Level Reporting</description>
+    <format>Tabular</format>
+    <name>Subscription Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$SBQQ__Subscription__c@SBQQ__Subscription__c.SBQQ__Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>SBQQ__Subscription__c.SBQQ__StartDate__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>SBQQ__Subscription__c.SBQQ__StartDate__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

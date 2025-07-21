@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>BG-Flu Shot</label>
+    <protected>false</protected>
+    <values>
+        <field>LVGO__Initial_Message_Content__c</field>
+        <value xsi:type="xsd:string">One of the easiest things you can do for your health and managing blood sugar is to stay up-to-date on your vaccines, including your flu shot.</value>
+    </values>
+    <values>
+        <field>LVGO__Initial_Message__c</field>
+        <value xsi:type="xsd:string">BG-Flu Shot</value>
+    </values>
+</CustomMetadata>

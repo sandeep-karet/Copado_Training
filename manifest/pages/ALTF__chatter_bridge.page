@@ -1,0 +1,7 @@
+<apex:page docType="html-5.0"
+    showHeader="false" 
+    sidebar="false"
+    applyHtmlTag="false" >
+    <chatter:feed entityId="{!$CurrentPage.parameters.oppId}" rendered="{!$CurrentPage.parameters.oppId != ''}"/>
+    <chatter:feed entityId="{!$CurrentPage.parameters.accountId}" rendered="{!$CurrentPage.parameters.accountId != ''}"/>    
+</apex:page>

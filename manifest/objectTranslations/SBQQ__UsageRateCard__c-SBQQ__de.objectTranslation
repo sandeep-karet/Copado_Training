@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Nutzungsgebührenkarte (Reserviert)</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Nutzungsgebührenkarten (Reserviert)</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Nutzungsgebührenkarte (Reserviert) --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Nutzungsgebührenkarten (Reserviert) --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Nutzungsgebührenkarte (Reserviert) --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Nutzungsgebührenkarten (Reserviert) --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Nutzungsgebührenkarte (Reserviert) --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Nutzungsgebührenkarten (Reserviert) --></value>
+    </caseValues>
+    <fields>
+        <help><!-- Group usage rates by the selected field during document output and billing --></help>
+        <label>Attributfeld</label>
+        <name>SBQQ__AttributeField__c</name>
+        <picklistValues>
+            <masterLabel>UsagePriceMethod__c</masterLabel>
+            <translation><!-- UsagePriceMethod__c --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Abrechnungshäufigkeit</label>
+        <name>SBQQ__BillingFrequency__c</name>
+    </fields>
+    <fields>
+        <label>Beschreibung</label>
+        <name>SBQQ__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The usage rate card that you cloned to create this usage rate card --></help>
+        <label>Ursprüngliche Nutzungsratenkarte</label>
+        <name>SBQQ__OriginalUsageRateCard__c</name>
+        <relationshipLabel>Nutzungsratenkarten (Ursprüngliche Nutzungsratenkarte)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The quote line that this usage rate card covers --></help>
+        <label>Angebotsbelegposten</label>
+        <name>SBQQ__QuoteLine__c</name>
+        <relationshipLabel>Nutzungsratenkarten</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The subscription that this usage rate card covers --></help>
+        <label>Abonnement</label>
+        <name>SBQQ__Subscription__c</name>
+        <relationshipLabel>Nutzungsratenkarten</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The usage rate card that you added to the original quote --></help>
+        <label>Vorlage für Ratenkarte</label>
+        <name>SBQQ__TemplateRateCard__c</name>
+        <relationshipLabel>Angebotsratenkarten</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Choose how Salesforce Billing bills usage rates for this usage rate card. Range bills a single rate while slab bills all applicable usage rates. --></help>
+        <label>Typ</label>
+        <name>SBQQ__Type__c</name>
+        <picklistValues>
+            <masterLabel>Range</masterLabel>
+            <translation><!-- Range --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slab</masterLabel>
+            <translation><!-- Slab --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Name der Nutzungsratenkarte</nameFieldLabel>
+    <webLinks>
+        <label>Mit Zugehörigen duplizieren</label>
+        <name>SBQQ__CloneWithRelated</name>
+    </webLinks>
+    <webLinks>
+        <label>Mit Zugehörigen duplizieren</label>
+        <name>SBQQ__CloneWithRelatedClassic</name>
+    </webLinks>
+</CustomObjectTranslation>
