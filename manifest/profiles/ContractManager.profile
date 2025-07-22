@@ -16278,6 +16278,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Sample_Acc_field__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.Secondary_Billing_Contact__c</field>
         <readable>false</readable>
     </fieldPermissions>
