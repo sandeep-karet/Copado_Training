@@ -1,0 +1,21 @@
+<apex:page controller="copado.Settings">
+    <apex:includeLightning />
+    <div id="LightningComponentid" class="base-alert-wrap"/>
+    <script>
+        const namespace = '{! namespace }' == '' ? 'c' : 'copado';
+        $Lightning.use(namespace + ":" + "packageUpgradeNotifyApp", function () {
+            $Lightning.createComponent(namespace + ":" + "packageUpgradeAlert",
+                {
+                },
+                "LightningComponentid",
+                function (cmp) {
+                    console.log('LWC Componenet added in VF page');
+                });
+        });
+    </script>
+    <style>
+        .base-alert-wrap {
+            margin: 0rem 1rem 0.5rem;
+        }
+    </style>
+</apex:page>

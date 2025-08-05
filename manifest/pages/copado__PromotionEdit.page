@@ -67,10 +67,12 @@
                         <apex:outputField value="{!copado__Promotion__c.OwnerId}"/>
                         <apex:inputField value="{!copado__Promotion__c.copado__Project__c}" id="projectfield"/>
                         <apex:inputField value="{!copado__Promotion__c.copado__Status__c}" />
+                        <apex:inputField value="{!copado__Promotion__c.copado__Pipeline__c}" id="pipelinefield"/>
+                        <apex:inputField value="{!copado__Promotion__c.copado__Order_by__c}" />
                         <apex:inputField value="{!copado__Promotion__c.copado__Source_Environment__c}"  required="true" rendered="{!copado__Promotion__c.copado__Back_Promotion__c=false}"/>
                         <apex:inputField value="{!copado__Promotion__c.copado__Destination_Environment__c}" rendered="{!copado__Promotion__c.copado__Back_Promotion__c=true}"/>
-                        <apex:inputField value="{!copado__Promotion__c.copado__Order_by__c}" />
-
+                        <apex:pageBlockSectionItem />
+                        
                         <apex:pageBlockSectionItem >
                             <apex:outputLabel value="{!$ObjectType.copado__Promotion__c.fields.copado__Back_Promotion__c.Label}" for="backpromotionfield"/>
                             <!-- action region is added to avoid required field warning on source environment field on promotion object -->

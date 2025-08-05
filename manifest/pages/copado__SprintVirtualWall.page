@@ -560,8 +560,7 @@
                         <p>
                             <apex:outputPanel styleClass="slds-card__header slds-grid slds-float_right" layout="block" id="pageHeaderDetailButton">
                                 <button title="{!$Label.Filter}" type="button" id="filterButton" class="slds-button slds-button--icon-border slds-icon--small slds-float_right {!IF(sectionRenderer == 'usWithFilter','slds-is-selected','')}"
-                                    onClick="lockScreen();filterRenderer('{!IF(sectionRenderer != " usWithFilter ","usWithFilter
-                                    ","onlyUS ")}');" style="margin-left: .25rem;"></button>
+                                    onClick="lockScreen();filterRenderer('{!IF(JSENCODE(sectionRenderer) != " usWithFilter ","usWithFilter","onlyUS ")}');" style="margin-left: .25rem;"></button>
                                 <apex:outputPanel layout="none" rendered="{!IsChatterEnabled}">
                                     <button title="{!$Label.Chatter}" type="button" id="chatButton" class="slds-button slds-button--icon-border slds-icon--small slds-float_right"
                                         onClick="lockScreen();toggleChat();"></button>

@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Data Set --></value>
+        <value>データセット</value>
     </caseValues>
     <fields>
         <help><!-- The selected Data Template will be used as a base for object relationships, related fields and filtering. --></help>
@@ -29,12 +29,32 @@
         <name>copado__Last_Generated_Date__c</name>
     </fields>
     <fields>
+        <label>MCDD有効</label>
+        <name>copado__MCDD_Enabled__c</name>
+    </fields>
+    <fields>
+        <label>プラットフォーム</label>
+        <name>copado__Platform__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFDX</masterLabel>
+            <translation><!-- SFDX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce</masterLabel>
+            <translation><!-- Salesforce --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <help><!-- The Environment where the data was extracted from in the last generation of Data Sets. --></help>
         <label>データソース環境</label>
         <name>copado__Source_Org__c</name>
         <relationshipLabel>データセット</relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Data Set Name --></nameFieldLabel>
+    <nameFieldLabel>データセット名</nameFieldLabel>
     <validationRules>
         <errorMessage>データセットが作成されたら、データテンプレートを変更することはできません。新しいデータセットを作成してください。</errorMessage>
         <name>copado__Prevent_change_Data_Template</name>

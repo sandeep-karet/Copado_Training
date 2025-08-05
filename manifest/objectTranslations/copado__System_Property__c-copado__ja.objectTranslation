@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- System Property --></value>
+        <value>システムプロパティ</value>
     </caseValues>
     <fields>
         <label>API名</label>
@@ -17,6 +17,11 @@
         <help><!-- Select this checkbox if you want to share the System Property among multiple pipelines and environments. --></help>
         <label>グローバルフラグ</label>
         <name>copado__Is_Global__c</name>
+    </fields>
+    <fields>
+        <help><!-- On setting this checkbox, this system property will be shared with &quot;All the Company&quot; Public Group --></help>
+        <label>公開しますか？</label>
+        <name>copado__Is_Public__c</name>
     </fields>
     <fields>
         <help><!-- If this field is selected, the value won&apos;t be accessible to any user, and it will be securely saved. The value will remain hidden unless the field is unchecked --></help>
@@ -47,7 +52,11 @@
         <label>値</label>
         <name>copado__Value__c</name>
     </fields>
-    <nameFieldLabel><!-- Property Name --></nameFieldLabel>
+    <nameFieldLabel>プロパティ名</nameFieldLabel>
+    <sharingReasons>
+        <label>公開</label>
+        <name>copado__isPublic</name>
+    </sharingReasons>
     <validationRules>
         <errorMessage>API名に空白スペースを含めることはできません。</errorMessage>
         <name>copado__API_Name_Cannot_Contain_Spaces</name>
@@ -59,5 +68,9 @@
     <validationRules>
         <errorMessage>非グローバルプロパティは、1つの親にのみ関連付けることができます。環境、パイプライン、ユーザーのいずれか1つの親にしか関連付けられません。</errorMessage>
         <name>copado__Only_One_Parent_Is_Allowed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>このシステム・プロパティには値を指定する必要があります。</errorMessage>
+        <name>copado__Value_cannot_be_empty</name>
     </validationRules>
 </CustomObjectTranslation>

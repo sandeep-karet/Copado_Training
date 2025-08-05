@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- System Property --></value>
+        <value>システムプロパティ</value>
     </caseValues>
     <fields>
         <label><!-- API Name --></label>
@@ -17,6 +17,11 @@
         <help>複数のパイプラインや環境間でシステムプロパティを共有したい場合は、このチェックボックスを選択します。</help>
         <label><!-- Is Global? --></label>
         <name>copado__Is_Global__c</name>
+    </fields>
+    <fields>
+        <help>このチェックボックスを設定すると、このシステムプロパティは「全社」公開グループで共有されます。</help>
+        <label><!-- Is Public? --></label>
+        <name>copado__Is_Public__c</name>
     </fields>
     <fields>
         <help>機密情報を非表示にするには、このチェックボックスを選択します。</help>
@@ -47,7 +52,11 @@
         <label><!-- Value --></label>
         <name>copado__Value__c</name>
     </fields>
-    <nameFieldLabel><!-- Property Name --></nameFieldLabel>
+    <nameFieldLabel>プロパティ名</nameFieldLabel>
+    <sharingReasons>
+        <label><!-- Is Public --></label>
+        <name>copado__isPublic</name>
+    </sharingReasons>
     <validationRules>
         <errorMessage><!-- The API Name cannot contain blank spaces. --></errorMessage>
         <name>copado__API_Name_Cannot_Contain_Spaces</name>
@@ -59,5 +68,9 @@
     <validationRules>
         <errorMessage><!-- A non-global property can only be related to one parent: Environment, Pipeline, or User. --></errorMessage>
         <name>copado__Only_One_Parent_Is_Allowed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must provide a value for this system property. --></errorMessage>
+        <name>copado__Value_cannot_be_empty</name>
     </validationRules>
 </CustomObjectTranslation>

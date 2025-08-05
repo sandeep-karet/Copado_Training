@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- User Story Data Commit --></value>
+        <value>ユーザーストーリーデータコミット</value>
     </caseValues>
     <fields>
         <label>コミット日付</label>
@@ -23,6 +23,10 @@
         <relationshipLabel>ユーザーストーリーデータのコミット</relationshipLabel>
     </fields>
     <fields>
+        <label>データセット生成ジョブ実行 ID</label>
+        <name>copado__Generate_Data_Set_Job_Execution_Id__c</name>
+    </fields>
+    <fields>
         <label>ステータス</label>
         <name>copado__Status__c</name>
     </fields>
@@ -31,7 +35,7 @@
         <name>copado__User_Story__c</name>
         <relationshipLabel>ユーザーストーリーデータのコミット</relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- User Story Data Commit Name --></nameFieldLabel>
+    <nameFieldLabel>ユーザーストーリーデータコミット名</nameFieldLabel>
     <validationRules>
         <errorMessage>一度作成したユーザーストーリーのデータコミットのコミット日を変更することはできません。新たにコミットを作成してください。</errorMessage>
         <name>copado__Prevent_change_Commit_Date</name>

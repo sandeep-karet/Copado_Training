@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Promotion --></value>
+        <value>プロモーション</value>
     </caseValues>
     <fieldSets>
         <label><!-- Copado Header Fields --></label>
@@ -17,7 +17,7 @@
         <name>copado__ManageBranchesDialog</name>
     </fieldSets>
     <fieldSets>
-        <label><!-- Pipeline Manager --></label>
+        <label><!-- Pipeline Manager Promotion Fields --></label>
         <name>copado__Pipeline_Manager</name>
     </fieldSets>
     <fields>
@@ -111,6 +111,23 @@
         <name>copado__Order_by__c</name>
     </fields>
     <fields>
+        <help>有効にすると、ソース環境からのファイルが直接デプロイメントされ、宛先環境で進行中の作業はすべて上書きされます。無効にすると、Copado は進行中の作業を確認し、変更が検出された場合、コンフリクトの解決をプロンプトします。</help>
+        <label><!-- Override Destination Changes --></label>
+        <name>copado__Override_Destination_Changes__c</name>
+    </fields>
+    <fields>
+        <help>この項目は、ソースフォーマットパイプラインでのみ使用して、高度なユーザーストーリーのグループ化を有効にしてください。
+
+- 同じリリース内の異なるプロジェクトからユーザーストーリーをグループ化する場合：リリース（関連付けられたプロジェクトがないもの）とパイプラインを選択してください。
+
+- 任意のプロジェクトおよびリリースからユーザーストーリーをグループ化する場合：パイプラインのみを選択してください。
+
+プロジェクトおよび/またはリリース項目を使用した標準的なプロモーションを行う場合は、この項目を空のままにしてください。</help>
+        <label><!-- Pipeline --></label>
+        <name>copado__Pipeline__c</name>
+        <relationshipLabel><!-- Promotions --></relationshipLabel>
+    </fields>
+    <fields>
         <help>このフィールドには、パイプラインのプラットフォームが自動入力され表示されます。</help>
         <label><!-- Platform --></label>
         <name>copado__Platform__c</name>
@@ -120,6 +137,19 @@
         <label><!-- Project --></label>
         <name>copado__Project__c</name>
         <relationshipLabel><!-- Promotions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>環境との変更の同期方法を選択します。環境同期は、ソース環境のブランチからファイルを直接コピーするため、コンフリクトの解決のオーバーヘッドが軽減されます。クラシックプロモーションは、個々の機能ブランチを使用して変更をプロモートするため、各ブランチの順次マージとコンフリクトの解決が必要になります。</help>
+        <label><!-- Promotion Method --></label>
+        <name>copado__Promotion_Method__c</name>
+        <picklistValues>
+            <masterLabel>Classic Promotion</masterLabel>
+            <translation><!-- Classic Promotion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environment Sync</masterLabel>
+            <translation><!-- Environment Sync --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Release --></label>
@@ -186,7 +216,12 @@
             <translation>検証に失敗しました</translation>
         </picklistValues>
     </fields>
-    <nameFieldLabel><!-- Promotion Name --></nameFieldLabel>
+    <fields>
+        <help>Git のユーザーストーリーのプロモーションブランチへのリンク。リンクは、Git リポジトリレコードのベースブランチ URL に基づいて生成されます。</help>
+        <label><!-- View in Git --></label>
+        <name>copado__View_in_Git__c</name>
+    </fields>
+    <nameFieldLabel>プロモーション名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- Back Promotions to Scratch Orgs are not allowed --></errorMessage>
         <name>copado__Scratch_Orgs_Disabled_for_Back_Promoting</name>

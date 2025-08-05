@@ -113,7 +113,7 @@
 
             <script type="text/javascript">
                 var copadoApp = {
-                    ns: '{!settings.namespace}'
+                    ns: '{!JSENCODE(settings.namespace)}'
                 }
                 ctss.ns = copadoApp.ns;
                 init();

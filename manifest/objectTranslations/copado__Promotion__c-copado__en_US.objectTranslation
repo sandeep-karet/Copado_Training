@@ -21,7 +21,7 @@
         <name>copado__ManageBranchesDialog</name>
     </fieldSets>
     <fieldSets>
-        <label><!-- Pipeline Manager --></label>
+        <label><!-- Pipeline Manager Promotion Fields --></label>
         <name>copado__Pipeline_Manager</name>
     </fieldSets>
     <fields>
@@ -115,6 +115,23 @@
         <name>copado__Order_by__c</name>
     </fields>
     <fields>
+        <help><!-- When enabled, files from the source environment will be deployed directly, overriding any work in progress in the destination environment. When disabled, Copado will check for work in progress and prompt for conflict resolution if changes are detected. --></help>
+        <label><!-- Override Destination Changes --></label>
+        <name>copado__Override_Destination_Changes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field only in Source Format Pipelines to enable advanced user story grouping:
+
+- To group user stories from different projects within the same release: Select a Release (with no associated Project) and Pipeline
+
+- To group user stories from any project and release: Select only Pipeline.
+
+Leave this field empty for standard promotions using Project and/or Release fields. --></help>
+        <label><!-- Pipeline --></label>
+        <name>copado__Pipeline__c</name>
+        <relationshipLabel><!-- Promotions --></relationshipLabel>
+    </fields>
+    <fields>
         <help><!-- This field auto-populates and displays the pipeline platform. --></help>
         <label><!-- Platform --></label>
         <name>copado__Platform__c</name>
@@ -124,6 +141,19 @@
         <label><!-- Project --></label>
         <name>copado__Project__c</name>
         <relationshipLabel><!-- Promotions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select how to synchronize changes with the environments: Environment Sync copies files directly from the source environment&apos;s branch, reducing conflict resolution overhead; Classic Promotion uses individual feature branches to promote changes, requiring sequential merge and conflict resolution for each branch. --></help>
+        <label><!-- Promotion Method --></label>
+        <name>copado__Promotion_Method__c</name>
+        <picklistValues>
+            <masterLabel>Classic Promotion</masterLabel>
+            <translation><!-- Classic Promotion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environment Sync</masterLabel>
+            <translation><!-- Environment Sync --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label><!-- Release --></label>
@@ -189,6 +219,11 @@
             <masterLabel>Validation failed</masterLabel>
             <translation><!-- Validation failed --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Link to the User Story promotion branch in Git. The link is generated based on the Base Branch URL of the Git Repository record. --></help>
+        <label><!-- View in Git --></label>
+        <name>copado__View_in_Git__c</name>
     </fields>
     <startsWith>Consonant</startsWith>
     <validationRules>

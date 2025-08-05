@@ -51,7 +51,6 @@
         <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
     <description>Quick Access to Key Parts of Copado</description>
-    <formFactors>Small</formFactors>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
@@ -79,7 +78,6 @@
     <tabs>copado__User_Story__c</tabs>
     <tabs>copado__Work_Manager</tabs>
     <tabs>copado__Kanban_Board__c</tabs>
-    <tabs>copado__Pipeline_Manager</tabs>
     <tabs>copado__Deployment__c</tabs>
     <tabs>copado__Promotion__c</tabs>
     <tabs>copado__Sprint__c</tabs>
@@ -139,9 +137,6 @@
         </mappings>
         <mappings>
             <tab>copado__Org__c</tab>
-        </mappings>
-        <mappings>
-            <tab>copado__Pipeline_Manager</tab>
         </mappings>
         <mappings>
             <tab>copado__Project__c</tab>

@@ -25,8 +25,8 @@
                     targetOrgName: '{!JSENCODE(DestinationOrg.To_Org__r.Environment__r.Name)}',
                     orgName: '{!JSENCODE(deployment.Rolled_back_Deployment__r.Name)}',
                     deploymentId: '{!deployment.Id}',
-                    stepId: '{!stepId}',
-                    deleteStepId: '{!deleteStepId}',
+                    stepId: '{!JSENCODE(stepId)}',
+                    deleteStepId: '{!JSENCODE(deleteStepId)}',
                 },
                 elts: {},
                 server: {
@@ -92,7 +92,7 @@
             <c:DW_Header currentStep="{!currentStepValue}" stepNameList="{!stepsList}" />
         </apex:outputPanel>
 
-        <div class="co-dw-container">
+        <div class="co-dw-container"  id="bodyComponent">
             <div class="slds-grid">
                 <div class="slds-col slds-size_1-of-12"></div>
                 <div class="slds-col slds-size_10-of-12">

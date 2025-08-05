@@ -52,6 +52,12 @@ global class Request {
     global copado.RunTestsAction.Request createConsolidatedResult(Boolean createConsolidatedResult) {
         return null;
     }
+    global copado.RunTestsAction.Request credential(String id) {
+        return null;
+    }
+    global copado.RunTestsAction.Request cronExpression(String expression) {
+        return null;
+    }
     global copado.RunTestsAction.Request environment(String id) {
         return null;
     }
@@ -64,6 +70,9 @@ global class Request {
     global copado.RunTestsAction.Request result(Id resultId) {
         return null;
     }
+    global copado.RunTestsAction.Request scheduledJob(String id) {
+        return null;
+    }
     global copado.RunTestsAction.Request tool(String testTool) {
         return null;
     }
@@ -72,7 +81,11 @@ global class Request {
     }
 }
 global class Response {
+    @InvocableVariable(label='Cron Job Id' description='Cron Job Id for the Scheduled Test Action' required=false)
+    global String cronJobId;
     @InvocableVariable(label='Job Execution' description='Job Execution record for the Run Test Action' required=false)
     global copado__JobExecution__c jobExecution;
+    @InvocableVariable(label='Scheduled Job' description='Scheduled Job record for the Schedule Test Action' required=false)
+    global copado__Scheduled_Job__c scheduledJob;
 }
 }

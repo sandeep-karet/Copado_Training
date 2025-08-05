@@ -19,5 +19,11 @@ global class Request {
     global Id transactionId;
     @InvocableVariable( required=false)
     global String transactionId2;
+    global Request() {
+
+    }
+    global Request(copado__JobExecution__c job, String transactionId) {
+
+    }
 }
 }

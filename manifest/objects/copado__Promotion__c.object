@@ -588,7 +588,7 @@
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
-        <description>Pipeline Manager</description>
+        <description>Fields displayed in the Promotions and Back-Promotions tables of the Pipeline Manager</description>
         <displayedFields>
             <field>Name</field>
             <isFieldManaged>false</isFieldManaged>
@@ -619,7 +619,12 @@
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
-        <label>Pipeline Manager</label>
+        <displayedFields>
+            <field>copado__Is_Rolled_Back__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Pipeline Manager Promotion Fields</label>
     </fieldSets>
     <fields>
         <fullName>Hide_Rollback_Button__c</fullName>
@@ -819,10 +824,47 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__Override_Destination_Changes__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>When enabled, files from the source environment will be deployed directly, overriding any work in progress in the destination environment. When disabled, Copado will check for work in progress and prompt for conflict resolution if changes are detected.</inlineHelpText>
+        <label>Override Destination Changes</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>copado__Pipeline__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Use this field only in Source Format Pipelines to enable advanced user story grouping:
+
+- To group user stories from different projects within the same release: Select a Release (with no associated Project) and Pipeline
+
+- To group user stories from any project and release: Select only Pipeline.
+
+Leave this field empty for standard promotions using Project and/or Release fields.</inlineHelpText>
+        <label>Pipeline</label>
+        <referenceTo>copado__Deployment_Flow__c</referenceTo>
+        <relationshipLabel>Promotions</relationshipLabel>
+        <relationshipName>Promotions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__Platform__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <formula>IF( NOT(ISBLANK( copado__Project__c )) ,  TEXT(copado__Project__r.copado__Deployment_Flow__r.copado__Platform__c) ,  IF( NOT(ISBLANK( copado__Release__c )),  TEXT(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Platform__c) , &apos;Salesforce&apos;) )</formula>
+        <formula>IF(NOT(ISBLANK( copado__Pipeline__c )),
+    TEXT(copado__Pipeline__r.copado__Platform__c),
+    IF(NOT(ISBLANK( copado__Project__c )),  
+        TEXT(copado__Project__r.copado__Deployment_Flow__r.copado__Platform__c),
+        IF(NOT(ISBLANK( copado__Release__c )),  
+            TEXT(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Platform__c), 
+            &apos;Salesforce&apos;
+        )
+    )
+)</formula>
         <inlineHelpText>This field auto-populates and displays the pipeline platform.</inlineHelpText>
         <label>Platform</label>
         <required>false</required>
@@ -842,6 +884,31 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Promotion_Method__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Select how to synchronize changes with the environments: Environment Sync copies files directly from the source environment&apos;s branch, reducing conflict resolution overhead; Classic Promotion uses individual feature branches to promote changes, requiring sequential merge and conflict resolution for each branch.</inlineHelpText>
+        <label>Promotion Method</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Environment Sync</fullName>
+                    <default>false</default>
+                    <label>Environment Sync</label>
+                </value>
+                <value>
+                    <fullName>Classic Promotion</fullName>
+                    <default>false</default>
+                    <label>Classic Promotion</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>copado__Release__c</fullName>
@@ -961,6 +1028,20 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>copado__View_in_Git__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Link to the User Story promotion branch in Git. The link is generated based on the Base Branch URL of the Git Repository record.</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(IF(AND(NOT(ISNULL(copado__Pipeline__r.copado__Git_Repository__r.copado__Branch_Base_URL__c)),copado__Pipeline__r.copado__Git_Repository__r.copado__Branch_Base_URL__c != &apos;&apos;),IF(AND(NOT(ISPICKVAL(copado__Pipeline__r.copado__Git_Repository__r.copado__Git_Provider__c, &apos;&apos;)),NOT(ISPICKVAL(copado__Pipeline__r.copado__Git_Repository__r.copado__Git_Provider__c, &apos;Others&apos;))),copado__Pipeline__r.copado__Git_Repository__r.copado__Branch_Base_URL__c + &apos;promotion/&apos; + Name,IF(CONTAINS(copado__Pipeline__r.copado__Git_Repository__r.copado__Branch_Base_URL__c, &apos;[BRANCH_NAME]&apos;),SUBSTITUTE(copado__Pipeline__r.copado__Git_Repository__r.copado__Branch_Base_URL__c,&apos;[BRANCH_NAME]&apos;,&apos;promotion/&apos; + Name),copado__Pipeline__r.copado__Git_Repository__r.copado__Branch_Base_URL__c + &apos;promotion/&apos; + Name)),IF(AND(NOT(ISNULL(copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c)),copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c != &apos;&apos;),IF(AND(NOT(ISPICKVAL(copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Git_Provider__c, &apos;&apos;)),NOT(ISPICKVAL(copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Git_Provider__c, &apos;Others&apos;))),copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c + &apos;promotion/&apos; + Name,IF(CONTAINS(copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c, &apos;[BRANCH_NAME]&apos;),SUBSTITUTE(copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c,&apos;[BRANCH_NAME]&apos;,&apos;promotion/&apos; + Name),copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c + &apos;promotion/&apos; + Name)),IF(AND(NOT(ISNULL(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c)),copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c != &apos;&apos;),IF(AND(NOT(ISPICKVAL(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Git_Provider__c, &apos;&apos;)),NOT(ISPICKVAL(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Git_Provider__c, &apos;Others&apos;))),copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c + &apos;promotion/&apos; + Name,IF(CONTAINS(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c, &apos;[BRANCH_NAME]&apos;),SUBSTITUTE(copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c,&apos;[BRANCH_NAME]&apos;,&apos;promotion/&apos; + Name),copado__Release__r.copado__Project__r.copado__Deployment_Flow__r.copado__Git_Repository__r.copado__Branch_Base_URL__c + &apos;promotion/&apos; + Name)),&apos;&apos;))),&apos;promotion/&apos; + Name)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Link to the User Story promotion branch in Git. The link is generated based on the Base Branch URL of the Git Repository record.</inlineHelpText>
+        <label>View in Git</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <label>Promotion</label>
     <listViews>

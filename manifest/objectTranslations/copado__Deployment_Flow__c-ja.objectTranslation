@@ -2,8 +2,12 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Pipeline --></value>
+        <value>パイプライン</value>
     </caseValues>
+    <fieldSets>
+        <label><!-- Additional Information --></label>
+        <name>copado__Additional_Information</name>
+    </fieldSets>
     <fields>
         <help>チェックされている場合は、デプロイメントフローですべてのブランチ管理機能が有効になります。</help>
         <label><!-- Active --></label>
@@ -163,7 +167,7 @@
     </fields>
     <fields>
         <help>ユーザーストーリーのプロモーションとバックプロモーションを実行するパイプラインマネジャーへののリンク</help>
-        <label><!-- Manage Releases --></label>
+        <label><!-- Pipeline Manager --></label>
         <name>copado__Manage_Branches__c</name>
     </fields>
     <fields>
@@ -217,7 +221,7 @@
         <name>copado__Static_Code_Analysis_Settings__c</name>
         <relationshipLabel><!-- Pipelines --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Pipeline Name --></nameFieldLabel>
+    <nameFieldLabel>パイプライン名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- A pipeline cannot have the same template for both Promote and Deploy --></errorMessage>
         <name>copado__Unique_Template_for_promote_and_deploy</name>
