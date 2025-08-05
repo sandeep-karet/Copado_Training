@@ -13,6 +13,11 @@
         <name>copado__Apex_Job_ID__c</name>
     </fields>
     <fields>
+        <label><!-- Credential --></label>
+        <name>copado__Credential__c</name>
+        <relationshipLabel><!-- Scheduled Jobs --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Cron Expression --></label>
         <name>copado__Cron_Expression__c</name>
     </fields>
@@ -44,8 +49,21 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Test --></label>
+        <name>copado__Test__c</name>
+        <relationshipLabel><!-- Scheduled Jobs --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Webhook URL --></label>
         <name>copado__Webhook_URL__c</name>
     </fields>
+    <recordTypes>
+        <label><!-- Test Execution --></label>
+        <name>copado__Test_Execution</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Webhook --></label>
+        <name>copado__Webhook</name>
+    </recordTypes>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

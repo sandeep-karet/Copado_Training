@@ -40,6 +40,8 @@ global class Request {
     global String baseBranch;
     @InvocableVariable(label='Changes' description='List of changes to commit' required=false)
     global List<copado.CommitAction.Change> changes;
+    @InvocableVariable(label='Changes Serialized' description='List of changes to commit serialized as JSON' required=false)
+    global String changesSerialized;
     @InvocableVariable(label='Commit Id' description='Id of an existing git commit with the changes. Likely specified when commiting from CLI' required=false)
     global String commitId;
     @InvocableVariable(label='Execute commit' description='If set to false, actual commit behaviour will be skipped and only operations in Copado will happen. Likely specified to false when commiting from CLI. Defaults to true' required=false)

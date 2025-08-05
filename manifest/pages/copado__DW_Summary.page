@@ -18,12 +18,13 @@
         var stepId = '{!JSENCODE(stepId)}';
         var namespace = '{!JSENCODE(namespace)}';
         var isRollback = '{!JSENCODE(deployment.Name)}'.startsWith('Rollback ');
+
         //***IMPORTANT***  use exactly the same name(jqxdatatable_config) for the configuration for future uses on new pages
         if (isRollback) {
             var jqxdatatable_config = {
                 data: {
                     deploymentId: '{!deployment.Id}',
-                    stepId: '{!stepId}'
+                    stepId: '{!JSENCODE(stepId)}'
                 },
                 elts: {},
                 server: {
@@ -43,7 +44,7 @@
                 eltMainId: 'metadataGrid'
             };
         }
-        else{
+        else {
             var jqxdatatable_config = {
                 data: {
                     orgId: '{!deployment.copado__From_Org__c}',
@@ -67,7 +68,7 @@
                 previewOnly: true,
                 eltMainId: 'metadataGrid'
             };
-         }
+        }
 
         $copado(document).ready(function () {
             $copado('#tabbingUl li').on('click', { param: this }, dw.handleTabs);
@@ -90,20 +91,20 @@
 
         <div class="co-dw-container">
             <apex:outputPanel rendered="{!isRollback}">
-                <div class="slds-grid slds-gutters">                
+                <div class="slds-grid slds-gutters">
                     <div class="slds-col slds-size_10-of-12"></div>
                     <div class="slds-col slds-size_2-of-12" style="color: rgba(1, 118, 211, 1);">
-                    <div>
-                        <span class="slds-icon_container slds-icon-utility-announcement">
-                            <span class="slds-icon_container slds-icon__svg--default"></span>
-                            <svg class="slds-icon slds-icon_small" aria-hidden="true" style="fill: rgba(1, 118, 211, 1)">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#announcement')}"></use>
-                            </svg>
-                        </span>
-                        <a href="https://success.copado.com/s/group/0F95p000000sY6QCAU/new-rollback-feedback">
-                            <span class="slds-text-heading_small">{!$Label.copado__Feedback}</span>
-                        </a>
-                    </div>
+                        <div>
+                            <span class="slds-icon_container slds-icon-utility-announcement">
+                                <span class="slds-icon_container slds-icon__svg--default"></span>
+                                <svg class="slds-icon slds-icon_small" aria-hidden="true" style="fill: rgba(1, 118, 211, 1)">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#announcement')}"></use>
+                                </svg>
+                            </span>
+                            <a href="https://success.copado.com/s/group/0F95p000000sY6QCAU/new-rollback-feedback">
+                                <span class="slds-text-heading_small">{!$Label.copado__Feedback}</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </apex:outputPanel>
@@ -193,8 +194,8 @@
                     </div>
 
                     <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader != $Label.copado__New_Data_Deployment}">
-                        <apex:outputPanel rendered="{!!isRollback}">  
-                            <p class="credits" >
+                        <apex:outputPanel rendered="{!!isRollback}">
+                            <p class="credits">
                                 {!CalculatedCredit}
                                 <apex:outputPanel layout="none" rendered="{!CalculatedCredit < 2}">
                                     {!$Label.copado__Credit}
@@ -204,7 +205,7 @@
                                 </apex:outputPanel>
                                 <span>{!$Label.copado__To_Be_Used}</span>
                             </p>
-                        </apex:outputPanel>  
+                        </apex:outputPanel>
 
                         <ul id="tabbingUl" class="slds-tabs_default__nav" role="tablist">
                             <li class="slds-tabs_default__item slds-is-active" title="{!$Label.STEP_TYPE_METADATA}" role="presentation">
@@ -218,7 +219,7 @@
                         </ul>
                         <div id="tab-default-1" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
                             <apex:outputPanel id="jqxMetadataGridComponent">
-                                <c:JQX_MetadataGrid bigMetadata="false" tabs="false" isRollback="{!isRollback}" hideTitle="true"/>
+                                <c:JQX_MetadataGrid bigMetadata="false" tabs="false" isRollback="{!isRollback}" hideTitle="true" />
                             </apex:outputPanel>
                         </div>
                         <div id="tab-default-2" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">
@@ -247,9 +248,10 @@
 
                     <div class="buttons slds-m-top--xx-large">
                         <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__Start_New_Deployment}"
-                            action="{!startNewDeployment}" rendered="{!!isRollback}"/>
+                            action="{!startNewDeployment}" rendered="{!!isRollback}" />
                         <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__CLONE}" action="{!deepCloneDeployment}"
-                            onComplete="dw.buttonOnComplete();unlockScreen();" rendered="{!!isRollback}" reRender="errorPanel,headerComponent" />
+                            onComplete="dw.buttonOnComplete();unlockScreen();" rendered="{!!isRollback}" reRender="errorPanel,headerComponent"
+                        />
                         <apex:outputPanel layout="none" rendered="{!deploymentInterface.StepGeneralHeader == $Label.copado__New_Data_Deployment}">
                             <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__Restart_Deployment}"
                                 action="{!deploymentDMLs}" onComplete="restartDeployment();" reRender="nothingtorender" />

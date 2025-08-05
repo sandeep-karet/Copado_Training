@@ -23,6 +23,11 @@
         <name>copado__Is_Global__c</name>
     </fields>
     <fields>
+        <help><!-- On setting this checkbox, this system property will be shared with &quot;All the Company&quot; Public Group --></help>
+        <label><!-- Is Public? --></label>
+        <name>copado__Is_Public__c</name>
+    </fields>
+    <fields>
         <help><!-- If this field is selected, the value won&apos;t be accessible to any user, and it will be securely saved. The value will remain hidden unless the field is unchecked --></help>
         <label><!-- Hide Value --></label>
         <name>copado__Is_Sensitive__c</name>
@@ -51,6 +56,10 @@
         <label><!-- Value --></label>
         <name>copado__Value__c</name>
     </fields>
+    <sharingReasons>
+        <label><!-- Is Public --></label>
+        <name>copado__isPublic</name>
+    </sharingReasons>
     <startsWith>Consonant</startsWith>
     <validationRules>
         <errorMessage><!-- The API Name cannot contain blank spaces. --></errorMessage>
@@ -63,5 +72,9 @@
     <validationRules>
         <errorMessage><!-- A non-global property can only be related to one parent: Environment, Pipeline, or User. --></errorMessage>
         <name>copado__Only_One_Parent_Is_Allowed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must provide a value for this system property. --></errorMessage>
+        <name>copado__Value_cannot_be_empty</name>
     </validationRules>
 </CustomObjectTranslation>

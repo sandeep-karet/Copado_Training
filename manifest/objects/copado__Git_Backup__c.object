@@ -651,6 +651,17 @@
         <label>Snapshot Waiting Page</label>
     </fieldSets>
     <fields>
+        <fullName>copado__Apex_Job_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Apex Job ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Branch__c</fullName>
         <deprecated>false</deprecated>
         <description>Branch of the selected Git Repository (e.g. master). Snapshots and Commits done in the Git Snapshot will affect the specified branch.</description>
@@ -844,6 +855,16 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Scheduled_Commit_Message__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Message to use when committing the snapshot to Git</description>
+        <inlineHelpText>Message to use when committing the snapshot to Git</inlineHelpText>
+        <label>Commit Message</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>copado__Scope__c</fullName>

@@ -9,6 +9,9 @@ global class Quality implements copado.CopadoDomain {
     global Quality() {
 
     }
+    global static Map<copado__Quality_Gate_Rule__c,copado__Quality_Gate_Rule__c> findDuplicates(List<copado__Quality_Gate_Rule__c> records, List<copado__Quality_Gate_Rule_Condition__c> recordConditions) {
+        return null;
+    }
     global static copado.Quality.MatchingRulesResult matchingRules(copado.Quality.MatchingRulesRequest request) {
         return null;
     }

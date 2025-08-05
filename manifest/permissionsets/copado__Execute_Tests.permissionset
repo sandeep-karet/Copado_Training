@@ -29,6 +29,18 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ScheduleTestServiceImpl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ScheduleTestsAction</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ScheduleTestsInExtension</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__TestDefinitionCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -190,6 +202,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Scheduled_Job__c.copado__Credential__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Scheduled_Job__c.copado__Test__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>copado__Test__c.copado__AcceptanceCriteria__c</field>
         <readable>true</readable>
@@ -311,4 +333,8 @@
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
+    <recordTypeVisibilities>
+        <recordType>copado__Scheduled_Job__c.copado__Test_Execution</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
 </PermissionSet>

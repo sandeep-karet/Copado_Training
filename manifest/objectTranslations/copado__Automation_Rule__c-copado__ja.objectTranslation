@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Automation Rule --></value>
+        <value>オートメーションルール</value>
     </caseValues>
     <fields>
         <label>有効</label>
@@ -22,6 +22,10 @@
         <help><!-- Connector that maps the payload and parameters between the source and automated actions.Select &quot;Custom&quot; if you want to specify a custom connector class --></help>
         <label>オートメーションコネクター</label>
         <name>copado__Automation_Connector__c</name>
+    </fields>
+    <fields>
+        <label>設定Json</label>
+        <name>copado__Config_Json__c</name>
     </fields>
     <fields>
         <help><!-- You can use www.cronmaker.com to create more sophisticated cron expressions. Please keep in mind that certain cron expressions might not be supported by Salesforce. --></help>
@@ -76,6 +80,11 @@
         <relationshipLabel>オートメーションルール</relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Quality Gate Rule Condition --></label>
+        <name>copado__Quality_Gate_Rule_Condition__c</name>
+        <relationshipLabel><!-- Automation Rules --></relationshipLabel>
+    </fields>
+    <fields>
         <label>スケジュールジョブID</label>
         <name>copado__Scheduled_Job_Id__c</name>
     </fields>
@@ -94,7 +103,7 @@
     </fields>
     <fields>
         <help><!-- Action that will trigger the automation --></help>
-        <label>ソースアクション</label>
+        <label>トリガーアクション</label>
         <name>copado__Source_Action__c</name>
     </fields>
     <fields>
@@ -102,7 +111,7 @@
         <label>選択されたステージ</label>
         <name>copado__Stage__c</name>
     </fields>
-    <nameFieldLabel><!-- Automation Rule Name --></nameFieldLabel>
+    <nameFieldLabel>オートメーション・ルール名</nameFieldLabel>
     <validationRules>
         <errorMessage>同時に環境とステージ項目を選択することはできません。細かいフィルターは環境を用いて、より広いフィルターはステージにて定義してください。</errorMessage>
         <name>copado__Stage_and_Environment_both_populated</name>

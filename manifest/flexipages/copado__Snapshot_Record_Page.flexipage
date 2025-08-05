@@ -144,20 +144,6 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Org__c</fieldItem>
-                <identifier>RecordOrg_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-bca3cc45-3541-47df-91f0-247ef523738a</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Snapshot_Frequency__c</fieldItem>
@@ -181,6 +167,20 @@
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
+        <name>Facet-bca3cc45-3541-47df-91f0-247ef523738a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Org__c</fieldItem>
+                <identifier>RecordOrg_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -189,6 +189,23 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Pipeline__c</fieldItem>
                 <identifier>RecordPipeline_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Scheduled_Commit_Message__c</fieldItem>
+                <identifier>RecordScheduled_Commit_Message__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Snapshot_Frequency__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Schedule</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-cc3d9dea-5b9e-4a28-b767-e40abe42ede6</name>
@@ -353,6 +370,12 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentName>copado:nextRunTime</componentName>
+                <identifier>c_nextRunTime</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-2258c0d2-22ff-43e6-bee2-ce50fbd6b0a5</value>
@@ -490,7 +513,7 @@
                 <componentName>flexipage:tabset</componentName>
                 <identifier>flexipage_tabset</identifier>
                 <visibilityRule>
-                    <booleanFilter>(1 AND 2) OR 3</booleanFilter>
+                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.copado__Pipeline__r.copado__Platform__c}</leftValue>
                         <operator>NE</operator>
@@ -555,7 +578,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListLabel</name>
-                    <value>Snapshot Commits</value>
+                    <value>{!$Label.copado__SnapshotCommits}</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>

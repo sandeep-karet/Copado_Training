@@ -62,7 +62,6 @@
     <tabs>copado__Getting_Started</tabs>
     <tabs>copado__Org__c</tabs>
     <tabs>copado__Deployment_Flow__c</tabs>
-    <tabs>copado__Pipeline_Manager</tabs>
     <tabs>copado__User_Story__c</tabs>
     <tabs>copado__User_Story_Metadata__c</tabs>
     <tabs>copado__Release__c</tabs>

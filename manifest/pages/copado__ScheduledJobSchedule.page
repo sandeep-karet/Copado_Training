@@ -19,7 +19,7 @@
             <apex:pageMessages id="theMessages"/>
         	<apex:pageBlock id="pb_main" mode="edit" rendered="{!AND(showOptions,!showError)}">
             <apex:pageBlockButtons id="pbb_main" title="{!$Label.copado__DETAILS}">
-                <apex:commandButton action="{!save_job}" value="{!$Label.copado__Save}" id="btnSave"/>
+                <apex:commandButton action="{!saveJob}" value="{!$Label.copado__Save}" id="btnSave"/>
                 <apex:commandButton action="{!cancel}" value="{!$Label.copado__Cancel}" id="btnCancel" immediate="true"/>
             </apex:pageBlockButtons>
     		<apex:pageBlockSection title="{!$Label.copado__BASIC_INFORMATION}" id="pbs_info" columns="1">

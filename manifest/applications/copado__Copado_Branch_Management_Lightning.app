@@ -85,7 +85,6 @@
     </profileActionOverrides>
     <setupExperience>all</setupExperience>
     <tabs>standard-home</tabs>
-    <tabs>copado__Pipeline_Manager</tabs>
     <tabs>copado__Deployment_Flow__c</tabs>
     <tabs>copado__Snapshot_Difference__c</tabs>
     <tabs>copado__Org__c</tabs>

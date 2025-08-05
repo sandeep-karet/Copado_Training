@@ -156,6 +156,11 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>copado__Copado_Admin</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>copado__Copado_Branch_Management</application>
         <default>false</default>
         <visible>false</visible>
@@ -13074,6 +13079,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ACCommitToRunQG</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ACCommitToRunQGTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ACPromotionDeploymentToBackPromotion</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -13087,6 +13100,22 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__ACPromotionDeploymentToPromotionTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ACPromotionDeploymentToRunQG</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ACPromotionDeploymentToRunQGTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ACPromotionToRunQG</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ACPromotionToRunQGTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -13207,6 +13236,22 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__AddCCHRuleCriteriaExtTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AddLicenseServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AddLicenseServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AddPermissionServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AddPermissionServiceImplTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -13370,23 +13415,11 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__AuthorizationCheck</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>copado__AuthorizationException</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>copado__AuthorizationUtils</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__AuthorizationWithSharing</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__AuthorizationWithoutSharing</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -13442,7 +13475,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__AutomationEventPayload</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__AutomationEventsSelector</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AutomationExecutionQueueable</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -13518,6 +13559,18 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__AutomationRuleStatus</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AutomationRuleWizardCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AutomationRuleWizardCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__AutomationRules</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -13539,6 +13592,38 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__AutomationTemplateExportImportHelper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__Automations</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AutomationsTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BackPromotionAutomationScopeCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BackPromotionAutomationScopeCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BackPromotionAwareness</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BackPromotionAwarenessCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BackPromotionAwarenessCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BackPromotionAwarenessTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -13595,6 +13680,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__BundledStoriesRelatedListCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__BundledStory</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -13714,6 +13803,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CalculationServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CallbackHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -13770,6 +13863,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CheckCCMEnabled</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CheckCCMEnabledTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CheckContentDocumentPermissionAction</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -13786,7 +13887,23 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CheckFeatureEnabled</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CheckFeatureEnabledTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CheckFeaturesController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CheckJobEngineDMLAccess</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CheckJobEngineDMLAccessTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -13894,6 +14011,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CommitDataIntermediaryCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CommitDataIntermediaryCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CommitService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -13994,6 +14119,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ConnectionBehaviorController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ConnectionBehaviorControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ConnectionBehaviorTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -14062,6 +14195,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ConvertServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ConvertServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ConvertTypes</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -14079,6 +14220,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CopadoCommitChangesTestDefaults</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoCredential</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoCredentialTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -14118,11 +14267,35 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CopadoExtLicenseInterface</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CopadoFunctionException</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CopadoFunctions</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoInstalledPackagesManager</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoInstalledPackagesManagerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoLatestPackageRequest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoLatestPackagesManager</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CopadoLatestPackagesManagerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -14206,6 +14379,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CreateAPIKey</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CreateAPIKeyTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CreateAttachmentAction</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -14274,6 +14455,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CreatePromotionServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CreatePromotionServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CreatePromotions</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -14330,11 +14519,39 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CredentialShareRecalc</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CredentialShareRecalcTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__Credentials</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CredentialsButtonsHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CredentialsHandlersTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CredentialsServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CredentialsTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CronTriggerService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CronTriggerServiceTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -14347,6 +14564,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CustomConnectedAppTriggerHelper_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CustomFunctionUsage</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -14526,11 +14747,27 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__DataSetCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DataSetCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__DataSetExecutionHistoryCtrl</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>copado__DataSetExecutionHistoryCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DataSetJobExecutionsCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DataSetJobExecutionsCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -14646,6 +14883,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__DataTemplateImportCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DataTemplateImportCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__DataTemplateImportExtension</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -14755,6 +15000,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__DeactivateAutomationRuleTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DefaultPersonaUpdateManager</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DefaultPersonaUpdateManagerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -14942,7 +15195,19 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__DisableFeatureServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DisableFeatureServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__DomainBuilder</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DummySchedulableClass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -14959,6 +15224,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__DxOperationCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DynamicComponentWrapperCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DynamicComponentWrapperCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -15042,6 +15315,22 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__EnableFeatureServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__EnableFeatureServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__EnableJWTSettingImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__EnableJWTSettingImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__Encoder</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -15087,6 +15376,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__EnvironmentVarPipelineRelatedListCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__EnvironmentVariableExpression</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -15170,6 +15463,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ExtLicenseAssignment</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ExtLicenseInfo</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ExtensionConfiguration</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -15206,6 +15507,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ExtensionLicenseManager</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ExtensionLicenseManagerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ExternalCIAPIFactory</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -15226,6 +15535,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__FeatureServiceHelper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__FeatureTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__FeaturesSelector</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -15235,6 +15552,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__FflibExtensionTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__FieldMigrationBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__FieldMigrationBatchTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -15438,6 +15763,22 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__GetConflictingMetadatasFromBundle</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__GetConflictingMetadatasFromBundleTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__GetPrefetchedStepIfEnabledServiceImTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__GetPrefetchedStepIfEnabledServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__GetPromotionUserStoryNames</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -15518,7 +15859,27 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__GitRepoController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__GitRepoControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__GitRepositoriesSelector</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__GitRepository</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__GitRepositoryController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__GitRepositoryControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -15638,10 +15999,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__IAuthorization</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>copado__IDXOrgBehavior</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -15754,6 +16111,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__JobEngineUIRecordApi</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JobEngineUIRecordApiTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__JobExecuteServiceImpl</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -15763,6 +16128,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__JobExecution</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JobExecutionActionExtractor</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JobExecutionActionExtractorTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -15787,6 +16160,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__JobExecutionMonitorCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JobExecutions</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -15850,7 +16227,19 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__JobsTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__JsRemotingController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JwtController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__JwtControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -15862,7 +16251,23 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__LatestTestsRunsController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__LatestTestsRunsControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__LicenseAPI</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__LicenseAssignmentValidator</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__LicenseConstants</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -15883,6 +16288,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__LicenseManagerCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__LicenseServiceHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -15943,14 +16352,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__MCWebhookTest</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__MC_MassBackPromoteBatch</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__MC_MassBackPromoteBatchTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16054,6 +16455,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__MetaCacheAPIProxy</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__MetaCacheAPIProxyTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__MetaDataItem</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -16067,6 +16476,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__MetadataServiceException</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__MetadataServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__MetadataServiceImplTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16087,6 +16504,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__MetadataselectorExtension</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__MockFeatures</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16278,6 +16699,38 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__OverviewActiveJobQueuesController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OverviewActiveJobQueuesControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OverviewApiKeyController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OverviewApiKeyControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OverviewAssignedCopadoLicensesController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OverviewAssignedCopadoLicensesCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OverviewLicenseAssignmentController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__OverviewLicenseAssignmentControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PackageArtifactOrgDefinitionController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -16398,6 +16851,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__PermissionChecker</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PermissionCheckerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PermissionSchedulable</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -16410,11 +16871,79 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__Persona</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PersonaAssignmentHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>copado__PersonaAssignmentTriggerHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaCredentialServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaCredentialServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaDefinitionConfig</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaDefinitions</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementCredentialServiceCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementCredentialServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementFeatureServiceCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementFeatureServiceCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementLicenseServiceCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementLicenseServiceCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementPermissionServiceCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementPermissionServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementServiceCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementServiceCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementUserServiceCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementUserServiceCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16426,11 +16955,35 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__PersonaServiceHelper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PersonaTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>copado__PersonaTriggerHelper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaUserServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaUserServiceImplTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16462,6 +17015,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__PipelineConnection</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PipelineConnectionCreateService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -16479,6 +17036,30 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__PipelineHeaderController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PipelineInitialiserCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PipelineInitialiserCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PipelineLaunchWizardCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PipelineLaunchWizardCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PipelineManagerCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PipelineManagerCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16518,6 +17099,22 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__PrefechVolume</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PrefechVolumeTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PrefetchedVolumeManager</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PrefetchedVolumeManagerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PreventAlteringDefaultPipelineActions</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -16535,6 +17132,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__PreventForbiddenPipelineActionsTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PreventModificationStandardPersonas</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16658,6 +17259,22 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__PromotionProgressAlertsController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PromotionProgressAlertsControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PromotionRemoter</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PromotionRemoterTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PromotionServiceImpl</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -16686,7 +17303,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__Promotions</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PromotionsSelector</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PromotionsTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16710,7 +17335,31 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__QualityAutomation</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityAutomationConstants</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityAutomationEngine</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityChecksMonitorCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityChecksMonitorCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__QualityGate</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGateConstants</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16742,6 +17391,22 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__QualityGateRuleDuplicateChecker</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGateRuleDuplicateCheckerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGateRuleValidator</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGateRuleValidatorTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__QualityGateRules</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -16755,6 +17420,22 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__QualityGateTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGateWizardCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGateWizardCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGatesCheckerCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QualityGatesCheckerCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16787,6 +17468,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__Queue</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QueueStateImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__QueueStateImplTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16839,6 +17528,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__RefreshOrgMetadataCache</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__RefreshOrgMetadataCacheTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -16906,6 +17599,22 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__RemoveLicenseServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__RemoveLicenseServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__RemovePermissionServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__RemovePermissionServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__RemoveUserStoryBundleServiceImpl</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -16930,6 +17639,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__RepositoryOAuth</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__RepositoryOAuthTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ResolveConflictsController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -16942,19 +17659,11 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__RestrictQgrDuplicate</apexClass>
+        <apexClass>copado__RestrictQgrcUpdateOrDelete</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__RestrictQgrDuplicateTest</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RestrictQgrcDuplicate</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__RestrictQgrcDuplicateTest</apexClass>
+        <apexClass>copado__RestrictQualityGateUpdateOrDelete</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -17034,6 +17743,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__Results</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ResultsSelector</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -17083,6 +17796,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__RollbackWizardValidationExt</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__RollupInProgressFailedTestsInUSTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__RollupInProgressFailedTestsInUserStory</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -17183,6 +17904,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__RunTestGroupsBatch</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__RunTestOtherInformation</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -17294,6 +18019,22 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ScheduleTestServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ScheduleTestsAction</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ScheduleTestsInExtension</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ScheduleTestsInExtensionTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ScheduledJobExtension</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -17379,10 +18120,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__SecondGenerationPackageService</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__SecureOperations</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -17486,6 +18223,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__SensitiveSystemPropertiesTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__SerializeCollection</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -17527,6 +18268,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__SetQgrcAcceptanceCriteria</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__SetSystemPropertySharing</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__SetSystemPropertySharingTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -18426,10 +19175,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__Test_CopadoAuthorization</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>copado__Test_CopadoLicensesComponentController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -18834,6 +19579,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__UserStoryCommitServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__UserStoryCommitServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__UserStoryCommitTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -19034,6 +19787,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ValidateUserStoryTests</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ValidationResult</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -19071,10 +19828,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__WebhookAPI</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>copado__WebhookCallout</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -67732,6 +68485,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>User.copado__Persona_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>User.copado__Show_Copado_Tips__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -68317,6 +69075,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Application_Feature__c.copado__Parent_Feature__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Application_Feature__c.copado__Priority__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -68612,6 +69375,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Automation_Event__c.copado__Processing_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Automation_Event__c.copado__Stage_Id__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -68643,6 +69411,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Automation_Rule__c.copado__Automation_Connector__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Automation_Rule__c.copado__Config_Json__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -68683,6 +69456,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Automation_Rule__c.copado__Last_Execution_Date_Time__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Automation_Rule__c.copado__Quality_Gate_Rule_Condition__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -69482,6 +70260,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Data_Set__c.copado__MCDD_Enabled__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Data_Set__c.copado__Platform__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Data_Set__c.copado__Source_Org__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -69543,6 +70331,31 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Data_Template__c.copado__Template_Source_Org__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Default_Persona_Permission__mdt.copado__Default_Persona__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Default_Persona_Permission__mdt.copado__Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Default_Persona_Permission__mdt.copado__Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Default_Persona__mdt.copado__Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Default_Persona__mdt.copado__Icon_Name__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -70542,6 +71355,46 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Feature_Toggle_Group__mdt.copado__Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Feature_Toggle_Group__mdt.copado__Icon_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Feature_Toggle_Group__mdt.copado__Order__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Feature_Toggle_Group__mdt.copado__Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Feature_Toggle__mdt.copado__Custom_Permission_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Feature_Toggle__mdt.copado__Full_Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Feature_Toggle__mdt.copado__Order__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Feature_Toggle__mdt.copado__Short_Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Filter__c.copado__Owner__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -70612,6 +71465,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Git_Backup__c.copado__Apex_Job_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Git_Backup__c.copado__Branch__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -70663,6 +71521,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Git_Backup__c.copado__Pipeline__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Git_Backup__c.copado__Scheduled_Commit_Message__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -70773,6 +71636,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Git_Repository__c.copado__Git_Provider__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Git_Repository__c.copado__Is_repository_connected_via_copa_tunnel__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -71422,6 +72290,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Persona_Definition__c.copado__Config_JSON__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Persona_Definition__c.copado__Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Persona_Definition__c.copado__Is_Standard__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Persona_Permission__c.copado__Permission_Set_Name__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -71617,12 +72500,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Promotion__c.copado__Override_Destination_Changes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Promotion__c.copado__Pipeline__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Promotion__c.copado__Platform__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Promotion__c.copado__Project__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Promotion__c.copado__Promotion_Method__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -71648,6 +72546,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Promotion__c.copado__Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Promotion__c.copado__View_in_Git__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -71742,6 +72645,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Pull_Request__c.copado__Requested_Reviewers_Long__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Pull_Request__c.copado__Requested_Reviewers__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -71778,6 +72686,56 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Pull_Request__c.copado__Username__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Action__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Details__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Environment_Info_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Execution_Sequence_Icon__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Info_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Is_Default__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Select_Environment_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Sequence__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Test_Tool__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Action__mdt.copado__Tool_Sequence_Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -71832,6 +72790,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Quality_Gate_Rule__c.copado__Is_Updated_Data_Model__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Quality_Gate_Rule__c.copado__Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -71843,6 +72806,36 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Quality_Gate_Rule__c.copado__dataJson__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Test_From__mdt.copado__Available_Options__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Test_From__mdt.copado__Default_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Test_From__mdt.copado__Edit_Mode__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Test_From__mdt.copado__Info_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Test_From__mdt.copado__Is_Visible__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Quality_Gate_Test_From__mdt.copado__Test_Tool__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -71928,6 +72921,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Record_Matching_Formula__c.copado__Hash_Formula__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Record_Matching_Formula__c.copado__Object2__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -72167,6 +73165,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Scheduled_Job__c.copado__Credential__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Scheduled_Job__c.copado__Cron_Expression__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -72188,6 +73191,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Scheduled_Job__c.copado__Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Scheduled_Job__c.copado__Test__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -73007,6 +74015,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__System_Property__c.copado__Is_Public__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__System_Property__c.copado__Is_Sensitive__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -73143,6 +74156,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__TestTool__mdt.copado__Automate_Test_Readiness__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__TestTool__mdt.copado__Description__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -73647,6 +74665,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__User_Story_Data_Commit__c.copado__Generate_Data_Set_Job_Execution_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__User_Story_Data_Commit__c.copado__Status__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -73978,6 +75001,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__User_Story__c.copado__Parent_Epic_Title__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__User_Story__c.copado__Pending_Tests__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -82746,6 +83774,10 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>copado__DataTemplateImportLWCContainer</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>copado__DataTemplateObjectResult</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -83247,6 +84279,10 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>copado__newEnvironmentOverride</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>copado__packageUpgradeAlert</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
@@ -84762,6 +85798,16 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
+        <recordType>copado__Scheduled_Job__c.copado__Test_Execution</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>copado__Scheduled_Job__c.copado__Webhook</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
         <recordType>copado__Selenium_Test_Run__c.copado__Generic_Web_Application</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -85594,6 +86640,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>copado__Permission_Set_Explorer</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>copado__Persona_Management</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>

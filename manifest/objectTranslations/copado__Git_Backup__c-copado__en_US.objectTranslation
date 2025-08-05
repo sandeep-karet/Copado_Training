@@ -29,6 +29,10 @@
         <name>copado__Snapshot_Waiting_Page</name>
     </fieldSets>
     <fields>
+        <label><!-- Apex Job ID --></label>
+        <name>copado__Apex_Job_ID__c</name>
+    </fields>
+    <fields>
         <help><!-- Git branch related to the Org. Be aware that branch names are case sensitive. --></help>
         <label><!-- Branch --></label>
         <name>copado__Branch__c</name>
@@ -120,6 +124,11 @@
         <label><!-- Pipeline --></label>
         <name>copado__Pipeline__c</name>
         <relationshipLabel><!-- Git Snapshots --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Message to use when committing the snapshot to Git --></help>
+        <label><!-- Commit Message --></label>
+        <name>copado__Scheduled_Commit_Message__c</name>
     </fields>
     <fields>
         <help><!-- Use this field to specify the files for which you want to take the snapshot. The format may vary depending on the extension that you are using. Please refer to your extension documentation. --></help>

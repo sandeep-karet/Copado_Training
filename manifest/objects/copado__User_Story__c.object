@@ -1652,6 +1652,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>copado__US_Feature__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>copado__Validate_Only__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -1676,7 +1681,7 @@
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </availableFields>
-        <description>On CBM2 page</description>
+        <description>Fields displayed in the User Story tables of the Pipeline Manager</description>
         <displayedFields>
             <field>Name</field>
             <isFieldManaged>false</isFieldManaged>
@@ -1722,7 +1727,7 @@
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
-        <label>CBM Fields</label>
+        <label>Pipeline Manager User Story Fields</label>
     </fieldSets>
     <fieldSets>
         <fullName>copado__Commit_Files_Information</fullName>
@@ -5072,6 +5077,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>copado__Developer__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>copado__Documentation_Complete__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -7640,6 +7650,20 @@ IMAGE(&apos;/img/msg_icons/warning16.png&apos;,&apos;OutDated&apos;)+&quot; &quo
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Pending_Tests__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field displays the total number of tests associated with this user story that are currently in progress or have failed. These tests might require further attention or resolution before you can promote this user story.</inlineHelpText>
+        <label>Pending Tests</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -10516,7 +10540,7 @@ copado__Environment__c != copado__Org_Credential__r.copado__Environment__c</erro
         <openType>replace</openType>
         <protected>false</protected>
         <requireRowSelection>true</requireRowSelection>
-        <url>/apex/{!IF(CONTAINS($Action.copado__User_Story__c.New, &apos;copado__&apos;), &apos;copado__&apos;, &apos;&apos;)}UserStoryBundle</url>
+        <url>/flow/{!IF(CONTAINS($Action.copado__User_Story__c.New, &apos;copado__&apos;), &apos;copado__&apos;, &apos;&apos;)}User_Story_Bundle</url>
     </webLinks>
     <webLinks>
         <fullName>copado__Create_Scratch_Org</fullName>

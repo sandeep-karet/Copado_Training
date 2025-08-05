@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Record Matching Formula --></value>
+        <value>レコード・マッチング式</value>
     </caseValues>
     <fields>
         <help>コパードが、数式を構築するために使用可能なオブジェクトとフィールドのリストを取得するためのクレデンシャルになります。</help>
@@ -35,11 +35,16 @@
         <name>copado__Hash_Formula__c</name>
     </fields>
     <fields>
-        <help>ドロップダウンからオブジェクトを選択し、数式を設定します。数式で利用可能なフィールドは、選択されたオブジェクトとソース組織に基づいています。</help>
+        <help>ドロップダウンからオブジェクトを選択して、式を設定します。式に使用できる項目は、選択したオブジェクトおよびソース組織によって異なります。</help>
         <label><!-- Object --></label>
+        <name>copado__Object2__c</name>
+    </fields>
+    <fields>
+        <help>ドロップダウンからオブジェクトを選択し、数式を設定します。数式で利用可能なフィールドは、選択されたオブジェクトとソース組織に基づいています。</help>
+        <label><!-- Object (Obsolete) --></label>
         <name>copado__Object__c</name>
     </fields>
-    <nameFieldLabel><!-- Record Matching Formula Name --></nameFieldLabel>
+    <nameFieldLabel>レコード・マッチング式名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- You can not change the Configuration Schema Credential once the value is selected. --></errorMessage>
         <name>copado__RestrictSchemaCredentialModification</name>

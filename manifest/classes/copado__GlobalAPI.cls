@@ -12,6 +12,9 @@ global class GlobalAPI {
     global static void authenticateGitRepository(Id gitRepositoryId, String username, String password) {
 
     }
+    global copado.GlobalAPI.UserLicense copadoLicensesByUser(Id userId) {
+        return null;
+    }
     global String createUserAPIKey() {
         return null;
     }
@@ -48,10 +51,21 @@ global class GlobalAPI {
     global String upsertCopadoLicense(Id userId, copado.GlobalAPI.UserLicense licenseDetails) {
         return null;
     }
+    global static Boolean validateOrg(Id orgId) {
+        return null;
+    }
 global class CopadoAPIException extends Exception {
 }
 global class CopadoLicenses {
+    global Integer availableADDLicenses {
+        get;
+        set;
+    }
     global Integer availableCADLicenses {
+        get;
+        set;
+    }
+    global Integer availableCBMLicenses {
         get;
         set;
     }
@@ -71,7 +85,35 @@ global class CopadoLicenses {
         get;
         set;
     }
+    global Integer availableFunctionLicenses {
+        get;
+        set;
+    }
+    global Integer hasDevopsLicenseEnabled {
+        get;
+        set;
+    }
+    global Integer hasFunctionLicenseEnabled {
+        get;
+        set;
+    }
+    global Integer hasMetaCacheLicenseEnabled {
+        get;
+        set;
+    }
+    global Integer totalFunctionsSoftLimit {
+        get;
+        set;
+    }
+    global Integer totalNumberOfADDLicenses {
+        get;
+        set;
+    }
     global Integer totalNumberOfCADLicenses {
+        get;
+        set;
+    }
+    global Integer totalNumberOfCBMLicenses {
         get;
         set;
     }
@@ -91,7 +133,19 @@ global class CopadoLicenses {
         get;
         set;
     }
+    global Integer usageMonthlyFunctionLicenses {
+        get;
+        set;
+    }
+    global Integer usedADDLicenses {
+        get;
+        set;
+    }
     global Integer usedCADLicenses {
+        get;
+        set;
+    }
+    global Integer usedCBMLicenses {
         get;
         set;
     }
@@ -159,6 +213,10 @@ global class ProxyOrgResponse {
     }
 }
 global class UserLicense {
+    global Boolean isADDEnabled {
+        get;
+        set;
+    }
     global Boolean isCADenabled {
         get;
         set;
@@ -187,6 +245,9 @@ global class UserLicense {
 
     }
     global UserLicense(Id userId, Boolean isCADenabled, Boolean isCCHenabled, Boolean isCCMenabled, Boolean isCopadoEnabled, Boolean isCSTenabled) {
+
+    }
+    global UserLicense(Id userId, Boolean isCADenabled, Boolean isCCHenabled, Boolean isCCMenabled, Boolean isCopadoEnabled, Boolean isCSTenabled, Boolean isADDEnabled) {
 
     }
 }

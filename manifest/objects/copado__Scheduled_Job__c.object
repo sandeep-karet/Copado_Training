@@ -166,6 +166,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__Credential__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Credential</label>
+        <referenceTo>copado__Org__c</referenceTo>
+        <relationshipLabel>Scheduled Jobs</relationshipLabel>
+        <relationshipName>Scheduled_Jobs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__Cron_Expression__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -237,6 +249,18 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>copado__Test__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Test</label>
+        <referenceTo>copado__Test__c</referenceTo>
+        <relationshipLabel>Scheduled Jobs</relationshipLabel>
+        <relationshipName>Scheduled_Jobs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__Webhook_URL__c</fullName>
         <deprecated>false</deprecated>
         <label>Webhook URL</label>
@@ -261,6 +285,38 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Scheduled Jobs</pluralLabel>
+    <recordTypes>
+        <fullName>copado__Test_Execution</fullName>
+        <active>true</active>
+        <label>Test Execution</label>
+        <picklistValues>
+            <picklist>copado__Status__c</picklist>
+            <values>
+                <fullName>Failure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Success</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>copado__Webhook</fullName>
+        <active>true</active>
+        <label>Webhook</label>
+        <picklistValues>
+            <picklist>copado__Status__c</picklist>
+            <values>
+                <fullName>Failure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Success</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

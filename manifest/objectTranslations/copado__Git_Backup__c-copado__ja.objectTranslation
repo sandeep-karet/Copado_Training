@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Git Snapshot --></value>
+        <value>Gitスナップショット</value>
     </caseValues>
     <fieldSets>
         <label>コミットファイル情報</label>
@@ -24,6 +24,10 @@
         <label>スナップショット待機ページ</label>
         <name>copado__Snapshot_Waiting_Page</name>
     </fieldSets>
+    <fields>
+        <label>Apex ジョブ ID</label>
+        <name>copado__Apex_Job_ID__c</name>
+    </fields>
     <fields>
         <help><!-- Git branch related to the Org. Be aware that branch names are case sensitive. --></help>
         <label>ブランチ</label>
@@ -118,6 +122,11 @@
         <relationshipLabel>Gitスナップショット</relationshipLabel>
     </fields>
     <fields>
+        <help><!-- Message to use when committing the snapshot to Git --></help>
+        <label>コミットメッセージ</label>
+        <name>copado__Scheduled_Commit_Message__c</name>
+    </fields>
+    <fields>
         <help><!-- Use this field to specify the files for which you want to take the snapshot. The format may vary depending on the extension that you are using. Please refer to your extension documentation. --></help>
         <label>スコープ</label>
         <name>copado__Scope__c</name>
@@ -140,7 +149,7 @@
         <label>Gitで参照</label>
         <name>copado__View_in_Git__c</name>
     </fields>
-    <nameFieldLabel><!-- Git Snapshot Name --></nameFieldLabel>
+    <nameFieldLabel>Gitスナップショット名</nameFieldLabel>
     <webLinks>
         <label>ブランチを選択</label>
         <name>copado__Select_Branch</name>

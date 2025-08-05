@@ -7,6 +7,10 @@
         <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
+        <field>copado__Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>copado__JobTemplate__c</field>
         <value xsi:nil="true"/>
     </values>
