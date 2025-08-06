@@ -19268,6 +19268,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Contact.Sample_field__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contact.Send_Pipeline_Notifications__c</field>
         <readable>false</readable>
     </fieldPermissions>
