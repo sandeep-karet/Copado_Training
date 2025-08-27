@@ -8859,6 +8859,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>JiraIntegrationTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>L2O_AccountClientStatusMonthsBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
