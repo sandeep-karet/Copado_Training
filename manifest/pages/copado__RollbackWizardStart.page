@@ -6,7 +6,6 @@
     <apex:includeScript value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.js')}" />
     <apex:stylesheet value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.css')}" />
     <apex:stylesheet value="{!$Resource.copado__DW_custom_css}" />
-    <c:GAnalytics />
 
     <script>
         var globalSldsResourcePath = '{!URLFOR($Asset.SLDS)}';
@@ -14,10 +13,6 @@
         dataTableId = 'rollbackTable';
 
         var deploymentType = '{!JSENCODE(deploymentInterface.StepGeneralHeader)}';
-        ga('send', 'pageview', {
-            'page': '/RollbackWizardStart',
-            'title': deploymentType
-        });
     </script>
 
     <apex:form >

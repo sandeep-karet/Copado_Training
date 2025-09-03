@@ -671,6 +671,33 @@
         <label><!-- Workflow Trigger Added Comments --></label>
         <name>Apttus_Approval__Workflow_Trigger_Added_Comments__c</name>
     </fields>
+    <layouts>
+        <layout>Approval Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Escalation Information --></label>
+            <section>Escalation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Subprocess Information --></label>
+            <section>Subprocess Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Add Comment --></label>
+        <name>Apttus_Approval__sf1AddCommentAction</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Approve / Reject --></label>
+        <name>Apttus_Approval__sf1ApproveRejectAction</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Reassign --></label>
+        <name>Apttus_Approval__sf1ReassignAction</name>
+    </quickActions>
     <recordTypes>
         <description><!-- Agreement --></description>
         <label><!-- Agreement --></label>

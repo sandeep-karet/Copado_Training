@@ -2,7 +2,6 @@
     <apex:slds />
     <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
     <head>
-        <c:GAnalytics />
         <apex:slds />
         <c:IncludeStaticsResourceComponent addJQuery="true" />
         <apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
@@ -20,12 +19,6 @@
         </style>
         <script type="text/javascript">
             var globalSldsResourcePath = '{!URLFOR($Asset.SLDS)}';
-
-            ga('send', 'pageview', {
-                'page': '/GenerateStaticCodeAnalysisRuleSet',
-                'title': 'Generate Static Code Analysis RuleSet'
-            });
-
             var iconsList = [
                 {
                     svgButtonsClass: 'warningToastIcon',

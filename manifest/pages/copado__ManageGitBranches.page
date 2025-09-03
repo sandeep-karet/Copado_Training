@@ -6,7 +6,6 @@
 
     <head>
         <title>{!$Label.MANAGE_GIT_BRANCHES} | Copado</title>
-        <c:GAnalytics />
         <c:WizardUtils />
 
         <c:IncludeStaticsResourceComponent addJQuery="true" />
@@ -439,15 +438,6 @@
 
                     $btn.show();
                 };
-
-
-            </script>
-
-            <script>
-                ga('send', 'pageview', {
-                    'page': '/ManageGitBranches',
-                    'title': 'Manage Git Branches'
-                });
 
 
             </script>

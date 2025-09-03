@@ -5,13 +5,6 @@
 
   <head>
     <TITLE>Scheduled Job {!copado__Scheduled_Job__c.Name} | Copado</TITLE>
-    <c:GAnalytics />
-    <script>
-      ga('send', 'pageview', {
-        'page': '/ScheduledJobViewOverride',
-        'title': 'Scheduled Job View'
-      });
-    </script>
     <apex:stylesheet value="{!IF(OR($User.UIThemeDisplayed == 'Theme4d', $User.UIThemeDisplayed == 'Theme4u'), URLFOR($Resource.CopadoLightningCSS),
     '')}
 " />

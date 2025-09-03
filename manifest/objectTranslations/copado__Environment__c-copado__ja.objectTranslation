@@ -139,7 +139,7 @@
         <name>copado__Namespace__c</name>
     </fields>
     <fields>
-        <label>クレデンシャルID</label>
+        <label>組織ID</label>
         <name>copado__Org_ID__c</name>
     </fields>
     <fields>
@@ -220,6 +220,25 @@
             <translation><!-- Only If User Has No Org Credential --></translation>
         </picklistValues>
     </fields>
+    <layouts>
+        <layout>Environment Layout</layout>
+        <sections>
+            <label><!-- Compliance --></label>
+            <section>Compliance</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label><!-- Rollback --></label>
+            <section>Rollback</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>環境名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- An environment cannot have the same automation template for both Promote and Deploy --></errorMessage>

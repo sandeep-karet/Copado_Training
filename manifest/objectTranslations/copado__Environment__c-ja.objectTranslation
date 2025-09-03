@@ -156,7 +156,7 @@
     </fields>
     <fields>
         <help>ターゲット組織のデフォルトクレデンシャルは常にチェックされています。オプションで、ユーザーがターゲット組織の組織クレデンシャルを持っていない場合のみ、デフォルトのクレデンシャルを選択することができます。</help>
-        <label><!-- Promotion Default Credential --></label>
+        <label><!-- Default Credential --></label>
         <name>copado__Promotion_Default_Credential__c</name>
         <picklistValues>
             <masterLabel>Always</masterLabel>
@@ -220,6 +220,25 @@
             <translation>ユーザーが組織クレデンシャルを持っていない場合のみ</translation>
         </picklistValues>
     </fields>
+    <layouts>
+        <layout>Environment Layout</layout>
+        <sections>
+            <label>コンプライアンス</label>
+            <section>Compliance</section>
+        </sections>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>ページメッセージ</label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label>ロールバック</label>
+            <section>Rollback</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>環境名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- An environment cannot have the same automation template for both Promote and Deploy --></errorMessage>

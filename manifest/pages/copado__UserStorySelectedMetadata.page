@@ -1,6 +1,5 @@
 <apex:page id="thePage" standardController="copado__User_Story__c" extensions="copado.MetadataselectorExtension,copado.Settings" showHeader="false" sidebar="false" standardStyleSheets="true" lightningStylesheets="true"> 
     <head>
-        <c:GAnalytics />
         <c:WizardUtils />
         <c:IncludeStaticsResourceComponent addJquery="true" addWizardcss="true"/>
         <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true"/>
@@ -53,10 +52,4 @@
     </apex:form>
     
     <style> #jqxTabs .apexp .bPageBlock.apexDefaultPageBlock .pbBody {margin:0;}</style>
-    <script>
-        ga('send', 'pageview', {
-          'page': '/UserStorySelectedMetadata',
-          'title': 'User Story Selected Metadata'
-        });
-    </script>
 </apex:page>

@@ -102,6 +102,29 @@
         <label><!-- User Story Status After Promotion --></label>
         <name>copado__Story_Status_After_Deployment__c</name>
     </fields>
+    <layouts>
+        <layout>Connection Behavior Layout</layout>
+        <sections>
+            <label>バックプロモーションの詳細</label>
+            <section>Back-Promotion Details</section>
+        </sections>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>ポストデプロイメントアクション</label>
+            <section>Post-deployment Actions</section>
+        </sections>
+        <sections>
+            <label>プロモーションの詳細</label>
+            <section>Promotion Details</section>
+        </sections>
+        <sections>
+            <label>使用状況情報</label>
+            <section>Usage Information</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>接続動作名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- Batch Size fields for Promotion or Back Promotion needs to be between 1 and 2000 --></errorMessage>

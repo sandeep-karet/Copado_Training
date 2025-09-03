@@ -137,7 +137,22 @@
         <name>copado__User_Story__c</name>
         <relationshipLabel><!-- Tests --></relationshipLabel>
     </fields>
+    <layouts>
+        <layout>Test Layout</layout>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>名</nameFieldLabel>
+    <quickActions>
+        <label><!-- Mark as Ready --></label>
+        <name>copado__Mark_as_Ready</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Run --></label>
+        <name>copado__Run</name>
+    </quickActions>
     <validationRules>
         <errorMessage><!-- This Tool Configuration cannot be modified. Please create a new Test and select the Tool Configuration needed. --></errorMessage>
         <name>copado__PreventUpdatingToolConfiguration</name>

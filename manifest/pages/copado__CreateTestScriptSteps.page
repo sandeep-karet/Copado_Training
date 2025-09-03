@@ -1,6 +1,5 @@
 <apex:page id="thePage" controller="copado.CreateTestScriptStepsController" lightningStylesheets="true">
     <head>
-        <c:GAnalytics />
         <c:IncludeStaticsResourceComponent addJquery="true" addUIjs="true" addUIcss="true" />
         <c:IncludeConnectionJsComponent />
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
@@ -117,13 +116,6 @@
                 }
                 ctss.ns = copadoApp.ns;
                 init();
-            </script>
-
-            <script>
-                ga('send', 'pageview', {
-                'page': '/CreateTestScriptSteps',
-                'title': 'Create Test Script Steps'
-                });
             </script>
         </apex:outputPanel>
     </body>

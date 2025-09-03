@@ -218,7 +218,51 @@
         <label>開発者ハブクレデンシャルです</label>
         <name>copado__is_Developer_Hub_Org__c</name>
     </fields>
+    <layouts>
+        <layout>Org Credential Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Org Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>クレデンシャル名</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>認証する</label>
+        <name>copado__Authenticate</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>コパードDX.</label>
+        <name>copado__Copado_DX</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>クレデンシャルを開く</label>
+        <name>copado__Open_Credential</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>すべてのテストを実行</label>
+        <name>copado__Run_All_Test</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>コンプライアンススキャンを実行</label>
+        <name>copado__Run_Compliance_Scan</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>静的コード分析を実行</label>
+        <name>copado__Run_Static_Code_Analysis</name>
+    </quickActions>
     <sharingReasons>
         <label>コパードペルソナ</label>
         <name>copado__Copado_Persona</name>

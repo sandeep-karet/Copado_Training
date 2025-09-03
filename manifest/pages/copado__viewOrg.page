@@ -4,8 +4,7 @@
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
 
     <head>
-        <title>Org Credential {!copado__Org__c.Name} | Copado</title>
-        <c:GAnalytics />
+        <title>Org Credential {!copado__Org__c.Name} | Copado</title>   
         <c:WizardUtils />
         <c:IncludeStaticsResourceComponent addJquery="true" />
         <script type="text/javascript">
@@ -282,13 +281,6 @@
                         <apex:outputPanel id="pbs_metadata" rendered="{! and(not(isblank(Org__c.Username__c)), or(CurrentUserLicensesObject.hasCopado, CurrentUserLicensesObject.hasCCM, CurrentUserLicensesObject.hasCST, CurrentUserLicensesObject.hasCCH) ) }">
                             <c:ViewOrgMetadataGrid orgId="{!copado__Org__c.Id}" id="cmpViewOrgMetadataGrid" metadataurl="{!JSENCODE(metadata_url)}" recId="{!copado__Org__c.Id}"
                                 envId="{!copado__Org__c.copado__Environment__c}" />
-                            <script>
-                                ga('send', 'pageview', {
-                                    'page': '/viewOrg',
-                                    'title': 'View Org'
-                                });
-
-                            </script>
                         </apex:outputPanel>
                         <div>
                             <center>

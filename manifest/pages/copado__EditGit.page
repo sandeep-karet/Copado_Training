@@ -5,7 +5,6 @@
 
     <head>
         <title>{!$Label.EDIT} {!$Label.GIT_REPOSITORY} {!Git_Repository__c.Name} | {!$Label.Copado}</title>
-        <c:GAnalytics />
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
         <c:IncludeStaticsResourceComponent addJQuery="true" />
     </head>

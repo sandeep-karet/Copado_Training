@@ -15,6 +15,10 @@
         <value xsi:type="xsd:string">Copado will create as many quality gates based on your selection. They will share the same configuration, but you will be able to edit each of them individually.</value>
     </values>
     <values>
+        <field>copado__Execution_Error_Message__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>copado__Execution_Sequence_Icon__c</field>
         <value xsi:nil="true"/>
     </values>

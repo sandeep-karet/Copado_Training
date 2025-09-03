@@ -6,7 +6,6 @@
 
     <head>
         <title>Promotion {!copado__Promotion__c.Name} | Copado</title>
-        <c:GAnalytics />
         <c:WizardUtils />
 
         <c:IncludeStaticsResourceComponent addJQuery="true" addCometdjs="true" addJCometdjs="true" addCirclifuljs="true" addCirclifulcss="true"
@@ -32,7 +31,7 @@
                 'Next': '{!JSENCODE($Label.Next)}',
                 'Previous': '{!JSENCODE($Label.Previous)}'
             };
-        </script>    
+        </script>
         <link rel="stylesheet" typea="text/css" href="{!URLFOR($Resource.DataTables10,'DataTables10/datatables.min.css')}" />
         <apex:outputPanel id="hiddenVars">
             <input id="hiddenRollbackFlag" type="hidden" value="{!enableRollbackEnv}" />
@@ -175,8 +174,8 @@
             var showReviewConflictButton = function () {
                 var reviewConflictButton = $copado('<input id="customReviewConflictButton" type="button" class="btn" value="{!JSENCODE($Label.copado__MERGE_CONFLICT_REVIEW)}" onclick="openResolveConflictsPage();"/>');
                 if ({!IF(copado__Promotion__c.copado__Merge_Conflict__c, 1, 0)} || '{!JSENCODE(copado__Promotion__c.copado__Status__c)}' == '{!JSENCODE($Label.copado__MERGE_CONFLICT)}' || {!isSmartConflict}) {
-                reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
-            }
+                    reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
+                }
             }
 
             var showRollbackButton = function () {
@@ -765,14 +764,14 @@
                                         <script type="text/javascript">
                                             function submitModal(deployNow) {
                                                 if(!deployNow || (deployNow && confirm("{!JSENCODE($Label.PromoteAndDeployWarning)}"))){
-                                                var deploymentName = $copado('#deploymentName').val();
-                                                var isTestOnly = $copado('#validationOnly').is(':checked');
-                                                var testLevel = $copado('[id$="testLevel"]').val();
-                                                var attachdeploymentfile = $copado('#attachdeploymentfile').is(':checked');
-                                                console.log(deploymentName, isTestOnly, testLevel);
-                                                closeModal();
+                                                    var deploymentName = $copado('#deploymentName').val();
+                                                    var isTestOnly = $copado('#validationOnly').is(':checked');
+                                                    var testLevel = $copado('[id$="testLevel"]').val();
+                                                    var attachdeploymentfile = $copado('#attachdeploymentfile').is(':checked');
+                                                    console.log(deploymentName, isTestOnly, testLevel);
+                                                    closeModal();
                                                     copadoApp.createDeployment(deploymentName, isTestOnly, testLevel, attachdeploymentfile, deployNow);
-                                            }
+                                                }
 
                                             }
                                             function closeProgressModalFunction() {
@@ -1485,11 +1484,6 @@
                     $copado('[id$="usMetadataPanel"]').find('td:odd:first').append(paginationObj.npButtons);
                     $copado('[id$="usMetadataPanel"]').find('td:even:first').css('width', '40%');
                 }
-
-                ga('send', 'pageview', {
-                    'page': '/PromoteChanges',
-                    'title': 'Promote Changes'
-                });
             </script>
 
             <c:CheckFeaturesComponent />

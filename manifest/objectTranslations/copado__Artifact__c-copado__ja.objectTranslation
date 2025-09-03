@@ -281,7 +281,74 @@ The credential where the unmanaged package is created from. --></help>
         <name>copado__Target_Dev_Hub_Org__c</name>
         <relationshipLabel>パッケージ（ターゲットDev Hub組織）</relationshipLabel>
     </fields>
+    <layouts>
+        <layout>Artifact Layout</layout>
+        <sections>
+            <label><!-- Content --></label>
+            <section>Content</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Package Artifact Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Package Details --></label>
+            <section>Package Details</section>
+        </sections>
+        <sections>
+            <label><!-- Package Metadata Content --></label>
+            <section>Package Metadata Content</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Package Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Package Details --></label>
+            <section>Package Details</section>
+        </sections>
+        <sections>
+            <label><!-- Package Metadata Content --></label>
+            <section>Package Metadata Content</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Story Bundle</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>パッケージ名</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>パッケージバージョンを作成</label>
+        <name>copado__CreatePackageVersion</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>設定の編集</label>
+        <name>copado__EditConfiguration</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>パッケージを生成</label>
+        <name>copado__GeneratePackage</name>
+    </quickActions>
     <recordTypes>
         <description>バージョン管理システム重視のパッケージ</description>
         <label>Gitパッケージ</label>

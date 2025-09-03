@@ -1,12 +1,5 @@
 <apex:page id="PipelineManager" standardController="copado__Deployment_Flow__c" extensions="copado.PipelineManagerExtension,copado.BranchManagementExtension,copado.Settings,copado.PromotionRemoter" lightningStylesheets="true" sideBar="false" docType="html-5.0" title="{!$Label.copado__PipelineManager}" showHeader="true">
     <apex:slds />
-    <c:GAnalytics />
-    <script>
-        ga('send', 'pageview', {
-          'page': '/PipelineManager',
-          'title': 'Pipeline Manager'
-        });
-    </script>
     <c:IncludeConnectionJsComponent />
     <apex:includeScript value="{!URLFOR($Resource.utils) }" />
     <c:IncludeStaticsResourceComponent addJQuery="true" addUIjs="true" addUIcss="true" addCometdjs="true" addJCometdjs="true" addJSON2js="true" addJSzipjs="true" />

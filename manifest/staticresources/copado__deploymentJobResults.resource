@@ -158,7 +158,6 @@ deploymentJobResults.createResultTable = function(res, $container) {
 	$grid2.jqxGrid('applyfilters');
 
 	$copado('#loading').hide();
-	if(ga)ga('send', 'event', 'Deployment Result Page', 'result', 'render', res.length);
 };
 deploymentJobResults.showMessage = function(type, msg) {
 	$copado('.fixedMsg')

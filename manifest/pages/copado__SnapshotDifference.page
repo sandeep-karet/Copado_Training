@@ -6,7 +6,6 @@
 
     <head>
         <title>{!$Label.Snapshot_Difference} {!copado__Snapshot_Difference__c.Name} | Copado</title>
-        <c:GAnalytics />
         <c:WizardUtils />
         <c:IncludeStaticsResourceComponent addJquery="true" addDVcss="true" addDLjs="true" addDVjs="true" addWizardcss="true" addCometdjs="true"
             addJcometdjs="true" addJSON2js="true" addJSzipjs="true" />
@@ -1136,12 +1135,6 @@
                 <apex:outputPanel styleClass="copado-lightning-container" layout="block">
                     <apex:relatedList title="{!$Label.copado__Snapshot_Attachments}" list="CombinedAttachments" rendered="false" />
                 </apex:outputPanel>
-                <script>
-                    ga('send', 'pageview', {
-                        'page': '/SnapshotDifference',
-                        'title': 'Snapshot Difference'
-                    });
-                </script>
                 <c:CheckFeaturesComponent />
             </apex:outputPanel>
         </div>

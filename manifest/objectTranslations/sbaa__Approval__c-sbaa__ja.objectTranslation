@@ -160,7 +160,34 @@
         <label>全員</label>
         <name>sbaa__Unanimous__c</name>
     </fields>
+    <layouts>
+        <layout>Approval Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>承認番号</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>承認</label>
+        <name>sbaa__ApproveMobile</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>再割り当て</label>
+        <name>sbaa__ReassignMobile</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>却下</label>
+        <name>sbaa__RejectMobile</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>申請の再送信</label>
+        <name>sbaa__ResendRequestMobile</name>
+    </quickActions>
     <webLinks>
         <label>承認</label>
         <name>sbaa__Approve</name>

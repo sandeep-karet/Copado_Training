@@ -9,6 +9,23 @@
         <value>Pull Requests</value>
     </caseValues>
     <fields>
+        <help><!-- Indicates the current approval status of the pull request. This information is retrieved directly from the connected Git provider and reflects whether the required reviewers have approved the pull request. Depending on the provider, data may be available via webhook or may require OAuth authorization. --></help>
+        <label><!-- Approval Status --></label>
+        <name>copado__Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Assignees --></label>
         <name>copado__Assignees__c</name>
     </fields>
@@ -57,6 +74,16 @@
         <name>copado__Requested_Reviewers__c</name>
     </fields>
     <fields>
+        <help><!-- Specifies the number of required reviewer approvals set in your Git provider. Helps determine if a pull request meets the configured approval threshold. Depending on the provider, data may be available via webhook or may require OAuth authorization. --></help>
+        <label><!-- Required Reviewer Approvals --></label>
+        <name>copado__Required_Reviewer_Approvals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Shows the number of reviewers who have approved the pull request. Updates automatically as reviewers approve the pull request in your Git provider. Depending on the provider, data may be available via webhook or may require OAuth authorization --></help>
+        <label><!-- Reviewer Approvals Count --></label>
+        <name>copado__Reviewer_Approvals_Count__c</name>
+    </fields>
+    <fields>
         <label><!-- State --></label>
         <name>copado__State__c</name>
     </fields>
@@ -89,5 +116,16 @@
         <label><!-- Username --></label>
         <name>copado__Username__c</name>
     </fields>
+    <layouts>
+        <layout>Pull Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Other Information --></label>
+            <section>Other Information</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

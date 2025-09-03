@@ -457,6 +457,60 @@
         <name>Shipping_Contact__c</name>
         <relationshipLabel><!-- Order Products --></relationshipLabel>
     </fields>
+    <layouts>
+        <layout>CPQ Order Product Layout</layout>
+        <sections>
+            <label>Información de facturación</label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label>Información de contratación</label>
+            <section>Contracting Information</section>
+        </sections>
+        <sections>
+            <label>Información de los precios</label>
+            <section>Price Information</section>
+        </sections>
+        <sections>
+            <label>Información de presupuesto y suscripción</label>
+            <section>Quote and Subscription Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Order Product Layout</layout>
+        <sections>
+            <label><!-- Amendment Information --></label>
+            <section>Amendment Information</section>
+        </sections>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Contract Information --></label>
+            <section>Contract Information</section>
+        </sections>
+        <sections>
+            <label><!-- Ordering Information --></label>
+            <section>Ordering Information</section>
+        </sections>
+        <sections>
+            <label><!-- Pricing Information --></label>
+            <section>Pricing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product Bundle Information --></label>
+            <section>Product Bundle Information</section>
+        </sections>
+        <sections>
+            <label><!-- Quote Information --></label>
+            <section>Quote Information</section>
+        </sections>
+        <sections>
+            <label><!-- Shipping Information --></label>
+            <section>Shipping Information</section>
+        </sections>
+    </layouts>
     <validationRules>
         <errorMessage><!-- This Order Item has been Activated and cannot be updated --></errorMessage>
         <name>Active_Order_Product_Cannot_Be_Updated</name>

@@ -160,7 +160,7 @@
     </fields>
     <fields>
         <help><!-- The Default Credential for the target Org is always selected by default. Optionally, the Default Credential can be selected only if the user has no Org Credential for the target Org. --></help>
-        <label><!-- Promotion Default Credential --></label>
+        <label><!-- Default Credential --></label>
         <name>copado__Promotion_Default_Credential__c</name>
         <picklistValues>
             <masterLabel>Always</masterLabel>
@@ -224,6 +224,25 @@
             <translation><!-- Only If User Has No Org Credential --></translation>
         </picklistValues>
     </fields>
+    <layouts>
+        <layout>Environment Layout</layout>
+        <sections>
+            <label><!-- Compliance --></label>
+            <section>Compliance</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label><!-- Rollback --></label>
+            <section>Rollback</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
     <validationRules>
         <errorMessage><!-- An environment cannot have the same automation template for both Promote and Deploy --></errorMessage>

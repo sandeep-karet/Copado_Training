@@ -1,4 +1,5 @@
-<apex:page id="DataTemplateImport" standardController="copado__Data_Template__c" extensions="copado.DataTemplateImportExtension" recordSetVar="dataTemplates" lightningStylesheets="true" sideBar="false" docType="html-5.0" title="Data Template Import">
+<apex:page id="DataTemplateImport" standardController="copado__Data_Template__c" extensions="copado.DataTemplateImportExtension" recordSetVar="dataTemplates"
+    lightningStylesheets="true" sideBar="false" docType="html-5.0" title="Data Template Import">
     <apex:slds />
     <c:IncludeStaticsResourceComponent addJQuery="true" addUIjs="true" addUIcss="true" />
     <c:IncludeConnectionJsComponent />
@@ -6,14 +7,9 @@
     <apex:includeScript value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.js')}" />
     <apex:stylesheet value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.css')}" />
     <apex:stylesheet value="{!$Resource.copado__DataTemplateImport_custom_css}" />
-    <c:GAnalytics />
 
     <script>
         var globalSldsResourcePath = '{!URLFOR($Asset.SLDS)}';
-        ga('send', 'pageview', {
-            'page': '/DataTemplateImport',
-            'title': 'Data Template Import'
-        });
     </script>
 
     <apex:form >
@@ -42,7 +38,9 @@
                     <div class="slds-page-header__col-actions">
                         <div class="slds-page-header__controls">
                             <div class="slds-page-header__control buttons">
-                                <apex:commandButton styleClass="slds-button slds-button_brand" action="{!finishImportAndClose}" value="{!$Label.copado__Finish_Import}" onClick="lockScreen();dti.expandDataTables();" onComplete="dti.contractDataTables();unlockScreen();" reRender="errorPanel" />
+                                <apex:commandButton styleClass="slds-button slds-button_brand" action="{!finishImportAndClose}" value="{!$Label.copado__Finish_Import}"
+                                    onClick="lockScreen();dti.expandDataTables();" onComplete="dti.contractDataTables();unlockScreen();"
+                                    reRender="errorPanel" />
                             </div>
                         </div>
                     </div>
@@ -57,18 +55,15 @@
                             <div class="slds-notify slds-notify_toast slds-theme_{!severity}" role="status">
                                 <span class="slds-assistive-text"></span>
                                 <span class="slds-icon_container slds-icon-utility-success slds-m-right_small slds-no-flex slds-align-top">
-                                        <span class="slds-icon_container slds-icon__svg--default {!severity}ToastIcon"></span>
-                                    </span>
+                                    <span class="slds-icon_container slds-icon__svg--default {!severity}ToastIcon"></span>
+                                </span>
                                 <div class="slds-notify__content">
                                     <apex:repeat value="{!pageMessagesMap[severity]}" var="messages">
                                         <h2 class="slds-text-heading_small ">{!messages}</h2>
                                     </apex:repeat>
                                 </div>
                                 <div class="slds-notify__close">
-                                    <button type="button"
-                                            class="slds-button slds-button_icon slds-button_icon-inverse"
-                                            title="{!$Label.CLOSE}"
-                                            onclick="$copado('[id=divToast]').addClass('slds-hide');">
+                                    <button type="button" class="slds-button slds-button_icon slds-button_icon-inverse" title="{!$Label.CLOSE}" onclick="$copado('[id=divToast]').addClass('slds-hide');">
                                         <span class="slds-icon_container slds-icon__svg--default closeToastIcon"></span>
                                     </button>
                                 </div>
@@ -117,13 +112,13 @@
             </div>
 
             <!--  Upload Template Modal  -->
-            <section id="modalUploadTemplate" role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_medium hide" aria-labelledby="uploadTemplateHeading" aria-modal="true" aria-describedby="uploadTemplateContent">
+            <section id="modalUploadTemplate" role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_medium hide"
+                aria-labelledby="uploadTemplateHeading" aria-modal="true" aria-describedby="uploadTemplateContent">
                 <apex:outputPanel layout="block" styleClass="slds-modal__container" id="uploadTemplateContainer">
                     <header class="slds-modal__header">
                         <apex:outputPanel layout="block" id="uploadTemplateHeader">
-                            <button type="button"
-                                    class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse closeToastIcon"
-                                    title="{!$Label.Close}" onclick="dti.closeModals('UploadTemplate');"></button>
+                            <button type="button" class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse closeToastIcon" title="{!$Label.Close}"
+                                onclick="dti.closeModals('UploadTemplate');"></button>
                             <h2 id="uploadTemplateHeading" class="slds-text-heading_medium slds-hyphenate">
                                 <span class="modal-title slds-text-heading_medium">{!$Label.Upload_Template_s}</span>
                             </h2>
@@ -177,9 +172,15 @@
                                                     {!temp.values.relationList.size} {!$Label.Related_Data_Templates}
                                                 </div>
                                                 <div class="slds-col slds-size_1-of-12 result-icons">
-                                                    <img id="{!temp.values.dataTemplate.encodedTemplateName}_confirm" title="{!temp.values.dataTemplate.templateMainObject} {!$Label.Object_Is_Found}" class="confirm-images" src="{!URLFOR($Resource.DTS_images, 'check.png')}"/>
-                                                    <img id="{!temp.values.dataTemplate.encodedTemplateName}_cross" title="{!temp.values.dataTemplate.templateMainObject} {!$Label.Object_Is_Not_Found}" class="cross-images" src="{!URLFOR($Resource.DTS_images, 'cross.png')}"/>
-                                                    <img id="{!temp.values.dataTemplate.encodedTemplateName}_warning" title="{!temp.values.dataTemplate.templateName} {!$Label.Duplicate_Template_Name_Import}" class="warning-images" src="{!URLFOR($Resource.DTS_images, 'warning.png')}"/>
+                                                    <img id="{!temp.values.dataTemplate.encodedTemplateName}_confirm" title="{!temp.values.dataTemplate.templateMainObject} {!$Label.Object_Is_Found}"
+                                                        class="confirm-images" src="{!URLFOR($Resource.DTS_images, 'check.png')}"
+                                                    />
+                                                    <img id="{!temp.values.dataTemplate.encodedTemplateName}_cross" title="{!temp.values.dataTemplate.templateMainObject} {!$Label.Object_Is_Not_Found}"
+                                                        class="cross-images" src="{!URLFOR($Resource.DTS_images, 'cross.png')}"
+                                                    />
+                                                    <img id="{!temp.values.dataTemplate.encodedTemplateName}_warning" title="{!temp.values.dataTemplate.templateName} {!$Label.Duplicate_Template_Name_Import}"
+                                                        class="warning-images" src="{!URLFOR($Resource.DTS_images, 'warning.png')}"
+                                                    />
                                                 </div>
                                             </div>
                                         </apex:repeat>
@@ -191,8 +192,9 @@
                                         </label>
                                         <div class="slds-form-element__control">
                                             <div class="slds-combobox_container">
-                                                <apex:inputField value="{!template.copado__Template_Source_Org__c}" id="schemaOrg" styleClass="slds-input lookup-adjustment" >
-                                                    <apex:actionSupport event="onchange" onSubmit="dti.isValidated = false;dti.totalValidatedTemplate = 0;dti.totalNotValidatedTemplate = 0;" reRender="uploadTemplateFooter" />
+                                                <apex:inputField value="{!template.copado__Template_Source_Org__c}" id="schemaOrg" styleClass="slds-input lookup-adjustment">
+                                                    <apex:actionSupport event="onchange" onSubmit="dti.isValidated = false;dti.totalValidatedTemplate = 0;dti.totalNotValidatedTemplate = 0;"
+                                                        reRender="uploadTemplateFooter" />
                                                 </apex:inputField>
                                             </div>
                                         </div>
@@ -219,7 +221,7 @@
                     <footer class="slds-modal__footer">
                         <apex:outputPanel layout="block" styleClass="buttons modal-button" id="uploadTemplateFooter">
                             <apex:outputPanel layout="none" rendered="{!templateInformationList.size > 0}">
-                                <button  id="doneButton" type="button" class="slds-button slds-button_brand hide-buttons" onclick="lockScreen();dti.orgCallout('{!JSENCODE(OrgCalloutDataJSON)}');">
+                                <button id="doneButton" type="button" class="slds-button slds-button_brand hide-buttons" onclick="lockScreen();dti.orgCallout('{!JSENCODE(OrgCalloutDataJSON)}');">
                                     {!$Label.Confirm_Import}
                                 </button>
                                 <button id="validateButton" type="button" class="slds-button slds-button_brand" onclick="lockScreen();checkValidationCondition();">
@@ -227,7 +229,8 @@
                                 </button>
                             </apex:outputPanel>
 
-                            <apex:actionFunction name="checkValidationCondition" action="{!checkValidationCondition}" onComplete="dti.orgCallout('{!JSENCODE(OrgCalloutDataJSON)}');dti.applyRenderSVG();" reRender="uploadTemplateHeader,uploadTemplateContent,errorPanel" />
+                            <apex:actionFunction name="checkValidationCondition" action="{!checkValidationCondition}" onComplete="dti.orgCallout('{!JSENCODE(OrgCalloutDataJSON)}');dti.applyRenderSVG();"
+                                reRender="uploadTemplateHeader,uploadTemplateContent,errorPanel" />
                         </apex:outputPanel>
                     </footer>
                 </apex:outputPanel>
@@ -236,13 +239,16 @@
 
 
             <!--  Action functions  -->
-            <apex:actionFunction name="listImportedTemplates" action="{!listImportedTemplates}" onComplete="dti.closeModals('UploadTemplate');dti.applyRenderSVG();dti.startDataTables();unlockScreen();" reRender="importedTemplatesPanel,uploadTemplateHeader,uploadTemplateContent,errorPanel">
+            <apex:actionFunction name="listImportedTemplates" action="{!listImportedTemplates}" onComplete="dti.closeModals('UploadTemplate');dti.applyRenderSVG();dti.startDataTables();unlockScreen();"
+                reRender="importedTemplatesPanel,uploadTemplateHeader,uploadTemplateContent,errorPanel">
                 <apex:param value="" name="templateIds" />
             </apex:actionFunction>
-            <apex:actionFunction name="parseImportedFiles" action="{!parseImportedFile}" onComplete="dti.applyRenderSVG();unlockScreen();" reRender="uploadTemplateHeader,uploadTemplateContent,uploadTemplateFooter,errorPanel">
+            <apex:actionFunction name="parseImportedFiles" action="{!parseImportedFile}" onComplete="dti.applyRenderSVG();unlockScreen();"
+                reRender="uploadTemplateHeader,uploadTemplateContent,uploadTemplateFooter,errorPanel">
                 <apex:param value="" name="jsonValue" />
             </apex:actionFunction>
-            <apex:actionFunction name="showError" action="{!populateErrorMessages}" onComplete="dti.applyRenderSVG();unlockScreen();" reRender="uploadTemplateHeader,uploadTemplateContent,errorPanel">
+            <apex:actionFunction name="showError" action="{!populateErrorMessages}" onComplete="dti.applyRenderSVG();unlockScreen();"
+                reRender="uploadTemplateHeader,uploadTemplateContent,errorPanel">
                 <apex:param value="" name="errorString" />
             </apex:actionFunction>
         </div>

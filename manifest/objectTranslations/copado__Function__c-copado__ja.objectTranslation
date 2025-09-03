@@ -101,7 +101,32 @@ The class must implement the MCCallBack interface. --></help>
             <translation><!-- XL --></translation>
         </picklistValues>
     </fields>
+    <layouts>
+        <layout>Function Layout</layout>
+        <sections>
+            <label><!-- Callback --></label>
+            <section>Callback</section>
+        </sections>
+        <sections>
+            <label><!-- Configuration --></label>
+            <section>Configuration</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>関数名</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>関数を複製</label>
+        <name>copado__Clone_Function</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>機能の実行</label>
+        <name>copado__Execute_Function</name>
+    </quickActions>
     <validationRules>
         <errorMessage>API名は英数字のみ使用可能で、文字から始める必要があります。</errorMessage>
         <name>copado__Function_Name_must_Be_Alpha_Numeric</name>

@@ -84,6 +84,32 @@
         <label>Gitで参照</label>
         <name>copado__View_in_Git__c</name>
     </fields>
+    <layouts>
+        <layout>Git Org Commit Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- MetaData Selections --></label>
+            <section>MetaData Selections</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Snapshot Commit Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- MetaData Selections --></label>
+            <section>MetaData Selections</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>コミット名</nameFieldLabel>
     <validationRules>
         <errorMessage>コミットIDがあるときは、コミットステータスを「保留」または「変更なし」にすることはできません。</errorMessage>

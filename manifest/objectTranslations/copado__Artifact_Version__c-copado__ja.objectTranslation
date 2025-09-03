@@ -109,7 +109,42 @@
         <label>Gitで参照</label>
         <name>copado__View_In_Git__c</name>
     </fields>
+    <layouts>
+        <layout>Artifact Version Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Package Version Details --></label>
+            <section>Package Version Details</section>
+        </sections>
+        <sections>
+            <label><!-- Release Details --></label>
+            <section>Release Details</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>アーティファクトのバージョン名</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>設定の編集</label>
+        <name>copado__EditConfiguration</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>パッケージバージョンの作成</label>
+        <name>copado__GeneratePackageVersion</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>バンドルをロック</label>
+        <name>copado__Lock_Bundle</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>パッケージバージョンのパブリッシュ</label>
+        <name>copado__PublishPackageVersion</name>
+    </quickActions>
     <webLinks>
         <label>マージバージョン</label>
         <name>copado__Merge_Version</name>

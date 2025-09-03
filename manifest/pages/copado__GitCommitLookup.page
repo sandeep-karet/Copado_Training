@@ -1,6 +1,5 @@
 <apex:page id="thePage" controller="copado.GitCommitLookupController" extensions="copado.Settings" sidebar="false" showHeader="false" tabStyle="copado__Git_Org_Commit__c" lightningStylesheets="true">
-    <head>
-        <c:GAnalytics />
+    <head>  
         <c:IncludeStaticsResourceComponent addJQuery="true" addUIjs="true" addUIcss="true" addWizardcss="true"/>
         <c:IncludeConnectionJsComponent />
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
@@ -307,12 +306,6 @@
             $copado(document).ready(function() {
                 copadoApp.ns = '{!JSENCODE(namespace)}';
                 copadoApp.init();
-            });
-        </script>
-    <script>
-            ga('send', 'pageview', {
-              'page': '/GitCommitLookup',
-              'title': 'Git Commit Lookup'
             });
         </script>
     </body>

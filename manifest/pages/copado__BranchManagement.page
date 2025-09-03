@@ -1,6 +1,5 @@
 <apex:page id="thePage" standardController="copado__Deployment_Flow__c" extensions="copado.BranchManagementExtension,copado.Settings,copado.FeatureHelper,copado.JsRemotingController" sidebar="false" title="Copado Branch Management" showHeader="false" applyHtmlTag="true">
-    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
-    <c:GAnalytics />
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en"> 
     <c:WizardUtils />
 
     <apex:slds />
@@ -582,11 +581,6 @@
                 $copado(window).on('resize', function(){
                     timer && clearTimeout(timer);
                     timer = setTimeout(onResize, 100);
-                });
-
-                ga('send', 'pageview', {
-                  'page': '/BranchManagement',
-                  'title': 'Branch Management'
                 });
 
                 var mStart = mStart || '';

@@ -32,6 +32,9 @@ global class Feature implements copado.CopadoDomain {
     global static Boolean isCCMEnabled() {
         return null;
     }
+    global static Boolean isFeatureEnabled(String featureParameterName) {
+        return null;
+    }
 global class JWTSetting implements copado.CopadoService {
     global JWTSetting() {
 

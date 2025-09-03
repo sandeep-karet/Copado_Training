@@ -1,4 +1,5 @@
-<apex:page standardController="copado__Deployment__c" extensions="copado.DW_SourceExtension" id="DW_Source" lightningStylesheets="true" sideBar="false" docType="html-5.0" title="Deployment Source">
+<apex:page standardController="copado__Deployment__c" extensions="copado.DW_SourceExtension" id="DW_Source" lightningStylesheets="true"
+    sideBar="false" docType="html-5.0" title="Deployment Source">
 
     <apex:slds />
     <c:IncludeStaticsResourceComponent addJQuery="true" addUIjs="true" />
@@ -6,7 +7,6 @@
     <apex:includeScript value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.js')}" />
     <apex:stylesheet value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.css')}" />
     <apex:stylesheet value="{!$Resource.copado__DW_custom_css}" />
-    <c:GAnalytics />
 
     <script>
         var globalSldsResourcePath = '{!URLFOR($Asset.SLDS)}';
@@ -14,23 +14,19 @@
         var selectedSourceType = '{!JSENCODE(selectedSourceType)}';
         var deploymentId = '{!deployment.Id}';
         $copado(document).ready(() => {
-            if(selectedSourceType.length > 0){
+            if (selectedSourceType.length > 0) {
                 $copado(`[for="${selectedSourceType}"]>span`).click();
             }
         });
 
         var deploymentType = '{!JSENCODE(deploymentInterface.StepGeneralHeader)}';
-        ga('send', 'pageview', {
-            'page': '/DeploymentWizardSource',
-            'title': deploymentType
-        });
     </script>
 
     <apex:form >
         <c:CopadoSpinner />
 
         <apex:outputPanel layout="block" id="headerComponent">
-            <c:DW_Header currentStep="{!currentStepValue}" stepNameList="{!stepsList}"/>
+            <c:DW_Header currentStep="{!currentStepValue}" stepNameList="{!stepsList}" />
         </apex:outputPanel>
 
         <div class="co-dw-container">
@@ -95,7 +91,9 @@
                                                                             <span class="slds-assistive-text">{!sType.sourceTypeLabel}</span>
                                                                         </span>
                                                                     </div>
-                                                                    <div><span>{!sType.sourceTypeLabel}</span></div>
+                                                                    <div>
+                                                                        <span>{!sType.sourceTypeLabel}</span>
+                                                                    </div>
                                                                 </div>
                                                             </span>
                                                             <span class="slds-is-not-selected">
@@ -106,7 +104,9 @@
                                                                             <span class="slds-assistive-text">{!sType.sourceTypeLabel}</span>
                                                                         </span>
                                                                     </div>
-                                                                    <div><span>{!sType.sourceTypeLabel}</span></div>
+                                                                    <div>
+                                                                        <span>{!sType.sourceTypeLabel}</span>
+                                                                    </div>
                                                                 </div>
                                                             </span>
                                                         </span>

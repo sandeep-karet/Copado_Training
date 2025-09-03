@@ -111,7 +111,42 @@
         <label><!-- Selected Stages --></label>
         <name>copado__Stage__c</name>
     </fields>
+    <layouts>
+        <layout>Automation Rule Layout</layout>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>フィルター</label>
+            <section>Filter</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>オートメーション・ルール名</nameFieldLabel>
+    <quickActions>
+        <label><!-- Activate --></label>
+        <name>copado__Activate</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Activate --></label>
+        <name>copado__Activate1</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Deactivate --></label>
+        <name>copado__Deactivate</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Deactivate --></label>
+        <name>copado__Deactivate1</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Delete --></label>
+        <name>copado__Delete1</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Edit --></label>
+        <name>copado__Edit1</name>
+    </quickActions>
     <validationRules>
         <errorMessage><!-- Environment and Stage fields cannot be selected at the same time. Define the most granular filters using Environments, or broader filters using Stage. --></errorMessage>
         <name>copado__Stage_and_Environment_both_populated</name>

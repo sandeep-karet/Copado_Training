@@ -137,7 +137,24 @@
         <name>copado__User_Story__c</name>
         <relationshipLabel>テスト</relationshipLabel>
     </fields>
+    <layouts>
+        <layout>Test Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>名</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>準備完了としてマーク</label>
+        <name>copado__Mark_as_Ready</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>実行</label>
+        <name>copado__Run</name>
+    </quickActions>
     <validationRules>
         <errorMessage>このツール設定は変更することができません。新しいテストを作成し、ツール設定を選択してください。</errorMessage>
         <name>copado__PreventUpdatingToolConfiguration</name>

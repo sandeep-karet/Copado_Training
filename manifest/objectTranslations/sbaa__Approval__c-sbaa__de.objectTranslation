@@ -197,7 +197,34 @@
         <name>sbaa__Unanimous__c</name>
     </fields>
     <gender>Feminine</gender>
+    <layouts>
+        <layout>Approval Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>Genehmigungsnummer</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Genehmigen</label>
+        <name>sbaa__ApproveMobile</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Neu zuweisen</label>
+        <name>sbaa__ReassignMobile</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Ablehnen</label>
+        <name>sbaa__RejectMobile</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>Anfrage erneut senden</label>
+        <name>sbaa__ResendRequestMobile</name>
+    </quickActions>
     <webLinks>
         <label>Genehmigen</label>
         <name>sbaa__Approve</name>

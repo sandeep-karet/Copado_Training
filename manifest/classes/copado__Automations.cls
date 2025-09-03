@@ -10,6 +10,18 @@ global class Automations implements copado.CopadoDomain {
         get;
         set;
     }
+    global static copado.Automations.DeleteEnvironmentService DeleteEnvironmentService {
+        get;
+        set;
+    }
+    global static copado.Automations.MatchingService MatchingService {
+        get;
+        set;
+    }
+    global static copado.Automations.UpdateEnvironmentService UpdateEnvironmentService {
+        get;
+        set;
+    }
     global Automations() {
 
     }
@@ -49,12 +61,90 @@ global class ConvertService implements copado.CopadoService {
         return null;
     }
 }
+global class DeleteEnvironmentRequest {
+    global copado.Automations.MatchingRuleConfig matchingRuleConfig;
+    global DeleteEnvironmentRequest() {
+
+    }
+}
+global class DeleteEnvironmentService implements copado.CopadoService {
+    global DeleteEnvironmentService() {
+
+    }
+    global void execute(copado.Automations.DeleteEnvironmentRequest request) {
+
+    }
+}
+global class FindMatchingRulesRequest {
+    global Set<Id> automationRuleIds {
+        get;
+        set;
+    }
+    global Set<Id> environmentIds {
+        get;
+        set;
+    }
+    global Id pipelineId {
+        get;
+        set;
+    }
+    global FindMatchingRulesRequest() {
+
+    }
+}
+global class FindMatchingRulesResult {
+    global copado.Automations.MatchingRuleConfig matchingRuleConfig;
+    global FindMatchingRulesResult() {
+
+    }
+}
+global class MatchingRule {
+    global copado.Automations.AutomationConfig config;
+    global Boolean isLastEnvironmentInAutomationRule;
+    global Boolean isLastEnvironmentInStage;
+    global Id ruleId;
+    global String ruleName;
+    global MatchingRule() {
+
+    }
+}
+global class MatchingRuleConfig {
+    global Id environmentId;
+    global List<copado.Automations.MatchingRule> matchingRules;
+    global Id stageId;
+    global MatchingRuleConfig() {
+
+    }
+}
+global class MatchingService implements copado.CopadoService {
+    global MatchingService() {
+
+    }
+    global copado.Automations.FindMatchingRulesResult execute(copado.Automations.FindMatchingRulesRequest request) {
+        return null;
+    }
+}
 global class StageConfig {
     global List<String> environments;
     global List<String> environmentsForBackPromotion;
     global String id;
     global Boolean isAppliedToStage;
     global StageConfig() {
+
+    }
+}
+global class UpdateEnvironmentRequest {
+    global Id environmentId;
+    global copado.Automations.MatchingRuleConfig matchingRuleConfig;
+    global UpdateEnvironmentRequest() {
+
+    }
+}
+global class UpdateEnvironmentService implements copado.CopadoService {
+    global UpdateEnvironmentService() {
+
+    }
+    global void execute(copado.Automations.UpdateEnvironmentRequest request) {
 
     }
 }

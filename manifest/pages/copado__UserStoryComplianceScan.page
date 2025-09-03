@@ -1,13 +1,6 @@
 <apex:page standardController="copado__User_Story__c" extensions="copado.UserStoryComplianceScanController" id="UserStoryComplianceScan" lightningStylesheets="true" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" action="{!requestComplianceScan}">
 	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height: 100%;">
-    <head>
-      <c:GAnalytics />
-      <script>
-          ga('send', 'pageview', {
-            'page': '/UserStoryComplianceScan',
-            'title': 'Compliance Scan Requested'
-          });
-      </script>   
+    <head> 
       <apex:slds />
       <apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
       <c:IncludeStaticsResourceComponent addJQuery="true" />

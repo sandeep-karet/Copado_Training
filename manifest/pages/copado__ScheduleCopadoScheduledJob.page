@@ -2,7 +2,6 @@
     <apex:slds />
     <c:IncludeStaticsResourceComponent addJquery="true" addUIjs="true"/>
     <script type="text/javascript" src="{!URLFOR($Resource.cronExpression) }"></script>
-    <c:GAnalytics />
     <c:CopadoSpinner />
 
     <style>
@@ -19,11 +18,6 @@
 
         $copado(document).ready(function() {
             unlockScreen();
-        });
-
-        ga('send', 'pageview', {
-            'page': '/ScheduleCopadoScheduledJob',
-            'title': 'Schedule a Scheduled Job'
         });
     </script>
     <div class="slds-scope">
