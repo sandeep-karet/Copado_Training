@@ -4,6 +4,62 @@
         <plural>false</plural>
         <value>パッケージバージョン</value>
     </caseValues>
+    <fieldSets>
+        <label><!-- SFDX Extension Fields --></label>
+        <name>cmcSf__SFDX_Extension_Fields</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- SFDX Package Version Lightning Page --></label>
+        <name>cmcSf__SFDX_PackageVersion_CustomFields</name>
+    </fieldSets>
+    <fields>
+        <help>Ancestor Idは、既存のプロモート (公開) パッケージバージョンを指定するために使用されます。パッケージバージョン ID (04t) またはパッケージバージョンのエイリアスとして指定されます。コパードでは、この項目はプロジェクト構成 (sfdx-project.json) の値を反映しており、UI から編集することはできません。どのバージョンを祖先として指定するかには注意が必要です。パッケージの継承関係は、どのバージョンへのアップグレードが許可されるかに影響を与えるためです。</help>
+        <label><!-- Ancestor Id --></label>
+        <name>cmcSf__Ancestor_Id__c</name>
+    </fields>
+    <fields>
+        <help>Ancestor Version は、既存のプロモート (公開) パッケージバージョンを指定するために使用します。通常、4.6.0 などの形式、または HIGHEST などのキーワードを使用して指定します。コパードでは、このフィールドはプロジェクト構成 (sfdx-project.json) の値を反映しており、UI から編集することはできません。パッケージの祖先は、パッケージのバージョンアップグレードの許可に影響するため、祖先として使用するバージョンに注意してください。</help>
+        <label><!-- Ancestor Version --></label>
+        <name>cmcSf__Ancestor_Version__c</name>
+    </fields>
+    <fields>
+        <help>パッケージング CLI コマンドに使用する API バージョン。指定しない場合は、親パッケージの API バージョンの値が使用されます。どちらも指定されていない場合は、デフォルト値、つまり Dev Hub の API バージョンが使用されます。54.0 などの形式で指定してください。</help>
+        <label><!-- Api Version --></label>
+        <name>cmcSf__Api_Version__c</name>
+    </fields>
+    <fields>
+        <help>このパッケージバージョンに含まれる Apex テストを実行して、コードカバー率を計算して保存します。</help>
+        <label><!-- Code Coverage --></label>
+        <name>cmcSf__Code_Coverage__c</name>
+    </fields>
+    <fields>
+        <help>パスワードで保護されたパッケージバージョンであるかどうかを示します。</help>
+        <label><!-- Has Installation Key --></label>
+        <name>cmcSf__Has_Installation_Key__c</name>
+    </fields>
+    <fields>
+        <help>マネージドパッケージのインストールまたはアップグレード後に、サブスクライバー組織で実行される InstallHandler を実装する Apex クラスの名前。</help>
+        <label><!-- Post Install Script --></label>
+        <name>cmcSf__Post_Install_Script__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Install URL --></label>
+        <name>cmcSf__Post_Install_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Notes URL --></label>
+        <name>cmcSf__Release_Notes_URL__c</name>
+    </fields>
+    <fields>
+        <help>パッケージバージョンの生成時に検証をスキップしたかどうかを示します。</help>
+        <label><!-- Skip Validation --></label>
+        <name>cmcSf__Skip_Validation__c</name>
+    </fields>
+    <fields>
+        <help>マネージドパッケージがアンインストールされる前に、サブスクライバー組織で実行される UninstallHandler を実装する Apex クラスの名前。</help>
+        <label><!-- Uninstall Script --></label>
+        <name>cmcSf__Uninstall_Script__c</name>
+    </fields>
     <fields>
         <label><!-- Package --></label>
         <name>copado__Artifact__c</name>
@@ -126,6 +182,26 @@
     </layouts>
     <nameFieldLabel>アーティファクトのバージョン名</nameFieldLabel>
     <quickActions>
+        <label><!-- Configure Package Version From Git --></label>
+        <name>cmcSf__Configure_Package_Version_From_Git</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Generate Package Version --></label>
+        <name>cmcSf__GeneratePackageVersionSFDX</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Publish Package Version --></label>
+        <name>cmcSf__PublishPackageVersionSFDX</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Installation Key --></label>
+        <name>cmcSf__UpdateInstallationKey</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Package Version Info --></label>
+        <name>cmcSf__Update_Package_Version_Info</name>
+    </quickActions>
+    <quickActions>
         <label><!-- Edit Configuration --></label>
         <name>copado__EditConfiguration</name>
     </quickActions>
@@ -141,6 +217,18 @@
         <label><!-- Publish Package Version --></label>
         <name>copado__PublishPackageVersion</name>
     </quickActions>
+    <validationRules>
+        <errorMessage><!-- The API version specified is not valid. It must be in the format, Number.0 --></errorMessage>
+        <name>cmcSf__Api_Version_Format</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Package version number specified is not valid. It must be in the format,  {whole number}.{whole number}.{whole number}.{whole number} or {whole number}.{whole number}.{whole number}.NEXT --></errorMessage>
+        <name>cmcSf__Package_Version_Number_Format</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Tag field is used to create a Git tag during package version creation. Ensure there are no spaces or character sequences that are not allowed for the Git tag. For more details, review the Git documentation https://git-scm.com/docs/git-check-ref-format --></errorMessage>
+        <name>cmcSf__Tag_Restriction</name>
+    </validationRules>
     <webLinks>
         <label><!-- Merge_Version --></label>
         <name>copado__Merge_Version</name>

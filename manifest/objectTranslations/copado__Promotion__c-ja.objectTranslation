@@ -5,6 +5,14 @@
         <value>プロモーション</value>
     </caseValues>
     <fieldSets>
+        <label><!-- Rollback Page --></label>
+        <name>cmcSf__Rollback_Page</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- SFDX Extension Fields --></label>
+        <name>cmcSf__SFDX_Extension_Fields</name>
+    </fieldSets>
+    <fieldSets>
         <label><!-- Copado Header Fields --></label>
         <name>copado__Copado_Header_Fields</name>
     </fieldSets>
@@ -47,6 +55,79 @@
     <fields>
         <label><!-- Rollback Requested --></label>
         <name>Rollback_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apex Test Level --></label>
+        <name>cmcSf__Apex_Test_Level__c</name>
+    </fields>
+    <fields>
+        <help>デプロイのステータスに関係なく Vlocity ログを確認する場合は、このチェックボックスを有効にします。Vlocityログを含めると、かなりのファイルストレージを消費する可能性があります。</help>
+        <label><!-- Attach Vlocity(SFI) Build File --></label>
+        <name>cmcSf__Attach_Vlocity_Build_File__c</name>
+    </fields>
+    <fields>
+        <help>これを有効にすると、git リポジトリの copadoDebug/&lt;PromotionNumber&gt; というブランチにあるデプロイ先の組織に (このプロモーションの一部として) デプロイされたソースファイルを見ることができます。</help>
+        <label><!-- Debug Mode --></label>
+        <name>cmcSf__Debug_Mode__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, deployment warnings will be ignored and the deployment will only fail if errors are returned --></help>
+        <label><!-- Ignore Deployment Warnings --></label>
+        <name>cmcSf__Ignore_Deployment_Warnings__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, deployment warnings in rollback will be ignored and the deployment will only fail if errors are returned --></help>
+        <label><!-- Ignore Rollback Deployment Warnings --></label>
+        <name>cmcSf__Ignore_Rollback_Deployment_Warnings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Rollback Execution Id --></label>
+        <name>cmcSf__Last_Rollback_Execution_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recreate Promotion Branch --></label>
+        <name>cmcSf__Recreate_Promotion_Branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollback Status --></label>
+        <name>cmcSf__Rollback_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation>完了</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation>失敗</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation>進行中</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress (Validation Only)</masterLabel>
+            <translation>進行中（検証のみ）</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation>未着手</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validated</masterLabel>
+            <translation>検証済み</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validation Failed</masterLabel>
+            <translation>検証失敗</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rolled Back Date --></label>
+        <name>cmcSf__Rolled_Back_Date__c</name>
+    </fields>
+    <fields>
+        <help>検証後、対象組織でクイックデプロイが利用可能な場合、このフィールドには検証IDが含まれます。プロモーションがデプロイされると、クイックデプロイが自動的に使用されます。</help>
+        <label><!-- Validate Deploy Request Id --></label>
+        <name>cmcSf__Validate_Deploy_Request_Id__c</name>
     </fields>
     <fields>
         <help>パイプラインで上位の環境から下位の環境にプロモートする場合は、このチェックボックスを選択します。</help>
