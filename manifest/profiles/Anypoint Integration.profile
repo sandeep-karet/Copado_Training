@@ -56231,6 +56231,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-OmniGlobalAutoNumber</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-OmniScriptSavedSession</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
