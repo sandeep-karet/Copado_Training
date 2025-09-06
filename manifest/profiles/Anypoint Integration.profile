@@ -52605,6 +52605,12 @@
         <layout>ContentAsset-Asset File Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ContentLink-Content Link Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ContentSource-Content Source Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ContentVersion-Content Version</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -56223,6 +56229,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-OmniESignatureTemplate</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-OmniGlobalAutoNumber</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>

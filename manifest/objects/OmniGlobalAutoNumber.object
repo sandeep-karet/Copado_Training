@@ -15,6 +15,20 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -116,54 +130,29 @@
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>CompletedDateTime</fullName>
-        <trackHistory>false</trackHistory>
+        <fullName>Increment</fullName>
     </fields>
     <fields>
-        <fullName>OwnerId</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
+        <fullName>LastGeneratedNumber</fullName>
     </fields>
     <fields>
-        <fullName>RelatedRecord</fullName>
-        <trackHistory>false</trackHistory>
+        <fullName>LeftPad</fullName>
     </fields>
     <fields>
-        <fullName>StartedDateTime</fullName>
-        <trackHistory>false</trackHistory>
+        <fullName>MinimumLength</fullName>
     </fields>
     <fields>
-        <fullName>Status</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
+        <fullName>Name</fullName>
     </fields>
     <fields>
-        <fullName>TargetRecord</fullName>
-        <trackHistory>false</trackHistory>
+        <fullName>Prefix</fullName>
     </fields>
     <fields>
-        <fullName>Type</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
+        <fullName>Separator</fullName>
     </fields>
-    <listViews>
-        <fullName>All_PrivacyRequests</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All Privacy Requests</label>
-    </listViews>
     <searchLayouts>
-        <customTabListAdditionalFields>Type</customTabListAdditionalFields>
-        <customTabListAdditionalFields>StartedDateTime</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CompletedDateTime</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Status</customTabListAdditionalFields>
-        <customTabListAdditionalFields>LastModifiedDate</customTabListAdditionalFields>
-        <customTabListAdditionalFields>LastModifiedBy</customTabListAdditionalFields>
-        <searchResultsAdditionalFields>Type</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>StartedDateTime</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CompletedDateTime</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Status</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>LastModifiedDate</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>LastModifiedBy</searchResultsAdditionalFields>
+        <customTabListAdditionalFields>LastGeneratedNumber</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>LastGeneratedNumber</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Private</sharingModel>
 </CustomObject>

@@ -52358,6 +52358,12 @@
         <readable>false</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>ContentLink-Content Link Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ContentSource-Content Source Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Opportunity-TD Post Fusion Page Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -55571,6 +55577,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-OmniESignatureTemplate</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-OmniGlobalAutoNumber</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
