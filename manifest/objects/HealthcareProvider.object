@@ -166,13 +166,29 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>IsActive</fullName>
+        <inlineHelpText>Specifies whether or not the Health Care Provider is active.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>IsNotSearchable</fullName>
         <inlineHelpText>Exclude this provider from search results.</inlineHelpText>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>IsPrivacyLawEnabled</fullName>
+        <inlineHelpText>If checked, this account is flagged for Privacy Law regulations.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>Name</fullName>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OperatingCountryCode</fullName>
+        <inlineHelpText>Country to which Account belongs to.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
@@ -184,6 +200,12 @@
         <inlineHelpText>Practitioner that this Healthcare Provider record is associated with.</inlineHelpText>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProfessionalTitle</fullName>
+        <inlineHelpText>Stores Professional Title.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>ProviderClass</fullName>
@@ -222,6 +244,11 @@
     <fields>
         <fullName>SourceSystemIdentifier</fullName>
         <inlineHelpText>Record ID in Source System.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SourceSystemModifiedDate</fullName>
+        <inlineHelpText>Last Updated Date.</inlineHelpText>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
