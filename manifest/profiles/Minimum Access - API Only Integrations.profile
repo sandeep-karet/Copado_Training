@@ -10676,10 +10676,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SBQQ__InstallProcessorAssignPS</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SBQQ__InstallProcessorBatchAssetCombineKey</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -11240,10 +11236,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SBQQ__OrderProductObjectManager</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SBQQ__OrderService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -11269,10 +11261,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SBQQ__OrderVO</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SBQQ__PageActionController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -12352,14 +12340,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SBQQ__ReferencedFieldCache</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SBQQ__ReferencedFieldCacheTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SBQQ__ReferencedFieldGenerator</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -12532,14 +12512,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SBQQ__SchemaUtils</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SBQQ__SchemaUtilsTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SBQQ__SearchFilter</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -12577,10 +12549,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SBQQ__SecurityUtilsTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SBQQ__SelectContractController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -82536,6 +82504,12 @@
         <layout>HealthRiskEvaluation-Health Risk Evaluation Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>HealthScore-Health Score Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>HealthScoreActionLog-Health Score Action Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>HierCondHlthCodeMapping-Hierarchical Condition Health Code Mapping Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -82543,6 +82517,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Hierarchical_List_View_Configuration__mdt-Hierarchical List View Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>InterestTag-Interest Tag Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>MedReconRecommendation-Medication Reconciliation Recommendation Layout</layout>
@@ -82576,6 +82553,12 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Specimen-Specimen Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>TagCategory-Tag Category Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>TagCategoryAssignment-Tag Category Assignment Layout</layout>
     </layoutAssignments>
     <pageAccesses>
         <apexPage>ALTF__AMLaunchpad</apexPage>
