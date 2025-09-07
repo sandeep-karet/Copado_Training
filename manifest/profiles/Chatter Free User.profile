@@ -6779,10 +6779,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SBQQ__InstallProcessorAssignPS</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SBQQ__InstallProcessorBatchAssetCombineKey</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7343,10 +7339,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SBQQ__OrderProductObjectManager</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SBQQ__OrderService</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7372,10 +7364,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SBQQ__OrderVO</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SBQQ__PageActionController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -8455,14 +8443,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SBQQ__ReferencedFieldCache</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SBQQ__ReferencedFieldCacheTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SBQQ__ReferencedFieldGenerator</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -8635,14 +8615,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SBQQ__SchemaUtils</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SBQQ__SchemaUtilsTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SBQQ__SearchFilter</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -8680,10 +8652,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SBQQ__SecurityUtilsTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SBQQ__SelectContractController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -19630,6 +19598,51 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ContactPointTypeConsent.EngagementChannelTypeId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContentLink.LastCntntUpdateDateTime</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContentLink.Status</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContentLink.UpdatedContent</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContentSource.ExtractDataMapperInput</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContentSource.ExtractDataMapperName</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContentSource.RelatedFieldApiName</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContentSource.RelatedObjectApiName</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContentSource.RelatedRecordIdentifier</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContentSource.TransformDataMapperName</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

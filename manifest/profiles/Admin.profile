@@ -6779,10 +6779,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SBQQ__InstallProcessorAssignPS</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SBQQ__InstallProcessorBatchAssetCombineKey</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -7343,10 +7339,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SBQQ__OrderProductObjectManager</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SBQQ__OrderService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -7372,10 +7364,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SBQQ__OrderVO</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SBQQ__PageActionController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -8455,14 +8443,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SBQQ__ReferencedFieldCache</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SBQQ__ReferencedFieldCacheTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SBQQ__ReferencedFieldGenerator</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -8635,14 +8615,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SBQQ__SchemaUtils</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SBQQ__SchemaUtilsTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>SBQQ__SearchFilter</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -8680,10 +8652,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SBQQ__SecurityUtilsTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SBQQ__SelectContractController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -19771,6 +19739,51 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ContactPointTypeConsent.EngagementChannelTypeId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContentLink.LastCntntUpdateDateTime</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContentLink.Status</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContentLink.UpdatedContent</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContentSource.ExtractDataMapperInput</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContentSource.ExtractDataMapperName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContentSource.RelatedFieldApiName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContentSource.RelatedObjectApiName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContentSource.RelatedRecordIdentifier</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContentSource.TransformDataMapperName</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -54297,6 +54310,26 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>ContactRequest</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>ContentLink</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>ContentSource</object>
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
