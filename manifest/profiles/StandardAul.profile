@@ -83672,6 +83672,9 @@
         <layout>copado__Artifact__c-copado__Artifact Layout</layout>
         <recordType>copado__Artifact__c.copado__User_Story_Bundle</recordType>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Deployment_Flow__c-copado__Pipeline Layout V%2E17</layout>
+    </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
