@@ -5,6 +5,15 @@
         <value>エクステンション構成</value>
     </caseValues>
     <fields>
+        <label><!-- Latest Job Execution --></label>
+        <name>copadoQuality__Latest_Job_Execution__c</name>
+        <relationshipLabel><!-- Extension Configurations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Requires Sync? --></label>
+        <name>copadoQuality__Requires_Sync__c</name>
+    </fields>
+    <fields>
         <label>受け入れ基準</label>
         <name>copado__AcceptanceCriteria__c</name>
     </fields>
@@ -32,6 +41,10 @@
             <masterLabel>Manual Tests</masterLabel>
             <translation><!-- Manual Tests --></translation>
         </picklistValues>
+        <picklistValues>
+            <masterLabel>PMD</masterLabel>
+            <translation><!-- PMD --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <help><!-- Select the name of the CMDT Extension for which you are creating the record. --></help>
@@ -40,6 +53,10 @@
         <picklistValues>
             <masterLabel>None</masterLabel>
             <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMD</masterLabel>
+            <translation><!-- PMD --></translation>
         </picklistValues>
     </fields>
     <fields>
