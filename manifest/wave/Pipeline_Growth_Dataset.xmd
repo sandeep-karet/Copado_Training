@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dataset>Pipeline_Growth_Dataset</dataset>
+    <dates>
+        <alias>L2O_Stage_.From Stage Date</alias>
+        <firstDayOfWeek>-1</firstDayOfWeek>
+        <fiscalMonthOffset>0</fiscalMonthOffset>
+        <label>Days Since Last Activity</label>
+        <sortIndex>0</sortIndex>
+        <type xsi:nil="true"/>
+    </dates>
+    <dates>
+        <alias>Opportunit.Created Date</alias>
+        <firstDayOfWeek>-1</firstDayOfWeek>
+        <fiscalMonthOffset>0</fiscalMonthOffset>
+        <label>Created Date</label>
+        <sortIndex>1</sortIndex>
+        <type xsi:nil="true"/>
+    </dates>
+    <dates>
+        <alias>Opportunit.Close Date</alias>
+        <firstDayOfWeek>-1</firstDayOfWeek>
+        <fiscalMonthOffset>0</fiscalMonthOffset>
+        <label>Close Date</label>
+        <sortIndex>2</sortIndex>
+        <type xsi:nil="true"/>
+    </dates>
+    <dates>
+        <alias>Opportunit.Revenue Effective Date</alias>
+        <firstDayOfWeek>-1</firstDayOfWeek>
+        <fiscalMonthOffset>0</fiscalMonthOffset>
+        <label>Launch Date</label>
+        <sortIndex>3</sortIndex>
+        <type xsi:nil="true"/>
+    </dates>
+    <dimensions>
+        <field>Opportunit.Name</field>
+        <isDerived>false</isDerived>
+        <label>Opportunity Name</label>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>User1.Name</field>
+        <isDerived>false</isDerived>
+        <label>Opportunity Owner</label>
+        <sortIndex>1</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>User.Name</field>
+        <isDerived>false</isDerived>
+        <label>Account Owner</label>
+        <sortIndex>2</sortIndex>
+    </dimensions>
+    <measures>
+        <field>L2O_Stage_.L2O_Number_of_Days__c</field>
+        <isDerived>false</isDerived>
+        <label>Days in Current Stage</label>
+        <sortIndex>0</sortIndex>
+    </measures>
+</WaveXmd>
