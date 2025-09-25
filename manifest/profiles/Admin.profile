@@ -75505,6 +75505,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Epic__c.Jira_Key__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Epic__c.User_QA__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -79326,6 +79331,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__User_Story_Selenium_Test__c.copado__External_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__User_Story_Task__c.Jira_Key__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -85489,6 +85499,12 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>copado__Deployment_Flow__c-copado__Pipeline Layout V%2E17</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__Epic__c-copado__Epic Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>copado__User_Story_Task__c-copado__User Story Task Layout</layout>
     </layoutAssignments>
     <loginIpRanges>
         <endAddress>255.255.255.255</endAddress>
