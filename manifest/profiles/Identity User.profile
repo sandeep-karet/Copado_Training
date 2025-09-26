@@ -23958,6 +23958,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__BatchFetchJiraTeams</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__BatchFetchJiraTeamsTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__BatchFetchSalesforceToJiraEpics</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -24570,6 +24578,26 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__JiraGetTeamAdaptor</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__JiraGetTeamAdaptorTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__JiraGetTeamModel</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__JiraGetTeamServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__JiraGetTeamsService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__JiraGetUpdatableFieldsInputBean</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -24839,6 +24867,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copadoconnect__Logger</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__LookupSearchResult</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__LookupSearchResultTests</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -78403,6 +78439,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Team__c.copado__Vision__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Team__c.copadoconnect__External_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Team__c.copadoconnect__Last_Synced_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

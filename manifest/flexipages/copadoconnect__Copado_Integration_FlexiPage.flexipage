@@ -60,6 +60,22 @@
                         <valueListItems>
                             <value>copadoconnect__Copado_Integration__c.copadoconnect__Clone</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>copadoconnect__Copado_Integration__c.copadoconnect__Resync</value>
+                            <visibilityRule>
+                                <booleanFilter>1 AND 2</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!Record.copadoconnect__Connection_Status__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Connected</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.copadoconnect__Integration_Status__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Active</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -252,6 +268,28 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copadoconnect__Provider__c</fieldItem>
                 <identifier>RecordProvider_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copadoconnect__Appendix__c</fieldItem>
+                <identifier>RecordAppendix_cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.copadoconnect__Provider__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>JIRA</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copadoconnect__Named_Credential__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
