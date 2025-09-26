@@ -166,6 +166,47 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>cmcSf__SFDX_Package_CustomFields</fullName>
+        <description>Display Custom Fields in Package Lightning Page in SFDX</description>
+        <label>SFDX Package Lightning Page</label>
+    </fieldSets>
+    <fields>
+        <fullName>cmcSf__Api_Version__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The api version to be used for the packaging CLI commands. If this is not specified, the default value, i.e. the api version of the Dev Hub, will be used. Specify in the format, e.g. 54.0.
+Note that if Api Version has also been specified in the child Package Version, that value will be used.</inlineHelpText>
+        <label>Api Version</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cmcSf__IsOrgDependent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Is Org Dependent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cmcSf__PackagePath__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this to specify the path for creating the package. This path should be available in sfdx-project.json of your repository.</inlineHelpText>
+        <label>Package Path</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <fields>
         <fullName>copado__Artifact_Repository__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
@@ -1302,6 +1343,21 @@ The credential where the unmanaged package is created from.</inlineHelpText>
         <searchResultsAdditionalFields>copado__DefaultPath__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>cmcSf__Api_Version_Format</fullName>
+        <active>true</active>
+        <errorConditionFormula>RecordType.DeveloperName = &apos;Package_Artifact&apos; &amp;&amp; ISPICKVAL( copado__Pipeline__r.copado__Platform__c ,&apos;SFDX&apos;)  &amp;&amp; NOT(ISBLANK(cmcSf__Api_Version__c)) &amp;&amp; NOT(REGEX(cmcSf__Api_Version__c, &quot;^\\d*.0&quot;))</errorConditionFormula>
+        <errorDisplayField>cmcSf__Api_Version__c</errorDisplayField>
+        <errorMessage>The API version specified is not valid. It must be in the format, Number.0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>cmcSf__No_Namespace_Validation</fullName>
+        <active>true</active>
+        <description>No Namespace cannot be set to true for a Managed package</description>
+        <errorConditionFormula>RecordType.DeveloperName = &apos;Package_Artifact&apos;   &amp;&amp;  ISPICKVAL( copado__Pipeline__r.copado__Platform__c ,&apos;SFDX&apos;)  &amp;&amp; ISPICKVAL(copado__Package_Type__c, &apos;Managed&apos;) &amp;&amp; copado__No_Namespace__c  = true</errorConditionFormula>
+        <errorDisplayField>copado__No_Namespace__c</errorDisplayField>
+        <errorMessage>No Namespace cannot be set to true for a Managed package</errorMessage>
+    </validationRules>
     <validationRules>
         <fullName>copado__ArtifactNameCannotChange</fullName>
         <active>true</active>

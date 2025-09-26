@@ -1,21 +1,37 @@
 <apex:page id="thePage" standardController="copado__Selenium_Test_Group__c" extensions="copado.LicenseHelper" lightningStylesheets="true">
+
     <head>
         <c:ShowWebhook url="webhook/selenium/TestGroupRun" recordId="{!copado__Selenium_Test_Group__c.Id}" />
-        <c:GAnalytics />
         <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
     </head>
-    <c:IncludeStaticsResourceComponent addJquery="true"/>
+    <c:IncludeStaticsResourceComponent addJquery="true" />
     <apex:form id="theForm" styleClass="copado-lightning-container">
-    	<apex:detail id="detail" inlineEdit="true" relatedList="true" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_CST__c}"/>
+        <apex:detail id="detail" inlineEdit="true" relatedList="true" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_CST__c}" />
     </apex:form>
 
     <!-- check that the feature is enabled, and the user has a license assigned -->
-    <apex:pageMessage severity="WARNING" strength="2" summary="{!possibleCSTErrorMsg}" rendered="{!!ISNULL(possibleCSTErrorMsg)}"/>
+    <apex:pageMessage severity="WARNING" strength="2" summary="{!possibleCSTErrorMsg}" rendered="{!!ISNULL(possibleCSTErrorMsg)}"
+    />
 
     <script>
-        ga('send', 'pageview', {
-            'page': '/SeleniumTestGroupDetailOverride',
-            'title': 'Selenium Test Group Detail Override'
+        $copado(document).ready(function () {
+            //top section
+            let documentSection = document.querySelector('td.pbButton');
+            documentSection.appendChild(createButton("{!JSENCODE($Label.copado__Show_Hook_URL)}", showWebhook));
+            documentSection.appendChild(createButton("{!JSENCODE($Label.copado__Refresh_Progress)}", function () { document.location.reload(true); }));
+            //bottom section  
+            let documentSectionb = document.querySelector('td.pbButtonb');
+            documentSectionb.appendChild(createButton("{!JSENCODE($Label.copado__Show_Hook_URL)}", showWebhook));
+            documentSectionb.appendChild(createButton("{!JSENCODE($Label.copado__Refresh_Progress)}", function () { document.location.reload(true); }));
         });
+
+        function createButton(label, functionToCall) {
+            let showWebhookBtn1 = document.createElement('input')
+            showWebhookBtn1.type = 'button';
+            showWebhookBtn1.value = label;
+            showWebhookBtn1.classList.add('btn');
+            showWebhookBtn1.onclick = function () { functionToCall(); };
+            return showWebhookBtn1;
+        }
     </script>
 </apex:page>

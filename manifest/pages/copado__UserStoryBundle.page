@@ -10,7 +10,7 @@
     <div id="lightningvf" />
 
     <script>
-        const namespace = '{! namespace }';
+        const namespace = '{! JSENCODE(namespace) }';
         $Lightning.use(namespace + ":" + "UserStoryBundleApp", function () {
             $Lightning.createComponent(namespace + ":" + "userStoryBundle",
                 {

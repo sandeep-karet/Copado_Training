@@ -1,14 +1,7 @@
 <apex:page standardController="copado__User_Story__c" extensions="copado.UserStoryCodeAnalysisRequestController" id="UserStoryCodeAnalysis" lightningStylesheets="true" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" action="{!requestCodeScan}">
 <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height: 100%;">
 	<apex:slds />
-    <head>
-      <c:GAnalytics />
-      <script>
-          ga('send', 'pageview', {
-            'page': '/UserStoryCodeAnalysisRequested',
-            'title': 'User Story Code Analysis Requested'
-          });
-      </script>   
+    <head> 
       <apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
       <c:IncludeStaticsResourceComponent addJQuery="true"/>
       <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />

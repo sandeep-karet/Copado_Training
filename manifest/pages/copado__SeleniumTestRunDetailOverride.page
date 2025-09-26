@@ -4,13 +4,6 @@
 
     <head>
         <c:ShowWebhook url="webhook/selenium/TestRun" recordId="{!copado__Selenium_Test_Run__c.Id}" />
-        <c:GAnalytics />
-        <script>
-            ga('send', 'pageview', {
-                'page': '/SeleniumTestRunDetailOverride',
-                'title': 'Selenium Test Run Detail Override'
-            });
-        </script>
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
 
         <c:IncludeStaticsResourceComponent addJquery="true" addCirclifuljs="true" addCirclifulcss="true" />
@@ -34,8 +27,7 @@
                     <apex:outputPanel layout="block" id="pageMessages">
                         <apex:pageMessage severity="WARNING" strength="2" summary="{!HTMLENCODE(possibleCSTErrorMsg)}" rendered="{!!ISNULL(possibleCSTErrorMsg)}"></apex:pageMessage>
                         <apex:outputPanel id="summaryPanelNoResults2" rendered="{!count_all=0}">
-                            <apex:pageMessage Id="msgNoTestRunResults2" severity="INFO" strength="2" summary="{!$Label.copado__NO_TEST_RUN_RESULTS}"
-                            />
+                            <apex:pageMessage Id="msgNoTestRunResults2" severity="INFO" strength="2" summary="{!$Label.copado__NO_TEST_RUN_RESULTS}" />
                         </apex:outputPanel>
                         <apex:pagemessages id="msg" />
                     </apex:outputPanel>
@@ -87,7 +79,7 @@
                                     foregroundBorderWidth: 5,
                                     backgroundBorderWidth: 15,
                                     percent: {!count_finished*100/ count_all}
-                            });
+                                });
                             $copado("#test-circle .circle-info-half").attr('data-text', '{!count_finished}/{!count_all}');
                             $copado("#test-circle .circle-info-half").css('z-index', '-1');
 
@@ -102,8 +94,24 @@
                                     $copado(this).parent().append('&nbsp; <span style="font-size: 8pt;"><a target="_blank" href="copado:selenese/' + id + '">(open in recorder)</a></span>')
                                 })
                             }
+                            //top section
+                            let documentSection = document.querySelector('td.pbButton');
+                            documentSection.appendChild(createButton("{!JSENCODE($Label.Show_Hook_URL)}", showWebhook));
+                            documentSection.appendChild(createButton("{!JSENCODE($Label.Refresh_Progress)}", function () { document.location.reload(true); }));
+                            //bottom section  
+                            let documentSectionb = document.querySelector('td.pbButtonb');
+                            documentSectionb.appendChild(createButton("{!JSENCODE($Label.Show_Hook_URL)}", showWebhook));
+                            documentSectionb.appendChild(createButton("{!JSENCODE($Label.Refresh_Progress)}", function () { document.location.reload(true); }));
+                            });
 
-                        });
+                            function createButton(label, functionToCall) {
+                                let showWebhookBtn1 = document.createElement('input')
+                                showWebhookBtn1.type = 'button';
+                                showWebhookBtn1.value = label;
+                                showWebhookBtn1.classList.add('btn');
+                                showWebhookBtn1.onclick = function () { functionToCall(); };
+                                return showWebhookBtn1;
+                            }
                         </script>
 
                         <apex:pageBlock id="pb" title="{!$Label.copado__Last_Results_Summary}" rendered="{!OR($Setup.copado__Copado_License__c.copado__Enable_Copado__c, $Setup.copado__Copado_License__c.copado__Enable_CST__c)}">

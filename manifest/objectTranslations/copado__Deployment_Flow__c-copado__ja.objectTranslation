@@ -9,6 +9,14 @@
         <name>copado__Additional_Information</name>
     </fieldSets>
     <fields>
+        <label><!-- Builder Data --></label>
+        <name>cmcSf__Builder_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initialization Data --></label>
+        <name>cmcSf__Initialization_Data__c</name>
+    </fields>
+    <fields>
         <help><!-- If checked, all Branch Management features will be enabled in the Deployment Flow. --></help>
         <label>アクティブ</label>
         <name>copado__Active__c</name>
@@ -197,6 +205,10 @@ This value will prefill the order by field on related Promotion record creation 
             <translation><!-- Other --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>SFDX</masterLabel>
+            <translation><!-- SFDX --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Salesforce</masterLabel>
             <translation><!-- Salesforce --></translation>
         </picklistValues>
@@ -221,7 +233,61 @@ This value will prefill the order by field on related Promotion record creation 
         <name>copado__Static_Code_Analysis_Settings__c</name>
         <relationshipLabel>パイプライン</relationshipLabel>
     </fields>
+    <layouts>
+        <layout>Pipeline Layout V.17</layout>
+        <sections>
+            <label><!-- Advanced Options --></label>
+            <section>Advanced Options</section>
+        </sections>
+        <sections>
+            <label><!-- Copado DX --></label>
+            <section>Copado DX</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>パイプライン名</nameFieldLabel>
+    <quickActions>
+        <label><!-- Migrate to Source Format --></label>
+        <name>cmcSf__Migrate_to_SFP</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>環境での複製</label>
+        <name>copado__Clone_with_Environments</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>パフォーマンスの最適化</label>
+        <name>copado__Configure_prefetch_volume</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>完了したストーリーを除外</label>
+        <name>copado__Exclude_Completed_Stories</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>初期化</label>
+        <name>copado__Initialise</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>パイプラインビルダー</label>
+        <name>copado__Pipeline_Builder</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>パイプラインマネージャー</label>
+        <name>copado__Pipeline_Manager</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>継続的デリバリーをセットアップ</label>
+        <name>copado__Setup_Continuous_Delivery</name>
+    </quickActions>
     <validationRules>
         <errorMessage><!-- A pipeline cannot have the same template for both Promote and Deploy --></errorMessage>
         <name>copado__Unique_Template_for_promote_and_deploy</name>

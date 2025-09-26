@@ -2,7 +2,7 @@
     <apex:includeLightning />
     <div id="LightningComponentid" class="base-alert-wrap"/>
     <script>
-        const namespace = '{! namespace }' == '' ? 'c' : 'copado';
+        const namespace = '{! JSENCODE(namespace) }' == '' ? 'c' : 'copado';
         $Lightning.use(namespace + ":" + "packageUpgradeNotifyApp", function () {
             $Lightning.createComponent(namespace + ":" + "packageUpgradeAlert",
                 {

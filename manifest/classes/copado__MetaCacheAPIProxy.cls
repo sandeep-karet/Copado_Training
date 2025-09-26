@@ -9,7 +9,19 @@ global class MetaCacheAPIProxy {
     global MetaCacheAPIProxy() {
 
     }
+    global static System.HttpResponse callMetaCacheService(copado.MetaCacheAPIProxy.MetaCacheRequest metaCacheRequest) {
+        return null;
+    }
     global static System.HttpResponse callMetaCacheService(String serviceEndpoint, String httpMethod, String payloadJson) {
         return null;
     }
+global class MetaCacheRequest {
+    global String encoding;
+    global String endpoint;
+    global String method;
+    global String payload;
+    global MetaCacheRequest() {
+
+    }
+}
 }

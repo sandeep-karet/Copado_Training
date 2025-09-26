@@ -5,6 +5,14 @@
         <value>ユーザーストーリー</value>
     </caseValues>
     <fieldSets>
+        <label><!-- Add Test Classes --></label>
+        <name>cmcSf__Add_Test_Classes</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Pipeline Based Package Distribution --></label>
+        <name>cmcSf__PipelineBasedPackageDistribution</name>
+    </fieldSets>
+    <fieldSets>
         <label>バンドル</label>
         <name>copado__Bundle</name>
     </fieldSets>
@@ -96,6 +104,15 @@
     <fields>
         <label><!-- User Story Number --></label>
         <name>User_Story_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apex Test Level --></label>
+        <name>cmcSf__Apex_Test_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Functional Review --></label>
+        <name>copadoQuality__Functional_Review__c</name>
+        <relationshipLabel><!-- User Stories --></relationshipLabel>
     </fields>
     <fields>
         <label>受け入れ基準の状況</label>
@@ -922,7 +939,125 @@
         <label><!-- Last Synced Date --></label>
         <name>copadoconnect__Last_Synced_Date__c</name>
     </fields>
+    <layouts>
+        <layout>User Story Layout</layout>
+        <sections>
+            <label><!-- Agile content --></label>
+            <section>Agile content</section>
+        </sections>
+        <sections>
+            <label><!-- Apex Code Coverage --></label>
+            <section>Apex Code Coverage</section>
+        </sections>
+        <sections>
+            <label><!-- Approvals --></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label><!-- Compliance --></label>
+            <section>Compliance</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deployment Flow --></label>
+            <section>Deployment Flow</section>
+        </sections>
+        <sections>
+            <label><!-- Deployment Options --></label>
+            <section>Deployment Options</section>
+        </sections>
+        <sections>
+            <label><!-- Estimation --></label>
+            <section>Estimation</section>
+        </sections>
+        <sections>
+            <label><!-- Project Management --></label>
+            <section>Project Management</section>
+        </sections>
+        <sections>
+            <label><!-- Resourcing --></label>
+            <section>Resourcing</section>
+        </sections>
+        <sections>
+            <label><!-- Specifications --></label>
+            <section>Specifications</section>
+        </sections>
+        <sections>
+            <label><!-- User Story selections --></label>
+            <section>User Story selections</section>
+        </sections>
+        <sections>
+            <label><!-- Validation Deployment Results --></label>
+            <section>Validation Deployment Results</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Utility</layout>
+        <sections>
+            <label><!-- Apex Code Coverage --></label>
+            <section>Apex Code Coverage</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deployment Flow --></label>
+            <section>Deployment Flow</section>
+        </sections>
+        <sections>
+            <label><!-- Deployment Options --></label>
+            <section>Deployment Options</section>
+        </sections>
+        <sections>
+            <label><!-- Project Management --></label>
+            <section>Project Management</section>
+        </sections>
+        <sections>
+            <label><!-- Resourcing --></label>
+            <section>Resourcing</section>
+        </sections>
+        <sections>
+            <label><!-- User Story selections --></label>
+            <section>User Story selections</section>
+        </sections>
+        <sections>
+            <label><!-- Validation Deployment Results --></label>
+            <section>Validation Deployment Results</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>ユーザーストーリーリファレンス</nameFieldLabel>
+    <quickActions>
+        <label><!-- Add Apex Tests --></label>
+        <name>cmcSf__Add_Apex_Tests</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>変更をコミット</label>
+        <name>copado__Commit_Changes</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>データのコミット</label>
+        <name>copado__Commit_Data_SFDX</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>送信</label>
+        <name>copado__MC_Submit</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Open Pull Request --></label>
+        <name>copado__Open_Pull_Request</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>変更を検証</label>
+        <name>copado__ValidateChanges</name>
+    </quickActions>
     <recordTypes>
         <label>バグ</label>
         <name>copado__Bug</name>

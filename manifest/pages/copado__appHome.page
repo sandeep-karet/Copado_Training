@@ -2,7 +2,6 @@
     id="thePage" cache="false" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" /> 
     <head>
-        <c:GAnalytics />
         <c:IncludeStaticsResourceComponent addJquery="true" addUIjs="true" addCometdjs="true" addJSON2js="true" addJcometdjs="true" addUIcss="true" addATRcss="true" addWizardcss="true"/>
         <apex:stylesheet id="lexss" value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" /> 
         <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">

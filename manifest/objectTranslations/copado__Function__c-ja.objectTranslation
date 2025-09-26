@@ -86,7 +86,7 @@
         <name>copado__Worker_Size__c</name>
         <picklistValues>
             <masterLabel>L</masterLabel>
-            <translation><!-- L --></translation>
+            <translation>L</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>M</masterLabel>
@@ -94,14 +94,37 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>S</masterLabel>
-            <translation><!-- S --></translation>
+            <translation>S</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>XL</masterLabel>
-            <translation><!-- XL --></translation>
+            <translation>XL</translation>
         </picklistValues>
     </fields>
+    <layouts>
+        <layout>Function Layout</layout>
+        <sections>
+            <label>コールバック</label>
+            <section>Callback</section>
+        </sections>
+        <sections>
+            <label>設定</label>
+            <section>Configuration</section>
+        </sections>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>関数名</nameFieldLabel>
+    <quickActions>
+        <label><!-- Clone Function --></label>
+        <name>copado__Clone_Function</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Execute Function --></label>
+        <name>copado__Execute_Function</name>
+    </quickActions>
     <validationRules>
         <errorMessage><!-- Api name can only contain alphanumeric characters and must begin with a letter --></errorMessage>
         <name>copado__Function_Name_must_Be_Alpha_Numeric</name>

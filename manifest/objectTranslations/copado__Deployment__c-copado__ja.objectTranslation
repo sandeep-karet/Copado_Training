@@ -213,7 +213,65 @@
         <name>copado__Template__c</name>
         <relationshipLabel>テンプレートの実行</relationshipLabel>
     </fields>
+    <layouts>
+        <layout>Advanced (Multi Step)</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Automation Template</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Data Deployment</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Deployment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Progress --></label>
+            <section>Progress</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Metadata Deployment</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>デプロイメント名</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>テンプレートを複製</label>
+        <name>copado__Clone_Template</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>テンプレートを実行</label>
+        <name>copado__Execute_Automation_Template</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>テンプレートをエクスポート</label>
+        <name>copado__Export_Template</name>
+    </quickActions>
     <recordTypes>
         <description>複数の種類のデプロイメントステップを作成 （技術的知識が必要です）</description>
         <label>アドバンスト（マルチステップ）</label>
@@ -246,4 +304,8 @@
         <label>テンプレートをインポート</label>
         <name>copado__Import_Template</name>
     </webLinks>
+    <workflowTasks>
+        <name>copado__Deployment_scheduled</name>
+        <subject>デプロイメントスケジュール</subject>
+    </workflowTasks>
 </CustomObjectTranslation>

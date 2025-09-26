@@ -8,14 +8,9 @@
     <apex:includeScript value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.js')}" />
     <apex:stylesheet value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.css')}" />
     <apex:stylesheet value="{!$Resource.copado__DataTemplateSetup_custom_css}" />
-    <c:GAnalytics />
 
     <script>
         var globalSldsResourcePath = '{!URLFOR($Asset.SLDS)}';
-        ga('send', 'pageview', {
-            'page': '/DataTemplateSetup',
-            'title': 'Data Template Setup'
-        });
     </script>
 
     <apex:form >

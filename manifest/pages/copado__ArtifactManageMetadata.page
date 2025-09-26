@@ -1,5 +1,4 @@
 <apex:page id="thePage" standardController="copado__Artifact__c" extensions="copado.ArtifactManageMetadataController,copado.Settings,copado.JsRemotingController" standardStyleSheets="true" lightningStylesheets="true" sideBar="false" action="{!redirectIfUnlocked}">
-    <c:GAnalytics />
     <apex:slds />
     <head>
         <style type="text/css">
@@ -184,11 +183,4 @@
         <apex:includeScript value="{!URLFOR($Resource.metadataGrid2) }" />
         <apex:includeScript value="{!URLFOR($Resource.artifactmanagemetadata) }" />
     </apex:form>
-
-    <script>
-        ga('send', 'pageview', {
-          'page': '/ArtifactManageMetadata',
-          'title': 'Artifact Manage Metadata'
-        });
-    </script>
 </apex:page>

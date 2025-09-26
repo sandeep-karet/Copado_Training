@@ -1,8 +1,7 @@
 <apex:page standardController="copado__Git_Backup__c" extensions="copado.EditBackupExtension" action="{!init}" id="thePage" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
-      <title>Edit Git Snapshot {!Git_Backup__c.Name} | Copado</title>
-        <c:GAnalytics />
+      <title>Edit Git Snapshot {!Git_Backup__c.Name} | Copado</title>        
         <c:IncludeStaticsResourceComponent addJquery="true"/>
         <style type="text/css">
             /*to force center multiselect component*/

@@ -2,7 +2,6 @@
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
         <title>{!$Label.Org_Differences} {!copado__OrgDiff__c.Name} | Copado</title>
-        <c:GAnalytics />
         <c:IncludeStaticsResourceComponent addJquery="true"/>
         <script type="text/javascript">
             var Copado_Licenses = {!CurrentUserLicenses};
@@ -167,12 +166,6 @@
                         <apex:actionFunction name="validateOrgs_JS" action="{!validateOrgs}" rerender="pmessages"/>
                         <apex:outputPanel id="pbs_metadata" rendered="{!isDiffEnabled}">
                                    <c:DiffOrgGrid diffId="{!copado__OrgDiff__c.Id}"/>
-                                   <script>
-                                    ga('send', 'pageview', {
-                                      'page': '/viewOrgDiff',
-                                      'title': 'View Org Diff'
-                                    });
-                                    </script>
                         </apex:outputPanel>
                     </apex:pageBlock>
                 </apex:form>

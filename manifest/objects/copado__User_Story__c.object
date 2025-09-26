@@ -180,6 +180,66 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
+        <fullName>cmcSf__Add_Test_Classes</fullName>
+        <description>It is used in Add Apex Test Classes page.</description>
+        <displayedFields>
+            <field>copado__User_Story_Title__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Platform__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Org_Credential__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Environment__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecordTypeId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Add Test Classes</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>cmcSf__PipelineBasedPackageDistribution</fullName>
+        <description>Pipeline Based Package Distribution</description>
+        <displayedFields>
+            <field>copado__User_Story_Title__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Project__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Release__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Org_Credential__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Pipeline Based Package Distribution</label>
+    </fieldSets>
+    <fieldSets>
         <fullName>copado__Bundle</fullName>
         <availableFields>
             <field>copado__Acceptance_Criteria_Status__c</field>
@@ -6667,6 +6727,33 @@ Test description 02</description>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>cmcSf__Apex_Test_Level__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Test levels in order from least to most restrictive</description>
+        <label>Apex Test Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>cmcSf__Apex_Test_Level</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>copadoQuality__Functional_Review__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Functional Review</label>
+        <referenceTo>copadoQuality__Functional_Review__c</referenceTo>
+        <relationshipLabel>User Stories</relationshipLabel>
+        <relationshipName>User_Stories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__Acceptance_Criteria_Status__c</fullName>
         <deprecated>false</deprecated>
         <label>Acceptance Criteria Status</label>
@@ -8382,6 +8469,25 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
         <active>true</active>
         <label>Bug</label>
         <picklistValues>
+            <picklist>cmcSf__Apex_Test_Level__c</picklist>
+            <values>
+                <fullName>No Test Run</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Run All Tests In Org</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Run Local Tests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Run Specified Tests</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>copado__Acceptance_Criteria_Status__c</picklist>
             <values>
                 <fullName>Accepted</fullName>
@@ -8864,6 +8970,25 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
         <fullName>copado__Investigation</fullName>
         <active>true</active>
         <label>Investigation</label>
+        <picklistValues>
+            <picklist>cmcSf__Apex_Test_Level__c</picklist>
+            <values>
+                <fullName>No Test Run</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Run All Tests In Org</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Run Local Tests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Run Specified Tests</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>copado__Acceptance_Criteria_Status__c</picklist>
             <values>
@@ -9348,6 +9473,25 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
         <active>true</active>
         <label>User Story</label>
         <picklistValues>
+            <picklist>cmcSf__Apex_Test_Level__c</picklist>
+            <values>
+                <fullName>No Test Run</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Run All Tests In Org</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Run Local Tests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Run Specified Tests</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>copado__Acceptance_Criteria_Status__c</picklist>
             <values>
                 <fullName>Accepted</fullName>
@@ -9830,6 +9974,25 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
         <fullName>copado__Utility</fullName>
         <active>true</active>
         <label>Utility</label>
+        <picklistValues>
+            <picklist>cmcSf__Apex_Test_Level__c</picklist>
+            <values>
+                <fullName>No Test Run</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Run All Tests In Org</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Run Local Tests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Run Specified Tests</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>copado__Acceptance_Criteria_Status__c</picklist>
             <values>

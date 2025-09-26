@@ -2,14 +2,8 @@
     <apex:slds />
     <head>
         <title>Deployment Wizard {!Deployment__c.Name} | Copado</title>
-        <c:GAnalytics />
         <c:IncludeStaticsResourceComponent addJquery="true" addCometdjs="true" addJcometdjs="true"/>
         <script type="text/javascript">
-            ga('send', 'pageview', {
-                'page': '/wizardStep4',
-                'title': 'Wizard - Schedule'
-            });
-
             const updateDeployment = () => {
                 setTimeout(confirmDeployment, 3000);
             };

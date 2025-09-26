@@ -169,6 +169,26 @@
         <label>Additional Information</label>
     </fieldSets>
     <fields>
+        <fullName>cmcSf__Builder_Data__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Builder Data</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>cmcSf__Initialization_Data__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Initialization Data</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>copado__Active__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -600,6 +620,11 @@ This value will prefill the order by field on related Promotion record creation 
                     <fullName>Salesforce</fullName>
                     <default>true</default>
                     <label>Salesforce</label>
+                </value>
+                <value>
+                    <fullName>SFDX</fullName>
+                    <default>false</default>
+                    <label>SFDX</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>

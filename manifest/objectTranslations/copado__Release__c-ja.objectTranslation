@@ -105,7 +105,26 @@
         <label><!-- Pipeline definition --></label>
         <name>copadoconnect__Pipeline_definition__c</name>
     </fields>
+    <layouts>
+        <layout>Release Layout</layout>
+        <sections>
+            <label>追加情報</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>アドバンス</label>
+            <section>Advanced</section>
+        </sections>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>リリース名</nameFieldLabel>
+    <quickActions>
+        <label><!-- Set Release Version --></label>
+        <name>copado__Set_Release_Version</name>
+    </quickActions>
     <validationRules>
         <errorMessage><!-- please dont include spaces in version field --></errorMessage>
         <name>copado__Validate_spaces_in_version</name>

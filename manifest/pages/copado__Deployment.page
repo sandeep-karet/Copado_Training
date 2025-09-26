@@ -102,8 +102,7 @@
                     font-size: large;
                     font-weight: 500;
                 }
-            </style>
-            <c:GAnalytics />
+            </style>  
             <c:ShowWebhook url="webhook/deploy" recordId="{!copado__Deployment__c.Id}" />
             <c:IncludeStaticsResourceComponent addJQuery="true" addCometdjs="true" addETjs="true" addJSON2js="true" addJCometdjs="true"
                 addWizardcss="true" addSortjs="true" />
@@ -644,10 +643,7 @@
             </apex:outputPanel>
         </div>
         <script type="text/javascript">
-            ga('send', 'event', 'Deployment', 'view', 'loading');
             copadoApp.start(JSON.parse("{!JSENCODE(DepJson)}"), JSON.parse("{!JSENCODE(stepsJson)}"));
-            ga('send', 'event', 'Deployment', 'view', 'loaded');
-
         </script>
         <apex:outputPanel id="msg">
             <script type="text/javascript">

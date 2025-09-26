@@ -10,7 +10,6 @@
         width: 60%;
       }
     </style>
-    <c:GAnalytics />
     <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
   </head>
 
@@ -125,12 +124,6 @@
             </apex:pageBlockSection>
           </apex:pageBlock>
         </apex:form>
-        <script>
-          ga('send', 'pageview', {
-            'page': '/EditScheduledJobsOverride',
-            'title': 'Edit Scheduled Jobs Override'
-          });
-        </script>
       </apex:outputPanel>
     </div>
   </body>

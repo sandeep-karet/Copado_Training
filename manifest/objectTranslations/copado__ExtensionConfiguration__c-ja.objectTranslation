@@ -5,6 +5,15 @@
         <value>エクステンション構成</value>
     </caseValues>
     <fields>
+        <label><!-- Latest Job Execution --></label>
+        <name>copadoQuality__Latest_Job_Execution__c</name>
+        <relationshipLabel><!-- Extension Configurations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Requires Sync? --></label>
+        <name>copadoQuality__Requires_Sync__c</name>
+    </fields>
+    <fields>
         <label><!-- Acceptance Criteria --></label>
         <name>copado__AcceptanceCriteria__c</name>
     </fields>
@@ -29,8 +38,16 @@
         <label><!-- Extension Tool --></label>
         <name>copado__ExtensionTool__c</name>
         <picklistValues>
+            <masterLabel>Apex Tests</masterLabel>
+            <translation><!-- Apex Tests --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Manual Tests</masterLabel>
             <translation>マニュアルテスト</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMD</masterLabel>
+            <translation><!-- PMD --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -40,6 +57,10 @@
         <picklistValues>
             <masterLabel>None</masterLabel>
             <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMD</masterLabel>
+            <translation><!-- PMD --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -87,7 +108,26 @@
             <translation><!-- Unit Test --></translation>
         </picklistValues>
     </fields>
+    <layouts>
+        <layout>Extension Configuration Layout</layout>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>名</nameFieldLabel>
+    <quickActions>
+        <label><!-- Activate - Deprecated --></label>
+        <name>copado__Activate</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Activate --></label>
+        <name>copado__Activation</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Deactivate --></label>
+        <name>copado__Deactivate</name>
+    </quickActions>
     <validationRules>
         <errorMessage><!-- This Extension Tool cannot be modified. Please create a new Extension Configuration record instead. --></errorMessage>
         <name>copado__PreventUpdatingExtensionTool</name>

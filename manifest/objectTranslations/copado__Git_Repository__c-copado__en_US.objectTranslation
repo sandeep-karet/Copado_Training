@@ -73,6 +73,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- OAuth --></label>
+        <name>copado__OAuth__c</name>
+    </fields>
+    <fields>
         <help><!-- Base URL of your Repository, e.g.: https://github.com/[COMPANY]/[REPOSITORY]/ https://bitbucket.org/[COMPANY]/[REPOSITORY]/ https://gitlab.org/[COMPANY]/[REPOSITORY]/ --></help>
         <label><!-- Pull Request Base URL --></label>
         <name>copado__Pull_Request_Base_URL__c</name>
@@ -96,5 +100,34 @@
         <label><!-- URI --></label>
         <name>copado__URI__c</name>
     </fields>
+    <layouts>
+        <layout>Git Repository Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Git Repository Layout Lightning</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Git Server Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Switch to Classic View --></label>
+        <name>copado__Switch_to_Classic_View</name>
+    </quickActions>
     <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Initialize_Salesforce_Project --></label>
+        <name>cmcSf__Initialize_Salesforce_Project</name>
+    </webLinks>
 </CustomObjectTranslation>

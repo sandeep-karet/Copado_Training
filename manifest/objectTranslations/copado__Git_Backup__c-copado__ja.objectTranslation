@@ -149,7 +149,26 @@
         <label>Gitで参照</label>
         <name>copado__View_in_Git__c</name>
     </fields>
+    <layouts>
+        <layout>Git Backup Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Git Snapshot Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>Gitスナップショット名</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>スナップショットを取得</label>
+        <name>copado__Take_Snapshot_Now</name>
+    </quickActions>
     <webLinks>
         <label>ブランチを選択</label>
         <name>copado__Select_Branch</name>

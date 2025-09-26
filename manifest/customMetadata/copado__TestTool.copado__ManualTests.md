@@ -15,6 +15,10 @@
         <value xsi:nil="true"/>
     </values>
     <values>
+        <field>copado__Quality_Gates_Readiness_Logic__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>copado__TestType__c</field>
         <value xsi:type="xsd:string">Functional Test</value>
     </values>

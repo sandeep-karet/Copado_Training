@@ -1049,6 +1049,76 @@ Note: This parameter is not applicable for Multi-Process High-Volume Match. --><
         <label><!-- DHC Sync Time --></label>
         <name>texcellency__DefHC_SyncTime__c</name>
     </fields>
+    <layouts>
+        <layout>Integration-Marketo Lead Layout</layout>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- Contact Information --></label>
+            <section>Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Main Section --></label>
+            <section>Main Section</section>
+        </sections>
+        <sections>
+            <label><!-- Marketing Information --></label>
+            <section>Marketing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Referrals --></label>
+            <section>Referrals</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Lead Layout</layout>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- Contact Information --></label>
+            <section>Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Highspot --></label>
+            <section>Highspot</section>
+        </sections>
+        <sections>
+            <label><!-- International Attributes --></label>
+            <section>International Attributes</section>
+        </sections>
+        <sections>
+            <label><!-- Main Section --></label>
+            <section>Main Section</section>
+        </sections>
+        <sections>
+            <label><!-- Marketing Information --></label>
+            <section>Marketing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Marketo Sales Insight --></label>
+            <section>Marketo Sales Insight</section>
+        </sections>
+        <sections>
+            <label><!-- Referrals --></label>
+            <section>Referrals</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- LinkedIn InMail --></label>
+        <name>LID__LinkedIn_Message</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Send Lead --></label>
+        <name>Send_Lead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Social --></label>
+        <name>mkto_si__Test_on_mobile</name>
+    </quickActions>
     <validationRules>
         <errorMessage><!-- Please ensure this is a USGH lead in AQL status or reach out to Marketing Ops to allow a directly conversion to an Opportunity. --></errorMessage>
         <name>L2O_AQL_to_Direct_Conversion</name>

@@ -1,5 +1,4 @@
 <apex:page id="thePage" standardController="copado__User_Story__c" extensions="copado.MetadataselectorExtension,copado.Settings,copado.JsRemotingController" showHeader="false" sidebar="false" standardStyleSheets="true" lightningStylesheets="true">
-    <c:GAnalytics />
     <head>
         <style type="text/css">
             @keyframes flash {
@@ -149,11 +148,4 @@
         <script src="{!URLFOR($Resource.metadataGrid2) }" />
         <script src="{!URLFOR($Resource.metadataselector) }"></script>
     </apex:form>
-    
-    <script>
-        ga('send', 'pageview', {
-          'page': '/MetaDataSelector',
-          'title': 'MetaData Selector'
-        });
-    </script>
 </apex:page>

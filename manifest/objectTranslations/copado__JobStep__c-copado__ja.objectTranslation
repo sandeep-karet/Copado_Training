@@ -151,7 +151,28 @@
         <name>copado__UserStory__c</name>
         <relationshipLabel>デプロイメントステップ</relationshipLabel>
     </fields>
+    <layouts>
+        <layout>Job Step Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- JSON --></label>
+            <section>JSON</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>ジョブ・ステップ名</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>マニュアルタスクを完了</label>
+        <name>copado__Complete_Manual_Task</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>マニュアルステップを実行</label>
+        <name>copado__ExecuteManualStep</name>
+    </quickActions>
     <validationRules>
         <errorMessage>デプロイメントステップには実行シークエンスが必須となります。</errorMessage>
         <name>copado__Execution_Sequence_Required</name>

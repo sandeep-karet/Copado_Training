@@ -4,7 +4,6 @@
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
         <c:IncludeStaticsResourceComponent addJquery="true" addUIjs="true"/>
         <c:IncludeJqxResourceComponent addjqxAlljs="true" addjqxBasecss="true" addjqxEBcss="true"/>
-    	<c:GAnalytics />
         <style>
             .apexCode {
                 width: 80%;
@@ -316,13 +315,6 @@
                     </script>
                 </apex:form>
                 <link href="{!URLFOR($Resource.CopadoChangeManagement, 'Assets/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css')}" rel="stylesheet" type="text/css" />
-
-                <script>
-                    ga('send', 'pageview', {
-                        'page': '/SeleniumTestCasePerSuite',
-                        'title': 'Selenium Test Case Per Suite'
-                    });
-                </script>
             </apex:outputPanel>
         </div>
     </body>

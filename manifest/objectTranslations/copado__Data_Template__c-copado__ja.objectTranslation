@@ -73,7 +73,34 @@
         <name>copado__Template_Source_Org__c</name>
         <relationshipLabel>データテンプレート</relationshipLabel>
     </fields>
+    <layouts>
+        <layout>Data Template Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>データテンプレート名</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>有効化</label>
+        <name>copado__Activate</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>複製</label>
+        <name>copado__Clone</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>非有効化</label>
+        <name>copado__Deactivate</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>テンプレートをエクスポート</label>
+        <name>copado__Export_Template</name>
+    </quickActions>
     <webLinks>
         <label>テンプレートをインポート</label>
         <name>copado__Import_Templates</name>

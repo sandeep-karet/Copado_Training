@@ -4,14 +4,14 @@ var conversionFunc = conversionFunc || {},
     modalOperations = modalOperations || {},
     panelFunctions = panelFunctions || {};
 
-const getUnzippedContent = async function(content) {
+const getUnzippedContent = async function (content) {
     returnContent = await content.async("string");
     return returnContent;
 };
 
-(function(self) {
+(function (self) {
     var spacing = '  ',
-        getType = function(obj) {
+        getType = function (obj) {
             var type = typeof obj;
             if (obj instanceof Array) {
                 return 'array';
@@ -27,7 +27,7 @@ const getUnzippedContent = async function(content) {
                 return 'hash';
             }
         },
-        convert = function(obj, ret) {
+        convert = function (obj, ret) {
             var type = getType(obj);
 
             switch (type) {
@@ -51,7 +51,7 @@ const getUnzippedContent = async function(content) {
                     break;
             }
         },
-        convertArray = function(obj, ret) {
+        convertArray = function (obj, ret) {
             if (obj.length === 0) {
                 ret.push('[]');
             }
@@ -65,7 +65,7 @@ const getUnzippedContent = async function(content) {
                 }
             }
         },
-        convertHash = function(obj, ret) {
+        convertHash = function (obj, ret) {
             for (var k in obj) {
                 var recurse = [];
                 if (obj.hasOwnProperty(k)) {
@@ -83,7 +83,7 @@ const getUnzippedContent = async function(content) {
                 }
             }
         },
-        normalizeString = function(str) {
+        normalizeString = function (str) {
             if (str.match(/^[\w]+$/)) {
                 return str;
             } else {
@@ -97,11 +97,11 @@ const getUnzippedContent = async function(content) {
                 );
             }
         },
-        convertString = function(obj, ret) {
+        convertString = function (obj, ret) {
             ret.push(normalizeString(obj));
         };
 
-    self.json2yaml = function(obj) {
+    self.json2yaml = function (obj) {
         if (obj == '') {
             return '';
         }
@@ -116,13 +116,13 @@ const getUnzippedContent = async function(content) {
     };
 })(conversionFunc);
 
-(function(self) {
-    var setGlobalErrorMessage = function(message, lineNo) {
-            var elt = $copado('#errorMessage');
-            elt.text(message);
-            elt.data('line', lineNo);
-        },
-        addLineError = function(lineNo) {
+(function (self) {
+    var setGlobalErrorMessage = function (message, lineNo) {
+        var elt = $copado('#errorMessage');
+        elt.text(message);
+        elt.data('line', lineNo);
+    },
+        addLineError = function (lineNo) {
             config.hasError = true;
             config.errorLines.push(lineNo);
             var line = editor.edit.doc.getLineHandle(lineNo);
@@ -130,7 +130,7 @@ const getUnzippedContent = async function(content) {
                 editor.edit.doc.addLineClass(line, 'background', 'line-error');
             }
         },
-        removeLineErrors = function(className) {
+        removeLineErrors = function (className) {
             config.hasError = false;
             for (var i = 0; i < config.errorLines; i++) {
                 var line = editor.edit.doc.getLineHandle(config.errorLines[i]);
@@ -139,7 +139,7 @@ const getUnzippedContent = async function(content) {
             config.errorLines = [];
         };
 
-    self.parseYaml = function() {
+    self.parseYaml = function () {
         try {
             if (editor.edit.doc.getValue().length > 0) {
                 var doc = jsyaml.load(editor.edit.doc.getValue());
@@ -158,10 +158,10 @@ const getUnzippedContent = async function(content) {
     };
 })(jsonValidation);
 
-(function(self) {
+(function (self) {
     self.featureValue = '';
     self.attList = [];
-    self.setPreValue = function(sPane, format, cb) {
+    self.setPreValue = function (sPane, format, cb) {
         att2Res = $copado('[id$=attHiddenInp]').val();
         attConflictPathName = $copado('[id$=attHiddenAttachName]').val();
         $copado('#xmlJson>button').removeClass('slds-button_brand');
@@ -172,44 +172,44 @@ const getUnzippedContent = async function(content) {
         } else if (!format && currentMode) {
             $copado('[cType="' + currentMode + '"]').addClass('slds-button_brand');
         } else $copado('[cType="xml"]').addClass('slds-button_brand');
-        
+
         if (att2Res || (attSource.length > 0 && attTarget.length > 0) || (isRollback && preSourceRollback && preTargetRollback)) {
             var attach = att2Res.length > 0 ? getAttachmentById(config.parentId, att2Res) : '';
             if (!attach && !bundleFlag) {
                 if (isRollback) {
                     preSource = preSourceRollback;
                     preTarget = preTargetRollback;
-                    if(preTarget && preTarget[0] === 'PREVIEW NOT AVAILABLE'){
+                    if (preTarget && preTarget[0] === 'PREVIEW NOT AVAILABLE') {
                         panes = 1;
                     }
                     preFlag = true;
-                    if(preTarget[1][0].includes('aura') || preTarget[1][0].includes('lwc')) {
+                    if (preTarget[1][0].includes('aura') || preTarget[1][0].includes('lwc')) {
                         modalDiff(true, cb, preSource, preTarget);
                     } else {
-                        if(typeof preSourceRollback[0] == 'object') {
-                            getUnzippedContent(preSourceRollback[0].file(preTarget[1])).then(function(resultSource) {
+                        if (typeof preSourceRollback[0] == 'object') {
+                            getUnzippedContent(preSourceRollback[0].file(preTarget[1])).then(function (resultSource) {
                                 preSource[0] = resultSource;
                                 preSource[1] = preTarget[1];
-                                performCodeDiff(attach, returnFlag, sPane,cb, false);
+                                performCodeDiff(attach, returnFlag, sPane, cb, false);
                             });
                         }
                         else {
-                            performCodeDiff(attach, returnFlag, sPane,cb, false);
+                            performCodeDiff(attach, returnFlag, sPane, cb, false);
                         }
                     }
                 }
-                else{
+                else {
                     preFlag = true;
-                    unzip_Decode(attSource).then(function(resultSource) {
+                    unzip_Decode(attSource).then(function (resultSource) {
                         bundleSource = resultSource ? resultSource : '';
-                        unzip_Decode(attTarget).then(function(resultTarget) {
+                        unzip_Decode(attTarget).then(function (resultTarget) {
                             bundleTarget = resultTarget ? resultTarget : '';
                             if ((bundleSource[1].length == 2 || (bundleSource[1].length == 3 && bundleSource[1][1].indexOf('meta.xml') > -1)) && !attach) {
-                                if(Object.keys(bundleSource[0].files)[0] != 'package.xml'){
+                                if (Object.keys(bundleSource[0].files)[0] != 'package.xml') {
                                     getUnzippedContent(bundleSource[0].file(Object.keys(bundleSource[0].files)[0])).then(function (content) {
                                         preSource[0] = content ? content : '';
                                         preSource[1] = bundleSource[1][0];
-                                        if(Object.keys(bundleTarget[0].files)[0] != 'package.xml'){
+                                        if (Object.keys(bundleTarget[0].files)[0] != 'package.xml') {
                                             getUnzippedContent(bundleTarget[0].file(Object.keys(bundleTarget[0].files)[0])).then(function (contentTarget) {
                                                 preTarget[0] = contentTarget ? contentTarget : '';
                                                 preTarget[1] = bundleTarget[1][0];
@@ -221,18 +221,18 @@ const getUnzippedContent = async function(content) {
                                             preTarget[1] = bundleTarget[1][0];
                                             performCodeDiff(attach, returnFlag, sPane, cb, false);
                                         }
-                                        
+
                                     });
-                                }else {
+                                } else {
                                     preSource[0] = '';
                                     preSource[1] = bundleSource[1][0];
-                                    if(Object.keys(bundleTarget[0].files)[0] != 'package.xml'){
+                                    if (Object.keys(bundleTarget[0].files)[0] != 'package.xml') {
                                         getUnzippedContent(bundleTarget[0].file(Object.keys(bundleTarget[0].files)[0])).then(function (contentTarget) {
                                             preTarget[0] = contentTarget ? contentTarget : '';
                                             preTarget[1] = bundleTarget[1][0];
                                             performCodeDiff(attach, returnFlag, sPane, cb, true);
                                         });
-                                    }else {
+                                    } else {
                                         preTarget[0] = '';
                                         preTarget[1] = bundleTarget[1][0];
                                         performCodeDiff(attach, returnFlag, sPane, cb, false);
@@ -245,20 +245,20 @@ const getUnzippedContent = async function(content) {
                     });
                 }
                 preFlag = true;
-                
+
             }
             else {
-                performCodeDiff(attach, returnFlag, sPane,cb, false);
+                performCodeDiff(attach, returnFlag, sPane, cb, false);
             }
-            
+
             cb && cb(config.attachName);
         }
     };
-    self.setPreValueForSelectedFiles = function(sPane, format, cb) {
+    self.setPreValueForSelectedFiles = function (sPane, format, cb) {
         var att2ResList = $copado('[id$=attsHiddenInp]').val();
-        for(var i =0; i<JSON.parse(att2ResList).length; i++) {
+        for (var i = 0; i < JSON.parse(att2ResList).length; i++) {
             att2Res = JSON.parse(att2ResList)[i];
-        
+
             attConflictPathName = $copado('[id$=attHiddenAttachName]').val();
             $copado('#xmlJson>button').removeClass('slds-button_brand');
             if (format) {
@@ -268,30 +268,30 @@ const getUnzippedContent = async function(content) {
             } else if (!format && currentMode) {
                 $copado('[cType="' + currentMode + '"]').addClass('slds-button_brand');
             } else $copado('[cType="xml"]').addClass('slds-button_brand');
-            
+
             if (att2Res || (attSource.length > 0 && attTarget.length > 0) || (isRollback && preSourceRollback && preTargetRollback)) {
-            
+
                 var attach = att2Res;
                 if (!attach && !bundleFlag) {
                     if (isRollback) {
                         preSource = preSourceRollback;
                         preTarget = preTargetRollback;
-                        if(preTarget && preTarget[0] === 'PREVIEW NOT AVAILABLE'){
+                        if (preTarget && preTarget[0] === 'PREVIEW NOT AVAILABLE') {
                             panes = 1;
                         }
                     }
-                    else{
-                        unzip_Decode(attSource).then( function (attSrc){ 
+                    else {
+                        unzip_Decode(attSource).then(function (attSrc) {
                             bundleSource = attSrc ? attSrc : '';
-                            unzip_Decode(attTarget).then( function (attTgt){ 
+                            unzip_Decode(attTarget).then(function (attTgt) {
                                 bundleTarget = attTgt ? attTgt : '';
                                 if ((bundleSource[1].length == 2 || (bundleSource[1].length == 3 && bundleSource[1][1].indexOf('meta.xml') > -1)) && !attach) {
-                                    if(Object.keys(bundleSource[0].files)[0] != 'package.xml') {
-                                        getUnzippedContent(bundleSource[0].file(Object.keys(bundleSource[0].files)[0])).then( function (srcContent) {
+                                    if (Object.keys(bundleSource[0].files)[0] != 'package.xml') {
+                                        getUnzippedContent(bundleSource[0].file(Object.keys(bundleSource[0].files)[0])).then(function (srcContent) {
                                             preSource[0] = srcContent ? srcContent : '';
                                             preSource[1] = bundleSource[1][0];
-                                            if(Object.keys(bundleTarget[0].files)[0] != 'package.xml'){
-                                                getUnzippedContent(bundleTarget[0].file(Object.keys(bundleTarget[0].files)[0])).then( function (tgtContent) {
+                                            if (Object.keys(bundleTarget[0].files)[0] != 'package.xml') {
+                                                getUnzippedContent(bundleTarget[0].file(Object.keys(bundleTarget[0].files)[0])).then(function (tgtContent) {
                                                     preTarget[0] = tgtContent ? tgtContent : '';
                                                     preTarget[1] = bundleTarget[1][0];
                                                     performCodeDiffSelected(attach, returnFlag, sPane, cb, preFlag);
@@ -305,8 +305,8 @@ const getUnzippedContent = async function(content) {
                                     } else {
                                         preSource[0] = '';
                                         preSource[1] = bundleSource[1][0];
-                                        if(Object.keys(bundleTarget[0].files)[0] != 'package.xml'){
-                                            getUnzippedContent(bundleTarget[0].file(Object.keys(bundleTarget[0].files)[0])).then( function (tgtContent) {
+                                        if (Object.keys(bundleTarget[0].files)[0] != 'package.xml') {
+                                            getUnzippedContent(bundleTarget[0].file(Object.keys(bundleTarget[0].files)[0])).then(function (tgtContent) {
                                                 preTarget[0] = tgtContent ? tgtContent : '';
                                                 preTarget[1] = bundleTarget[1][0];
                                                 performCodeDiffSelected(attach, returnFlag, sPane, cb, preFlag);
@@ -328,12 +328,12 @@ const getUnzippedContent = async function(content) {
                 } else {
                     performCodeDiffSelected(attach, returnFlag, sPane, cb, preFlag);
                 }
-                
+
                 cb && cb(config.attachName);
             }
         }
     }
-    self.classSetValue = function(elem) {
+    self.classSetValue = function (elem) {
         var index = $copado(elem).attr('panel');
         resolutionToolTip = index === '3' ? resolutionToolTip3panel : resolutionToolTip2panel;
         jsCookies.set('merge.conflict.selection', index);
@@ -341,20 +341,20 @@ const getUnzippedContent = async function(content) {
         $copado(elem).addClass('slds-button_brand');
         self.setPreValue(index);
     };
-    var unzip_Decode = async function(elem) {
-            zip = await JSZip.loadAsync(elem, { base64: true });
-            return [zip, Object.keys(zip.files)];
-            
-        },
-        
-        performCodeDiff = function(attach, returnFlag, sPane, cb, zipFlag) {
+    var unzip_Decode = async function (elem) {
+        zip = await JSZip.loadAsync(elem, { base64: true });
+        return [zip, Object.keys(zip.files)];
+
+    },
+
+        performCodeDiff = function (attach, returnFlag, sPane, cb, zipFlag) {
             format = '';
             if (((attach && attach.Body.length > 0) || !zipFlag) && !returnFlag) {
-                if(attConflictPathName){
+                if (attConflictPathName) {
                     config.attachName = attConflictPathName;
-                }else{
+                } else {
                     config.attachName = !preFlag ? attach.Name : preSource[0] > preTarget[0] ? preSource[1] : preTarget[1];
-                }             
+                }
                 config.hasError = false;
                 config.alreadyChecked = true;
                 $copado('#toLineDiv,.CodeMirror-simplescroll,.CodeMirror-merge-2pane,.CodeMirror-merge-3pane,#infoOnMerge').remove();
@@ -364,7 +364,7 @@ const getUnzippedContent = async function(content) {
                 var offsetAmount = 120;
                 attachmentInfo = !preFlag ? attach.Name.replace('AUTO ', '').replace('RESOLVED ', '').split(' ')
                     : typeof config.attachName === 'object' ? config.attachName[0].split('/')
-                    : config.attachName.split('/');
+                        : config.attachName.split('/');
                 //correction for the types which's label and name are not the same hence there might be empty spaces in the label exp:custom object, field, layout etc.
                 if (attachmentInfo.length > 2 && !preFlag) {
                     tempAttachments = attachmentInfo;
@@ -380,14 +380,14 @@ const getUnzippedContent = async function(content) {
                 var fileName = preSource && preSource.length ? (preSource[0] > preTarget[0] ? preSource[1] : preTarget[1]) : '';
                 $copado('.files-to-compare').text(preSource && preSource.length > 0 ? fileName : attachmentInfo[1]);
 
-                
+
                 initCodeDiffEditor(attach, pMode);
-                
-                
+
+
                 $copado('#errorMessage').text('');
                 modalOperations.toogleLocker(false);
-                if(!cb){
-                    modalOperations.showFileModal();	
+                if (!cb) {
+                    modalOperations.showFileModal();
                 }
             }
         },
@@ -409,7 +409,7 @@ const getUnzippedContent = async function(content) {
                 directValue = false;
                 $copado('#view').css('display', '');
                 $copado('.CodeMirror-simplescroll').css('display', 'none');
-                
+
                 var value = attach ? prapareValue(Base64.decode(attach.Body), format) : prapareValue(typeof preSource == 'string' ? preSource : preSource[0], format);
                 var orig1 = attach ? prepareOrig(Base64.decode(attach.Body), format) : prapareValue(preTarget[0], format);
                 self.featureValue = orig1;
@@ -426,7 +426,7 @@ const getUnzippedContent = async function(content) {
                     readOnly: attach ? false : true,
                     lineWrapping: true,
                     extraKeys: {
-                        'Ctrl-Q': function(cm) {
+                        'Ctrl-Q': function (cm) {
                             cm.foldCode(cm.getCursor());
                         }
                     },
@@ -448,8 +448,8 @@ const getUnzippedContent = async function(content) {
                 );
                 if ($copado('.CodeMirror-merge-left').length > 0) {
                     $copado('.CodeMirror-merge-left').prepend(
-                        '<div class="panel top" style="background-color:white;"><center><div id="promotionToolTip" class="slds-popover slds-popover_tooltip slds-nubbin_top slds-is-absolute slds-hide toolTipTopHeight" role="tooltip"><div class="slds-popover__body"><div><span>'+promotionToolTip+'</span></div></div></div><span>' + promotionBranch + '</span>'+
-                        '<div onmouseenter="$copado(\'#promotionToolTip\').removeClass(\'slds-hide\')" onmouseleave="$copado(\'#promotionToolTip\').addClass(\'slds-hide\')" class="slds-icon_container slds-icon__svg--default slds-p-left_xx-small informationIcon"><svg class="slds-button__icon"><use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#info"></use></svg></div>'+
+                        '<div class="panel top" style="background-color:white;"><center><div id="promotionToolTip" class="slds-popover slds-popover_tooltip slds-nubbin_top slds-is-absolute slds-hide toolTipTopHeight" role="tooltip"><div class="slds-popover__body"><div><span>' + promotionToolTip + '</span></div></div></div><span>' + promotionBranch + '</span>' +
+                        '<div onmouseenter="$copado(\'#promotionToolTip\').removeClass(\'slds-hide\')" onmouseleave="$copado(\'#promotionToolTip\').addClass(\'slds-hide\')" class="slds-icon_container slds-icon__svg--default slds-p-left_xx-small informationIcon"><svg class="slds-button__icon"><use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#info"></use></svg></div>' +
                         '</center></div>'
                     );
                 }
@@ -465,13 +465,13 @@ const getUnzippedContent = async function(content) {
                 currentMode = 'xml';
                 $copado('#xmlJson').css('display', 'none');
 
-                CodeMirror.defineMode('highlightSearch', function(config, parserConfig) {
+                CodeMirror.defineMode('highlightSearch', function (config, parserConfig) {
                     var searchOverlay = {
-                        token: function(stream, state) {
+                        token: function (stream, state) {
                             if (stream.match(keyword)) {
                                 return 'highlightSearch';
                             }
-                            while (stream.next() != null && !stream.match(keyword, false)) {}
+                            while (stream.next() != null && !stream.match(keyword, false)) { }
                             return null;
                         }
                     };
@@ -486,14 +486,14 @@ const getUnzippedContent = async function(content) {
                 editor2.setValue(Base64.decode(attach.Body));
             }
         },
-        performCodeDiffSelected = function(attach, returnFlag, sPane, cb, preFlag) {
+        performCodeDiffSelected = function (attach, returnFlag, sPane, cb, preFlag) {
 
             format = '';
             if (((attach && attach.Body.length > 0) || preFlag) && !returnFlag) {
-                    
-                if(attConflictPathName){
+
+                if (attConflictPathName) {
                     config.attachName = attConflictPathName;
-                }else{
+                } else {
                     config.attachName = !preFlag ? attach.Name : preSource[0] > preTarget[0] ? preSource[1] : preTarget[1];
                 }
                 config.hasError = false;
@@ -508,7 +508,7 @@ const getUnzippedContent = async function(content) {
                         .replace('RESOLVED ', '')
                         .split(' ')
                     : config.attachName.split('/');
-                
+
                 //correction for the types which's label and name are not the same hence there might be empty spaces in the label exp:custom object, field, layout etc.
                 if (attachmentInfo.length > 2 && !preFlag) {
                     tempAttachments = attachmentInfo;
@@ -520,10 +520,10 @@ const getUnzippedContent = async function(content) {
                 pMode = defineMode();
                 usName = attachmentInfo[0];
 
-                $copado('.slds-modal__header:last').append('<center><span id="infoOnMerge"><strong style="font-size: medium;">'+attachmentInfo[1]+'</strong> ');
+                $copado('.slds-modal__header:last').append('<center><span id="infoOnMerge"><strong style="font-size: medium;">' + attachmentInfo[1] + '</strong> ');
                 var fileName = preSource && preSource.length ? (preSource[0] > preTarget[0] ? preSource[1] : preTarget[1]) : '';
                 $copado('.files-to-compare').text(preSource && preSource.length > 0 ? fileName : attachmentInfo[1]);
-                
+
                 if (panes != 1) {
                     if (
                         pMode.toLowerCase().indexOf('xml') > -1 &&
@@ -541,16 +541,16 @@ const getUnzippedContent = async function(content) {
                     directValue = false;
                     $copado('#view').css('display', '');
                     $copado('.CodeMirror-simplescroll').css('display', 'none');
-                    
+
                     var value = attach ? prapareValue(Base64.decode(attach.Body.asByteArray), format) : prapareValue(preSource[0], format);
                     var orig1 = attach ? prepareOrig(Base64.decode(attach.Body.asByteArray), format) : prapareValue(preTarget[0], format);
                     self.featureValue = orig1;
 
                     let att2Resolve = {};
-                        att2Resolve.Id = attach.Id;
-                        att2Resolve.Body = self.featureValue;
-                        att2Resolve.oldName = attach.Name;
-                        att2Resolve.Name = attach.Name;
+                    att2Resolve.Id = attach.Id;
+                    att2Resolve.Body = self.featureValue;
+                    att2Resolve.oldName = attach.Name;
+                    att2Resolve.Name = attach.Name;
                     self.attList.push(att2Resolve);
 
                     editor = CodeMirror.MergeView(document.getElementById('view'), {
@@ -565,7 +565,7 @@ const getUnzippedContent = async function(content) {
                         readOnly: attach ? false : true,
                         lineWrapping: true,
                         extraKeys: {
-                            'Ctrl-Q': function(cm) {
+                            'Ctrl-Q': function (cm) {
                                 cm.foldCode(cm.getCursor());
                             }
                         },
@@ -587,8 +587,8 @@ const getUnzippedContent = async function(content) {
                     );
                     if ($copado('.CodeMirror-merge-left').length > 0) {
                         $copado('.CodeMirror-merge-left').prepend(
-                            '<div class="panel top" style="background-color:white;"><center><div id="promotionToolTip" class="slds-popover slds-popover_tooltip slds-nubbin_top slds-is-absolute slds-hide toolTipTopHeight" role="tooltip"><div class="slds-popover__body"><div><span>'+promotionToolTip+'</span></div></div></div><span>' + promotionBranch + '</span>'+
-                            '<div onmouseenter="$copado(\'#promotionToolTip\').removeClass(\'slds-hide\')" onmouseleave="$copado(\'#promotionToolTip\').addClass(\'slds-hide\')" class="slds-icon_container slds-icon__svg--default slds-p-left_xx-small informationIcon"><svg class="slds-button__icon"><use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#info"></use></svg></div>'+
+                            '<div class="panel top" style="background-color:white;"><center><div id="promotionToolTip" class="slds-popover slds-popover_tooltip slds-nubbin_top slds-is-absolute slds-hide toolTipTopHeight" role="tooltip"><div class="slds-popover__body"><div><span>' + promotionToolTip + '</span></div></div></div><span>' + promotionBranch + '</span>' +
+                            '<div onmouseenter="$copado(\'#promotionToolTip\').removeClass(\'slds-hide\')" onmouseleave="$copado(\'#promotionToolTip\').addClass(\'slds-hide\')" class="slds-icon_container slds-icon__svg--default slds-p-left_xx-small informationIcon"><svg class="slds-button__icon"><use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#info"></use></svg></div>' +
                             '</center></div>'
                         );
                     }
@@ -604,13 +604,13 @@ const getUnzippedContent = async function(content) {
                     currentMode = 'xml';
                     $copado('#xmlJson').css('display', 'none');
 
-                    CodeMirror.defineMode('highlightSearch', function(config, parserConfig) {
+                    CodeMirror.defineMode('highlightSearch', function (config, parserConfig) {
                         var searchOverlay = {
-                            token: function(stream, state) {
+                            token: function (stream, state) {
                                 if (stream.match(keyword)) {
                                     return 'highlightSearch';
                                 }
-                                while (stream.next() != null && !stream.match(keyword, false)) {}
+                                while (stream.next() != null && !stream.match(keyword, false)) { }
                                 return null;
                             }
                         };
@@ -626,70 +626,70 @@ const getUnzippedContent = async function(content) {
                 }
                 $copado('#errorMessage').text('');
                 modalOperations.toogleLocker(false);
-                if(!cb){	
-                    modalOperations.showFileModal();	
+                if (!cb) {
+                    modalOperations.showFileModal();
                 }
             }
         },
-        renderBundleView = function(bundleTarget, isSrcTgtEqual, viewDifferences, viewFile, i) {
-            if(bundleTarget[1][i].includes('package.xml') == false) {
+        renderBundleView = function (bundleTarget, isSrcTgtEqual, viewDifferences, viewFile, i) {
+            if (bundleTarget[1][i].includes('package.xml') == false) {
                 /*used single quotes instead of ` since VF acts weird and puts js code directly to the page as visible*/
                 $copado('[id="fs2append"]').append(
                     '<div class="slds-card__header slds-grid" style="padding: 0 0 0 0;margin: 0 0 .15rem;"><header style="color:black !important;' +
-                (isSrcTgtEqual
-                            ? 'background-color: #f4f7fa !important;'
-                            : 'background-color: #FFF !important;') +
-                        '" class="rectangle slds-media slds-media_center slds-has-flexi-truncate"><div class="slds-media__body"><h2><span style="margin-left: 1%;" class="slds-text-heading_small aura-bundle-page-template">' +
-                        bundleTarget[1][i]+
-                        '</span></h2></div>' +
-                        (isSrcTgtEqual
-                            ? '<div class="aura-bundle-view-button slds-no-flex"><div class="slds-form-element__control"><div class="slds-radio_button-group"><span class="slds-button slds-radio_button" onclick="modalOperations.renderBundleSelection(\'' +
-                            bundleTarget[1][i] +
-                            '\');"><input id="autoResolveButton-' +
-                            i +
-                            '" name="radio-' +
-                            i +
-                            '"  type="radio" value="on"><label class="slds-radio_button__label slds-button slds-button_neutral" for="autoResolveButton-' +
-                            i +
-                            '"><span class="slds-radio_faux" >' +
-                            viewDifferences +
-                            '</span></label></span></div> </div></div>'
-                            : '<a href="#" onclick="modalOperations.renderBundleSelection(\'' +
-                            bundleTarget[1][i] +
-                            '\');">' +
-                            viewFile +
-                            '</a>') +
-                        '</header></div><div class="slds-card__body"></div><footer class="slds-card__footer"></footer>'
+                    (isSrcTgtEqual
+                        ? 'background-color: #f4f7fa !important;'
+                        : 'background-color: #FFF !important;') +
+                    '" class="rectangle slds-media slds-media_center slds-has-flexi-truncate"><div class="slds-media__body"><h2><span style="margin-left: 1%;" class="slds-text-heading_small aura-bundle-page-template">' +
+                    bundleTarget[1][i] +
+                    '</span></h2></div>' +
+                    (isSrcTgtEqual
+                        ? '<div class="aura-bundle-view-button slds-no-flex"><div class="slds-form-element__control"><div class="slds-radio_button-group"><span class="slds-button slds-radio_button" onclick="modalOperations.renderBundleSelection(\'' +
+                        bundleTarget[1][i] +
+                        '\');"><input id="autoResolveButton-' +
+                        i +
+                        '" name="radio-' +
+                        i +
+                        '"  type="radio" value="on"><label class="slds-radio_button__label slds-button slds-button_neutral" for="autoResolveButton-' +
+                        i +
+                        '"><span class="slds-radio_faux" >' +
+                        viewDifferences +
+                        '</span></label></span></div> </div></div>'
+                        : '<a href="#" onclick="modalOperations.renderBundleSelection(\'' +
+                        bundleTarget[1][i] +
+                        '\');">' +
+                        viewFile +
+                        '</a>') +
+                    '</header></div><div class="slds-card__body"></div><footer class="slds-card__footer"></footer>'
                 );
             }
         },
-        targetModalDiff = function(source, bundleTarget, size, bundleSource) {
+        targetModalDiff = function (source, bundleTarget, size, bundleSource) {
             let src;
             let tgt;
 
             for (let i = 0; i < size; i++) {
-                if(bundleSource != '' && bundleTarget != '') {
+                if (bundleSource != '' && bundleTarget != '') {
                     getUnzippedContent(bundleSource[0].file(bundleSource[1][i])).then(function (source) {
                         src = source ? source : '';
-                        if(bundleTarget[1][i] && bundleTarget[1][i] != 'package.xml') {
+                        if (bundleTarget[1][i] && bundleTarget[1][i] != 'package.xml') {
                             getUnzippedContent(bundleTarget[0].file(bundleTarget[1][i])).then(function (target) {
                                 tgt = target ? target : '';
                                 let isSrcTgtEqual = (src != tgt) ? true : false;
                                 renderBundleView(bundleTarget, isSrcTgtEqual, viewDifferences, viewFile, i);
-                                
+
                             });
                         }
                     });
                 }
-                else if(bundleSource == '' && bundleTarget != '') {
+                else if (bundleSource == '' && bundleTarget != '') {
                     getUnzippedContent(bundleTarget[0].file(bundleTarget[1][i])).then(function (target) {
                         tgt = target ? target : '';
                         let isSrcTgtEqual = (src != tgt) ? true : false;
                         renderBundleView(bundleTarget, isSrcTgtEqual, viewDifferences, viewFile, i);
-                        
+
                     });
                 }
-                else if(src != '' && tgt == '') {
+                else if (src != '' && tgt == '') {
                     getUnzippedContent(bundleSource[0].file(bundleSource[1][i])).then(function (source) {
                         src = source ? source : '';
                         let isSrcTgtEqual = (src != tgt) ? true : false;
@@ -701,27 +701,27 @@ const getUnzippedContent = async function(content) {
                 }
             }
         },
-        modalDiff = function(bundleFlag, cb, bundleSource, bundleTarget) {
-            
+        modalDiff = function (bundleFlag, cb, bundleSource, bundleTarget) {
+
             bundleFlag = true;
-            if(!cb){	
-                modalOperations.showFileModal();	
+            if (!cb) {
+                modalOperations.showFileModal();
             }
             modalOperations.showFileModal();
             $copado('.slds-modal__content#modal-content-id-1').prepend('<div id="fs2append"></div>');
             let size = bundleSource[1] ? bundleSource[1].length : bundleTarget[1] ? bundleTarget[1].length : 0;
-                if (bundleSource[1] !== undefined && bundleSource[1] !== '') {
-                    targetModalDiff(source, bundleTarget, size, sourceCONTENT);
-                }
-                else if(bundleTarget[1] !== '') {
-                    targetModalDiff(source, bundleTarget, size, bundleSource);
-                }
+            if (bundleSource[1] !== undefined && bundleSource[1] !== '') {
+                targetModalDiff(source, bundleTarget, size, sourceCONTENT);
+            }
+            else if (bundleTarget[1] !== '') {
+                targetModalDiff(source, bundleTarget, size, bundleSource);
+            }
             returnFlag = true;
         },
-        modalDiff_DEPRECATE = function(bundleFlag, cb, bundleSource, bundleTarget) {
+        modalDiff_DEPRECATE = function (bundleFlag, cb, bundleSource, bundleTarget) {
             bundleFlag = true;
-            if(!cb){	
-                modalOperations.showFileModal();	
+            if (!cb) {
+                modalOperations.showFileModal();
             }
             modalOperations.showFileModal();
             $copado('.slds-modal__content#modal-content-id-1').prepend('<div id="fs2append"></div>');
@@ -732,30 +732,30 @@ const getUnzippedContent = async function(content) {
                         targetModalDiff(source, bundleTarget, i);
                     });
                 }
-                else if(bundleTarget[1] !== '' && bundleTarget[1][i].toLowerCase() != 'package.xml') {
+                else if (bundleTarget[1] !== '' && bundleTarget[1][i].toLowerCase() != 'package.xml') {
                     targetModalDiff(source, bundleTarget, i, bundleSource);
                 }
             }
             returnFlag = true;
         },
-        defineMode = function() {
+        defineMode = function () {
             var aType;
-            var metadataAPIName = config.ns+'Metadata_API_Name__c';
-            if(attachmentInfo[0].includes('.conflict')) {
+            var metadataAPIName = config.ns + 'Metadata_API_Name__c';
+            if (attachmentInfo[0].includes('.conflict')) {
                 let temp = attachmentInfo[0].lastIndexOf("_");
-                aType = attachmentInfo[0].substr(0,temp) != undefined ? getMetadataType(attachmentInfo[0].substr(0,temp)).get(metadataAPIName).split('.')[0].toLowerCase() : '';
+                aType = attachmentInfo[0].substr(0, temp) != undefined ? getMetadataType(attachmentInfo[0].substr(0, temp)).get(metadataAPIName).split('.')[0].toLowerCase() : '';
             }
-            else{
+            else {
                 //last clause(after : ) used to be (attachmentInfo.length > 1 ? attachmentInfo[1].split('.')[0].toLowerCase() : attachmentInfo[0])
                 //attachmentInfo.length > 2 is for bundles which is in use on SelectChanges page via compare link
                 aType =
-                attachmentInfo.length > 2
-                    ? attachmentInfo[2].split('.')[1].toLowerCase()
-                    : preFlag
-                    ? attachmentInfo[0]
-                    : attachmentInfo[1].split('/')[0].toLowerCase();
+                    attachmentInfo.length > 2
+                        ? attachmentInfo[2].split('.')[1].toLowerCase()
+                        : preFlag
+                            ? attachmentInfo[0]
+                            : attachmentInfo[1].split('/')[0].toLowerCase();
             }
-            
+
             if (aType == 'apexclass' || aType == 'apextrigger' || aType == 'classes' || aType == 'triggers') {
                 return 'text/x-java';
             } else if (aType == 'apexpage' || aType == 'apexcomponent' || aType == 'cmp' || aType == 'pages' || aType == 'components') {
@@ -766,59 +766,80 @@ const getUnzippedContent = async function(content) {
                 return 'text/javascript';
             } else return 'application/xml'; //'text/x-yaml'
         },
-        prapareValue = function(val, format) {
+        prapareValue = function (val, format) {
             if (pMode == 'application/xml') {
                 let firstRowEndsAt = val.indexOf('\n');
                 firstRow = val.slice(0, firstRowEndsAt);
 
                 // to make it work for yaml we are removing all blank lines
-                if(format == 'json') {
+                if (format == 'json') {
                     val = val.replace(/(^[ \t]*\n)/gm, '');
                 }
             }
-            usName = val.slice(val.indexOf('>>>>>>>'), val.indexOf(usName) + usName.length); //'>>>>>>> feature/'+usName;
-            
+
+            // Check if it's the promotion/envsync_ scenario
+            if (val.indexOf('>>>>>>> promotion/envsync_') > -1) {
+                // Extract the full line starting with '>>>>>>> promotion/envsync_'
+                let envSyncStart = val.indexOf('>>>>>>> promotion/envsync_');
+                let lineEnd = val.indexOf('\n', envSyncStart);
+                if (lineEnd === -1) {
+                    lineEnd = val.length; // Handle case where there's no newline
+                }
+                usName = val.slice(envSyncStart, lineEnd);
+            } else {
+                usName = val.slice(val.indexOf('>>>>>>>'), val.indexOf(usName) + usName.length); //'>>>>>>> feature/'+usName;
+            }
 
             var usNameWithMultiLineBreaks = val.match(usName + '(\r\n)');
-            var usNameWithLineBreaks = usNameWithMultiLineBreaks ? usName+ '\r\n' : usName+ val.charAt(val.indexOf(usName) + usName.length);
-           
+            var usNameWithLineBreaks = usNameWithMultiLineBreaks ? usName + '\r\n' : usName + val.charAt(val.indexOf(usName) + usName.length);
+
             while (val.indexOf(usName) > -1 && usName && usName.length > 0 && !isConflictFile) {
-               
+
                 // find a new line character either \r or \n and append to the end to truncate the values
                 val = (val.slice(0, val.indexOf('=======')) + val.slice(val.indexOf(usName) + usNameWithLineBreaks.length, val.length)).replace(/<<<<<<< HEAD(\r\n|\n|\r)/, '');
-                
+
             }
-           
+
             var returnVal = format == 'json' ? conversionFunc.json2yaml(parseOperations.convertXml2formattedJSON(val)) : val;
-            
+
             return unicodeReplacer(returnVal);
         },
-        prepareOrig = function(val, format) {
-           
+        prepareOrig = function (val, format) {
+
             if (pMode == 'application/xml') {
                 // to make it work for yaml we are removing all blank lines
-                if(format == 'json') {
+                if (format == 'json') {
                     val = val.replace(/(^[ \t]*\n)/gm, '');
                 }
             }
+
+            // Check if it's the promotion/envsync_ scenario
+            if (val.indexOf('>>>>>>> promotion/envsync_') > -1) {
+                let envSyncStart = val.indexOf('>>>>>>> promotion/envsync_');
+                let lineEnd = val.indexOf('\n', envSyncStart);
+                if (lineEnd === -1) {
+                    lineEnd = val.length;  // Handle case where there's no newline
+                }
+                usName = val.slice(envSyncStart, lineEnd);
+            }
+
             var usRegex = new RegExp(usName + '(\r\n|\n|\r)');
-            
+
             var multiLineBreaks = val.match('=======' + '(\r\n)');
-           
-            var conflictSperatorLineBreaks = multiLineBreaks ? '======='+ '\r\n' : '======='+ val.charAt(val.indexOf(usName) + usName.length);
-            
+
+            var conflictSperatorLineBreaks = multiLineBreaks ? '=======' + '\r\n' : '=======' + val.charAt(val.indexOf(usName) + usName.length);
 
             while (val.indexOf(usName) > -1 && val.indexOf('<<<<<<< HEAD') > -1) {
                 // find a new line character either \r or \n and append to the end to truncate the values
                 val = val.slice(0, val.indexOf('<<<<<<< HEAD')) + val.slice(val.indexOf('=======') + conflictSperatorLineBreaks.length, val.length);
                 val = val.replace(usRegex, '');
             }
-           
+
             var returnVal = format == 'json' ? conversionFunc.json2yaml(parseOperations.convertXml2formattedJSON(val)) : val;
-            
+
             return unicodeReplacer(returnVal);
         },
-        unicodeReplacer = function(returnVal) {
+        unicodeReplacer = function (returnVal) {
             while (returnVal.indexOf('\\x0A\\x20\\x20') > -1) {
                 returnVal = returnVal.replace('\\x0A\\x20\\x20', '\\x0A\\x20');
             }
@@ -835,29 +856,29 @@ const getUnzippedContent = async function(content) {
         };
 })(panelFunctions);
 
-(function(self) {
-    self.saveAutoResolveAttachment = function(attachmentId) {		
-        panelFunctions.setPreValue(2, undefined, function(attachName){		
-            if(attachName.indexOf('AUTO RESOLVED')<0){	
-                if(attachName.startsWith('US-')){
-                    attachName = 'AUTO RESOLVED '+attachName;
-                }else if(attachName.startsWith('RESOLVED')) {
+(function (self) {
+    self.saveAutoResolveAttachment = function (attachmentId) {
+        panelFunctions.setPreValue(2, undefined, function (attachName) {
+            if (attachName.indexOf('AUTO RESOLVED') < 0) {
+                if (attachName.startsWith('US-')) {
+                    attachName = 'AUTO RESOLVED ' + attachName;
+                } else if (attachName.startsWith('RESOLVED')) {
                     attachName = attachName.replace('RESOLVED', 'AUTO RESOLVED');
-                }           	
+                }
             }
-            
-            config.saveAttachment(attachName, panelFunctions.featureValue);	
-        });	
+
+            config.saveAttachment(attachName, panelFunctions.featureValue);
+        });
     };
-    self.saveSelectedAutoResolveAttachment = function() {
-        
-        panelFunctions.setPreValueForSelectedFiles(2, undefined, function(attachName){
-            
+    self.saveSelectedAutoResolveAttachment = function () {
+
+        panelFunctions.setPreValueForSelectedFiles(2, undefined, function (attachName) {
+
             for (var key of Object.keys(panelFunctions.attList)) {
-                if(panelFunctions.attList[key].Name.indexOf('AUTO RESOLVED')<0){
-                    if(panelFunctions.attList[key].Name.startsWith('US-')){
-                        panelFunctions.attList[key].Name = 'AUTO RESOLVED '+panelFunctions.attList[key].Name;
-                    }else if(panelFunctions.attList[key].Name.startsWith('RESOLVED')) {
+                if (panelFunctions.attList[key].Name.indexOf('AUTO RESOLVED') < 0) {
+                    if (panelFunctions.attList[key].Name.startsWith('US-')) {
+                        panelFunctions.attList[key].Name = 'AUTO RESOLVED ' + panelFunctions.attList[key].Name;
+                    } else if (panelFunctions.attList[key].Name.startsWith('RESOLVED')) {
                         panelFunctions.attList[key].Name = panelFunctions.attList[key].Name.replace('RESOLVED', 'AUTO RESOLVED');
                     }
                 }
@@ -867,29 +888,29 @@ const getUnzippedContent = async function(content) {
         panelFunctions.attList.length = 0;
     };
 
-    self.openModal = function(attachmentId) {
+    self.openModal = function (attachmentId) {
         window.setTimeout(self.lock, 5); // to force redrawing.
 
         panelFunctions.setPreValue();
 
         return false;
     };
-    
-    self.renderBundleSelection = function(optionName) {
-        if(sourceCONTENT != '' && targetCONTENT != '') {
-            if(window.sourceCONTENT[0].file(optionName) == null) {
+
+    self.renderBundleSelection = function (optionName) {
+        if (sourceCONTENT != '' && targetCONTENT != '') {
+            if (window.sourceCONTENT[0].file(optionName) == null) {
                 preSource[0] = '';
                 preTarget[1] = preSource[1] = optionName;
-                    getUnzippedContent(window.targetCONTENT[0].file(optionName)).then(function (contentTgt) {
-                        preTarget[0] = contentTgt ? contentTgt : '';
-                        returnFlag = false;
-                        $copado('#fs2append').css('display', 'none');
-                        $copado('#closeFileModalbtn').css('display', 'none');
-                        $copado('#xmlJson').css('display', 'inline-flex');
-                        $copado('#backBtn4bundle').css('display', '');
-                        $copado('#view').css('visibility', '');
-                        panelFunctions.setPreValue();
-                    });
+                getUnzippedContent(window.targetCONTENT[0].file(optionName)).then(function (contentTgt) {
+                    preTarget[0] = contentTgt ? contentTgt : '';
+                    returnFlag = false;
+                    $copado('#fs2append').css('display', 'none');
+                    $copado('#closeFileModalbtn').css('display', 'none');
+                    $copado('#xmlJson').css('display', 'inline-flex');
+                    $copado('#backBtn4bundle').css('display', '');
+                    $copado('#view').css('visibility', '');
+                    panelFunctions.setPreValue();
+                });
             } else {
                 getUnzippedContent(window.sourceCONTENT[0].file(optionName)).then(function (contentSrc) {
                     preSource[0] = contentSrc ? contentSrc : '';
@@ -906,8 +927,8 @@ const getUnzippedContent = async function(content) {
                     });
                 });
             }
-            
-        } else if(sourceCONTENT == '' && targetCONTENT != '') {
+
+        } else if (sourceCONTENT == '' && targetCONTENT != '') {
             preSource[0] = '';
             preTarget[1] = preSource[1] = optionName;
             getUnzippedContent(window.targetCONTENT[0].file(optionName)).then(function (contentTgt) {
@@ -920,7 +941,7 @@ const getUnzippedContent = async function(content) {
                 $copado('#view').css('visibility', '');
                 panelFunctions.setPreValue();
             });
-        } else if(sourceCONTENT != '' && targetCONTENT == '') {
+        } else if (sourceCONTENT != '' && targetCONTENT == '') {
             getUnzippedContent(window.sourceCONTENT[0].file(optionName)).then(function (contentSrc) {
                 preSource[0] = contentSrc ? contentSrc : '';
                 preTarget[1] = preSource[1] = optionName;
@@ -933,14 +954,14 @@ const getUnzippedContent = async function(content) {
                 $copado('#backBtn4bundle').css('display', '');
                 $copado('#view').css('visibility', '');
                 panelFunctions.setPreValue();
-                
+
             });
         } else {
             // both are blank
         }
-        
+
     };
-    self.backButtonOperation = function() {
+    self.backButtonOperation = function () {
         $copado('#xmlJson').css('display', 'none');
         $copado('#fs2append').css('display', '');
         $copado('#closeFileModalbtn').css('display', '');
@@ -949,26 +970,26 @@ const getUnzippedContent = async function(content) {
         $copado('[type=radio]:checked').prop('checked', false);
         $copado('.files-to-compare').text(files2Compare);
     };
-    self.showModal = function() {
-        setTimeout(function() {
+    self.showModal = function () {
+        setTimeout(function () {
             $copado('#backdrop').addClass('slds-backdrop--open');
             $copado('#modal').addClass('slds-fade-in-open');
             self.unlock();
         }, 500);
     };
-    self.closeModal = function() {
+    self.closeModal = function () {
         $copado('#modal').removeClass('slds-fade-in-open');
         $copado('#backdrop').removeClass('slds-backdrop--open');
         return false;
     };
-    self.showFileModal = function() {
-        setTimeout(function() {
+    self.showFileModal = function () {
+        setTimeout(function () {
             $copado('#fileBackdrop').addClass('slds-backdrop--open');
             $copado('#fileModal').addClass('slds-fade-in-open');
             self.unlock();
         }, 500);
     };
-    self.closeFileModal = function() {
+    self.closeFileModal = function () {
         bundleFlag = false;
         returnFlag = false;
         $copado('#backBtn4bundle').css('display', 'none');
@@ -977,71 +998,71 @@ const getUnzippedContent = async function(content) {
         $copado('#fileBackdrop').removeClass('slds-backdrop--open');
         $copado('#screenLockerLightning').hide();
     };
-    self.toogleLocker = function(lock) {
+    self.toogleLocker = function (lock) {
         if (lock) {
             $copado('#screenLockerLightning').show();
             return;
         }
         $copado('#screenLockerLightning').hide();
     };
-    self.hideLocker = function() {
-        setTimeout(function() {
+    self.hideLocker = function () {
+        setTimeout(function () {
             self.toogleLocker(false);
         }, 500);
     };
-    self.unlock = function() {
+    self.unlock = function () {
         $copado('#screenLockerLightning').hide();
     };
-    self.lock = function() {
+    self.lock = function () {
         $copado('#screenLockerLightning').show();
     };
 })(modalOperations);
 
-(function(self) {
-    var xmlToJson = function(xml) {
-            // Changes XML to JSON
-            // Modified version from here: http://davidwalsh.name/convert-xml-json
-            // Create the return object
-            var obj = {};
+(function (self) {
+    var xmlToJson = function (xml) {
+        // Changes XML to JSON
+        // Modified version from here: http://davidwalsh.name/convert-xml-json
+        // Create the return object
+        var obj = {};
 
-            if (xml.nodeType == 1) {
-                // element
-                // do attributes
-                if (xml.attributes.length > 0) {
-                    obj['@attributes'] = {};
-                    for (var j = 0; j < xml.attributes.length; j++) {
-                        var attribute = xml.attributes.item(j);
-                        obj['@attributes'][attribute.nodeName] = attribute.nodeValue;
-                    }
-                }
-            } else if (xml.nodeType == 3) {
-                // text
-                obj = xml.nodeValue;
-            }
-
-            // do children
-            // If just one text node inside
-            if (xml.hasChildNodes() && xml.childNodes.length === 1 && xml.childNodes[0].nodeType === 3) {
-                obj = xml.childNodes[0].nodeValue;
-            } else if (xml.hasChildNodes()) {
-                for (var i = 0; i < xml.childNodes.length; i++) {
-                    var item = xml.childNodes.item(i);
-                    var nodeName = item.nodeName;
-                    if (typeof obj[nodeName] == 'undefined') {
-                        if (nodeName != '#text') obj[nodeName] = xmlToJson(item);
-                    } else {
-                        if (typeof obj[nodeName].push == 'undefined') {
-                            var old = obj[nodeName];
-                            obj[nodeName] = [];
-                            obj[nodeName].push(old);
-                        }
-                        obj[nodeName].push(xmlToJson(item));
-                    }
+        if (xml.nodeType == 1) {
+            // element
+            // do attributes
+            if (xml.attributes.length > 0) {
+                obj['@attributes'] = {};
+                for (var j = 0; j < xml.attributes.length; j++) {
+                    var attribute = xml.attributes.item(j);
+                    obj['@attributes'][attribute.nodeName] = attribute.nodeValue;
                 }
             }
-            return obj;
-        },
-        json2Xml = function(json, node) {
+        } else if (xml.nodeType == 3) {
+            // text
+            obj = xml.nodeValue;
+        }
+
+        // do children
+        // If just one text node inside
+        if (xml.hasChildNodes() && xml.childNodes.length === 1 && xml.childNodes[0].nodeType === 3) {
+            obj = xml.childNodes[0].nodeValue;
+        } else if (xml.hasChildNodes()) {
+            for (var i = 0; i < xml.childNodes.length; i++) {
+                var item = xml.childNodes.item(i);
+                var nodeName = item.nodeName;
+                if (typeof obj[nodeName] == 'undefined') {
+                    if (nodeName != '#text') obj[nodeName] = xmlToJson(item);
+                } else {
+                    if (typeof obj[nodeName].push == 'undefined') {
+                        var old = obj[nodeName];
+                        obj[nodeName] = [];
+                        obj[nodeName].push(old);
+                    }
+                    obj[nodeName].push(xmlToJson(item));
+                }
+            }
+        }
+        return obj;
+    },
+        json2Xml = function (json, node) {
             /**
              * JSON to XML
              * @param {Object} JSON
@@ -1105,7 +1126,7 @@ const getUnzippedContent = async function(content) {
                                         document.createElement(x)
                                     )
                                 );
-                            } catch (e) {}
+                            } catch (e) { }
                         }
                     }
                 }
@@ -1116,12 +1137,12 @@ const getUnzippedContent = async function(content) {
                 return node;
             }
         },
-        formatXml = function(xml) {
+        formatXml = function (xml) {
             var formatted = '';
             var reg = /(>)(<)(\/*)/g; /**/
             xml = xml.replace(reg, '$1\r\n$2$3');
             var pad = 0;
-            jQuery.each(xml.split('\r\n'), function(index, node) {
+            jQuery.each(xml.split('\r\n'), function (index, node) {
                 var indent = 0;
                 if (node.match(/.+<\/\w[^>]*>$/)) {
                     indent = 0;
@@ -1152,17 +1173,17 @@ const getUnzippedContent = async function(content) {
             return firstRow + '\n' + formatted;
         };
 
-    parseOperations.parseErrorExist = function(body) {
+    parseOperations.parseErrorExist = function (body) {
         var xmlDOM = new DOMParser().parseFromString(body, 'text/xml');
         var oSerializer = new XMLSerializer();
         var sXML = oSerializer.serializeToString(xmlDOM);
         return sXML.indexOf('parsererror') > -1;
     };
-    parseOperations.convertXml2formattedJSON = function(param) {
+    parseOperations.convertXml2formattedJSON = function (param) {
         //yaml parser error fix for empty files
         return param.length != '' ? JSON.stringify(xmlToJson(new DOMParser().parseFromString(param, 'text/xml')), null, '\t') : '';
     };
-    parseOperations.convertJSON2formattedXml = function(param) {
+    parseOperations.convertJSON2formattedXml = function (param) {
         return formatXml(jsonToXml(JSON.parse(param)));
     };
     jsonToXml = function (o, tab) {

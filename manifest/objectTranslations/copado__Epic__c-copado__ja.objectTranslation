@@ -37,6 +37,10 @@
         <name>Epic_Name__c</name>
     </fields>
     <fields>
+        <label><!-- Jira Key --></label>
+        <name>Jira_Key__c</name>
+    </fields>
+    <fields>
         <label><!-- User QA --></label>
         <name>User_QA__c</name>
         <relationshipLabel><!-- Epics --></relationshipLabel>
@@ -139,5 +143,20 @@
         <label><!-- Last Synced Date --></label>
         <name>copadoconnect__Last_Synced_Date__c</name>
     </fields>
+    <layouts>
+        <layout>Epic Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Owners --></label>
+            <section>Owners</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>エピックリファレンス</nameFieldLabel>
 </CustomObjectTranslation>

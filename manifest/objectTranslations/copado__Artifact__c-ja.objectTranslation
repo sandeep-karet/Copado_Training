@@ -4,6 +4,25 @@
         <plural>false</plural>
         <value>パッケージ</value>
     </caseValues>
+    <fieldSets>
+        <label><!-- SFDX Package Lightning Page --></label>
+        <name>cmcSf__SFDX_Package_CustomFields</name>
+    </fieldSets>
+    <fields>
+        <help>パッケージング CLI コマンドで使用する API バージョン。指定しない場合、デフォルト値（Dev Hub の API バージョン）が使用されます。形式は例のように指定してください。例：54.0
+注：子パッケージのバージョンに API バージョンが指定されている場合、その値が使用されます。</help>
+        <label><!-- Api Version --></label>
+        <name>cmcSf__Api_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Org Dependent --></label>
+        <name>cmcSf__IsOrgDependent__c</name>
+    </fields>
+    <fields>
+        <help>パッケージを作成するためのパスを指定します。このパスは、リポジトリの sfdx-project.json で利用可能である必要があります。</help>
+        <label><!-- Package Path --></label>
+        <name>cmcSf__PackagePath__c</name>
+    </fields>
     <fields>
         <help>これは、マスターブランチにある、アーティファクトを保存できるリポジトリです。</help>
         <label><!-- Package Repository --></label>
@@ -281,7 +300,79 @@
         <name>copado__Target_Dev_Hub_Org__c</name>
         <relationshipLabel><!-- Packages (Target Dev Hub Org) --></relationshipLabel>
     </fields>
+    <layouts>
+        <layout>Artifact Layout</layout>
+        <sections>
+            <label>コンテンツ</label>
+            <section>Content</section>
+        </sections>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Package Artifact Layout</layout>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>パッケージの詳細</label>
+            <section>Package Details</section>
+        </sections>
+        <sections>
+            <label>パッケージメタデータコンテンツ</label>
+            <section>Package Metadata Content</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Package Layout</layout>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>パッケージの詳細</label>
+            <section>Package Details</section>
+        </sections>
+        <sections>
+            <label>パッケージメタデータコンテンツ</label>
+            <section>Package Metadata Content</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Story Bundle</layout>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>フィールド</label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>パッケージ名</nameFieldLabel>
+    <quickActions>
+        <label><!-- Distribute Package --></label>
+        <name>cmcSf__Distribute_Package</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Generate Package --></label>
+        <name>cmcSf__GeneratePackageSFDX</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Create Package Version --></label>
+        <name>copado__CreatePackageVersion</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Edit Configuration --></label>
+        <name>copado__EditConfiguration</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Generate Package --></label>
+        <name>copado__GeneratePackage</name>
+    </quickActions>
     <recordTypes>
         <description><!-- Version Control System centric package --></description>
         <label><!-- Git Package --></label>
@@ -297,6 +388,14 @@
         <label><!-- User Story Bundle --></label>
         <name>copado__User_Story_Bundle</name>
     </recordTypes>
+    <validationRules>
+        <errorMessage><!-- The API version specified is not valid. It must be in the format, Number.0 --></errorMessage>
+        <name>cmcSf__Api_Version_Format</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- No Namespace cannot be set to true for a Managed package --></errorMessage>
+        <name>cmcSf__No_Namespace_Validation</name>
+    </validationRules>
     <validationRules>
         <errorMessage><!-- Package names are in use for DX folder structure, therefore, package names are not editable. --></errorMessage>
         <name>copado__ArtifactNameCannotChange</name>

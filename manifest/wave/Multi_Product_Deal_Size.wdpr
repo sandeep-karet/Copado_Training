@@ -1,0 +1,438 @@
+{
+  "version" : "56.0",
+  "nodes" : {
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "IsDeleted", "AccountId", "Name", "Description", "StageName", "Amount", "Probability", "ExpectedRevenue", "CloseDate", "Type", "NextStep", "LeadSource", "IsClosed", "IsWon", "ForecastCategory", "ForecastCategoryName", "HasOpportunityLineItem", "IsSplit", "Pricebook2Id", "OwnerId", "Territory2Id", "IsExcludedFromTerritory2Filter", "CreatedDate", "LastModifiedDate", "SystemModstamp", "LastActivityDate", "PushCount", "LastStageChangeDate", "Fiscal", "HasOpenActivity", "HasOverdueTask", "ROI_Analysis_Completed__c", "L2O_Bookings__c", "L2O_Bookings_Total__c", "texcellency__DefHC_HospitalID__c", "texcellency__DefHC_RFPID__c", "L2O_Channel_Segment__c", "L2O_Sub_Channel_Segment__c", "L2O_Business_Unit__c", "L2O_Est_First_Year_Revenue__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Opportunity",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Opportunity"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN0" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET0", "LOAD_DATASET2" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "INNER",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "Opportunit",
+        "rightKeys" : [ "OpportunityId" ]
+      }
+    },
+    "LOAD_DATASET2" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "OpportunityId", "SortOrder", "PricebookEntryId", "Product2Id", "ProductCode", "Name", "Quantity", "TotalPrice", "UnitPrice", "ListPrice", "Description", "CreatedDate", "LastModifiedDate", "L2O_Ordered_Qty__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "OpportunityLineItem",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "OpportunityLineItem"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN1" : {
+      "action" : "join",
+      "sources" : [ "JOIN0", "LOAD_DATASET4" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "INNER",
+        "leftKeys" : [ "Opportunit.Product2Id" ],
+        "rightQualifier" : "Product2",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "LOAD_DATASET4" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "ProductCode", "IsActive", "CreatedDate", "Family", "QuantityUnitOfMeasure" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Product2",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Product2"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "EXTRACT0" : {
+      "action" : "extractGrains",
+      "sources" : [ "LOAD_DATASET2" ],
+      "parameters" : {
+        "grainExtractions" : [ ]
+      }
+    },
+    "AGGREGATE1" : {
+      "action" : "aggregate",
+      "sources" : [ "EXTRACT0" ],
+      "parameters" : {
+        "aggregations" : [ {
+          "action" : "COUNT",
+          "source" : "Product2Id",
+          "name" : "COUNT_Product2Id",
+          "label" : "Count of Product ID"
+        } ],
+        "groupings" : [ "OpportunityId" ],
+        "pivots" : [ ],
+        "nodeType" : "STANDARD"
+      }
+    },
+    "FILTER0" : {
+      "action" : "filter",
+      "sources" : [ "AGGREGATE1" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "NUMBER",
+          "field" : "COUNT_Product2Id",
+          "operator" : "GREATER_THAN",
+          "operands" : [ "1" ]
+        } ]
+      }
+    },
+    "JOIN2" : {
+      "action" : "join",
+      "sources" : [ "FILTER0", "JOIN1" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "INNER",
+        "leftKeys" : [ "OpportunityId" ],
+        "rightQualifier" : "Join1",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "OUTPUT0" : {
+      "action" : "save",
+      "sources" : [ "EDIT_ATTRIBUTES0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Multi Product Deal Opportunity",
+          "name" : "multi_Product_Deal_Opport",
+          "folderName" : "Teladoc_Health_App"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "LOAD_DATASET5" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "UserRoleId", "Id" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "User",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "User"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET6" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "ParentRoleId" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "UserRole",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "UserRole"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "FLATTEN0" : {
+      "action" : "flatten",
+      "sources" : [ "LOAD_DATASET6" ],
+      "parameters" : {
+        "selfField" : "Id",
+        "parentField" : "ParentRoleId",
+        "multiField" : {
+          "name" : "Roles",
+          "label" : "Roles",
+          "isSystemField" : false
+        },
+        "pathField" : {
+          "name" : "Role.Path",
+          "label" : "RolePath",
+          "isSystemField" : false
+        },
+        "includeSelfId" : false
+      }
+    },
+    "JOIN3" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET5", "FLATTEN0" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "UserRoleId" ],
+        "rightQualifier" : "Role",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN4" : {
+      "action" : "join",
+      "sources" : [ "JOIN2", "JOIN3" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "Join1.OwnerId" ],
+        "rightQualifier" : "User",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "EDIT_ATTRIBUTES0" : {
+      "action" : "schema",
+      "sources" : [ "JOIN4" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Join1.Name",
+          "newProperties" : {
+            "label" : "Opportunity Name",
+            "name" : "Join1.Name",
+            "typeProperties" : null
+          }
+        } ]
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "label" : "Opportunity",
+        "type" : "LOAD_DATASET",
+        "top" : 114,
+        "left" : 389.9,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN0" : {
+        "label" : "Join 0",
+        "type" : "JOIN",
+        "top" : 114,
+        "left" : 529.9
+      },
+      "LOAD_DATASET2" : {
+        "label" : "OpportunityLineItem",
+        "type" : "LOAD_DATASET",
+        "top" : 251.8,
+        "left" : 392,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN1" : {
+        "label" : "Join 1",
+        "type" : "JOIN",
+        "top" : 112,
+        "left" : 672
+      },
+      "LOAD_DATASET4" : {
+        "label" : "Product2",
+        "type" : "LOAD_DATASET",
+        "top" : 252,
+        "left" : 672.6,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "AGGREGATE0" : {
+        "label" : "Aggregate 0",
+        "type" : "AGGREGATE",
+        "top" : 252.10000000000002,
+        "left" : 532,
+        "graph" : {
+          "EXTRACT0" : null,
+          "AGGREGATE1" : null
+        },
+        "connectors" : [ {
+          "source" : "EXTRACT0",
+          "target" : "AGGREGATE1"
+        } ]
+      },
+      "FILTER0" : {
+        "label" : "Filter 0",
+        "type" : "FILTER",
+        "top" : 252.10000000000002,
+        "left" : 812
+      },
+      "JOIN2" : {
+        "label" : "Join 2",
+        "type" : "JOIN",
+        "top" : 112.30000000000001,
+        "left" : 812.3
+      },
+      "OUTPUT0" : {
+        "label" : "Output 0",
+        "type" : "OUTPUT",
+        "top" : 112,
+        "left" : 1232
+      },
+      "LOAD_DATASET5" : {
+        "label" : "User",
+        "type" : "LOAD_DATASET",
+        "top" : 392.1,
+        "left" : 391.6,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET6" : {
+        "label" : "UserRole",
+        "type" : "LOAD_DATASET",
+        "top" : 531.8,
+        "left" : 392.9,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM0" : {
+        "label" : "Transform 0",
+        "type" : "TRANSFORM",
+        "top" : 532,
+        "left" : 532,
+        "graph" : {
+          "FLATTEN0" : {
+            "label" : "Flatten"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "JOIN3" : {
+        "label" : "User With User Role",
+        "description" : "Join the User Role object for Users Role",
+        "type" : "JOIN",
+        "top" : 532,
+        "left" : 672
+      },
+      "JOIN4" : {
+        "label" : "Join 4",
+        "type" : "JOIN",
+        "top" : 112,
+        "left" : 952
+      },
+      "TRANSFORM1" : {
+        "label" : "Transform 1",
+        "type" : "TRANSFORM",
+        "top" : 112,
+        "left" : 1092,
+        "graph" : {
+          "EDIT_ATTRIBUTES0" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ ]
+      }
+    },
+    "connectors" : [ {
+      "source" : "LOAD_DATASET0",
+      "target" : "JOIN0"
+    }, {
+      "source" : "LOAD_DATASET2",
+      "target" : "JOIN0"
+    }, {
+      "source" : "JOIN0",
+      "target" : "JOIN1"
+    }, {
+      "source" : "LOAD_DATASET4",
+      "target" : "JOIN1"
+    }, {
+      "source" : "LOAD_DATASET2",
+      "target" : "AGGREGATE0"
+    }, {
+      "source" : "AGGREGATE0",
+      "target" : "FILTER0"
+    }, {
+      "source" : "FILTER0",
+      "target" : "JOIN2"
+    }, {
+      "source" : "JOIN1",
+      "target" : "JOIN2"
+    }, {
+      "source" : "TRANSFORM1",
+      "target" : "OUTPUT0"
+    }, {
+      "source" : "LOAD_DATASET6",
+      "target" : "TRANSFORM0"
+    }, {
+      "source" : "LOAD_DATASET5",
+      "target" : "JOIN3"
+    }, {
+      "source" : "TRANSFORM0",
+      "target" : "JOIN3"
+    }, {
+      "source" : "JOIN2",
+      "target" : "JOIN4"
+    }, {
+      "source" : "JOIN3",
+      "target" : "JOIN4"
+    }, {
+      "source" : "JOIN4",
+      "target" : "TRANSFORM1"
+    } ],
+    "hiddenColumns" : [ ]
+  }
+}

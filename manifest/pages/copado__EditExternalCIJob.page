@@ -2,7 +2,6 @@
 	<apex:outputPanel layout="block">
 		<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height: 100%;">
 		<head>
-			<c:GAnalytics />
 			<apex:slds />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<c:IncludeStaticsResourceComponent addJQuery="true"/>
@@ -288,7 +287,7 @@
 				var todayDate= param ? param : new Date('{!lastCacheDate}');
 				ciJob.cacheDate = ciJob.cacheDate ? $copado("[Id$='removeCache']").text() : ciJob.cacheDate;
 				console.log('TodayD ==>'+todayDate);
-				var textTemplate = "{!$Label.copado__CACHE_REFRESHED_NOW}";
+				var textTemplate = "{!$Label.CACHE_REFRESHED_NOW}";
 				textTemplate = textTemplate.replace('__METATYPE__','');
 				if(todayDate != "Invalid Date"){
 					var format ="AM";

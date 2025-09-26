@@ -155,6 +155,37 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
+        <fullName>copado__Approval_Status__c</fullName>
+        <defaultValue>&apos;Pending&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Indicates the current approval status of the pull request. This information is retrieved directly from the connected Git provider and reflects whether the required reviewers have approved the pull request. Depending on the provider, data may be available via webhook or may require OAuth authorization.</inlineHelpText>
+        <label>Approval Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>copado__Assignees__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -281,6 +312,32 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Required_Reviewer_Approvals__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifies the number of required reviewer approvals set in your Git provider. Helps determine if a pull request meets the configured approval threshold. Depending on the provider, data may be available via webhook or may require OAuth authorization.</inlineHelpText>
+        <label>Required Reviewer Approvals</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Reviewer_Approvals_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Shows the number of reviewers who have approved the pull request. Updates automatically as reviewers approve the pull request in your Git provider. Depending on the provider, data may be available via webhook or may require OAuth authorization</inlineHelpText>
+        <label>Reviewer Approvals Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
