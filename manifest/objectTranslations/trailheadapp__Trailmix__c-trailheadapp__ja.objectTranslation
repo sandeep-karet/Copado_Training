@@ -45,7 +45,24 @@
         <label>更新日時</label>
         <name>trailheadapp__Updated_At__c</name>
     </fields>
+    <layouts>
+        <layout>Trailmix Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>Trailmix 名</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>ユーザを割り当て</label>
+        <name>trailheadapp__Assign_Multiple_Users</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>ユーザを割り当て解除</label>
+        <name>trailheadapp__Unassign_Multiple_Users</name>
+    </quickActions>
     <webLinks>
         <label>ユーザを割り当て</label>
         <name>trailheadapp__Assign_Users</name>

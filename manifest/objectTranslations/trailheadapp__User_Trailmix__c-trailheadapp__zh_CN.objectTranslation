@@ -44,5 +44,22 @@
         <name>trailheadapp__User__c</name>
         <relationshipLabel><!-- User Trailmixes --></relationshipLabel>
     </fields>
+    <layouts>
+        <layout>User Trailmix Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>用户 Trailmix ID</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>分配 Trailmix</label>
+        <name>trailheadapp__AssignTrailmix</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>取消分配 Trailmix</label>
+        <name>trailheadapp__Unassign_Trailmix</name>
+    </quickActions>
 </CustomObjectTranslation>

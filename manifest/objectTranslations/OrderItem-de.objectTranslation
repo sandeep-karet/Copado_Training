@@ -248,6 +248,25 @@
         <name>SBQQ__UpgradedSubscription__c</name>
         <relationshipLabel><!-- Upgraded Order Products --></relationshipLabel>
     </fields>
+    <layouts>
+        <layout>CPQ Order Product Layout</layout>
+        <sections>
+            <label>Rechnungsinformationen</label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label>Vertragsinformationen</label>
+            <section>Contracting Information</section>
+        </sections>
+        <sections>
+            <label>Preisinformationen</label>
+            <section>Price Information</section>
+        </sections>
+        <sections>
+            <label>Angebots- und Abonnementinformationen</label>
+            <section>Quote and Subscription Information</section>
+        </sections>
+    </layouts>
     <validationRules>
         <errorMessage><!-- Can’t edit the bookings status on an activated order product. --></errorMessage>
         <name>SBQQ__CannotChangeBookingIndicatorOnActivation</name>
