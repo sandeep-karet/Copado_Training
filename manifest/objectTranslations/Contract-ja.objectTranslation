@@ -283,6 +283,36 @@
         <label><!-- Type of Provider IDN --></label>
         <name>Type_of_Provider_IDN__c</name>
     </fields>
+    <layouts>
+        <layout>CPQ Contract Layout</layout>
+        <sections>
+            <label>修正</label>
+            <section>Amendments</section>
+        </sections>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>再計算</label>
+            <section>Recalculating</section>
+        </sections>
+        <sections>
+            <label>Salesforce CPQ 情報</label>
+            <section>Salesforce CPQ Information</section>
+        </sections>
+        <sections>
+            <label>システム情報</label>
+            <section>System Info</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contract Layout</layout>
+        <sections>
+            <label><!-- Opportunity Information --></label>
+            <section>Opportunity Information</section>
+        </sections>
+    </layouts>
     <validationRules>
         <errorMessage><!-- Only System Administrator can update the Account Name --></errorMessage>
         <name>Account_Name_Change_Validation</name>

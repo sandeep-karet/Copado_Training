@@ -26212,6 +26212,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>LVGO__Contact__c.LVGO__Package_Deployment_Test__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>LVGO__Contact__c.LVGO__Parent_Account_From_Account__c</field>
         <readable>false</readable>
     </fieldPermissions>

@@ -63,7 +63,7 @@
             <name>LVGO__Assign_Reference_Requests_to_Lisa_Thomas</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(RecordType.Name == &quot;Reference Request&quot;,($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c))</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -73,7 +73,7 @@
             <name>LVGO__Send_Livongo_Presale_Email_Confirmation</name>
             <type>Alert</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(RecordType.Name == &quot;Livongo Presale&quot;,($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c))</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -83,7 +83,7 @@
             <name>LVGO__Send_Livongo_Wins_Email_Confirmation</name>
             <type>Alert</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(RecordType.Name == &quot;Livongo Wins&quot;,($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c))</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -93,7 +93,7 @@
             <name>LVGO__Notify_Case_Owner_for_New_Reference_Request_Case</name>
             <type>Alert</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(RecordType.Name == &quot;Reference Request&quot;,($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c))</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>

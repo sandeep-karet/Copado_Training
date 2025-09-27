@@ -501,6 +501,37 @@
         <label><!-- Score --></label>
         <name>mkto71_Lead_Score__c</name>
     </fields>
+    <layouts>
+        <layout>Lead Layout</layout>
+        <sections>
+            <label><!-- Contact Information --></label>
+            <section>Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label><!-- Lead Source Information --></label>
+            <section>Lead Source Information</section>
+        </sections>
+        <sections>
+            <label><!-- Optional --></label>
+            <section>Optional</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- LinkedIn InMail --></label>
+        <name>LID__LinkedIn_Message</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Send Lead --></label>
+        <name>Send_Lead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Document --></label>
+        <name>tinderbox__CreateLeadDocument</name>
+    </quickActions>
     <validationRules>
         <errorMessage><!-- CompanyId should be a numeric value --></errorMessage>
         <name>LID__Check_CompanyId_Value</name>

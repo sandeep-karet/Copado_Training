@@ -98,7 +98,7 @@
             <name>LVGO__Turn_Status_to_Engaging</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <description>An account with an open opportunity should be in the Account Status &apos;Engaging.&apos;</description>
         <formula>AND(                     AND(                         NOT(ISPICKVAL(LVGO__Account_Type__c,&quot;Engaging&quot;)),                         NOT(ISPICKVAL(LVGO__Account_Type__c,&quot;Client&quot;)),                         NOT(ISPICKVAL(LVGO__Account_Type__c,&quot;Disqualified&quot;)),                         NOT(ISPICKVAL(LVGO__Account_Type__c,&quot;Active Partner&quot;))                     ),                     LVGO__Closed_Won_Opportunity_Count__c == 0,                     LVGO__Open_Opportunity_Count__c != 0,                     $Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c                 )</formula>
         <triggerType>onAllChanges</triggerType>
@@ -109,7 +109,7 @@
             <name>LVGO__Enrollment_Marketing_Lead_Assignemnt</name>
             <type>Alert</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c,LVGO__EML__c != null)</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
@@ -130,13 +130,13 @@
             <name>LVGO__Multi_program</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c,LVGO__Program_Count3__c&gt;=2,1&gt;LVGO__PO_WholePerson__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
         <fullName>LVGO__Request CSM_60 Days</fullName>
-        <active>false</active>
+        <active>true</active>
         <formula>AND($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c,LVGO__Earliest_Active_Initial_Launch_Date__c!=null,RecordType.Name=&quot;Client Account&quot;,LVGO__RequestCSM__c=false,LVGO__CSM__c=null,NOT(ISPICKVAL(LVGO__Account_Type__c,&quot;Former Client&quot;)),NOT(ISPICKVAL(LVGO__Account_Type__c,&quot;Disqualified&quot;)),NOT(ISPICKVAL(LVGO__Account_Type__c,&quot;Study&quot;)))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
@@ -155,7 +155,7 @@
             <name>LVGO__Single_program</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c,LVGO__Program_Count3__c=1,1&gt;LVGO__PO_WholePerson__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -165,14 +165,14 @@
             <name>LVGO__Update_Prior_Account_Status</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <description>JENGA-1279</description>
         <formula>AND(ISCHANGED(LVGO__Account_Type__c), NOT(ISPICKVAL(LVGO__Account_Type__c, &apos;&apos;)), NOT(ISBLANK(PRIORVALUE(LVGO__Account_Type__c))),$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <tasks>
         <fullName>LVGO__Resource_Request_CSM_Needed_on_this_Account</fullName>
-        <assignedTo>prince.kumar@teladochealth.com.lcrm</assignedTo>
+        <assignedTo>sandeep.kareti@teladochealth.com.lcrm</assignedTo>
         <assignedToType>user</assignedToType>
         <dueDateOffset>3</dueDateOffset>
         <notifyAssignee>false</notifyAssignee>
@@ -183,7 +183,7 @@
     </tasks>
     <tasks>
         <fullName>LVGO__Resource_Request_CSM_Needed_on_this_Account10</fullName>
-        <assignedTo>prince.kumar@teladochealth.com.lcrm</assignedTo>
+        <assignedTo>sandeep.kareti@teladochealth.com.lcrm</assignedTo>
         <assignedToType>user</assignedToType>
         <dueDateOffset>3</dueDateOffset>
         <notifyAssignee>false</notifyAssignee>
@@ -194,7 +194,7 @@
     </tasks>
     <tasks>
         <fullName>LVGO__Resource_Request_CSM_Needed_on_this_Account2</fullName>
-        <assignedTo>prince.kumar@teladochealth.com.lcrm</assignedTo>
+        <assignedTo>sandeep.kareti@teladochealth.com.lcrm</assignedTo>
         <assignedToType>user</assignedToType>
         <dueDateOffset>3</dueDateOffset>
         <notifyAssignee>false</notifyAssignee>
@@ -205,7 +205,7 @@
     </tasks>
     <tasks>
         <fullName>LVGO__Resource_Request_CSM_Needed_on_this_Account4</fullName>
-        <assignedTo>prince.kumar@teladochealth.com.lcrm</assignedTo>
+        <assignedTo>sandeep.kareti@teladochealth.com.lcrm</assignedTo>
         <assignedToType>user</assignedToType>
         <dueDateOffset>3</dueDateOffset>
         <notifyAssignee>false</notifyAssignee>
@@ -216,7 +216,7 @@
     </tasks>
     <tasks>
         <fullName>LVGO__Resource_Request_CSM_Needed_on_this_Account5</fullName>
-        <assignedTo>prince.kumar@teladochealth.com.lcrm</assignedTo>
+        <assignedTo>sandeep.kareti@teladochealth.com.lcrm</assignedTo>
         <assignedToType>user</assignedToType>
         <dueDateOffset>3</dueDateOffset>
         <notifyAssignee>false</notifyAssignee>
@@ -227,7 +227,7 @@
     </tasks>
     <tasks>
         <fullName>LVGO__Resource_Request_CSM_Needed_on_this_Account9</fullName>
-        <assignedTo>prince.kumar@teladochealth.com.lcrm</assignedTo>
+        <assignedTo>sandeep.kareti@teladochealth.com.lcrm</assignedTo>
         <assignedToType>user</assignedToType>
         <dueDateOffset>3</dueDateOffset>
         <notifyAssignee>false</notifyAssignee>
@@ -238,7 +238,7 @@
     </tasks>
     <tasks>
         <fullName>LVGO__Resource_Request_CSM_Needed_on_this_Account_1</fullName>
-        <assignedTo>prince.kumar@teladochealth.com.lcrm</assignedTo>
+        <assignedTo>sandeep.kareti@teladochealth.com.lcrm</assignedTo>
         <assignedToType>user</assignedToType>
         <dueDateOffset>3</dueDateOffset>
         <notifyAssignee>false</notifyAssignee>
@@ -249,7 +249,7 @@
     </tasks>
     <tasks>
         <fullName>LVGO__Resource_Request_CSM_Needed_on_this_Account_2</fullName>
-        <assignedTo>prince.kumar@teladochealth.com.lcrm</assignedTo>
+        <assignedTo>sandeep.kareti@teladochealth.com.lcrm</assignedTo>
         <assignedToType>user</assignedToType>
         <dueDateOffset>3</dueDateOffset>
         <notifyAssignee>false</notifyAssignee>

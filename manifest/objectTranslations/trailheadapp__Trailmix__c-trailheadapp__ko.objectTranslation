@@ -45,7 +45,24 @@
         <label>업데이트 시간</label>
         <name>trailheadapp__Updated_At__c</name>
     </fields>
+    <layouts>
+        <layout>Trailmix Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>Trailmix 이름</nameFieldLabel>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>사용자 할당</label>
+        <name>trailheadapp__Assign_Multiple_Users</name>
+    </quickActions>
+    <quickActions>
+        <aspect>Master</aspect>
+        <label>사용자 할당 취소</label>
+        <name>trailheadapp__Unassign_Multiple_Users</name>
+    </quickActions>
     <webLinks>
         <label>사용자 할당</label>
         <name>trailheadapp__Assign_Users</name>

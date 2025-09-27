@@ -77,9 +77,9 @@
                     <apex:outputText escape="false" value="{!SUBSTITUTE(theCHS.clientHandoffSummary.LVGO__Population_of_Coverage__c,'<br>',';')}"/>
                     </td>
                 </tr>
-                <tr><td>Eligibility Verification Method</td><td width="50%">{!theCHS.clientHandoffSummary.Eligibility_Verification_Method__c}</td></tr>
-                <tr><td>Clinical Model</td><td width="50%">{!theCHS.clientHandoffSummary.Clinical_Model__c}</td></tr>
-                <tr><td>Clinical Referrals</td><td width="50%">{!theCHS.clientHandoffSummary.Clinical_Referrals__c}</td></tr>
+                <tr><td>Eligibility Verification Method</td><td width="50%">{!theCHS.clientHandoffSummary.LVGO__Eligibility_Verification_Method__c}</td></tr>
+                <tr><td>Clinical Model</td><td width="50%">{!theCHS.clientHandoffSummary.LVGO__Clinical_Model__c}</td></tr>
+                <tr><td>Clinical Referrals</td><td width="50%">{!theCHS.clientHandoffSummary.LVGO__Clinical_Referrals__c}</td></tr>
                 <tr><td>Clinical Data Sharing and Access</td><td width="50%">
                     <apex:outputText escape="false" value="{!SUBSTITUTE(theCHS.clientHandoffSummary.LVGO__Clinical_Data_Sharing_and_Access__c,'<br>',';')}"/>
                     </td>
@@ -156,18 +156,18 @@
                         </apex:outputText>
                         </td>
                     </tr>
-                    <tr><td>Contract Term</td><td width="50%">{!PO.Contract_Term__c}</td></tr>
+                    <tr><td>Contract Term</td><td width="50%">{!PO.LVGO__Contract_Term__c}</td></tr>
                     <tr><td>Program Renewal Notice Date</td><td width="50%">
                         <apex:outputText value="{0, date, MM/dd/yyyy}">
                             <apex:param value="{!PO.LVGO__ContractRenewalDate__c}"/>
                         </apex:outputText></td></tr>
-                    <tr><td>Participants</td><td width="50%">{!PO.Participants__c}</td></tr>
-                    <tr><td>Is there a Lapse Criteria?</td><td width="50%">{!PO.Is_there_Lapse_Criteria__c}</td></tr>
-                    <tr><td>Lapse Criteria</td><td width="50%">{!PO.Lapse_Criteria__c}</td></tr>
-                    <tr><td>Lapsed Criteria Source</td><td width="50%">{!PO.Lapsed_Criteria_Source__c}</td></tr>
-                    <tr><td>Consecutive Inactive Months to Lapsed</td><td width="50%">{!PO.Consecutive_Inactive_Months_to_Lapsed__c}</td></tr>
-                    <tr><td>Minimum Number of Participants</td><td width="50%">{!PO.Minimum_Number_of_Participants__c}</td></tr>
-                    <tr><td>Performance Guarantees?</td><td width="50%">{!PO.Performance_Guarantees__c}</td></tr>
+                    <tr><td>Participants</td><td width="50%">{!PO.LVGO__Participants__c}</td></tr>
+                    <tr><td>Is there a Lapse Criteria?</td><td width="50%">{!PO.LVGO__Is_there_Lapse_Criteria__c}</td></tr>
+                    <tr><td>Lapse Criteria</td><td width="50%">{!PO.LVGO__Lapse_Criteria__c}</td></tr>
+                    <tr><td>Lapsed Criteria Source</td><td width="50%">{!PO.LVGO__Lapsed_Criteria_Source__c}</td></tr>
+                    <tr><td>Consecutive Inactive Months to Lapsed</td><td width="50%">{!PO.LVGO__Consecutive_Inactive_Months_to_Lapsed__c}</td></tr>
+                    <tr><td>Minimum Number of Participants</td><td width="50%">{!PO.LVGO__Minimum_Number_of_Participants__c}</td></tr>
+                    <tr><td>Performance Guarantees?</td><td width="50%">{!PO.LVGO__Performance_Guarantees__c}</td></tr>
                     <apex:outputPanel style="width: 100%;" layout="block" rendered="{!PO.LVGO__Program_Name__c== 'Hypertension'}">
                         <tr><td style="width: 100%;"><u>Additional Details - HTN</u></td></tr>
                         <tr><td style="width: 100%;">
@@ -255,7 +255,7 @@
                 <apex:repeat value="{!theCHS.opportunitiesForParentAccount}" var="Oppty">
                     <tr>
                         <td style="border-bottom: 1px solid #ddd;">{!Oppty.Name}</td>
-                        <td style="border-bottom: 1px solid #ddd;">{!Oppty.StageName__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!Oppty.LVGO__StageName__c}</td>
                         <td style="border-bottom: 1px solid #ddd;">                     
                             <apex:outputText value="{0, date, MM/dd/yyyy}">
                                 <apex:param value="{!Oppty.LVGO__CloseDate__c}"/>
@@ -281,9 +281,9 @@
                 <apex:repeat value="{!theCHS.partnerRelationshipForParentAccount}" var="PRel">
                     <tr>
                         <td style="border-bottom: 1px solid #ddd;">{!PRel.Name}</td>
-                        <td style="border-bottom: 1px solid #ddd;">{!PRel.RelationshipType__c}</td>
-                        <td style="border-bottom: 1px solid #ddd;">{!PRel.Partner_Account_Text__c}</td>
-                        <td style="border-bottom: 1px solid #ddd;">{!PRel.Active__c}</td>                  
+                        <td style="border-bottom: 1px solid #ddd;">{!PRel.LVGO__RelationshipType__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!PRel.LVGO__Partner_Account_Text__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!PRel.LVGO__Active__c}</td>                  
                     </tr>
                 </apex:repeat>
             </table> 
@@ -304,9 +304,9 @@
                 <apex:repeat value="{!theCHS.contractPartnerRelationshipForParentAccount}" var="CRel">
                     <tr>
                         <td style="border-bottom: 1px solid #ddd;">{!CRel.Name}</td>
-                        <td style="border-bottom: 1px solid #ddd;">{!CRel.RelationshipType__c}</td>
-                        <td style="border-bottom: 1px solid #ddd;">{!CRel.Partner_Account_Text__c}</td>
-                        <td style="border-bottom: 1px solid #ddd;">{!CRel.Active__c}</td>                  
+                        <td style="border-bottom: 1px solid #ddd;">{!CRel.LVGO__RelationshipType__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!CRel.LVGO__Partner_Account_Text__c}</td>
+                        <td style="border-bottom: 1px solid #ddd;">{!CRel.LVGO__Active__c}</td>                  
                     </tr>
                 </apex:repeat>
             </table> 

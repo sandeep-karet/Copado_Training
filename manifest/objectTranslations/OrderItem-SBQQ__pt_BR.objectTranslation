@@ -249,6 +249,25 @@
         <name>SBQQ__UpgradedSubscription__c</name>
         <relationshipLabel>Produtos do pedido atualizados</relationshipLabel>
     </fields>
+    <layouts>
+        <layout>CPQ Order Product Layout</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Contracting Information --></label>
+            <section>Contracting Information</section>
+        </sections>
+        <sections>
+            <label><!-- Price Information --></label>
+            <section>Price Information</section>
+        </sections>
+        <sections>
+            <label><!-- Quote and Subscription Information --></label>
+            <section>Quote and Subscription Information</section>
+        </sections>
+    </layouts>
     <validationRules>
         <errorMessage>Não é possível editar o status de lançamento em um produto do pedido ativado.</errorMessage>
         <name>SBQQ__CannotChangeBookingIndicatorOnActivation</name>

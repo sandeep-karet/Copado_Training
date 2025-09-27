@@ -100,8 +100,8 @@ The Client Member Code must contain only UPPERCASE letters, numbers, and/or a da
         <name>LVGO__OneApp_Access__c</name>
     </fields>
     <fields>
-        <help><!-- This is the date a client is starting on the OneApp experience. If existing client is migrating, then ensure this is completed at least 2 weeks before client launches on OneApp. Marketing needs at least 1 week for changes to take effect. --></help>
-        <label><!-- OneApp Start Date --></label>
+        <help><!-- This is the planned date for Client OneApp Migration. Ideally, this date should be at least 2 weeks in future. --></help>
+        <label><!-- OneApp Migration Date --></label>
         <name>LVGO__OneApp_Migration_Date__c</name>
     </fields>
     <fields>
@@ -117,6 +117,20 @@ The Client Member Code must contain only UPPERCASE letters, numbers, and/or a da
         <label><!-- myStrength 1.0 Access Code(s) --></label>
         <name>LVGO__myStrength_1_0_Access_Code_s__c</name>
     </fields>
+    <layouts>
+        <layout>Client Member Code Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Registration Code Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <recordTypes>
         <label><!-- Client Member Code --></label>
         <name>LVGO__ClientMemberCode</name>
@@ -126,10 +140,6 @@ The Client Member Code must contain only UPPERCASE letters, numbers, and/or a da
         <name>LVGO__RegistrationOnly</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
-    <validationRules>
-        <errorMessage><!-- If OneApp Access is checked you must enter a OneApp Start Date value. If you enter a OneApp Start Date value then you need to enable OneApp Access flag. --></errorMessage>
-        <name>LVGO__Check_oneApp_Access_n_oneApp_start_Date</name>
-    </validationRules>
     <validationRules>
         <errorMessage><!-- The Client Member Code must contain only UPPERCASE letters, numbers, and/or a dash --></errorMessage>
         <name>LVGO__Limit_Characters</name>

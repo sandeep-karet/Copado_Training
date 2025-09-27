@@ -21,7 +21,7 @@
             <name>LVGO__Notify_Users_on_Survey_Status</name>
             <type>Alert</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(ISCHANGED(LVGO__Survey_Status__c),($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>

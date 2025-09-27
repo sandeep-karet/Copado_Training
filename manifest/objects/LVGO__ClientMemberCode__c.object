@@ -408,8 +408,8 @@ IF(FIND(MID(Id,11,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
     <fields>
         <fullName>LVGO__OneApp_Migration_Date__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>This is the date a client is starting on the OneApp experience. If existing client is migrating, then ensure this is completed at least 2 weeks before client launches on OneApp. Marketing needs at least 1 week for changes to take effect.</inlineHelpText>
-        <label>OneApp Start Date</label>
+        <inlineHelpText>This is the planned date for Client OneApp Migration. Ideally, this date should be at least 2 weeks in future.</inlineHelpText>
+        <label>OneApp Migration Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -564,25 +564,6 @@ IF(FIND(MID(Id,11,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
         <searchResultsAdditionalFields>LVGO__Contract__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
-    <validationRules>
-        <fullName>LVGO__Check_oneApp_Access_n_oneApp_start_Date</fullName>
-        <active>true</active>
-        <description>This is created as part of SCDEV-5393. It is to check oneApp Access and oneApp Start date both the fields has a values in it.</description>
-        <errorConditionFormula>AND ($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c,
-OR
-(
-  AND(  
-    LVGO__OneApp_Access__c= TRUE, 
-    ISBLANK(LVGO__OneApp_Migration_Date__c)),
-
-  AND( 
-    LVGO__OneApp_Access__c = FALSE, 
-    NOT(ISBLANK(LVGO__OneApp_Migration_Date__c))
-    ) 
-  )
-)</errorConditionFormula>
-        <errorMessage>If OneApp Access is checked you must enter a OneApp Start Date value. If you enter a OneApp Start Date value then you need to enable OneApp Access flag.</errorMessage>
-    </validationRules>
     <validationRules>
         <fullName>LVGO__Limit_Characters</fullName>
         <active>true</active>

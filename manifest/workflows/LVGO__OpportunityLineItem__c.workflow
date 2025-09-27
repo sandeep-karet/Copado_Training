@@ -85,7 +85,7 @@
             <name>LVGO__Copy_Net_Program_ARR</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(ISCHANGED(LVGO__Opportunity_Owner_Role__c),$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -95,7 +95,7 @@
             <name>LVGO__Sales_Price_equals_Sales_Comm_Price</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <description>Sales Commissionable Price will be updated to match Sales Price until the Opportunity is Closed Won.</description>
         <formula>AND($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c,                     NOT(ISPICKVAL(LVGO__Opportunity__r.LVGO__StageName__c,&quot;Closed Won&quot;)),                     NOT(ISPICKVAL(LVGO__Opportunity__r.LVGO__StageName__c,&quot;Closed Lost&quot;)),                     NOT(ISPICKVAL(LVGO__Opportunity__r.LVGO__StageName__c,&quot;Closed No Decision&quot;))                 )</formula>
         <triggerType>onAllChanges</triggerType>
@@ -106,7 +106,7 @@
             <name>LVGO__Sales_Price_equals_Sales_Comm_Price</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <description>Sales Commissionable Price will be updated to match Sales Price until the Opportunity is Closed Won.</description>
         <formula>AND($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c,                     NOT(ISPICKVAL(LVGO__Opportunity__r.LVGO__StageName__c,&quot;Closed Won&quot;)),                     NOT(ISPICKVAL(LVGO__Opportunity__r.LVGO__StageName__c,&quot;Closed Lost&quot;)),                     NOT(ISPICKVAL(LVGO__Opportunity__r.LVGO__StageName__c,&quot;Closed No Decision&quot;))                 )</formula>
         <triggerType>onAllChanges</triggerType>
@@ -117,7 +117,7 @@
             <name>LVGO__Set_Integrate_Program_field_to_TRUE</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <description>Sets the Integrate Program field on the Opportunity Program to TRUE.</description>
         <formula>AND($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c,LVGO__IntegrateProgram__c = FALSE)</formula>
         <triggerType>onCreateOnly</triggerType>
@@ -128,7 +128,7 @@
             <name>LVGO__Set_the_Opportunity_Product_Name</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <criteriaItems>
             <field>LVGO__OpportunityLineItem__c.LVGO__ProductCode__c</field>
             <operation>notEqual</operation>

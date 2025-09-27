@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -45,10 +44,6 @@
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>LVGO__StageName__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>LVGO__Opportunity_Covered_Lives__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -114,19 +109,11 @@
                 <behavior>Edit</behavior>
                 <field>LVGO__Configuration_Team_Status__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>LVGO__Config_Notes__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>LVGO__ContractOps_Status__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>LVGO__Contract_Data_Entry_Owner__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -291,7 +278,6 @@
         <fields>LVGO__Program__c</fields>
         <fields>LVGO__Quantity__c</fields>
         <fields>LVGO__Product_Participants__c</fields>
-        <fields>LVGO__Product_Rollup__c</fields>
         <fields>LVGO__UnitPrice__c</fields>
         <fields>LVGO__ListPrice__c</fields>
         <relatedList>LVGO__OpportunityLineItem__c.LVGO__Opportunity__c</relatedList>
@@ -327,7 +313,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h7c000000QWRU</masterLabel>
+        <masterLabel>00h7c000000QWRP</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

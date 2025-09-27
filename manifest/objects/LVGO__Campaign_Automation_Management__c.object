@@ -971,23 +971,5 @@ NOT(ISBLANK(LVGO__Start_Date__c)),
 LVGO__Start_Date__c &lt; TODAY())</errorConditionFormula>
         <errorMessage>Start Date cannot be in the past, please select a valid date.</errorMessage>
     </validationRules>
-    <validationRules>
-        <fullName>LVGO__Validation_for_Recurring_Frequency</fullName>
-        <active>true</active>
-        <errorConditionFormula>AND ( 
-     OR(
-        AND(
-            LVGO__Allow_Recurring_Order__c = TRUE,
-            ISBLANK(TEXT(LVGO__Recurring_Order_Frequency__c))
-        ),
-        AND(
-            NOT(ISBLANK(TEXT(LVGO__Recurring_Order_Frequency__c))),
-            LVGO__Allow_Recurring_Order__c = FALSE
-        )
-     ),
-     $Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c
-)</errorConditionFormula>
-        <errorMessage>When Allow Recurring Order is checked, Recurring Frequency value is required.</errorMessage>
-    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

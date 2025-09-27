@@ -11249,10 +11249,6 @@
     </customPermissions>
     <customPermissions>
         <enabled>true</enabled>
-        <name>LVGO__Financially_Material_Bypass_Prevent_LV_Contract_Account_edit</name>
-    </customPermissions>
-    <customPermissions>
-        <enabled>true</enabled>
         <name>LVGO__Send_Enrollment_Survey</name>
     </customPermissions>
     <customPermissions>
@@ -26349,6 +26345,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>LVGO__Contact__c.LVGO__Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>LVGO__Contact__c.LVGO__Package_Deployment_Test__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

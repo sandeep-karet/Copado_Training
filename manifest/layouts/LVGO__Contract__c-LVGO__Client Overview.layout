@@ -82,14 +82,6 @@
                 <behavior>Edit</behavior>
                 <field>LVGO__Provider_Based_Care__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>LVGO__Cardio_Features_Enabled__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>LVGO__Cardio_Start_Date__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -115,10 +107,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>LVGO__Registration_Customizations__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>LVGO__Hide_SOGI_Questions__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -194,6 +182,18 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>LVGO__Disable_Live_Program_Eligibility_Check__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>LVGO__Eligibility_Escalation_Path__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>LVGO__Escalation_Contact__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>LVGO__Escalation_Details__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -452,10 +452,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>LVGO__Remove_Unlimited__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>LVGO__No_OEP_Direct_Mail_Inserts__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -1111,13 +1107,9 @@
         <fields>LVGO__Contract_Number_HyperLink__c</fields>
         <fields>LVGO__Program_Name__c</fields>
         <fields>LVGO__Program_Type__c</fields>
-        <fields>LVGO__Status__c</fields>
-        <fields>LVGO__Program_Start_Date__c</fields>
-        <fields>LVGO__Program_End_Date__c</fields>
         <fields>LVGO__Program_Implementation_status__c</fields>
         <fields>LVGO__Actual_Launch_Date__c</fields>
-        <fields>LVGO__PPPM__c</fields>
-        <fields>LVGO__Contract_Data_Entry_Owner__c</fields>
+        <fields>LVGO__ContractRenewalDate__c</fields>
         <relatedList>LVGO__Contract__c.LVGO__Client_Overview__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -1130,7 +1122,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h5G000005hSps</masterLabel>
+        <masterLabel>00h7h000000r1ZZ</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>1</sizeY>
         <summaryLayoutItems>

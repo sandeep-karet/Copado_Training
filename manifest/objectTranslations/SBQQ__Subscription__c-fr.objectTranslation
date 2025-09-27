@@ -671,7 +671,37 @@
         <name>Vendor_Partner__c</name>
     </fields>
     <gender>Masculine</gender>
+    <layouts>
+        <layout>Copy of Subscription Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Pricing Info --></label>
+            <section>Pricing Info</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Subscription Layout</layout>
+        <sections>
+            <label><!-- Billing Info --></label>
+            <section>Billing Info</section>
+        </sections>
+        <sections>
+            <label>Liens personnalisés</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>Informations de tarification</label>
+            <section>Pricing Info</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>N° d&apos;abonnement</nameFieldLabel>
+    <quickActions>
+        <label><!-- Mass Create PSF --></label>
+        <name>Massive_Create_PSF</name>
+    </quickActions>
     <startsWith>Vowel</startsWith>
     <validationRules>
         <errorMessage><!-- Your assigned Profile does not allow for creating new Subscriptions. --></errorMessage>

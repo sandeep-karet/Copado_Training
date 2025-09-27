@@ -22,7 +22,7 @@
         <description>An opportunity has been closed New/Cross/Expansion</description>
         <protected>false</protected>
         <recipients>
-            <recipient>prince.kumar@teladochealth.com.lcrm</recipient>
+            <recipient>sandeep.kareti@teladochealth.com.lcrm</recipient>
             <type>user</type>
         </recipients>
         <recipients>
@@ -49,7 +49,7 @@
             <type>owner</type>
         </recipients>
         <recipients>
-            <recipient>prince.kumar@teladochealth.com.lcrm</recipient>
+            <recipient>sandeep.kareti@teladochealth.com.lcrm</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>

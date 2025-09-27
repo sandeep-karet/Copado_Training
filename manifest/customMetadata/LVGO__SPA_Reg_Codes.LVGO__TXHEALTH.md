@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>LVGO__Registration_Code_ID__c</field>
-        <value xsi:type="xsd:string">a8J5G000000CvozUAC</value>
+        <value xsi:type="xsd:string">a8J5G000000CuBUUA0</value>
     </values>
     <values>
         <field>LVGO__SPA_CMC_Prefix__c</field>

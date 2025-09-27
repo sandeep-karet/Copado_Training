@@ -666,7 +666,37 @@
         <label><!-- Vendor Partner --></label>
         <name>Vendor_Partner__c</name>
     </fields>
+    <layouts>
+        <layout>Copy of Subscription Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Pricing Info --></label>
+            <section>Pricing Info</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Subscription Layout</layout>
+        <sections>
+            <label><!-- Billing Info --></label>
+            <section>Billing Info</section>
+        </sections>
+        <sections>
+            <label>カスタムリンク</label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>価格設定情報</label>
+            <section>Pricing Info</section>
+        </sections>
+    </layouts>
     <nameFieldLabel>サブスクリプション番号</nameFieldLabel>
+    <quickActions>
+        <label><!-- Mass Create PSF --></label>
+        <name>Massive_Create_PSF</name>
+    </quickActions>
     <validationRules>
         <errorMessage><!-- Your assigned Profile does not allow for creating new Subscriptions. --></errorMessage>
         <name>Prevent_Subscription_Creation</name>

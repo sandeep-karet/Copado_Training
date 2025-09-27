@@ -17,7 +17,7 @@
             <name>LVGO__Update_Client_Tag_Validation_field</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <description>Updates Client Tag Validation field to match the Client Tag Name and validates it&apos;s unique.</description>
         <formula>$Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Workflows__c &amp;&amp; (ISNEW() || ISCHANGED( Name ))</formula>
         <triggerType>onAllChanges</triggerType>

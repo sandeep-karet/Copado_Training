@@ -54,13 +54,11 @@
         <relationshipLabel><!-- Program Overviews --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- Account --></label>
         <name>LVGO__Account__c</name>
         <relationshipLabel><!-- Contracts --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
         <label><!-- Account has SLAs? --></label>
         <name>LVGO__Account_has_SLAs__c</name>
         <picklistValues>
@@ -92,7 +90,7 @@
         <name>LVGO__Active__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Integrated with Redshift --></help>
         <label><!-- Initial Launch Date --></label>
         <name>LVGO__Actual_Launch_Date__c</name>
     </fields>
@@ -405,7 +403,7 @@
         <relationshipLabel><!-- Contracts (Billing Partner) --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Integrated with Redshift and NetSuite --></help>
         <label><!-- Billing Method --></label>
         <name>LVGO__Billing_Method__c</name>
         <picklistValues>
@@ -427,7 +425,7 @@
         <relationshipLabel><!-- Contracts (Billing POC) --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Integrated with NetSuite and Redshift --></help>
         <label><!-- Billing Partner Fee --></label>
         <name>LVGO__Billing_Partner_Admin_Fee__c</name>
     </fields>
@@ -1020,7 +1018,6 @@
         <name>LVGO__Coaching_Sessions__c</name>
     </fields>
     <fields>
-        <help><!-- Member is required to have had a coaching session within this timeframe in order to be covered [ongoing requirement].  Flows to Redshift --></help>
         <label><!-- Coaching interaction threshold (days) --></label>
         <name>LVGO__Coaching_interaction_threshold_days__c</name>
     </fields>
@@ -1057,7 +1054,7 @@
         <name>LVGO__Confirm_On_No_Recruitable_Match__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Integrated with NetSuite and Redshift --></help>
         <label><!-- Consecutive Inactive Months to Lapsed --></label>
         <name>LVGO__Consecutive_Inactive_Months_to_Lapsed__c</name>
         <picklistValues>
@@ -1159,7 +1156,6 @@
         <name>LVGO__Contract_Name__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
         <label><!-- Contract Number --></label>
         <name>LVGO__Contract_Number_HyperLink__c</name>
     </fields>
@@ -1168,13 +1164,11 @@
         <name>LVGO__Contract_Path_Deprecated__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
         <label><!-- Contract Path --></label>
         <name>LVGO__Contract_Path__c</name>
         <relationshipLabel><!-- Contracts (Contract Path) --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
         <label><!-- Contract Term --></label>
         <name>LVGO__Contract_Term__c</name>
     </fields>
@@ -1229,7 +1223,6 @@
         <name>LVGO__Cumulative_Program_Cap__c</name>
     </fields>
     <fields>
-        <help><!-- Total number of required weigh-ins for an initial prescription [one time requirement].  Flows to Redshift --></help>
         <label><!-- Cumulative unique days with weigh-ins --></label>
         <name>LVGO__Cumulative_unique_days_with_weigh_ins__c</name>
         <picklistValues>
@@ -1346,7 +1339,7 @@
         <name>LVGO__CurrentUser_CIM__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
+        <help><!-- Integrated with NetSuite --></help>
         <label><!-- Custom PG Type --></label>
         <name>LVGO__CustomPGType__c</name>
     </fields>
@@ -1757,7 +1750,6 @@
         <name>LVGO__EndDate__c</name>
     </fields>
     <fields>
-        <help><!-- See default engagement criteria options. Any custom configurations outside of the default options require approval from clinical product. --></help>
         <label><!-- Engagement Criteria Option --></label>
         <name>LVGO__Engagement_Criteria_Option__c</name>
         <picklistValues>
@@ -2877,7 +2869,6 @@
         <name>LVGO__Fast_Start_Credit_Offered_old__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
         <label><!-- Fast Start Credit Type --></label>
         <name>LVGO__Fast_Start_Credit_Type__c</name>
         <picklistValues>
@@ -2894,7 +2885,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
         <label><!-- Fast Start Custom --></label>
         <name>LVGO__Fast_Start_Custom__c</name>
     </fields>
@@ -3265,7 +3255,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Indicates whether Lapse Criteria is required. If so, users will be required to populate the Lapse Criteria, Lapse Criteria Detail, and Consecutive Inactive Months to Lapsed fields.- - Edits Controlled - Financially Material --></help>
+        <help><!-- Required in SpringCM; used to indicate whether there Lapse Criteria is required. If so, users will be required to populate the Lapse Criteria, Lapse Criteria Detail, and Consecutive Inactive Months to Lapsed fields. --></help>
         <label><!-- Is there Lapse Criteria? --></label>
         <name>LVGO__Is_there_Lapse_Criteria__c</name>
         <picklistValues>
@@ -3278,7 +3268,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Indicate whether there is a Participant Term Minimum number of Months required. If so, users will be required to populate the Participant Term Minimum Months field.- - Edits Controlled - Financially Material --></help>
+        <help><!-- Required in SpringCM; used to indicate whether there is a Participant Term Minimum number of Months required. If so, users will be required to populate the Participant Term Minimum Months field. --></help>
         <label><!-- Is there a PTMM? --></label>
         <name>LVGO__Is_there_a_PTMM__c</name>
         <picklistValues>
@@ -3676,7 +3666,6 @@
         <name>LVGO__Logo_File_Name__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- Lost/Damaged Device 1 --></label>
         <name>LVGO__Lost_Damaged_Device_1__c</name>
         <picklistValues>
@@ -3693,7 +3682,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- Lost/Damaged Device 2 --></label>
         <name>LVGO__Lost_Damaged_Device_2__c</name>
         <picklistValues>
@@ -3710,7 +3698,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- Lost/Damaged Device Price 2 --></label>
         <name>LVGO__Lost_Damaged_Device_Price_2__c</name>
     </fields>
@@ -3763,7 +3750,7 @@
         <name>LVGO__Member_Comms_Need_Client_Approval__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Integrated with Redshift --></help>
         <label><!-- Initial Member Recruitment --></label>
         <name>LVGO__Member_Recruitment_Began__c</name>
     </fields>
@@ -3855,7 +3842,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Indicates price discount for that program when a member is signed up for multiple programs during that billing cycle.- - Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- This column will be used to reflect the price discount for that program when a member is signed up for multiple programs during that billing cycle. --></help>
         <label><!-- Multiprogram Discount --></label>
         <name>LVGO__Multiprogram_Discount__c</name>
     </fields>
@@ -4209,7 +4196,7 @@
         <name>LVGO__PG_Analysis_Due_Date__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
+        <help><!-- Integrated with NetSuite --></help>
         <label><!-- PG Custom Detail --></label>
         <name>LVGO__PG_Custom_Detail__c</name>
     </fields>
@@ -4234,7 +4221,6 @@
         <name>LVGO__PG_Satisfaction__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- PMPM --></label>
         <name>LVGO__PMPM__c</name>
     </fields>
@@ -4248,7 +4234,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Integrated with NetSuite and Redshift --></help>
         <label><!-- PPPM --></label>
         <name>LVGO__PPPM__c</name>
     </fields>
@@ -4258,7 +4244,7 @@
         <name>LVGO__ParticipantSatisfaction__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Integrated with Redshift and NetSuite --></help>
         <label><!-- Participant Term Minimum Months --></label>
         <name>LVGO__Participant_Term_Minimum_Months__c</name>
         <picklistValues>
@@ -4311,7 +4297,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- Participants --></label>
         <name>LVGO__Participants__c</name>
     </fields>
@@ -4427,7 +4412,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Used to indicate whether there are Performance Guarantees. If so, users will be required to populate the PG fields.- - Edits Controlled - Financially Material --></help>
+        <help><!-- Integrated with NetSuite. Required in SpringCM; used to indicate whether there are Performance Guarantees. If so, users will be required to populate the PG fields. --></help>
         <label><!-- Performance Guarantees? --></label>
         <name>LVGO__Performance_Guarantees__c</name>
         <picklistValues>
@@ -4662,7 +4647,7 @@
         <relationshipLabel><!-- Contracts --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Integrated with Redshift --></help>
         <label><!-- Pricing Model --></label>
         <name>LVGO__Pricing_Model__c</name>
         <picklistValues>
@@ -4679,7 +4664,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Populated by SpringCM. Integrated with NetSuite and Redshift --></help>
         <label><!-- Enrollment Cap --></label>
         <name>LVGO__Product_Enrollment_Cap__c</name>
     </fields>
@@ -4712,7 +4697,6 @@
         <name>LVGO__Program_End_Date__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- Program Implementation Status --></label>
         <name>LVGO__Program_Implementation_status__c</name>
         <picklistValues>
@@ -4745,7 +4729,7 @@
         <name>LVGO__Program_Name_Contract_Path__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Integrated with NetSuite and Redshift --></help>
         <label><!-- Program --></label>
         <name>LVGO__Program_Name__c</name>
         <picklistValues>
@@ -4887,7 +4871,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Date the program becomes effective. - - Edits Controlled - Financially Material --></help>
+        <help><!-- Date the program becomes effective. Integrated with NetSuite. --></help>
         <label><!-- Program Start Date --></label>
         <name>LVGO__Program_Start_Date__c</name>
     </fields>
@@ -4897,7 +4881,6 @@
         <name>LVGO__Program_Transition_Date__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- Program Type --></label>
         <name>LVGO__Program_Type__c</name>
         <picklistValues>
@@ -5044,12 +5027,12 @@
         <name>LVGO__Relaunch_Start_Date__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
+        <help><!-- Integrated with Redshift --></help>
         <label><!-- Remaining Mths &gt;= 9 Early Term Fee --></label>
         <name>LVGO__Remaining_Mths_greater_9_Early_Term_Fee__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
+        <help><!-- Integrated with Redshift --></help>
         <label><!-- Remaining Mths &lt; 9 Early Term Fee --></label>
         <name>LVGO__Remaining_Mths_less_9_Early_Term_Fee__c</name>
     </fields>
@@ -5109,7 +5092,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Integrated with NetSuite --></help>
         <label><!-- Lost/Damaged Device Responsibility --></label>
         <name>LVGO__Replacement_Device_Responsibility__c</name>
         <picklistValues>
@@ -5130,7 +5113,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Integrated with NetSuite and Redshift --></help>
         <label><!-- Lost/Damaged Device Price 1 --></label>
         <name>LVGO__Replacement_Fee__c</name>
     </fields>
@@ -5159,7 +5142,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Number of coaching interactions required in first 90 days. This is calculated as live coaching sessions plus food log feedback sessions [one time requirement].  Flows to Redshift --></help>
         <label><!-- Required coaching interactions --></label>
         <name>LVGO__Required_coaching_interactions__c</name>
         <picklistValues>
@@ -5192,7 +5174,6 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Required number of live coaching sessions in the first 90 days. Coaching sessions are a subset of the coaching interactions [one time requirement].  Flows to Redshift --></help>
         <label><!-- Required coaching sessions --></label>
         <name>LVGO__Required_coaching_sessions__c</name>
         <picklistValues>
@@ -5245,7 +5226,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- If &quot;Account has SLAs&quot; is checked, the details of where the SLAs are outlined can be found here - - Edits Controlled - Financially Material --></help>
+        <help><!-- If &quot;Account has SLAs&quot; is checked, the details of where the SLAs are outlined can be found here --></help>
         <label><!-- SLA Details --></label>
         <name>LVGO__SLA_Details__c</name>
     </fields>
@@ -5349,7 +5330,6 @@
         <name>LVGO__Start_Date_Today__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- Status --></label>
         <name>LVGO__Status__c</name>
         <picklistValues>
@@ -5411,7 +5391,6 @@
         <name>LVGO__TaskRay_Parent_Project_Id__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
         <label><!-- Termination Fee --></label>
         <name>LVGO__Termination_Fee__c</name>
     </fields>
@@ -5420,12 +5399,10 @@
         <name>LVGO__Termination_for_Convenience__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- Tier2 PPPM Start Month --></label>
         <name>LVGO__Tier2_PPPM_Start_Month__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- Tier2 PPPM --></label>
         <name>LVGO__Tier2_PPPM__c</name>
     </fields>
@@ -5438,12 +5415,10 @@
         <name>LVGO__Tier2_Partner_Fee__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- Tier3 PPPM Start Month --></label>
         <name>LVGO__Tier3_PPPM_Start_Month__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material -  Flows to Redshift --></help>
         <label><!-- Tier3 PPPM --></label>
         <name>LVGO__Tier3_PPPM__c</name>
     </fields>
@@ -5453,7 +5428,6 @@
         <name>LVGO__Time_horizon_for_criteria_below_days__c</name>
     </fields>
     <fields>
-        <help><!-- Required days in WM/DPP programs prior to coverage. This is a one-time requirement.  Flows to Redshift --></help>
         <label><!-- Time in program threshold (days) --></label>
         <name>LVGO__Time_in_program_threshold_days__c</name>
     </fields>
@@ -5462,7 +5436,6 @@
         <name>LVGO__Transitioning_DPP_Year_2_members__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
         <label><!-- True-up Frequency --></label>
         <name>LVGO__True_up_Frequency__c</name>
     </fields>
@@ -5504,7 +5477,6 @@
         <name>LVGO__Union_Printer__c</name>
     </fields>
     <fields>
-        <help><!-- Edits Controlled - Financially Material --></help>
         <label><!-- Unique Contract Terms --></label>
         <name>LVGO__Unique_Contract_Terms__c</name>
     </fields>
@@ -5524,7 +5496,6 @@
         <name>LVGO__Unique_weigh_in_days__c</name>
     </fields>
     <fields>
-        <help><!-- Member is required to have had this number of weigh-ins on unique days within the last 14 days to be covered [ongoing requirement].  Flows to Redshift --></help>
         <label><!-- Unique weigh-in days (last 14) --></label>
         <name>LVGO__Unique_weigh_in_days_last_14__c</name>
         <picklistValues>
@@ -5557,7 +5528,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Cost charged to the member upon enrolling. - - Edits Controlled - Financially Material -  Flows to Redshift --></help>
+        <help><!-- Cost charged the member upon enrolling. Integrated with NetSuite and Redshift. --></help>
         <label><!-- Upfront Per Member --></label>
         <name>LVGO__Up_Front_Per_Member__c</name>
     </fields>
@@ -5670,6 +5641,190 @@
         <label><!-- sFTP in Place? --></label>
         <name>LVGO__sFTP_in_Place__c</name>
     </fields>
+    <layouts>
+        <layout>Client Overview</layout>
+        <sections>
+            <label><!-- Client Implementation --></label>
+            <section>Client Implementation</section>
+        </sections>
+        <sections>
+            <label><!-- Client Overview --></label>
+            <section>Client Overview</section>
+        </sections>
+        <sections>
+            <label><!-- Clinical --></label>
+            <section>Clinical</section>
+        </sections>
+        <sections>
+            <label><!-- Coaching --></label>
+            <section>Coaching</section>
+        </sections>
+        <sections>
+            <label><!-- Contract: Billing/Fast Start Credit (SpringCM) --></label>
+            <section>Contract: Billing/Fast Start Credit (SpringCM)</section>
+        </sections>
+        <sections>
+            <label><!-- Contract: General (SpringCM) --></label>
+            <section>Contract: General (SpringCM)</section>
+        </sections>
+        <sections>
+            <label><!-- Contract: Reporting --></label>
+            <section>Contract: Reporting</section>
+        </sections>
+        <sections>
+            <label><!-- Contract: Salesforce Record Ids (SpringCM) --></label>
+            <section>Contract: Salesforce Record Ids (SpringCM)</section>
+        </sections>
+        <sections>
+            <label><!-- Contract: Signatures (SpringCM) --></label>
+            <section>Contract: Signatures (SpringCM)</section>
+        </sections>
+        <sections>
+            <label><!-- Data Operations --></label>
+            <section>Data Operations</section>
+        </sections>
+        <sections>
+            <label><!-- Eligibility --></label>
+            <section>Eligibility</section>
+        </sections>
+        <sections>
+            <label><!-- Eligibility Notes --></label>
+            <section>Eligibility Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Enrollment Language Preference --></label>
+            <section>Enrollment Language Preference</section>
+        </sections>
+        <sections>
+            <label><!-- Enrollment Marketing --></label>
+            <section>Enrollment Marketing</section>
+        </sections>
+        <sections>
+            <label><!-- Integrations --></label>
+            <section>Integrations</section>
+        </sections>
+        <sections>
+            <label><!-- Livongo Incentives(EM) --></label>
+            <section>Livongo Incentives(EM)</section>
+        </sections>
+        <sections>
+            <label><!-- Member Marketing --></label>
+            <section>Member Marketing</section>
+        </sections>
+        <sections>
+            <label><!-- Member Support --></label>
+            <section>Member Support</section>
+        </sections>
+        <sections>
+            <label><!-- Open Enrollment --></label>
+            <section>Open Enrollment</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contract Layout</layout>
+        <sections>
+            <label><!-- Fast Start --></label>
+            <section>Fast Start</section>
+        </sections>
+        <sections>
+            <label><!-- Performance Guarantees --></label>
+            <section>Performance Guarantees</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Agreement</layout>
+        <sections>
+            <label><!-- Clinical --></label>
+            <section>Clinical</section>
+        </sections>
+        <sections>
+            <label><!-- Contract: Client / Member Details --></label>
+            <section>Contract: Client / Member Details</section>
+        </sections>
+        <sections>
+            <label><!-- Contract: Partnership Details --></label>
+            <section>Contract: Partnership Details</section>
+        </sections>
+        <sections>
+            <label><!-- Contract: Pricing and Fees --></label>
+            <section>Contract: Pricing and Fees</section>
+        </sections>
+        <sections>
+            <label><!-- Contract: Reporting --></label>
+            <section>Contract: Reporting</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Data Operations --></label>
+            <section>Data Operations</section>
+        </sections>
+        <sections>
+            <label><!-- Eligibility --></label>
+            <section>Eligibility</section>
+        </sections>
+        <sections>
+            <label><!-- Enrollment Marketing --></label>
+            <section>Enrollment Marketing</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Program Overview</layout>
+        <sections>
+            <label><!-- Client Implementation --></label>
+            <section>Client Implementation</section>
+        </sections>
+        <sections>
+            <label><!-- Client Incentives --></label>
+            <section>Client Incentives</section>
+        </sections>
+        <sections>
+            <label><!-- Contract: Performance Guarantees (SpringCM) --></label>
+            <section>Contract: Performance Guarantees (SpringCM)</section>
+        </sections>
+        <sections>
+            <label><!-- Contract: Program Schedule (SpringCM) --></label>
+            <section>Contract: Program Schedule (SpringCM)</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Enrollment Marketing --></label>
+            <section>Enrollment Marketing</section>
+        </sections>
+        <sections>
+            <label><!-- Member Support --></label>
+            <section>Member Support</section>
+        </sections>
+        <sections>
+            <label><!-- Program Eligibility --></label>
+            <section>Program Eligibility</section>
+        </sections>
+        <sections>
+            <label><!-- Program Engagement Criteria --></label>
+            <section>Program Engagement Criteria</section>
+        </sections>
+        <sections>
+            <label><!-- Program Overview --></label>
+            <section>Program Overview</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- WP Non-Anchor Layout --></label>
+        <name>LVGO__WP_Non_Anchor_Layout</name>
+    </quickActions>
     <recordTypes>
         <description><!-- Represents the overarching Program Agreement between Livongo and Client + the Client&apos;s specific operational processes --></description>
         <label><!-- Client Overview --></label>
@@ -5697,10 +5852,6 @@
     <validationRules>
         <errorMessage><!-- Only Legal users are able to edit this record due to its Status being either &quot;Expired&quot; or &quot;Terminated&quot;.  If you believe you this record needs to be updated, please Chatter @Livongo Legal. --></errorMessage>
         <name>LVGO__Cannot_edit_Expired_Terminated_Contracts</name>
-    </validationRules>
-    <validationRules>
-        <errorMessage><!-- If Cardio Features Enabled is checked you must enter a Cardio Start Date value. If you enter a Cardio Start Date value then you need to enable Cardio Features Enabled flag. --></errorMessage>
-        <name>LVGO__Cardio_Features_Required_Check</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Coaching interaction threshold is not between 14-180 --></errorMessage>
@@ -5741,10 +5892,6 @@
     <validationRules>
         <errorMessage><!-- Please enter a valid 10 digit phone number. --></errorMessage>
         <name>LVGO__Phone_Should_be_numeric_and_10_digit</name>
-    </validationRules>
-    <validationRules>
-        <errorMessage><!-- Account is a financially material field owned by the Change Team with restricted edit access. --></errorMessage>
-        <name>LVGO__Prevent_LV_Contract_Account_edit</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Program Qualification dependency to be filled only for Standalone program type. --></errorMessage>

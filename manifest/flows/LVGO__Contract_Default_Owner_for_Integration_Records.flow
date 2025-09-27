@@ -47,19 +47,19 @@
         <locationY>395</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Engagement_Criteria_Default_ESI</name>
+            <name>Engagement_Criteria_Option_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.LVGO__Engagement_Criteria_Option__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Default ESI</stringValue>
+                    <stringValue>Option 1</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Default_ESI</targetReference>
+                <targetReference>Update_Option_1</targetReference>
             </connector>
-            <label>Engagement Criteria Default ESI</label>
+            <label>Engagement Criteria Option 1</label>
         </rules>
         <rules>
             <name>Engagement_Criteria_Option_2</name>
@@ -78,44 +78,15 @@
         </rules>
         <rules>
             <name>Engagement_Criteria_None</name>
-            <conditionLogic>1 OR ( 2 AND 3)</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.LVGO__Engagement_Criteria_Option__c</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.LVGO__Engagement_Criteria_Option__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Custom</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record__Prior.LVGO__Engagement_Criteria_Option__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Custom</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Option_None_and_custom</targetReference>
-            </connector>
-            <label>Engagement Criteria None</label>
-        </rules>
-        <rules>
-            <name>Engagement_Criteria_Default_Non_ESI</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.LVGO__Engagement_Criteria_Option__c</leftValueReference>
                 <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Default Non-ESI</stringValue>
-                </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Default_Non_ESI</targetReference>
+                <targetReference>Update_Option_None</targetReference>
             </connector>
-            <label>Engagement Criteria Default Non-ESI</label>
+            <label>Engagement Criteria None</label>
         </rules>
     </decisions>
     <decisions>
@@ -210,44 +181,32 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Default_ESI</name>
-        <label>Default ESI</label>
+        <name>Update_Option_1</name>
+        <label>Update Option 1</label>
         <locationX>578</locationX>
         <locationY>503</locationY>
         <inputAssignments>
-            <field>LVGO__Coaching_Sessions__c</field>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LVGO__Coaching_interaction_threshold_days__c</field>
             <value>
-                <elementReference>IsNullNumber</elementReference>
+                <numberValue>60.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>LVGO__Cumulative_unique_days_with_weigh_ins__c</field>
             <value>
-                <elementReference>IsNullNumber</elementReference>
+                <stringValue>0</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>LVGO__Required_coaching_interactions__c</field>
             <value>
-                <elementReference>IsNullNumber</elementReference>
+                <stringValue>0</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>LVGO__Required_coaching_sessions__c</field>
             <value>
-                <elementReference>IsNullNumber</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Time_horizon_for_criteria_below_days__c</field>
-            <value>
-                <numberValue>30.0</numberValue>
+                <stringValue>0</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -257,100 +216,9 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>LVGO__Unique_days_any_app_or_web_engagement__c</field>
-            <value>
-                <numberValue>4.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Unique_days_lesson_taken_loggedor_food__c</field>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Unique_weigh_in_days__c</field>
-            <value>
-                <numberValue>4.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LVGO__Unique_weigh_in_days_last_14__c</field>
             <value>
-                <elementReference>IsNullNumber</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Default_Non_ESI</name>
-        <label>Update Default Non- ESI</label>
-        <locationX>1370</locationX>
-        <locationY>503</locationY>
-        <inputAssignments>
-            <field>LVGO__Coaching_Sessions__c</field>
-            <value>
-                <numberValue>1.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Coaching_interaction_threshold_days__c</field>
-            <value>
-                <elementReference>IsNullNumber</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Cumulative_unique_days_with_weigh_ins__c</field>
-            <value>
-                <elementReference>IsNullNumber</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Required_coaching_interactions__c</field>
-            <value>
-                <elementReference>IsNullNumber</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Required_coaching_sessions__c</field>
-            <value>
-                <elementReference>IsNullNumber</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Time_horizon_for_criteria_below_days__c</field>
-            <value>
-                <numberValue>30.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Time_in_program_threshold_days__c</field>
-            <value>
-                <numberValue>90.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Unique_days_any_app_or_web_engagement__c</field>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Unique_days_lesson_taken_loggedor_food__c</field>
-            <value>
-                <numberValue>4.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Unique_weigh_in_days__c</field>
-            <value>
-                <numberValue>4.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Unique_weigh_in_days_last_14__c</field>
-            <value>
-                <elementReference>IsNullNumber</elementReference>
+                <stringValue>2</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -360,12 +228,6 @@
         <label>Update  Option 2</label>
         <locationX>842</locationX>
         <locationY>503</locationY>
-        <inputAssignments>
-            <field>LVGO__Coaching_Sessions__c</field>
-            <value>
-                <numberValue>1.0</numberValue>
-            </value>
-        </inputAssignments>
         <inputAssignments>
             <field>LVGO__Coaching_interaction_threshold_days__c</field>
             <value>
@@ -391,33 +253,9 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>LVGO__Time_horizon_for_criteria_below_days__c</field>
-            <value>
-                <numberValue>30.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LVGO__Time_in_program_threshold_days__c</field>
             <value>
                 <numberValue>90.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Unique_days_any_app_or_web_engagement__c</field>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Unique_days_lesson_taken_loggedor_food__c</field>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Unique_weigh_in_days__c</field>
-            <value>
-                <numberValue>4.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -429,16 +267,10 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Option_None_and_custom</name>
-        <label>Update Option None and custom</label>
+        <name>Update_Option_None</name>
+        <label>Update Option None</label>
         <locationX>1106</locationX>
         <locationY>503</locationY>
-        <inputAssignments>
-            <field>LVGO__Coaching_Sessions__c</field>
-            <value>
-                <elementReference>IsNullNumber</elementReference>
-            </value>
-        </inputAssignments>
         <inputAssignments>
             <field>LVGO__Coaching_interaction_threshold_days__c</field>
             <value>
@@ -464,31 +296,7 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>LVGO__Time_horizon_for_criteria_below_days__c</field>
-            <value>
-                <elementReference>IsNullNumber</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LVGO__Time_in_program_threshold_days__c</field>
-            <value>
-                <elementReference>IsNullNumber</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Unique_days_any_app_or_web_engagement__c</field>
-            <value>
-                <elementReference>IsNullNumber</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Unique_days_lesson_taken_loggedor_food__c</field>
-            <value>
-                <elementReference>IsNullNumber</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__Unique_weigh_in_days__c</field>
             <value>
                 <elementReference>IsNullNumber</elementReference>
             </value>

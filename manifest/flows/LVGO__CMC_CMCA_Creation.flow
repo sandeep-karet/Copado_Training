@@ -341,8 +341,8 @@
     <assignments>
         <name>Make_SelectedCO_Empty</name>
         <label>Make SelectedCO Empty</label>
-        <locationX>2117</locationX>
-        <locationY>838</locationY>
+        <locationX>2119</locationX>
+        <locationY>919</locationY>
         <assignmentItems>
             <assignToReference>SelectedCO</assignToReference>
             <operator>Assign</operator>
@@ -352,75 +352,6 @@
         </assignmentItems>
         <connector>
             <targetReference>SelectedPOs_in_Empty_String</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>OneApp_Assignment_Downmarket</name>
-        <label>OneApp Assignment Downmarket</label>
-        <locationX>1310</locationX>
-        <locationY>1972</locationY>
-        <assignmentItems>
-            <assignToReference>ObjCMC.LVGO__OneApp_Access__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>OneApp_Access_Downmarket</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>ObjCMC.LVGO__OneApp_Migration_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>OneApp_Start_Date_Downmarket</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Assign_POSelected_Partner</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>OneApp_Assignment_NSC_POs</name>
-        <label>OneApp Assignment NSC POs</label>
-        <locationX>2120</locationX>
-        <locationY>964</locationY>
-        <assignmentItems>
-            <assignToReference>ObjCMC.LVGO__OneApp_Access__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>OneApp_Access_NSC_PO</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>ObjCMC.LVGO__OneApp_Migration_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>OneApp_Start_Date_NSC_PO</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Make_SelectedCO_Empty</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>OneApp_Assignment_SemiColon_POs</name>
-        <label>OneApp Assignment SemiColon POs</label>
-        <locationX>1589</locationX>
-        <locationY>1074</locationY>
-        <assignmentItems>
-            <assignToReference>ObjCMC.LVGO__OneApp_Access__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>OneApp_Access_SemiColon_POs</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>ObjCMC.LVGO__OneApp_Migration_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>OneApp_Start_Date_SemiColon_POs</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Trim_Selected_CO</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -1750,18 +1681,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LVGO__UsedforRegistration__c</field>
             <value>
                 <booleanValue>false</booleanValue>
@@ -1794,18 +1713,6 @@
             <field>LVGO__ClientMemberCode__c</field>
             <value>
                 <elementReference>Enter_Client_Member_Code</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1844,18 +1751,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LVGO__UsedforRegistration__c</field>
             <value>
                 <booleanValue>false</booleanValue>
@@ -1888,18 +1783,6 @@
             <field>LVGO__ClientMemberCode__c</field>
             <value>
                 <elementReference>Enter_Client_Member_Code_3</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1938,18 +1821,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LVGO__UsedforRegistration__c</field>
             <value>
                 <booleanValue>false</booleanValue>
@@ -1982,18 +1853,6 @@
             <field>LVGO__ClientMemberCode__c</field>
             <value>
                 <elementReference>Enter_Client_Member_Code_5</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2032,18 +1891,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LVGO__UsedforRegistration__c</field>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2076,18 +1923,6 @@
             <field>LVGO__ClientMemberCode__c</field>
             <value>
                 <elementReference>Enter_Client_Member_Code_7</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2126,18 +1961,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LVGO__UsedforRegistration__c</field>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2173,18 +1996,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LVGO__UsedforRegistration__c</field>
             <value>
                 <booleanValue>false</booleanValue>
@@ -2217,18 +2028,6 @@
             <field>LVGO__ClientMemberCode__c</field>
             <value>
                 <elementReference>CMCPrefixPlusAcctIdentifier</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2678,18 +2477,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>LVGO__UsedforRegistration__c</field>
             <value>
                 <booleanValue>true</booleanValue>
@@ -2722,18 +2509,6 @@
             <field>LVGO__ClientMemberCode__c</field>
             <value>
                 <elementReference>Enter_Registration_Code_Nonstandard</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Access__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Access__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LVGO__OneApp_Migration_Date__c</field>
-            <value>
-                <elementReference>ObjCMC.LVGO__OneApp_Migration_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2826,11 +2601,11 @@
     <recordLookups>
         <name>Get_Partner_Account</name>
         <label>Get Partner Account</label>
-        <locationX>1159</locationX>
+        <locationX>1280</locationX>
         <locationY>1972</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>OneApp_Assignment_Downmarket</targetReference>
+            <targetReference>Assign_POSelected_Partner</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -2939,114 +2714,14 @@
     <screens>
         <name>Choose_POs</name>
         <label>Choose POs</label>
-        <locationX>2122</locationX>
-        <locationY>1109</locationY>
+        <locationX>2119</locationX>
+        <locationY>1065</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>OneApp_Assignment_NSC_POs</targetReference>
+            <targetReference>Make_SelectedCO_Empty</targetReference>
         </connector>
-        <fields>
-            <name>OneApp_Single_PO_Display</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Please input OneApp Access and Start Date if applicable for the client. &lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>Choose_POs_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Choose_POs_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>OneApp_Access_NSC_PO</name>
-                    <dataType>Boolean</dataType>
-                    <fieldText>OneApp Access</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>2</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Choose_POs_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>OneApp_Start_Date_NSC_PO</name>
-                    <dataType>Date</dataType>
-                    <fieldText>OneApp Start Date</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>OneApp_Access_NSC_PO</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Choose_POs_Section1_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
         <fields>
             <name>PO_display_nonsemicolon</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;Please select the Program Overview(s) to associate the Registration Code&amp;nbsp;&lt;/span&gt;&lt;b style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!Enter_Registration_Code_Nonstandard} &lt;/b&gt;&lt;span style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;with&lt;/span&gt;&lt;/p&gt;</fieldText>
@@ -3089,31 +2764,6 @@
                 </width>
             </styleProperties>
         </fields>
-        <fields>
-            <name>Choose_POs_Section2</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Choose_POs_Section2_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>12</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
@@ -3144,8 +2794,8 @@
     <screens>
         <name>DownmarketScreen2</name>
         <label>DownmarketScreen2</label>
-        <locationX>976</locationX>
-        <locationY>1969</locationY>
+        <locationX>1131</locationX>
+        <locationY>1957</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -3184,106 +2834,6 @@
                 <errorMessage>&lt;p&gt;&lt;span style=&quot;color: rgb(247, 14, 14);&quot;&gt;The Account Identifier must contain only UPPERCASE letters, numbers, and/or a dash&lt;/span&gt;&lt;/p&gt;</errorMessage>
                 <formulaExpression>REGEX( {!Account_Identifier},&quot;^[0-9 A-Z -]*&quot;)</formulaExpression>
             </validationRule>
-        </fields>
-        <fields>
-            <name>OneApp_Downmarket_Display</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Please input OneApp Acces and Start Date if applicable for the client.&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>DownmarketScreen2_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>DownmarketScreen2_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>OneApp_Access_Downmarket</name>
-                    <dataType>Boolean</dataType>
-                    <fieldText>OneApp Access</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>2</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>DownmarketScreen2_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>OneApp_Start_Date_Downmarket</name>
-                    <dataType>Date</dataType>
-                    <fieldText>OneApp Start Date</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>OneApp_Access_Downmarket</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>DownmarketScreen2_Section1_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
         </fields>
         <fields>
             <name>Choose_Program_Overviews_partner</name>
@@ -3858,7 +3408,7 @@ REGEX( {!Enter_Client_Member_Code_6},&quot;^[0-9 A-Z -]*&quot;)</formulaExpressi
     <screens>
         <name>PartnershipScreen</name>
         <label>PartnershipScreen</label>
-        <locationX>789</locationX>
+        <locationX>949</locationX>
         <locationY>1951</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -3994,119 +3544,14 @@ REGEX( {!Enter_Client_Member_Code_6},&quot;^[0-9 A-Z -]*&quot;)</formulaExpressi
     <screens>
         <name>Select_POs_Current</name>
         <label>Select POs  Current</label>
-        <locationX>1576</locationX>
-        <locationY>1240</locationY>
+        <locationX>1600</locationX>
+        <locationY>1039</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>OneApp_Assignment_SemiColon_POs</targetReference>
+            <targetReference>Trim_Selected_CO</targetReference>
         </connector>
-        <fields>
-            <name>OneApp_PO_Display</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Please input OneApp Access and Start Date if applicable for the client.&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>Select_POs_Current_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Select_POs_Current_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>OneApp_Access_SemiColon_POs</name>
-                    <dataType>Boolean</dataType>
-                    <fieldText>OneApp Access</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>2</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Select_POs_Current_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>OneApp_Start_Date_SemiColon_POs</name>
-                    <dataType>Date</dataType>
-                    <fieldText>OneApp Start Date</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                    <validationRule>
-                        <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(255, 0, 0);&quot;&gt;Please input OneApp Access and Start Date if applicable for the client.&lt;/span&gt;&lt;/p&gt;</errorMessage>
-                        <formulaExpression>{!OneApp_Start_Date_SemiColon_POs} != null &amp;&amp;
-{!OneApp_Access_SemiColon_POs} = FALSE</formulaExpression>
-                    </validationRule>
-                    <visibilityRule>
-                        <conditionLogic>and</conditionLogic>
-                        <conditions>
-                            <leftValueReference>OneApp_Access_SemiColon_POs</leftValueReference>
-                            <operator>EqualTo</operator>
-                            <rightValue>
-                                <booleanValue>true</booleanValue>
-                            </rightValue>
-                        </conditions>
-                    </visibilityRule>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Select_POs_Current_Section1_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
         <fields>
             <name>PO_Display_Semicolon</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;Please select the Program Overview(s) to associate the Registration Code&amp;nbsp;&lt;/span&gt;&lt;b style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!Enter_Registration_Code_Nonstandard} &lt;/b&gt;&lt;span style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;with&lt;/span&gt;&lt;/p&gt;</fieldText>
@@ -4231,14 +3676,6 @@ REGEX( {!Enter_Client_Member_Code_6},&quot;^[0-9 A-Z -]*&quot;)</formulaExpressi
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>LVGO__CMCAssociation__c</objectType>
-    </variables>
-    <variables>
-        <name>ObjCMC</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>LVGO__ClientMemberCode__c</objectType>
     </variables>
     <variables>
         <name>ObjCMCA</name>

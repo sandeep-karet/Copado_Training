@@ -178,7 +178,7 @@
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
-    <enableReports>true</enableReports>
+    <enableReports>false</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
@@ -338,7 +338,6 @@
         <fullName>LVGO__Account__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>Account</label>
         <referenceTo>LVGO__Account__c</referenceTo>
         <relationshipLabel>Contracts</relationshipLabel>
@@ -352,7 +351,6 @@
     <fields>
         <fullName>LVGO__Account_has_SLAs__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
         <label>Account has SLAs?</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -427,7 +425,7 @@
         <fullName>LVGO__Actual_Launch_Date__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with Redshift</description>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Integrated with Redshift</inlineHelpText>
         <label>Initial Launch Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -932,7 +930,7 @@
         <fullName>LVGO__Billing_Method__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with Redshift and NetSuite</description>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Integrated with Redshift and NetSuite</inlineHelpText>
         <label>Billing Method</label>
         <required>false</required>
         <trackFeedHistory>true</trackFeedHistory>
@@ -978,7 +976,7 @@
         <fullName>LVGO__Billing_Partner_Admin_Fee__c</fullName>
         <deprecated>false</deprecated>
         <description>For Finance/Billing to capture the admin fee to be paid to the Billing Partner for a particular program. Integrated with NetSuite and Redshift.</description>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Integrated with NetSuite and Redshift</inlineHelpText>
         <label>Billing Partner Fee</label>
         <precision>18</precision>
         <required>false</required>
@@ -2212,7 +2210,6 @@
         <fullName>LVGO__Coaching_interaction_threshold_days__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <inlineHelpText>Member is required to have had a coaching session within this timeframe in order to be covered [ongoing requirement].  Flows to Redshift</inlineHelpText>
         <label>Coaching interaction threshold (days)</label>
         <precision>18</precision>
         <required>false</required>
@@ -2301,7 +2298,7 @@
         <fullName>LVGO__Consecutive_Inactive_Months_to_Lapsed__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with NetSuite and Redshift</description>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Integrated with NetSuite and Redshift</inlineHelpText>
         <label>Consecutive Inactive Months to Lapsed</label>
         <required>false</required>
         <trackFeedHistory>true</trackFeedHistory>
@@ -2514,7 +2511,6 @@
         <externalId>false</externalId>
         <formula>HYPERLINK(&quot;/&quot; &amp; Id, LVGO__ContractNumber__c)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
         <label>Contract Number</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -2540,7 +2536,6 @@
         <fullName>LVGO__Contract_Path__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
         <label>Contract Path</label>
         <referenceTo>LVGO__Account__c</referenceTo>
         <relationshipLabel>Contracts (Contract Path)</relationshipLabel>
@@ -2554,7 +2549,6 @@
     <fields>
         <fullName>LVGO__Contract_Term__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
         <label>Contract Term</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -2673,7 +2667,6 @@
     <fields>
         <fullName>LVGO__Cumulative_unique_days_with_weigh_ins__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Total number of required weigh-ins for an initial prescription [one time requirement].  Flows to Redshift</inlineHelpText>
         <label>Cumulative unique days with weigh-ins</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -2842,7 +2835,7 @@
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
         <description>Performance Guarantee Type: Custom</description>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
+        <inlineHelpText>Integrated with NetSuite</inlineHelpText>
         <label>Custom PG Type</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -3731,7 +3724,6 @@ Used to easily identify which Client Overview records are associated with Downma
     <fields>
         <fullName>LVGO__Engagement_Criteria_Option__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>See default engagement criteria options. Any custom configurations outside of the default options require approval from clinical product.</inlineHelpText>
         <label>Engagement Criteria Option</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -5233,7 +5225,6 @@ Used to easily identify which Client Overview records are associated with Downma
     <fields>
         <fullName>LVGO__Fast_Start_Credit_Type__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
         <label>Fast Start Credit Type</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -5264,7 +5255,6 @@ Used to easily identify which Client Overview records are associated with Downma
     <fields>
         <fullName>LVGO__Fast_Start_Custom__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
         <label>Fast Start Custom</label>
         <length>3000</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -6040,7 +6030,7 @@ Used to easily identify which Client Overview records are associated with Downma
         <fullName>LVGO__Is_there_Lapse_Criteria__c</fullName>
         <deprecated>false</deprecated>
         <description>Required in SpringCM; used to indicate whether there Lapse Criteria is required. If so, users will be required to populate the Lapse Criteria, Lapse Criteria Detail, and Consecutive Inactive Months to Lapsed fields.</description>
-        <inlineHelpText>Indicates whether Lapse Criteria is required. If so, users will be required to populate the Lapse Criteria, Lapse Criteria Detail, and Consecutive Inactive Months to Lapsed fields.- - Edits Controlled - Financially Material</inlineHelpText>
+        <inlineHelpText>Required in SpringCM; used to indicate whether there Lapse Criteria is required. If so, users will be required to populate the Lapse Criteria, Lapse Criteria Detail, and Consecutive Inactive Months to Lapsed fields.</inlineHelpText>
         <label>Is there Lapse Criteria?</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -6067,7 +6057,7 @@ Used to easily identify which Client Overview records are associated with Downma
         <fullName>LVGO__Is_there_a_PTMM__c</fullName>
         <deprecated>false</deprecated>
         <description>Required in SpringCM; used to indicate whether there is a Participant Term Minimum number of Months required. If so, users will be required to populate the Participant Term Minimum Months field.</description>
-        <inlineHelpText>Indicate whether there is a Participant Term Minimum number of Months required. If so, users will be required to populate the Participant Term Minimum Months field.- - Edits Controlled - Financially Material</inlineHelpText>
+        <inlineHelpText>Required in SpringCM; used to indicate whether there is a Participant Term Minimum number of Months required. If so, users will be required to populate the Participant Term Minimum Months field.</inlineHelpText>
         <label>Is there a PTMM?</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -6894,7 +6884,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__Lost_Damaged_Device_1__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>Lost/Damaged Device 1</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -6925,7 +6914,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__Lost_Damaged_Device_2__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>Lost/Damaged Device 2</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -6956,7 +6944,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__Lost_Damaged_Device_Price_2__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>Lost/Damaged Device Price 2</label>
         <precision>18</precision>
         <required>false</required>
@@ -7084,7 +7071,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Member_Recruitment_Began__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with Redshift</description>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Integrated with Redshift</inlineHelpText>
         <label>Initial Member Recruitment</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -7279,7 +7266,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Multiprogram_Discount__c</fullName>
         <deprecated>false</deprecated>
         <description>This column will be used to reflect the price discount for that program when a member is signed up for multiple programs during that billing cycle.</description>
-        <inlineHelpText>Indicates price discount for that program when a member is signed up for multiple programs during that billing cycle.- - Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>This column will be used to reflect the price discount for that program when a member is signed up for multiple programs during that billing cycle.</inlineHelpText>
         <label>Multiprogram Discount</label>
         <precision>18</precision>
         <required>false</required>
@@ -7920,7 +7907,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__PG_Custom_Detail__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
+        <inlineHelpText>Integrated with NetSuite</inlineHelpText>
         <label>PG Custom Detail</label>
         <length>3000</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -7984,7 +7971,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__PMPM__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>PMPM</label>
         <precision>18</precision>
         <required>false</required>
@@ -8020,7 +8006,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__PPPM__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with NetSuite and Redshift</description>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Integrated with NetSuite and Redshift</inlineHelpText>
         <label>PPPM</label>
         <precision>18</precision>
         <required>false</required>
@@ -8046,7 +8032,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Participant_Term_Minimum_Months__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with Redshift and NetSuite</description>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Integrated with Redshift and NetSuite</inlineHelpText>
         <label>Participant Term Minimum Months</label>
         <required>false</required>
         <trackFeedHistory>true</trackFeedHistory>
@@ -8123,7 +8109,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Participants__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>Participants</label>
         <precision>7</precision>
         <required>false</required>
@@ -8354,7 +8339,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Performance_Guarantees__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with NetSuite. Required in SpringCM; used to indicate whether there are Performance Guarantees. If so, users will be required to populate the PG fields.</description>
-        <inlineHelpText>Used to indicate whether there are Performance Guarantees. If so, users will be required to populate the PG fields.- - Edits Controlled - Financially Material</inlineHelpText>
+        <inlineHelpText>Integrated with NetSuite. Required in SpringCM; used to indicate whether there are Performance Guarantees. If so, users will be required to populate the PG fields.</inlineHelpText>
         <label>Performance Guarantees?</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -8744,7 +8729,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Pricing_Model__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with Redshift</description>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Integrated with Redshift</inlineHelpText>
         <label>Pricing Model</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -8777,7 +8762,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <deprecated>false</deprecated>
         <description>Populated by SpringCM. Integrated with NetSuite and Redshift</description>
         <externalId>false</externalId>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Populated by SpringCM. Integrated with NetSuite and Redshift</inlineHelpText>
         <label>Enrollment Cap</label>
         <precision>7</precision>
         <required>false</required>
@@ -8877,7 +8862,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__Program_Implementation_status__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>Program Implementation Status</label>
         <required>false</required>
         <trackFeedHistory>true</trackFeedHistory>
@@ -8936,7 +8920,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Program_Name__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with NetSuite and Redshift</description>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Integrated with NetSuite and Redshift</inlineHelpText>
         <label>Program</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -9145,7 +9129,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Program_Start_Date__c</fullName>
         <deprecated>false</deprecated>
         <description>Date the program becomes effective</description>
-        <inlineHelpText>Date the program becomes effective. - - Edits Controlled - Financially Material</inlineHelpText>
+        <inlineHelpText>Date the program becomes effective. Integrated with NetSuite.</inlineHelpText>
         <label>Program Start Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -9167,7 +9151,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__Program_Type__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>Program Type</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -9480,7 +9463,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Remaining_Mths_greater_9_Early_Term_Fee__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with Redshift</description>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
+        <inlineHelpText>Integrated with Redshift</inlineHelpText>
         <label>Remaining Mths &gt;= 9 Early Term Fee</label>
         <precision>18</precision>
         <required>false</required>
@@ -9494,7 +9477,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Remaining_Mths_less_9_Early_Term_Fee__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with Redshift</description>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
+        <inlineHelpText>Integrated with Redshift</inlineHelpText>
         <label>Remaining Mths &lt; 9 Early Term Fee</label>
         <precision>18</precision>
         <required>false</required>
@@ -9625,7 +9608,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Replacement_Device_Responsibility__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with NetSuite</description>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Integrated with NetSuite</inlineHelpText>
         <label>Lost/Damaged Device Responsibility</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -9662,7 +9645,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Replacement_Fee__c</fullName>
         <deprecated>false</deprecated>
         <description>Integrated with NetSuite and Redshift</description>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Integrated with NetSuite and Redshift</inlineHelpText>
         <label>Lost/Damaged Device Price 1</label>
         <precision>18</precision>
         <required>false</required>
@@ -9731,7 +9714,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__Required_coaching_interactions__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Number of coaching interactions required in first 90 days. This is calculated as live coaching sessions plus food log feedback sessions [one time requirement].  Flows to Redshift</inlineHelpText>
         <label>Required coaching interactions</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -9783,7 +9765,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__Required_coaching_sessions__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Required number of live coaching sessions in the first 90 days. Coaching sessions are a subset of the coaching interactions [one time requirement].  Flows to Redshift</inlineHelpText>
         <label>Required coaching sessions</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -9887,7 +9868,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__SLA_Details__c</fullName>
         <deprecated>false</deprecated>
         <description>If &quot;Account has SLAs&quot; is checked, the details of where the SLAs are outlined can be found here</description>
-        <inlineHelpText>If &quot;Account has SLAs&quot; is checked, the details of where the SLAs are outlined can be found here - - Edits Controlled - Financially Material</inlineHelpText>
+        <inlineHelpText>If &quot;Account has SLAs&quot; is checked, the details of where the SLAs are outlined can be found here</inlineHelpText>
         <label>SLA Details</label>
         <length>1000</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -10099,7 +10080,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__Status__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>Status</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -10227,7 +10207,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__Termination_Fee__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
         <label>Termination Fee</label>
         <precision>18</precision>
         <required>false</required>
@@ -10251,7 +10230,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Tier2_PPPM_Start_Month__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>Tier2 PPPM Start Month</label>
         <precision>3</precision>
         <required>false</required>
@@ -10265,7 +10243,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__Tier2_PPPM__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>Tier2 PPPM</label>
         <precision>18</precision>
         <required>false</required>
@@ -10305,7 +10282,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Tier3_PPPM_Start_Month__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>Tier3 PPPM Start Month</label>
         <precision>3</precision>
         <required>false</required>
@@ -10319,7 +10295,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__Tier3_PPPM__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
         <label>Tier3 PPPM</label>
         <precision>18</precision>
         <required>false</required>
@@ -10348,7 +10323,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Time_in_program_threshold_days__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <inlineHelpText>Required days in WM/DPP programs prior to coverage. This is a one-time requirement.  Flows to Redshift</inlineHelpText>
         <label>Time in program threshold (days)</label>
         <precision>18</precision>
         <required>false</required>
@@ -10373,7 +10347,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__True_up_Frequency__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
         <label>True-up Frequency</label>
         <length>255</length>
         <required>false</required>
@@ -10460,7 +10433,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Unique_Contract_Terms__c</fullName>
         <deprecated>false</deprecated>
         <description>Any custom terms for this contract</description>
-        <inlineHelpText>Edits Controlled - Financially Material</inlineHelpText>
         <label>Unique Contract Terms</label>
         <length>10000</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -10517,7 +10489,6 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
     <fields>
         <fullName>LVGO__Unique_weigh_in_days_last_14__c</fullName>
         <deprecated>false</deprecated>
-        <inlineHelpText>Member is required to have had this number of weigh-ins on unique days within the last 14 days to be covered [ongoing requirement].  Flows to Redshift</inlineHelpText>
         <label>Unique weigh-in days (last 14)</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -10570,7 +10541,7 @@ LVGO__Actual_Launch_Date__c &lt;&gt; LVGO__Program_Start_Date__c )</formula>
         <fullName>LVGO__Up_Front_Per_Member__c</fullName>
         <deprecated>false</deprecated>
         <description>Cost charged the member upon enrolling</description>
-        <inlineHelpText>Cost charged to the member upon enrolling. - - Edits Controlled - Financially Material -  Flows to Redshift</inlineHelpText>
+        <inlineHelpText>Cost charged the member upon enrolling. Integrated with NetSuite and Redshift.</inlineHelpText>
         <label>Upfront Per Member</label>
         <precision>18</precision>
         <required>false</required>
@@ -23185,28 +23156,6 @@ ISPICKVAL(PRIORVALUE(LVGO__Status__c), &quot;Expired&quot;)
         <errorMessage>Only Legal users are able to edit this record due to its Status being either &quot;Expired&quot; or &quot;Terminated&quot;.  If you believe you this record needs to be updated, please Chatter @Livongo Legal.</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>LVGO__Cardio_Features_Required_Check</fullName>
-        <active>true</active>
-        <errorConditionFormula>AND(
-  $Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c = TRUE,
-  OR(
-    ISCHANGED(LVGO__Cardio_Features_Enabled__c),
-    ISCHANGED(LVGO__Cardio_Start_Date__c)
-  ),
-  OR(
-    AND(
-      LVGO__Cardio_Features_Enabled__c = TRUE,
-      ISBLANK(LVGO__Cardio_Start_Date__c)
-    ),
-    AND(
-      NOT(ISBLANK(LVGO__Cardio_Start_Date__c)),
-      LVGO__Cardio_Features_Enabled__c = FALSE
-    )
-  )
-)</errorConditionFormula>
-        <errorMessage>If Cardio Features Enabled is checked you must enter a Cardio Start Date value. If you enter a Cardio Start Date value then you need to enable Cardio Features Enabled flag.</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>LVGO__Coaching_interaction_threshold_days</fullName>
         <active>true</active>
         <description>If the &quot;Coaching interaction threshold (days)&quot; field value is NOT between 14-180, then users should NOT be able to save the record.</description>
@@ -23215,14 +23164,9 @@ ISCHANGED(LVGO__Coaching_interaction_threshold_days__c),
 NOT(AND(
 LVGO__Coaching_interaction_threshold_days__c &gt;= 14,
 LVGO__Coaching_interaction_threshold_days__c &lt;= 180
-)),
-NOT(OR(
-ISPICKVAL( LVGO__Engagement_Criteria_Option__c , &quot;Default ESI&quot;),
-ISPICKVAL(LVGO__Engagement_Criteria_Option__c, &quot;Default Non-ESI&quot;),
-ISPICKVAL(LVGO__Engagement_Criteria_Option__c, &quot;Custom&quot;)
-)),
-NOT(LVGO__IsValidationRuleBypassed__c)
-)</errorConditionFormula>
+)
+)
+) &amp;&amp; NOT(LVGO__IsValidationRuleBypassed__c)</errorConditionFormula>
         <errorDisplayField>LVGO__Coaching_interaction_threshold_days__c</errorDisplayField>
         <errorMessage>Coaching interaction threshold is not between 14-180</errorMessage>
     </validationRules>
@@ -23315,14 +23259,6 @@ NOT(REGEX(LVGO__Member_support_phone__c, &quot;\\D*?(\\d\\D*?){10}&quot;))
 &amp;&amp; $Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c</errorConditionFormula>
         <errorDisplayField>LVGO__Member_support_phone__c</errorDisplayField>
         <errorMessage>Please enter a valid 10 digit phone number.</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>LVGO__Prevent_LV_Contract_Account_edit</fullName>
-        <active>true</active>
-        <description>***FINANCIALLY MATERIAL*** Allows only the Change Team and System Admins to edit the Account field on LV Contracts.</description>
-        <errorConditionFormula>AND($Setup.LVGO__LVGO_Automation_Switch__c.LVGO__Validations__c = TRUE, ISCHANGED( LVGO__Account__c ) , NOT( $Permission.LVGO__Financially_Material_Bypass_Prevent_LV_Contract_Account_edit ))</errorConditionFormula>
-        <errorDisplayField>LVGO__Account__c</errorDisplayField>
-        <errorMessage>Account is a financially material field owned by the Change Team with restricted edit access.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>LVGO__Prog_Qualification_Dependency_Standalone</fullName>
