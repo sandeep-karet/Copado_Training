@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>Alert_Developer</name>
-        <label>Alert Developer</label>
-        <locationX>50</locationX>
-        <locationY>755</locationY>
+        <name>Copy_1_of_Alert_Developer</name>
+        <label>Copy 1 of Alert Developer</label>
+        <locationX>242</locationX>
+        <locationY>708</locationY>
         <actionName>CommitCreatorAlertAction</actionName>
         <actionType>apex</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -17,7 +17,7 @@
         <inputParameters>
             <name>userStoryName</name>
             <value>
-                <elementReference>Get_Associated_User_Story.Name</elementReference>
+                <elementReference>Copy_1_of_Get_Associated_User_Story.Name</elementReference>
             </value>
         </inputParameters>
         <nameSegment>CommitCreatorAlertAction</nameSegment>
@@ -25,20 +25,20 @@
     </actionCalls>
     <actionCalls>
         <description>Run Static Code Analysis</description>
-        <name>Run_Static_Code_Analysis</name>
-        <label>Run Static Code Analysis</label>
-        <locationX>50</locationX>
-        <locationY>647</locationY>
+        <name>Copy_1_of_Run_Static_Code_Analysis</name>
+        <label>Copy 1 of Run Static Code Analysis</label>
+        <locationX>242</locationX>
+        <locationY>600</locationY>
         <actionName>copado__RunUserStoryStaticCodeAnalysis</actionName>
         <actionType>apex</actionType>
         <connector>
-            <targetReference>Alert_Developer</targetReference>
+            <targetReference>Copy_1_of_Alert_Developer</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>orgId</name>
             <value>
-                <elementReference>Get_Associated_Env.copado__Org_ID__c</elementReference>
+                <elementReference>Copy_1_of_Get_Associated_Env.copado__Org_ID__c</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -53,25 +53,25 @@
     <apiVersion>62.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
-        <name>Check_for_Apex_Class</name>
-        <label>Check for Apex Class</label>
-        <locationX>182</locationX>
-        <locationY>431</locationY>
+        <name>Copy_1_of_Check_for_Apex_Class</name>
+        <label>Copy 1 of Check for Apex Class</label>
+        <locationX>374</locationX>
+        <locationY>384</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Has_Apex</name>
+            <name>Copy_1_of_Has_Apex</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Associated_User_Story.copado__Has_Apex_Code__c</leftValueReference>
+                <leftValueReference>Copy_1_of_Get_Associated_User_Story.copado__Has_Apex_Code__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Associated_Env</targetReference>
+                <targetReference>Copy_1_of_Get_Associated_Env</targetReference>
             </connector>
-            <label>Has Apex?</label>
+            <label>Copy 1 of Has Apex?</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -97,20 +97,20 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Associated_Env</name>
-        <label>Get Associated Env</label>
-        <locationX>50</locationX>
-        <locationY>539</locationY>
+        <name>Copy_1_of_Get_Associated_Env</name>
+        <label>Copy 1 of Get Associated Env</label>
+        <locationX>242</locationX>
+        <locationY>492</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Run_Static_Code_Analysis</targetReference>
+            <targetReference>Copy_1_of_Run_Static_Code_Analysis</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Associated_User_Story.copado__Environment__c</elementReference>
+                <elementReference>Copy_1_of_Get_Associated_User_Story.copado__Environment__r.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -118,13 +118,13 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Associated_User_Story</name>
-        <label>Get Associated User Story</label>
-        <locationX>182</locationX>
-        <locationY>323</locationY>
+        <name>Copy_1_of_Get_Associated_User_Story</name>
+        <label>Copy 1 of Get Associated User Story</label>
+        <locationX>374</locationX>
+        <locationY>276</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Check_for_Apex_Class</targetReference>
+            <targetReference>Copy_1_of_Check_for_Apex_Class</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -139,13 +139,21 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>56</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>Get_Associated_User_Story</targetReference>
-        </connector>
         <object>copado__User_Story_Commit__c</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Run_scheduled_static_code</name>
+            <connector>
+                <targetReference>Copy_1_of_Get_Associated_User_Story</targetReference>
+            </connector>
+            <label>Run scheduled static code</label>
+            <offsetNumber>2</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>CreatedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>

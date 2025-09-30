@@ -93,7 +93,7 @@
         <connector>
             <targetReference>Get_Related_SCA_Result_Record</targetReference>
         </connector>
-        <filterLogic>or</filterLogic>
+        <filterLogic>(1 OR 2) AND 3</filterLogic>
         <filters>
             <field>copado__Promote_and_Deploy__c</field>
             <operator>IsChanged</operator>
@@ -106,6 +106,13 @@
             <operator>IsChanged</operator>
             <value>
                 <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>PMD_Override__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
             </value>
         </filters>
         <object>copado__User_Story__c</object>
