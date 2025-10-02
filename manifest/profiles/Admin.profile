@@ -26414,6 +26414,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>LVGO__Contact__c.LVGO__Sample_Package_Deployment_Field__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>LVGO__Contact__c.LVGO__Secondary_Email__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -26471,6 +26476,11 @@
         <editable>true</editable>
         <field>LVGO__Contact__c.LVGO__myStrengthContactExternalId__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>LVGO__Contact__c.Sample_Package_Deployment_Field__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
