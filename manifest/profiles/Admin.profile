@@ -26483,6 +26483,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>LVGO__Contact__c.Sample_Package_Deployment_Field__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>LVGO__Contract__c.LVGO__A1cReduction__c</field>
         <readable>true</readable>
     </fieldPermissions>
