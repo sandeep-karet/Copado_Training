@@ -91892,6 +91892,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>UserInteractionInsights</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ViewHelpLink</name>
     </userPermissions>
 </Profile>
