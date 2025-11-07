@@ -202,7 +202,7 @@
 	&quot;SBC.parametersLabel&quot;: &quot;Parameters&quot;,
 	&quot;SBC.filterLabel&quot;: &quot;Filters&quot;,
 	&quot;SBC.fuzzySearchHelptext&quot;: &quot;Search based on tradestyle name&quot;,
-	&quot;SBC.fuzzySearchLabel&quot;: &quot;Fuzzy search&quot;,
+	&quot;SBC.fuzzySearchLabel&quot;: &quot;Tradestyle search&quot;,
     &quot;SBC.industryCol&quot;: &quot;Industry&quot;,
     &quot;SBC.industryLabel&quot;: &quot;Industry - SIC&quot;,
     &quot;SBC.industryPlaceholder&quot;: &quot;Filter records by Industry&quot;,

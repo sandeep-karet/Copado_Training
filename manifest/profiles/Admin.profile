@@ -8434,6 +8434,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>DNBConnect__DNBConnectIntUserPermScanController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DNBConnect__DNBConnectIntUserPermScanController_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>DNBConnect__DNB_AccountMetadataController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -8494,6 +8502,18 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>DNBConnect__DNB_CustomLogCleanup</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DNBConnect__DNB_CustomLogCleanup_Scheduler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DNBConnect__DNB_CustomLogCleanup_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>DNBConnect__DNB_DataTableController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -8524,6 +8544,14 @@
     <classAccesses>
         <apexClass>DNBConnect__DNB_LinkageOpportunity_Batch_Test</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DNBConnect__DNB_LogsDataTableController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DNBConnect__DNB_LogsDataTableController_Test</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>DNBConnect__DNB_OnDemandUpdateQueueable</apexClass>
@@ -53450,6 +53478,36 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>DNBConnect__D_B_Custom_Log__c.DNBConnect__Line__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DNBConnect__D_B_Custom_Log__c.DNBConnect__Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DNBConnect__D_B_Custom_Log__c.DNBConnect__Process__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DNBConnect__D_B_Custom_Log__c.DNBConnect__TimeStamp__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DNBConnect__D_B_Custom_Log__c.DNBConnect__User_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DNBConnect__D_B_Custom_Log__c.DNBConnect__User__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>DNBConnect__DnBAccountMetadata__c.DNBConnect__LinkageOpportunityType__c</field>
         <readable>true</readable>
@@ -88723,6 +88781,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>DNBConnect__D_B_Custom_Log__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>DNBConnect__DnBAccountMetadata__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -94333,6 +94400,10 @@
     <pageAccesses>
         <apexPage>DNBConnect__DNB_Connect_Duplicates_VFP</apexPage>
         <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>DNBConnect__DNB_Connect_Logs_Table</apexPage>
+        <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
         <apexPage>DNBConnect__DNB_DNBSessionIdPage_VFP</apexPage>
@@ -99963,6 +100034,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageHealthCheck</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageHerokuAppLink</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
