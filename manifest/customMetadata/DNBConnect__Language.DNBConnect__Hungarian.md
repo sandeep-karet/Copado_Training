@@ -201,7 +201,7 @@
 	&quot;SBC.parametersLabel&quot;: &quot;Parameters&quot;,
 	&quot;SBC.filterLabel&quot;: &quot;Szűrők&quot;,
 	&quot;SBC.fuzzySearchHelptext&quot;: &quot;Search based on tradestyle name&quot;,
-	&quot;SBC.fuzzySearchLabel&quot;: &quot;Fuzzy search&quot;,
+	&quot;SBC.fuzzySearchLabel&quot;: &quot;Tradestyle search&quot;,
 	&quot;SBC.industryCol&quot;: &quot;Iparág&quot;,
 	&quot;SBC.industryLabel&quot;: &quot;Iparág - SIC&quot;,
 	&quot;SBC.industryPlaceholder&quot;: &quot;Iparág szerinti szűrés&quot;,

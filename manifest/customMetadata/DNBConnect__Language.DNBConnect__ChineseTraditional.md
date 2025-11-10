@@ -201,7 +201,7 @@
 	&quot;SBC.parametersLabel&quot;: &quot;Parameters&quot;,
 	&quot;SBC.filterLabel&quot;: &quot;篩選器&quot;,
 	&quot;SBC.fuzzySearchHelptext&quot;: &quot;Search based on tradestyle name&quot;,
-	&quot;SBC.fuzzySearchLabel&quot;: &quot;Fuzzy search&quot;,
+	&quot;SBC.fuzzySearchLabel&quot;: &quot;Tradestyle search&quot;,
     &quot;SBC.industryCol&quot;: &quot;產業&quot;,
     &quot;SBC.industryLabel&quot;: &quot;行業 - SIC&quot;,
     &quot;SBC.industryPlaceholder&quot;: &quot;按行業過篩選記錄&quot;,
