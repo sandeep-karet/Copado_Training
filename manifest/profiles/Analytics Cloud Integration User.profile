@@ -26347,6 +26347,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>LVGO__Contract__c.Copado_Package_Sample_field__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>LVGO__Contract__c.LVGO__A1cReduction__c</field>
         <readable>false</readable>
     </fieldPermissions>
