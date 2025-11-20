@@ -61221,6 +61221,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ViewLicenseUtilization</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ViewMLModels</name>
     </userPermissions>
     <userPermissions>
