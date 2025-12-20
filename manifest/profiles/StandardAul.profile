@@ -241,11 +241,6 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
-        <application>standard__TrustedServicesPrivacyAgent</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
         <application>tinderbox__TinderBox</application>
         <default>false</default>
         <visible>false</visible>
