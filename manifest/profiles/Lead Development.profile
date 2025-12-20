@@ -405,11 +405,6 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__TrustedServicesPrivacyAgent</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
     <classAccesses>
         <apexClass>ALTF__AMAvailability</apexClass>
         <enabled>false</enabled>
