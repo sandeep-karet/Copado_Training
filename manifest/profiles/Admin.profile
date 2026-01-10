@@ -241,6 +241,11 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>standard__Shield</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>tinderbox__TinderBox</application>
         <default>false</default>
         <visible>true</visible>
@@ -38058,6 +38063,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>MessagingSession.CampaignId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>MessagingSession.CaseId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -60225,6 +60235,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-OrgMetric</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-OtherUserProfile</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -60751,6 +60765,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageApiNamedQueries</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ManageAuthProviders</name>
     </userPermissions>
     <userPermissions>
@@ -61208,6 +61226,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewAllUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewApiNamedQueries</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

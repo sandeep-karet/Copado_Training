@@ -241,6 +241,11 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>standard__Shield</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>tinderbox__TinderBox</application>
         <default>false</default>
         <visible>false</visible>
@@ -37914,6 +37919,11 @@
         <editable>true</editable>
         <field>MessagingEndUser.LeadId</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>MessagingSession.CampaignId</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
