@@ -100,7 +100,7 @@
 	&quot;Duplicates.cancelBtn&quot;: &quot;Peruuta &quot;,
 	&quot;Duplicates.contactsCol&quot;: &quot;Yhteyshenkilöt&quot;,
 	&quot;Duplicates.createdCol&quot;: &quot;Luotu&quot;,
-	&quot;Duplicates.footerCount&quot;: &quot;Showing {x} - {x} records ({x} out of {x} duplicates)&quot;,
+	&quot;Duplicates.footerCount&quot;: &quot;Näytetään {x}–{x} tietuetta ({x}/{x} kaksoiskappaleesta)&quot;,
 	&quot;Duplicates.header&quot;: &quot;Kopioi Tietueet&quot;,
 	&quot;Duplicates.includeCol&quot;: &quot;Sisällytä?&quot;,
 	&quot;Duplicates.lastModCol&quot;: &quot;Viimeksi muokattu&quot;,
@@ -128,7 +128,7 @@
 	&quot;FamilyTree.createAndLinkSectionHelpText&quot;: &quot;Alla olevat tiedot kuvaavat tytäryrityksen ja suoraan emoyrityksen tietueiden välisiä yhteyksiä, jos emoyrityksen tietuetta ei ole ympäristössäsi. D&amp;B Connect tunnistaa nämä mahdollisuudet kaikkien osuttujen tietueiden D-U-N-S-numeroiden tarkistamisen perusteella. Päättämällä linkittää ne luo vanhemman tietueen ja asettaa emotilin kentän tytäryhtiön tietueen mahdollistaakseen Salesforcen Tilin Hierarkian toiminnallisuuden.&quot;,
 	&quot;FamilyTree.duplicateSection&quot;: &quot;Duplikaatti&quot;,
 	&quot;FamilyTree.duplicateSectionHelpText&quot;: &quot;Alla olevat tiedot edustavat tytäryritysten ja suoraan emoyhtiön tietueiden välisiä yhteyksiä, joissa ympäristössäsi on päällekkäisiä tietueita. D&amp;B Connect tunnistaa nämä mahdollisuudet kaikkien osuttujen tietueiden D-U-N-S-numeroiden tarkistamisen perusteella. Käytä Duplicate Records dashboard tai muuta menetelmää ratkaista päällekkäisiä vanhempia, joka siirtää nämä linkitys mahdollisuuksia Linkki-välilehti ja voit ryhtyä toimiin siellä.&quot;,
-	&quot;FamilyTree.familyTableFooter&quot;: &quot;Showing {x} - {x} records out of total {x} records&quot;,
+	&quot;FamilyTree.familyTableFooter&quot;: &quot;Näytetään {x}–{x} tietuetta yhteensä {x} tietueesta&quot;,
 	&quot;FamilyTree.familyTreeMembersLegend&quot;: &quot;Perhepuiden Jäsenet&quot;,
 	&quot;FamilyTree.header&quot;: &quot;Perhepuiden Yhteydet Mahdollisuudet&quot;,
 	&quot;FamilyTree.headerMessage&quot;: &quot;Tarkista linkkimahdollisuutesi neljässä välilehdessä. Uusia linkkimahdollisuuksia päivitetään kerran tunnissa. Tekemäsi tietueet päivitetään kojelautaan reaaliajassa ja ne katoavat taulukosta.&quot;,
@@ -233,6 +233,6 @@
 	&quot;SBC.tooManyResults&quot;: &quot;D&amp;B löysi liian monta tulosta näytettäväksi tässä. Säädä vasemmalla olevia kriteereitä vähentääksesi tulosten määrää.&quot;,
 	&quot;SBC.updateBtn&quot;: &quot;Päivitä&quot;,
 	&quot;SBC.websiteMessageWhenPatternMismatch&quot;: &quot;Verkkosivuston nimi on virheellinen&quot;
-			}</value>
+}</value>
     </values>
 </CustomMetadata>

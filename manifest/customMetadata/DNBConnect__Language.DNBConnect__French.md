@@ -142,7 +142,7 @@
 &quot;FamilyTree.linkageOperationResultLinkedCol&quot;: &quot;Lié&quot;,
 &quot;FamilyTree.linkageOperationResultParentCol&quot;: &quot;Société mère &quot;,
 &quot;FamilyTree.linkageOpportunitiesLegend&quot;: &quot;Opportunités de liaison&quot;,
-	&quot;FamilyTree.linkageWaitResultMessage&quot;: &quot;Dun And Bradstreet is linking accounts at your request. This may take a moment. You&apos;ll be able to act on Linkage Opportunities once this process is completed.&quot;,
+	&quot;FamilyTree.linkageWaitResultMessage&quot;: &quot;Dun &amp; Bradstreet relie les comptes à votre demande. Cela peut prendre un moment. Vous serez en mesure d&apos;agir sur les liens d&apos;opportunités une fois ce processus terminé.&quot;,
 &quot;FamilyTree.linkedFamilyTreeMembersLegend&quot;: &quot;Membres de l&apos;arbre de famille lié&quot;,
 &quot;FamilyTree.parentDunsCol&quot;: &quot;DUNS parents&quot;,
 &quot;FamilyTree.parentNameCol&quot;: &quot;Nom du parent&quot;,

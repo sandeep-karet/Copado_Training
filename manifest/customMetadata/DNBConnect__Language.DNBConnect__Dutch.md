@@ -6,7 +6,7 @@
         <field>DNBConnect__Labels__c</field>
         <value xsi:type="xsd:string">{
 &quot;Admin.accountFieldsTableHeader&quot;: &quot;Accountvelden&quot;,
-&quot;Admin.accountLabel&quot;: &quot;Account&quot;,
+	&quot;Admin.accountLabel&quot;: &quot;ACCOUNT&quot;,
 &quot;Admin.addBtn&quot;: &quot;Toevoegen&quot;,
 &quot;Admin.addFieldBtn&quot;: &quot;Veld toevoegen&quot;,
 &quot;Admin.addProfileMessageHeader&quot;: &quot;Een profiel toevoegen&quot;,
@@ -233,6 +233,6 @@
 &quot;SBC.tooManyResults&quot;: &quot;D&amp;B vond te veel resultaten om hier weer te geven. \n Pas je criteria aan links aan om de resultaten te beperken.&quot;,
 &quot;SBC.updateBtn&quot;: &quot;Bijwerken&quot;,
 &quot;SBC.websiteMessageWhenPatternMismatch&quot;: &quot;Website naam is ongeldig&quot;
-			}</value>
+}</value>
     </values>
 </CustomMetadata>
