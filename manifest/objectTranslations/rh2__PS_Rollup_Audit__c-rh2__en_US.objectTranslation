@@ -61,6 +61,11 @@
         <name>rh2__Number_Of_Past_Records__c</name>
     </fields>
     <fields>
+        <help><!-- If checked, Rollup Helper will override the object level force async setting to run in realtime. --></help>
+        <label><!-- Override Object Level Forced Async --></label>
+        <name>rh2__Override_Object_Level_Forced_Async__c</name>
+    </fields>
+    <fields>
         <help><!-- Controls whether Rollup Helper will overwrite populated fields. --></help>
         <label><!-- Overwrite fields --></label>
         <name>rh2__Overwrite__c</name>
@@ -285,6 +290,16 @@
         <help><!-- API Name of the Rollup&apos;s target object --></help>
         <label><!-- Target Object Name --></label>
         <name>rh2__targetObjectName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stores truncation indicator for text rollups --></help>
+        <label><!-- Truncator --></label>
+        <name>rh2__truncatorOption__c</name>
+    </fields>
+    <fields>
+        <help><!-- The field to evaluate on child records when performing a unique rollup --></help>
+        <label><!-- Unique Field --></label>
+        <name>rh2__uniqueField__c</name>
     </fields>
     <fields>
         <help><!-- If checked, comma-separated rollup results will be formatted in the form &quot;one, two, and three.&quot; If unchecked, rollup results will be formatted as &quot;one, two, three.&quot; --></help>

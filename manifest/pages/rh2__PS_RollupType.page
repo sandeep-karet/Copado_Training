@@ -144,6 +144,9 @@
     <apex:actionFunction action="{!doSourceFKFieldSearch}" name="searchAllSourceFKFields" rerender="fkFieldOptions, fkFieldPagination" status="loading">
         <apex:param name="sourceFKFieldSearch" value=""/>
     </apex:actionFunction>
+    <apex:actionFunction action="{!doUniqueSumFieldSearch}" name="searchAllUniqueSumFields" reRender="uniqueSumFieldOptions, uniqueSumFieldPagination" status="loading">
+        <apex:param name="uniqueSumFieldSearch" value=""/>
+    </apex:actionFunction>
     <apex:actionStatus id="loading" onstart="loading(true)" onstop="loading(false)" />
     <div class="slds-scope" role="main">
     <div class="slds-card grayBackground">
@@ -173,7 +176,7 @@
                             <div class="slds-modal__header">
                                 <button type="button" onclick='showModal(false, "existingSettingModal");' class="slds-button slds-button_icon-inverse slds-modal__close">
                                     <svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
-                                        <use href="{!URLFOR($Asset.SLDS, '/assets/icons/action-sprite/svg/symbols.svg#close')}"></use>
+                                        <use href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
                                     </svg>
                                 </button>                            
                             </div>
@@ -370,7 +373,7 @@
                             </div>
                             <apex:selectRadio value="{!smHelper.logic}" layout="pageDirection">
 
-                                <apex:actionSupport event="onchange" action="{!selectRollupType}" reRender="type, firstField, field2, filterAndPreview, DateField, targetCurrencyField, deduplicate, selectionInfo, preview, saveCancelBtns, createTrigger, cloneModal, rollUpZeroAsNull, useCommaAndOption, modeTiebreaker, targetFieldMessage" status="loading"/>
+                                <apex:actionSupport event="onchange" action="{!selectRollupType}" reRender="type, firstField, field2, filterAndPreview, DateField, targetCurrencyField, deduplicate, selectionInfo, preview, saveCancelBtns, createTrigger, cloneModal, rollUpZeroAsNull, useCommaAndOption, modeTiebreaker, targetFieldMessage, uniqueSumField, truncate" status="loading"/>
                                 <apex:selectOption itemValue="CNT" itemLabel="{!$Label.rh2__Count}" rendered="{! AND(IF(smHelper.targetFieldType != 'REFERENCE', true, false), IF(smHelper.targetFieldType != 'ID', true, false), IF(smHelper.targetFieldType != 'BOOLEAN', true, false), IF(smHelper.targetFieldType != 'DATE', true, false), IF(smHelper.targetFieldType != 'DATETIME', true, false), IF(smHelper.targetFieldType != 'PICKLIST', true, false), IF(smHelper.targetFieldType != 'MULTIPICKLIST', true, false), IF(smHelper.targetFieldType != 'URL', true, false), IF(smHelper.targetFieldType != 'PHONE', true, false))}"/>
                                 <apex:selectOption itemValue="MAX" itemLabel="{!$Label.rh2__Maximum}" rendered="{! AND(IF(smHelper.targetFieldType != 'REFERENCE', true, false), IF(smHelper.targetFieldType != 'ID', true, false), IF(smHelper.targetFieldType != 'BOOLEAN', true, false), IF(smHelper.targetFieldType != 'URL', true, false), IF(smHelper.targetFieldType != 'PHONE', true, false))}"/>
                                 <apex:selectOption itemValue="MIN" itemLabel="{!$Label.rh2__Minimum}" rendered="{! AND(IF(smHelper.targetFieldType != 'REFERENCE', true, false), IF(smHelper.targetFieldType != 'ID', true, false), IF(smHelper.targetFieldType != 'BOOLEAN', true, false), IF(smHelper.targetFieldType != 'URL', true, false), IF(smHelper.targetFieldType != 'PHONE', true, false))}"/>
@@ -432,6 +435,26 @@
                                                 </div>
                                             </div>    
                                         </div> 
+                                    </span>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                            <apex:outputPanel id="uniqueSumDisplay" rendered="{!smHelper.logic == 'SUM'}">
+                                <br/>
+                                <apex:outputPanel id="uniqueSumOption">
+                                    <apex:inputCheckbox value="{!smHelper.uniqueSum}">
+                                        <apex:actionSupport event="onchange" action="{!buildUniqueSumFieldList}" reRender="source, selectionInfo, saveCancelBtns, filterAndPreview, targetFieldMessage, rollupPreviewContainer, archivedRecordsMessage, modeTiebreaker, uniqueSumField" status="loading"/>
+                                    </apex:inputCheckbox>&nbsp;{!$Label.UniqueSum}
+                                    <span>
+                                        <a id="uniqueSumInfo" onmouseover="setShowTooltipFormatting('uniqueSumHelp');" onmouseout="document.getElementById('uniqueSumHelp').style.display = 'none';">
+                                            <img class="slds-icon slds-icon--x-small" src="/apexpages/slds/latest/assets/icons/utility/info_60.png"></img>
+                                        </a>
+                                        <div style="max-height:0px; overflow:visible; overflow-y:visible; position:absolute;">
+                                            <div class="slds-popover slds-theme--info" id="uniqueSumHelp" style="display:none !important">
+                                                <div class="slds-popover__body">
+                                                    {!$Label.IfCheckedUniqueSum}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </span>
                                 </apex:outputPanel>
                             </apex:outputPanel>
@@ -508,8 +531,9 @@
                     <apex:outputPanel id="firstField">                        
                     <apex:outputPanel rendered="{!IF(AND(OR(AND(smHelper.logic != null, smHelper.logic != 'CNT'),AND(smHelper.displayCountFields == true, smHelper.logic == 'CNT')), NOT(AND(smHelper.childExistsCheckboxRollup, smHelper.logic == 'CBX'))),true,false)}">
                         <apex:outputPanel id="firstFieldOptions">
+                            <apex:outputLabel value="{!$Label.rh2__Select} {!$Label.rh2__SourceField}" for="sf1"/><br/>
                             <apex:selectList size="8" value="{!smHelper.sourceField1API}" id="sf1" style="margin-right:15px;width:315px;overflow-x:auto;">
-                                <apex:actionSupport event="onchange" action="{!refreshSource2}" reRender="sf2, field2, selectionInfo, source, saveCancelBtns, filterAndPreview, targetFieldMessage, polyWarning, rollupPreviewContainer, delim, type, archivedRecordsMessage, modeTiebreaker" status="loading"/> 
+                                <apex:actionSupport event="onchange" action="{!refreshSource2}" reRender="sf2, field2, selectionInfo, source, saveCancelBtns, filterAndPreview, targetFieldMessage, polyWarning, rollupPreviewContainer, delim, type, archivedRecordsMessage, modeTiebreaker, uniqueSumField" status="loading"/> 
                                 <apex:selectOptions value="{! sourceFieldController.PaginatedList }"/>
                             </apex:selectList>
                         </apex:outputPanel>
@@ -529,8 +553,9 @@
                     <apex:outputPanel id="field2">
                         <apex:outputPanel rendered="{! AND(NOT(ISBLANK(smHelper.sourceField1API)), sourceFields1FK)}">
                             <apex:outputPanel id="fkFieldOptions">
+                                <apex:outputLabel value="{!$Label.rh2__Select} {!$Label.rh2__ForeignKey} {!$Label.rh2__SourceField}" for="sf2"/><br/>
                                 <apex:selectList id="sf2" size="8" value="{!smHelper.sourceField2API}" style="margin-right:15px;width:315px;overflow-x:auto;">
-                                    <apex:actionSupport event="onchange" action="{!selectSourceField}" reRender="uniqueCountOption, source, selectionInfo, saveCancelBtns, filterAndPreview, targetFieldMessage, rollupPreviewContainer, archivedRecordsMessage, modeTiebreaker" status="loading"/>
+                                    <apex:actionSupport event="onchange" action="{!selectSourceField}" reRender="uniqueCountOption, source, selectionInfo, saveCancelBtns, filterAndPreview, targetFieldMessage, rollupPreviewContainer, archivedRecordsMessage, modeTiebreaker, uniqueSumField" status="loading"/>
                                     <apex:selectOptions value="{! fkSourceFieldController.PaginatedList }"/>
                                 </apex:selectList>
                             </apex:outputPanel>
@@ -547,14 +572,41 @@
                             </apex:outputPanel>
                         </apex:outputPanel>
                     </apex:outputPanel>
+                    <apex:outputPanel id="uniqueSumField">
+                        <apex:outputPanel rendered="{!AND(smHelper.uniqueSum, smHelper.logic == 'SUM', OR(AND(!sourceFields1FK, NOT(ISBLANK(smHelper.sourceField1Api))), AND(sourceFields1FK, NOT(ISBLANK(smHelper.sourceField2Api)))))}">
+                            <apex:outputPanel id="uniqueSumFieldOptions">
+                                <apex:outputLabel value="{!$Label.rh2__Select} {!$Label.rh2__UniqueField}" for="uniqueFieldSelect"/><br/>
+                                <apex:selectList id="uniqueFieldSelect" size="8" value="{!smHelper.uniqueSumFieldApi}" style="margin-right:15px; width:315px; overflow-x:auto;">
+                                    <apex:actionSupport event="onchange" reRender="source, selectionInfo, saveCancelBtns, filterAndPreview, targetFieldMessage, rollupPreviewContainer, archivedRecordsMessage, modeTiebreaker" status="loading"/>
+                                    <apex:selectOptions value="{!uniqueSumFieldController.PaginatedList}"/>
+                                </apex:selectList>
+                            </apex:outputPanel>
+                            <br/><br/>
+                            <div class="slds-form-element">
+                                <input style="width:315px;" class="slds-input" placeholder="{!$Label.TypeForFields}" type="text" onkeypress="captureEnterAndBuildList(event, 'uniqueSumFieldSearch', searchAllUniqueSumFields);" id="uniqueSumFieldSearch"/>
+                            </div>
+                            <script>
+                                searchFromInput("uniqueSumFieldSearch", searchAllUniqueSumFields);
+                            </script>
+                            <br/>
+                            <apex:outputPanel id="uniqueSumFieldPagination">
+                                <c:Paginate pageController="{!uniqueSumFieldController}" renderedComponent="uniqueSumField" rendered="{!smHelper.uniqueSum}"/>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
 
                     <apex:outputPanel id="selectionInfo">
-                    <apex:outputPanel styleClass="slds-box" style="width:250px;float:right; margin-right:35px; background-color: white; word-wrap:break-word;" rendered="{!IF(AND(smHelper.sourceFieldType != null, smHelper.sourceField != null), true, false)}">
+                    <apex:outputPanel styleClass="slds-box" style="width:250px;float:right; margin-right:35px; margin-top:20px; background-color: white; word-wrap:break-word;" rendered="{!IF(AND(smHelper.sourceFieldType != null, smHelper.sourceField != null), true, false)}">
                         <apex:outputText value="{!$Label.rh2__YouHaveSelected}" styleClass="caption"/>
                         <br/> 
                         <br/>
                         <apex:outputText value="{! SUBSTITUTE(smHelper.sourceField, '.', ' > ') }" /> 
                         <br/>
+                        <apex:outputPanel rendered="{!AND(smHelper.uniqueSum, NOT(ISBLANK(smHelper.uniqueSumFieldApi)))}">
+                            <br/>
+                            From {!smHelper.sourceObject} records with unique {!smHelper.uniqueSumFieldApi} field values
+                            <br/>
+                        </apex:outputPanel>
                         <br/>
                         <apex:outputText value="{!$Label.Type} {! smHelper.sourceFieldType }"/><br />
                         <apex:outputText value="{!$Label.rh2__ToRollupInto} {!smHelper.targetField}" />
@@ -1052,8 +1104,19 @@
 
                                 <apex:outputLabel for="disableRealtimeCheckbox" value="{!' ' + $Label.rh2__DisableRealtime}"/>
                                 <p class="slds-text-body_small">{!$Label.rh2__IfCheckedWillNotRollupInRealtime}</p>
+                                <br/>
                             </apex:outputpanel> 
 
+                            <!-- Code for overriding object level async-->
+                            <apex:outputpanel id="overrideObjectLevelForcedAsync">
+                                <apex:outputPanel >
+                                    <apex:inputCheckbox value="{!smHelper.overrideObjectLevelForcedAsync}" id="overrideObjectLevelForcedAsyncCheckBox" />
+                                    <apex:actionsupport event="onchange" action="{! postVariable }" rerender="overrideObjectLevelForcedAsync"/>   
+                                </apex:outputpanel>
+
+                                <apex:outputLabel for="overrideObjectLevelForcedAsyncCheckBox" value="{!' ' + $Label.rh2__OverrideObjectLevelForcedAsync}"/>
+                                <p class="slds-text-body_small">{!$Label.rh2__IfCheckedWillOverrideObjectLevelForcedAsync}</p>
+                            </apex:outputpanel>
 
                             <apex:outputPanel rendered="{!isTextSetting}">
                                 <br/><br/>
@@ -1108,6 +1171,19 @@
                                         <br/>
                                     </apex:outputPanel>
                                 </apex:outputPanel>
+
+                                
+                                <apex:outputPanel id="truncate">
+                                    <apex:inputCheckbox value="{!smHelper.shouldTruncateTxt}" id="truncateCheckBox">
+                                        <apex:actionSupport event="onchange" action="{! postVariable }" rerender="truncate" status="loading"/>
+                                    </apex:inputCheckbox>
+                                    <apex:outputLabel value="{!$Label.rh2__TruncateText}" style="padding-left:2px;" for="truncateCheckBox"/>
+                                    <p class="slds-text-body_small">{!$Label.rh2__TruncationInformation}</p>
+                                    <br/>
+                                    <apex:selectList size="1" value="{!smHelper.textTruncator}" rendered="{!smHelper.shouldTruncateTxt}">
+                                        <apex:selectOptions value="{!textTruncators}"></apex:selectOptions>
+                                    </apex:selectList>
+                                </apex:outputPanel>
                             </apex:outputPanel>
                             
                          </div>
@@ -1124,7 +1200,7 @@
              <footer class="slds-card__footer">
                  <apex:outputPanel id="saveCancelBtns">
                     <apex:outputPanel rendered="{!AND(smHelper.NewlyCreatedFields, !!renderSaveButton)}">
-                        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert">
+                        <div class="slds-notify slds-notify_alert slds-theme_warning slds-align_absolute-center" role="alert">
                             <p>{!$Label.rh2__FieldLevelSecurityWillNotBeSet} {!smHelper.fieldsThatNeedFLS}</p>
                         </div><br/><br/>
                     </apex:outputPanel>
@@ -1152,14 +1228,24 @@
    <apex:outputpanel id="realtimeEnable">
         <div aria-hidden="false" role="dialog" class="slds-modal slds-fade-in-open">
             <div class="slds-modal__container" style="width:640px !important;">
-                <div class="slds-modal__header slds-theme_alert-texture">
+                <div class="slds-modal__header">
                     <h4 class="slds-text-heading_medium">{!$Label.EnableRealtime}?</h4>
-                    {!$Label.ItAppearsRealtime} &nbsp; {!smHelper.childObjectLabel} &nbsp; {!$Label.ObjectCurrently}.
-                    {!$Label.WeRecommendRealtime} &nbsp; {!smHelper.childObjectLabel} &nbsp; {!$Label.ObjectNow}?
+                    <button type="button" onclick='showModal(false, "triggerPopup");' class="slds-button slds-button_icon-inverse slds-modal__close">
+                        <svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                        </svg>  
+                    </button>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <div>
+                        {!$Label.ItAppearsRealtime} &nbsp; {!smHelper.childObjectLabel} &nbsp; {!$Label.ObjectCurrently}.
+                        {!$Label.WeRecommendRealtime} &nbsp; {!smHelper.childObjectLabel} &nbsp; {!$Label.ObjectNow}?
+                    </div>
                     <br/>
-                    <br/>
-                    <apex:inputCheckbox value="{!smHelper.realtimeEnablementOptOut}"/>
-                    {!$Label.rh2__DontSuggestRealtime}                              
+                    <div class="slds-align_absolute-center">
+                        <apex:inputCheckbox value="{!smHelper.realtimeEnablementOptOut}"/>
+                        &nbsp;{!$Label.DontSuggestRealtime}                              
+                    </div>
                 </div>
                 <div class="slds-modal__footer">
                     <div class="slds-x-small-buttons_horizontal slds-align_absolute-center">
@@ -1186,7 +1272,7 @@
                     <h2 class="slds-text-heading_medium">{!$Label.RollupQueryValidation}</h2>
                     <button type="button" onclick='showModal(false, "rollupQueryValidation");' class="slds-button slds-button_icon-inverse slds-modal__close">
                         <svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
-                            <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/action-sprite/svg/symbols.svg#close')}"></use>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
                         </svg>
                     </button>
                         
@@ -1218,7 +1304,7 @@
                     <h2 class="slds-text-heading_medium">{!$Label.ScheduleRecommended}</h2>
                     <button type="button" onclick='showModal(false, "modalPopup");' class="slds-button slds-button_icon-inverse slds-modal__close">
                         <svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
-                            <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/action-sprite/svg/symbols.svg#close')}"></use>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
                         </svg>
                     </button>
                         
@@ -1292,7 +1378,7 @@
                     <h2 class="slds-text-heading_medium">{!$Label.rh2__PreviewRollupResults}</h2>
                     <button type="button" onclick='showModal(false, "previewRollupResults");' class="slds-button slds-button_icon-inverse slds-modal__close">
                         <svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
-                            <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/action-sprite/svg/symbols.svg#close')}"></use>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
                         </svg>
                     </button>
                             
@@ -1360,7 +1446,7 @@
                     <h2 class="slds-text-heading_medium">{!$Label.rh2__CreateRelationshipField}</h2>
                     <button type="button" onclick='showModal(false, "createRelationshipFieldModal");' class="slds-button slds-button_icon-inverse slds-modal__close">
                         <svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
-                            <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/action-sprite/svg/symbols.svg#close')}"></use>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
                         </svg>
                     </button>
                             

@@ -15,7 +15,7 @@
         <fullName>rh2__Ignore_Query_Error__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <description>Check this box to ignore query errors when calculating lookup skew</description>
+        <description>Check this box to ignore query errors when calculating lookup skew.</description>
         <label>Ignore Query Error</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -36,6 +36,7 @@
         <fullName>rh2__Override__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
+        <description>If checked, Rollup Helper will not automatically update the record scope value for this object.</description>
         <label>Override</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -51,6 +52,7 @@
     <fields>
         <fullName>rh2__Record_Scope__c</fullName>
         <deprecated>false</deprecated>
+        <description>The maximum number of records of this object that Rollup Helper will process in a single asynchronous request.</description>
         <externalId>false</externalId>
         <label>Record Scope</label>
         <precision>4</precision>
@@ -63,6 +65,7 @@
     <fields>
         <fullName>rh2__Rollups_Per_Async__c</fullName>
         <deprecated>false</deprecated>
+        <description>The maximum number of rollups processed per asynchronous job. Lowering this setting can greatly reduce the number of query rows consumed per job, but may greatly increase the number of queue items needed to process all rollups.</description>
         <externalId>false</externalId>
         <label>Rollups Per Asynchronous Request</label>
         <precision>3</precision>

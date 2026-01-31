@@ -9,22 +9,6 @@
     </head> 
     
     <style>
-        .slds-button_neutral {
-            border: 1px solid rgb(201, 201, 201) !important;
-        }
-
-        .slds-button_icon-border {
-            border: 1px solid rgb(201, 201, 201) !important;
-        }
-
-        .slds-button_icon-border-filled {
-            border: 1px solid rgb(201, 201, 201) !important;
-        }
-
-        .slds-combobox__input{
-            background: white !important;
-        }
-
         #toastContainer {
           position:fixed;
           z-index: 999;
@@ -71,21 +55,12 @@
             createAllSettingsComponent();
         });
 
-        function adjustHelpTextStyling(){
-            const popupText = document.querySelector("lightning-primitive-bubble");
-            if(popupText){
-                popupText.classList.add("slds-scope");
-            }
-        }
-
         function createAllSettingsComponent(){
             $Lightning.use(namespace + ":PS_Rollup_Group_Config", function() {
                 $Lightning.createComponent(
                     namespace + ":ps_allSettings", {}, 
                     "allSettings", 
-                    function(cmp) {
-                        adjustHelpTextStyling();
-                    });
+                    function(cmp) {});
             });
         }
 

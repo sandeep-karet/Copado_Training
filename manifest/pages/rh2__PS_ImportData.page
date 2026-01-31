@@ -1,4 +1,4 @@
-<apex:page title="Rollup Helper Export"  sidebar="false"  applyBodyTag="false" docType="html-5.0" showHeader="true">
+<apex:page title="Rollup Helper Export" standardStylesheets="false" sidebar="false"  applyBodyTag="false" docType="html-5.0" showHeader="true">
 <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">	 
 	 <head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -7,12 +7,6 @@
 		<apex:stylesheet value="{! URLFOR($Resource.PT_Resources_v1, '/css/grayBackground.css') }" /> 
 		<apex:includeLightning />
      </head>
-     <style>
-        lightning-breadcrumb.slds-breadcrumb__item::marker {
-            color: transparent !important;
-        }   
-     </style>
-     
      <script type="text/javascript">
 		var namespace;
 

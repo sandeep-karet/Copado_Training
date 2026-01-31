@@ -9,30 +9,11 @@
     </head>
 
     <style>
-        .slds-button_icon-border, .borderedButton > button {
-            border: 1px solid rgb(201, 201, 201) !important;
-        }
-
-        td .slds-button_icon-border {
-            margin-right: 12px !important;
-        }
-
-        .slds-button_neutral {
-            border: 1px solid rgb(201, 201, 201) !important;
-        }
-
-        .slds-combobox__input{
-            background: white !important;
-        }
         
         #toastContainer {
           position:fixed;
           z-index: 999;
         }
-
-        lightning-breadcrumb.slds-breadcrumb__item::marker {
-            color: transparent !important;
-        }   
     </style>
 
     <script>
@@ -85,8 +66,8 @@
         function sendColumnWidths(lwcElement){
             try{
                 const columnList = [
-                    "filter-name-cell", "filter-label-cell", "rollup-cell",
-                    "filter-type-cell", "filter-object-cell", "action-cell"
+                    "invalid-data-cell", "filter-name-cell", "filter-label-cell", "rollup-cell",
+                    "filter-type-cell", "schedule-cell", "filter-object-cell", "action-cell"
                 ];
 
                 const columnWidths = columnList.map(columnName => {

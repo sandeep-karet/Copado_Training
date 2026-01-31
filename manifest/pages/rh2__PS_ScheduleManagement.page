@@ -1,4 +1,4 @@
-<apex:page Controller="rh2.PS_ScheduleManagement_Controller" title="Rollup Helper Schedule Management" sidebar="false" applyBodyTag="false" docType="html-5.0" showHeader="true">
+<apex:page Controller="rh2.PS_ScheduleManagement_Controller" title="Rollup Helper Schedule Management" standardStylesheets="false" sidebar="false" applyBodyTag="false" docType="html-5.0" showHeader="true">
    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <head>
          <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -7,14 +7,10 @@
          <apex:includeScript value="{! URLFOR($Resource.HS_Jquery, 'jquery-3.6.0.min.js')}" />   
          <apex:stylesheet value="{! URLFOR($Resource.PT_Resources_v1, '/font-awesome/css/font-awesome.min.css') }" />
          <apex:stylesheet value="{! URLFOR($Resource.PT_Resources_v1, '/css/grayBackground.css') }" />
-         <apex:stylesheet value="{! URLFOR($Resource.PT_Resources_v1, '/css/lwcHelpTextForVF.css') }"/>
          <apex:includeLightning />
       </head>
 
       <style>
-         .slds-card {
-            margin: 8px;
-         }
 
          .datePicker, 
          .inlineEditDialog,
@@ -40,21 +36,6 @@
             display: block;
          }
 
-         .slds-button_neutral {
-            border: 1px solid rgb(201, 201, 201) !important;
-        }
-
-        .slds-button_icon-border {
-            border: 1px solid rgb(201, 201, 201) !important;
-        }
-
-        .slds-combobox__input{
-            background: white !important;
-        }
-
-         lightning-breadcrumb.slds-breadcrumb__item::marker {
-            color: transparent !important;
-         }
         #toastContainer {
           position:fixed;
           z-index: 999;
@@ -121,7 +102,7 @@
          function sendColumnWidths(lwcElement){
             try{
                const columnList = [
-                    "schedule-name-cell", "rollup-name-cell", "target-object-cell",
+                    "schedule-name-cell", "rollup-name-cell", "target-object-cell", "parent-filter-cell",
                     "next-fire-time-cell", "repeat-cell", "interval-cell",
                     "interval-unit-cell", "job-status-cell", "action-cell"
                ];

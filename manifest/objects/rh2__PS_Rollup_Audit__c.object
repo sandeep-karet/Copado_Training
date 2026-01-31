@@ -307,6 +307,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>rh2__Override_Object_Level_Forced_Async__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, Rollup Helper will override the object level force async setting to run in realtime.</description>
+        <inlineHelpText>If checked, Rollup Helper will override the object level force async setting to run in realtime.</inlineHelpText>
+        <label>Override Object Level Forced Async</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>rh2__Overwrite__c</fullName>
         <defaultValue>true</defaultValue>
         <deprecated>false</deprecated>
@@ -944,6 +956,36 @@
         <inlineHelpText>API Name of the Rollup&apos;s target object</inlineHelpText>
         <label>Target Object Name</label>
         <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__truncatorOption__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores truncation indicator for text rollups</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores truncation indicator for text rollups</inlineHelpText>
+        <label>Truncator</label>
+        <length>16</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rh2__uniqueField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The field to evaluate on child records when performing a unique rollup</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The field to evaluate on child records when performing a unique rollup</inlineHelpText>
+        <label>Unique Field</label>
+        <length>150</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>

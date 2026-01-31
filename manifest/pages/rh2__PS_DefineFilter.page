@@ -136,7 +136,7 @@
                     </center>
                     </div>              
                     <div class="slds-modal__footer">
-                        <apex:commandButton styleClass="slds-button slds-button_brand" action="{!cloneFilter}" onclick="showModal(false, 'clonePopupModal');" rerender="ClonePopup, FilterForm, limitinput, offsetinput, boolLogic, existingSortList, existingFilters, filtercon, preview" value="{!$Label.rh2__Clone}" status="loading"/>
+                        <apex:commandButton styleClass="slds-button slds-button_brand" action="{!cloneFilter}" onclick="showModal(false, 'clonePopupModal');" rerender="ClonePopup, FilterForm, fName, limitinput, offsetinput, boolLogic, existingSortList, existingFilters, filtercon, preview" value="{!$Label.rh2__Clone}" status="loading"/>
                         <apex:commandButton styleClass="slds-button slds-button_neutral" onclick="showModal(false, 'clonePopupModal');" rerender="none" value="{!$Label.rh2__Cancel}"/>                                                       
                     </div>
                 </div>
@@ -171,7 +171,7 @@
                 </nav>
             </header>
             <div class="slds-modal__content slds-p-left_small slds-p-bottom_small grayBackground">
-                <apex:commandButton styleClass="slds-button slds-button_neutral" rendered="{!ISBLANK(filterName)}" onclick="showModal(true, 'clonePopupModal');" rerender="none" value="{!$Label.rh2__CloneFromExisting}"/>                                                                                                    
+                <apex:commandButton styleClass="slds-button slds-button_neutral" onclick="showModal(true, 'clonePopupModal');" reRender="none" value="{!$Label.rh2__CloneFromExisting}"/>
             </div>
             <footer><apex:outputPanel id="errorblock" rendered="{!NOT(dfh.showSubFilterPopup)}"><apex:pagemessages /></apex:outputPanel></footer>
         </div>
@@ -861,6 +861,7 @@
                     <apex:commandButton rendered="{!NOT(ISBLANK(filterName))}" action="{!deleteFilter}" value="{!$Label.rh2__Delete}" styleClass="slds-button slds-button_neutral slds-m-around_large"/>        
                     <apex:commandButton action="{!goBackToPreviousPage}" value="{!$Label.rh2__Cancel}" styleClass="slds-button slds-button_neutral slds-m-around_large"/>            
                     <apex:outputLink value="#" onclick="showModal(true, 'modalPopup')" styleClass="slds-button slds-button_neutral slds-m-around_large">{!$Label.rh2__WhereIsThisFilterUsed}?</apex:outputLink>
+                    <apex:commandLink rendered="{! !ISNULL(filterName)}" action="{!redirectToFilterAudit}" value="{!$Label.rh2__ViewAuditRecord}" styleClass="slds-button slds-button_neutral slds-m-around_large" target="_blank"/>
                     <apex:commandButton action="{!URLFOR($Page.PS_ReferAFriend)}" value="{!$Label.rh2__InviteFriend}" styleClass="slds-button slds-button_brand slds-m-around_large slds-float--right"/>
                 </div>
 
@@ -880,31 +881,38 @@
                     <h2 class="slds-text-heading_medium">{!$Label.rh2__WhereIsThisFilterUsed}?</h2>
                     <button type="button" onclick='showModal(false, "modalPopup");' class="slds-button slds-button_icon-inverse slds-modal__close">
                         <svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
-                            <use xlink:href="{! URLFOR($Asset.SLDS, '/assets/icons/action-sprite/svg/symbols.svg#close')}"></use>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{! URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
                         </svg>
                     </button>
                         
                 </div>
                 <div class="slds-modal__content">
-                    <apex:outputPanel rendered="{!RollupsUsingThisFilter.size>0}"> 
+                    <apex:outputPanel rendered="{!FilterReferences.size>0}"> 
                         <table class="slds-table" style="overflow:hidden;">
                             <thead> 
-                                <th class="slds-text-heading_label"><strong>{!$Label.rh2__RollupName}</strong></th>
-                                <th class="slds-text-heading_label"><strong>{!$Label.rh2__RollupLabel}</strong></th>
+                                <th class="slds-text-heading_label"><strong>{!$Label.rh2__Object}</strong></th>
                                 <th class="slds-text-heading_label"><strong>{!$Label.rh2__FilterType}</strong></th>
+                                <th class="slds-text-heading_label"><strong>{!$Label.rh2__RecordName}</strong></th>
+                                <th class="slds-text-heading_label"><strong>{!$Label.rh2__RecordLabel}</strong></th>
                             </thead>
                             <tbody>
-                                <apex:repeat value="{!RollupsUsingThisFilter}" var="item">
+                                <apex:repeat value="{!FilterReferences}" var="item">
                                     <tr>
-                                        <td style="word-wrap:break-word !important;" class="slds-cell-wrap"><apex:outputLink value="{!URLFOR($Page.rh2__PS_RollupType, null, [s=item.rollupName])}" target="__blank">{!item.rollupName}</apex:outputLink></td>
-                                        <td style="word-wrap:break-word !important;" class="slds-cell-wrap">{!item.rollupLabel}</td>
-                                        <td style="word-wrap:break-word !important;" class="slds-cell-wrap">{!item.filterUsage}</td>
+                                        <td style="word-wrap:break-word !important;" class="slds-cell-wrap">{!item.objType}</td>
+                                        <td style="word-wrap:break-word !important;" class="slds-cell-wrap">{!item.filterContext}</td>
+                                        <apex:outputPanel rendered="{!IF(contains(item.objType, 'Rollup'), true, false)}">
+                                            <td style="word-wrap:break-word !important;" class="slds-cell-wrap"><apex:outputLink value="{!URLFOR($Page.rh2__PS_RollupType, null, [s=item.objName])}" target="__blank">{!item.objName}</apex:outputLink></td>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!IF(contains(item.objType, 'Schedule'), true, false)}">
+                                            <td style="word-wrap:break-word !important;" class="slds-cell-wrap"><apex:outputLink value="{!URLFOR($Page.rh2__PS_Job, null, [id=item.objId])}" target="__blank">{!item.objName}</apex:outputLink></td>
+                                        </apex:outputPanel>
+                                        <td style="word-wrap:break-word !important;" class="slds-cell-wrap">{!item.friendlyName}</td>
                                     </tr>
                                 </apex:repeat>
                             </tbody>
                         </table>
                     </apex:outputPanel>
-                    <apex:outputPanel rendered="{!RollupsUsingThisFilter.size==0}">
+                    <apex:outputPanel rendered="{!FilterReferences.size==0}">
                         {!$Label.rh2__ThisFilterIsCurrentlyNot}
                     </apex:outputPanel>
                     

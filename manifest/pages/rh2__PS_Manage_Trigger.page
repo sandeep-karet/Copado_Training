@@ -54,6 +54,7 @@
     				<ol class="slds-breadcrumb slds-list_horizontal">
     					<li class="slds-list__item slds-text-heading_label home-crumb"><a href="{!URLFOR($Page.PS_landingPage)}">{!$Label.Home}</a></li>
    		   				<li class="slds-list__item slds-text-heading_label setting-crumb"><a href="{!URLFOR($Page.PS_Allsettings)}">{!$Label.AllRollupSetting}</a></li>
+						<li class="slds-list__item slds-text-heading_label"><a href="{!URLFOR($Page.PS_Select_Object)}">{!$Label.EnableRealtime}</a></li>
        				</ol>
         		</nav>
   			</header>
@@ -172,7 +173,7 @@
 			<apex:outputPanel id="testAlert">
 				<apex:outputPanel rendered="{!runSpecifiedTests}">
 				<center>
-					<div class="slds-size_1-of-3 slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert">
+					<div class="slds-size_1-of-3 slds-notify slds-notify_alert slds-theme_warning slds-align_absolute-center" role="alert">
 						<b>{!$Label.rh2__PleaseNoteItIsRecommended}</b>
 					</div>
 				</center>
@@ -277,7 +278,7 @@
 					<div class="slds-modal__header">
 						<button type="button" onclick="showModal(false, 'realtimeRunInfoModal')" class="slds-button slds-button_icon-inverse slds-modal__close">
 							<svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
-								<use href="{!URLFOR($Asset.SLDS, '/assets/icons/action-sprite/svg/symbols.svg#close')}"></use>
+								<use href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
 							</svg>
 						</button>
 						<h2 class="slds-text-heading_medium">About Running Realtime Rollups</h2>
