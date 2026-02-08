@@ -70,6 +70,16 @@ window.stringUtils = (function () {
   };
 
   /**
+   * Returns decoded string.
+   * @param s {string} The string to decode.
+   * @returns {string} The decoded string.
+   */
+  var decodeHtmlEntity = function (s) {
+    var doc = new DOMParser().parseFromString(s, 'text/html');
+    return doc.body.textContent || '';
+  };
+
+  /**
    * Formats an error message from an HTTP response.
    * @param response {Response} The HTTP response.
    * @returns {string} The formatted error message.
@@ -188,6 +198,7 @@ window.stringUtils = (function () {
     formatHtml: formatHtml,
     escapeHtml: escapeHtml,
     unescapeHtml: unescapeHtml,
+    decodeHtmlEntity: decodeHtmlEntity,
     getErrorMessage: getErrorMessage,
     getExceptionType: getExceptionType,
     formatSCMFile: formatSCMFile,

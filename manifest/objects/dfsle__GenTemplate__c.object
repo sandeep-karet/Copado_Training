@@ -175,6 +175,14 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>dfsle__CurrencyLocaleEdit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Generator Can Edit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>dfsle__Description__c</fullName>
         <deprecated>false</deprecated>
         <label>Description</label>
@@ -362,6 +370,17 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>dfsle__TemplateCurrencyFormat__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Template Currency Format</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>dfsle__TemplateId__c</fullName>
         <caseSensitive>false</caseSensitive>
         <deprecated>false</deprecated>
@@ -415,7 +434,62 @@
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
-    <label>DocuSign Gen Template</label>
+    <fields>
+        <fullName>dfsle__templateCurrencyCode__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Template Currency Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>dfsle__templateCurrencySymbol__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Template Currency Symbol</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>dfsle__templateISO__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Template ISO</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>dfsle__templateLocaleCode__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Template Locale Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>dfsle__templateLocale__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Template Locale</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Docusign Gen Template</label>
     <listViews>
         <fullName>dfsle__All</fullName>
         <columns>NAME</columns>
@@ -431,7 +505,7 @@
         <label>Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>DocuSign Gen Templates</pluralLabel>
+    <pluralLabel>Docusign Gen Templates</pluralLabel>
     <searchLayouts>
         <searchResultsAdditionalFields>dfsle__SourceObject__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>dfsle__IsSample__c</searchResultsAdditionalFields>

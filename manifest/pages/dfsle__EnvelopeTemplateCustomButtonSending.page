@@ -6,13 +6,16 @@
     var _event = '{!JSENCODE($CurrentPage.parameters.event)}';
     var _namespace = '{!JSENCODE(namespace)}';
     var _isMobileApp = '{!JSENCODE($CurrentPage.parameters.isMobileApp)}';
+    var _isConsoleView = '{!JSENCODE($CurrentPage.parameters.isConsoleView)}';
+
     $Lightning.use(_namespace + ':EnvelopeActionSummary', function () {
       $Lightning.createComponent(_namespace + ':postEnvelopeAction',
         {
           recordId: _sourceId,
           eventResult: _event ? _event : 'Send', 
           isMobileApp: _isMobileApp === '1',
-          isSendingExperience: true
+          isSendingExperience: true,
+          isConsoleView: _isConsoleView === 'true'
         },
         "postEnvelopeActionId",
         function (cmp) {

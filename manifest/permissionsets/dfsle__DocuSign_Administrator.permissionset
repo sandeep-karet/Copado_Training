@@ -53,6 +53,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>dfsle__NavigatorController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>dfsle__OnlineEditorController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -686,6 +690,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>dfsle__GenTemplate__c.dfsle__CurrencyLocaleEdit__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>dfsle__GenTemplate__c.dfsle__Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -776,6 +785,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>dfsle__GenTemplate__c.dfsle__TemplateCurrencyFormat__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>dfsle__GenTemplate__c.dfsle__TemplateId__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -792,6 +806,61 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>dfsle__GenTemplate__c.dfsle__UseCurrentRecord__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dfsle__GenTemplate__c.dfsle__templateCurrencyCode__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dfsle__GenTemplate__c.dfsle__templateCurrencySymbol__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dfsle__GenTemplate__c.dfsle__templateISO__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dfsle__GenTemplate__c.dfsle__templateLocaleCode__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dfsle__GenTemplate__c.dfsle__templateLocale__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dfsle__Jobs__c.dfsle__ContentVersion_Ids__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dfsle__Jobs__c.dfsle__Gen_Template_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dfsle__Jobs__c.dfsle__JobEnvelopeStatus__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dfsle__Jobs__c.dfsle__JobId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dfsle__Jobs__c.dfsle__Job_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>dfsle__Jobs__c.dfsle__Source_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1137,6 +1206,16 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>dfsle__Jobs__c</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>dfsle__Log__c</object>
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>true</viewAllRecords>
@@ -1275,6 +1354,10 @@
     </tabSettings>
     <tabSettings>
         <tab>dfsle__GenTemplate__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>dfsle__Jobs__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

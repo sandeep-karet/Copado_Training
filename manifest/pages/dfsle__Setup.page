@@ -2,7 +2,7 @@
     <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <apex:includeLightning />
     <apex:slds />
-    <apex:includeScript value="{!$Resource.dfsle__stringUtils}"/>
+    <apex:includeScript value="{!$Resource.dfsle__stringUtilsVF}"/>
     <apex:includeScript value="{!$Resource.dfsle__loginUtils}"/>
     <apex:stylesheet value="{!$Resource.dfsle__dstooltip}"/>
 
@@ -91,7 +91,7 @@
                 var left = (screen.width / 2) - (width / 2);
                 var top = (screen.height / 2) - (height / 2);
 
-                var w = window.open(stringUtils.unescapeHtml(result), 'oauth', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+                var w = window.open(stringUtilsVF.unescapeHtml(result), 'oauth', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
                 if (!w) {
                   showError(component, '{!JSENCODE($Label.DisablePopUp)}');
                   component.set('v.loading', false);
@@ -154,7 +154,7 @@
                 var left = (screen.width / 2) - (width / 2);
                 var top = (screen.height / 2) - (height / 2);
 
-                var w = window.open(stringUtils.unescapeHtml(result), 'oauth', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+                var w = window.open(stringUtilsVF.unescapeHtml(result), 'oauth', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
                 if (!w) {
                   showError(component, '{!JSENCODE($Label.DisablePopUp)}');
                   component.set('v.loading', false);

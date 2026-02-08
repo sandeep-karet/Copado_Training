@@ -1,6 +1,7 @@
 <apex:page id="CustomEnvelopeCreation" showHeader="true" sidebar="false" title="{!$Label.dfsle__DocuSign}" controller="dfsle.CustomEnvelopeCreationController"
     action="{!createDraftEnvelope}">
     <apex:includeLightning />
+    <apex:includeScript value="/support/console/60.0/integration.js" />
     <apex:slds />
     <style type="text/css">
         /* CSS to override default padding applied in Lightning Experience */
@@ -47,6 +48,7 @@
             const _recordName = '{!JSENCODE(recordName)}';
             const _urlforParams = '{!JSENCODE(urlforParams)}';
             const _errorMessage = '{!JSENCODE(errorMessage)}';
+            const _isConsoleView = sforce.console.isInConsole();
             const _showEmailSubject = '{!IF(showEmailSubject, "true", "false")}';
             const _showEmailMessage = '{!IF(showEmailMessage, "true", "false")}';
             const _showRemindExpire = '{!IF(showRemindExpire, "true", "false")}';
@@ -67,7 +69,8 @@
                         sendingExperience: _sendingExperience,
                         showEmailSubject: _showEmailSubject,
                         showEmailMessage: _showEmailMessage,
-                        showRemindExpire: _showRemindExpire 
+                        showRemindExpire: _showRemindExpire,
+                        isConsoleView: _isConsoleView
                     }
                 }, 'ds-sending', function () {
                     showSendingComponent();

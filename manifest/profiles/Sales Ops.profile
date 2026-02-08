@@ -26339,6 +26339,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>dfsle__AgreementDeskController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__AgreementDeskControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>dfsle__AgreementHistoryItem</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -26447,6 +26455,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>dfsle__CLMAction</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>dfsle__CLMApexUtility</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -26473,6 +26485,22 @@
     <classAccesses>
         <apexClass>dfsle__CLMConversionStatus</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__CLMEOSBatchableJob</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__CLMEOSHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__CLMEOSService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__CLMEOSServiceTest</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>dfsle__CLMEOSViewController</apexClass>
@@ -26541,6 +26569,14 @@
     <classAccesses>
         <apexClass>dfsle__CLMUpsellPermissionControllerTest</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__CLMWorkflowRequest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__CLMWorkflowRequestTest</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>dfsle__CheckboxTab</apexClass>
@@ -26915,6 +26951,18 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>dfsle__EnvelopeConfigurationBulkRequest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__EnvelopeConfigurationBulkRequestTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__EnvelopeConfigurationBulkSend</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>dfsle__EnvelopeConfigurationController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -27123,6 +27171,26 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>dfsle__InvocableCLMEOSSyncRequest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__InvocableDocumentGenerationJob</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__InvocableDocumentGenerationRequest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__InvocableDocumentGenerationRequestTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__InvocableGenAndSendJob</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>dfsle__JobMock</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -27153,6 +27221,14 @@
     <classAccesses>
         <apexClass>dfsle__ListTab</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__Locale</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__LocaleOption</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>dfsle__Localization</apexClass>
@@ -27259,6 +27335,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>dfsle__NavigatorController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__NavigatorControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>dfsle__Negotiate</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -27359,6 +27443,18 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>dfsle__PiAPI</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__PiAPIMock</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__PiAPITest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>dfsle__PivProvider</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -27405,6 +27501,14 @@
     <classAccesses>
         <apexClass>dfsle__PostInstallTest</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__ProcessGenAndSendJobs</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__ProcessGenAndSendJobsTest</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>dfsle__Product</apexClass>
@@ -27533,6 +27637,18 @@
     <classAccesses>
         <apexClass>dfsle__SalesforceTest</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__ScheduleGenAndSendJob</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__ScheduleGenAndSendJobTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__SchedulerAndBatchUtils</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>dfsle__ScmAPI</apexClass>
@@ -27735,6 +27851,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>dfsle__TokenCache</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__TokenCacheTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>dfsle__TokenService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -27753,6 +27877,14 @@
     <classAccesses>
         <apexClass>dfsle__ToolingAPIServiceTest</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__TriggerWorkflowRequest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__TriggerWorkflowRequestTest</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>dfsle__TroubleShootingController</apexClass>
@@ -27873,6 +28005,18 @@
     <classAccesses>
         <apexClass>dfsle__WordTemplateUpdaterTest</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__WorkflowAPI</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__WorkflowAPITest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__WorkflowBatchJob</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>dfsle__XMLSerializer</apexClass>
@@ -81213,6 +81357,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__GenTemplate__c.dfsle__CurrencyLocaleEdit__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>dfsle__GenTemplate__c.dfsle__Description__c</field>
         <readable>true</readable>
@@ -81303,6 +81452,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__GenTemplate__c.dfsle__TemplateCurrencyFormat__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>dfsle__GenTemplate__c.dfsle__TemplateId__c</field>
         <readable>true</readable>
@@ -81321,6 +81475,66 @@
         <editable>true</editable>
         <field>dfsle__GenTemplate__c.dfsle__UseCurrentRecord__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__GenTemplate__c.dfsle__templateCurrencyCode__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__GenTemplate__c.dfsle__templateCurrencySymbol__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__GenTemplate__c.dfsle__templateISO__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__GenTemplate__c.dfsle__templateLocaleCode__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__GenTemplate__c.dfsle__templateLocale__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__Jobs__c.dfsle__ContentVersion_Ids__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__Jobs__c.dfsle__Gen_Template_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__Jobs__c.dfsle__JobEnvelopeStatus__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__Jobs__c.dfsle__JobId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__Jobs__c.dfsle__Job_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__Jobs__c.dfsle__Source_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>dfsle__Jobs__c.dfsle__TaskId__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -91446,6 +91660,10 @@
     <tabVisibilities>
         <tab>dfsle__GenTemplate__c</tab>
         <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>dfsle__Jobs__c</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>dfsle__Log__c</tab>
