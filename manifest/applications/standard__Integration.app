@@ -5,13 +5,14 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
-    <label>FlowsApp</label>
-    <navType>Standard</navType>
-    <tabs>standard-home</tabs>
-    <tabs>standard-FlowRecord</tabs>
-    <tabs>standard-Monitor</tabs>
-    <tabs>standard-ActionHub</tabs>
-    <tabs>standard-FlowLogs</tabs>
+    <label>Integration App</label>
+    <navType>Console</navType>
+    <tabs>standard-IntegrationIntelligence</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>FlowsApp_UtilityBar</utilityBar>
+    <utilityBar>Integration_UtilityBar</utilityBar>
+    <workspaceConfig>
+        <mappings>
+            <tab>standard-IntegrationIntelligence</tab>
+        </mappings>
+    </workspaceConfig>
 </CustomApplication>
