@@ -28542,6 +28542,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>LVGO__Contract__c.Sample_pkg_test__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>LVGO__Enrollment_Communications_Survey__c.LVGO__Annual_Notice_of_Change_Content_Needed__c</field>
         <readable>false</readable>
     </fieldPermissions>

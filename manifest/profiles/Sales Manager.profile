@@ -28546,6 +28546,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>LVGO__Contract__c.Sample_pkg_test__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>LVGO__Enrollment_Communications_Survey__c.LVGO__Annual_Notice_of_Change_Content_Needed__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -52785,6 +52790,17 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>L2O_Stage_Metric__c-Stage Metric Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LVGO__Contract__c-LVGO__Client Overview</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LVGO__Contract__c-LVGO__Client Overview</layout>
+        <recordType>LVGO__Contract__c.LVGO__Client_Overview</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LVGO__Contract__c-LVGO__Program Overview</layout>
+        <recordType>LVGO__Contract__c.LVGO__Program_Overview</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Lead-Lead Layout</layout>
