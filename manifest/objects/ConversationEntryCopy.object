@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <enableFeeds>false</enableFeeds>
-    <externalSharingModel>ReadWrite</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>ClientDuration</fullName>
     </fields>
@@ -32,6 +32,10 @@
         <fullName>Name</fullName>
     </fields>
     <fields>
+        <fullName>OwnerId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>TranscriptedTimestamp</fullName>
     </fields>
     <fields>
@@ -40,5 +44,5 @@
     <fields>
         <fullName>VisibilityStrategy</fullName>
     </fields>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Private</sharingModel>
 </CustomObject>
