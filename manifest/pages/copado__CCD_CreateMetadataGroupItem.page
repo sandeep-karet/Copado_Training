@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="slds-form-element">
                                         <label class="slds-form-element__label" for="metadataNameOptions">
-                                            {!$Label.copado__metadata_name}
+                                            {!$Label.copado__Metadata_Name}
                                             <abbr class="slds-required">*</abbr>
                                         </label>
                                         <div class="slds-form-element__control" id="metadataNameOptions">
@@ -61,7 +61,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="slds-form-element__row" id="advancedMetadataNameFilters" style="visibility: {!IF(selectedMetadataItemName == $Label.copado__all, 'hidden', 'visible')};">
+                                <div class="slds-form-element__row" id="advancedMetadataNameFilters" style="visibility: {!IF(selectedMetadataItemName == $Label.copado__ALL, 'hidden', 'visible')};">
                                     <div class="slds-form-element">
                                         <label class="slds-form-element__label" for="operatorSelectList">
                                             {!$ObjectType.copado__Metadata_Group_Item__c.Fields.copado__Operator__c.Label}
@@ -84,8 +84,8 @@
                     </div>
                 </div>
                 <div class="slds-form-element slds-align_absolute-center">
-                    <apex:commandButton value="{!$Label.copado__cancel}" action="{!cancel}" styleClass="slds-button slds-button_neutral" />
-                    <apex:commandButton value="{!$Label.copado__save}" action="{!save}" styleClass="slds-button slds-button_brand" status="loadingScreen" reRender="messages" />
+                    <apex:commandButton value="{!$Label.copado__Cancel}" action="{!cancel}" styleClass="slds-button slds-button_neutral" />
+                    <apex:commandButton value="{!$Label.copado__Save}" action="{!save}" styleClass="slds-button slds-button_brand" status="loadingScreen" reRender="messages" />
                 </div>
             </apex:pageBlock>
         </apex:form>

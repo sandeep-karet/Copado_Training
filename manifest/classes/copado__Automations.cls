@@ -36,6 +36,7 @@ global class AutomationConfig {
     global String ruleName;
     global String scope;
     global String sourceAction;
+    global String sourceForBackwardEnvSync;
     global List<copado.Automations.StageConfig> stages;
     global AutomationConfig() {
 

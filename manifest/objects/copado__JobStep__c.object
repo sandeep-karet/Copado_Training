@@ -179,6 +179,15 @@
         <unique>true</unique>
     </fields>
     <fields>
+        <fullName>copado__Backend_Bypass__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Internal: When true on incoming DML, trigger handlers bypass business logic. Auto-clears to false in before context.</description>
+        <label>Backend Bypass</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>copado__ConfigJson__c</fullName>
         <deprecated>false</deprecated>
         <description>Config Json stores Job step related configuration information, for example in case of manual step it contains manual task assignee and instructions.</description>
@@ -544,6 +553,14 @@
         <errorConditionFormula>AND( copado__UserStory__c &lt;&gt; null, ISPICKVAL(copado__ExecutionSequence__c, &quot;&quot;))</errorConditionFormula>
         <errorDisplayField>copado__ExecutionSequence__c</errorDisplayField>
         <errorMessage>Execution Sequence is required for Deployment steps</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>copado__Prevent_SkipCondition_Change_With_US</fullName>
+        <active>true</active>
+        <description>Skip Condition cannot be changed when a User Story is associated with this Job Step.</description>
+        <errorConditionFormula>AND( NOT(ISBLANK(copado__UserStory__c)), ISCHANGED(copado__SkipCondition__c) )</errorConditionFormula>
+        <errorDisplayField>copado__SkipCondition__c</errorDisplayField>
+        <errorMessage>Skip Condition cannot be changed when a User Story is associated with this Job Step.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>copado__Template_OR_Execution_Is_Required</fullName>

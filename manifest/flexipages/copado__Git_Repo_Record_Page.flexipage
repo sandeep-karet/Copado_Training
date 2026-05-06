@@ -10,6 +10,15 @@
                             <value>Delete</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>copado__Git_Repository__c.copado__Reset_Authentication</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__URI__c}</leftValue>
+                                    <operator>NE</operator>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>copado__Git_Repository__c.copado__Switch_to_Classic_View</value>
                         </valueListItems>
                         <valueListItems>
@@ -181,7 +190,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListLabel</name>
-                    <value>{$Label.PIPELINES}</value>
+                    <value>{!$Label.copado__PIPELINES}</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
@@ -275,6 +284,10 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Tabs</value>
+                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-18c21a92-f7e0-419e-b64d-1966d9b8f6e2</value>

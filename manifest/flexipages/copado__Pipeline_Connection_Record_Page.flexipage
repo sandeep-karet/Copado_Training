@@ -84,8 +84,8 @@
                     <name>uiBehavior</name>
                     <value>required</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__Destination_Environment__c</fieldItem>
-                <identifier>RecordDestination_Environment__cField</identifier>
+                <fieldItem>Record.copado__Branch__c</fieldItem>
+                <identifier>RecordBranch__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -94,8 +94,8 @@
                     <name>uiBehavior</name>
                     <value>required</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__Branch__c</fieldItem>
-                <identifier>RecordBranch__cField</identifier>
+                <fieldItem>Record.copado__Destination_Environment__c</fieldItem>
+                <identifier>RecordDestination_Environment__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-ab9923ea-be7a-4eb4-99c9-6f053841407f</name>
@@ -161,6 +161,13 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Connection_Behavior_Override__c</fieldItem>
                 <identifier>RecordConnection_Behavior_Override__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Deployment_Flow__r.copado__Platform__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Salesforce</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-d11097fa-44cf-40e7-9f58-a2002a21727f</name>

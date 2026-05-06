@@ -25,7 +25,7 @@
         <name>copado__Bundled_Stories</name>
     </fieldSets>
     <fieldSets>
-        <label>CBMフィールド</label>
+        <label>パイプラインマネージャーのユーザーストーリーフィールド</label>
         <name>copado__CBM_Fields</name>
     </fieldSets>
     <fieldSets>
@@ -159,6 +159,10 @@
     <fields>
         <label>バックバーナーランク</label>
         <name>copado__Backburner_Rank__c</name>
+    </fields>
+    <fields>
+        <label>バックエンドバイパス</label>
+        <name>copado__Backend_Bypass__c</name>
     </fields>
     <fields>
         <help><!-- Position of the User Story within the Backlog. Usually User Stories at the top of the Backlog are more relevant than User Stories at the bottom. --></help>
@@ -1058,7 +1062,8 @@
         <name>copado__MC_Submit</name>
     </quickActions>
     <quickActions>
-        <label><!-- Open Pull Request --></label>
+        <aspect>Master</aspect>
+        <label>プルリクエストを開く</label>
         <name>copado__Open_Pull_Request</name>
     </quickActions>
     <quickActions>

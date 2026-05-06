@@ -39,6 +39,7 @@ global class MatchingRulesResult implements copado.CopadoServiceResult {
 global class StepsRequest implements copado.CopadoServiceRequest {
     global String action;
     global List<Id> contextIds;
+    global Boolean deploymentDryRun;
     global Id environment;
     global List<copado__User_Story_Metadata__c> metadataChanges;
     global Id pipeline;

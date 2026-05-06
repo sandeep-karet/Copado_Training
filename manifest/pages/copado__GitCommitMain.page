@@ -57,10 +57,6 @@
                 class:'slds-button__icon'
             };
         }
-        $copado(document).ready(function(){
-            setSVGStruct();
-            applyRenderSVG(svgButtonsId,svgButtonsClass);
-        });
         //TODO: move to common resource
         function applyRenderSVG(listIdArray,listClassArray){
             if(listIdArray){
@@ -99,6 +95,20 @@
             }
         }
 
+        function getRemoteAccount() {
+            var newCommitExperienceUrl = '{!newCommitExperienceUrl}';
+            if(newCommitExperienceUrl) {
+                window.top.location.href = decodeURIComponent(newCommitExperienceUrl);
+            }
+        }
+
+        $copado(document).ready(function(){
+            getRemoteAccount();
+            setSVGStruct();
+            applyRenderSVG(svgButtonsId,svgButtonsClass);
+        });
+        
+
     </script>
     <style>
         .approvalIcon {
@@ -127,7 +137,7 @@
     <apex:form style="padding: 5px 20px 5px 20px;" id="gitcommit_header_form">
         <c:CopadoSpinner />
 
-        <apex:outputPanel layout="block" styleClass="slds-scope">
+        <apex:outputPanel layout="block" styleClass="slds-scope" rendered="{!ISNULL(newCommitExperienceUrl)}">
             <c:CopadoSmartHelpComponent />
         </apex:outputPanel>
 

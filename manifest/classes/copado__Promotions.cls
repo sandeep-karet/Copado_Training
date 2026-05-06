@@ -40,12 +40,15 @@ global class CalculationServiceRequest implements copado.CopadoServiceRequest {
     global Id environmentId;
     global Boolean filterExcludeFromCbm;
     global Boolean filterReadyToPromote;
+    global Boolean includeOutOfSyncCalculation;
     global Id pipelineId;
     global CalculationServiceRequest() {
 
     }
 }
 global class CalculationServiceResult implements copado.CopadoServiceResult {
+    global List<copado.Promotions.ServiceError> errors;
+    global Set<Id> outOfSyncUserStoryIds;
     global Set<Id> userStoryIds;
     global CalculationServiceResult() {
 
@@ -68,6 +71,14 @@ global class MetadataServiceRequest implements copado.CopadoServiceRequest {
 global class MetadataServiceResult implements copado.CopadoServiceResult {
     global List<copado__User_Story_Metadata__c> userStoryMetadatas;
     global MetadataServiceResult() {
+
+    }
+}
+global class ServiceError {
+    global String code;
+    global String details;
+    global String message;
+    global ServiceError(String code, String message, String details) {
 
     }
 }

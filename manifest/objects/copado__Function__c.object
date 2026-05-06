@@ -192,6 +192,15 @@ The class must implement the MCCallBack interface.</inlineHelpText>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__Backend_Bypass__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Internal: When true on incoming DML, trigger handlers bypass business logic. Auto-clears to false in before context.</description>
+        <label>Backend Bypass</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>copado__Callback_Type__c</fullName>
         <deprecated>false</deprecated>
         <description>Type of Callback selected for the function.</description>

@@ -9,6 +9,10 @@
         <name>copado__ApiName__c</name>
     </fields>
     <fields>
+        <label><!-- Backend Bypass --></label>
+        <name>copado__Backend_Bypass__c</name>
+    </fields>
+    <fields>
         <label><!-- ConfigJson --></label>
         <name>copado__ConfigJson__c</name>
     </fields>
@@ -174,6 +178,10 @@
     <validationRules>
         <errorMessage><!-- Execution Sequence is required for Deployment steps --></errorMessage>
         <name>copado__Execution_Sequence_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Skip Condition cannot be changed when a User Story is associated with this Job Step. --></errorMessage>
+        <name>copado__Prevent_SkipCondition_Change_With_US</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- JobTemplate, Execution, or User Story is required --></errorMessage>

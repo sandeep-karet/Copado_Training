@@ -65,26 +65,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__API_Name__c</fieldItem>
-                <identifier>RecordAPI_Name_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Platform__c</fieldItem>
-                <identifier>RecordPlatform_cField1</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Type__c</fieldItem>
                 <identifier>RecordType_cField1</identifier>
             </fieldInstance>
@@ -95,15 +75,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__Last_Refresh_Date__c</fieldItem>
-                <identifier>RecordLast_Refresh_Date_cField1</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Sandbox</rightValue>
-                    </criteria>
-                </visibilityRule>
+                <fieldItem>Record.copado__Platform__c</fieldItem>
+                <identifier>RecordPlatform_cField1</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-fc6a5986-68e6-416b-9bd0-7a39a71d06a8</name>
@@ -126,8 +99,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.LastModifiedById</fieldItem>
-                <identifier>RecordLastModifiedByIdField1</identifier>
+                <fieldItem>Record.copado__API_Name__c</fieldItem>
+                <identifier>RecordAPI_Name_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -136,8 +109,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.CreatedById</fieldItem>
-                <identifier>RecordCreatedByIdField1</identifier>
+                <fieldItem>Record.copado__Org_ID__c</fieldItem>
+                <identifier>RecordOrg_ID_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-9c586078-3fb1-49fd-82fe-7a54848390f0</name>
@@ -192,6 +165,23 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Last_Refresh_Date__c</fieldItem>
+                <identifier>RecordLast_Refresh_Date_cField1</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Sandbox</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-fa51b080-a562-4607-865f-b1a6e6760fdc</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -699,15 +689,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__API_Name__c</fieldItem>
-                <identifier>RecordAPI_Name_cField2</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Platform__c}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Salesforce</rightValue>
-                    </criteria>
-                </visibilityRule>
+                <fieldItem>Record.copado__Type__c</fieldItem>
+                <identifier>RecordType__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -718,43 +701,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Platform__c</fieldItem>
                 <identifier>RecordPlatform__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Type__c</fieldItem>
-                <identifier>RecordType__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Last_Refresh_Date__c</fieldItem>
-                <identifier>RecordLast_Refresh_Date__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Type__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Sandbox</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>readonly</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.CreatedById</fieldItem>
-                <identifier>RecordCreatedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-399a3bdd-4559-4656-8578-00a11edfb70b</name>
@@ -789,36 +735,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Org_ID__c</fieldItem>
                 <identifier>RecordOrg_ID__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Run_all_tests__c</fieldItem>
-                <identifier>RecordRun_all_tests__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Run_specified_tests__c</fieldItem>
-                <identifier>RecordRun_specified_tests_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>readonly</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.LastModifiedById</fieldItem>
-                <identifier>RecordLastModifiedByIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-3e90233f-40d5-44f8-bb2f-b614f3f29e91</name>
@@ -889,6 +805,23 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.copado__Last_Refresh_Date__c</fieldItem>
+                <identifier>RecordLast_Refresh_Date__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Sandbox</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Connection_Behavior__c</fieldItem>
                 <identifier>RecordConnection_Behavior__cField</identifier>
             </fieldInstance>
@@ -901,6 +834,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Latest_Deployment__c</fieldItem>
                 <identifier>RecordLatest_Deployment__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Latest_Deployment_Status__c</fieldItem>
+                <identifier>RecordLatest_Deployment_Status_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-6548003e-3b4f-48e1-ae59-6321f03586d0</name>
@@ -1208,6 +1151,16 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Run_specified_tests__c</fieldItem>
+                <identifier>RecordRun_specified_tests_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -1835,14 +1788,6 @@
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
                 <identifier>force_relatedListSingleContainer11</identifier>
             </componentInstance>
@@ -1871,6 +1816,32 @@
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
                 <identifier>force_relatedListSingleContainer12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>copado__Environment__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>copado__Promotions1__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer7</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

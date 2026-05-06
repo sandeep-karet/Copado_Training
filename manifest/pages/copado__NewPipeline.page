@@ -24,11 +24,11 @@
                         <p>{!$Label.Pipeline_Would_like_to_continue_to_setup} "<apex:outputText value="{!currentPipeline.Name}" />"?</p>
                     </div>
                     <footer class="slds-modal__footer">
-                        <apex:commandLink value="{!$Label.copado__cancel}" action="{!URLFOR($Action.Deployment_Flow__c.List,
+                        <apex:commandLink value="{!$Label.copado__Cancel}" action="{!URLFOR($Action.Deployment_Flow__c.List,
                         $ObjectType.Deployment_Flow__c)}" styleClass="slds-button slds-button_neutral slds-m-around_xxx-small"/>
                         <apex:commandButton value="Start New" action="{!startNew}" styleClass="slds-button slds-button_destructive slds-m-around_xxx-small"/>
                         <apex:commandButton action="{!goToSetup}" styleClass="slds-button slds-button_brand slds-m-around_xxx-small"
-                                            reRender="xx" value="{!$Label.copado__continue}"/>
+                                            reRender="xx" value="{!$Label.copado__CONTINUE}"/>
                     </footer>
                 </div>
             </section>

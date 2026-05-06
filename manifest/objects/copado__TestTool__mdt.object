@@ -21,6 +21,17 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__ExcludeFromValidationPromotion__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Exclude from Validation Promotion</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__JobTemplate__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -42,6 +53,16 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Requires_Manual_Interaction__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether this testing tool requires manual intervention. When checked, the system determines this step to be completed by human interaction only</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Check this box if this test tool cannot be completed automatically and a human interaction is necessary.</inlineHelpText>
+        <label>Requires Manual Interaction</label>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>copado__TestType__c</fullName>

@@ -15,10 +15,16 @@ global class GlobalAPI {
     global copado.GlobalAPI.UserLicense copadoLicensesByUser(Id userId) {
         return null;
     }
+    global static Integer createPromotionPullRequest(copado.GlobalAPI.PromotionPullRequestRequest request) {
+        return null;
+    }
     global String createUserAPIKey() {
         return null;
     }
     global Boolean deleteCopadoLicense(Id userId) {
+        return null;
+    }
+    global String getConnectedAppName() {
         return null;
     }
     global String getCopadoServerUrl() {
@@ -31,6 +37,9 @@ global class GlobalAPI {
         return null;
     }
     global List<copado.SourceMemberResult> getRecentChanges(String orgId, Datetime dateTimeToRetrieveChanges) {
+        return null;
+    }
+    global static Boolean isGovCloud() {
         return null;
     }
     global List<copado.GlobalAPI.UserLicense> listCopadoLicenses() {
@@ -190,6 +199,16 @@ global class LicenseOperationResult {
 
     }
     global LicenseOperationResult(Boolean isSuccessParam, Boolean isCreatedParam, Boolean isUpdatedParam, String errorStringParam) {
+
+    }
+}
+global class PromotionPullRequestRequest {
+    global String description;
+    global Id repoId;
+    global String sourceBranch;
+    global String targetBranch;
+    global String title;
+    global PromotionPullRequestRequest() {
 
     }
 }

@@ -30,6 +30,7 @@ global class ExecuteRequest implements copado.CopadoServiceRequest {
     global String functionApiName;
     global List<copado.CopadoFunctions.FunctionParameter> options;
     global List<copado.CopadoFunctions.FunctionParameter> parameters;
+    global Id testId;
     global ExecuteRequest() {
 
     }

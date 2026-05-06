@@ -9,6 +9,16 @@ const getUnzippedContent = async function (content) {
     return returnContent;
 };
 
+const decodeAttachmentBody = function (attachBody) {
+    const dataInBinaryFormat = window.atob(attachBody);
+    const base64ToBytes = Uint8Array.from(
+        dataInBinaryFormat, 
+        value => value.charCodeAt(0)
+    );
+    const decodedData = new TextDecoder().decode(base64ToBytes);
+    return decodedData;
+};
+
 (function (self) {
     var spacing = '  ',
         getType = function (obj) {
@@ -89,7 +99,8 @@ const getUnzippedContent = async function (content) {
             } else {
                 return (
                     '"' +
-                    escape(str)
+                    escape(str) 
+                        .replace
                         .replace(/%u/g, '\\u')
                         .replace(/%U/g, '\\U')
                         .replace(/%/g, '\\x') +
@@ -395,7 +406,7 @@ const getUnzippedContent = async function (content) {
             if (panes != 1) {
                 if (
                     (pMode.toLowerCase().indexOf('xml') > -1) &&
-                    (!parseOperations.parseErrorExist(attach ? prapareValue(Base64.decode(attach.Body), format) : preSource[0]) || format)
+                    (!parseOperations.parseErrorExist(attach ? prapareValue(decodeAttachmentBody(attach.Body), format) : preSource[0]) || format)
                 ) {
                     $copado('#xmlJson').css('display', '');
                     format = currentMode;
@@ -410,8 +421,8 @@ const getUnzippedContent = async function (content) {
                 $copado('#view').css('display', '');
                 $copado('.CodeMirror-simplescroll').css('display', 'none');
 
-                var value = attach ? prapareValue(Base64.decode(attach.Body), format) : prapareValue(typeof preSource == 'string' ? preSource : preSource[0], format);
-                var orig1 = attach ? prepareOrig(Base64.decode(attach.Body), format) : prapareValue(preTarget[0], format);
+                var value = attach ? prapareValue(decodeAttachmentBody(attach.Body), format) : prapareValue(typeof preSource == 'string' ? preSource : preSource[0], format);
+                var orig1 = attach ? prepareOrig(decodeAttachmentBody(attach.Body), format) : prapareValue(preTarget[0], format);
                 self.featureValue = orig1;
 
                 editor = CodeMirror.MergeView(document.getElementById('view'), {
@@ -483,7 +494,7 @@ const getUnzippedContent = async function (content) {
                 $copado('.CodeMirror-simplescroll').css('display', '');
 
                 editor2.focus();
-                editor2.setValue(Base64.decode(attach.Body));
+                editor2.setValue(decodeAttachmentBody(attach.Body));
             }
         },
         performCodeDiffSelected = function (attach, returnFlag, sPane, cb, preFlag) {
@@ -527,7 +538,7 @@ const getUnzippedContent = async function (content) {
                 if (panes != 1) {
                     if (
                         pMode.toLowerCase().indexOf('xml') > -1 &&
-                        (!parseOperations.parseErrorExist(attach ? prapareValue(Base64.decode(attach.Body), format) : preSource[0]) || format)
+                        (!parseOperations.parseErrorExist(attach ? prapareValue(decodeAttachmentBody(attach.Body), format) : preSource[0]) || format)
                     ) {
                         $copado('#xmlJson').css('display', '');
                         format = currentMode;
@@ -542,8 +553,8 @@ const getUnzippedContent = async function (content) {
                     $copado('#view').css('display', '');
                     $copado('.CodeMirror-simplescroll').css('display', 'none');
 
-                    var value = attach ? prapareValue(Base64.decode(attach.Body.asByteArray), format) : prapareValue(preSource[0], format);
-                    var orig1 = attach ? prepareOrig(Base64.decode(attach.Body.asByteArray), format) : prapareValue(preTarget[0], format);
+                    var value = attach ? prapareValue(decodeAttachmentBody(attach.Body), format) : prapareValue(preSource[0], format);
+                    var orig1 = attach ? prepareOrig(decodeAttachmentBody(attach.Body), format) : prapareValue(preTarget[0], format);
                     self.featureValue = orig1;
 
                     let att2Resolve = {};
@@ -622,7 +633,7 @@ const getUnzippedContent = async function (content) {
                     $copado('.CodeMirror-simplescroll').css('display', '');
 
                     editor2.focus();
-                    editor2.setValue(Base64.decode(attach.Body));
+                    editor2.setValue(decodeAttachmentBody(attach.Body));
                 }
                 $copado('#errorMessage').text('');
                 modalOperations.toogleLocker(false);

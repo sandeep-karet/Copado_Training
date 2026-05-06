@@ -413,6 +413,7 @@
                                 background-color: #fdfdfd;
                                 border-radius: 15rem;
                             }
+
                         </style>
 
                         <div class="slds-scope">
@@ -428,7 +429,7 @@
                                     <li class="slds-tabs_default__item" title="API Key" role="presentation">
                                         <a class="slds-tabs_default__link" href="#" role="tab" tabindex="-1" aria-selected="false"
                                             aria-controls="tab-api-key" id="tab-api-key-item" onclick="switchTab(event, 'tab-api-key')">
-                                            {!$Label.copado__API_KEY}
+                                            {!$Label.API_KEY}
                                         </a>
                                     </li>
                                     <li class="slds-tabs_default__item" title="Transactions" role="presentation">
@@ -479,21 +480,20 @@
                                 <div id="tab-api-key" class="slds-tabs_default__content slds-hide" role="tabpanel"
                                     aria-labelledby="tab-api-key-item">
                                    <apex:pageBlock id="pbAPIKey" title="{!$Label.copado__PESONAL_API_KEY} {!$User.FirstName} {!$User.LastName}">
-                                    <apex:pageBlockButtons location="top">
+                                        <apex:pageBlockButtons location="top">
 
-                                        <apex:outputPanel id="registerApiKeyButtonContainer" layout="block">
-                                            <apex:commandButton disabled="{!NOT(isApplicationRegistered)}" action="{!createAPIKey}" value="{!IF(isApplicationRegistered, $Label.copado__CREATE + ' / ' + $Label.copado__RESET, 'Application must be registered to create an API KEY')}"
-                                                onComplete="doPrivateSettingUdate()" />
-                                        </apex:outputPanel>
+                                            <apex:outputPanel id="registerApiKeyButtonContainer" layout="block">
+                                                <apex:commandButton disabled="{!NOT(isApplicationRegistered)}" action="{!createAPIKey}" value="{!IF(isApplicationRegistered, $Label.copado__CREATE + ' / ' + $Label.copado__RESET, 'Application must be registered to create an API KEY')}"
+                                                    onComplete="doPrivateSettingUdate()" />
+                                            </apex:outputPanel>
 
-                                    </apex:pageBlockButtons>
-                                    <apex:pageBlockSection >
-                                        <apex:pageBlockSectionItem >
-                                            <apex:outputLabel value="{!$Label.copado__API_KEY}" for="api_key" />
-                                            <apex:outputText value="{!APIKey}" id="api_key" />
-                                        </apex:pageBlockSectionItem>
-                                    </apex:pageBlockSection>
-                                </apex:pageBlock>
+                                        </apex:pageBlockButtons>
+                                        <apex:pageBlockSection columns="1">
+                                            <span style="white-space: nowrap;">
+                                                {!$Label.API_KEY} &nbsp;&nbsp; {!APIKey}
+                                            </span>
+                                        </apex:pageBlockSection>
+                                    </apex:pageBlock>
                                 <apex:actionFunction name="doPrivateSettingUdate" action="{!updatePrivateSettings}" reRender="messagesContainer, pbAPIKey" />
                                 </div>
 

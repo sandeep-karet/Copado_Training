@@ -19,7 +19,7 @@
     &lt;li&gt;&lt;strong&gt;User Story&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Help Docs:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://docs.copado.com/articles/#!copado-ci-cd-publication/results-object/q/results/qp/8/qid/385317&quot;&gt;&lt;strong&gt;Display Results (Copado Docs)&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</value>
+&lt;p&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://docs.copado.com/articles/#!copado-ci-cd-publication/results-object/&quot;&gt;&lt;strong&gt;Display Results (Copado Docs)&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</value>
     </values>
     <values>
         <field>copado__Order__c</field>

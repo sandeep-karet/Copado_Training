@@ -828,21 +828,21 @@ var MetadataGrid3 = (() => {
             var allMetaData = [];
             if (this.conf.data.stepId) {
                 if (this.conf.gridMode != 'dwOverviewGrid') {
-                    allMetaData = JSON.parse(atob(dw.u.getFileContent(this.conf.data.stepId, this.conf.attachmentName)));
+                    allMetaData = JSON.parse(Base64.decode(dw.u.getFileContent(this.conf.data.stepId, this.conf.attachmentName)));
                 } else {
                     let gitPromotionContent = dw.u.getFileContent(this.conf.data.stepId, this.conf.attachmentName + '_Git Promotion');
                     if (gitPromotionContent != null) {
-                        allMetaData.push(...JSON.parse(atob(gitPromotionContent)));
+                        allMetaData.push(...JSON.parse(Base64.decode(gitPromotionContent)));
                     }
 
                     let deleteMetadataContent = dw.u.getFileContent(this.conf.data.stepId, this.conf.attachmentName + '_Delete Metadata');
                     if (deleteMetadataContent != null) {
-                        allMetaData.push(...JSON.parse(atob(deleteMetadataContent)));
+                        allMetaData.push(...JSON.parse(Base64.decode(deleteMetadataContent)));
                     }
                 }
             }
             if (this.conf.data.deleteStepId) {
-                const deleteMetadata = JSON.parse(atob(dw.u.getFileContent(this.conf.data.deleteStepId, this.conf.attachmentName)));
+                const deleteMetadata = JSON.parse(Base64.decode(dw.u.getFileContent(this.conf.data.deleteStepId, this.conf.attachmentName)));
                 allMetaData.push(...deleteMetadata);
             }
             var existingFlag = false;
@@ -1562,15 +1562,15 @@ var MetadataGrid3 = (() => {
         var sourceUrl =
             baseUrl +
             url
-                .replace(/ORG_ID/, sourceOrgId)
-                .replace(/TYPE/, type)
-                .replace(/NAME/, window.escape(name));
+                .replace(/ORG_ID/, encodeURIComponent(sourceOrgId))
+                .replace(/TYPE/, encodeURIComponent(type))
+                .replace(/NAME/, encodeURIComponent(name));
         var targetUrl =
             baseUrl +
             url
-                .replace(/ORG_ID/, targetOrgId)
-                .replace(/TYPE/, type)
-                .replace(/NAME/, window.escape(name));
+                .replace(/ORG_ID/, encodeURIComponent(targetOrgId))
+                .replace(/TYPE/, encodeURIComponent(type))
+                .replace(/NAME/, encodeURIComponent(name));
 
         var deferreds = [];
         var deferredSource = new $copado.Deferred();

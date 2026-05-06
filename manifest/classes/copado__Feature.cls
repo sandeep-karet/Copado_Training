@@ -99,4 +99,11 @@ global class QueueResult implements copado.CopadoServiceResult {
 
     }
 }
+global class QueueState {
+    global Integer size;
+    global String status;
+    global QueueState() {
+
+    }
+}
 }

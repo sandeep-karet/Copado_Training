@@ -14,13 +14,22 @@
         <name>copado__Description__c</name>
     </fields>
     <fields>
+        <label><!-- Exclude from Validation Promotion --></label>
+        <name>copado__ExcludeFromValidationPromotion__c</name>
+    </fields>
+    <fields>
         <label><!-- Job Template --></label>
         <name>copado__JobTemplate__c</name>
     </fields>
     <fields>
-        <help><!-- API Name of the Apex class that validates if the Quality Gate Rule configuration is complete. This validation is triggered when a user saves a new Quality Gate Rule. If the validation fails, the Quality Gate Rule cannot be saved until the user completes the missing configuration. The Apex class must implement the interface with name “QualityGateReadinessInterface”. --></help>
+        <help>API品質ゲートルールの設定が完了しているかどうかを検証するApex クラスの名前です。この検証は、ユーザーが新しい品質ゲートルールを保存する際にトリガーされます。検証に失敗した場合、ユーザーが不足している設定を完了するまで品質ゲートルールを保存することはできません。Apex クラスは「QualityGateReadinessInterface」という名前のインターフェースを実装する必要があります。</help>
         <label><!-- Quality Gates Readiness Logic --></label>
         <name>copado__Quality_Gates_Readiness_Logic__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box if this test tool cannot be completed automatically and a human interaction is necessary. --></help>
+        <label><!-- Requires Manual Interaction --></label>
+        <name>copado__Requires_Manual_Interaction__c</name>
     </fields>
     <fields>
         <label><!-- Test Type --></label>

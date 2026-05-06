@@ -56,16 +56,16 @@ var Base64 = {
 !window.console && (window.console = {
     log: function() {},
     error: function() {}
-});
+    });
 
 // parses an ISO date only (ignores ms and tz) "2018-04-25T13:24:39.000Z" and returns a LOCAL date.
 Date.fromISOString = function(input) {
   return new Date(Date.UTC(
-    parseInt(input.slice(0, 4), 10),
-    parseInt(input.slice(5, 7), 10) - 1,
-    parseInt(input.slice(8, 10), 10),
-    parseInt(input.slice(11, 13), 10),
-    parseInt(input.slice(14, 16), 10),
+            parseInt(input.slice(0, 4), 10),
+            parseInt(input.slice(5, 7), 10) - 1,
+            parseInt(input.slice(8, 10), 10),
+            parseInt(input.slice(11, 13), 10),
+            parseInt(input.slice(14, 16), 10),
     parseInt(input.slice(17,19), 10)
   ));
 };
@@ -486,7 +486,7 @@ dw.u.getDecodedAttach = function(parentId, name) {
     //below replaces opening and closing tags based on xss concerns
     while(a.Body.indexOf('<') > -1 || a.Body.indexOf('>') > -1){
              a.Body = a.Body.replace('<','').replace('>','');
-         }
+    }
     return a;
 };
 
@@ -508,9 +508,18 @@ dw.u.upsertAttach = function(parentId, name, body, alreadyCheck, newName, attId)
     } else {
         att.name = name;
     }
-
-    att.body = Base64.encode(body);
-
+    // 1. Convert the raw JS string into a UTF-8 byte array
+    const utf8Bytes = new TextEncoder().encode(body);
+    
+    // 2. Convert the byte array into a binary string safely
+    let binaryString = '';
+    for (let i = 0; i < utf8Bytes.length; i++) {
+        binaryString += String.fromCharCode(utf8Bytes[i]);
+    }
+    
+    // 3. Base64 encode the binary string so Salesforce can read it
+    att.body = window.btoa(binaryString);
+    
     if (Id) {
         att.Id = Id;
     }
@@ -526,15 +535,15 @@ preventXSSonJQXGrid = function(objectArray){
     var fields = Object.keys(objectArray[0]);
     for(var i=0;i<objectArray.length;i++){
             for(var c=0;c<fields.length;c++){
-                var currentValue = objectArray[i][fields[c]];
+            var currentValue = objectArray[i][fields[c]];
                 if(currentValue && typeof currentValue === 'string'){
                     while(currentValue.indexOf('<') > -1 || currentValue.indexOf('>') > -1){
                         currentValue = currentValue.replace('<','').replace('>','');
-                    }
-                    objectArray[i][fields[c]] = currentValue;
                 }
+                objectArray[i][fields[c]] = currentValue;
             }
         }
+    }
 
     return objectArray;
 };
@@ -555,7 +564,7 @@ dw.u.getCachedRemote = function(opt) {
     };*/
 
     var attach = dw.u.getAttach(opt.parentId, opt.name);
-    
+
     if (opt.force || attach.length != 1) {
         
         //get remote and save
@@ -650,18 +659,18 @@ var coUploadAttachment = {
                  console.log('coUploadAttachment:::uploadFile',file);
                  if(file.size <= that.maxFileSize) {
                     if(that.attachmentName.length <= 0)that.attachmentName = file.name;
-                    var fileReader = new FileReader();
+                var fileReader = new FileReader();
                     fileReader.onloadend = function(e) {
                         that.attachment = window.btoa(this.result);  //Base 64 encode the file before sending it
                         that.positionIndex=0;
-                        that.fileSize = that.attachment.length;
+                    that.fileSize = that.attachment.length;
                         console.log("coUploadAttachment:::uploadFile Total Attachment Length: " + that.fileSize);
-                        that.doneUploading = false;
+                    that.doneUploading = false;
                         if(that.fileSize < that.maxStringSize) {
                           that.uploadAttachment(null,that.doDML,callback); // null param is for fileId this may change
-                        } else {
+                    } else {
                           alert("Base 64 Encoded file is too large.  Maximum size is " + that.maxStringSize + " your file is " + that.fileSize + ".");
-                        }
+                    }
                     }
                     fileReader.onerror = function(e) {
                         alert("There was an error reading the file.  Please try again.");
@@ -673,7 +682,7 @@ var coUploadAttachment = {
 
               }else {
                 alert("File must be under 4.3 MB in size.  Your file is too large.  Please try again.");
-              }
+            }
         }else {
           alert("You must choose a file before trying to upload it");
         }
@@ -683,11 +692,11 @@ var coUploadAttachment = {
     uploadAttachment : function(fileId, doDML,callback) {
         var that = this;
         if(that.fileSize <= that.positionIndex + that.chunkSize) {
-          that.attachmentBody = that.attachment.substring(that.positionIndex);
+            that.attachmentBody = that.attachment.substring(that.positionIndex);
           console.log('attachmentBody = that.attachment.substring(that.positionIndex) ===>',Base64.decode(that.attachment.substring(that.positionIndex)));
-          that.doneUploading = true;
+            that.doneUploading = true;
         } else {
-          that.attachmentBody = that.attachment.substring(that.positionIndex, that.positionIndex + that.chunkSize);
+            that.attachmentBody = that.attachment.substring(that.positionIndex, that.positionIndex + that.chunkSize);
         }
         console.log("coUploadAttachment:::uploadAttachment Uploading " + that.attachmentBody.length + " chars of " + that.fileSize);
         //TODO : Replace with dynamic one without standard controller
@@ -824,13 +833,13 @@ var coGridHelper = {
             }
             // add for vlocity rollback items.
             // added typeof check to keep it aligned with above checks but also added if it is null/undefined
-            if (isRollback && (typeof data[len].vk !== 'undefined' || data[len].vk)) { 
+            if (isRollback && (typeof data[len].vk !== 'undefined' || data[len].vk)) {
                 o.v = true;
             }
            if(o.r == true) {
-               data[len].s && coGridHelper._retrieveOnlyNames.push(o);
+                data[len].s && coGridHelper._retrieveOnlyNames.push(o);
             }
-                data[len].s && coGridHelper._selectedNames.push(o);
+            data[len].s && coGridHelper._selectedNames.push(o);
         }
         return coGridHelper._selectedNames;
     },
@@ -882,7 +891,7 @@ var coGridHelper = {
         //validations
         //check global selected items
         me.getSelectedObj();
-        
+
         if (!allowEmpty && !me._selectedNames.length) {
             //check if copadoApp showmessage is active
             if (copadoApp.showMessage) {
@@ -897,7 +906,7 @@ var coGridHelper = {
         return false;
     },
 
-     /**
+    /**
      * Save in attachment the selected items of the grid
      * @param  {[type]} id                   parentId
      * @param  {[type]} type                 Attachment Name
@@ -928,7 +937,7 @@ var coGridHelper = {
     remoteSaveMeta: function(id, items, type, callback, isRollback, attachmentSize) {
         if (isRollback) {
             if (type === 'Selected items to rollback') {
-                //we need to support both scenarios when only one single step is created for promotion and deletion. 
+                //we need to support both scenarios when only one single step is created for promotion and deletion.
                 //So if the attachment size is more than 1 it is supporting old version of backend
                 if(attachmentSize && attachmentSize == 2) {
                     let deletedItems=[];

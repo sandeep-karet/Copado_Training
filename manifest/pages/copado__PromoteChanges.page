@@ -186,7 +186,7 @@
                     rollbackButton.appendTo($copado('[Id^="topButtonRow"]'));
                 }
 
-            }
+            }         
 
             document.onreadystatechange = function () {
                 if (document.readyState === 'complete') {
@@ -195,6 +195,51 @@
                     showReviewConflictButton();
                 }
             }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                document.body.addEventListener('click', function (event) {
+                    const target = event.target;
+                    if (target) {
+                        const innerText = target.innerText?.trim();
+
+                        if (innerText && innerText.startsWith('Show') && innerText.endsWith('more »')) {
+                            let relatedListName = '';
+
+                            const relatedListContainer = target.closest('.bRelatedList');
+                            if (relatedListContainer) {
+                                const titleDiv = relatedListContainer.querySelector('.pbTitle');
+                                if (titleDiv) {
+                                    const titleHeader = titleDiv.querySelector('[id$="_title"]');
+                                    relatedListName = titleHeader.innerText?.trim();
+                                }
+                            }
+    
+                            if (relatedListName === 'Deployments') {
+                                waitForRelatedListUpdate(relatedListContainer, () => {
+                                    createPullRequestLinks();
+                                });
+                            }
+                        }
+                    }
+                });
+            });
+
+            function waitForRelatedListUpdate(relatedListContainer, callback) {
+                if (!relatedListContainer || !callback) { return; }
+
+                let previousRowCount = relatedListContainer.querySelectorAll('tr.dataRow').length;
+
+                const observer = new MutationObserver(() => {
+                    const currentRowCount = relatedListContainer.querySelectorAll('tr.dataRow').length;
+                    if (currentRowCount > previousRowCount) {
+                        observer.disconnect();
+                        callback();
+                    }
+                });
+                
+                observer.observe(relatedListContainer, { childList: true, subtree: true });
+            }
+
             $copado(document).ready(function () {
                 $copado('#toggleBtn').click(function () {
                     $copado('#backdrop').addClass('slds-backdrop--open');
@@ -603,7 +648,7 @@
 
                                         <apex:outputPanel id="pnlDetail" layout="block" styleClass="copado-lightning-container">
                                             <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" layout="none">
-                                                <apex:detail inlineEdit="false" showChatter="false" relatedList="true" title="true" />
+                                                <apex:detail inlineEdit="false" showChatter="false" relatedList="true" title="true"/>
                                             </apex:outputPanel>
                                             <apex:outputPanel rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" layout="none">
                                                 <apex:detail inlineEdit="false" showChatter="true" relatedList="true" title="true" />

@@ -30,9 +30,27 @@ global class RepositoryOAuth implements copado.CopadoDomain {
     global static Boolean isAuthenticated(Id repositoryId) {
         return null;
     }
+    global static void resetRepository(Id repositoryId) {
+
+    }
+    global static void saveRepositoryOAuth(copado.RepositoryOAuth.AddOauthKeyRequest request) {
+
+    }
     global static String validateGitConnection(Id repositoryId) {
         return null;
     }
+global class AddOauthKeyRequest implements copado.CopadoServiceRequest {
+    global Boolean addReadme;
+    global String azureOrg;
+    global String parent;
+    global Id recordId;
+    global String repoId;
+    global String repoName;
+    global String state;
+    global AddOauthKeyRequest() {
+
+    }
+}
 global class AddSSHKeyRequest implements copado.CopadoServiceRequest {
     global Boolean addReadme;
     global Id recordId;
@@ -45,6 +63,8 @@ global class AddSSHKeyRequest implements copado.CopadoServiceRequest {
 }
 global class Configuration {
     global String authType;
+    global String copaTunnel;
+    global Boolean govCloud;
     global String headers;
     global String repositoryName;
     global copado.RepositoryOAuth.SSHKey sshKey;

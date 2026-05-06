@@ -29,10 +29,14 @@ global class Request {
     global Boolean isBackPromotion;
     @InvocableVariable(label='Other Information' description='Additional information that can be passed for the job execution in JSON format' required=false)
     global String otherInformation;
+    @InvocableVariable(label='Override Destination Changes' description='Include this parameter if you want to override the destination changes for Environment Sync promotion.' required=false)
+    global Boolean overrideDestinationChanges;
     @InvocableVariable(label='Project Id' description='Id of the Project record that will be used to define the pipeline details and pipeline connections.' required=false)
     global Id projectId;
     @InvocableVariable(label='Promotion Id' description='Id of the Promotion record. If it is not defined, Copado will create a new promotion with the parameter values provided.' required=false)
     global Id promotionId;
+    @InvocableVariable(label='Promotion Method' description='Method of the promotion that will be executed.' required=false)
+    global String promotionMethod;
     @InvocableVariable(label='Source Environment Id' description='Id of the promotion’s source environment. Copado will use this parameter to populate the destination environment if no promotion Id is specified.' required=false)
     global Id sourceEnvironmentId;
     @InvocableVariable(label='User Story Ids' description='Ids of the user stories to be included in the promotion.' required=false)
