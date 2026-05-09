@@ -135,6 +135,11 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>CaseId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>CategoryId</fullName>
         <inlineHelpText>The system-defined code that represents the category this service request belongs to. For example, laboratory, surgical, or educational.</inlineHelpText>
         <trackHistory>false</trackHistory>
@@ -193,6 +198,11 @@
     </fields>
     <fields>
         <fullName>ObservationId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrchestrationInstanceId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
@@ -262,6 +272,11 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>ReferralScore</fullName>
+        <inlineHelpText>AI-generated score from a model your organization trains on your data. It does not make clinical decisions or trigger automated actions. Use it only to help choose which referrals to review first. Coordinators still complete every referral. Do not rely on this score alone.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>RequestCodeId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
@@ -276,6 +291,11 @@
         <inlineHelpText>The identifier that represents a group of service requests that are part of the same batch or were approved by the same person at approximately the same time.</inlineHelpText>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SourceChannel</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>SourceSystem</fullName>
@@ -300,15 +320,15 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>StatusReason</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
-    <listViews>
-        <fullName>All_ClinicalServiceRequests</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All Clinical Service Requests</label>
-    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>Patient</customTabListAdditionalFields>
         <customTabListAdditionalFields>RequestCode</customTabListAdditionalFields>

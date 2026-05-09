@@ -129,6 +129,10 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>ProcessType</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>ScheduleFrequency</fullName>
     </fields>
     <fields>
@@ -144,23 +148,8 @@
         <fullName>TargetId</fullName>
         <type>Lookup</type>
     </fields>
-    <listViews>
-        <fullName>All_ActionPlans</fullName>
-        <columns>Name</columns>
-        <columns>ActionPlanState</columns>
-        <columns>Target</columns>
-        <columns>StartDate</columns>
-        <filterScope>Everything</filterScope>
-        <label>All Action Plans</label>
-    </listViews>
-    <listViews>
-        <fullName>My_ActionPlans</fullName>
-        <columns>Name</columns>
-        <columns>ActionPlanState</columns>
-        <columns>Target</columns>
-        <columns>StartDate</columns>
-        <filterScope>Mine</filterScope>
-        <label>My Action Plans</label>
-    </listViews>
+    <fields>
+        <fullName>Version</fullName>
+    </fields>
     <sharingModel>Private</sharingModel>
 </CustomObject>

@@ -88,6 +88,10 @@
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
+        <fullName>AdditionalInformation</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>BatchJobId</fullName>
         <trackHistory>false</trackHistory>
         <type>MasterDetail</type>
@@ -152,29 +156,5 @@
         <fullName>UserReference</fullName>
         <trackHistory>false</trackHistory>
     </fields>
-    <listViews>
-        <fullName>All_Tasks</fullName>
-        <columns>Name</columns>
-        <columns>Id</columns>
-        <columns>StartTime</columns>
-        <columns>EndTime</columns>
-        <columns>InputRecordCount</columns>
-        <columns>Status</columns>
-        <columns>FailedRecordCount</columns>
-        <filterScope>Everything</filterScope>
-        <label>All Tasks</label>
-    </listViews>
-    <listViews>
-        <fullName>All_Tasks_Calc</fullName>
-        <columns>Name</columns>
-        <columns>StartTime</columns>
-        <columns>EndTime</columns>
-        <columns>InputRecordCount</columns>
-        <columns>OutputRecordCount</columns>
-        <columns>FailedRecordCount</columns>
-        <columns>Status</columns>
-        <filterScope>Everything</filterScope>
-        <label>All Tasks</label>
-    </listViews>
     <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>
