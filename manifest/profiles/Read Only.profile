@@ -16760,6 +16760,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>ApprovalWorkItem.ParentWorkItemId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>ApprovalWorkItem.RelatedRecordId</field>
         <readable>true</readable>
@@ -21167,11 +21172,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>DocumentTemplate.HasBatchableSection</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DocumentTemplate.IsActive</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -37931,6 +37931,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>MessagingEndUser.MessagingExternalUserKey</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>MessagingSession.CampaignId</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -40943,6 +40948,56 @@
         <editable>false</editable>
         <field>Product2.psf_disable__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRelatedMaterial.ComponentLifecycleStatus</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRelatedMaterial.Description</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRelatedMaterial.EffectiveEndDate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRelatedMaterial.EffectiveStartDate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRelatedMaterial.ProductComponentId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRelatedMaterial.ProductCpntPricebookId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRelatedMaterial.ProductId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRelatedMaterial.QuantityPerProductUnit</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRelatedMaterial.SourcingType</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProductRelatedMaterial.UsageCategory</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -52409,6 +52464,10 @@
         <field>trailheadapp__User_Trailmix__c.trailheadapp__User__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>sfdc_default_ReportExport_Protection_Flow</flow>
+    </flowAccesses>
     <layoutAssignments>
         <layout>APTS_Error_Code_Repository__c-Error Code Repository Layout</layout>
     </layoutAssignments>
@@ -60290,6 +60349,10 @@
     <tabVisibilities>
         <tab>standard-Product2</tab>
         <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ProductRelatedMaterial</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ProfilePlatformFeed</tab>
