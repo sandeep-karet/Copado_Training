@@ -123,6 +123,26 @@
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
+    <listViews>
+        <fullName>All_ApprovalSubmissions</fullName>
+        <filterScope>Everything</filterScope>
+        <label>AllApprovalSubmissions</label>
+    </listViews>
+    <listViews>
+        <fullName>My_ApprovalSubmissions</fullName>
+        <filterScope>Mine</filterScope>
+        <label>MyApprovalSubmissions</label>
+    </listViews>
+    <listViews>
+        <fullName>Pending_ApprovalSubmissions</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status</field>
+            <operation>equals</operation>
+            <value>IP</value>
+        </filters>
+        <label>PendingApprovalSubmissions</label>
+    </listViews>
     <searchLayouts>
         <lookupDialogsAdditionalFields>RelatedRecord</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>RelatedRecordObjectName</lookupDialogsAdditionalFields>

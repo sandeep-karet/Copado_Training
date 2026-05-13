@@ -151,5 +151,23 @@
     <fields>
         <fullName>Version</fullName>
     </fields>
+    <listViews>
+        <fullName>All_ActionPlans</fullName>
+        <columns>Name</columns>
+        <columns>ActionPlanState</columns>
+        <columns>Target</columns>
+        <columns>StartDate</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Action Plans</label>
+    </listViews>
+    <listViews>
+        <fullName>My_ActionPlans</fullName>
+        <columns>Name</columns>
+        <columns>ActionPlanState</columns>
+        <columns>Target</columns>
+        <columns>StartDate</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Action Plans</label>
+    </listViews>
     <sharingModel>Private</sharingModel>
 </CustomObject>
