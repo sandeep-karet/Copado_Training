@@ -42226,6 +42226,10 @@
     </customLabels>
     <customLabels>
         <label></label>
+        <name>copadoQuality__NoApproval</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
         <name>copadoQuality__NoComplianceRuleToDisplay</name>
     </customLabels>
     <customLabels>
@@ -42243,6 +42247,10 @@
     <customLabels>
         <label></label>
         <name>copadoQuality__NoNamedCredentials</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
+        <name>copadoQuality__NoOpenApproval</name>
     </customLabels>
     <customLabels>
         <label></label>
@@ -42282,7 +42290,15 @@
     </customLabels>
     <customLabels>
         <label></label>
+        <name>copadoQuality__No_Access_Acceptance_Criteria</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
         <name>copadoQuality__No_Access_to_Credential</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
+        <name>copadoQuality__No_Edit_Acceptance_Criteria</name>
     </customLabels>
     <customLabels>
         <label></label>
@@ -42446,11 +42462,43 @@
     </customLabels>
     <customLabels>
         <label></label>
+        <name>copadoQuality__Promotion_Missing_PR</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
+        <name>copadoQuality__Promotion_OAuth_Not_Setup</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
+        <name>copadoQuality__Promotion_PR_Closed_No_Approval</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
+        <name>copadoQuality__Promotion_PR_Create_Error</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
         <name>copadoQuality__Promotion_PR_Missing</name>
     </customLabels>
     <customLabels>
         <label></label>
+        <name>copadoQuality__Promotion_PR_Missing_Approval</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
+        <name>copadoQuality__Promotion_PR_Missing_Open_PR</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
         <name>copadoQuality__Promotion_PR_Not_Approved</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
+        <name>copadoQuality__Promotion_PR_Rejected</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
+        <name>copadoQuality__Promotion_Pull_Request_Job_Step_Name</name>
     </customLabels>
     <customLabels>
         <label></label>
@@ -42682,6 +42730,10 @@
     </customLabels>
     <customLabels>
         <label></label>
+        <name>copadoQuality__Review_Summary</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
         <name>copadoQuality__RiskDetails</name>
     </customLabels>
     <customLabels>
@@ -42811,6 +42863,10 @@
     <customLabels>
         <label></label>
         <name>copadoQuality__Session_Assignments_removed_successfully</name>
+    </customLabels>
+    <customLabels>
+        <label></label>
+        <name>copadoQuality__Session_Summary</name>
     </customLabels>
     <customLabels>
         <label></label>
@@ -78073,8 +78129,23 @@
         <fullName>copadoQuality__Publish_Copado_Event</fullName>
     </flowDefinitions>
     <flowDefinitions>
-        <flows/>
+        <flows>
+            <textTemplates>
+                <name>failurePayload</name>
+            </textTemplates>
+            <textTemplates>
+                <name>successPayload</name>
+            </textTemplates>
+        </flows>
         <fullName>copadoQuality__Pull_Request_Automation</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>copadoQuality__Pull_Request_Job_Service</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>copadoQuality__Pull_Request_Review_Job_Service</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows/>

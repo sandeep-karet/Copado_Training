@@ -27,7 +27,7 @@
             "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0tKI000001OL4FYAW"
           },
           "copado__ApiName__c": "Pull_Request_1_Pull_Request_creation_1",
-          "copado__ConfigJson__c": "{\"flowName\":\"Pull_Request_Automation\",\"parameters\":[{\"name\":\"userStoryId\",\"value\":\"{$Context.JobExecution__r.DataJson.userStoryId}\"},{\"name\":\"promotionId\",\"value\":\"{$Context.JobExecution__r.DataJson.promotionId}\"}]}",
+          "copado__ConfigJson__c": "{\"flowName\":\"copadoQuality.Pull_Request_Automation\",\"parameters\":[{\"name\":\"userStoryId\",\"value\":\"{$Context.JobExecution__r.DataJson.userStoryId}\"},{\"name\":\"promotionId\",\"value\":\"{$Context.JobExecution__r.DataJson.promotionId}\"}]}",
           "copado__CustomType__c": "Salesforce Flow",
           "copado__IsSkipped__c": false,
           "copado__JobTemplate__c": "a0uKI000000E55cYAC",

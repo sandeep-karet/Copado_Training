@@ -75,6 +75,26 @@
                 <identifier>RecordCredential_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copadoQuality__Status__c</fieldItem>
+                <identifier>RecordStatus__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copadoQuality__Execution_Status__c</fieldItem>
+                <identifier>RecordExecution_Status_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-c541e5dd-055a-4b1a-a504-522f1958751e</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -107,6 +127,26 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copadoQuality__Assignee__c</fieldItem>
                 <identifier>RecordAssignee_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copadoQuality__Outcome__c</fieldItem>
+                <identifier>RecordOutcome_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copadoQuality__Automation_Status__c</fieldItem>
+                <identifier>RecordAutomation_Status_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-3d974fc7-e374-4e4e-8d8e-05723e897a0d</name>
@@ -247,7 +287,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Outcome</value>
+                    <value>{!$Label.copadoQuality__Session_Summary}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
@@ -347,6 +387,10 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Tabs</value>
+                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-47a5dd3e-de42-4b6a-a850-77325b521979</value>

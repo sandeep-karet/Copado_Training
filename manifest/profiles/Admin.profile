@@ -16179,6 +16179,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoQuality__PullRequestUpdateService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoQuality__PullRequestUpdateServiceTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoQuality__QgrcSelector</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -31014,6 +31022,10 @@
     <customPermissions>
         <enabled>true</enabled>
         <name>cmcSf__Manage_Package_Keys</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>copadoQuality__EnableAutonomousExplorations</name>
     </customPermissions>
     <customPermissions>
         <enabled>true</enabled>

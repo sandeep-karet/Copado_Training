@@ -104,6 +104,16 @@
                 <identifier>RecordReview_Target_URL_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copadoQuality__Execution_Status__c</fieldItem>
+                <identifier>RecordExecution_Status_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-fe556662-ed5b-4916-95ba-8167962da396</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -146,6 +156,26 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copadoQuality__User_Story__c</fieldItem>
                 <identifier>RecordUser_Story_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copadoQuality__Outcome__c</fieldItem>
+                <identifier>RecordOutcome_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copadoQuality__Automation_Status__c</fieldItem>
+                <identifier>RecordAutomation_Status_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-45eb75b3-ed28-4e11-8b93-96803989dff5</name>
@@ -342,7 +372,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>{!$Label.copadoQuality__Outcome}</value>
+                    <value>{!$Label.copadoQuality__Review_Summary}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
@@ -628,6 +658,10 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Tabs</value>
+                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-7721a6ec-826b-49ce-a3d6-54f65ae54e99</value>

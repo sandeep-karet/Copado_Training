@@ -28,7 +28,7 @@
     </values>
     <values>
         <field>copado__TestType__c</field>
-        <value xsi:type="xsd:string">Static Code Analysis</value>
+        <value xsi:type="xsd:string">Compliance Scan</value>
     </values>
     <values>
         <field>copado__Test_Readiness_Logic__c</field>

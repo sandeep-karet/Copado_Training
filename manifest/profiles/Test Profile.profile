@@ -16179,6 +16179,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoQuality__PullRequestUpdateService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoQuality__PullRequestUpdateServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoQuality__QgrcSelector</apexClass>
         <enabled>false</enabled>
     </classAccesses>
