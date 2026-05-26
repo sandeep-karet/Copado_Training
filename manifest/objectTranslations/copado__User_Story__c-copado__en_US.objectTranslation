@@ -122,6 +122,10 @@
         <name>cmcSf__Apex_Test_Level__c</name>
     </fields>
     <fields>
+        <label><!-- Migration Date --></label>
+        <name>cmcSf__Migration_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Functional Review --></label>
         <name>copadoQuality__Functional_Review__c</name>
         <relationshipLabel><!-- User Stories --></relationshipLabel>
@@ -1109,6 +1113,10 @@
     <validationRules>
         <errorMessage><!-- This User Story does not meet the required Apex coverage threshold to be promoted. --></errorMessage>
         <name>copado__Promote_User_Story_Apex_validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- “Run Relevant Tests” is not supported for Metadata Format Pipelines. Please select a different test level. --></errorMessage>
+        <name>copado__Test_Level_Validation_for_MFP</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- Test scratch orgs cannot be used for developments --></errorMessage>

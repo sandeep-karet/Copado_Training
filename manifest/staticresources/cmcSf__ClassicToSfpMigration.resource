@@ -6,7 +6,7 @@
                 {
                     "attributes": {
                         "type": "copado__JobTemplate__c",
-                        "url": "/services/data/v64.0/sobjects/copado__JobTemplate__c/a0xJ6000000TP1OIAW"
+                        "url": "/services/data/v65.0/sobjects/copado__JobTemplate__c/a0xJ6000000TP1OIAW"
                     },
                     "copado__ApiName__c": "Classic_to_Source_Format_Migration_2",
                     "copado__Type__c": "Standard",
@@ -22,8 +22,10 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobTemplate__c/a0xJ6000000TOrqIAG"
                     },
                     "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1",
+                    "copado__Backend_Bypass__c": false,
                     "copado__Type__c": "Standard",
                     "copado__Version__c": 1,
+                    "copado__VolumeOptions__c": "[\r\n{\r\n\"name\": \"volumeSize\",\r\n\"value\": \"10\"\r\n},\r\n{\r\n\"name\": \"volumeTTL\",\r\n\"value\": \"100\"\r\n},\r\n{\r\n\"name\": \"preserveVolumeAfterExecution\",\r\n\"value\": \"true\"\r\n},\r\n{\r\n\"name\": \"volumeEnabled\",\r\n\"value\": \"true\"\r\n}\r\n]",
                     "Id": "a0xJ6000000TOrqIAG",
                     "LastReferencedDate": "2025-06-30T18:07:17.000+0000",
                     "LastViewedDate": "2025-06-30T18:07:17.000+0000",
@@ -35,7 +37,7 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobTemplate__c/a0xJ6000000TPTqIAO"
                     },
                     "copado__ApiName__c": "SFP_Migration_WIP_1",
-                    "copado__Type__c": "Custom",
+                    "copado__Type__c": "Standard",
                     "copado__Version__c": 1,
                     "Id": "a0xJ6000000TPTqIAO",
                     "LastReferencedDate": "2025-06-24T15:01:57.000+0000",
@@ -65,44 +67,14 @@
                 {
                     "attributes": {
                         "type": "copado__JobStep__c",
-                        "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bt2ZIAQ"
-                    },
-                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Create_Copado_Git_repository_record_3",
-                    "copado__ConfigJson__c": "{\"flowName\":\"cmcSf.Create_Git_Repository_Record_and_Update_DataJson\",\"parameters\":[{\"name\":\"jobExecutionId\",\"value\":\"{$Context.JobExecution__r.Id}\"},{\"name\":\"repoName\",\"value\":\"{$Context.JobExecution__r.DataJson.repoName}\"},{\"name\":\"uri\",\"value\":\"{$Context.JobExecution__r.DataJson.uri}\"},{\"name\":\"classicGitRepositoryId\",\"value\":\"{$Context.copado__Git_Repository__c}\"},{\"name\":\"provider\",\"value\":\"{$Context.JobExecution__r.DataJson.provider}\"}]}",
-                    "copado__CustomType__c": "Salesforce Flow",
-                    "copado__IsSkipped__c": false,
-                    "copado__JobTemplate__c": "a0xJ6000000TP1OIAW",
-                    "copado__Order__c": 3,
-                    "copado__Type__c": "Flow",
-                    "Id": "a0wJ6000000bt2ZIAQ",
-                    "Name": "Create Copado Git repository record"
-                },
-                {
-                    "attributes": {
-                        "type": "copado__JobStep__c",
-                        "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bt2aIAA"
-                    },
-                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Authenticate_Copado_Repository_4",
-                    "copado__ConfigJson__c": "{\"flowName\":\"cmcSf.Migration_Authenticate_Git_Repository_in_Copado\",\"parameters\":[{\"name\":\"gitRepositoryId\",\"value\":\"{$Context.JobExecution__r.DataJson.gitRepositoryId}\"},{\"name\":\"classicGitRepositoryId\",\"value\":\"{$Context.JobExecution__r.DataJson.classicGitRepositoryId}\"}]}",
-                    "copado__CustomType__c": "Salesforce Flow",
-                    "copado__IsSkipped__c": false,
-                    "copado__JobTemplate__c": "a0xJ6000000TP1OIAW",
-                    "copado__Order__c": 4,
-                    "copado__Type__c": "Flow",
-                    "Id": "a0wJ6000000bt2aIAA",
-                    "Name": "Migration - Authenticate Copado Repository"
-                },
-                {
-                    "attributes": {
-                        "type": "copado__JobStep__c",
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bt2bIAA"
                     },
-                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Git_Initialization_5",
+                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Git_Initialization_2",
                     "copado__ConfigJson__c": "{\"flowName\":\"cmcSf.Migration_Source_Format_Git_Initialisation\",\"parameters\":[{\"name\":\"gitRepositoryId\",\"value\":\"{$Context.JobExecution__r.DataJson.gitRepositoryId}\"},{\"name\":\"branch\",\"value\":\"{$Pipeline.copado__Main_Branch__c}\"},{\"name\":\"gitRepositoryURI\",\"value\":\"{$Context.JobExecution__r.DataJson.uri}\"}]}",
                     "copado__CustomType__c": "Salesforce Flow",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TP1OIAW",
-                    "copado__Order__c": 5,
+                    "copado__Order__c": 2,
                     "copado__Type__c": "Flow",
                     "Id": "a0wJ6000000bt2bIAA",
                     "Name": "Git Initialization"
@@ -110,14 +82,31 @@
                 {
                     "attributes": {
                         "type": "copado__JobStep__c",
+                      "url": "/services/data/v65.0/sobjects/copado__JobStep__c/a0wS8000002CGe9IAG"
+                    },
+                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Update_Gitignore_and_Forceignore_3",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"instructions\":\"Update gitignore and forceignore\",\"parameters\":[{\"name\":\"assigneeId\",\"value\":\"005RR000002rJGHYA2\"},{\"name\":\"assigneeName\",\"value\":\"Sakshi Vijay\"},{\"name\":\"performAtSource\",\"value\":\"false\"},{\"name\":\"performAtDestination\",\"value\":\"false\"},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
+                    "copado__CustomType__c": "Manual Task",
+                    "copado__IsSkipped__c": false,
+                    "copado__JobTemplate__c": "a0xJ6000000TP1OIAW",
+                    "copado__Order__c": 3,
+                    "copado__Type__c": "Manual",
+                    "Id": "a0wS8000002CGe9IAG",
+                    "Name": "Update Gitignore and Forceignore"
+                    },
+                {
+                    "attributes": {
+                        "type": "copado__JobStep__c",
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bt2cIAA"
                     },
-                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Update_Exclude_From_AutoResolve_6",
+                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Update_Exclude_From_AutoResolve_3",
+                    "copado__Backend_Bypass__c": false,
                     "copado__ConfigJson__c": "{\"functionName\":\"Update_Exclude_From_AutoResolve\",\"parameters\":[{\"name\":\"autoResolveMetadatas\",\"value\":\"{$Pipeline.copado__Exclude_From_Auto_Resolve__c}\"},{\"name\":\"branch\",\"value\":\"{$Pipeline.copado__Main_Branch__c}\"},{\"name\":\"git_json\",\"value\":\"{$Context.apex.cmcSf.GetGitJson}\"},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\"},{\"name\":\"gitName\",\"value\":\"{$User.Name}\"}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TP1OIAW",
-                    "copado__Order__c": 6,
+                    "copado__Order__c": 4,
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bt2cIAA",
                     "Name": "Update Exclude From AutoResolve"
@@ -127,12 +116,13 @@
                         "type": "copado__JobStep__c",
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bt2dIAA"
                     },
-                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Clone_Classic_and_create_DX_Pipeline_7",
+                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Clone_Classic_and_create_DX_Pipeline_4",
+                    "copado__Backend_Bypass__c": false,
                     "copado__ConfigJson__c": "{\"flowName\":\"cmcSf.Clone_Classic_Pipeline_To_Source_Format\",\"parameters\":[{\"name\":\"pipelineId\",\"value\":\"{$Pipeline.Id}\"},{\"name\":\"repositoryId\",\"value\":\"{$Context.JobExecution__r.DataJson.gitRepositoryId}\"},{\"name\":\"jobExecutionId\",\"value\":\"{$Context.JobExecution__r.Id}\"}]}",
                     "copado__CustomType__c": "Salesforce Flow",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TP1OIAW",
-                    "copado__Order__c": 7,
+                    "copado__Order__c": 5,
                     "copado__Type__c": "Flow",
                     "Id": "a0wJ6000000bt2dIAA",
                     "Name": "Clone Classic and create DX Pipeline"
@@ -140,14 +130,35 @@
                 {
                     "attributes": {
                         "type": "copado__JobStep__c",
-                        "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bt2eIAA"
+                        "url": "/services/data/v66.0/sobjects/copado__JobStep__c/a0tJ7000000mZwMIAU"
                     },
-                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Create_Git_Snapshot_Record_8",
-                    "copado__ConfigJson__c": "{\"flowName\":\"cmcSf.Migration_Create_Git_Snapshot\",\"parameters\":[{\"name\":\"mainBranch\",\"value\":\"{$Pipeline.copado__Main_Branch__c}\"},{\"name\":\"repositoryId\",\"value\":\"{$Context.JobExecution__r.DataJson.gitRepositoryId}\"},{\"name\":\"credentialId\",\"value\":\"{$Context.JobExecution__r.DataJson.credentialId}\"},{\"name\":\"pipelineId\",\"value\":\"{$Context.JobExecution__r.DataJson.sfpPipelineId}\"},{\"name\":\"snapshotScope\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"Report\\\"]}}\"},{\"name\":\"jobExecutionId\",\"value\":\"{$Context.JobExecution__r.Id}\"}]}",
+                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Enable_Vlocity_10",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"flowName\":\"cmcSf.Enable_Vlocity\",\"parameters\":[{\"name\":\"pipelineId\",\"value\":\"{$Context.JobExecution__r.DataJson.sfpPipelineId}\"},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
                     "copado__CustomType__c": "Salesforce Flow",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TP1OIAW",
-                    "copado__Order__c": 8,
+                    "copado__Order__c": 6,
+                    "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.isVlocityEnabled.matches(false)}",
+                    "copado__Type__c": "Flow",
+                    "Id": "a0tJ7000000mZwMIAU",
+                    "LastReferencedDate": "2026-03-24T09:56:11.000+0000",
+                    "LastViewedDate": "2026-03-24T09:56:11.000+0000",
+                    "Name": "Enable Vlocity"
+                },
+                {
+                    "attributes": {
+                        "type": "copado__JobStep__c",
+                        "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bt2eIAA"
+                    },
+                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Create_Git_Snapshot_Record_5",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"flowName\":\"cmcSf.Migration_Create_Git_Snapshot\",\"parameters\":[{\"name\":\"mainBranch\",\"value\":\"{$Pipeline.copado__Main_Branch__c}\"},{\"name\":\"repositoryId\",\"value\":\"{$Context.JobExecution__r.DataJson.gitRepositoryId}\"},{\"name\":\"credentialId\",\"value\":\"{$Context.JobExecution__r.DataJson.credentialId}\"},{\"name\":\"pipelineId\",\"value\":\"{$Context.JobExecution__r.DataJson.sfpPipelineId}\"},{\"name\":\"snapshotScope\",\"value\":\"{$Context.Apex.cmcSf.GetSnapshotScopeForMigration}\"},{\"name\":\"jobExecutionId\",\"value\":\"{$Context.JobExecution__r.Id}\"},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
+                    "copado__CustomType__c": "Salesforce Flow",
+                    "copado__IsSkipped__c": false,
+                    "copado__JobTemplate__c": "a0xJ6000000TP1OIAW",
+                    "copado__Order__c": 7,
+                    "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.takeSnapshot.matches(false)}",
                     "copado__Type__c": "Flow",
                     "Id": "a0wJ6000000bt2eIAA",
                     "Name": "Create Git Snapshot Record"
@@ -157,12 +168,14 @@
                         "type": "copado__JobStep__c",
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bt2fIAA"
                     },
-                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Snapshot_9",
-                    "copado__ConfigJson__c": "{\"flowName\":\"cmcSf.SFP_Migration_Snapshot\",\"parameters\":[{\"name\":\"branch\",\"value\":\"{$Pipeline.copado__Main_Branch__c}\"},{\"name\":\"pipelineId\",\"value\":\"{$Context.JobExecution__r.DataJson.sfpPipelineId}\"},{\"name\":\"sourceOrgId\",\"value\":\"{$Source.Id}\"},{\"name\":\"snapshotInformation\",\"value\":\"{\\\"applyEnvVars\\\":true,\\\"ymlReplacement\\\":true}\"},{\"name\":\"snapshotId\",\"value\":\"{$Context.JobExecution__r.DataJson.gitSnapshotId}\"}]}",
+                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Snapshot_6",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"flowName\":\"cmcSf.SFP_Migration_Snapshot\",\"parameters\":[{\"name\":\"branch\",\"value\":\"{$Pipeline.copado__Main_Branch__c}\"},{\"name\":\"pipelineId\",\"value\":\"{$Context.JobExecution__r.DataJson.sfpPipelineId}\"},{\"name\":\"sourceOrgId\",\"value\":\"{$Source.Id}\"},{\"name\":\"snapshotInformation\",\"value\":\"{\\\"applyEnvVars\\\":true,\\\"ymlReplacement\\\":true}\"},{\"name\":\"snapshotId\",\"value\":\"{$Context.JobExecution__r.DataJson.gitSnapshotId}\"},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
                     "copado__CustomType__c": "Salesforce Flow",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TP1OIAW",
-                    "copado__Order__c": 9,
+                    "copado__Order__c": 8,
+                    "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.takeSnapshot.matches(false)}",
                     "copado__Type__c": "Flow",
                     "Id": "a0wJ6000000bt2fIAA",
                     "Name": "Snapshot"
@@ -172,12 +185,13 @@
                         "type": "copado__JobStep__c",
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bt2gIAA"
                     },
-                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Create_Env_Branches_10",
+                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Create_Env_Branches_7",
+                    "copado__Backend_Bypass__c": false,
                     "copado__ConfigJson__c": "{\"functionName\":\"Migration_Create_Git_Branches\",\"parameters\":[{\"name\":\"branches\",\"value\":\"{$Context.JobExecution__r.DataJson.branches}\",\"required\":false},{\"name\":\"mainBranch\",\"value\":\"{$Context.JobExecution__r.DataJson.mainBranch}\",\"required\":false},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"gitUser\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"git_json\",\"value\":\"{$Context.apex.cmcSf.GetGitJson}\",\"required\":true}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TP1OIAW",
-                    "copado__Order__c": 10,
+                    "copado__Order__c": 9,
                     "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.hasWip.matches(true)}",
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bt2gIAA",
@@ -188,12 +202,13 @@
                         "type": "copado__JobStep__c",
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bt2hIAA"
                     },
-                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Refresh_Sandboxes_12",
+                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Refresh_Sandboxes_9",
+                    "copado__Backend_Bypass__c": false,
                     "copado__ConfigJson__c": "{\"functionName\":\"Refresh_Sandbox\",\"parameters\":[{\"name\":\"destinationSessionid\",\"value\":\"{$Destination.Credential.SessionId}\"},{\"name\":\"destinationEndpoint\",\"value\":\"{$Destination.Credential.Endpoint}\"}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TP1OIAW",
-                    "copado__Order__c": 12,
+                    "copado__Order__c": 11,
                     "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.refreshSandboxes.matches(false)}",
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bt2hIAA",
@@ -204,12 +219,13 @@
                         "type": "copado__JobStep__c",
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000buaBIAQ"
                     },
-                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Handle_Work_in_Progress_13",
+                    "copado__ApiName__c": "Classic_to_Source_Format_Migration_2_Handle_Work_in_Progress_8",
+                    "copado__Backend_Bypass__c": false,
                     "copado__ConfigJson__c": "{\"flowName\":\"cmcSf.Handle_work_in_progress_migration\",\"parameters\":[{\"name\":\"jobExecutionId\",\"value\":\"{$Context.JobExecution__r.Id}\"}]}",
                     "copado__CustomType__c": "Salesforce Flow",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TP1OIAW",
-                    "copado__Order__c": 11,
+                    "copado__Order__c": 10,
                     "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.hasWip.matches(false)}",
                     "copado__Type__c": "Flow",
                     "Id": "a0wJ6000000buaBIAQ",
@@ -221,6 +237,7 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsaSIAQ"
                     },
                     "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Refresh_Metadata_1",
+                    "copado__Backend_Bypass__c": false,
                     "copado__ConfigJson__c": "{\"flowName\":\"cmcSf.Refresh_Metadata\",\"parameters\":[{\"name\":\"credentialId\",\"value\":\"{$Job.ExecutionParent.copado__Org__c}\"}]}",
                     "copado__CustomType__c": "Salesforce Flow",
                     "copado__IsSkipped__c": false,
@@ -233,14 +250,33 @@
                 {
                     "attributes": {
                         "type": "copado__JobStep__c",
-                        "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsaXIAQ"
+                        "url": "/services/data/v66.0/sobjects/copado__JobStep__c/a0tJ7000000mZzQIAU"
                     },
-                    "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Git_Snapshot_2",
-                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{$Context.apex.cmcSf.MainSnapshotMetadataForMigrationToSFP}\"},{\"name\":\"snapshotInformation\",\"value\":\"{\\\"applyEnvVars\\\":true,\\\"ymlReplacement\\\":true}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"}]}",
+                    "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Vlocity_Snapshot_13",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"functionName\":\"vlocity_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"sourceDirectory\",\"value\":\"vlocity\",\"required\":true},{\"name\":\"selections\",\"value\":\"{$Context.apex.cmcSf.VlocitySnapshotMetadataForMigration}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"endpointUrl\",\"value\":\"{$Source.Credential.EndpointURL}\",\"required\":true},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":true},{\"name\":\"maxBuffer\",\"value\":\"5242880\"},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TOrqIAG",
                     "copado__Order__c": 3,
+                    "copado__Type__c": "Function",
+                    "Id": "a0tJ7000000mZzQIAU",
+                    "LastReferencedDate": "2026-03-25T06:59:07.000+0000",
+                    "LastViewedDate": "2026-03-25T06:59:07.000+0000",
+                    "Name": "Vlocity Snapshot"
+                },
+                {
+                    "attributes": {
+                        "type": "copado__JobStep__c",
+                        "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsaXIAQ"
+                    },
+                    "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Git_Snapshot_2",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{$Context.apex.cmcSf.MainSnapshotMetadataForMigrationToSFP}\"},{\"name\":\"snapshotInformation\",\"value\":\"{\\\"applyEnvVars\\\":true,\\\"ymlReplacement\\\":true}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"}]}",
+                    "copado__CustomType__c": "Function",
+                    "copado__IsSkipped__c": false,
+                    "copado__JobTemplate__c": "a0xJ6000000TOrqIAG",
+                    "copado__Order__c": 4,
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bsaXIAQ",
                     "Name": "Git Snapshot"
@@ -251,11 +287,13 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsacIAA"
                     },
                     "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Static_Resources_3",
-                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"StaticResource\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"}]}",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"StaticResource\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"},{\"name\":\"repositoryId\",\"value\":\"{$Job.ExecutionParent.copado__Git_Repository__r.Id}\",\"required\":true},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TOrqIAG",
-                    "copado__Order__c": 4,
+                    "copado__Order__c": 5,
+                    "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.sfdxExcludedTypes.matches(\"*StaticResource*\")}",
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bsacIAA",
                     "Name": "Static Resources"
@@ -266,11 +304,13 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsaTIAQ"
                     },
                     "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Reports_4",
-                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"Report\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"}]}",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"Report\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"},{\"name\":\"repositoryId\",\"value\":\"{$Job.ExecutionParent.copado__Git_Repository__r.Id}\",\"required\":true},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TOrqIAG",
-                    "copado__Order__c": 5,
+                    "copado__Order__c": 6,
+                    "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.sfdxExcludedTypes.matches(\"*Report*\")}",
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bsaTIAQ",
                     "Name": "Reports"
@@ -281,11 +321,13 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsahIAA"
                     },
                     "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Dashboards_5",
-                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"Dashboard\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"}]}",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"Dashboard\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"},{\"name\":\"repositoryId\",\"value\":\"{$Job.ExecutionParent.copado__Git_Repository__r.Id}\",\"required\":true},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TOrqIAG",
-                    "copado__Order__c": 6,
+                    "copado__Order__c": 7,
+                    "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.sfdxExcludedTypes.matches(\"*Dashboard*\")}",
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bsahIAA",
                     "Name": "Dashboards"
@@ -296,11 +338,13 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsaUIAQ"
                     },
                     "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_ContentAsset_6",
-                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"ContentAsset\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"}]}",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"ContentAsset\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"},{\"name\":\"repositoryId\",\"value\":\"{$Job.ExecutionParent.copado__Git_Repository__r.Id}\",\"required\":true},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TOrqIAG",
-                    "copado__Order__c": 7,
+                    "copado__Order__c": 8,
+                    "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.sfdxExcludedTypes.matches(\"*ContentAsset*\")}",
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bsaUIAQ",
                     "Name": "ContentAsset"
@@ -311,11 +355,13 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsamIAA"
                     },
                     "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Document_7",
-                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"Document\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"}]}",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"Document\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"},{\"name\":\"repositoryId\",\"value\":\"{$Job.ExecutionParent.copado__Git_Repository__r.Id}\",\"required\":true},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TOrqIAG",
-                    "copado__Order__c": 8,
+                    "copado__Order__c": 9,
+                    "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.sfdxExcludedTypes.matches(\"*Document*\")}",
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bsamIAA",
                     "Name": "Document"
@@ -326,11 +372,13 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsarIAA"
                     },
                     "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Email_Template_8",
-                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"EmailTemplate\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"}]}",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"EmailTemplate\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"},{\"name\":\"repositoryId\",\"value\":\"{$Job.ExecutionParent.copado__Git_Repository__r.Id}\",\"required\":true},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TOrqIAG",
-                    "copado__Order__c": 9,
+                    "copado__Order__c": 10,
+                    "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.sfdxExcludedTypes.matches(\"*EmailTemplate*\")}",
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bsarIAA",
                     "Name": "Email Template"
@@ -341,11 +389,13 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsanIAA"
                     },
                     "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Custom_Labels_9",
-                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"CustomLabels\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"}]}",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"CustomLabels\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"},{\"name\":\"repositoryId\",\"value\":\"{$Job.ExecutionParent.copado__Git_Repository__r.Id}\",\"required\":true},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TOrqIAG",
-                    "copado__Order__c": 10,
+                    "copado__Order__c": 11,
+                    "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.sfdxExcludedTypes.matches(\"*CustomLabels*\")}",
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bsanIAA",
                     "Name": "Custom Labels"
@@ -356,11 +406,13 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsaiIAA"
                     },
                     "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Custom_Object_10",
-                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"CustomObject\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"}]}",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"CustomObject\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"},{\"name\":\"repositoryId\",\"value\":\"{$Job.ExecutionParent.copado__Git_Repository__r.Id}\",\"required\":true},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TOrqIAG",
-                    "copado__Order__c": 11,
+                    "copado__Order__c": 12,
+                    "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.sfdxExcludedTypes.matches(\"*CustomObject*\")}",
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bsaiIAA",
                     "Name": "Custom Object"
@@ -371,11 +423,13 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsawIAA"
                     },
                     "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Apex_Classes_11",
-                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"ApexClass\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"}]}",
+                    "copado__Backend_Bypass__c": false,
+                    "copado__ConfigJson__c": "{\"functionName\":\"sfdx_git_snapshot\",\"parameters\":[{\"name\":\"git_json\",\"value\":\"{$Context.Repository.Credential}\",\"required\":true},{\"name\":\"gitName\",\"value\":\"{$User.Name}\",\"required\":true},{\"name\":\"gitEmail\",\"value\":\"{$User.Email}\",\"required\":true},{\"name\":\"sourceEndpoint\",\"value\":\"{$Source.Credential.Endpoint}\",\"required\":true},{\"name\":\"sourceSessionId\",\"value\":\"{$Source.Credential.SessionId}\",\"required\":true},{\"name\":\"branch\",\"value\":\"{$Job.ExecutionParent.copado__Branch__c}\",\"required\":true},{\"name\":\"selectedMetadata\",\"value\":\"{\\\"SFDX\\\":{\\\"included\\\":[\\\"ApexClass\\\"]}}\"},{\"name\":\"snapshotInformation\",\"value\":\"{$Job.ExecutionParent.copado__Other_Information__c}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Context.JobExecution__r.DataJson.metadataRefreshResult}\",\"required\":false},{\"name\":\"overriddenApiVersion\",\"value\":\"\"},{\"name\":\"maximumRetryCount\",\"value\":\"1\",\"required\":true},{\"name\":\"commitMessage\",\"value\":\"{$Context.JobExecution__r.DataJson.message}\",\"required\":true},{\"name\":\"processesUsedForRetrieval\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_processesUsedForRetrieval}\",\"required\":false},{\"name\":\"environmentVariables\",\"value\":\"{$Source.apex.EnvironmentVariables}\"},{\"name\":\"findAndReplaceFileId\",\"value\":\"{$Context.apex.GlobalFindAndReplaceSourceId}\"},{\"name\":\"metadataChunkInfo\",\"value\":\"{$Pipeline.Property.sfdx_git_snapshot_metadataChunkInfo}\",\"required\":false},{\"name\":\"vlocityFolder\",\"value\":\"vlocity\"},{\"name\":\"repositoryId\",\"value\":\"{$Job.ExecutionParent.copado__Git_Repository__r.Id}\",\"required\":true},{\"name\":\"skippedForBackPromotion\",\"value\":\"false\"},{\"name\":\"skippedStages\",\"value\":\"[]\"},{\"name\":\"skippedEnvironments\",\"value\":\"[]\"}]}",
                     "copado__CustomType__c": "Function",
                     "copado__IsSkipped__c": false,
                     "copado__JobTemplate__c": "a0xJ6000000TOrqIAG",
-                    "copado__Order__c": 12,
+                    "copado__Order__c": 13,
+                    "copado__SkipCondition__c": "{$Context.JobExecution__r.DataJson.sfdxExcludedTypes.matches(\"*ApexClass*\")}",
                     "copado__Type__c": "Function",
                     "Id": "a0wJ6000000bsawIAA",
                     "Name": "Apex Classes"
@@ -386,6 +440,7 @@
                         "url": "/services/data/v64.0/sobjects/copado__JobStep__c/a0wJ6000000bsvkIAA"
                     },
                     "copado__ApiName__c": "MFP_to_SFP_Snapshot_migration_1_Add_Metadata_Content_Id_in_JE_12",
+                    "copado__Backend_Bypass__c": false,
                     "copado__ConfigJson__c": "{\"flowName\":\"cmcSf.UpdateMigrationSnapshotJobDataJson\",\"parameters\":[{\"name\":\"jobExecutionId\",\"value\":\"{$Context.JobExecution__r.Id}\"},{\"name\":\"metadataRefreshResult\",\"value\":\"{$Job.PrevStep.Result__r.Result_Data__c}\"}]}",
                     "copado__CustomType__c": "Salesforce Flow",
                     "copado__IsSkipped__c": false,
@@ -421,6 +476,7 @@
                         "url": "/services/data/v64.0/sobjects/copado__Function__c/a0oJ6000000TYbVIAW"
                     },
                     "copado__API_Name__c": "Update_Exclude_From_AutoResolve",
+                    "copado__Backend_Bypass__c": false,
                     "copado__Image_Name__c": "copado-function-core:v1",
                     "copado__Options__c": "[ ]",
                     "copado__Parameters__c": "[ {\n  \"name\" : \"autoResolveMetadatas\",\n  \"defaultValue\" : \"{$Context.copado__Exclude_From_Auto_Resolve__c}\"\n}, {\n  \"name\" : \"branch\",\n  \"defaultValue\" : \"{$Context.copado__Main_Branch__c}\"\n}, {\n  \"name\" : \"git_json\",\n  \"defaultValue\" : \"{$Context.apex.cmcSf.GetGitJson}\"\n}, {\n  \"name\" : \"gitEmail\",\n  \"defaultValue\" : \"{$User.Email}\"\n}, {\n  \"name\" : \"gitName\",\n  \"defaultValue\" : \"{$User.Name}\"\n} ]",
@@ -456,6 +512,7 @@
                         "url": "/services/data/v64.0/sobjects/copado__Function__c/a0oJ6000000TYoZIAW"
                     },
                     "copado__API_Name__c": "Refresh_Sandbox",
+                    "copado__Backend_Bypass__c": false,
                     "copado__Image_Name__c": "copado-multicloud-dx:v5",
                     "copado__Options__c": "[ ]",
                     "copado__Parameters__c": "[ {\n  \"name\" : \"destinationSessionid\",\n  \"defaultValue\" : \"{$Context.Credential.SessionId}\"\n}, {\n  \"name\" : \"destinationEndpoint\",\n  \"defaultValue\" : \"{$Context.Credential.Endpoint}\"\n} ]",
@@ -477,7 +534,7 @@
                     "copado__Options__c": "[ ]",
                     "copado__Parameters__c": "[ {\n  \"required\" : true,\n  \"name\" : \"childBranch\",\n  \"defaultValue\" : \"{$Context.JobExecution__r.DataJson.createBranch}\"\n}, {\n  \"required\" : true,\n  \"name\" : \"parentBranch\",\n  \"defaultValue\" : \"{$Context.JobExecution__r.DataJson.fromBranch}\"\n}, {\n  \"required\" : true,\n  \"name\" : \"gitEmail\",\n  \"defaultValue\" : \"{$User.Email}\"\n}, {\n  \"required\" : true,\n  \"name\" : \"gitUser\",\n  \"defaultValue\" : \"{$User.Name}\"\n}, {\n  \"required\" : true,\n  \"name\" : \"git_json\",\n  \"defaultValue\" : \"{$Context.apex.cmcSf.GetGitJson}\"\n} ]",
                     "copado__Script__c": "#!/usr/bin/env node\n'use strict';\n\nconst child_process = require('child_process'),\n    process = require('process'),\n    fs = require('fs'),\n    { childBranch, isTest, gitEmail, gitUser, parentBranch } = process.env,\n    APP_DIRECTORY = getPath('/app'),\n    TEMP_DIRECTORY = getPath('/tmp'),\n    TARGET_DIRECTORY = `${APP_DIRECTORY}/repository`,\n    RESULT_INFO = {\n        LEVEL: {\n            INFO: 'INFO',\n            ERROR: 'ERROR',\n            WARN: 'WARN'\n        },\n        CATEGORY: {\n            GIT: 'Git',\n            COPADO_INFO: 'Copado Info',\n            COPADO_SERVICE: 'Copado Service',\n            UNKNOWN_EXCEPTION: 'Unknown Exception',\n            FILE_SYSTEM: 'File System'\n        },\n        ADDITIONAL_INFORMATION: {\n            GIT_CHECKOUT: 'Git Checkout',\n            GIT_PUSH: 'Git Push',\n            UPLOAD_FILES: 'Upload Files',\n            COPADO_GIT_GET: 'Copado Git Service',\n            GIT_CONFIG: 'Git Configuration',\n            SETUP_DIRECTORY: 'Setup Directory',\n            GIT_BRANCH_NAME: 'Git Branch Name'\n        }\n    },\n    STDIO = {\n        INHERIT: 'inherit',\n        PIPE: 'pipe',\n        IGNORE: 'ignore'\n    },\n    COPADO_INFO_PREFIX = 'CopadoFunction INFO',\n    resultViewerJson = [],\n    CUSTOM_ERROR = {\n        COMMAND_EXECUTION_ERROR: 'CommandExecutionError'\n    },\n    RESULT_TABLE_HEADER = {\n        label: 'Create Environment Branch Result',\n        customLabel: 'create_environment_branch_result'\n    },\n    HEADER_ICON = 'standard:note',\n    RESULT_TABLE_COLUMNS = [\n        {\n            label: 'Level',\n            fieldName: 'Level',\n            type: 'text',\n            wrapText: true,\n            customLabel: 'Level',\n            initialWidth: 80\n        },\n        {\n            label: 'Category',\n            fieldName: 'Category',\n            type: 'text',\n            wrapText: true,\n            customLabel: 'Category',\n            initialWidth: 120\n        },\n        {\n            label: 'Additional Information',\n            fieldName: 'AdditionalInformation',\n            type: 'text',\n            wrapText: true,\n            customLabel: 'Additional_Information',\n            initialWidth: 200\n        },\n        {\n            label: 'Message',\n            fieldName: 'Message',\n            type: 'text',\n            wrapText: true,\n            customLabel: 'Message'\n        }\n    ];\n\nlet executionError;\n\nasync function execute() {\n    try {\n        console.log('process.env:::', process.env);\n        console.log('process.env:::', JSON.stringify(process.env));\n        await this.createWorkingDirectory(TARGET_DIRECTORY);\n        this.logger('START Creating environment branches');\n        await this.validateBranches(childBranch, parentBranch);\n        await this.createWorkingDirectory(TARGET_DIRECTORY + '/environmentBranch');\n        await this.fetchGitBranch(parentBranch);\n        this.changeWorkingDirectory(TARGET_DIRECTORY + '/environmentBranch');\n        await this.configureGit(gitUser, gitEmail);\n        await this.createEnvironmentBranch(childBranch, parentBranch);\n        await this.pushEnvironmentBranch(childBranch);\n        \n        this.logger('END Creating environment branches');\n    } catch (err) {\n        this.log(`Error: ${err.stack}`);\n        if (!(err instanceof CommandExecutionError)) {\n            this.populateResultViewer(RESULT_INFO.LEVEL.ERROR, RESULT_INFO.CATEGORY.UNKNOWN_EXCEPTION, 'See logs for more info', err.message);\n        }\n        executionError = err.message || err?.toString() || 'Unknown Error occurred';\n    } finally {\n        if (resultViewerJson?.length) {\n            this.uploadResultViewerJson(resultViewerJson, RESULT_TABLE_COLUMNS, RESULT_TABLE_HEADER, HEADER_ICON);\n        }\n        if (executionError) {\n            await this.executeCommand(this.getErrorCommand(executionError));\n            process.exit(1);\n        }\n    }\n}\n\n\nasync function fetchGitBranch(branch) {\n    this.logger(`START Fetching ${branch}`);\n\n    const cmd = `cd ${TARGET_DIRECTORY}\n        copado-git-get ${branch}`;\n\n    await this.executeCommand(cmd, RESULT_INFO.CATEGORY.COPADO_SERVICE, RESULT_INFO.ADDITIONAL_INFORMATION.COPADO_GIT_GET);\n    this.logger(`END Fetching ${branch}`);\n}\n\nfunction getRemoteBranches(parentBranch) {\n    const response = child_process.execSync(`copado-git-get --remote \"${parentBranch}\"`, { encoding: 'utf-8' });\n    return response?.trim().split(', ');\n}\n\nasync function validateBranches(environmentBranch, parentBranch) {\n\n    if (parentBranch === null || environmentBranch === null) {\n        throw new Error('Error creating environment branch: ' + environmentBranch);\n    }\n\n    await this.validateBranchName([parentBranch, environmentBranch]);\n\n\n    const remoteBranches = this.getRemoteBranches(parentBranch);\n    if (!remoteBranches.includes(parentBranch)) {\n        throw new Error(`Error creating environment branch: ${parentBranch} does not exist!`);\n    }\n\n    if (remoteBranches.includes(environmentBranch)) {\n        throw new Error(`Error creating environment branch: ${environmentBranch} already exists!`);\n    }\n}\n\nasync function configureGit(gitEmail, gitUser) {\n    const gitConfig = `\n    git config --local user.email \"${gitEmail}\" || exit 1\n    git config --local user.name \"${gitUser}\" || exit 1\n    git config --global diff.renames false || exit 1\n    git config --global merge.renames false || exit 1\n    git config --global status.renames false || exit 1\n    `;\n    await this.executeCommand(gitConfig, RESULT_INFO.CATEGORY.GIT, RESULT_INFO.ADDITIONAL_INFORMATION.GIT_CONFIG);\n}\n\nasync function validateBranchName(branches) {\n\n    for(const branch of branches) {\n        const checkReferenceFormatCommand = `git check-ref-format --branch \"${branch}\" || exit 1`;\n        await this.executeCommand(checkReferenceFormatCommand, RESULT_INFO.CATEGORY.GIT, RESULT_INFO.ADDITIONAL_INFORMATION.GIT_BRANCH_NAME);\n    }\n}\n\nasync function createWorkingDirectory(dir) {\n    await this.executeCommand(`mkdir -p ${dir}`, RESULT_INFO.CATEGORY.FILE_SYSTEM, RESULT_INFO.ADDITIONAL_INFORMATION.SETUP_DIRECTORY);\n}\n\nasync function createEnvironmentBranch(environmentBranch, parentBranch) {\n    this.log(`Creating branch ${environmentBranch} from ${parentBranch}`);\n    if (parentBranch) {\n        this.asyncCopadoLogMessage(`\"Creating branch ${environmentBranch} from ${parentBranch}\"`);\n        await this.executeCommand(\n            `git checkout -b ${environmentBranch} ${parentBranch}`,\n            RESULT_INFO.CATEGORY.GIT,\n            RESULT_INFO.ADDITIONAL_INFORMATION.GIT_CHECKOUT\n        );\n    } else {\n        throw new Error('No environment branch provided');\n    }\n}\n\nasync function pushEnvironmentBranch(branchName) {\n\n    this.asyncCopadoLogMessage(`Pushing environment branch ${branchName}`);\n    const gitPush = `git push origin ${branchName}`;\n    await this.executeCommand(gitPush, RESULT_INFO.CATEGORY.GIT, RESULT_INFO.ADDITIONAL_INFORMATION.GIT_PUSH);\n}\n\nasync function executeCommand(command, category, additionalInfo, hasJsonResponse, disableLog) {\n    this.logger(`==> ${command}`);\n    return new Promise((resolve, reject) => {\n        let output = '',\n            error = '';\n\n        const childProcess = child_process.spawn(command, [], { shell: true });\n\n        childProcess.stdout.on('data', (data) => {\n           const outputStream = data?.toString();\n\t\t\tif(!disableLog) {\n\t\t\t\tthis.logger(outputStream);\n\t\t\t}\n\t\t\toutput += outputStream;\n        });\n\n        childProcess.stderr.on('data', (data) => {\n            const errorStream = data?.toString();\n\t\t\tthis.logger(errorStream);\n            error += data?.toString();\n        });\n\n        childProcess.on('close', (code) => {\n            if (code !== 0) {\n            \t\n                this.logger(`Code: ${code}`);\n                let errorMessage = '';\n\n                if (hasJsonResponse) {\n                    try {\n                        resolve(JSON.parse(output));\n                    } catch (error) {\n                        errorMessage = error;\n                    }\n                } else {\n                    errorMessage = error;\n                }\n\n                errorMessage = errorMessage ? errorMessage : `Error executing the command ${command}`;\n\n                this.populateResultViewer(RESULT_INFO.LEVEL.ERROR, category, additionalInfo, errorMessage);\n\n                const truncatedError = JSON.stringify(\n                    errorMessage.split('\\n').filter((msg) => !msg.includes(COPADO_INFO_PREFIX)).join(' ')\n                );\n                reject( new CommandExecutionError(truncatedError, category, additionalInfo));\n            }\n\n            resolve(hasJsonResponse ? JSON.parse(output) : output);\n        });\n\n        childProcess.on('error', (error) => {\n            this.populateResultViewer(RESULT_INFO.LEVEL.ERROR, category, additionalInfo, error);\n\n            const truncatedError = JSON.stringify(error.split('\\n').filter((msg) => !msg.includes(COPADO_INFO_PREFIX)).join(' '));\n            reject(new CommandExecutionError(truncatedError, category, additionalInfo));\n        });\n    });\n}\n\nfunction getPath(filePath) {\n    return isTest ? `${__dirname}/__tests__/__mockDir__${filePath}` : filePath;\n}\n\nfunction logger(message) {\n    console.log(message);\n}\n\nfunction log(response, disableLogs) {\n    const outputStream = response?.stdout?.toString().trim();\n    const errorStream = response?.stderr?.toString().trim();\n    if (!disableLogs) {\n        if (outputStream) {\n            console.log(outputStream);\n        }\n        if (errorStream) {\n            console.log(errorStream);\n        }\n    }\n    return { outputStream, errorStream };\n}\n\nfunction changeWorkingDirectory(dir) {\n    process.chdir(dir);\n}\n\nfunction populateResultViewer(level, category, additionalInfo, message) {\n    if (message) {\n        resultViewerJson.push({\n            Level: level,\n            Category: category,\n            AdditionalInformation: additionalInfo,\n            Message: message\n        });\n    }\n}\n\nfunction uploadResultViewerJson(data, columns, header, headerIcon) {\n    const RESULT_VIEWER_JSON_PATH = `${TEMP_DIRECTORY}/ResultViewer.json`;\n\n    const fileContent = { data, columns, header, headerIcon };\n    fs.writeFileSync(RESULT_VIEWER_JSON_PATH, JSON.stringify(fileContent, null, 2));\n    this.uploadFileAtPath(RESULT_VIEWER_JSON_PATH);\n}\n\nfunction uploadFileAtPath(filePath) {\n    new Promise((resolve, reject) => {\n        child_process.exec(`copado --uploadfile ${filePath}`, {}, err => {\n            if (err) {\n                this.populateResultViewer(\n                    RESULT_INFO.LEVEL.ERROR,\n                    RESULT_INFO.CATEGORY.COPADO_SERVICE,\n                    RESULT_INFO.ADDITIONAL_INFORMATION.UPLOAD_FILES,\n                    err\n                );\n                reject(new CommandExecutionError(err, RESULT_INFO.CATEGORY.COPADO_SERVICE, RESULT_INFO.ADDITIONAL_INFORMATION.UPLOAD_FILES));\n            } else {\n                resolve();\n            }\n        });\n    });\n}\nfunction asyncCopadoLogMessage(msg, logLevel) {\n    if (msg) {\n        this.populateResultViewer(logLevel ? logLevel : RESULT_INFO.LEVEL.INFO, RESULT_INFO.CATEGORY.COPADO_INFO, '', msg);\n        new Promise(resolve => {\n            child_process.exec(`copado -p \"${msg}\"`, { stdio: STDIO.INHERIT }, () => {\n                resolve();\n            });\n        });\n    }\n}\n\nfunction getErrorCommand(error) {\n    const suffix = 'Please check the logs for details.';\n    return `{ copado -p 'Error' -e '${error}. ${suffix}'; exit 2; }`;\n}\n\nclass CommandExecutionError extends Error {\n    constructor(message, category, additionalInfo) {\n        super(`${category ? category + ' - ' : ''}${additionalInfo ? additionalInfo + ' : ' : ''}${message}`);\n        this.name = CUSTOM_ERROR.COMMAND_EXECUTION_ERROR;\n    }\n}\n\n\nmodule.exports.executeCommand = executeCommand;\nmodule.exports.createEnvironmentBranch = createEnvironmentBranch;\nmodule.exports.execute = execute;\nmodule.exports.log = log;\nmodule.exports.changeWorkingDirectory = changeWorkingDirectory;\nmodule.exports.pushEnvironmentBranch = pushEnvironmentBranch;\nmodule.exports.uploadFileAtPath = uploadFileAtPath;\nmodule.exports.uploadResultViewerJson = uploadResultViewerJson;\nmodule.exports.populateResultViewer = populateResultViewer;\nmodule.exports.fetchGitBranch = fetchGitBranch;\nmodule.exports.createWorkingDirectory = createWorkingDirectory;\nmodule.exports.configureGit = configureGit;\nmodule.exports.getErrorCommand = getErrorCommand;\nmodule.exports.logger = logger;\nmodule.exports.getRemoteBranches = getRemoteBranches;\nmodule.exports.validateBranches = validateBranches;\nmodule.exports.asyncCopadoLogMessage = asyncCopadoLogMessage;\nmodule.exports.validateBranchName = validateBranchName;\n\n!isTest && this.execute();",
-                    "copado__Type__c": "Custom",
+                    "copado__Type__c": "Standard",
                     "copado__Worker_Size__c": "M",
                     "Id": "a0oJ6000000Tag7IAC",
                     "LastReferencedDate": "2025-06-19T05:53:40.000+0000",

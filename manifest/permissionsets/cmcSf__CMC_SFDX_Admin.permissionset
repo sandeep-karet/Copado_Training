@@ -41,6 +41,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__CheckLicense</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__CheckPackageDistributionLicense</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -101,6 +105,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__CreateGitRepository</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__CredentialListView</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -122,6 +130,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__DataDeployConfigurationCheckImpl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__DataKitsPresentStepValidator</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -153,6 +165,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__EnableVlocityForMigration</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__EnvironmentBranchCreationCallback</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -181,7 +197,19 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__FlowTestsSelector</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__GenerateSshKey</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__GetApexCodeCoverageFromOrg</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__GetCredentialInformation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -214,6 +242,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__GetRefreshIndexContent</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__GetSnapshotScopeForMigration</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -577,7 +609,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__RepositoryAuthenticationCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__RepositoryBranchCreationCallback</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__ResetMigrationRecords</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -605,7 +645,19 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__SfpMigrationCleanupBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__SfpMigrationDetails</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__SfpMigrationJobCallback</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__SfpMigrationResetBatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -677,6 +729,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__UserStoryMigrationCommitCallback</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__UserStoryMigrationUtils</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__Utilities</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -702,6 +762,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__VlocitySettingsSourceId</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__VlocitySnapshotMetadataForMigration</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1095,6 +1159,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__User_Story__c.cmcSf__Apex_Test_Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__User_Story__c.cmcSf__Migration_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>

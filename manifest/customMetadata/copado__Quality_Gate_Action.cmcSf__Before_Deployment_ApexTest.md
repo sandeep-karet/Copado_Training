@@ -24,7 +24,7 @@
     </values>
     <values>
         <field>copado__Info_Message__c</field>
-        <value xsi:type="xsd:string">The quality gate will be executed in the Promotion’s Destination environment</value>
+        <value xsi:type="xsd:string">The quality gate will be executed in the Promotion’s Source environment</value>
     </values>
     <values>
         <field>copado__Is_Default__c</field>

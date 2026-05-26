@@ -565,6 +565,17 @@
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
+        <fullName>cmcSf__Different_Environments_Required</fullName>
+        <active>false</active>
+        <description>Prevents saving the record when both Source and Destination Environment lookup fields reference the same Environment record.</description>
+        <errorConditionFormula>AND(
+    NOT(ISBLANK(copado__Source_Environment__c)),
+    NOT(ISBLANK(copado__Destination_Environment__c)),
+    copado__Source_Environment__c = copado__Destination_Environment__c
+)</errorConditionFormula>
+        <errorMessage>Source Environment and Destination Environment must be different.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>copado__EnvironmentAndPipelinePlatformMustBeSame</fullName>
         <active>true</active>
         <errorConditionFormula>OR( 

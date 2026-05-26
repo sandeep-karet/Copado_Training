@@ -203,6 +203,10 @@
     </layouts>
     <nameFieldLabel>パイプライン接続リファレンス</nameFieldLabel>
     <validationRules>
+        <errorMessage><!-- Source Environment and Destination Environment must be different. --></errorMessage>
+        <name>cmcSf__Different_Environments_Required</name>
+    </validationRules>
+    <validationRules>
         <errorMessage>パイプラインのプラットフォームと環境が一致する必要があります。</errorMessage>
         <name>copado__EnvironmentAndPipelinePlatformMustBeSame</name>
     </validationRules>
