@@ -1,41 +1,214 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>AffectedObjectsDetails</fullName>
+        <fullName>ClosureDate</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>ComplianceCategory</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>CustomComplianceCategory</fullName>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>DateFound</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>LastUpdate</fullName>
+        <fullName>DueDate</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>RegulationId</fullName>
+        <fullName>IdentifiedDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IssueOwnerId</fullName>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>RegulationVersionId</fullName>
-        <type>Lookup</type>
+        <fullName>IssueStatus</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>RiskLevel</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>RuleId</fullName>
-        <type>Lookup</type>
+        <fullName>Severity</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
+    <fields>
+        <fullName>Title</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>UsageType</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <searchLayouts>
+        <customTabListAdditionalFields>Title</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IssueStatus</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Severity</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IdentifiedDate</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Title</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IssueStatus</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Severity</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IdentifiedDate</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Title</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IssueStatus</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Severity</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Type</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IdentifiedDate</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Title</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IssueStatus</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Severity</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IdentifiedDate</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>Private</sharingModel>
 </CustomObject>

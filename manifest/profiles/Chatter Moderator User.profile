@@ -410,6 +410,11 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
+    <applicationVisibilities>
+        <application>standard__TrustedServicesPrivacyAgent</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
     <classAccesses>
         <apexClass>ALTF__AMAvailability</apexClass>
         <enabled>false</enabled>
@@ -92900,10 +92905,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>AssignTopics</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>BypassMFAForUiLogins</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
