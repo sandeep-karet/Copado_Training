@@ -86287,6 +86287,9 @@
         <layout>copado__User_Story__c-copado__User Story Layout</layout>
         <recordType>copado__User_Story__c.copado__Utility</recordType>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>test_29_july_object__c-test_29_july_object Layout</layout>
+    </layoutAssignments>
     <loginIpRanges>
         <endAddress>35.155.249.183</endAddress>
         <startAddress>35.155.249.183</startAddress>
@@ -94322,6 +94325,16 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>sbaa__TrackedValue__c</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>test_29_july_object__c</object>
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>

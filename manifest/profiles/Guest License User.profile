@@ -86057,6 +86057,9 @@
         <layout>copado__User_Story__c-copado__User Story Layout</layout>
         <recordType>copado__User_Story__c.copado__Utility</recordType>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>test_29_july_object__c-test_29_july_object Layout</layout>
+    </layoutAssignments>
     <pageAccesses>
         <apexPage>ALTF__AMLaunchpad</apexPage>
         <enabled>false</enabled>
