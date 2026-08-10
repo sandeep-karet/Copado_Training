@@ -9,7 +9,7 @@ global class TriggerWorkflowRequest {
     global TriggerWorkflowRequest() {
 
     }
-    @InvocableMethod(label='Start Docusign Maestro workflow' description='Start Docusign Maestro workflow')
+    @InvocableMethod(label='Start Docusign Workflow' description='Start Docusign Workflow')
     global static void triggerWorkflow(List<dfsle.TriggerWorkflowRequest.InvocableMethodRequest> requests) {
 
     }

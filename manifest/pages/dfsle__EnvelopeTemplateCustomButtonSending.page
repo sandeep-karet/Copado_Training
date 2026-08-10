@@ -24,7 +24,7 @@
   </script>
 
   <!-- Pull the Wootric Snippet -->
-  <script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
+  <apex:includeScript value="{!$Resource.dfsle__wootricSdk}"/>
   <script type="text/javascript">
     var uIdHash = '{!JSENCODE($CurrentPage.parameters.userIdHash)}';
   </script>

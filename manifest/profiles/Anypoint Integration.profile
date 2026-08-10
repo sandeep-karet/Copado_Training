@@ -26692,6 +26692,22 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>dfsle__ADDataSourceConnection</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__ADDataSourceConnectionTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__ADDataSourceProvider</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__ADDataSourceProviderTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>dfsle__ADMAPI</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -26821,6 +26837,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>dfsle__AgreementsControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__AppInstallerController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__AppInstallerControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -27616,6 +27640,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>dfsle__IamTasksAPI</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__IamTasksAPIMock</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>dfsle__IcpBrasilProvider</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -27849,6 +27881,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>dfsle__Obligation</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__OneDSController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__OneDSControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -28088,6 +28128,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>dfsle__SalesforceMetadataAPI</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__SalesforceMetadataAPITest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>dfsle__SalesforceTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -28205,6 +28253,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>dfsle__SmartSectionTab</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__SolutionPackagingController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dfsle__SolutionPackagingControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
