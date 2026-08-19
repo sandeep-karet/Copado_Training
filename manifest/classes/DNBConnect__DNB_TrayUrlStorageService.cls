@@ -10,6 +10,10 @@ global class DNB_TrayUrlStorageService {
     global DNB_TrayUrlStorageService() {
 
     }
+    @HttpGet
+    global static DNBConnect.DNB_TrayUrlStorageService.MessageResponse runSelfHealing() {
+        return null;
+    }
     @HttpPost
     global static DNBConnect.DNB_TrayUrlStorageService.MessageResponse storeTrayURL(String inputTrayURL) {
         return null;
