@@ -86330,6 +86330,9 @@
         <layout>copado__Epic__c-copado__Epic Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>copado__ExtensionConfiguration__c-copado__Extension Configuration Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>copado__User_Story_Task__c-copado__User Story Task Layout</layout>
     </layoutAssignments>
     <layoutAssignments>

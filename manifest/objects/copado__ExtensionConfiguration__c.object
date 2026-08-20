@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
@@ -271,31 +271,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>copado__Extension_Name__c</fullName>
-        <deprecated>false</deprecated>
-        <inlineHelpText>Select the name of the CMDT Extension for which you are creating the record.</inlineHelpText>
-        <label>Extension Name</label>
-        <required>true</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>None</fullName>
-                    <default>false</default>
-                    <label>None</label>
-                </value>
-                <value>
-                    <fullName>PMD</fullName>
-                    <default>false</default>
-                    <label>PMD</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>copado__Status__c</fullName>
         <deprecated>false</deprecated>
         <description>Deprecated</description>
@@ -379,7 +354,6 @@
     <listViews>
         <fullName>copado__All</fullName>
         <columns>NAME</columns>
-        <columns>copado__Extension_Name__c</columns>
         <columns>copado__ExtensionApplication__c</columns>
         <columns>copado__Status__c</columns>
         <columns>LAST_UPDATE</columns>
@@ -393,7 +367,7 @@
     </nameField>
     <pluralLabel>Extension Configurations</pluralLabel>
     <searchLayouts>
-        <searchResultsAdditionalFields>copado__Extension_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields xsi:nil="true"/>
         <searchResultsAdditionalFields>copado__ExtensionApplication__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>copado__Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
